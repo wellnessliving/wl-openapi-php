@@ -13,9 +13,10 @@ declare(strict_types=1);
  * All classes live under the WlSdk namespace with PSR-4 directory layout.
  *
  * Usage:
- *   php generate.php             # generate both stable and dev
- *   php generate.php stable      # generate stable only
- *   php generate.php dev         # generate dev only
+ *   php generate.php                  # generate stable, dev, and production (production skipped if spec not found)
+ *   php generate.php stable           # generate stable only
+ *   php generate.php dev              # generate dev only
+ *   php generate.php production       # generate production (exits 0 with a warning if spec not yet available)
  *
  * Requirements: PHP 8.0+, ext-curl, vendor/autoload.php (run composer install first).
  */
@@ -27,6 +28,7 @@ use Symfony\Component\Yaml\Yaml;
 const SPEC_URLS = [
     'stable' => 'https://raw.githubusercontent.com/wellnessliving/openapi/main/stable/openapi.yaml',
     'dev' => 'https://raw.githubusercontent.com/wellnessliving/openapi/main/dev/openapi.yaml',
+    'production' => 'https://raw.githubusercontent.com/wellnessliving/openapi/main/production/openapi.yaml',
 ];
 
 const TEMPLATES_DIR = __DIR__ . '/templates';
@@ -34,6 +36,7 @@ const TEMPLATES_DIR = __DIR__ . '/templates';
 const OUTPUT_DIRS = [
     'stable' => __DIR__ . '/../stable/src',
     'dev' => __DIR__ . '/../dev/src',
+    'production' => __DIR__ . '/../production/src',
 ];
 
 const NS_ROOT = 'WlSdk';
@@ -66,6 +69,44 @@ function wlFetchText(string $url): string
 
     if ($body === false) {
         throw new \RuntimeException("cURL error fetching {$url}: {$error}");
+    }
+    if ($status < 200 || $status >= 300) {
+        throw new \RuntimeException("HTTP {$status} fetching {$url}");
+    }
+
+    return $body;
+}
+
+/**
+ * Downloads text content from a URL, returning null when the server responds with 404.
+ *
+ * Used for optional spec channels (e.g. production) that may not be published yet.
+ *
+ * @param string $url URL to fetch.
+ * @return string|null Downloaded content, or null on HTTP 404.
+ * @throws \RuntimeException On cURL error or any non-2xx response other than 404.
+ */
+function wlFetchTextMaybe(string $url): ?string
+{
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_MAXREDIRS => 5,
+        CURLOPT_TIMEOUT => 120,
+        CURLOPT_USERAGENT => 'wl-sdk-php-generator/2.0',
+    ]);
+
+    $body = curl_exec($ch);
+    $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $error = curl_error($ch);
+    curl_close($ch);
+
+    if ($body === false) {
+        throw new \RuntimeException("cURL error fetching {$url}: {$error}");
+    }
+    if ($status === 404) {
+        return null;
     }
     if ($status < 200 || $status >= 300) {
         throw new \RuntimeException("HTTP {$status} fetching {$url}");
@@ -586,23 +627,30 @@ function wlGenerateApiClass(array $spec, string $path, array $pathItem): array
 /**
  * Downloads the OpenAPI spec, generates all API classes, and writes them to disk.
  *
- * @param string $channel 'stable' or 'dev'.
+ * @param string $channel 'stable', 'dev', or 'production'.
+ * @param bool $optional When `true`, a missing spec (HTTP 404) prints a warning and returns
+ *  without error. Used for channels not yet published (e.g. production).
  * @throws \RuntimeException On fetch, parse, or write failure.
  */
-function wlGenerateSdk(string $channel): void
+function wlGenerateSdk(string $channel, bool $optional = false): void
 {
     echo "Generating PHP SDK ({$channel})...\n";
 
     $outputDir = OUTPUT_DIRS[$channel];
+    $specUrl = SPEC_URLS[$channel];
+
+    echo "  Fetching spec from {$specUrl}...\n";
+
+    $yaml = $optional ? wlFetchTextMaybe($specUrl) : wlFetchText($specUrl);
+    if ($yaml === null) {
+        echo "  Spec not available yet - skipping {$channel} channel.\n";
+        return;
+    }
 
     // Wipe the output directory so removed endpoints don't leave stale files.
     wlRmDir($outputDir);
     echo "  Cleared {$outputDir}/\n";
 
-    $specUrl = SPEC_URLS[$channel];
-    echo "  Fetching spec from {$specUrl}...\n";
-
-    $yaml = wlFetchText($specUrl);
     $spec = Yaml::parse($yaml);
 
     $version = $spec['info']['version'] ?? 'unknown';
@@ -663,10 +711,14 @@ $channel = $argv[1] ?? 'both';
 if ($channel === 'both') {
     wlGenerateSdk('stable');
     wlGenerateSdk('dev');
+    wlGenerateSdk('production', true);
 } elseif ($channel === 'stable' || $channel === 'dev') {
     wlGenerateSdk($channel);
+} elseif ($channel === 'production') {
+    // production is optional - exits 0 even when spec is not yet published
+    wlGenerateSdk('production', true);
 } else {
-    fwrite(STDERR, "Usage: php generate.php [stable|dev|both]\n");
+    fwrite(STDERR, "Usage: php generate.php [stable|dev|production|both]\n");
     exit(1);
 }
 

@@ -7,7 +7,7 @@ namespace WlSdk;
  * Handles authentication, request encoding, and error handling.
  * Pass an instance to every generated Api class constructor.
  *
- * @see https://github.com/wellnessliving/wl-sdk-php-v2
+ * @see https://github.com/wellnessliving/wl-openapi-php
  */
 class WlSdkClient
 {

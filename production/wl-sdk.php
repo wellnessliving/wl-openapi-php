@@ -2,8 +2,8 @@
 /**
  * This file is no longer used.
  *
- * The SDK is now organized as PSR-4 classes under stable/src/.
- * Run `composer run generate:stable` to generate all API classes.
+ * The SDK is now organized as PSR-4 classes under production/src/.
+ * Run `composer run generate:production` to generate all API classes.
  *
  * Usage:
  *   use WlSdk\WlSdkClient;

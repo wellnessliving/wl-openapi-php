@@ -6,6 +6,14 @@ Auto-generated PHP SDK for the WellnessLiving API, built from the
 Each API endpoint is a dedicated PHP class with typed public properties for request parameters
 and one method per HTTP verb (`get()`, `post()`, etc.).
 
+## Channels
+
+| Channel | Spec | Branch | Description |
+|---------|------|--------|-------------|
+| `production` | `production/openapi.yaml` | `main` | Dedicated production API channel. |
+| `stable` | `stable/openapi.yaml` | `channel/stable` | Follows the live WellnessLiving platform. |
+| `dev` | `dev/openapi.yaml` | `channel/dev` | Latest features; may include breaking changes. |
+
 ## Structure
 
 ```
@@ -18,7 +26,7 @@ stable/src/
     ...                       - one class per API endpoint
 ```
 
-The `dev/src/` directory has the same structure built from the dev-channel spec.
+`dev/src/` and `production/src/` follow the same layout from their respective spec channels.
 
 ## Requirements
 
@@ -28,15 +36,41 @@ The `dev/src/` directory has the same structure built from the dev-channel spec.
 
 ## Installation
 
+Each channel is a separate Composer package served from a dedicated branch in this repository.
+Add the VCS source once per project, then require the channel you need.
+
 ```bash
-composer require wellnessliving/wl-sdk-php
+# Add source once
+composer config repositories.wl-sdk vcs https://github.com/wellnessliving/wl-openapi-php
 ```
 
-Or clone and install:
+| Channel | Package | Branch | When to use |
+|---------|---------|--------|-------------|
+| production | `wellnessliving/wl-openapi-php-production` | `main` | Production API - default for live apps |
+| stable | `wellnessliving/wl-openapi-php` | `channel/stable` | Tracks the live platform |
+| dev | `wellnessliving/wl-openapi-php-dev` | `channel/dev` | Feature development - latest endpoints |
 
 ```bash
-git clone https://github.com/wellnessliving/wl-sdk-php-v2.git
-cd wl-sdk-php-v2
+# Development - use dev channel
+composer require wellnessliving/wl-openapi-php-dev
+
+# Stabilizing / QA - switch to stable
+composer remove wellnessliving/wl-openapi-php-dev
+composer require wellnessliving/wl-openapi-php
+
+# Deploy to production environment - switch to production channel
+composer remove wellnessliving/wl-openapi-php
+composer require wellnessliving/wl-openapi-php-production
+```
+
+The namespace `WlSdk\` is identical across all channels - switching channels requires
+no code changes, only a `composer` command.
+
+### From source (generator)
+
+```bash
+git clone https://github.com/wellnessliving/wl-openapi-php.git
+cd wl-openapi-php
 composer install
 ```
 
@@ -86,31 +120,39 @@ try {
 }
 ```
 
-### Using the dev channel
+### Pinning a specific version
 
-Switch the Composer autoloader to point at `dev/src/`:
+Each channel release tags the spec version (e.g. `stable-1.1.20260619090040`).
+To pin:
 
-```json
-"autoload": {
-    "psr-4": {
-        "WlSdk\\": "dev/src/"
-    }
-}
+```bash
+composer require wellnessliving/wl-openapi-php:"1.1.20260619090040"
 ```
 
 ## Regenerating the SDK locally
 
 ```bash
 composer install
-composer run generate           # regenerate both stable and dev
-composer run generate:stable    # regenerate stable only
-composer run generate:dev       # regenerate dev only
+composer run generate               # regenerate stable, dev, and production
+composer run generate:stable        # regenerate stable only
+composer run generate:dev           # regenerate dev only
+composer run generate:production    # regenerate production only
 ```
 
 ## Automation
 
-GitHub Actions checks for upstream spec changes daily at 08:00 UTC and commits
-updated SDK files automatically when a new spec version is detected.
+GitHub Actions checks for upstream spec changes daily at 08:00 UTC. When a channel's
+spec version changes, it commits the updated files and creates a separate GitHub Release
+for that channel:
+
+| Channel | Tag format | Release type |
+|---------|-----------|--------------|
+| stable | `stable-VERSION` | Latest release |
+| dev | `dev-VERSION` | Pre-release |
+| production | `production-VERSION` | Release |
+
+Each release contains only the zip for its channel (`wl-openapi-php-{channel}.zip`).
+Channels that did not change in a given run do not produce a new release.
 
 ## Automation setup
 

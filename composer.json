@@ -1,6 +1,6 @@
 {
-    "name": "wellnessliving/wl-sdk-php",
-    "description": "WellnessLiving PHP SDK - auto-generated from OpenAPI spec",
+    "name": "wellnessliving/wl-openapi-php-production",
+    "description": "WellnessLiving PHP SDK - production channel",
     "license": "MIT",
     "require": {
         "php": ">=7.4",
@@ -12,17 +12,13 @@
     },
     "autoload": {
         "psr-4": {
-            "WlSdk\\": "stable/src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "WlSdk\\": "dev/src/"
+            "WlSdk\\": "production/src/"
         }
     },
     "scripts": {
         "generate": "php scripts/generate.php",
-        "generate:stable": "php scripts/generate.php stable",
-        "generate:dev": "php scripts/generate.php dev"
+        "generate:dev": "php scripts/generate.php dev",
+        "generate:production": "php scripts/generate.php production",
+        "generate:stable": "php scripts/generate.php stable"
     }
 }

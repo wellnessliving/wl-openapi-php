@@ -1,13 +1,13 @@
 # Setting up automatic SDK rebuild on spec change
 
-When `stable/openapi.yaml` or `dev/openapi.yaml` is updated in the
+When `stable/openapi.yaml`, `dev/openapi.yaml`, or `production/openapi.yaml` is updated in the
 [wellnessliving/openapi](https://github.com/wellnessliving/openapi) repository,
 the SDK can be rebuilt automatically via a `repository_dispatch` event.
 
 ## How it works
 
 ```
-openapi repo                        wl-sdk-php-v2 repo
+openapi repo                        wl-openapi-php repo
 ─────────────────────────────────   ──────────────────────────────────
 push to stable/openapi.yaml    -->  repository_dispatch: openapi-updated
                                 -->  php scripts/generate.php
@@ -21,10 +21,10 @@ push to stable/openapi.yaml    -->  repository_dispatch: openapi-updated
 1. Go to **GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens**.
 2. Click **Generate new token**.
 3. Set:
-   - **Token name**: `wl-sdk-php-v2 dispatch`
+   - **Token name**: `wl-openapi-php dispatch`
    - **Expiration**: choose a suitable period (or "No expiration")
    - **Resource owner**: `wellnessliving`
-   - **Repository access**: only `wl-sdk-php-v2`
+   - **Repository access**: only `wl-openapi-php`
    - **Permissions**:
      - **Actions** — Read and write
      - **Contents** — Read and write
@@ -53,6 +53,7 @@ on:
     paths:
       - 'stable/openapi.yaml'
       - 'dev/openapi.yaml'
+      - 'production/openapi.yaml'
 
 jobs:
   dispatch:
@@ -62,7 +63,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.SDK_PHP_DISPATCH_TOKEN }}
-          repository: wellnessliving/wl-sdk-php-v2
+          repository: wellnessliving/wl-openapi-php
           event-type: openapi-updated
 ```
 
@@ -70,13 +71,13 @@ jobs:
 
 Push any change to `stable/openapi.yaml` in the openapi repo.
 After a few seconds, a new workflow run should appear in
-**github.com/wellnessliving/wl-sdk-php-v2 → Actions**.
+**github.com/wellnessliving/wl-openapi-php → Actions**.
 
 Once the run completes, check:
 
 - **Commits** — a new commit `chore: regenerate PHP SDK` should appear on `main`.
 - **Releases** — a new release tagged `vX.X.XXXXXXXX` should appear under
-  **github.com/wellnessliving/wl-sdk-php-v2 → Releases**.
+  **github.com/wellnessliving/wl-openapi-php → Releases**.
 
 If the spec version did not change, the release step is skipped
 and only the commit is made.
