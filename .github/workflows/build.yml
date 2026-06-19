@@ -101,9 +101,9 @@ jobs:
 
             git -C "${WT}" rm -rf . --ignore-unmatch -q
             cp -r "${CHANNEL}/src" "${WT}/src"
-            sed -e "s/{{PACKAGE_NAME}}/${PKG_NAME}/" \
-                -e "s/{{CHANNEL}}/${CHANNEL}/" \
-                -e "s/{{VERSION}}/${VERSION}/" \
+            sed -e "s|{{PACKAGE_NAME}}|${PKG_NAME}|" \
+                -e "s|{{CHANNEL}}|${CHANNEL}|" \
+                -e "s|{{VERSION}}|${VERSION}|" \
                 scripts/templates/channel-composer.json.tpl > "${WT}/composer.json"
 
             git -C "${WT}" add -A
