@@ -23,7 +23,7 @@ class EditEmail
      *  status, staff flags, and password status if found; guest requests are subject to a per-IP
      *  rate limit.
      *
-     * @deprecated
+     * @deprecated Use {@link \Wl\Profile\Edit\Email\EditEmail67Api} instead.
      *
      * @return EditEmailGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -41,7 +41,7 @@ class EditEmail
      *  are missing, grants temporary access until the profile is completed. Sends a welcome
      *  notification once the user is fully registered.
      *
-     * @deprecated
+     * @deprecated Use {@link \Wl\Profile\Edit\Email\EditEmail67Api} instead.
      *
      * @return EditEmailPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

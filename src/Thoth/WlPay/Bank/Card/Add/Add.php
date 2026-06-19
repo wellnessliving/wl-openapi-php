@@ -19,7 +19,7 @@ class Add
     /**
      * Gets code of bank card widget.
      *
-     * @deprecated
+     * @deprecated Make card widget in client side using `RsPayBankCardEditWidget` class.
      *
      * @return AddGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

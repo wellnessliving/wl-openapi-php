@@ -22,7 +22,7 @@ class StaffView
      * This method can accept or one staff key `k_staff` or staff list
      * `a_staff_list` but not both (exception would be thrown).
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Staff\StaffView\StaffView74Api}
      *
      * @return StaffViewGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

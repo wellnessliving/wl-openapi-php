@@ -19,7 +19,7 @@ class Environment
     /**
      * Returns information about payment environment.
      *
-     * @deprecated
+     * @deprecated Use {@link \Thoth\WlPay\Form\EnvironmentUserApi} instead.
      *
      * @return EnvironmentGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

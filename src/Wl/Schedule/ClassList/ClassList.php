@@ -24,7 +24,7 @@ class ClassList
      * per-session details such as staff, capacity, booking counts, and virtual locations, as well as
      * a calendar map indicating which dates have at least one scheduled session.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Schedule\ClassList\ClassList68Api} instead.
      *
      * @return ClassListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

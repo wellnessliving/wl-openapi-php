@@ -23,7 +23,7 @@ class MemberValidate
      * registration quizzes, a required credit card on file, and lists of missing required profile fields for
      * booking and registration.
      *
-     * @deprecated
+     * @deprecated Use instead {@link \Wl\Login\Member\MemberValidate63Api}.
      *
      * @return MemberValidateGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

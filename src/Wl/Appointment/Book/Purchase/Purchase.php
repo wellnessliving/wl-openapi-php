@@ -23,7 +23,7 @@ class Purchase
      *  the specified appointment at the given location, including pricing details and eligibility status.
      *  Also returns options that can be purchased on the spot during booking.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Appointment\Book\Purchase\Purchase72Api} instead.
      *
      * @return PurchaseGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

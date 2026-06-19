@@ -23,7 +23,7 @@ class Response
      * such as
      * amendment availability and PDF generation support.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Quiz\Response\Response65Api} instead.
      *
      * @return ResponseGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -41,7 +41,7 @@ class Response
      * [QuizResponseApi](/Core/Quiz/QuizResponse.json) is set, only validation runs and no record is created.
      * Pass [QuizResponseApi](/Core/Quiz/QuizResponse.json) to bypass validation for pre-confirmed responses.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Quiz\Response\Response65Api} instead.
      *
      * @return ResponsePostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -59,7 +59,7 @@ class Response
      * edit their quiz answers after submission. Re-links the response to its owner and triggers
      * downstream reindexing so search and reporting stay consistent.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Quiz\Response\Response65Api} instead.
      *
      * @return ResponsePutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -76,7 +76,7 @@ class Response
      * Validates access privileges and removes the specified response records, updating any related search indexes
      * and activity logs.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Quiz\Response\Response65Api} instead.
      *
      * @return ResponseDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

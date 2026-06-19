@@ -23,7 +23,7 @@ class Resource
      * strips shared resources that clients should not choose individually, attaches image data and occupancy
      * information, and returns the result as `a_resource_all`.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Book\Process\Resource\Resource54Api} instead.
      *
      * @return ResourceGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -42,7 +42,7 @@ class Resource
      * keys,
      * activity keys, and a flag indicating whether further wizard steps are needed.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Book\Process\Resource\Resource54Api} instead.
      *
      * @return ResourcePostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

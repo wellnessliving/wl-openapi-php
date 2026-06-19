@@ -22,7 +22,7 @@ class LeadSourceElement
      * Accepts a list of lead source records and applies bulk create or update operations: new entries without a
      * key are inserted, and existing entries are updated with a new sort order or title.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Lead\LeadPageApi::post()} instead. Will be removed after WL-89292 done.
      *
      * @return LeadSourceElementPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

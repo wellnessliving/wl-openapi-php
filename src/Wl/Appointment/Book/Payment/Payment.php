@@ -23,7 +23,7 @@ class Payment
      *  applicable discount codes, surcharge amounts, and the final total. Intended to be called before
      *  submitting payment so the client side can display a pricing summary to the user.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Appointment\Book\Payment\PaymentPostApi} instead.
      *
      * @return PaymentGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -41,7 +41,7 @@ class Payment
      *  Purchase Option, and records the transaction. Requires the client to be authenticated and the
      *  booking data to include a valid service or asset key.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Appointment\Book\Payment\PaymentPostApi} instead.
      *
      * @return PaymentPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

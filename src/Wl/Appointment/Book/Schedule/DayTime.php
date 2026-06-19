@@ -23,7 +23,7 @@ class DayTime
      *  Each slot includes the start time, duration, available capacity, and staff information. Supports
      *  both frontend and backend modes, as well as asset bookings and back-to-back scheduling.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Appointment\Book\Schedule\DayTime73Api}
      *
      * @return DayTimeGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

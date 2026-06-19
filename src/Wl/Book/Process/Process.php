@@ -24,7 +24,7 @@ class Process
      * marked
      * as current, and additional flags about event type, wait-list availability, and payment options are returned.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Book\Process\Process54Api} instead.
      *
      * @return ProcessGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

@@ -23,7 +23,7 @@ class Info
      * recurring booking availability for the given class period and date. For events it also returns the list of
      * individually selectable sessions together with their free-session eligibility.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Book\Process\Info\Info54Api} instead.
      *
      * @return InfoGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -42,7 +42,7 @@ class Info
      * to book the session immediately when no further payment or resource steps are needed. Returns booking keys,
      * activity keys, and flags indicating whether additional wizard steps are required.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Book\Process\Info\Info54Api} instead.
      *
      * @return InfoPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

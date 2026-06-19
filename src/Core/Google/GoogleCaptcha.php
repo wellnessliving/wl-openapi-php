@@ -22,7 +22,7 @@ class GoogleCaptcha
      * Accepts the CAPTCHA version, the action name, and the user token obtained from the Google reCAPTCHA widget,
      * and stores them in the session so that subsequent API requests requiring CAPTCHA verification can use them.
      *
-     * @deprecated
+     * @deprecated Use {@link Core\Google\Captcha\GoogleCaptchaApi} instead of this.
      *
      * @return GoogleCaptchaPutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

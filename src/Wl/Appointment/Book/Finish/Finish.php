@@ -22,7 +22,7 @@ class Finish
      * Returns notification settings (email, push, SMS) for the appointment creation confirmation
      *  so the client side can display the appropriate notification options before finalizing the booking.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Appointment\Book\Finish\Finish47Api} instead.
      *
      * @return FinishGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -40,7 +40,7 @@ class Finish
      *  the legacy single-provider request fields to the multi-provider format. Creates an appointment
      *  record, applies the selected Purchase Option, and sends the booking confirmation notification.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Appointment\Book\Finish\Finish47Api} instead.
      *
      * @return FinishPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

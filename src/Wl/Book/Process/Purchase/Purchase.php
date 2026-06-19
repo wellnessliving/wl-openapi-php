@@ -25,7 +25,7 @@ class Purchase
      * prizes.
      * Returns pricing, image, program category, and availability data for each option.
      *
-     * @deprecated
+     * @deprecated Use {@link Wl\Book\Process\Purchase\Purchase56Api} instead.
      *
      * @return PurchaseGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

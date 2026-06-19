@@ -23,7 +23,7 @@ class PurchaseList
      *  item types such as memberships, redemption codes, enrollments, products, appointments, and
      *  gift cards. Package components are resolved and included inline beside their parent item.
      *
-     * @deprecated
+     * @deprecated Use {@link \Wl\Profile\PurchaseList\PurchaseListApi} instead.
      *
      * @return PurchaseListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
