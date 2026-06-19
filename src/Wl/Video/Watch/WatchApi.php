@@ -31,7 +31,7 @@ class WatchApi
 
     /**
      * The video string key:
-     * * [Deprecated] String key in old format. 
+     * * [Deprecated] String key in old format.
      * * String key in new format.
      *
      * @var string|null

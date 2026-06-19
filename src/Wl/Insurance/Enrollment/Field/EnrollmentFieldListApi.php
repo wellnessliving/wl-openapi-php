@@ -35,7 +35,7 @@ class EnrollmentFieldListApi
     /**
      * List of fields that the user has filled in for enrollment.
      * 
-     * Keys refer specifically to field keys. 
+     * Keys refer specifically to field keys.
      * Values refer specifically to values entered by the user.
      *
      * @var string[]|null

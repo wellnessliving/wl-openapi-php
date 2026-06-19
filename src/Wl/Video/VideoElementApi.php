@@ -27,7 +27,7 @@ class VideoElementApi
      * 
      * *Be careful, when use this property in code, use `k_video_binary` instead.*
      * In this property can be key in next format:
-     * * [Deprecated] String key in old format. 
+     * * [Deprecated] String key in old format.
      * * String key in new format.
      *
      * @var string|null

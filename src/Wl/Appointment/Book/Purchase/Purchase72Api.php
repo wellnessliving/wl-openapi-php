@@ -85,7 +85,7 @@ class Purchase72Api
     public ?bool $is_walk_in = null;
 
     /**
-     * Appointment key. 
+     * Appointment key.
      * Not empty in case when we return payment options for rescheduling existing appointment.
      *
      * @var string|null

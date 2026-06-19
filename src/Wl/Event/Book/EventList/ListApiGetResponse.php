@@ -21,7 +21,7 @@ class ListApiGetResponse
      * Unavailable events are those that cannot be booked,
      *  but they can be shown to the client (for example, under the "not available" filter).
      * 
-     * Key is the event class key. 
+     * Key is the event class key.
      * Value is `true` if the event is available for booking, `false` if it is unavailable.
      *
      * @var bool[]|null

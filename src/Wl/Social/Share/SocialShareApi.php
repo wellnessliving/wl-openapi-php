@@ -12,11 +12,11 @@ class SocialShareApi
      * The primary keys of the shared objects. Depends on `id_share_object`.
      * If `id_share_object` is:
      * * [ShareObjectSid::BOOK](#/components/schemas/Wl.Social.Share.ShareObjectSid) - each value is key of the
-     * visit. 
+     * visit.
      * * [ShareObjectSid::LOCATION](#/components/schemas/Wl.Social.Share.ShareObjectSid) - each value is key of the
-     * location. 
+     * location.
      * * [ShareObjectSid::PURCHASE](#/components/schemas/Wl.Social.Share.ShareObjectSid) - each value is key of the
-     * purchase. 
+     * purchase.
      * * [ShareObjectSid::REVIEW](#/components/schemas/Wl.Social.Share.ShareObjectSid) - each value is key of the
      * review.
      *

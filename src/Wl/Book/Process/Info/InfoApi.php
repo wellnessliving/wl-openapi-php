@@ -89,7 +89,7 @@ class InfoApi
     /**
      * The selected sessions.
      * 
-     * Keys are class period keys. 
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null
@@ -99,7 +99,7 @@ class InfoApi
     /**
      * Selected sessions on the waiting list without pay.
      * 
-     * Keys are class period keys. 
+     * Keys are class period keys.
      * Values are index arrays of dates/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null

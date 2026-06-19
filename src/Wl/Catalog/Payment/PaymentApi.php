@@ -74,8 +74,8 @@ class PaymentApi
 
     /**
      * The list of quiz response keys.
-     * Keys refer to quiz keys. 
-     * And values refer to responses. 
+     * Keys refer to quiz keys.
+     * And values refer to responses.
      * Or special values from the `skip` constant.
      *
      * @var string[]|null

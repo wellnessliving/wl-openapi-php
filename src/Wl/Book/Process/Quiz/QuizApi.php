@@ -9,7 +9,7 @@ use WlSdk\WlSdkClient;
 class QuizApi
 {
     /**
-     * The list of purchase items. Each element has the format `[id_purchase_item]::[k_id]`, where: 
+     * The list of purchase items. Each element has the format `[id_purchase_item]::[k_id]`, where:
      * 
      * This will be empty if no purchases are made for the booking.
      *
@@ -76,8 +76,8 @@ class QuizApi
     /**
      * The list of quiz response keys.
      * 
-     * Keys are quiz keys. 
-     * Values are response keys. 
+     * Keys are quiz keys.
+     * Values are response keys.
      * Or the `skip` to skip the quiz.
      *
      * @var string[]|null
@@ -101,7 +101,7 @@ class QuizApi
     /**
      * The selected sessions.
      * 
-     * Keys are class period keys. 
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null
@@ -111,7 +111,7 @@ class QuizApi
     /**
      * The selected sessions on the wait list that are unpaid.
      * 
-     * Keys are class period keys. 
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null

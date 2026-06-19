@@ -81,8 +81,8 @@ class PaymentApi
     /**
      * List of quiz response keys.
      * 
-     * Keys are quiz keys. 
-     * Values are response keys. 
+     * Keys are quiz keys.
+     * Values are response keys.
      * Or the `skip` to skip the quiz.
      *
      * @var string[]|null
@@ -106,7 +106,7 @@ class PaymentApi
     /**
      * A list of sessions being booked.
      * 
-     * Keys are class period keys. 
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null
@@ -116,7 +116,7 @@ class PaymentApi
     /**
      * Selected sessions on the waiting list without pay.
      * 
-     * Keys are class period keys. 
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT
      *
      * @var string[]|null

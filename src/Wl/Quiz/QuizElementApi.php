@@ -41,7 +41,7 @@ class QuizElementApi
      * This variable supports two structures:
      * 
      * New structure:
-     * Each element key has the format `[id_purchase_item]::[k_id]`, where: 
+     * Each element key has the format `[id_purchase_item]::[k_id]`, where:
      * 
      * Old structure:
      * Each element is a string in the format `[id_purchase_item]::[k_id]`.

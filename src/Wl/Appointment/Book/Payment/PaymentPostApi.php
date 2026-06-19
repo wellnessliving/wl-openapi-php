@@ -133,7 +133,7 @@ class PaymentPostApi
 
     /**
      * List of quiz response keys.
-     * Keys are quiz keys. 
+     * Keys are quiz keys.
      * Values are quiz response keys.
      *
      * @var string[]|null

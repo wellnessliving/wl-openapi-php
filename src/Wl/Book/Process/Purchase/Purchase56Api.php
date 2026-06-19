@@ -35,7 +35,7 @@ class Purchase56Api
     /**
      * The list of sessions being booked.
      * 
-     * Keys are class period keys. 
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null
@@ -45,7 +45,7 @@ class Purchase56Api
     /**
      * The selected sessions on the wait list that are unpaid.
      * 
-     * Keys are class period keys. 
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null

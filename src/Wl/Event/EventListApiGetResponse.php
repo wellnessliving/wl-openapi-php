@@ -9,7 +9,7 @@ class EventListApiGetResponse
     /**
      * List of available enrollment blocks matching the requested parameters.
      * 
-     * Key is the enrollment block key. 
+     * Key is the enrollment block key.
      * Value is the title of the first event found in that enrollment block.
      *
      * @var string[]|null
