@@ -258,13 +258,15 @@ function wlCollectParams(array $spec, array $operations): array
     $params = [];
 
     foreach ($operations as $operation) {
-        // Query / path / header parameters.
+        // Query and path parameters (header parameters are skipped — they are
+        // transport-level concerns and often contain hyphens, which are invalid PHP identifiers).
         foreach ($operation['parameters'] ?? [] as $param) {
             if (isset($param['$ref'])) {
                 $param = wlResolveRef($spec, $param['$ref']);
             }
             $name = $param['name'] ?? null;
-            if (!$name || isset($params[$name])) {
+            $in = $param['in'] ?? '';
+            if (!$name || $in === 'header' || isset($params[$name])) {
                 continue;
             }
             $schema = $param['schema'] ?? [];
@@ -316,7 +318,7 @@ function wlCollectParams(array $spec, array $operations): array
  * @param string $path API path string.
  * @return string PHPDoc block (indented 4 spaces, ready to place before the method).
  */
-function wlBuildVerbDoc(array $spec, array $operation, string $verb, string $path): string
+function wlBuildVerbDoc(array $spec, array $operation, string $verb, string $path, string $responseClassName): string
 {
     $L = '     * ';  // doc line prefix (4-space class body + ' * ')
     $E = '     *';   // empty doc line prefix
@@ -347,35 +349,8 @@ function wlBuildVerbDoc(array $spec, array $operation, string $verb, string $pat
         $lines[] = $L . '@deprecated';
     }
 
-    // @return
-    $responses = $operation['responses'] ?? [];
-    $returnItems = [];
-    foreach (['200', '201'] as $code) {
-        if (!isset($responses[$code])) {
-            continue;
-        }
-        $content = $responses[$code]['content'] ?? [];
-        $schema = $content['application/json']['schema'] ?? null;
-        if ($schema === null) {
-            break;
-        }
-        if (isset($schema['$ref'])) {
-            $schema = wlResolveRef($spec, $schema['$ref']);
-        }
-        foreach ($schema['properties'] ?? [] as $propName => $propSchema) {
-            $docType = wlSchemaToDocType($spec, $propSchema);
-            $propDesc = trim($propSchema['description'] ?? '');
-            $returnItems[] = $L . '  - ' . $docType . ' ' . $propName . ': '
-                . ($propDesc ?: 'No description.');
-        }
-        break;
-    }
-
     $lines[] = $E;
-    $lines[] = $L . '@return array Parsed JSON response data.';
-    foreach ($returnItems as $item) {
-        $lines[] = $item;
-    }
+    $lines[] = $L . '@return ' . $responseClassName;
     $lines[] = $L . '@throws \\WlSdk\\WlSdkException On non-2xx HTTP response.';
     $lines[] = $L . '@throws \\RuntimeException On network or cURL error.';
 
@@ -383,14 +358,108 @@ function wlBuildVerbDoc(array $spec, array $operation, string $verb, string $pat
 }
 
 /**
- * Generates the PHP source code for one API endpoint class.
+ * Generates a typed response class for one HTTP verb on a given endpoint.
+ *
+ * Properties are nullable so the class handles missing fields in partial responses gracefully.
+ *
+ * @param array $spec Full OpenAPI spec.
+ * @param string $verb HTTP verb (lowercase).
+ * @param array $operation OpenAPI operation object.
+ * @param string $namespace PHP namespace (e.g., 'WlSdk\Core\Request').
+ * @param string $responseClassName Simple class name (e.g., 'ExampleGetResponse').
+ * @param string $relDir Relative directory (e.g., 'Core/Request'), empty string for root.
+ * @return array{file: string, content: string} Generated file descriptor.
+ */
+function wlGenerateResponseClass(
+    array $spec,
+    string $verb,
+    array $operation,
+    string $namespace,
+    string $responseClassName,
+    string $relDir
+): array {
+    $responses = $operation['responses'] ?? [];
+    $successSchema = null;
+    foreach (['200', '201'] as $code) {
+        if (!isset($responses[$code])) {
+            continue;
+        }
+        $content = $responses[$code]['content'] ?? [];
+        $successSchema = $content['application/json']['schema'] ?? null;
+        if ($successSchema !== null) {
+            break;
+        }
+    }
+
+    if ($successSchema !== null && isset($successSchema['$ref'])) {
+        $successSchema = wlResolveRef($spec, $successSchema['$ref']);
+    }
+
+    $properties = ($successSchema !== null) ? ($successSchema['properties'] ?? []) : [];
+
+    $castMap = [
+        'string' => '(string)',
+        'int' => '(int)',
+        'float' => '(float)',
+        'bool' => '(bool)',
+        'array' => '(array)',
+    ];
+
+    $propsCode = '';
+    $constructorBody = '';
+
+    foreach ($properties as $propName => $propSchema) {
+        $phpType = wlSchemaToPhpType($spec, $propSchema);
+        $docType = wlSchemaToDocType($spec, $propSchema);
+        $rawDesc = trim($propSchema['description'] ?? '');
+
+        $propsCode .= "    /**\n";
+        foreach (explode("\n", wordwrap($rawDesc ?: 'No description.', 108, "\n")) as $l) {
+            $propsCode .= "     * {$l}\n";
+        }
+        $propsCode .= "     *\n";
+        $propsCode .= "     * @var {$docType}|null\n";
+        $propsCode .= "     */\n";
+
+        if ($phpType !== null) {
+            $propsCode .= "    public ?{$phpType} \${$propName} = null;\n\n";
+            $cast = $castMap[$phpType] ?? '';
+            $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
+                . " ? {$cast}\$data['{$propName}'] : null;\n";
+        } else {
+            $propsCode .= "    public \${$propName} = null;\n\n";
+            $constructorBody .= "        \$this->{$propName} = \$data['{$propName}'] ?? null;\n";
+        }
+    }
+
+    $relFile = ($relDir ? $relDir . '/' : '') . $responseClassName . '.php';
+
+    $content = "<?php\n"
+        . "namespace {$namespace};\n\n"
+        . "/**\n"
+        . " * Response from " . strtoupper($verb) . "\n"
+        . " */\n"
+        . "class {$responseClassName}\n"
+        . "{\n"
+        . $propsCode
+        . "    public function __construct(array \$data)\n"
+        . "    {\n"
+        . ($constructorBody !== '' ? $constructorBody : "        // Empty response.\n")
+        . "    }\n"
+        . "}\n";
+
+    return ['file' => $relFile, 'content' => $content];
+}
+
+/**
+ * Generates the PHP source code for one API endpoint class and all its response classes.
  *
  * @param array $spec Full OpenAPI spec.
  * @param string $path OpenAPI path (e.g., '/Core/Request/Example.json').
  * @param array $pathItem OpenAPI path item object (contains HTTP verb keys).
- * @return array{file: string, content: string}|null Relative file path and PHP content, or null if no verbs found.
+ * @return array<array{file: string, content: string}> List of generated files (Api class + Response classes).
  */
-function wlGenerateApiClass(array $spec, string $path, array $pathItem): ?array
+function wlGenerateApiClass(array $spec, string $path, array $pathItem): array
 {
     // Collect only supported HTTP verbs present in this path item.
     $operations = [];
@@ -400,7 +469,7 @@ function wlGenerateApiClass(array $spec, string $path, array $pathItem): ?array
         }
     }
     if (empty($operations)) {
-        return null;
+        return [];
     }
 
     // Derive namespace and class name from path segments.
@@ -411,8 +480,9 @@ function wlGenerateApiClass(array $spec, string $path, array $pathItem): ?array
     $namespace = NS_ROOT . ($relNs ? '\\' . $relNs : '');
     $className = $classBaseName . 'Api';
 
-    // Relative file path for PSR-4 layout.
-    $relFile = ($segments ? implode('/', $segments) . '/' : '') . $className . '.php';
+    // Relative file path and directory for PSR-4 layout.
+    $relDir = $segments ? implode('/', $segments) : '';
+    $relFile = ($relDir ? $relDir . '/' : '') . $className . '.php';
 
     // Collect all parameters across all HTTP verbs for this path.
     $allParams = wlCollectParams($spec, $operations);
@@ -421,9 +491,11 @@ function wlGenerateApiClass(array $spec, string $path, array $pathItem): ?array
     $propsCode = '';
     foreach ($allParams as $name => $info) {
         $docType = $info['docType'] . '|null';
-        $desc = $info['description'] ?: 'No description.';
+        $rawDesc = $info['description'] ?: 'No description.';
         $propsCode .= "    /**\n";
-        $propsCode .= "     * {$desc}\n";
+        foreach (explode("\n", wordwrap($rawDesc, 108, "\n")) as $descLine) {
+            $propsCode .= "     * {$descLine}\n";
+        }
         $propsCode .= "     *\n";
         $propsCode .= "     * @var {$docType}\n";
         $propsCode .= "     */\n";
@@ -458,17 +530,20 @@ function wlGenerateApiClass(array $spec, string $path, array $pathItem): ?array
             . "    }\n";
     }
 
-    // Build HTTP verb methods.
+    // Build HTTP verb methods and collect response class files.
     $verbsCode = '';
+    $responseFiles = [];
     $escapedPath = addslashes($path);
     foreach ($operations as $verb => $operation) {
         $phpVerb = strtoupper($verb);
-        $doc = wlBuildVerbDoc($spec, $operation, $verb, $path);
+        $responseClassName = $className . ucfirst($verb) . 'Response';
+        $doc = wlBuildVerbDoc($spec, $operation, $verb, $path, $responseClassName);
         $verbsCode .= $doc
-            . "    public function {$verb}(): array\n"
+            . "    public function {$verb}(): {$responseClassName}\n"
             . "    {\n"
-            . "        return \$this->client->request('{$escapedPath}', \$this->params(), '{$phpVerb}');\n"
+            . "        return new {$responseClassName}(\$this->client->request('{$escapedPath}', \$this->params(), '{$phpVerb}'));\n"
             . "    }\n\n";
+        $responseFiles[] = wlGenerateResponseClass($spec, $verb, $operation, $namespace, $responseClassName, $relDir);
     }
 
     // Build class-level docblock from the first available operation summary.
@@ -505,7 +580,7 @@ function wlGenerateApiClass(array $spec, string $path, array $pathItem): ?array
         . $paramsMethod
         . "}\n";
 
-    return ['file' => $relFile, 'content' => $content];
+    return array_merge([['file' => $relFile, 'content' => $content]], $responseFiles);
 }
 
 /**
@@ -548,31 +623,34 @@ function wlGenerateSdk(string $channel): void
         throw new \RuntimeException('Cannot read template: WlSdkInfo.php.tpl');
     }
 
-    // Generate all API classes first to get the final count.
-    $classes = [];
+    // Generate all API and response classes first to get the final count.
+    $files = [];
+    $apiCount = 0;
     foreach ($spec['paths'] ?? [] as $path => $pathItem) {
         if (!is_array($pathItem)) {
             continue;
         }
-        $result = wlGenerateApiClass($spec, $path, $pathItem);
-        if ($result !== null) {
-            $classes[] = $result;
+        $generated = wlGenerateApiClass($spec, $path, $pathItem);
+        if (!empty($generated)) {
+            $apiCount++;
+            foreach ($generated as $file) {
+                $files[] = $file;
+            }
         }
     }
-    $count = count($classes);
-    echo "  Generated {$count} API classes.\n";
+    echo "  Generated {$apiCount} API classes (" . count($files) . " files total).\n";
 
     // Write WlSdkInfo.php now that we have the final count.
     $infoContent = str_replace(
         ['{{CHANNEL}}', '{{SPEC_VERSION}}', '{{BUILD_DATE}}', '{{ENDPOINT_COUNT}}'],
-        [$channel, $version, date('Y-m-d'), (string)$count],
+        [$channel, $version, date('Y-m-d'), (string)$apiCount],
         $infoTpl
     );
     wlWriteFile($outputDir . '/WlSdkInfo.php', $infoContent);
 
-    // Write all API class files.
-    foreach ($classes as $class) {
-        wlWriteFile($outputDir . '/' . $class['file'], $class['content']);
+    // Write all generated files (Api classes + Response classes).
+    foreach ($files as $file) {
+        wlWriteFile($outputDir . '/' . $file['file'], $file['content']);
     }
 
     echo "  Written to {$outputDir}/\n";
