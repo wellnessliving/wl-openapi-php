@@ -165,6 +165,10 @@ function wlSchemaToDocType(array $spec, array $schema, int $depth = 0): string
 
     if (isset($schema['$ref'])) {
         $resolved = wlResolveRef($spec, $schema['$ref']);
+        if ($resolved && isset($resolved['enum']) && isset($resolved['x-enum-varnames'])) {
+            $parts = explode('/', $schema['$ref']);
+            return wlEnumSchemaToClassRef(end($parts));
+        }
         return $resolved ? wlSchemaToDocType($spec, $resolved, $depth + 1) : 'mixed';
     }
 
@@ -200,6 +204,40 @@ function wlSchemaToDocType(array $spec, array $schema, int $depth = 0): string
     ];
 
     return isset($type) ? ($map[$type] ?? 'mixed') : 'mixed';
+}
+
+/**
+ * Converts a dot-notation OpenAPI schema name to a fully-qualified PHP class reference.
+ *
+ * A plain name like 'ADateWeekSid' becomes '\WlSdk\ADateWeekSid'.
+ * A dotted name like 'Wl.Mode.ModeSid' becomes '\WlSdk\Wl\Mode\ModeSid'.
+ *
+ * @param string $schemaName Raw schema name from components/schemas.
+ * @return string Fully-qualified PHP class reference (with leading backslash).
+ */
+function wlEnumSchemaToClassRef(string $schemaName): string
+{
+    return '\\' . NS_ROOT . '\\' . str_replace('.', '\\', $schemaName);
+}
+
+/**
+ * Returns the schema name if the schema is a $ref to an enum, null otherwise.
+ *
+ * @param array $spec Full OpenAPI spec.
+ * @param array $schema OpenAPI schema object.
+ * @return string|null Raw schema name (e.g., 'ADateWeekSid' or 'Wl.Mode.ModeSid'), or null.
+ */
+function wlGetEnumSchemaName(array $spec, array $schema): ?string
+{
+    if (!isset($schema['$ref'])) {
+        return null;
+    }
+    $resolved = wlResolveRef($spec, $schema['$ref']);
+    if (!$resolved || !isset($resolved['enum']) || !isset($resolved['x-enum-varnames'])) {
+        return null;
+    }
+    $parts = explode('/', $schema['$ref']);
+    return end($parts);
 }
 
 /**
@@ -272,6 +310,7 @@ function wlCollectParams(array $spec, array $operations): array
                 'phpType' => wlSchemaToPhpType($spec, $schema),
                 'docType' => wlSchemaToDocType($spec, $schema),
                 'description' => trim($param['description'] ?? ''),
+                'enumClass' => wlGetEnumSchemaName($spec, $schema),
                 'required' => !empty($param['required']),
             ];
         }
@@ -299,6 +338,7 @@ function wlCollectParams(array $spec, array $operations): array
                 'phpType' => wlSchemaToPhpType($spec, $propSchema),
                 'docType' => wlSchemaToDocType($spec, $propSchema),
                 'description' => trim($propSchema['description'] ?? ''),
+                'enumClass' => wlGetEnumSchemaName($spec, $propSchema),
                 'required' => in_array($propName, $requiredFields, true),
             ];
         }
@@ -343,8 +383,9 @@ function wlBuildVerbDoc(array $spec, array $operation, string $verb, string $pat
     }
 
     if (!empty($operation['deprecated'])) {
+        $deprecatedMsg = trim($operation['x-deprecated'] ?? '');
         $lines[] = $E;
-        $lines[] = $L . '@deprecated';
+        $lines[] = $L . '@deprecated' . ($deprecatedMsg !== '' ? ' ' . $deprecatedMsg : '');
     }
 
     $lines[] = $E;
@@ -475,7 +516,10 @@ function wlGenerateRequestClass(
         $propsCode .= "     *\n";
         $propsCode .= "     * @var {$docType}\n";
         $propsCode .= "     */\n";
-        if ($info['phpType'] !== null) {
+        if ($info['enumClass'] !== null) {
+            $enumRef = wlEnumSchemaToClassRef($info['enumClass']);
+            $propsCode .= "    public ?{$enumRef} \${$name} = null;\n\n";
+        } elseif ($info['phpType'] !== null) {
             $propsCode .= "    public ?{$info['phpType']} \${$name} = null;\n\n";
         } else {
             $propsCode .= "    public \${$name} = null;\n\n";
@@ -483,8 +527,12 @@ function wlGenerateRequestClass(
     }
 
     $paramsEntries = '';
-    foreach (array_keys($params) as $name) {
-        $paramsEntries .= "            '{$name}' => \$this->{$name},\n";
+    foreach ($params as $name => $info) {
+        if ($info['enumClass'] !== null) {
+            $paramsEntries .= "            '{$name}' => \$this->{$name}?->value,\n";
+        } else {
+            $paramsEntries .= "            '{$name}' => \$this->{$name},\n";
+        }
     }
     if ($paramsEntries !== '') {
         $paramsMethod = "    public function params(): array\n"
@@ -637,6 +685,63 @@ function wlGenerateApiClass(array $spec, string $path, array $pathItem): array
 }
 
 /**
+ * Generates a PHP 8.1 backed enum class from an OpenAPI schema definition.
+ *
+ * Returns null if the schema is not an enum or lacks x-enum-varnames.
+ *
+ * @param string $schemaName Schema name from components/schemas (becomes the class name).
+ * @param array $schema OpenAPI schema object.
+ * @return array{file: string, content: string}|null Generated file descriptor, or null.
+ */
+function wlGenerateEnumClass(string $schemaName, array $schema): ?array
+{
+    if (!isset($schema['enum']) || !isset($schema['x-enum-varnames'])) {
+        return null;
+    }
+
+    // 'Wl.Mode.ModeSid' -> namespace WlSdk\Wl\Mode, class ModeSid, file Wl/Mode/ModeSid.php
+    $nameParts = explode('.', $schemaName);
+    $className = array_pop($nameParts);
+    $namespace = NS_ROOT . ($nameParts ? '\\' . implode('\\', $nameParts) : '');
+    $relFile = ($nameParts ? implode('/', $nameParts) . '/' : '') . $className . '.php';
+
+    $type = $schema['type'] ?? 'integer';
+    $phpType = ($type === 'string') ? 'string' : 'int';
+
+    $values = $schema['enum'];
+    $varnames = $schema['x-enum-varnames'];
+    $descriptions = $schema['x-enum-description'] ?? [];
+    $classDesc = trim($schema['description'] ?? '');
+
+    $classDocLines = [];
+    foreach (explode("\n", wordwrap($classDesc ?: $className . ' constants.', 116, "\n")) as $l) {
+        $classDocLines[] = ' * ' . $l;
+    }
+    $classDoc = "/**\n" . implode("\n", $classDocLines) . "\n */\n";
+
+    $casesCode = '';
+    foreach ($values as $i => $value) {
+        $caseName = $varnames[$i] ?? ('VALUE_' . $i);
+        $caseDesc = trim((string)($descriptions[$i] ?? ''));
+        if ($caseDesc !== '') {
+            $casesCode .= "    /** {$caseDesc} */\n";
+        }
+        $caseValue = ($phpType === 'string') ? "'" . addslashes((string)$value) . "'" : (string)(int)$value;
+        $casesCode .= "    case {$caseName} = {$caseValue};\n";
+    }
+
+    $content = "<?php\n"
+        . "namespace {$namespace};\n\n"
+        . $classDoc
+        . "enum {$className}: {$phpType}\n"
+        . "{\n"
+        . $casesCode
+        . "}\n";
+
+    return ['file' => $relFile, 'content' => $content];
+}
+
+/**
  * Reads the OpenAPI spec, generates all API classes, and writes them to disk.
  *
  * @param string $channel 'stable', 'dev', or 'production'.
@@ -711,10 +816,24 @@ function wlGenerateSdk(string $channel, bool $optional = false): void
     );
     wlWriteFile($outputDir . '/WlSdkInfo.php', $infoContent);
 
-    // Write all generated files (Api classes + Response classes).
+    // Write all generated files (endpoint, request, response classes).
     foreach ($files as $file) {
         wlWriteFile($outputDir . '/' . $file['file'], $file['content']);
     }
+
+    // Generate PHP 8.1 backed enum classes from components/schemas.
+    $enumCount = 0;
+    foreach ($spec['components']['schemas'] ?? [] as $schemaName => $schema) {
+        if (!is_array($schema)) {
+            continue;
+        }
+        $enumFile = wlGenerateEnumClass($schemaName, $schema);
+        if ($enumFile !== null) {
+            wlWriteFile($outputDir . '/' . $enumFile['file'], $enumFile['content']);
+            $enumCount++;
+        }
+    }
+    echo "  Generated {$enumCount} enum classes.\n";
 
     echo "  Written to {$outputDir}/\n";
 }
