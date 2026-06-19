@@ -158,7 +158,7 @@ jobs:
             ```
           files: wl-openapi-php-stable.zip
           fail_on_unmatched_files: false
-          make_latest: true
+          make_latest: false
 
       - name: Release dev
         if: steps.channel_push.outputs.dev_pushed == 'true'
@@ -209,4 +209,4 @@ jobs:
             ```
           files: wl-openapi-php-production.zip
           fail_on_unmatched_files: false
-          make_latest: false
+          make_latest: true
