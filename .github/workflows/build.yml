@@ -129,12 +129,9 @@ jobs:
           push_channel "stable" "${{ steps.changes.outputs.stable_version }}" "wellnessliving/wl-openapi-php"
           push_channel "dev"    "${{ steps.changes.outputs.dev_version }}"    "wellnessliving/wl-openapi-php-dev"
 
-      - name: Package SDK archives
-        if: steps.changes.outputs.prod_changed == 'true' || steps.channel_push.outputs.stable_pushed == 'true' || steps.channel_push.outputs.dev_pushed == 'true'
-        run: |
-          test -d stable/src && cd stable && zip -r ../wl-openapi-php-stable.zip src/ && cd .. || true
-          test -d dev/src    && cd dev    && zip -r ../wl-openapi-php-dev.zip src/    && cd .. || true
-          test -d src        &&             zip -r   wl-openapi-php-production.zip src/          || true
+      - name: Package stable archive
+        if: steps.channel_push.outputs.stable_pushed == 'true'
+        run: cd stable && zip -r ../wl-openapi-php.zip src/
 
       - name: Release stable
         if: steps.channel_push.outputs.stable_pushed == 'true'
@@ -156,9 +153,13 @@ jobs:
 
             composer require wellnessliving/wl-openapi-php
             ```
-          files: wl-openapi-php-stable.zip
+          files: wl-openapi-php.zip
           fail_on_unmatched_files: false
           make_latest: false
+
+      - name: Package dev archive
+        if: steps.channel_push.outputs.dev_pushed == 'true'
+        run: cd dev && zip -r ../wl-openapi-php.zip src/
 
       - name: Release dev
         if: steps.channel_push.outputs.dev_pushed == 'true'
@@ -183,9 +184,13 @@ jobs:
 
             composer require wellnessliving/wl-openapi-php-dev
             ```
-          files: wl-openapi-php-dev.zip
+          files: wl-openapi-php.zip
           fail_on_unmatched_files: false
           make_latest: false
+
+      - name: Package production archive
+        if: steps.changes.outputs.prod_changed == 'true'
+        run: zip -r wl-openapi-php.zip src/
 
       - name: Release production
         if: steps.changes.outputs.prod_changed == 'true'
@@ -207,6 +212,6 @@ jobs:
 
             composer require wellnessliving/wl-openapi-php-production
             ```
-          files: wl-openapi-php-production.zip
+          files: wl-openapi-php.zip
           fail_on_unmatched_files: false
           make_latest: true
