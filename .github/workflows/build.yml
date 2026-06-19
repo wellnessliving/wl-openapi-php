@@ -49,15 +49,11 @@ jobs:
       - name: Generate production SDK
         run: php scripts/generate.php production
 
-      - name: Detect changes
+      - name: Detect production changes
         id: changes
         run: |
-          git add -A stable/src/ dev/src/ production/src/
-
-          git diff --staged --quiet -- stable/src/     || echo "stable_changed=true" >> "$GITHUB_OUTPUT"
-          git diff --staged --quiet -- dev/src/        || echo "dev_changed=true"    >> "$GITHUB_OUTPUT"
-          git diff --staged --quiet -- production/src/ || echo "prod_changed=true"   >> "$GITHUB_OUTPUT"
-          git diff --staged --quiet                    || echo "any_changed=true"    >> "$GITHUB_OUTPUT"
+          test -d production/src && git add -A production/src/ || true
+          git diff --staged --quiet || echo "prod_changed=true" >> "$GITHUB_OUTPUT"
 
           STABLE_VER=$(php -r "require 'stable/src/WlSdkInfo.php'; echo \WlSdk\WlSdkInfo::SPEC_VERSION;" 2>/dev/null || echo "unknown")
           DEV_VER=$(php -r "require 'dev/src/WlSdkInfo.php'; echo \WlSdk\WlSdkInfo::SPEC_VERSION;" 2>/dev/null || echo "unknown")
@@ -66,31 +62,25 @@ jobs:
           echo "dev_version=${DEV_VER}"       >> "$GITHUB_OUTPUT"
           echo "prod_version=${PROD_VER}"     >> "$GITHUB_OUTPUT"
 
-      - name: Commit updated SDK files
-        if: steps.changes.outputs.any_changed == 'true'
+      - name: Commit production to main
+        if: steps.changes.outputs.prod_changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: regenerate PHP SDK
+          git commit -m "chore: regenerate production SDK
 
-          stable:     ${{ steps.changes.outputs.stable_version }}
-          dev:        ${{ steps.changes.outputs.dev_version }}
           production: ${{ steps.changes.outputs.prod_version }}"
           git push
 
       - name: Update channel branches
-        if: steps.changes.outputs.any_changed == 'true'
+        id: channel_push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           push_channel() {
-            local CHANNEL=$1 CHANGED=$2 VERSION=$3 PKG_NAME=$4
+            local CHANNEL=$1 VERSION=$2 PKG_NAME=$3
 
-            if [ "$CHANGED" != "true" ]; then
-              echo "  ${CHANNEL}: no changes, skipping."
-              return 0
-            fi
             if [ ! -d "${CHANNEL}/src" ]; then
               echo "  ${CHANNEL}: no src directory yet, skipping."
               return 0
@@ -99,9 +89,8 @@ jobs:
             local BRANCH="channel/${CHANNEL}"
             local WT="${RUNNER_TEMP}/wt-${CHANNEL}"
 
-            echo "  Updating branch ${BRANCH}..."
+            echo "  Checking ${BRANCH}..."
 
-            # Fetch existing branch into a local ref so worktree can check it out.
             git fetch origin "refs/heads/${BRANCH}:refs/heads/${BRANCH}" 2>/dev/null || true
 
             if git show-ref --verify --quiet "refs/heads/${BRANCH}"; then
@@ -110,10 +99,7 @@ jobs:
               git worktree add --orphan -b "${BRANCH}" "${WT}"
             fi
 
-            # Clear tracked files (--ignore-unmatch is safe on an empty orphan branch).
             git -C "${WT}" rm -rf . --ignore-unmatch -q
-
-            # Populate with fresh channel content.
             cp -r "${CHANNEL}/src" "${WT}/src"
             sed -e "s/{{PACKAGE_NAME}}/${PKG_NAME}/" \
                 -e "s/{{CHANNEL}}/${CHANNEL}/" \
@@ -123,31 +109,29 @@ jobs:
             git -C "${WT}" add -A
 
             if git -C "${WT}" diff --staged --quiet; then
-              echo "  ${CHANNEL}: branch already up to date."
+              echo "  ${CHANNEL}: no changes."
             else
               git -C "${WT}" commit -m "${CHANNEL}: ${VERSION}"
               git -C "${WT}" push origin "${BRANCH}" --force
+              echo "${CHANNEL}_pushed=true" >> "$GITHUB_OUTPUT"
               echo "  ${CHANNEL}: pushed."
             fi
 
             git worktree remove "${WT}" --force
           }
 
-          push_channel "stable" "${{ steps.changes.outputs.stable_changed }}" \
-            "${{ steps.changes.outputs.stable_version }}" "wellnessliving/wl-openapi-php"
-          push_channel "dev"    "${{ steps.changes.outputs.dev_changed }}" \
-            "${{ steps.changes.outputs.dev_version }}" "wellnessliving/wl-openapi-php-dev"
-          # production is served from main directly - no separate channel branch needed
+          push_channel "stable" "${{ steps.changes.outputs.stable_version }}" "wellnessliving/wl-openapi-php"
+          push_channel "dev"    "${{ steps.changes.outputs.dev_version }}"    "wellnessliving/wl-openapi-php-dev"
 
       - name: Package SDK archives
-        if: steps.changes.outputs.any_changed == 'true'
+        if: steps.changes.outputs.prod_changed == 'true' || steps.channel_push.outputs.stable_pushed == 'true' || steps.channel_push.outputs.dev_pushed == 'true'
         run: |
           test -d stable/src     && cd stable     && zip -r ../wl-openapi-php-stable.zip src/     && cd .. || true
           test -d dev/src        && cd dev        && zip -r ../wl-openapi-php-dev.zip src/        && cd .. || true
           test -d production/src && cd production && zip -r ../wl-openapi-php-production.zip src/ && cd .. || true
 
       - name: Release stable
-        if: steps.changes.outputs.stable_changed == 'true'
+        if: steps.channel_push.outputs.stable_pushed == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: stable-${{ steps.changes.outputs.stable_version }}
@@ -171,7 +155,7 @@ jobs:
           make_latest: true
 
       - name: Release dev
-        if: steps.changes.outputs.dev_changed == 'true'
+        if: steps.channel_push.outputs.dev_pushed == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: dev-${{ steps.changes.outputs.dev_version }}

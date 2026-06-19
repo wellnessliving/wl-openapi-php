@@ -8,25 +8,29 @@ and one method per HTTP verb (`get()`, `post()`, etc.).
 
 ## Channels
 
-| Channel | Spec | Branch | Description |
-|---------|------|--------|-------------|
-| `production` | `production/openapi.yaml` | `main` | Dedicated production API channel. |
-| `stable` | `stable/openapi.yaml` | `channel/stable` | Follows the live WellnessLiving platform. |
-| `dev` | `dev/openapi.yaml` | `channel/dev` | Latest features; may include breaking changes. |
+| Channel      | Spec                      | Branch           | Description                                    |
+|--------------|---------------------------|------------------|------------------------------------------------|
+| `production` | `production/openapi.yaml` | `main`           | Dedicated production API channel.              |
+| `stable`     | `stable/openapi.yaml`     | `channel/stable` | Follows the live WellnessLiving platform.      |
+| `dev`        | `dev/openapi.yaml`        | `channel/dev`    | Latest features; may include breaking changes. |
 
 ## Structure
 
+The `main` branch contains the generator and the **production** channel SDK:
+
 ```
-stable/src/
-    WlSdkClient.php           - HTTP client (pass to every Api class)
-    WlSdkException.php        - exception thrown on non-2xx response
-    WlSdkInfo.php             - build metadata (channel, spec version, endpoint count)
+scripts/              - SDK generator (not part of the installable package)
+production/src/       - generated production SDK classes
+    WlSdkClient.php
+    WlSdkException.php
+    WlSdkInfo.php
     Core/Request/ExampleApi.php
     Wl/Appointment/BookApi.php
-    ...                       - one class per API endpoint
+    ...
 ```
 
-`dev/src/` and `production/src/` follow the same layout from their respective spec channels.
+`channel/stable` and `channel/dev` branches have the same `src/` layout
+with their own `composer.json` pointing to it.
 
 ## Requirements
 
@@ -86,7 +90,7 @@ $api = new ExampleApi($client);
 $api->i_argument = 1;
 $result = $api->get();
 
-echo $result['i_result']; // 2
+echo $result->i_result; // 2
 ```
 
 ### Constructor options
