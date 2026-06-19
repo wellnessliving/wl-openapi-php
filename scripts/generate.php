@@ -18,17 +18,19 @@ declare(strict_types=1);
  *   php generate.php dev              # generate dev only
  *   php generate.php production       # generate production (exits 0 with a warning if spec not yet available)
  *
- * Requirements: PHP 8.0+, ext-curl, vendor/autoload.php (run composer install first).
+ * Requirements: PHP 8.0+, vendor/autoload.php (run composer install first).
+ * The openapi-spec/ directory must exist (git clone wellnessliving/openapi into it).
  */
 
 require __DIR__ . '/../vendor/autoload.php';
 
 use Symfony\Component\Yaml\Yaml;
 
-const SPEC_URLS = [
-    'stable' => 'https://raw.githubusercontent.com/wellnessliving/openapi/main/stable/openapi.yaml',
-    'dev' => 'https://raw.githubusercontent.com/wellnessliving/openapi/main/dev/openapi.yaml',
-    'production' => 'https://raw.githubusercontent.com/wellnessliving/openapi/main/production/openapi.yaml',
+// Relative file paths within the cloned openapi-spec/ directory.
+const SPEC_FILES = [
+    'stable'     => 'stable/openapi.yaml',
+    'dev'        => 'dev/openapi.yaml',
+    'production' => 'production/openapi.yaml',
 ];
 
 const TEMPLATES_DIR = __DIR__ . '/templates';
@@ -36,7 +38,7 @@ const TEMPLATES_DIR = __DIR__ . '/templates';
 const OUTPUT_DIRS = [
     'stable' => __DIR__ . '/../stable/src',
     'dev' => __DIR__ . '/../dev/src',
-    'production' => __DIR__ . '/../production/src',
+    'production' => __DIR__ . '/../src',
 ];
 
 const NS_ROOT = 'WlSdk';
@@ -45,74 +47,29 @@ const NS_ROOT = 'WlSdk';
 const HTTP_VERBS = ['get', 'post', 'put', 'patch', 'delete', 'head', 'options'];
 
 /**
- * Downloads text content from a URL, following redirects.
+ * Reads the OpenAPI spec file for a channel from the local openapi-spec/ directory.
  *
- * @param string $url URL to fetch.
- * @return string Downloaded content.
- * @throws \RuntimeException On cURL error or non-2xx response.
+ * Returns null when the file does not exist, which is expected for channels
+ * not yet published (e.g. production).
+ *
+ * @param string $channel Channel name ('stable', 'dev', or 'production').
+ * @return string|null YAML content, or null if the file is absent.
+ * @throws \RuntimeException If the file exists but cannot be read.
  */
-function wlFetchText(string $url): string
+function wlReadSpec(string $channel): ?string
 {
-    $ch = curl_init($url);
-    curl_setopt_array($ch, [
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_MAXREDIRS => 5,
-        CURLOPT_TIMEOUT => 120,
-        CURLOPT_USERAGENT => 'wl-sdk-php-generator/2.0',
-    ]);
+    $path = __DIR__ . '/../openapi-spec/' . SPEC_FILES[$channel];
 
-    $body = curl_exec($ch);
-    $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $error = curl_error($ch);
-    curl_close($ch);
-
-    if ($body === false) {
-        throw new \RuntimeException("cURL error fetching {$url}: {$error}");
-    }
-    if ($status < 200 || $status >= 300) {
-        throw new \RuntimeException("HTTP {$status} fetching {$url}");
-    }
-
-    return $body;
-}
-
-/**
- * Downloads text content from a URL, returning null when the server responds with 404.
- *
- * Used for optional spec channels (e.g. production) that may not be published yet.
- *
- * @param string $url URL to fetch.
- * @return string|null Downloaded content, or null on HTTP 404.
- * @throws \RuntimeException On cURL error or any non-2xx response other than 404.
- */
-function wlFetchTextMaybe(string $url): ?string
-{
-    $ch = curl_init($url);
-    curl_setopt_array($ch, [
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_MAXREDIRS => 5,
-        CURLOPT_TIMEOUT => 120,
-        CURLOPT_USERAGENT => 'wl-sdk-php-generator/2.0',
-    ]);
-
-    $body = curl_exec($ch);
-    $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $error = curl_error($ch);
-    curl_close($ch);
-
-    if ($body === false) {
-        throw new \RuntimeException("cURL error fetching {$url}: {$error}");
-    }
-    if ($status === 404) {
+    if (!file_exists($path)) {
         return null;
     }
-    if ($status < 200 || $status >= 300) {
-        throw new \RuntimeException("HTTP {$status} fetching {$url}");
+
+    $yaml = file_get_contents($path);
+    if ($yaml === false) {
+        throw new \RuntimeException("Cannot read spec file: {$path}");
     }
 
-    return $body;
+    return $yaml;
 }
 
 /**
@@ -625,26 +582,29 @@ function wlGenerateApiClass(array $spec, string $path, array $pathItem): array
 }
 
 /**
- * Downloads the OpenAPI spec, generates all API classes, and writes them to disk.
+ * Reads the OpenAPI spec, generates all API classes, and writes them to disk.
  *
  * @param string $channel 'stable', 'dev', or 'production'.
- * @param bool $optional When `true`, a missing spec (HTTP 404) prints a warning and returns
+ * @param bool $optional When `true`, a missing spec file prints a warning and returns
  *  without error. Used for channels not yet published (e.g. production).
- * @throws \RuntimeException On fetch, parse, or write failure.
+ * @throws \RuntimeException On read, parse, or write failure.
  */
 function wlGenerateSdk(string $channel, bool $optional = false): void
 {
     echo "Generating PHP SDK ({$channel})...\n";
 
     $outputDir = OUTPUT_DIRS[$channel];
-    $specUrl = SPEC_URLS[$channel];
+    $specFile = __DIR__ . '/../openapi-spec/' . SPEC_FILES[$channel];
 
-    echo "  Fetching spec from {$specUrl}...\n";
+    echo "  Reading spec from {$specFile}...\n";
 
-    $yaml = $optional ? wlFetchTextMaybe($specUrl) : wlFetchText($specUrl);
+    $yaml = wlReadSpec($channel);
     if ($yaml === null) {
-        echo "  Spec not available yet - skipping {$channel} channel.\n";
-        return;
+        if ($optional) {
+            echo "  Spec file not found - skipping {$channel} channel.\n";
+            return;
+        }
+        throw new \RuntimeException("Spec file not found: {$specFile}");
     }
 
     // Wipe the output directory so removed endpoints don't leave stale files.

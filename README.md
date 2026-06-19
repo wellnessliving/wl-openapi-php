@@ -16,21 +16,19 @@ and one method per HTTP verb (`get()`, `post()`, etc.).
 
 ## Structure
 
-The `main` branch contains the generator and the **production** channel SDK:
+All three branches share the same layout — `src/` at the root with a `composer.json` pointing to it.
+The `main` branch additionally contains the generator under `scripts/`.
 
 ```
-scripts/              - SDK generator (not part of the installable package)
-production/src/       - generated production SDK classes
+src/                  - generated SDK classes (production channel on main)
     WlSdkClient.php
     WlSdkException.php
     WlSdkInfo.php
     Core/Request/ExampleApi.php
     Wl/Appointment/BookApi.php
     ...
+scripts/              - SDK generator (main branch only, not part of the package)
 ```
-
-`channel/stable` and `channel/dev` branches have the same `src/` layout
-with their own `composer.json` pointing to it.
 
 ## Requirements
 

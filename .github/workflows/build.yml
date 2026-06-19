@@ -30,6 +30,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Checkout OpenAPI spec
+        uses: actions/checkout@v4
+        with:
+          repository: wellnessliving/openapi
+          path: openapi-spec
+
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -52,12 +58,12 @@ jobs:
       - name: Detect production changes
         id: changes
         run: |
-          test -d production/src && git add -A production/src/ || true
+          test -d src && git add -A src/ || true
           git diff --staged --quiet || echo "prod_changed=true" >> "$GITHUB_OUTPUT"
 
           STABLE_VER=$(php -r "require 'stable/src/WlSdkInfo.php'; echo \WlSdk\WlSdkInfo::SPEC_VERSION;" 2>/dev/null || echo "unknown")
           DEV_VER=$(php -r "require 'dev/src/WlSdkInfo.php'; echo \WlSdk\WlSdkInfo::SPEC_VERSION;" 2>/dev/null || echo "unknown")
-          PROD_VER=$(php -r "require 'production/src/WlSdkInfo.php'; echo \WlSdk\WlSdkInfo::SPEC_VERSION;" 2>/dev/null || echo "pending")
+          PROD_VER=$(php -r "require 'src/WlSdkInfo.php'; echo \WlSdk\WlSdkInfo::SPEC_VERSION;" 2>/dev/null || echo "pending")
           echo "stable_version=${STABLE_VER}" >> "$GITHUB_OUTPUT"
           echo "dev_version=${DEV_VER}"       >> "$GITHUB_OUTPUT"
           echo "prod_version=${PROD_VER}"     >> "$GITHUB_OUTPUT"
@@ -126,9 +132,9 @@ jobs:
       - name: Package SDK archives
         if: steps.changes.outputs.prod_changed == 'true' || steps.channel_push.outputs.stable_pushed == 'true' || steps.channel_push.outputs.dev_pushed == 'true'
         run: |
-          test -d stable/src     && cd stable     && zip -r ../wl-openapi-php-stable.zip src/     && cd .. || true
-          test -d dev/src        && cd dev        && zip -r ../wl-openapi-php-dev.zip src/        && cd .. || true
-          test -d production/src && cd production && zip -r ../wl-openapi-php-production.zip src/ && cd .. || true
+          test -d stable/src && cd stable && zip -r ../wl-openapi-php-stable.zip src/ && cd .. || true
+          test -d dev/src    && cd dev    && zip -r ../wl-openapi-php-dev.zip src/    && cd .. || true
+          test -d src        &&             zip -r   wl-openapi-php-production.zip src/          || true
 
       - name: Release stable
         if: steps.channel_push.outputs.stable_pushed == 'true'
