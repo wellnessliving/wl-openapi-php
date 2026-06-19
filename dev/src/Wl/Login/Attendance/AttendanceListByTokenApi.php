@@ -9,26 +9,6 @@ use WlSdk\WlSdkClient;
 class AttendanceListByTokenApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * The local date of the class or event session.
      *
      * @var string|null
@@ -37,7 +17,7 @@ Only standard 4xx codes are accepted.
 
     /**
      * If `true`, then return the purchase used to pay for session.
-Otherwise, do not return any purchase information.
+     * Otherwise, do not return any purchase information.
      *
      * @var bool|null
      */
@@ -88,30 +68,19 @@ Otherwise, do not return any purchase information.
      * limit,
      * and per-client details such as purchase option, visit status, wearables, and quiz responses.
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_list_active: No description.
-     *   - array[] a_list_confirm: No description.
-     *   - array[] a_list_wait: No description.
-     *   - int i_capacity: The maximum capacity of the class or event session.
-     *   - int i_client: Count client on the attendance.
-     *   - int i_wait_list_limit: The maximum number of clients on wait list of the class or event session.
-`0` for appointments, use [AppointmentWaitListApi](/Wl/Appointment/WaitList/AppointmentWaitList.json) instead.
-     *   - bool is_wait_list_limit: `true` to use class/event specific wait list limit, `false` to use the limit from default policies.
-`false` for appointments. Use [AppointmentWaitListApi](/Wl/Appointment/WaitList/AppointmentWaitList.json) instead.
-     *   - string k_location: The Location key.
+     * @return AttendanceListByTokenApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): AttendanceListByTokenApiGetResponse
     {
-        return $this->client->request('/Wl/Login/Attendance/AttendanceListByToken.json', $this->params(), 'GET');
+        return new AttendanceListByTokenApiGetResponse($this->client->request('/Wl/Login/Attendance/AttendanceListByToken.json', $this->params(), 'GET'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'dt_date_local' => $this->dt_date_local,
             'is_purchase_info_return' => $this->is_purchase_info_return,
             'k_appointment' => $this->k_appointment,

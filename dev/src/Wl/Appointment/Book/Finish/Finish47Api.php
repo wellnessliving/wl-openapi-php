@@ -9,28 +9,8 @@ use WlSdk\WlSdkClient;
 class Finish47Api
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * List of user keys to book appointments.
-There may be empty values in this list, which means that this is a walk-in.
+     * There may be empty values in this list, which means that this is a walk-in.
      *
      * @var string[]|null
      */
@@ -59,12 +39,13 @@ There may be empty values in this list, which means that this is a walk-in.
 
     /**
      * The user key.
-
-This field is used if the client books for himself or for the relative.
-
-This field is incorrect to use for guest booking since in this case the client will be checked as a relative.
-
-In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
+     * 
+     * This field is used if the client books for himself or for the relative.
+     * 
+     * This field is incorrect to use for guest booking since in this case the client will be checked as a
+     * relative.
+     * 
+     * In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
      *
      * @var string|null
      */
@@ -72,15 +53,16 @@ In case of a group booking or a guest booking, the key of the client who is maki
 
     /**
      * Data to create new user.
-Specify this if `uid` is empty.
-Must contain the following keys:
+     * Specify this if `uid` is empty.
+     * Must contain the following keys:
      *
      * @var array[]|null
      */
     public ?array $a_user = null;
 
     /**
-     * The payment type ID for the appointment. One of the [RsAppointmentPaySid](#/components/schemas/RsAppointmentPaySid) constants.
+     * The payment type ID for the appointment. One of the
+     * [RsAppointmentPaySid](#/components/schemas/RsAppointmentPaySid) constants.
      *
      * @var int|null
      */
@@ -88,9 +70,9 @@ Must contain the following keys:
 
     /**
      * The appointment key.
-This should be set if you're rebooking an existing appointment.
-
-Otherwise, use `0` to book a new appointment.
+     * This should be set if you're rebooking an existing appointment.
+     * 
+     * Otherwise, use `0` to book a new appointment.
      *
      * @var string|null
      */
@@ -98,8 +80,8 @@ Otherwise, use `0` to book a new appointment.
 
     /**
      * Key of timezone.
-
-`null` if not set then use default timezone client.
+     * 
+     * `null` if not set then use default timezone client.
      *
      * @var string|null
      */
@@ -107,7 +89,7 @@ Otherwise, use `0` to book a new appointment.
 
     /**
      * A list of answers for the questions from [QuestionApi](/Wl/Appointment/Book/Question/Question.json).
-Keys refer to hashes of the questions. Values refer to answers for the questions.
+     * Keys refer to hashes of the questions. Values refer to answers for the questions.
      *
      * @var string[]|null
      */
@@ -143,7 +125,7 @@ Keys refer to hashes of the questions. Values refer to answers for the questions
 
     /**
      * The purchase item keys.
-Empty if no purchases are made for the appointment booking.
+     * Empty if no purchases are made for the appointment booking.
      *
      * @var string[]|null
      */
@@ -151,8 +133,8 @@ Empty if no purchases are made for the appointment booking.
 
     /**
      * List of quiz response keys.
-Key is quiz key.
-Value is quiz response key.
+     * Key is quiz key.
+     * Value is quiz response key.
      *
      * @var string[]|null
      */
@@ -173,7 +155,8 @@ Value is quiz response key.
     public ?bool $is_back_to_back = null;
 
     /**
-     * If `true`, the appointment is booked as unpaid. Otherwise, this will be `false` to select an available Purchase Option.
+     * If `true`, the appointment is booked as unpaid. Otherwise, this will be `false` to select an available
+     * Purchase Option.
      *
      * @var bool|null
      */
@@ -207,15 +190,13 @@ Value is quiz response key.
      * Returns notification settings (email, push, SMS) for the appointment creation confirmation
      *  so the client side can display the appropriate notification options before finalizing the booking.
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_notification: No description.
-     *   - string k_location: Location to show available appointment booking schedule.
+     * @return Finish47ApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): Finish47ApiGetResponse
     {
-        return $this->client->request('/Wl/Appointment/Book/Finish/Finish47.json', $this->params(), 'GET');
+        return new Finish47ApiGetResponse($this->client->request('/Wl/Appointment/Book/Finish/Finish47.json', $this->params(), 'GET'));
     }
 
     /**
@@ -225,24 +206,19 @@ Value is quiz response key.
      *  from GET, POST, and the booking data array. The logging is temporary and intended to diagnose
      *  "Too many variables" errors in production.
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_appointment: No description.
-     *   - string[] a_login_activity_visit: The activity keys of the bookings that were made.
-     *   - string[] a_visit: The keys of visits.
-     *   - array[] a_visit_payment: No description.
+     * @return Finish47ApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): Finish47ApiPostResponse
     {
-        return $this->client->request('/Wl/Appointment/Book/Finish/Finish47.json', $this->params(), 'POST');
+        return new Finish47ApiPostResponse($this->client->request('/Wl/Appointment/Book/Finish/Finish47.json', $this->params(), 'POST'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_uid' => $this->a_uid,
             'is_walk_in' => $this->is_walk_in,
             'k_business' => $this->k_business,

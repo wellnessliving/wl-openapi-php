@@ -9,32 +9,12 @@ use WlSdk\WlSdkClient;
 class ResourceApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * The selected sessions.
-Only makes sense for session events.
-Optional parameter for GET request: if not passed, all available sessions will be used.
-
-Keys are class period keys. 
-Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
+     * Only makes sense for session events.
+     * Optional parameter for GET request: if not passed, all available sessions will be used.
+     * 
+     * Keys are class period keys. 
+     * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null
      */
@@ -56,19 +36,20 @@ Values are index arrays of date/time strings when the session occurred, in MySQL
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
-
-If `true` is sent, access to the business and to the client will be checked.
-If `false` is sent, user can book only for himself or for relatives if this is allowed in business settings.
+     * 
+     * If `true` is sent, access to the business and to the client will be checked.
+     * If `false` is sent, user can book only for himself or for relatives if this is allowed in business settings.
      *
      * @var bool|null
      */
     public ?bool $is_backend = null;
 
     /**
-     * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag is set to `false`.
-
-Use this field with caution.
-The final booking will not use this flag, and the check will still be performed.
+     * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag
+     * is set to `false`.
+     * 
+     * Use this field with caution.
+     * The final booking will not use this flag, and the check will still be performed.
      *
      * @var bool|null
      */
@@ -111,9 +92,9 @@ The final booking will not use this flag, and the check will still be performed.
 
     /**
      * The selected sessions on the wait list that are unpaid.
-
-Keys are class period keys. 
-Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
+     * 
+     * Keys are class period keys. 
+     * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null
      */
@@ -121,7 +102,7 @@ Values are index arrays of date/time strings when the session occurred, in MySQL
 
     /**
      * Determines whether the class/event can be booked at this step or not.
-This is an external process control flag.
+     * This is an external process control flag.
      *
      * @var bool|null
      */
@@ -129,10 +110,10 @@ This is an external process control flag.
 
     /**
      * `true` to book unpaid.
-`false` otherwise.
-
-Allows booking unpaid when client has a login promotion that can be used to pay for the service.
-Allowed in [ModeSid::WIDGET](#/components/schemas/Wl.Mode.ModeSid) mode only.
+     * `false` otherwise.
+     * 
+     * Allows booking unpaid when client has a login promotion that can be used to pay for the service.
+     * Allowed in [ModeSid::WIDGET](#/components/schemas/Wl.Mode.ModeSid) mode only.
      *
      * @var bool|null
      */
@@ -140,7 +121,7 @@ Allowed in [ModeSid::WIDGET](#/components/schemas/Wl.Mode.ModeSid) mode only.
 
     /**
      * `true` if user pressed 'Pay later'.
-`false` if user pressed 'Pay now'.
+     * `false` if user pressed 'Pay now'.
      *
      * @var bool|null
      */
@@ -177,14 +158,13 @@ Allowed in [ModeSid::WIDGET](#/components/schemas/Wl.Mode.ModeSid) mode only.
      *
      * @deprecated
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_resource_all: No description.
+     * @return ResourceApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): ResourceApiGetResponse
     {
-        return $this->client->request('/Wl/Book/Process/Resource/Resource.json', $this->params(), 'GET');
+        return new ResourceApiGetResponse($this->client->request('/Wl/Book/Process/Resource/Resource.json', $this->params(), 'GET'));
     }
 
     /**
@@ -197,26 +177,19 @@ Allowed in [ModeSid::WIDGET](#/components/schemas/Wl.Mode.ModeSid) mode only.
      *
      * @deprecated
      *
-     * @return array Parsed JSON response data.
-     *   - string[] a_login_activity: The keys of a user's activity.
-This won't be empty only if the session(s) was booked at this step.
-     *   - string[] a_visit: The keys of the bookings that have been made.
-Not empty only if session(s) was booked on this step.
-     *   - bool is_next: `true` - the next steps of the booking wizard are required (for example, to purchase something to book the selected session).
-`false` - no further booking steps are required.
+     * @return ResourceApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): ResourceApiPostResponse
     {
-        return $this->client->request('/Wl/Book/Process/Resource/Resource.json', $this->params(), 'POST');
+        return new ResourceApiPostResponse($this->client->request('/Wl/Book/Process/Resource/Resource.json', $this->params(), 'POST'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_session' => $this->a_session,
             'dt_date_gmt' => $this->dt_date_gmt,
             'id_mode' => $this->id_mode,

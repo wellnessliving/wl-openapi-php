@@ -9,26 +9,6 @@ use WlSdk\WlSdkClient;
 class MicrosoftLoginApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * The client for whom the Microsoft account will be unlinked.
      *
      * @var string|null
@@ -37,14 +17,14 @@ Only standard 4xx codes are accepted.
 
     /**
      * The Redirect URI for external applications.
-The link to the page on which Microsoft will return the result after authorization.
-
-* All possible links must be registered in the Microsoft application used for authorization.
-* WARNING: Do not use this link for a direct redirect. This will present a vulnerability.
-
-* A [LoginApi](/Social/Microsoft/Login.json) link will be generated along with this redirect URI.
-* When checking the received [LoginApi](/Social/Microsoft/Login.json) from Microsoft.
-The link must be sent along with it to the `post()` method.
+     * The link to the page on which Microsoft will return the result after authorization.
+     * 
+     * * All possible links must be registered in the Microsoft application used for authorization.
+     * * WARNING: Do not use this link for a direct redirect. This will present a vulnerability.
+     * 
+     * * A [LoginApi](/Social/Microsoft/Login.json) link will be generated along with this redirect URI.
+     * * When checking the received [LoginApi](/Social/Microsoft/Login.json) from Microsoft.
+     * The link must be sent along with it to the `post()` method.
      *
      * @var string|null
      */
@@ -73,7 +53,7 @@ The link must be sent along with it to the `post()` method.
 
     /**
      * If a state parameter is included in the request, the same value should appear in the response.
-The app should verify that the state values in the request and response are identical.
+     * The app should verify that the state values in the request and response are identical.
      *
      * @var string|null
      */
@@ -94,15 +74,13 @@ The app should verify that the state values in the request and response are iden
      * the button must link to. When a UID is provided, also reports whether that user already has a Microsoft
      * account linked, so the frontend can show "Link" or "Unlink" instead of the default sign-in label.
      *
-     * @return array Parsed JSON response data.
-     *   - bool is_exists: If `true`, the user has a bound Microsoft account. Otherwise, this will be `false`.
-     *   - string url_login: The Microsoft OAuth 2.0 authorization link.
+     * @return MicrosoftLoginApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): MicrosoftLoginApiGetResponse
     {
-        return $this->client->request('/Wl/Microsoft/Login/MicrosoftLogin.json', $this->params(), 'GET');
+        return new MicrosoftLoginApiGetResponse($this->client->request('/Wl/Microsoft/Login/MicrosoftLogin.json', $this->params(), 'GET'));
     }
 
     /**
@@ -111,13 +89,13 @@ The app should verify that the state values in the request and response are iden
      * Validates the business key, sets it as the current frontend business context, and then delegates to the
      * parent Microsoft OAuth flow to complete sign-in.
      *
-     * @return array Parsed JSON response data.
+     * @return MicrosoftLoginApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): MicrosoftLoginApiPostResponse
     {
-        return $this->client->request('/Wl/Microsoft/Login/MicrosoftLogin.json', $this->params(), 'POST');
+        return new MicrosoftLoginApiPostResponse($this->client->request('/Wl/Microsoft/Login/MicrosoftLogin.json', $this->params(), 'POST'));
     }
 
     /**
@@ -126,20 +104,19 @@ The app should verify that the state values in the request and response are iden
      * Accepts the user's UID, verifies that the caller is the account owner, and unlinks the Microsoft
      * account from the user's profile.
      *
-     * @return array Parsed JSON response data.
+     * @return MicrosoftLoginApiDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function delete(): array
+    public function delete(): MicrosoftLoginApiDeleteResponse
     {
-        return $this->client->request('/Wl/Microsoft/Login/MicrosoftLogin.json', $this->params(), 'DELETE');
+        return new MicrosoftLoginApiDeleteResponse($this->client->request('/Wl/Microsoft/Login/MicrosoftLogin.json', $this->params(), 'DELETE'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'uid' => $this->uid,
             'url_redirect' => $this->url_redirect,
             'is_external' => $this->is_external,

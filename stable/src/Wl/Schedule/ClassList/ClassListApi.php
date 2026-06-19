@@ -9,30 +9,10 @@ use WlSdk\WlSdkClient;
 class ClassListApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * The list of classes keys to filter.
-Return sessions with matching class IDs.
-
-If it's empty, all classes/events will be returned.
+     * Return sessions with matching class IDs.
+     * 
+     * If it's empty, all classes/events will be returned.
      *
      * @var string[]|null
      */
@@ -40,11 +20,11 @@ If it's empty, all classes/events will be returned.
 
     /**
      * Class filter by day of the week.
-Array of number representing the days of the week.
-Return sessions matching the given weekdays.
-(7 = Sunday, 1 = Monday, ..., 6 = Saturday)
-
-Empty array means no filtering.
+     * Array of number representing the days of the week.
+     * Return sessions matching the given weekdays.
+     * (7 = Sunday, 1 = Monday, ..., 6 = Saturday)
+     * 
+     * Empty array means no filtering.
      *
      * @var int[]|null
      */
@@ -52,8 +32,8 @@ Empty array means no filtering.
 
     /**
      * The list of location keys to filter results.
-If it's empty, schedule for all locations will be returned.
-All given locations should be from the same business, which is sent in `k_business`.
+     * If it's empty, schedule for all locations will be returned.
+     * All given locations should be from the same business, which is sent in `k_business`.
      *
      * @var string[]|null
      */
@@ -61,13 +41,13 @@ All given locations should be from the same business, which is sent in `k_busine
 
     /**
      * Class filter by time of day.
-List of arrays with start and end time in "HH:MM" format (24h).
-Include sessions that start between the specified time range.
-
-Each value is array with time parameters:
-
-
-Empty array means no filtering.
+     * List of arrays with start and end time in "HH:MM" format (24h).
+     * Include sessions that start between the specified time range.
+     * 
+     * Each value is array with time parameters:
+     * 
+     * 
+     * Empty array means no filtering.
      *
      * @var array[]|null
      */
@@ -89,7 +69,8 @@ Empty array means no filtering.
 
     /**
      * `true` means to not generate `a_session` result.
-Can be used, if you do not need full information about existing classes and result in `a_calendar` is enough.
+     * Can be used, if you do not need full information about existing classes and result in `a_calendar` is
+     * enough.
      *
      * @var bool|null
      */
@@ -97,7 +78,7 @@ Can be used, if you do not need full information about existing classes and resu
 
     /**
      * If `true`, sessions from every class tab are returned. If `false`, use the
-`k_class_tab` value.
+     * `k_class_tab` value.
      *
      * @var bool|null
      */
@@ -105,11 +86,11 @@ Can be used, if you do not need full information about existing classes and resu
 
     /**
      * Class filter by type.
-The class is virtual.
-
-`true`: Only virtual classes.
-`false`: Only in-person.
-`null` or not set: No filtering.
+     * The class is virtual.
+     * 
+     * `true`: Only virtual classes.
+     * `false`: Only in-person.
+     * `null` or not set: No filtering.
      *
      * @var bool|null
      */
@@ -124,9 +105,9 @@ The class is virtual.
 
     /**
      * The category tab key.
-
-This will be `null` if not set yet.
-This will be ignored if `is_tab_all` is `true`.
+     * 
+     * This will be `null` if not set yet.
+     * This will be ignored if `is_tab_all` is `true`.
      *
      * @var string|null
      */
@@ -134,7 +115,7 @@ This will be ignored if `is_tab_all` is `true`.
 
     /**
      * The list of staff members to filter.
-A comma separated list of staff keys.
+     * A comma separated list of staff keys.
      *
      * @var string|null
      */
@@ -142,7 +123,7 @@ A comma separated list of staff keys.
 
     /**
      * The list of staff user keys to filter.
-A comma separated list of staff user keys.
+     * A comma separated list of staff user keys.
      *
      * @var string|null
      */
@@ -194,30 +175,19 @@ A comma separated list of staff user keys.
      *
      * @deprecated
      *
-     * @return array Parsed JSON response data.
-     *   - string[] a_calendar: Keys are dates of the days inside requested date range, when there is at least one class in the business.
-If locations are sent as a parameter, then at least one class must exist in the given locations.
-
-Each key is a date string in `YYYY-MM-DD` format (local date in the business time zone).
-Each value is an empty array reserved for future use.
-     *   - array[] a_session: No description.
-     *   - bool is_timezone_different: If `true`, the list of sessions contains sessions from different time zones. Otherwise, this will be `false`.
-     *   - bool is_virtual_service: If `true`, there exists at least one virtual service by a specified
-`k_business` and `k_class_tab`,
-Otherwise, this will be `false`.
+     * @return ClassListApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): ClassListApiGetResponse
     {
-        return $this->client->request('/Wl/Schedule/ClassList/ClassList.json', $this->params(), 'GET');
+        return new ClassListApiGetResponse($this->client->request('/Wl/Schedule/ClassList/ClassList.json', $this->params(), 'GET'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_class' => $this->a_class,
             'a_day' => $this->a_day,
             'a_location' => $this->a_location,

@@ -9,32 +9,13 @@ use WlSdk\WlSdkClient;
 class EditApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * Registration source ID.
-One of [RegisterSourceSid](#/components/schemas/Wl.Profile.RegisterSourceSid) constants.
-
-Used only to register new clients.
-* If the client is already authorized, the field value will not be used.
-* If the client is not authorized and no value is set, [RegisterSourceSid::SELF](#/components/schemas/Wl.Profile.RegisterSourceSid) will be used.
+     * One of [RegisterSourceSid](#/components/schemas/Wl.Profile.RegisterSourceSid) constants.
+     * 
+     * Used only to register new clients.
+     * * If the client is already authorized, the field value will not be used.
+     * * If the client is not authorized and no value is set,
+     * [RegisterSourceSid::SELF](#/components/schemas/Wl.Profile.RegisterSourceSid) will be used.
      *
      * @var int|null
      */
@@ -42,7 +23,7 @@ Used only to register new clients.
 
     /**
      * Indicates whether to display the form as a user or as a staff member.
-Staff members may have access to different fields than the user.
+     * Staff members may have access to different fields than the user.
      *
      * @var bool|null
      */
@@ -50,8 +31,8 @@ Staff members may have access to different fields than the user.
 
     /**
      * The key of the business you're editing.
-
-An empty value will return the system-wide fields.
+     * 
+     * An empty value will return the system-wide fields.
      *
      * @var string|null
      */
@@ -59,8 +40,8 @@ An empty value will return the system-wide fields.
 
     /**
      * The key of the user to edit.
-
-If empty, an empty form will be displayed to add a new user.
+     * 
+     * If empty, an empty form will be displayed to add a new user.
      *
      * @var string|null
      */
@@ -75,8 +56,8 @@ If empty, an empty form will be displayed to add a new user.
 
     /**
      * Whether the address be inherited.
-`true` if address inherit, `false` to remove inheritance.
-`null` if not explicitly set (PUT only: preserves the current state).
+     * `true` if address inherit, `false` to remove inheritance.
+     * `null` if not explicitly set (PUT only: preserves the current state).
      *
      * @var bool|null
      */
@@ -84,7 +65,7 @@ If empty, an empty form will be displayed to add a new user.
 
     /**
      * Indicates whether to display the full profile edit form or the short version.
-This is assumed to be used only in user registration mode.
+     * This is assumed to be used only in user registration mode.
      *
      * @var bool|null
      */
@@ -92,11 +73,11 @@ This is assumed to be used only in user registration mode.
 
     /**
      * Key of the lead source.
-
-`null` if not defined.
-
-When creating or editing a user:
-`LEAD_SOURCE_REPLACE_NONE` if Lead Source is to be unselected for the user.
+     * 
+     * `null` if not defined.
+     * 
+     * When creating or editing a user:
+     * `LEAD_SOURCE_REPLACE_NONE` if Lead Source is to be unselected for the user.
      *
      * @var string|null
      */
@@ -104,7 +85,8 @@ When creating or editing a user:
 
     /**
      * Compound key delimited with a colon. First part is the business key where the selected client exists.
-Second part is the uid of the already existing user we want to add. Empty if a non-existent client is being added.
+     * Second part is the uid of the already existing user we want to add. Empty if a non-existent client is being
+     * added.
      *
      * @var string|null
      */
@@ -119,8 +101,8 @@ Second part is the uid of the already existing user we want to add. Empty if a n
 
     /**
      * UID of the user, whose address was inherited by the existing client we want to add.
-Empty if non-existent user is being added or user to add is the one, whose address is inherited.
-`null` If the address is not inherited.
+     * Empty if non-existent user is being added or user to add is the one, whose address is inherited.
+     * `null` If the address is not inherited.
      *
      * @var string|null
      */
@@ -128,7 +110,7 @@ Empty if non-existent user is being added or user to add is the one, whose addre
 
     /**
      * UID of the user, whose email was inherited by the existing client we want to add.
-Empty if non-existent user is being added or user to add is the one, whose email is inherited.
+     * Empty if non-existent user is being added or user to add is the one, whose email is inherited.
      *
      * @var string|null
      */
@@ -143,19 +125,20 @@ Empty if non-existent user is being added or user to add is the one, whose email
 
     /**
      * Information for user's photo.
-It is necessary to save simultaneously user and photo in staff member mode.
-
-Attention!
-Data from this field is taken directly from a POST somewhere in the depths of the photo upload.
+     * It is necessary to save simultaneously user and photo in staff member mode.
+     * 
+     * Attention!
+     * Data from this field is taken directly from a POST somewhere in the depths of the photo upload.
      *
      * @var string|null
      */
     public ?string $a_image_upload = null;
 
     /**
-     * List of intent identifiers. Each element is one of [MemberIntentsSid](#/components/schemas/Wl.Login.Member.Intents.MemberIntentsSid) constants.
-
-Available only for leads added by CAASI agent.
+     * List of intent identifiers. Each element is one of
+     * [MemberIntentsSid](#/components/schemas/Wl.Login.Member.Intents.MemberIntentsSid) constants.
+     * 
+     * Available only for leads added by CAASI agent.
      *
      * @var int[]|null
      */
@@ -163,7 +146,7 @@ Available only for leads added by CAASI agent.
 
     /**
      * A copy of the `a_change`.
-This is used for POST requests when creating a new user.
+     * This is used for POST requests when creating a new user.
      *
      * @var array|null
      */
@@ -192,9 +175,9 @@ This is used for POST requests when creating a new user.
 
     /**
      * `true` - user agreed to receive marketing SMS;
-`false` - otherwise.
-
-Only matters if `is_sms_subscription_presented` is `true`.
+     * `false` - otherwise.
+     * 
+     * Only matters if `is_sms_subscription_presented` is `true`.
      *
      * @var bool|null
      */
@@ -202,8 +185,8 @@ Only matters if `is_sms_subscription_presented` is `true`.
 
     /**
      * `true` - user was shown checkboxes to subscribe to marketing and transactional sms messages.
-  This means we need to modify his subscription based on the values in these fields.
-`false` - otherwise. This means we should not change subscription settings.
+     *   This means we need to modify his subscription based on the values in these fields.
+     * `false` - otherwise. This means we should not change subscription settings.
      *
      * @var bool|null
      */
@@ -211,9 +194,9 @@ Only matters if `is_sms_subscription_presented` is `true`.
 
     /**
      * `true` - user agreed to receive transactional SMS;
-`false` - otherwise.
-
-Only matters if `is_sms_subscription_presented` is `true`.
+     * `false` - otherwise.
+     * 
+     * Only matters if `is_sms_subscription_presented` is `true`.
      *
      * @var bool|null
      */
@@ -227,9 +210,11 @@ Only matters if `is_sms_subscription_presented` is `true`.
     public ?string $text_password = null;
 
     /**
-     * A list of fields to change. Values are the new field values. Specific values depend on an individual field type.
-Some fields may be strings while others are arrays. If a composite field is changed, all fields should be specified
-(for example, if you change your address, you'll need to specify the city). Keys are the `k_field` values.
+     * A list of fields to change. Values are the new field values. Specific values depend on an individual field
+     * type.
+     * Some fields may be strings while others are arrays. If a composite field is changed, all fields should be
+     * specified
+     * (for example, if you change your address, you'll need to specify the city). Keys are the `k_field` values.
      *
      * @var array|null
      */
@@ -250,40 +235,13 @@ Some fields may be strings while others are arrays. If a composite field is chan
      *  structure when creating a new account. Used to populate the profile edit form with the
      *  correct fields, validation rules, and inheritance options for the business.
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_error_list: No description.
-     *   - array[] a_phone_inherit: No description.
-     *   - array[] a_structure: No description.
-     *   - bool can_password_change: Whether current user can change password of the given user or not.
-If client is part of multiple businesses, then staff of the business can only request reset of the password,
-but cannot change it.
-     *   - bool is_a2p: `true` if the A2P 10DLC registration feature is enabled for this business, `false` otherwise.
-     *   - bool is_address_inherit: Whether the address be inherited.
-`true` if address inherit, `false` to remove inheritance.
-`null` if not explicitly set (PUT only: preserves the current state).
-     *   - bool is_short: Indicates whether to display the full profile edit form or the short version.
-This is assumed to be used only in user registration mode.
-     *   - string k_lead_source: Key of the lead source.
-
-`null` if not defined.
-
-When creating or editing a user:
-`LEAD_SOURCE_REPLACE_NONE` if Lead Source is to be unselected for the user.
-     *   - string s_class: Exception class name.
-`null` if there was no mistake.
-     *   - string s_code: Code of the error.
-`null` if there was no mistake.
-     *   - string text_message: Error message.
-`null` if there was no mistake.
-     *   - string uid_inherit_address: UID of the user, whose address was inherited by the existing client we want to add.
-Empty if non-existent user is being added or user to add is the one, whose address is inherited.
-`null` If the address is not inherited.
+     * @return EditApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): EditApiGetResponse
     {
-        return $this->client->request('/Wl/Profile/Edit/Edit.json', $this->params(), 'GET');
+        return new EditApiGetResponse($this->client->request('/Wl/Profile/Edit/Edit.json', $this->params(), 'GET'));
     }
 
     /**
@@ -293,25 +251,13 @@ Empty if non-existent user is being added or user to add is the one, whose addre
      *  IP-based registration rate limiting, and handles family relations and phone or address
      *  inheritance. Returns the identifier of the newly created account.
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_error_list: No description.
-     *   - string s_class: Exception class name.
-`null` if there was no mistake.
-     *   - string s_code: Code of the error.
-`null` if there was no mistake.
-     *   - string s_status: Status of the request.
-`null` if there was no mistake.
-     *   - string text_message: Error message.
-`null` if there was no mistake.
-     *   - string uid: The key of the user to edit.
-
-If empty, an empty form will be displayed to add a new user.
+     * @return EditApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): EditApiPostResponse
     {
-        return $this->client->request('/Wl/Profile/Edit/Edit.json', $this->params(), 'POST');
+        return new EditApiPostResponse($this->client->request('/Wl/Profile/Edit/Edit.json', $this->params(), 'POST'));
     }
 
     /**
@@ -320,20 +266,19 @@ If empty, an empty form will be displayed to add a new user.
      * Saves the updated profile field values for the existing user, propagates phone and address
      *  inheritance changes, triggers relevant notifications, and re-indexes the user for search.
      *
-     * @return array Parsed JSON response data.
+     * @return EditApiPutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function put(): array
+    public function put(): EditApiPutResponse
     {
-        return $this->client->request('/Wl/Profile/Edit/Edit.json', $this->params(), 'PUT');
+        return new EditApiPutResponse($this->client->request('/Wl/Profile/Edit/Edit.json', $this->params(), 'PUT'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'id_register_source' => $this->id_register_source,
             'is_staff' => $this->is_staff,
             'k_business' => $this->k_business,

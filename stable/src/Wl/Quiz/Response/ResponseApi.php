@@ -9,30 +9,10 @@ use WlSdk\WlSdkClient;
 class ResponseApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * Checks whether unauthorized user should be permitted to operate with form and make a response.
-In general all quizzes should have users in response but it some cases such as registration process
- user might not exist yet, and we need ability to ignore check for user existence.
-`true` - add possibility load form and accept response for non-registered user, `false` otherwise.
+     * In general all quizzes should have users in response but it some cases such as registration process
+     *  user might not exist yet, and we need ability to ignore check for user existence.
+     * `true` - add possibility load form and accept response for non-registered user, `false` otherwise.
      *
      * @var bool|null
      */
@@ -47,9 +27,9 @@ In general all quizzes should have users in response but it some cases such as r
 
     /**
      * Whether quiz response received by kiosk or direct mode link.
-
-`true` quiz response received by kiosk mode.
-`false` quiz response received by direct or direct mode.
+     * 
+     * `true` quiz response received by kiosk mode.
+     * `false` quiz response received by direct or direct mode.
      *
      * @var bool|null
      */
@@ -64,9 +44,9 @@ In general all quizzes should have users in response but it some cases such as r
 
     /**
      * Quiz response key.
-
-`null` in a case of response creation or
-removing set of responses in [QuizResponseApi](/Core/Quiz/QuizResponse.json).
+     * 
+     * `null` in a case of response creation or
+     * removing set of responses in [QuizResponseApi](/Core/Quiz/QuizResponse.json).
      *
      * @var string|null
      */
@@ -165,7 +145,7 @@ removing set of responses in [QuizResponseApi](/Core/Quiz/QuizResponse.json).
 
     /**
      * Booking appointment wizard ID.
-Not `null` if quiz response was sent during booking appointment process.
+     * Not `null` if quiz response was sent during booking appointment process.
      *
      * @var string|null
      */
@@ -173,7 +153,7 @@ Not `null` if quiz response was sent during booking appointment process.
 
     /**
      * Booking class wizard ID.
-Not `null` if quiz response was sent during booking class process.
+     * Not `null` if quiz response was sent during booking class process.
      *
      * @var string|null
      */
@@ -231,33 +211,13 @@ Not `null` if quiz response was sent during booking class process.
      *
      * @deprecated
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_access_log: No description.
-     *   - array[] a_element: No description.
-     *   - array[] a_service_info: No description.
-     *   - bool can_amend: Whether response can be amended by current user.
-     *   - string dtu_response: Date when response was submitted.
-     *   - int id_source: Response source. One of [SourceSid](#/components/schemas/Wl.Quiz.Response.SourceSid) constants.
-     *   - int id_status: Response status ID.
-     *   - bool show_numbering: Whether to show numbering of the form elements that supports numbering.
-
-`true` to show numbering on the form for elements that supports numbering.
-`false` to not show numbering.
-     *   - string text_add_date: Date when response added.
-     *   - string text_amend_date: Date when response amended.
-     *   - string text_amend_user: Name of the user who amend the response.
-     *   - string text_complete_date: Date when response completed.
-     *   - string text_complete_user: Name of the user who complete the response.
-     *   - string text_response_by: Name of the user who owned the response.
-     *   - string text_title: Title of the filled form.
-
-`null` in case when not filled yet.
+     * @return ResponseApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): ResponseApiGetResponse
     {
-        return $this->client->request('/Wl/Quiz/Response/Response.json', $this->params(), 'GET');
+        return new ResponseApiGetResponse($this->client->request('/Wl/Quiz/Response/Response.json', $this->params(), 'GET'));
     }
 
     /**
@@ -269,17 +229,13 @@ Not `null` if quiz response was sent during booking class process.
      *
      * @deprecated
      *
-     * @return array Parsed JSON response data.
-     *   - string k_quiz_response: Quiz response key.
-
-`null` in a case of response creation or
-removing set of responses in [QuizResponseApi](/Core/Quiz/QuizResponse.json).
+     * @return ResponseApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): ResponseApiPostResponse
     {
-        return $this->client->request('/Wl/Quiz/Response/Response.json', $this->params(), 'POST');
+        return new ResponseApiPostResponse($this->client->request('/Wl/Quiz/Response/Response.json', $this->params(), 'POST'));
     }
 
     /**
@@ -291,13 +247,13 @@ removing set of responses in [QuizResponseApi](/Core/Quiz/QuizResponse.json).
      *
      * @deprecated
      *
-     * @return array Parsed JSON response data.
+     * @return ResponseApiPutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function put(): array
+    public function put(): ResponseApiPutResponse
     {
-        return $this->client->request('/Wl/Quiz/Response/Response.json', $this->params(), 'PUT');
+        return new ResponseApiPutResponse($this->client->request('/Wl/Quiz/Response/Response.json', $this->params(), 'PUT'));
     }
 
     /**
@@ -308,20 +264,19 @@ removing set of responses in [QuizResponseApi](/Core/Quiz/QuizResponse.json).
      *
      * @deprecated
      *
-     * @return array Parsed JSON response data.
+     * @return ResponseApiDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function delete(): array
+    public function delete(): ResponseApiDeleteResponse
     {
-        return $this->client->request('/Wl/Quiz/Response/Response.json', $this->params(), 'DELETE');
+        return new ResponseApiDeleteResponse($this->client->request('/Wl/Quiz/Response/Response.json', $this->params(), 'DELETE'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'can_anonymous' => $this->can_anonymous,
             'is_answer' => $this->is_answer,
             'is_simple' => $this->is_simple,

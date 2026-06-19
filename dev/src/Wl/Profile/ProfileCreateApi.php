@@ -9,29 +9,10 @@ use WlSdk\WlSdkClient;
 class ProfileCreateApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
-     * List of intent identifiers. Each element is one of [MemberIntentsSid](#/components/schemas/Wl.Login.Member.Intents.MemberIntentsSid) constants.
-
-Available only for leads added by CAASI agent.
+     * List of intent identifiers. Each element is one of
+     * [MemberIntentsSid](#/components/schemas/Wl.Login.Member.Intents.MemberIntentsSid) constants.
+     * 
+     * Available only for leads added by CAASI agent.
      *
      * @var int[]|null
      */
@@ -46,9 +27,9 @@ Available only for leads added by CAASI agent.
 
     /**
      * Gender ID.
-One of the [GenderSid](#/components/schemas/Wl.Gender.GenderSid) constants.
-
-`0` if not specified.
+     * One of the [GenderSid](#/components/schemas/Wl.Gender.GenderSid) constants.
+     * 
+     * `0` if not specified.
      *
      * @var int|null
      */
@@ -56,9 +37,9 @@ One of the [GenderSid](#/components/schemas/Wl.Gender.GenderSid) constants.
 
     /**
      * Lead source ID.
-
-One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
-`0` if not specified.
+     * 
+     * One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * `0` if not specified.
      *
      * @var int|null
      */
@@ -66,10 +47,12 @@ One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
 
     /**
      * Vaccination status ID.
-
-One of the [VaccinationStatusSid](#/components/schemas/Wl.Login.Member.VaccinationStatus.VaccinationStatusSid) constants.
-
-`0` if not specified.
+     * 
+     * One of the
+     * [VaccinationStatusSid](#/components/schemas/Wl.Login.Member.VaccinationStatus.VaccinationStatusSid)
+     * constants.
+     * 
+     * `0` if not specified.
      *
      * @var int|null
      */
@@ -77,10 +60,10 @@ One of the [VaccinationStatusSid](#/components/schemas/Wl.Login.Member.Vaccinati
 
     /**
      * `true` means to add user to the legacy lead report.
-`false` means to not add user to the legacy lead report.
-
-Note, that this setting does not impact new Lead Management report, which will always include new user.
-Also lead capture marketing notification will never be triggered with this endpoint.
+     * `false` means to not add user to the legacy lead report.
+     * 
+     * Note, that this setting does not impact new Lead Management report, which will always include new user.
+     * Also lead capture marketing notification will never be triggered with this endpoint.
      *
      * @var bool|null
      */
@@ -95,8 +78,8 @@ Also lead capture marketing notification will never be triggered with this endpo
 
     /**
      * The key of the lead source.
-
-Empty string if not specified.
+     * 
+     * Empty string if not specified.
      *
      * @var string|null
      */
@@ -132,7 +115,7 @@ Empty string if not specified.
 
     /**
      * Email of the user.
-Required if `text_phone` not provided.
+     * Required if `text_phone` not provided.
      *
      * @var string|null
      */
@@ -140,7 +123,7 @@ Required if `text_phone` not provided.
 
     /**
      * Phone of the user.
-Required if `text_mail` not provided.
+     * Required if `text_mail` not provided.
      *
      * @var string|null
      */
@@ -162,8 +145,8 @@ Required if `text_mail` not provided.
 
     /**
      * Referrer user key.
-
-Empty string if not specified.
+     * 
+     * Empty string if not specified.
      *
      * @var string|null
      */
@@ -184,21 +167,19 @@ Empty string if not specified.
      *  address, phones, birthday, gender, and vaccination status, registers the user in the
      *  business, and optionally adds them to the lead report and sets intents.
      *
-     * @return array Parsed JSON response data.
-     *   - string uid: The key of the user.
+     * @return ProfileCreateApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): ProfileCreateApiPostResponse
     {
-        return $this->client->request('/Wl/Profile/ProfileCreate.json', $this->params(), 'POST');
+        return new ProfileCreateApiPostResponse($this->client->request('/Wl/Profile/ProfileCreate.json', $this->params(), 'POST'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_intents' => $this->a_intents,
             'dt_birthday' => $this->dt_birthday,
             'id_gender' => $this->id_gender,

@@ -9,43 +9,25 @@ use WlSdk\WlSdkClient;
 class NextAvailableDayApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * List of user keys to book appointments.
-There may be empty values in this list, which means that this is a walk-in.
+     * There may be empty values in this list, which means that this is a walk-in.
      *
      * @var string[]|null
      */
     public ?array $a_uid = null;
 
     /**
-     * Start date to search next available date in MySQL format. If empty, the search will start from the current date.
+     * Start date to search next available date in MySQL format. If empty, the search will start from the current
+     * date.
      *
      * @var string|null
      */
     public ?string $dt_date = null;
 
     /**
-     * The duration of the asset booking or custom appointment duration in minutes. Zero in case of service predefined duration.
-In case of back-to-back booking - custom duration of first appointment.
+     * The duration of the asset booking or custom appointment duration in minutes. Zero in case of service
+     * predefined duration.
+     * In case of back-to-back booking - custom duration of first appointment.
      *
      * @var int|null
      */
@@ -60,8 +42,9 @@ In case of back-to-back booking - custom duration of first appointment.
 
     /**
      * The ID of the staff member's gender.
-In case of back-to-back booking - staff gender of first appointment.
-One of the [AGenderSid](#/components/schemas/AGenderSid) constants. `0` means no limitations on staff gender.
+     * In case of back-to-back booking - staff gender of first appointment.
+     * One of the [AGenderSid](#/components/schemas/AGenderSid) constants. `0` means no limitations on staff
+     * gender.
      *
      * @var int|null
      */
@@ -76,7 +59,7 @@ One of the [AGenderSid](#/components/schemas/AGenderSid) constants. `0` means no
 
     /**
      * `true` if the request is made by staff member; in this case booking policy restrictions are ignored.
-`false` if the request is made by client; booking policy restrictions are applied.
+     * `false` if the request is made by client; booking policy restrictions are applied.
      *
      * @var bool|null
      */
@@ -84,9 +67,9 @@ One of the [AGenderSid](#/components/schemas/AGenderSid) constants. `0` means no
 
     /**
      * `true` - search in all tabs.
-`false` - search only for the selected bookable tab.
-
-Cannot be set simultaneously with {DayTimeApi::$k_class_tab}.
+     * `false` - search only for the selected bookable tab.
+     * 
+     * Cannot be set simultaneously with {DayTimeApi::$k_class_tab}.
      *
      * @var bool|null
      */
@@ -101,9 +84,10 @@ Cannot be set simultaneously with {DayTimeApi::$k_class_tab}.
 
     /**
      * Current booking tab.
-Only used for asset booking with "Allow clients to select a date and time, then the available asset" booking policy enabled.
-
-Cannot be set simultaneously with {DayTimeApi::$is_tab_all}.
+     * Only used for asset booking with "Allow clients to select a date and time, then the available asset" booking
+     * policy enabled.
+     * 
+     * Cannot be set simultaneously with {DayTimeApi::$is_tab_all}.
      *
      * @var string|null
      */
@@ -118,7 +102,7 @@ Cannot be set simultaneously with {DayTimeApi::$is_tab_all}.
 
     /**
      * The resource key to show which days are available for booking.
-Should be `0` in case of back-to-back booking.
+     * Should be `0` in case of back-to-back booking.
      *
      * @var string|null
      */
@@ -126,7 +110,7 @@ Should be `0` in case of back-to-back booking.
 
     /**
      * The service key used for showing the available appointment booking schedule.
-In case of back-to-back booking - service key of first appointment.
+     * In case of back-to-back booking - service key of first appointment.
      *
      * @var string|null
      */
@@ -134,8 +118,8 @@ In case of back-to-back booking - service key of first appointment.
 
     /**
      * Key of timezone.
-
-`null` if not set then use default timezone client.
+     * 
+     * `null` if not set then use default timezone client.
      *
      * @var string|null
      */
@@ -143,9 +127,10 @@ In case of back-to-back booking - service key of first appointment.
 
     /**
      * The staff key to show what days are available for booking.
-
-For back-to-back booking ([DayTimeApi](/Wl/Appointment/Book/Schedule/DayTime.json) == `true`): array of appointments for back-to-back booking.
-Converted to JSON string to be usable as model key. Each item is an array with next structure:
+     * 
+     * For back-to-back booking ([DayTimeApi](/Wl/Appointment/Book/Schedule/DayTime.json) == `true`): array of
+     * appointments for back-to-back booking.
+     * Converted to JSON string to be usable as model key. Each item is an array with next structure:
      *
      * @var string|null
      */
@@ -153,7 +138,7 @@ Converted to JSON string to be usable as model key. Each item is an array with n
 
     /**
      * A list of service add-ons keys(encoded as JSON string).
-In case of back-to-back booking - add-ons of first appointment.
+     * In case of back-to-back booking - add-ons of first appointment.
      *
      * @var string|null
      */
@@ -161,12 +146,13 @@ In case of back-to-back booking - add-ons of first appointment.
 
     /**
      * The user key.
-
-This field is used if the client books for himself or for the relative.
-
-This field is incorrect to use for guest booking since in this case the client will be checked as a relative.
-
-In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
+     * 
+     * This field is used if the client books for himself or for the relative.
+     * 
+     * This field is incorrect to use for guest booking since in this case the client will be checked as a
+     * relative.
+     * 
+     * In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
      *
      * @var string|null
      */
@@ -174,8 +160,8 @@ In case of a group booking or a guest booking, the key of the client who is maki
 
     /**
      * The staff user key used for showing the available appointment booking schedule.
-In case of back-to-back booking - staff user key of first appointment.
-`0` means any available staff.
+     * In case of back-to-back booking - staff user key of first appointment.
+     * `0` means any available staff.
      *
      * @var string|null
      */
@@ -197,28 +183,19 @@ In case of back-to-back booking - staff user key of first appointment.
      *  date so the client side can pre-select it in the booking calendar. This request may take longer
      *  than usual on production and uses an extended execution time limit.
      *
-     * @return array Parsed JSON response data.
-     *   - string dt_date: Start date to search next available date in MySQL format. If empty, the search will start from the current date.
-     *   - string dt_next: Next available date in MySQL format.
-     *   - int i_capacity: Maximum number of clients that can simultaneously book this service.
-`null` for asset bookings where this limit does not apply.
-     *   - int i_capacity_waitlist: Maximum number of clients that can be placed on the waitlist for this service.
-`null` if waitlist is disabled, the waitlist has no capacity limit, or for asset bookings.
-     *   - bool is_waitlist: Whether list of available times contains slots with only waitlist booking available.
-     *   - string k_location: Location to show available appointment booking schedule.
+     * @return NextAvailableDayApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): NextAvailableDayApiGetResponse
     {
-        return $this->client->request('/Wl/Appointment/Book/Schedule/NextAvailableDay.json', $this->params(), 'GET');
+        return new NextAvailableDayApiGetResponse($this->client->request('/Wl/Appointment/Book/Schedule/NextAvailableDay.json', $this->params(), 'GET'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_uid' => $this->a_uid,
             'dt_date' => $this->dt_date,
             'i_duration' => $this->i_duration,

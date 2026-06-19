@@ -10,29 +10,9 @@ use WlSdk\WlSdkClient;
 class ListApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * List of groups for filtering groups of business.
-
-`null` in the case when need to return all groups of business.
+     * 
+     * `null` in the case when need to return all groups of business.
      *
      * @var string[]|null
      */
@@ -87,14 +67,13 @@ otherwise filters result according to `$a_member_group_select`.
      *
      * If `is_return_members` is `true` includes in the result list of members of each groups.
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_member_group: No description.
+     * @return ListApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): ListApiGetResponse
     {
-        return $this->client->request('/Wl/Member/Group/GroupList/List.json', $this->params(), 'GET');
+        return new ListApiGetResponse($this->client->request('/Wl/Member/Group/GroupList/List.json', $this->params(), 'GET'));
     }
 
     /**
@@ -103,13 +82,13 @@ otherwise filters result according to `$a_member_group_select`.
      * Saves the display order of member groups for the business using the positions supplied in
      * `$a_member_group_order`, verifying that all specified group keys belong to the business before writing.
      *
-     * @return array Parsed JSON response data.
+     * @return ListApiPutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function put(): array
+    public function put(): ListApiPutResponse
     {
-        return $this->client->request('/Wl/Member/Group/GroupList/List.json', $this->params(), 'PUT');
+        return new ListApiPutResponse($this->client->request('/Wl/Member/Group/GroupList/List.json', $this->params(), 'PUT'));
     }
 
     /**
@@ -117,20 +96,19 @@ otherwise filters result according to `$a_member_group_select`.
      *
      * Deletes specified groups and associated search templates.
      *
-     * @return array Parsed JSON response data.
+     * @return ListApiDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function delete(): array
+    public function delete(): ListApiDeleteResponse
     {
-        return $this->client->request('/Wl/Member/Group/GroupList/List.json', $this->params(), 'DELETE');
+        return new ListApiDeleteResponse($this->client->request('/Wl/Member/Group/GroupList/List.json', $this->params(), 'DELETE'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_member_group_select' => $this->a_member_group_select,
             'is_churn_risk' => $this->is_churn_risk,
             'is_return_members' => $this->is_return_members,

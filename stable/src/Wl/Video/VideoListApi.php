@@ -9,26 +9,6 @@ use WlSdk\WlSdkClient;
 class VideoListApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * The calorie range ascribed to the video to use for the search.
      *
      * @var array[]|null
@@ -37,7 +17,7 @@ Only standard 4xx codes are accepted.
 
     /**
      * The duration range ascribed to the video to use for the search.
-The interval is set in seconds.
+     * The interval is set in seconds.
      *
      * @var array[]|null
      */
@@ -94,16 +74,17 @@ The interval is set in seconds.
 
     /**
      * Page to return.
-Pagination are ignored when count of videos less than `VIDEO_COUNT_PAGINATION`.
-
-`null` if you need to return all the videos.
+     * Pagination are ignored when count of videos less than `VIDEO_COUNT_PAGINATION`.
+     * 
+     * `null` if you need to return all the videos.
      *
      * @var int|null
      */
     public ?int $i_page = null;
 
     /**
-     * Sort order ID. One of [SortOrderSid](#/components/schemas/Core.Sid.SortOrderSid) constants. `null` or 0 if order is undefined and depends on sort order.
+     * Sort order ID. One of [SortOrderSid](#/components/schemas/Core.Sid.SortOrderSid) constants. `null` or 0 if
+     * order is undefined and depends on sort order.
      *
      * @var int|null
      */
@@ -111,7 +92,8 @@ Pagination are ignored when count of videos less than `VIDEO_COUNT_PAGINATION`.
 
     /**
      * The sorting type.
-A constant from [FilterSortSid](#/components/schemas/Wl.Video.Catalog.Filter.Sort.FilterSortSid). `null` or 0 if sort is undefined and custom sort order is used.
+     * A constant from [FilterSortSid](#/components/schemas/Wl.Video.Catalog.Filter.Sort.FilterSortSid). `null` or
+     * 0 if sort is undefined and custom sort order is used.
      *
      * @var int|null
      */
@@ -140,10 +122,10 @@ A constant from [FilterSortSid](#/components/schemas/Wl.Video.Catalog.Filter.Sor
 
     /**
      * UID of the client who request list of videos.
-
-`null` if user is not signed in.
-
-NOTE: Not used directly in API, needed for `KEY` constant.
+     * 
+     * `null` if user is not signed in.
+     * 
+     * NOTE: Not used directly in API, needed for `KEY` constant.
      *
      * @var string|null
      */
@@ -172,33 +154,13 @@ NOTE: Not used directly in API, needed for `KEY` constant.
      * pagination for large libraries. In frontend mode, results are restricted to videos the
      * current user is allowed to watch based on their membership and login type.
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_list: No description.
-     *   - array[] a_page: No description.
-     *   - int id_embed_source: Embedded video source.
-One of [VideoEmbedSourceSid](#/components/schemas/Wl.Video.VideoEmbedSourceSid) constants.
-
-`null` if video is uploaded.
-     *   - int id_order: Sort order ID. One of [SortOrderSid](#/components/schemas/Core.Sid.SortOrderSid) constants. `null` or 0 if order is undefined and depends on sort order.
-     *   - int id_sort: The sorting type.
-A constant from [FilterSortSid](#/components/schemas/Wl.Video.Catalog.Filter.Sort.FilterSortSid). `null` or 0 if sort is undefined and custom sort order is used.
-     *   - string json_setup: Video.js media player initialization parameters in JSON format.
-
-Usage example:
-     <script>
-         videojs($('video'), {
-             "techOrder": ["Vimeo"],
-             "sources": [
-                 {"type": "video/vimeo", "src": "https://vimeo.com/123456789"}
-             ]
-         });
-     </script>
+     * @return VideoListApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): VideoListApiGetResponse
     {
-        return $this->client->request('/Wl/Video/VideoList.json', $this->params(), 'GET');
+        return new VideoListApiGetResponse($this->client->request('/Wl/Video/VideoList.json', $this->params(), 'GET'));
     }
 
     /**
@@ -208,35 +170,19 @@ Usage example:
      * library is configured to use the custom sort order. Requires backend access with the
      * video library management privilege.
      *
-     * @return array Parsed JSON response data.
-     *   - int id_embed_source: Embedded video source.
-One of [VideoEmbedSourceSid](#/components/schemas/Wl.Video.VideoEmbedSourceSid) constants.
-
-`null` if video is uploaded.
-     *   - string json_setup: Video.js media player initialization parameters in JSON format.
-
-Usage example:
-     <script>
-         videojs($('video'), {
-             "techOrder": ["Vimeo"],
-             "sources": [
-                 {"type": "video/vimeo", "src": "https://vimeo.com/123456789"}
-             ]
-         });
-     </script>
+     * @return VideoListApiPutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function put(): array
+    public function put(): VideoListApiPutResponse
     {
-        return $this->client->request('/Wl/Video/VideoList.json', $this->params(), 'PUT');
+        return new VideoListApiPutResponse($this->client->request('/Wl/Video/VideoList.json', $this->params(), 'PUT'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_calorie' => $this->a_calorie,
             'a_duration' => $this->a_duration,
             'a_level' => $this->a_level,

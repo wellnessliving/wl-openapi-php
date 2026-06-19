@@ -9,26 +9,6 @@ use WlSdk\WlSdkClient;
 class AttachElementApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * Attachment key.
      *
      * @var string|null
@@ -58,7 +38,7 @@ Only standard 4xx codes are accepted.
 
     /**
      * `true` if the attachment is private; `false` otherwise.
-`null` until initialized.
+     * `null` until initialized.
      *
      * @var bool|null
      */
@@ -66,8 +46,8 @@ Only standard 4xx codes are accepted.
 
     /**
      * Attachment description.
-
-`null` for not update description.
+     * 
+     * `null` for not update description.
      *
      * @var string|null
      */
@@ -75,8 +55,8 @@ Only standard 4xx codes are accepted.
 
     /**
      * Attachment file name.
-
-`null` for not update file name.
+     * 
+     * `null` for not update file name.
      *
      * @var string|null
      */
@@ -97,28 +77,13 @@ Only standard 4xx codes are accepted.
      *  and edit timestamps, download URL, preview URL, and a flag indicating whether the current
      *  user has permission to delete the attachment.
      *
-     * @return array Parsed JSON response data.
-     *   - string dtu_create: Date and time of the creation.
-     *   - string dtu_edit: Date and time of the last edit.
-     *   - string s_show_delete: Flag for showing a delete button.
-     *   - string text_description: Attachment description.
-
-`null` for not update description.
-     *   - string text_filename: Attachment file name.
-
-`null` for not update file name.
-     *   - string text_filesize: Attachment file size.
-     *   - string text_filetype: Attachment file type.
-     *   - string url_file: URL to get attachment file.
-     *   - string url_preview: URL to get preview attachment data.
-
-`null` in case when preview not available.
+     * @return AttachElementApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): AttachElementApiGetResponse
     {
-        return $this->client->request('/Wl/Profile/Attach/AttachElement.json', $this->params(), 'GET');
+        return new AttachElementApiGetResponse($this->client->request('/Wl/Profile/Attach/AttachElement.json', $this->params(), 'GET'));
     }
 
     /**
@@ -128,14 +93,13 @@ In case the attachment key is specified, edits the attachment.
      * When `k_attach` is empty, uploads a new file to the client profile; when set, updates the
      *  attachment metadata, file content, or visibility flag depending on the provided fields.
      *
-     * @return array Parsed JSON response data.
-     *   - string k_attach: Attachment key.
+     * @return AttachElementApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): AttachElementApiPostResponse
     {
-        return $this->client->request('/Wl/Profile/Attach/AttachElement.json', $this->params(), 'POST');
+        return new AttachElementApiPostResponse($this->client->request('/Wl/Profile/Attach/AttachElement.json', $this->params(), 'POST'));
     }
 
     /**
@@ -144,20 +108,19 @@ In case the attachment key is specified, edits the attachment.
      * Permanently removes the specified attachment from the client profile and logs the deletion
      *  action in the business audit trail.
      *
-     * @return array Parsed JSON response data.
+     * @return AttachElementApiDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function delete(): array
+    public function delete(): AttachElementApiDeleteResponse
     {
-        return $this->client->request('/Wl/Profile/Attach/AttachElement.json', $this->params(), 'DELETE');
+        return new AttachElementApiDeleteResponse($this->client->request('/Wl/Profile/Attach/AttachElement.json', $this->params(), 'DELETE'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'k_attach' => $this->k_attach,
             'k_business' => $this->k_business,
             'uid' => $this->uid,

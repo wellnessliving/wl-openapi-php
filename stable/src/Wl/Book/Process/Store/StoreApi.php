@@ -10,26 +10,6 @@ use WlSdk\WlSdkClient;
 class StoreApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * Date/time to which session is booked.
      *
      * @var string|null
@@ -45,19 +25,20 @@ Only standard 4xx codes are accepted.
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
-
-If `true` is sent, access to the business and to the client will be checked.
-If `false` is sent, user can book only for himself or for relatives if this is allowed in business settings.
+     * 
+     * If `true` is sent, access to the business and to the client will be checked.
+     * If `false` is sent, user can book only for himself or for relatives if this is allowed in business settings.
      *
      * @var bool|null
      */
     public ?bool $is_backend = null;
 
     /**
-     * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag is set to `false`.
-
-Use this field with caution.
-The final booking will not use this flag, and the check will still be performed.
+     * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag
+     * is set to `false`.
+     * 
+     * Use this field with caution.
+     * The final booking will not use this flag, and the check will still be performed.
      *
      * @var bool|null
      */
@@ -107,9 +88,9 @@ The final booking will not use this flag, and the check will still be performed.
 
     /**
      * The selected sessions for an event.
-
-Keys are class period keys, values are indexed arrays of dates and times when the session occurred
- (in MySQL format, UTC).
+     * 
+     * Keys are class period keys, values are indexed arrays of dates and times when the session occurred
+     *  (in MySQL format, UTC).
      *
      * @var string[][]|null
      */
@@ -117,9 +98,9 @@ Keys are class period keys, values are indexed arrays of dates and times when th
 
     /**
      * The selected sessions for an event that are on the wait list and unpaid.
-
-Keys are class period keys, values are indexed arrays of dates and times when the session occurred
- (in MySQL format, UTC).
+     * 
+     * Keys are class period keys, values are indexed arrays of dates and times when the session occurred
+     *  (in MySQL format, UTC).
      *
      * @var string[][]|null
      */
@@ -127,7 +108,7 @@ Keys are class period keys, values are indexed arrays of dates and times when th
 
     /**
      * Determines whether the class/event can be booked at this step or not.
-This is an external process control flag.
+     * This is an external process control flag.
      *
      * @var bool|null
      */
@@ -135,10 +116,10 @@ This is an external process control flag.
 
     /**
      * `true` to book unpaid.
-`false` otherwise.
-
-Allows booking unpaid when client has a login promotion that can be used to pay for the service.
-Allowed in [ModeSid::WIDGET](#/components/schemas/Wl.Mode.ModeSid) mode only.
+     * `false` otherwise.
+     * 
+     * Allows booking unpaid when client has a login promotion that can be used to pay for the service.
+     * Allowed in [ModeSid::WIDGET](#/components/schemas/Wl.Mode.ModeSid) mode only.
      *
      * @var bool|null
      */
@@ -146,7 +127,7 @@ Allowed in [ModeSid::WIDGET](#/components/schemas/Wl.Mode.ModeSid) mode only.
 
     /**
      * `true` if user pressed 'Pay later'.
-`false` if user pressed 'Pay now'.
+     * `false` if user pressed 'Pay now'.
      *
      * @var bool|null
      */
@@ -182,25 +163,19 @@ Allowed in [ModeSid::WIDGET](#/components/schemas/Wl.Mode.ModeSid) mode only.
      * immediately when no payment or quiz step is needed. Returns visit keys, activity keys, and a flag indicating
      * whether further wizard steps are required.
      *
-     * @return array Parsed JSON response data.
-     *   - string[] a_login_activity: The keys for the user's activities. This will be populated upon completion of the booking process.
-     *   - string[] a_visit: The keys of the bookings that have been made.
-     *   - bool is_next: If `true`, the next steps of the booking wizard are required to purchase an item or book the selected session.
-
-If `false`, no further steps in the booking wizard are required.
+     * @return StoreApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): StoreApiPostResponse
     {
-        return $this->client->request('/Wl/Book/Process/Store/Store.json', $this->params(), 'POST');
+        return new StoreApiPostResponse($this->client->request('/Wl/Book/Process/Store/Store.json', $this->params(), 'POST'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'dt_date_gmt' => $this->dt_date_gmt,
             'id_mode' => $this->id_mode,
             'is_backend' => $this->is_backend,

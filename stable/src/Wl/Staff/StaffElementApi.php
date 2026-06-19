@@ -9,32 +9,12 @@ use WlSdk\WlSdkClient;
 class StaffElementApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * The key of the staff member resolved and used internally by this API.
-
-This property is populated from `uid_staff` in `post()` and
-returned in API result for compatibility.
-
-Passing `k_staff` in request payload is not supported and causes an error.
+     * 
+     * This property is populated from `uid_staff` in `post()` and
+     * returned in API result for compatibility.
+     * 
+     * Passing `k_staff` in request payload is not supported and causes an error.
      *
      * @var string|null
      */
@@ -42,8 +22,8 @@ Passing `k_staff` in request payload is not supported and causes an error.
 
     /**
      * The list of locations where the staff member works.
-
-`null` means to not change the current value of the field.
+     * 
+     * `null` means to not change the current value of the field.
      *
      * @var string[]|null
      */
@@ -51,8 +31,8 @@ Passing `k_staff` in request payload is not supported and causes an error.
 
     /**
      * Employment end date.
-
-`null` means to not change the current value of the field.
+     * 
+     * `null` means to not change the current value of the field.
      *
      * @var string|null
      */
@@ -60,8 +40,8 @@ Passing `k_staff` in request payload is not supported and causes an error.
 
     /**
      * Employment start date.
-
-`null` means to not change the current value of the field.
+     * 
+     * `null` means to not change the current value of the field.
      *
      * @var string|null
      */
@@ -69,8 +49,8 @@ Passing `k_staff` in request payload is not supported and causes an error.
 
     /**
      * Gender of staff member. One of [AGenderSid](#/components/schemas/AGenderSid) constants.
-
-`null` means to not change the current value of the field or set gender by default for new staff.
+     * 
+     * `null` means to not change the current value of the field or set gender by default for new staff.
      *
      * @var int|null
      */
@@ -78,8 +58,8 @@ Passing `k_staff` in request payload is not supported and causes an error.
 
     /**
      * ID of the default system role. One of [RsPrivilegeRoleSid](#/components/schemas/RsPrivilegeRoleSid).
-
-`null` means to not change the current value of the field.
+     * 
+     * `null` means to not change the current value of the field.
      *
      * @var int|null
      */
@@ -87,8 +67,8 @@ Passing `k_staff` in request payload is not supported and causes an error.
 
     /**
      * Whether the staff is currently employed.
-
-`null` means to not change the current value of the field.
+     * 
+     * `null` means to not change the current value of the field.
      *
      * @var bool|null
      */
@@ -96,16 +76,17 @@ Passing `k_staff` in request payload is not supported and causes an error.
 
     /**
      * Determines whether the staff member be shown on the directory site of the business.
-
-If `null`, the current value of the field shouldn't be changed.
+     * 
+     * If `null`, the current value of the field shouldn't be changed.
      *
      * @var bool|null
      */
     public ?bool $is_microsite = null;
 
     /**
-     * Whether password set is disabled. `true` - if the email is associated to a client profile which has a password set,
-  `false` - otherwise.
+     * Whether password set is disabled. `true` - if the email is associated to a client profile which has a
+     * password set,
+     *   `false` - otherwise.
      *
      * @var bool|null
      */
@@ -120,7 +101,7 @@ If `null`, the current value of the field shouldn't be changed.
 
     /**
      * The key of the business in which the staff member is being created or edited.
-This field is required.
+     * This field is required.
      *
      * @var string|null
      */
@@ -128,8 +109,8 @@ This field is required.
 
     /**
      * Business role key.
-
-`null` if not set.
+     * 
+     * `null` if not set.
      *
      * @var string|null
      */
@@ -137,8 +118,8 @@ This field is required.
 
     /**
      * City key.
-
-`null` means to not change the current value of the field.
+     * 
+     * `null` means to not change the current value of the field.
      *
      * @var string|null
      */
@@ -146,8 +127,8 @@ This field is required.
 
     /**
      * Home location key.
-
-`null` if not set.
+     * 
+     * `null` if not set.
      *
      * @var string|null
      */
@@ -155,8 +136,8 @@ This field is required.
 
     /**
      * Address.
-
-`null` means to not change the current value of the field.
+     * 
+     * `null` means to not change the current value of the field.
      *
      * @var string|null
      */
@@ -164,8 +145,8 @@ This field is required.
 
     /**
      * Staff biography.
-
-`null` means to not change the current value of the field.
+     * 
+     * `null` means to not change the current value of the field.
      *
      * @var string|null
      */
@@ -173,8 +154,8 @@ This field is required.
 
     /**
      * Custom city title.
-
-`null` means to not change the current value of the field or `k_city` is specified.
+     * 
+     * `null` means to not change the current value of the field or `k_city` is specified.
      *
      * @var string|null
      */
@@ -182,9 +163,9 @@ This field is required.
 
     /**
      * The staff member's email address.
-This field is required when creating a new staff member.
-
-If `null`, the current value of the field shouldn't be changed.
+     * This field is required when creating a new staff member.
+     * 
+     * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
      */
@@ -192,9 +173,9 @@ If `null`, the current value of the field shouldn't be changed.
 
     /**
      * The staff member's first name.
-This field is required when creating a new staff member.
-
-If `null`, the current value of the field shouldn't be changed.
+     * This field is required when creating a new staff member.
+     * 
+     * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
      */
@@ -202,8 +183,8 @@ If `null`, the current value of the field shouldn't be changed.
 
     /**
      * The staff member's last name.
-
-If `null`, the current value of the field shouldn't be changed.
+     * 
+     * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
      */
@@ -211,9 +192,9 @@ If `null`, the current value of the field shouldn't be changed.
 
     /**
      * The password.
-This field is required when creating a new staff member.
-
-If `null`, the current value of the field shouldn't be changed.
+     * This field is required when creating a new staff member.
+     * 
+     * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
      */
@@ -221,9 +202,9 @@ If `null`, the current value of the field shouldn't be changed.
 
     /**
      * Confirmation of the password.
-This field is required when creating a new staff member.
-
-If `null`, the current value of the field shouldn't be changed.
+     * This field is required when creating a new staff member.
+     * 
+     * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
      */
@@ -231,8 +212,8 @@ If `null`, the current value of the field shouldn't be changed.
 
     /**
      * Home phone.
-
-`null` means to not change the current value of the field.
+     * 
+     * `null` means to not change the current value of the field.
      *
      * @var string|null
      */
@@ -240,8 +221,8 @@ If `null`, the current value of the field shouldn't be changed.
 
     /**
      * Cell phone.
-
-`null` means to not change the current value of the field.
+     * 
+     * `null` means to not change the current value of the field.
      *
      * @var string|null
      */
@@ -249,8 +230,8 @@ If `null`, the current value of the field shouldn't be changed.
 
     /**
      * The staff member's job title.
-
-If `null`, the current value of the field shouldn't be changed.
+     * 
+     * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
      */
@@ -258,8 +239,8 @@ If `null`, the current value of the field shouldn't be changed.
 
     /**
      * The staff member's job title.
-
-If `null`, the current value of the field shouldn't be changed.
+     * 
+     * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
      */
@@ -267,9 +248,9 @@ If `null`, the current value of the field shouldn't be changed.
 
     /**
      * User key of a staff member.
-
-This is the supported request identifier for staff update operations.
-Value is normalized into `k_staff` in `post()`.
+     * 
+     * This is the supported request identifier for staff update operations.
+     * Value is normalized into `k_staff` in `post()`.
      *
      * @var string|null
      */
@@ -291,26 +272,19 @@ Value is normalized into `k_staff` in `post()`.
      * staff member must already belong to the business. Role, location, contact details,
      * employment dates, and custom profile fields can all be set in a single call.
      *
-     * @return array Parsed JSON response data.
-     *   - string k_staff: The key of the staff member resolved and used internally by this API.
-
-This property is populated from `uid_staff` in `post()` and
-returned in API result for compatibility.
-
-Passing `k_staff` in request payload is not supported and causes an error.
+     * @return StaffElementApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): StaffElementApiPostResponse
     {
-        return $this->client->request('/Wl/Staff/StaffElement.json', $this->params(), 'POST');
+        return new StaffElementApiPostResponse($this->client->request('/Wl/Staff/StaffElement.json', $this->params(), 'POST'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'k_staff' => $this->k_staff,
             'a_location' => $this->a_location,
             'dl_end' => $this->dl_end,

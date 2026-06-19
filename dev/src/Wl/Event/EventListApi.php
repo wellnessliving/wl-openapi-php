@@ -9,26 +9,6 @@ use WlSdk\WlSdkClient;
 class EventListApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * List of class keys applied by filter.
      *
      * @var string[]|null
@@ -72,9 +52,10 @@ Only standard 4xx codes are accepted.
 
     /**
      * List of IDs to include/exclude virtual events.
-If the only ID is [YesNoSid::YES](#/components/schemas/Core.Sid.YesNoSid), only virtual events are included.
-If the only ID is [YesNoSid::NO](#/components/schemas/Core.Sid.YesNoSid), only in-person events are included.
-Otherwise, no filtering is done.
+     * If the only ID is [YesNoSid::YES](#/components/schemas/Core.Sid.YesNoSid), only virtual events are included.
+     * If the only ID is [YesNoSid::NO](#/components/schemas/Core.Sid.YesNoSid), only in-person events are
+     * included.
+     * Otherwise, no filtering is done.
      *
      * @var string[]|null
      */
@@ -82,8 +63,8 @@ Otherwise, no filtering is done.
 
     /**
      * The end date of the range from which a list of events should be retrieved.
-
-`null` if the range has no end date.
+     * 
+     * `null` if the range has no end date.
      *
      * @var string|null
      */
@@ -91,8 +72,8 @@ Otherwise, no filtering is done.
 
     /**
      * The start date of the range from which a list of events should be retrieved.
-
-`null` if the range has no start date.
+     * 
+     * `null` if the range has no start date.
      *
      * @var string|null
      */
@@ -100,12 +81,12 @@ Otherwise, no filtering is done.
 
     /**
      * Defines how the event availability flag filter should be applied.
-
-One of [AFlagSid](#/components/schemas/AFlagSid) constants.
-
-* [AFlagSid::ON](#/components/schemas/AFlagSid) to show only available events.
-* [AFlagSid::OFF](#/components/schemas/AFlagSid) to show only unavailable events.
-* [AFlagSid::ALL](#/components/schemas/AFlagSid) to show all events (available and unavailable).
+     * 
+     * One of [AFlagSid](#/components/schemas/AFlagSid) constants.
+     * 
+     * * [AFlagSid::ON](#/components/schemas/AFlagSid) to show only available events.
+     * * [AFlagSid::OFF](#/components/schemas/AFlagSid) to show only unavailable events.
+     * * [AFlagSid::ALL](#/components/schemas/AFlagSid) to show all events (available and unavailable).
      *
      * @var int|null
      */
@@ -126,10 +107,11 @@ One of [AFlagSid](#/components/schemas/AFlagSid) constants.
     public ?bool $is_ignore_requirement = null;
 
     /**
-     * Determines whether you need to retrieve a list of event sessions regardless of the tab specified in `k_class_tab`.
-
-* `true` - retrieves a list regardless of the specified tab.
-* `false` - retrieves a list only for the specific tab.
+     * Determines whether you need to retrieve a list of event sessions regardless of the tab specified in
+     * `k_class_tab`.
+     * 
+     * * `true` - retrieves a list regardless of the specified tab.
+     * * `false` - retrieves a list only for the specific tab.
      *
      * @var bool|null
      */
@@ -137,8 +119,8 @@ One of [AFlagSid](#/components/schemas/AFlagSid) constants.
 
     /**
      * The event business key to retrieve a list of all event sessions in business.
-
-`null` to retrieve events from `k_location`.
+     * 
+     * `null` to retrieve events from `k_location`.
      *
      * @var string|null
      */
@@ -146,7 +128,7 @@ One of [AFlagSid](#/components/schemas/AFlagSid) constants.
 
     /**
      * The event class key to retrieve a list of all event sessions of a specific class.
-`null` to retrieve a list of event sessions of all classes.
+     * `null` to retrieve a list of event sessions of all classes.
      *
      * @var string|null
      */
@@ -154,11 +136,11 @@ One of [AFlagSid](#/components/schemas/AFlagSid) constants.
 
     /**
      * The class tab key to retrieve a list of event sessions from a specific tab only.
-An empty value to retrieve a list of event sessions that don't belong to any tab.
-
-Will be ignored in next cases:
-* `k_skin` specified.
-* `is_tab_all` is `true`.
+     * An empty value to retrieve a list of event sessions that don't belong to any tab.
+     * 
+     * Will be ignored in next cases:
+     * * `k_skin` specified.
+     * * `is_tab_all` is `true`.
      *
      * @var string|null
      */
@@ -166,9 +148,9 @@ Will be ignored in next cases:
 
     /**
      * The event location key to retrieve a list of all event sessions in a specific location.
-
-Required if `k_business` isn't specified.
-`null` if you need to retrieve a list of event sessions in all locations of `k_business`.
+     * 
+     * Required if `k_business` isn't specified.
+     * `null` if you need to retrieve a list of event sessions in all locations of `k_business`.
      *
      * @var string|null
      */
@@ -176,8 +158,8 @@ Required if `k_business` isn't specified.
 
     /**
      * The skin key if an event list is used for widget mode.
-
-`k_class_tab` will be ignored for widget mode.
+     * 
+     * `k_class_tab` will be ignored for widget mode.
      *
      * @var string|null
      */
@@ -192,7 +174,7 @@ Required if `k_business` isn't specified.
 
     /**
      * The user key.
-Required to apply specific user rules such as age restrictions.
+     * Required to apply specific user rules such as age restrictions.
      *
      * @var string|null
      */
@@ -220,18 +202,13 @@ Required to apply specific user rules such as age restrictions.
      * date range, staff, and booking status. Results are cached per business and user context; the cache
      * is invalidated automatically when events are modified.
      *
-     * @return array Parsed JSON response data.
-     *   - string[] a_enrollment_block_list: List of available enrollment blocks matching the requested parameters.
-
-Key is the enrollment block key. 
-Value is the title of the first event found in that enrollment block.
-     *   - array[] a_event_list: A list of events corresponding to requested parameters.
+     * @return EventListApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): EventListApiGetResponse
     {
-        return $this->client->request('/Wl/Event/EventList.json', $this->params(), 'GET');
+        return new EventListApiGetResponse($this->client->request('/Wl/Event/EventList.json', $this->params(), 'GET'));
     }
 
     /**
@@ -240,20 +217,19 @@ Value is the title of the first event found in that enrollment block.
      * Call this after modifying event data to force the next request to rebuild the schedule from the
      * database. Can also conditionally reset without parameters if the caller determines a reset is needed.
      *
-     * @return array Parsed JSON response data.
+     * @return EventListApiPutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function put(): array
+    public function put(): EventListApiPutResponse
     {
-        return $this->client->request('/Wl/Event/EventList.json', $this->params(), 'PUT');
+        return new EventListApiPutResponse($this->client->request('/Wl/Event/EventList.json', $this->params(), 'PUT'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_class_filter' => $this->a_class_filter,
             'a_day' => $this->a_day,
             'a_enrollment_block_filter' => $this->a_enrollment_block_filter,

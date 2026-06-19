@@ -9,26 +9,6 @@ use WlSdk\WlSdkClient;
 class ContractApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * The start date of the contract.
      *
      * @var string|null
@@ -43,8 +23,9 @@ Only standard 4xx codes are accepted.
     public ?float $f_manual_discount = null;
 
     /**
-     * The type of purchase item. This is one of the [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid) constants.
-Optional if `k_purchase_item` is not empty.
+     * The type of purchase item. This is one of the [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid)
+     * constants.
+     * Optional if `k_purchase_item` is not empty.
      *
      * @var int|null
      */
@@ -59,7 +40,7 @@ Optional if `k_purchase_item` is not empty.
 
     /**
      * The key of the purchase item in the database.
-The item key. Depends on `id_purchase_item` property.
+     * The item key. Depends on `id_purchase_item` property.
      *
      * @var string|null
      */
@@ -109,8 +90,8 @@ The item key. Depends on `id_purchase_item` property.
 
     /**
      * `false` if user has not agreed to use Electronic Signatures,
-`true` if user has agreed to use Electronic Signatures,
-`null` otherwise.
+     * `true` if user has agreed to use Electronic Signatures,
+     * `null` otherwise.
      *
      * @var bool|null
      */
@@ -118,7 +99,7 @@ The item key. Depends on `id_purchase_item` property.
 
     /**
      * An encoded version of the client signature.
-This is different from the signature needed to communicate with an endpoint.
+     * This is different from the signature needed to communicate with an endpoint.
      *
      * @var string|null
      */
@@ -139,16 +120,13 @@ This is different from the signature needed to communicate with an endpoint.
      *  discounts, and returns the content needed to display the contract acceptance modal to the
      *  client.
      *
-     * @return array Parsed JSON response data.
-     *   - string html_contract: The text of the contract.
-     *   - int i_minor_age: Age of minor which documents can be signed by parent or legal guardian.
-     *   - string text_title: Title of purchase option.
+     * @return ContractApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): ContractApiGetResponse
     {
-        return $this->client->request('/Wl/Profile/Contract/Contract.json', $this->params(), 'GET');
+        return new ContractApiGetResponse($this->client->request('/Wl/Profile/Contract/Contract.json', $this->params(), 'GET'));
     }
 
     /**
@@ -157,20 +135,19 @@ This is different from the signature needed to communicate with an endpoint.
      * Accepts an encoded client signature and agreement flag, decodes the signature, and records
      *  the signed contract for the specified purchase item.
      *
-     * @return array Parsed JSON response data.
+     * @return ContractApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): ContractApiPostResponse
     {
-        return $this->client->request('/Wl/Profile/Contract/Contract.json', $this->params(), 'POST');
+        return new ContractApiPostResponse($this->client->request('/Wl/Profile/Contract/Contract.json', $this->params(), 'POST'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'dt_start' => $this->dt_start,
             'f_manual_discount' => $this->f_manual_discount,
             'id_purchase_item' => $this->id_purchase_item,

@@ -9,26 +9,6 @@ use WlSdk\WlSdkClient;
 class PaymentApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * The staff commission earned for this purchase. If this isn't empty, it has the next fields:
      *
      * @var array[]|null
@@ -36,7 +16,8 @@ Only standard 4xx codes are accepted.
     public ?array $a_commission = null;
 
     /**
-     * The WellnessLiving mode type (required). One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * The WellnessLiving mode type (required). One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid)
+     * constants.
      *
      * @var int|null
      */
@@ -93,9 +74,9 @@ Only standard 4xx codes are accepted.
 
     /**
      * The list of quiz response keys.
-Keys refer to quiz keys. 
-And values refer to responses. 
-Or special values from the `skip` constant.
+     * Keys refer to quiz keys. 
+     * And values refer to responses. 
+     * Or special values from the `skip` constant.
      *
      * @var string[]|null
      */
@@ -110,7 +91,7 @@ Or special values from the `skip` constant.
 
     /**
      * The installment template key (optional).
-This will be `null` if the installment plan doesn't exist or isn't set for the purchased item.
+     * This will be `null` if the installment plan doesn't exist or isn't set for the purchased item.
      *
      * @var string|null
      */
@@ -132,8 +113,8 @@ This will be `null` if the installment plan doesn't exist or isn't set for the p
 
     /**
      * The manual surcharge amount.
-
-An empty string represents an automatic surcharge amount.
+     * 
+     * An empty string represents an automatic surcharge amount.
      *
      * @var string|null
      */
@@ -175,24 +156,19 @@ An empty string represents an automatic surcharge amount.
      * selected payment method, applies any discounts and tips, and creates the purchase record. Returns
      * the resulting purchase key so the frontend can redirect to the confirmation page.
      *
-     * @return array Parsed JSON response data.
-     *   - string k_login_activity: The key of login activity.
-
-This will be `null` if not set yet.
-     *   - string k_purchase: The purchase key created during payment.
+     * @return PaymentApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): PaymentApiPostResponse
     {
-        return $this->client->request('/Wl/Catalog/Payment/Payment.json', $this->params(), 'POST');
+        return new PaymentApiPostResponse($this->client->request('/Wl/Catalog/Payment/Payment.json', $this->params(), 'POST'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_commission' => $this->a_commission,
             'id_mode' => $this->id_mode,
             'is_guest' => $this->is_guest,

@@ -9,26 +9,6 @@ use WlSdk\WlSdkClient;
 class SkinForeignApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * Skin type, one of [RsSkinSid](#/components/schemas/RsSkinSid) constants.
      *
      * @var int|null
@@ -85,14 +65,13 @@ Only standard 4xx codes are accepted.
      * by the integrator. The foreign ID must be unique within the business; attempting to create
      * a duplicate triggers an error directing the caller to use PUT instead.
      *
-     * @return array Parsed JSON response data.
-     *   - string k_skin: Skin key.
+     * @return SkinForeignApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): SkinForeignApiPostResponse
     {
-        return $this->client->request('/Wl/Skin/SkinForeign.json', $this->params(), 'POST');
+        return new SkinForeignApiPostResponse($this->client->request('/Wl/Skin/SkinForeign.json', $this->params(), 'POST'));
     }
 
     /**
@@ -102,14 +81,13 @@ Only standard 4xx codes are accepted.
      * external foreign ID. Throws an error if no matching foreign ID is found, directing
      * the caller to use POST instead.
      *
-     * @return array Parsed JSON response data.
-     *   - string k_skin: Skin key.
+     * @return SkinForeignApiPutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function put(): array
+    public function put(): SkinForeignApiPutResponse
     {
-        return $this->client->request('/Wl/Skin/SkinForeign.json', $this->params(), 'PUT');
+        return new SkinForeignApiPutResponse($this->client->request('/Wl/Skin/SkinForeign.json', $this->params(), 'PUT'));
     }
 
     /**
@@ -118,21 +96,19 @@ Only standard 4xx codes are accepted.
      * Permanently removes a widget skin and its foreign ID mapping from the business. Used
      * by external integrators to clean up a widget that is no longer needed.
      *
-     * @return array Parsed JSON response data.
-     *   - string k_skin: Skin key.
+     * @return SkinForeignApiDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function delete(): array
+    public function delete(): SkinForeignApiDeleteResponse
     {
-        return $this->client->request('/Wl/Skin/SkinForeign.json', $this->params(), 'DELETE');
+        return new SkinForeignApiDeleteResponse($this->client->request('/Wl/Skin/SkinForeign.json', $this->params(), 'DELETE'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'id_skin' => $this->id_skin,
             'k_business' => $this->k_business,
             's_foreign_id' => $this->s_foreign_id,

@@ -9,26 +9,6 @@ use WlSdk\WlSdkClient;
 class AlertEditApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * Key of current business.
      *
      * @var string|null
@@ -37,7 +17,7 @@ Only standard 4xx codes are accepted.
 
     /**
      * Login note key to edit or get info for.
-Empty if new entry is being added.
+     * Empty if new entry is being added.
      *
      * @var string|null
      */
@@ -107,14 +87,13 @@ Empty if new entry is being added.
      *  booking and purchase restrictions, and location flags. Used to populate the edit form before
      *  saving changes.
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_login_note_data: No description.
+     * @return AlertEditApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): AlertEditApiGetResponse
     {
-        return $this->client->request('/Wl/Profile/Alert/AlertEdit.json', $this->params(), 'GET');
+        return new AlertEditApiGetResponse($this->client->request('/Wl/Profile/Alert/AlertEdit.json', $this->params(), 'GET'));
     }
 
     /**
@@ -124,15 +103,13 @@ Empty if new entry is being added.
      *  restrictions, booking and purchase flags, and the locations where the note applies. Used by
      *  staff to attach internal notes or warnings that appear on check-in and booking flows.
      *
-     * @return array Parsed JSON response data.
-     *   - string k_login_note: Login note key to edit or get info for.
-Empty if new entry is being added.
+     * @return AlertEditApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): AlertEditApiPostResponse
     {
-        return $this->client->request('/Wl/Profile/Alert/AlertEdit.json', $this->params(), 'POST');
+        return new AlertEditApiPostResponse($this->client->request('/Wl/Profile/Alert/AlertEdit.json', $this->params(), 'POST'));
     }
 
     /**
@@ -141,20 +118,19 @@ Empty if new entry is being added.
      * Permanently removes the login note specified by `k_login_note` from the business, requiring
      *  backend access for the current user.
      *
-     * @return array Parsed JSON response data.
+     * @return AlertEditApiDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function delete(): array
+    public function delete(): AlertEditApiDeleteResponse
     {
-        return $this->client->request('/Wl/Profile/Alert/AlertEdit.json', $this->params(), 'DELETE');
+        return new AlertEditApiDeleteResponse($this->client->request('/Wl/Profile/Alert/AlertEdit.json', $this->params(), 'DELETE'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'k_business' => $this->k_business,
             'k_login_note' => $this->k_login_note,
             'uid' => $this->uid,

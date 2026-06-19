@@ -9,26 +9,6 @@ use WlSdk\WlSdkClient;
 class PaymentApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * Information detailing an appointment booking:
      *
      * @var array[]|null
@@ -37,7 +17,7 @@ Only standard 4xx codes are accepted.
 
     /**
      * List of user keys to book appointments.
-There may be empty values in this list, which means that this is a walk-in.
+     * There may be empty values in this list, which means that this is a walk-in.
      *
      * @var string[]|null
      */
@@ -101,7 +81,8 @@ There may be empty values in this list, which means that this is a walk-in.
 
     /**
      * Variable price. Is set only during booking an appointment with variable type of the price
-  [RsServicePriceSid::VARIES](#/components/schemas/RsServicePriceSid) from spa backend [ModeSid::SPA_BACKEND](#/components/schemas/Wl.Mode.ModeSid).
+     *   [RsServicePriceSid::VARIES](#/components/schemas/RsServicePriceSid) from spa backend
+     * [ModeSid::SPA_BACKEND](#/components/schemas/Wl.Mode.ModeSid).
      *
      * @var string|null
      */
@@ -109,7 +90,7 @@ There may be empty values in this list, which means that this is a walk-in.
 
     /**
      * Service unique key.
-Used for model cache.
+     * Used for model cache.
      *
      * @var string|null
      */
@@ -131,12 +112,13 @@ Used for model cache.
 
     /**
      * The user key.
-
-This field is used if the client books for himself or for the relative.
-
-This field is incorrect to use for guest booking since in this case the client will be checked as a relative.
-
-In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
+     * 
+     * This field is used if the client books for himself or for the relative.
+     * 
+     * This field is incorrect to use for guest booking since in this case the client will be checked as a
+     * relative.
+     * 
+     * In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
      *
      * @var string|null
      */
@@ -151,8 +133,8 @@ In case of a group booking or a guest booking, the key of the client who is maki
 
     /**
      * List of quiz response keys.
-Keys are quiz keys. 
-Values are quiz response keys.
+     * Keys are quiz keys. 
+     * Values are quiz response keys.
      *
      * @var string[]|null
      */
@@ -175,22 +157,13 @@ Values are quiz response keys.
      *
      * @deprecated
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_promotion_data: No description.
-     *   - array[] a_purchase: No description.
-     *   - string k_location: Location to show available appointment booking schedule.
-     *   - string m_coupon: Gift card amount.
-     *   - string m_discount: Discount amount.
-     *   - string m_surcharge: Surcharge amount calculated for credit cards (Virtual Terminal and Card Swiper).
-     *   - string m_surcharge_ach: Surcharge amount calculated for money transfers from account: ACH, Direct Entry.
-     *   - string m_tax: The tax of service.
-     *   - string m_total: The total cost of the purchase.
+     * @return PaymentApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): PaymentApiGetResponse
     {
-        return $this->client->request('/Wl/Appointment/Book/Payment/Payment.json', $this->params(), 'GET');
+        return new PaymentApiGetResponse($this->client->request('/Wl/Appointment/Book/Payment/Payment.json', $this->params(), 'GET'));
     }
 
     /**
@@ -202,27 +175,19 @@ Values are quiz response keys.
      *
      * @deprecated
      *
-     * @return array Parsed JSON response data.
-     *   - string[] a_purchase_item: The purchase item keys from the database.
-
-This will be `null` if not set yet.
-     *   - int id_pay: The payment type for the appointment. A constant of [RsAppointmentPaySid](#/components/schemas/RsAppointmentPaySid).
-     *   - string k_login_activity_purchase: The key of activity of the purchase made.
-Empty if no purchase has been made.
-     *   - string k_login_prize: Login prize key. In case when appointment paid by reward prize, there is the key of redeemed login prize. Empty otherwise.
+     * @return PaymentApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): PaymentApiPostResponse
     {
-        return $this->client->request('/Wl/Appointment/Book/Payment/Payment.json', $this->params(), 'POST');
+        return new PaymentApiPostResponse($this->client->request('/Wl/Appointment/Book/Payment/Payment.json', $this->params(), 'POST'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_book_data' => $this->a_book_data,
             'a_uid' => $this->a_uid,
             'id_mode' => $this->id_mode,

@@ -9,28 +9,8 @@ use WlSdk\WlSdkClient;
 class RelationApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * List of check that must be skipped.
-Each element must be a member of [ProcessCheckSid](#/components/schemas/Wl.Book.Process.ProcessCheckSid).
+     * Each element must be a member of [ProcessCheckSid](#/components/schemas/Wl.Book.Process.ProcessCheckSid).
      *
      * @var int[]|null
      */
@@ -44,10 +24,11 @@ Each element must be a member of [ProcessCheckSid](#/components/schemas/Wl.Book.
     public ?string $dtu_date = null;
 
     /**
-     * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag is set to `false`.
-
-Use this field with caution.
-The final booking will not use this flag and the check will still be performed.
+     * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag
+     * is set to `false`.
+     * 
+     * Use this field with caution.
+     * The final booking will not use this flag and the check will still be performed.
      *
      * @var bool|null
      */
@@ -76,7 +57,7 @@ The final booking will not use this flag and the check will still be performed.
 
     /**
      * Day of birthday.
-`null` if birthday is not entered.
+     * `null` if birthday is not entered.
      *
      * @var int|null
      */
@@ -84,7 +65,7 @@ The final booking will not use this flag and the check will still be performed.
 
     /**
      * Month of birthday.
-`null` if birthday is not entered.
+     * `null` if birthday is not entered.
      *
      * @var int|null
      */
@@ -92,7 +73,7 @@ The final booking will not use this flag and the check will still be performed.
 
     /**
      * Year of birthday.
-`null` if birthday is not entered.
+     * `null` if birthday is not entered.
      *
      * @var int|null
      */
@@ -100,7 +81,7 @@ The final booking will not use this flag and the check will still be performed.
 
     /**
      * The mode type.
-One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
      *
      * @var int|null
      */
@@ -108,7 +89,7 @@ One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
 
     /**
      * The relation type.
-One of the [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) constants.
+     * One of the [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) constants.
      *
      * @var int|null
      */
@@ -116,8 +97,8 @@ One of the [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) const
 
     /**
      * `true` - the new relative uses the email from `uid_from`.
-
-`false` - the new relative has their own email.
+     * 
+     * `false` - the new relative has their own email.
      *
      * @var bool|null
      */
@@ -125,8 +106,8 @@ One of the [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) const
 
     /**
      * `true` - the new relative pays for themselves.
-
-`false` - `uid_from` pays for the new relative.
+     * 
+     * `false` - `uid_from` pays for the new relative.
      *
      * @var bool|null
      */
@@ -175,13 +156,13 @@ One of the [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) const
      * runs the full booking eligibility check (credit card, waiver, age, overlap, outstanding balance) and throws
      * a descriptive user-facing error if any requirement is not met.
      *
-     * @return array Parsed JSON response data.
+     * @return RelationApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): RelationApiGetResponse
     {
-        return $this->client->request('/Wl/Book/Process/Relation/Relation.json', $this->params(), 'GET');
+        return new RelationApiGetResponse($this->client->request('/Wl/Book/Process/Relation/Relation.json', $this->params(), 'GET'));
     }
 
     /**
@@ -191,21 +172,19 @@ One of the [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) const
      * applying birthday validation, email-inheritance rules, and payment responsibility settings. Returns the UID
      * of the newly created user in `uid_create`.
      *
-     * @return array Parsed JSON response data.
-     *   - string uid_create: The newly added relative.
+     * @return RelationApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): RelationApiPostResponse
     {
-        return $this->client->request('/Wl/Book/Process/Relation/Relation.json', $this->params(), 'POST');
+        return new RelationApiPostResponse($this->client->request('/Wl/Book/Process/Relation/Relation.json', $this->params(), 'POST'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_check_ignore' => $this->a_check_ignore,
             'dtu_date' => $this->dtu_date,
             'is_credit_card_check' => $this->is_credit_card_check,

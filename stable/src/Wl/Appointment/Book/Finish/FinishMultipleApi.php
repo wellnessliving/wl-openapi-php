@@ -9,29 +9,10 @@ use WlSdk\WlSdkClient;
 class FinishMultipleApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
-     * The payment type for the appointment. One of the [RsAppointmentPaySid](#/components/schemas/RsAppointmentPaySid) constants.
-
-Keys refer to provider indexes.
+     * The payment type for the appointment. One of the
+     * [RsAppointmentPaySid](#/components/schemas/RsAppointmentPaySid) constants.
+     * 
+     * Keys refer to provider indexes.
      *
      * @var int[]|null
      */
@@ -39,7 +20,7 @@ Keys refer to provider indexes.
 
     /**
      * List of user keys to book appointments.
-There may be empty values in this list, which means that this is a walk-in.
+     * There may be empty values in this list, which means that this is a walk-in.
      *
      * @var string[]|null
      */
@@ -47,8 +28,8 @@ There may be empty values in this list, which means that this is a walk-in.
 
     /**
      * Data to create new users.
-Specify this if `$uid` is empty.
-The data must contain the next keys:
+     * Specify this if `$uid` is empty.
+     * The data must contain the next keys:
      *
      * @var array[]|null
      */
@@ -63,7 +44,7 @@ The data must contain the next keys:
 
     /**
      * The appointment key.
-Specify this to reschedule a certain appointment.
+     * Specify this to reschedule a certain appointment.
      *
      * @var string|null
      */
@@ -85,12 +66,13 @@ Specify this to reschedule a certain appointment.
 
     /**
      * The user key.
-
-This field is used if the client books for himself or for the relative.
-
-This field is incorrect to use for guest booking since in this case the client will be checked as a relative.
-
-In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
+     * 
+     * This field is used if the client books for himself or for the relative.
+     * 
+     * This field is incorrect to use for guest booking since in this case the client will be checked as a
+     * relative.
+     * 
+     * In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
      *
      * @var string|null
      */
@@ -98,9 +80,9 @@ In case of a group booking or a guest booking, the key of the client who is maki
 
     /**
      * A list of answers for the questions from [QuestionApi](/Wl/Appointment/Book/Question/Question.json).
-
-1st dimension - provider index.
-2nd dimension - keys refer to hashes of the questions. Values refer to answers for the questions.
+     * 
+     * 1st dimension - provider index.
+     * 2nd dimension - keys refer to hashes of the questions. Values refer to answers for the questions.
      *
      * @var string[][]|null
      */
@@ -122,8 +104,8 @@ In case of a group booking or a guest booking, the key of the client who is maki
 
     /**
      * The sum paid.
-
-Keys refer to provider indexes.
+     * 
+     * Keys refer to provider indexes.
      *
      * @var string[]|null
      */
@@ -145,10 +127,10 @@ Keys refer to provider indexes.
 
     /**
      * The purchase items keys.
-This will be empty if no purchases have been made for the appointment booking.
-
-Keys refer to provider indexes.
-Value is array of item keys.
+     * This will be empty if no purchases have been made for the appointment booking.
+     * 
+     * Keys refer to provider indexes.
+     * Value is array of item keys.
      *
      * @var string[][]|null
      */
@@ -156,8 +138,8 @@ Value is array of item keys.
 
     /**
      * The list of quiz response keys.
-Key is quiz key.
-Value is quiz response key.
+     * Key is quiz key.
+     * Value is quiz response key.
      *
      * @var string[]|null
      */
@@ -179,9 +161,9 @@ Value is quiz response key.
 
     /**
      * This will be `true` when trying to make a test booking and rollback should be applied.
-Otherwise, this will be `false`.
-
-If the flag is set to `true`, credit card requirement will be ignored during this check.
+     * Otherwise, this will be `false`.
+     * 
+     * If the flag is set to `true`, credit card requirement will be ignored during this check.
      *
      * @var bool|null
      */
@@ -210,27 +192,19 @@ If the flag is set to `true`, credit card requirement will be ignored during thi
      *  booking confirmation notifications. A new client account can be created by supplying user
      *  details in `a_user` when no UID is provided.
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_appointment: No description.
-     *   - string[] a_login_activity_visit: The activity IDs of bookings that have been made.
-     *   - string[] a_visit: The visit IDs.
-     *   - string[][] a_visit_provider: Keys of booked visits.
-
-Structured into a two-dimensional array.
-1st dimension - providers; 2nd dimension - visit keys inside a provider.
+     * @return FinishMultipleApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): FinishMultipleApiPostResponse
     {
-        return $this->client->request('/Wl/Appointment/Book/Finish/FinishMultiple.json', $this->params(), 'POST');
+        return new FinishMultipleApiPostResponse($this->client->request('/Wl/Appointment/Book/Finish/FinishMultiple.json', $this->params(), 'POST'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_pay' => $this->a_pay,
             'a_uid' => $this->a_uid,
             'a_user' => $this->a_user,

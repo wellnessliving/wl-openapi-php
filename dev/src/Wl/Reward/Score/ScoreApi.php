@@ -9,30 +9,11 @@ use WlSdk\WlSdkClient;
 class ScoreApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * List of login activity keys for which points should be added or returned.
-
-NOTE: Login activity might belong to different users. It is possible for ex if booking performed
-for several users (usually family members) and required to retrieve sum of all scores for preformed activities.
+     * 
+     * NOTE: Login activity might belong to different users. It is possible for ex if booking performed
+     * for several users (usually family members) and required to retrieve sum of all scores for preformed
+     * activities.
      *
      * @var string[]|null
      */
@@ -40,9 +21,9 @@ for several users (usually family members) and required to retrieve sum of all s
 
     /**
      * Depending on arguments specified during API request might be:
-* Total number of points which were earned for each activity in a list provided in `a_login_activity`
-  in a case if it was provided.
-* Total number of points user currently own in a cast if `uid` specified.
+     * * Total number of points which were earned for each activity in a list provided in `a_login_activity`
+     *   in a case if it was provided.
+     * * Total number of points user currently own in a cast if `uid` specified.
      *
      * @var int|null
      */
@@ -84,17 +65,13 @@ for several users (usually family members) and required to retrieve sum of all s
      * returns
      * the current point balance for the specified user in the given business.
      *
-     * @return array Parsed JSON response data.
-     *   - int i_score: Depending on arguments specified during API request might be:
-* Total number of points which were earned for each activity in a list provided in `a_login_activity`
-  in a case if it was provided.
-* Total number of points user currently own in a cast if `uid` specified.
+     * @return ScoreApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): ScoreApiGetResponse
     {
-        return $this->client->request('/Wl/Reward/Score/Score.json', $this->params(), 'GET');
+        return new ScoreApiGetResponse($this->client->request('/Wl/Reward/Score/Score.json', $this->params(), 'GET'));
     }
 
     /**
@@ -104,13 +81,13 @@ for several users (usually family members) and required to retrieve sum of all s
      * schedules
      * reward point additions for each shareable activity.
      *
-     * @return array Parsed JSON response data.
+     * @return ScoreApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): ScoreApiPostResponse
     {
-        return $this->client->request('/Wl/Reward/Score/Score.json', $this->params(), 'POST');
+        return new ScoreApiPostResponse($this->client->request('/Wl/Reward/Score/Score.json', $this->params(), 'POST'));
     }
 
     /**
@@ -119,20 +96,19 @@ for several users (usually family members) and required to retrieve sum of all s
      * Requires the reward point reset privilege, creates a manual activity log entry, and applies the signed point
      * adjustment to the user's reward balance within a transaction.
      *
-     * @return array Parsed JSON response data.
+     * @return ScoreApiPutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function put(): array
+    public function put(): ScoreApiPutResponse
     {
-        return $this->client->request('/Wl/Reward/Score/Score.json', $this->params(), 'PUT');
+        return new ScoreApiPutResponse($this->client->request('/Wl/Reward/Score/Score.json', $this->params(), 'PUT'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_login_activity' => $this->a_login_activity,
             'i_score' => $this->i_score,
             'k_business' => $this->k_business,

@@ -10,30 +10,10 @@ use WlSdk\WlSdkClient;
 class PaymentMultipleApi
 {
     /**
-     * Custom rules for mapping API error status codes to HTTP status codes.
-
-By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
-
-Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
-- `status` - exact status match.
-- `-suffix` - status ends with `-suffix`.
-- `-part-` - status contains `-part-`.
-- `prefix-` - status starts with `prefix-`.
-- `-` - catch-all for any non-ok status that did not match any other rule.
-
-The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
-
-Only standard 4xx codes are accepted.
-     *
-     * @var string|null
-     */
-    public ?string $X-Error-Rules = null;
-
-    /**
      * The booking process information:
-
-
-Set this field value for GET requests.
+     * 
+     * 
+     * Set this field value for GET requests.
      *
      * @var array[]|null
      */
@@ -41,7 +21,7 @@ Set this field value for GET requests.
 
     /**
      * List of user keys to book appointments.
-There may be empty values in this list, which means that this is a walk-in.
+     * There may be empty values in this list, which means that this is a walk-in.
      *
      * @var string[]|null
      */
@@ -84,12 +64,13 @@ There may be empty values in this list, which means that this is a walk-in.
 
     /**
      * The user key.
-
-This field is used if the client books for himself or for the relative.
-
-This field is incorrect to use for guest booking since in this case the client will be checked as a relative.
-
-In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
+     * 
+     * This field is used if the client books for himself or for the relative.
+     * 
+     * This field is incorrect to use for guest booking since in this case the client will be checked as a
+     * relative.
+     * 
+     * In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
      *
      * @var string|null
      */
@@ -111,8 +92,8 @@ In case of a group booking or a guest booking, the key of the client who is maki
 
     /**
      * List of quiz response keys.
-Keys are quiz keys. 
-Values are quiz response keys.
+     * Keys are quiz keys. 
+     * Values are quiz response keys.
      *
      * @var string[]|null
      */
@@ -134,23 +115,13 @@ Values are quiz response keys.
      *  for each provider. Intended to be called before submitting payment so the client side can
      *  display a pricing summary.
      *
-     * @return array Parsed JSON response data.
-     *   - array[] a_promotion_data: No description.
-     *   - array[] a_purchase: No description.
-     *   - string[] a_total: The list of amounts to pay for appointments from the batch, with taxes and without surcharges.
-     *   - string k_location: Location to show available appointment booking schedule.
-     *   - string m_coupon: The gift card amount.
-     *   - string m_discount: The discount amount.
-     *   - string m_surcharge: Surcharge amount calculated for credit cards (Virtual Terminal and Card Swiper).
-     *   - string m_surcharge_ach: Surcharge amount calculated for money transfers from account: ACH, Direct Entry.
-     *   - string m_tax: The amount of tax to pay.
-     *   - string m_total: The price of the service, with taxes and without surcharges.
+     * @return PaymentMultipleApiGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(): array
+    public function get(): PaymentMultipleApiGetResponse
     {
-        return $this->client->request('/Wl/Appointment/Book/Payment/PaymentMultiple.json', $this->params(), 'GET');
+        return new PaymentMultipleApiGetResponse($this->client->request('/Wl/Appointment/Book/Payment/PaymentMultiple.json', $this->params(), 'GET'));
     }
 
     /**
@@ -160,27 +131,19 @@ Values are quiz response keys.
      *  or selected Purchase Options in the batch, and records the transactions. Requires the client
      *  to be authenticated and each provider entry to include a valid service or asset key with date.
      *
-     * @return array Parsed JSON response data.
-     *   - string[] a_login_prize: The list of redeemed prizes.
-     *   - int[] a_pay: The payment type for the appointment. One of the [RsAppointmentPaySid](#/components/schemas/RsAppointmentPaySid) constants.
-     *   - string[][] a_purchase_item: The keys of purchased items.
-
-The first level of the array is the list of appointments from the batch.
-The second level of the array is the list of items purchased for this appointment.
-     *   - string k_login_activity_purchase: Key of the activity for the purchase made. This will be empty if no purchase has been made.
+     * @return PaymentMultipleApiPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(): array
+    public function post(): PaymentMultipleApiPostResponse
     {
-        return $this->client->request('/Wl/Appointment/Book/Payment/PaymentMultiple.json', $this->params(), 'POST');
+        return new PaymentMultipleApiPostResponse($this->client->request('/Wl/Appointment/Book/Payment/PaymentMultiple.json', $this->params(), 'POST'));
     }
 
     private function params(): array
     {
         return array_filter(
             [
-            'X-Error-Rules' => $this->X-Error-Rules,
             'a_book_data' => $this->a_book_data,
             'a_uid' => $this->a_uid,
             'id_mode' => $this->id_mode,
