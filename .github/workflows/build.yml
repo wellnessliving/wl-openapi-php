@@ -48,7 +48,8 @@ jobs:
       - name: Detect changes
         id: changes
         run: |
-          git diff --quiet stable/src/ dev/src/ || echo "changed=true" >> "$GITHUB_OUTPUT"
+          git add -A stable/src/ dev/src/
+          git diff --staged --quiet || echo "changed=true" >> "$GITHUB_OUTPUT"
           STABLE_VER=$(php -r "require 'stable/src/WlSdkInfo.php'; echo \WlSdk\WlSdkInfo::SPEC_VERSION;" 2>/dev/null || echo "unknown")
           DEV_VER=$(php -r "require 'dev/src/WlSdkInfo.php'; echo \WlSdk\WlSdkInfo::SPEC_VERSION;" 2>/dev/null || echo "unknown")
           echo "stable_version=${STABLE_VER}" >> "$GITHUB_OUTPUT"
@@ -59,7 +60,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add stable/src/ dev/src/
           git commit -m "chore: regenerate PHP SDK
 
           stable: ${{ steps.changes.outputs.stable_version }}

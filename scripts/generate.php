@@ -205,6 +205,28 @@ function wlSchemaToDocType(array $spec, array $schema, int $depth = 0): string
 }
 
 /**
+ * Recursively deletes a directory and all its contents.
+ *
+ * Does nothing if the directory does not exist.
+ *
+ * @param string $dir Absolute path to the directory.
+ */
+function wlRmDir(string $dir): void
+{
+    if (!is_dir($dir)) {
+        return;
+    }
+    $items = new \RecursiveIteratorIterator(
+        new \RecursiveDirectoryIterator($dir, \FilesystemIterator::SKIP_DOTS),
+        \RecursiveIteratorIterator::CHILD_FIRST
+    );
+    foreach ($items as $item) {
+        $item->isDir() ? rmdir($item->getRealPath()) : unlink($item->getRealPath());
+    }
+    rmdir($dir);
+}
+
+/**
  * Writes a file to disk, creating intermediate directories as needed.
  *
  * @param string $filePath Absolute path to the target file.
@@ -496,6 +518,12 @@ function wlGenerateSdk(string $channel): void
 {
     echo "Generating PHP SDK ({$channel})...\n";
 
+    $outputDir = OUTPUT_DIRS[$channel];
+
+    // Wipe the output directory so removed endpoints don't leave stale files.
+    wlRmDir($outputDir);
+    echo "  Cleared {$outputDir}/\n";
+
     $specUrl = SPEC_URLS[$channel];
     echo "  Fetching spec from {$specUrl}...\n";
 
@@ -504,8 +532,6 @@ function wlGenerateSdk(string $channel): void
 
     $version = $spec['info']['version'] ?? 'unknown';
     echo "  Spec version: {$version}\n";
-
-    $outputDir = OUTPUT_DIRS[$channel];
 
     // Write static base classes (client + exception).
     foreach (['WlSdkClient.php', 'WlSdkException.php'] as $file) {
