@@ -1,0 +1,286 @@
+<?php
+namespace WlSdk\Wl\Schedule\ClassList;
+
+use WlSdk\WlSdkClient;
+
+/**
+ * This method is a modified Get method `get()`.
+ * The difference is as follows:
+ */
+class ClassList68Api
+{
+    /**
+     * Custom rules for mapping API error status codes to HTTP status codes.
+
+By default the API always returns HTTP 200, even when the response contains an error. Setting this header enables error-to-HTTP-code conversion: when the response status matches a rule, the corresponding 4xx code is returned instead of 200.
+
+Format: comma-separated entries of `{4xx_code} {pattern}[, ...]`. Pattern syntax:
+- `status` - exact status match.
+- `-suffix` - status ends with `-suffix`.
+- `-part-` - status contains `-part-`.
+- `prefix-` - status starts with `prefix-`.
+- `-` - catch-all for any non-ok status that did not match any other rule.
+
+The special entry `default` (no HTTP code prefix) expands to the built-in ruleset at that position: `400 -`, `403 -access access access-`, `404 -nx`. Rules listed before `default` override the built-in ones; rules after are fallbacks. Example: `401 access,403 access-,404 -nx,default`.
+
+Only standard 4xx codes are accepted.
+     *
+     * @var string|null
+     */
+    public ?string $X-Error-Rules = null;
+
+    /**
+     * The list of classes keys to filter.
+Return sessions with matching class IDs.
+
+If it's empty and `show_class` is `true`, all classes will be returned.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_class = null;
+
+    /**
+     * List of tabs keys.
+
+This will be ignored if `is_tab_all` is `true`.
+
+If list of tab keys is not empty, `id_class_tab` is mandatory.
+
+`null` if no filtering by Book Now Tab is required.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_class_tab = null;
+
+    /**
+     * Class filter by day of the week.
+Array of number representing the days of the week.
+Return sessions matching the given weekdays.
+(7 = Sunday, 1 = Monday, ..., 6 = Saturday)
+
+Empty array means no filtering.
+     *
+     * @var int[]|null
+     */
+    public ?array $a_day = null;
+
+    /**
+     * The list of event keys to filter.
+Return sessions with matching event keys.
+
+If it's empty and `show_event` is `true`, all events will be returned.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_event = null;
+
+    /**
+     * The list of location keys to filter results.
+If it's empty, schedule for all locations will be returned.
+All given locations should be from the same business, which is sent in [ClassListApi](/Wl/Schedule/ClassList/ClassList.json).
+     *
+     * @var string[]|null
+     */
+    public ?array $a_location = null;
+
+    /**
+     * No description.
+     *
+     * @var array[]|null
+     */
+    public ?array $a_time = null;
+
+    /**
+     * The list start date in MySQL format.
+     *
+     * @var string|null
+     */
+    public ?string $dt_date = null;
+
+    /**
+     * The list end date in MySQL format.
+     *
+     * @var string|null
+     */
+    public ?string $dt_end = null;
+
+    /**
+     * ID of tab. One of [TabSid](#/components/schemas/Wl.Classes.Tab.TabSid) constants.
+This will be ignored if `is_tab_all` is `true`.
+
+`null` if no filtering by tab is required.
+     *
+     * @var int|null
+     */
+    public ?int $id_class_tab = null;
+
+    /**
+     * `true` means to not generate `a_session` result.
+Can be used, if you do not need full information about existing classes and result in `a_calendar` is enough.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_response_short = null;
+
+    /**
+     * If `true`, sessions from every class tab are returned. If `false`, use the
+`k_class_tab` or `id_class_tab` to filter sessions by class tab.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_tab_all = null;
+
+    /**
+     * Class filter by type.
+The class is virtual.
+
+`true`: Only virtual classes.
+`false`: Only in-person.
+`null` or not set: No filtering.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_virtual = null;
+
+    /**
+     * The business key.
+     *
+     * @var string|null
+     */
+    public ?string $k_business = null;
+
+    /**
+     * The tab key.
+This will be ignored if `is_tab_all` is `true`.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_tab = null;
+
+    /**
+     * The list of staff members to filter.
+A comma separated list of staff keys.
+     *
+     * @var string|null
+     */
+    public ?string $s_staff = null;
+
+    /**
+     * The list of staff user keys to filter.
+A comma separated list of staff user keys.
+     *
+     * @var string|null
+     */
+    public ?string $s_staff_uid = null;
+
+    /**
+     * If `true`, canceled sessions will be returned. If `false`, canceled sessions won't be returned.
+     *
+     * @var bool|null
+     */
+    public ?bool $show_cancel = null;
+
+    /**
+     * If `true`, classes will be included in the response. `false` - otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $show_class = null;
+
+    /**
+     * If `true`, events are also returned. If `false`, only classes are returned.
+     *
+     * @var bool|null
+     */
+    public ?bool $show_event = null;
+
+    /**
+     * Whether to generate `a_quick` a quick filter.
+If `true`, a quick filter will be generated. `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $show_quick_filter = null;
+
+    /**
+     * The user key.
+     *
+     * @var string|null
+     */
+    public ?string $uid = null;
+
+    /** @var WlSdkClient */
+    private $client;
+
+    public function __construct(WlSdkClient $client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * This method is a modified Get method `get()`.
+The difference is as follows:
+     *
+     * - Some data for filtering is now transmitted by the post method.
+     * Because the addition of the filters creates a scenario where we can easily reach the maximum URL length of
+     * GET
+     * requests and the browser refuse to send the request (situations with long class ID, event ID or staff ID
+     * lists).
+     * 
+     *  - Added generation of a separate 'Quick filter'.
+     * This generation is enabled using the flag `show_quick_filter`.
+     * 
+     *  - Added a filter list of events `a_event`.
+     *  - Added a filter ID of tab `id_class_tab`.
+     *
+     * @return array Parsed JSON response data.
+     *   - string[] a_calendar: Keys are dates of the days inside requested date range, when there is at least one class in the business.
+If locations are sent as a parameter, then at least one class must exist in the given locations.
+
+Each key is a date string in `YYYY-MM-DD` format (local date in the business time zone).
+Each value is an empty array reserved for future use.
+     *   - array[] a_quick: No description.
+     *   - array[] a_session: No description.
+     *   - bool is_timezone_different: If `true`, the list of sessions contains sessions from different time zones. Otherwise, this will be `false`.
+     *   - bool is_virtual_service: If `true`, there exists at least one virtual service by a specified
+`k_business` and `k_class_tab`,
+Otherwise, this will be `false`.
+     * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
+     * @throws \RuntimeException On network or cURL error.
+     */
+    public function post(): array
+    {
+        return $this->client->request('/Wl/Schedule/ClassList/ClassList68.json', $this->params(), 'POST');
+    }
+
+    private function params(): array
+    {
+        return array_filter(
+            [
+            'X-Error-Rules' => $this->X-Error-Rules,
+            'a_class' => $this->a_class,
+            'a_class_tab' => $this->a_class_tab,
+            'a_day' => $this->a_day,
+            'a_event' => $this->a_event,
+            'a_location' => $this->a_location,
+            'a_time' => $this->a_time,
+            'dt_date' => $this->dt_date,
+            'dt_end' => $this->dt_end,
+            'id_class_tab' => $this->id_class_tab,
+            'is_response_short' => $this->is_response_short,
+            'is_tab_all' => $this->is_tab_all,
+            'is_virtual' => $this->is_virtual,
+            'k_business' => $this->k_business,
+            'k_class_tab' => $this->k_class_tab,
+            's_staff' => $this->s_staff,
+            's_staff_uid' => $this->s_staff_uid,
+            'show_cancel' => $this->show_cancel,
+            'show_class' => $this->show_class,
+            'show_event' => $this->show_event,
+            'show_quick_filter' => $this->show_quick_filter,
+            'uid' => $this->uid,
+            ],
+            static fn($v) => $v !== null
+        );
+    }
+}
