@@ -1,7 +1,3 @@
 vendor/
 composer.lock
 .idea
-
-# stable and dev SDK files live in their channel branches, not in main
-stable/src/
-dev/src/
