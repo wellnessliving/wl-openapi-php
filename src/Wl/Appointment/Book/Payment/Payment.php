@@ -6,7 +6,7 @@ use WlSdk\WlSdkClient;
 /**
  * Calculates pricing information for an appointment booking, including taxes, discounts, surcharges, and totals.
  */
-class PaymentPost
+class Payment
 {
     /** @var WlSdkClient */
     private $client;
@@ -23,13 +23,15 @@ class PaymentPost
      *  applicable discount codes, surcharge amounts, and the final total. Intended to be called before
      *  submitting payment so the client side can display a pricing summary to the user.
      *
-     * @return PaymentPostGetResponse
+     * @deprecated
+     *
+     * @return PaymentGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(PaymentPostGetRequest $request): PaymentPostGetResponse
+    public function get(PaymentGetRequest $request): PaymentGetResponse
     {
-        return new PaymentPostGetResponse($this->client->request('/Wl/Appointment/Book/Payment/PaymentPost.json', $request->params(), 'GET'));
+        return new PaymentGetResponse($this->client->request('/Wl/Appointment/Book/Payment/Payment.json', $request->params(), 'GET'));
     }
 
     /**
@@ -39,12 +41,14 @@ class PaymentPost
      *  Purchase Option, and records the transaction. Requires the client to be authenticated and the
      *  booking data to include a valid service or asset key.
      *
-     * @return PaymentPostPostResponse
+     * @deprecated
+     *
+     * @return PaymentPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function post(PaymentPostPostRequest $request): PaymentPostPostResponse
+    public function post(PaymentPostRequest $request): PaymentPostResponse
     {
-        return new PaymentPostPostResponse($this->client->request('/Wl/Appointment/Book/Payment/PaymentPost.json', $request->params(), 'POST'));
+        return new PaymentPostResponse($this->client->request('/Wl/Appointment/Book/Payment/Payment.json', $request->params(), 'POST'));
     }
 }
