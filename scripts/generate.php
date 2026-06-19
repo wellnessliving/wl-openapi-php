@@ -342,6 +342,11 @@ function wlBuildVerbDoc(array $spec, array $operation, string $verb, string $pat
         $lines[] = $L . 'Calls ' . strtoupper($verb) . ' ' . $path . '.';
     }
 
+    if (!empty($operation['deprecated'])) {
+        $lines[] = $E;
+        $lines[] = $L . '@deprecated';
+    }
+
     $lines[] = $E;
     $lines[] = $L . '@return ' . $responseClassName;
     $lines[] = $L . '@throws \\WlSdk\\WlSdkException On non-2xx HTTP response.';
@@ -512,35 +517,33 @@ function wlGenerateRequestClass(
 }
 
 /**
- * Generates the endpoint class for one HTTP verb on a given endpoint.
+ * Generates the endpoint class for all HTTP verbs on a given path.
+ *
+ * Produces one class with one method per verb. Each method accepts a typed
+ * request object and returns a typed response object.
  *
  * @param array $spec Full OpenAPI spec.
- * @param string $verb HTTP verb (lowercase).
- * @param array $operation OpenAPI operation object.
  * @param string $path OpenAPI path string (e.g., '/Core/Request/Example.json').
  * @param string $namespace PHP namespace (e.g., 'WlSdk\Core\Request').
- * @param string $endpointClassName Simple class name (e.g., 'ExampleGet').
- * @param string $requestClassName Simple class name (e.g., 'ExampleGetRequest').
- * @param string $responseClassName Simple class name (e.g., 'ExampleGetResponse').
+ * @param string $endpointClassName Simple class name (e.g., 'Example').
+ * @param array $operations Map of HTTP verb (lowercase) to OpenAPI operation object.
  * @param string $relDir Relative directory (e.g., 'Core/Request'), empty string for root.
  * @return array{file: string, content: string} Generated file descriptor.
  */
 function wlGenerateEndpointClass(
     array $spec,
-    string $verb,
-    array $operation,
     string $path,
     string $namespace,
     string $endpointClassName,
-    string $requestClassName,
-    string $responseClassName,
+    array $operations,
     string $relDir
 ): array {
     $useStatement = ($namespace !== NS_ROOT)
         ? "use WlSdk\\WlSdkClient;\n\n"
         : '';
 
-    $classSummary = trim($operation['summary'] ?? $operation['description'] ?? '');
+    $firstOp = reset($operations);
+    $classSummary = trim($firstOp['summary'] ?? $firstOp['description'] ?? '');
     if ($classSummary === '') {
         $classSummary = 'API endpoint: ' . $path;
     }
@@ -548,15 +551,22 @@ function wlGenerateEndpointClass(
     foreach (explode("\n", wordwrap($classSummary, 116, "\n")) as $l) {
         $classDocLines[] = ' * ' . $l;
     }
-    if (!empty($operation['deprecated'])) {
-        $classDocLines[] = ' *';
-        $classDocLines[] = ' * @deprecated';
-    }
     $classDoc = "/**\n" . implode("\n", $classDocLines) . "\n */\n";
 
-    $doc = wlBuildVerbDoc($spec, $operation, $verb, $path, $responseClassName);
     $escapedPath = addslashes($path);
-    $phpVerb = strtoupper($verb);
+    $verbsCode = '';
+    foreach ($operations as $verb => $operation) {
+        $ucVerb = ucfirst($verb);
+        $requestClass = $endpointClassName . $ucVerb . 'Request';
+        $responseClass = $endpointClassName . $ucVerb . 'Response';
+        $phpVerb = strtoupper($verb);
+        $doc = wlBuildVerbDoc($spec, $operation, $verb, $path, $responseClass);
+        $verbsCode .= $doc
+            . "    public function {$verb}({$requestClass} \$request): {$responseClass}\n"
+            . "    {\n"
+            . "        return new {$responseClass}(\$this->client->request('{$escapedPath}', \$request->params(), '{$phpVerb}'));\n"
+            . "    }\n\n";
+    }
 
     $relFile = ($relDir ? $relDir . '/' : '') . $endpointClassName . '.php';
 
@@ -572,11 +582,7 @@ function wlGenerateEndpointClass(
         . "    {\n"
         . "        \$this->client = \$client;\n"
         . "    }\n\n"
-        . $doc
-        . "    public function {$verb}({$requestClassName} \$request): {$responseClassName}\n"
-        . "    {\n"
-        . "        return new {$responseClassName}(\$this->client->request('{$escapedPath}', \$request->params(), '{$phpVerb}'));\n"
-        . "    }\n"
+        . rtrim($verbsCode) . "\n"
         . "}\n";
 
     return ['file' => $relFile, 'content' => $content];
@@ -585,9 +591,8 @@ function wlGenerateEndpointClass(
 /**
  * Generates all PHP source files for one API endpoint path.
  *
- * For each HTTP verb present, three files are generated: an endpoint class
- * (e.g. ExampleGet), a request class (e.g. ExampleGetRequest), and a response
- * class (e.g. ExampleGetResponse).
+ * Produces one endpoint class with all HTTP verb methods, plus a request class
+ * and a response class per verb (e.g. ExampleGetRequest, ExampleGetResponse).
  *
  * @param array $spec Full OpenAPI spec.
  * @param string $path OpenAPI path (e.g., '/Core/Request/Example.json').
@@ -617,16 +622,16 @@ function wlGenerateApiClass(array $spec, string $path, array $pathItem): array
 
     foreach ($operations as $verb => $operation) {
         $ucVerb = ucfirst($verb);
-        $endpointClass = $classBaseName . $ucVerb;
         $requestClass = $classBaseName . $ucVerb . 'Request';
         $responseClass = $classBaseName . $ucVerb . 'Response';
 
         $verbParams = wlCollectParams($spec, [$verb => $operation]);
 
-        $files[] = wlGenerateEndpointClass($spec, $verb, $operation, $path, $namespace, $endpointClass, $requestClass, $responseClass, $relDir);
         $files[] = wlGenerateRequestClass($verbParams, $namespace, $requestClass, $relDir);
         $files[] = wlGenerateResponseClass($spec, $verb, $operation, $namespace, $responseClass, $relDir);
     }
+
+    $files[] = wlGenerateEndpointClass($spec, $path, $namespace, $classBaseName, $operations, $relDir);
 
     return $files;
 }
