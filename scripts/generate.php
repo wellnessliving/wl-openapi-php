@@ -129,6 +129,13 @@ function wlSchemaToPhpType(array $spec, array $schema, int $depth = 0): ?string
 
     $type = $schema['type'] ?? null;
 
+    // OpenAPI 3.1 allows type to be an array: ['string', 'null'] instead of
+    // type: string + nullable: true. Extract the first non-null type.
+    if (is_array($type)) {
+        $nonNull = array_values(array_filter($type, fn($t) => $t !== 'null'));
+        $type = $nonNull[0] ?? null;
+    }
+
     $map = [
         'string' => 'string',
         'integer' => 'int',
@@ -138,7 +145,7 @@ function wlSchemaToPhpType(array $spec, array $schema, int $depth = 0): ?string
         'object' => 'array',
     ];
 
-    return $map[$type] ?? null;
+    return isset($type) ? ($map[$type] ?? null) : null;
 }
 
 /**
@@ -174,6 +181,13 @@ function wlSchemaToDocType(array $spec, array $schema, int $depth = 0): string
 
     $type = $schema['type'] ?? null;
 
+    // OpenAPI 3.1 allows type to be an array: ['string', 'null'] instead of
+    // type: string + nullable: true. Extract the first non-null type.
+    if (is_array($type)) {
+        $nonNull = array_values(array_filter($type, fn($t) => $t !== 'null'));
+        $type = $nonNull[0] ?? null;
+    }
+
     if ($type === 'array' && isset($schema['items'])) {
         return wlSchemaToDocType($spec, $schema['items'], $depth + 1) . '[]';
     }
@@ -187,7 +201,7 @@ function wlSchemaToDocType(array $spec, array $schema, int $depth = 0): string
         'object' => 'array',
     ];
 
-    return $map[$type] ?? 'mixed';
+    return isset($type) ? ($map[$type] ?? 'mixed') : 'mixed';
 }
 
 /**
