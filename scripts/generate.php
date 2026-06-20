@@ -325,9 +325,11 @@ function wlFieldNameToPascalCase(string $fieldName): string
  *
  * @param string $desc Human-readable description of the property.
  * @param string $docType Full PHPDoc type string including nullability (e.g., 'string[]|null').
+ * @param string|null $seeRef Fully-qualified class reference to append as a `@see` tag
+ *  (e.g., '\WlSdk\Wl\Quiz\Activity\ActivitySid'), or `null` to omit the tag.
  * @return string PHPDoc block with trailing newline, ready to place before the property declaration.
  */
-function wlBuildPropertyDoc(string $desc, string $docType): string
+function wlBuildPropertyDoc(string $desc, string $docType, ?string $seeRef = null): string
 {
     $code = "    /**\n";
     foreach (explode("\n", wordwrap($desc, 108, "\n")) as $l) {
@@ -335,6 +337,9 @@ function wlBuildPropertyDoc(string $desc, string $docType): string
     }
     $code .= "     *\n";
     $code .= "     * @var {$docType}\n";
+    if ($seeRef !== null) {
+        $code .= "     * @see {$seeRef}\n";
+    }
     $code .= "     */\n";
     return $code;
 }
@@ -514,7 +519,9 @@ function wlBuildResponseProperties(
         // Default: scalar or unresolvable type.
         $phpType = wlSchemaToPhpType($spec, $propSchema);
         $docType = wlSchemaToDocType($spec, $originalSchema);
-        $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $docType . '|null');
+        $enumSchemaName = wlGetEnumSchemaName($spec, $originalSchema);
+        $seeRef = ($enumSchemaName !== null) ? wlEnumSchemaToClassRef($enumSchemaName) : null;
+        $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $docType . '|null', $seeRef);
         if ($phpType !== null) {
             $propsCode .= "    public ?{$phpType} \${$phpPropName} = null;\n\n";
             $cast = $castMap[$phpType] ?? '';
@@ -782,6 +789,9 @@ function wlGenerateRequestClass(
         }
         $propsCode .= "     *\n";
         $propsCode .= "     * @var {$docType}\n";
+        if ($info['enumClass'] !== null) {
+            $propsCode .= "     * @see " . wlEnumSchemaToClassRef($info['enumClass']) . "\n";
+        }
         $propsCode .= "     */\n";
         if ($info['phpType'] !== null) {
             $propsCode .= "    public ?{$info['phpType']} \${$phpName} = null;\n\n";
