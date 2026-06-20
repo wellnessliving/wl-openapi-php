@@ -221,6 +221,27 @@ function wlEnumSchemaToClassRef(string $schemaName): string
 }
 
 /**
+ * Replaces OpenAPI markdown schema links with PHPDoc {@link} references.
+ *
+ * Converts '[Name](#/components/schemas/Wl.Mode.ModeSid)' to
+ * '{@link \WlSdk\Wl\Mode\ModeSid}'.
+ *
+ * @param string $text Description text from the OpenAPI spec.
+ * @return string Text with markdown schema links replaced by PHPDoc links.
+ */
+function wlConvertDescriptionLinks(string $text): string
+{
+    return preg_replace_callback(
+        '/\[[^\]]*\]\(#\/components\/schemas\/([^)]+)\)/',
+        static function(array $m): string
+        {
+            return '{@link ' . wlEnumSchemaToClassRef($m[1]) . '}';
+        },
+        $text
+    ) ?? $text;
+}
+
+/**
  * Returns the schema name if the schema is a $ref to an enum, null otherwise.
  *
  * @param array $spec Full OpenAPI spec.
@@ -238,6 +259,223 @@ function wlGetEnumSchemaName(array $spec, array $schema): ?string
     }
     $parts = explode('/', $schema['$ref']);
     return end($parts);
+}
+
+/**
+ * Converts a field name to PascalCase, stripping the type prefix.
+ *
+ * For example: 'a_access_log' becomes 'AccessLog', 'text_activity' becomes 'Activity'.
+ * Fields without a known prefix are converted as-is: 'foo_bar' becomes 'FooBar'.
+ *
+ * @param string $fieldName Field name with type prefix (e.g., 'a_access_log').
+ * @return string PascalCase name without type prefix (e.g., 'AccessLog').
+ */
+function wlFieldNameToPascalCase(string $fieldName): string
+{
+    // Longer prefixes first to avoid partial matches (e.g., 'dtu_' before 'd_').
+    $prefixes = ['dtu_', 'dtl_', 'dl_', 'uid_', 'url_', 'xml_', 'html_', 'text_', 'jq_', 'id_', 'a_', 'b_', 'i_', 'm_', 'k_', 'o_', 's_'];
+    foreach ($prefixes as $prefix) {
+        if (strncmp($fieldName, $prefix, strlen($prefix)) === 0) {
+            $fieldName = substr($fieldName, strlen($prefix));
+            break;
+        }
+    }
+    return str_replace('_', '', ucwords($fieldName, '_'));
+}
+
+/**
+ * Builds a PHPDoc block for a single response property.
+ *
+ * @param string $desc Human-readable description of the property.
+ * @param string $docType Full PHPDoc type string including nullability (e.g., 'string[]|null').
+ * @return string PHPDoc block with trailing newline, ready to place before the property declaration.
+ */
+function wlBuildPropertyDoc(string $desc, string $docType): string
+{
+    $code = "    /**\n";
+    foreach (explode("\n", wordwrap($desc, 108, "\n")) as $l) {
+        $code .= "     * {$l}\n";
+    }
+    $code .= "     *\n";
+    $code .= "     * @var {$docType}\n";
+    $code .= "     */\n";
+    return $code;
+}
+
+/**
+ * Builds the file descriptor for a response sub-class.
+ *
+ * @param string $namespace PHP namespace.
+ * @param string $relDir Relative directory (e.g., 'Core/Request'), empty string for root.
+ * @param string $className Simple class name.
+ * @param string $propsCode Property declarations block.
+ * @param string $constructorBody Constructor body statements.
+ * @return array{file: string, content: string} Generated file descriptor.
+ */
+function wlMakeResponseSubClass(
+    string $namespace,
+    string $relDir,
+    string $className,
+    string $propsCode,
+    string $constructorBody
+): array {
+    $relFile = ($relDir ? $relDir . '/' : '') . $className . '.php';
+    $content = "<?php\n"
+        . "namespace {$namespace};\n\n"
+        . "class {$className}\n"
+        . "{\n"
+        . $propsCode
+        . "    public function __construct(array \$data)\n"
+        . "    {\n"
+        . ($constructorBody !== '' ? $constructorBody : "        // Empty.\n")
+        . "    }\n"
+        . "}\n";
+    return ['file' => $relFile, 'content' => $content];
+}
+
+/**
+ * Builds property declarations and constructor assignments for a set of OpenAPI properties.
+ *
+ * Generates sub-classes for nested object and array-of-object properties, returning them as
+ * extra file descriptors. Three cases are handled:
+ *   - `type: object` with `properties` - generates one sub-class named `{parentClass}{FieldPascal}`.
+ *   - `type: array` with `items.type: object` - generates one sub-class for the item type.
+ *   - `type: array` with `items.oneOf` - generates one sub-class per object variant (suffixed A, B,
+ *      or the last segment of a `$ref` name). Non-object variants use raw PHPDoc types.
+ *
+ * @param array $spec Full OpenAPI spec.
+ * @param array $properties OpenAPI properties map (name => schema).
+ * @param string $namespace PHP namespace for generated sub-classes.
+ * @param string $relDir Relative directory for sub-class files.
+ * @param string $parentClassName Parent class name used as prefix for sub-class names.
+ * @return array{string, string, array<array{file: string, content: string}>}
+ *  Property declarations code, constructor body, and extra sub-class file descriptors.
+ */
+function wlBuildResponseProperties(
+    array $spec,
+    array $properties,
+    string $namespace,
+    string $relDir,
+    string $parentClassName
+): array {
+    $castMap = ['string' => '(string)', 'int' => '(int)', 'float' => '(float)', 'bool' => '(bool)', 'array' => '(array)'];
+
+    $propsCode = '';
+    $constructorBody = '';
+    $extraFiles = [];
+
+    foreach ($properties as $propName => $propSchema) {
+        // Preserve a caller-level description before resolving $ref (OpenAPI allows overriding).
+        $overrideDesc = $propSchema['description'] ?? null;
+        if (isset($propSchema['$ref'])) {
+            $resolved = wlResolveRef($spec, $propSchema['$ref']);
+            if ($resolved) {
+                $propSchema = $resolved;
+                if ($overrideDesc !== null) {
+                    $propSchema['description'] = $overrideDesc;
+                }
+            }
+        }
+
+        $rawDesc = trim($propSchema['description'] ?? '');
+        $schemaType = $propSchema['type'] ?? null;
+        if (is_array($schemaType)) {
+            $nonNull = array_values(array_filter($schemaType, fn($t) => $t !== 'null'));
+            $schemaType = $nonNull[0] ?? null;
+        }
+        $fieldPascal = wlFieldNameToPascalCase($propName);
+
+        // Case 1: type: object with properties -> generate a single sub-class.
+        if ($schemaType === 'object' && !empty($propSchema['properties'])) {
+            $subClassName = $parentClassName . $fieldPascal;
+            [$subPropsCode, $subConstructorBody, $subExtra] = wlBuildResponseProperties(
+                $spec, $propSchema['properties'], $namespace, $relDir, $subClassName
+            );
+            $extraFiles[] = wlMakeResponseSubClass($namespace, $relDir, $subClassName, $subPropsCode, $subConstructorBody);
+            array_push($extraFiles, ...$subExtra);
+
+            $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $subClassName . '|null')
+                . "    public ?{$subClassName} \${$propName} = null;\n\n";
+            $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
+                . " ? new {$subClassName}((array)\$data['{$propName}']) : null;\n";
+            continue;
+        }
+
+        // Case 2: type: array with items.
+        if ($schemaType === 'array' && isset($propSchema['items'])) {
+            $items = $propSchema['items'];
+
+            // Case 2a: items.oneOf -> one sub-class per object variant.
+            if (isset($items['oneOf'])) {
+                $docTypes = [];
+                $objectIdx = 0;
+                foreach ($items['oneOf'] as $variant) {
+                    $resolvedVariant = isset($variant['$ref'])
+                        ? (wlResolveRef($spec, $variant['$ref']) ?: $variant)
+                        : $variant;
+                    $variantType = $resolvedVariant['type'] ?? null;
+                    if ($variantType === 'object' && !empty($resolvedVariant['properties'])) {
+                        if (isset($variant['$ref'])) {
+                            $refParts = explode('/', $variant['$ref']);
+                            $refNameParts = explode('.', end($refParts));
+                            $suffix = end($refNameParts);
+                        } else {
+                            $suffix = $objectIdx < 26 ? chr(ord('A') + $objectIdx) : (string)$objectIdx;
+                        }
+                        $objectIdx++;
+                        $subClassName = $parentClassName . $fieldPascal . $suffix;
+                        [$subPropsCode, $subConstructorBody, $subExtra] = wlBuildResponseProperties(
+                            $spec, $resolvedVariant['properties'], $namespace, $relDir, $subClassName
+                        );
+                        $extraFiles[] = wlMakeResponseSubClass($namespace, $relDir, $subClassName, $subPropsCode, $subConstructorBody);
+                        array_push($extraFiles, ...$subExtra);
+                        $docTypes[] = $subClassName . '[]';
+                    } else {
+                        $docTypes[] = wlSchemaToDocType($spec, $variant) . '[]';
+                    }
+                }
+                $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', implode('|', array_unique($docTypes)) . '|null')
+                    . "    public ?array \${$propName} = null;\n\n";
+                // Cannot auto-instantiate without a discriminator; keep as plain array.
+                $constructorBody .= "        \$this->{$propName} = \$data['{$propName}'] ?? null;\n";
+                continue;
+            }
+
+            // Case 2b: items is an object with properties -> generate a sub-class for the item type.
+            $resolvedItems = isset($items['$ref']) ? (wlResolveRef($spec, $items['$ref']) ?: $items) : $items;
+            $itemType = $resolvedItems['type'] ?? null;
+            if ($itemType === 'object' && !empty($resolvedItems['properties'])) {
+                $subClassName = $parentClassName . $fieldPascal;
+                [$subPropsCode, $subConstructorBody, $subExtra] = wlBuildResponseProperties(
+                    $spec, $resolvedItems['properties'], $namespace, $relDir, $subClassName
+                );
+                $extraFiles[] = wlMakeResponseSubClass($namespace, $relDir, $subClassName, $subPropsCode, $subConstructorBody);
+                array_push($extraFiles, ...$subExtra);
+
+                $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $subClassName . '[]|null')
+                    . "    public ?array \${$propName} = null;\n\n";
+                $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
+                    . " ? array_map(static fn(\$item) => new {$subClassName}((array)\$item), (array)\$data['{$propName}']) : null;\n";
+                continue;
+            }
+        }
+
+        // Default: scalar or unresolvable type.
+        $phpType = wlSchemaToPhpType($spec, $propSchema);
+        $docType = wlSchemaToDocType($spec, $propSchema);
+        $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $docType . '|null');
+        if ($phpType !== null) {
+            $propsCode .= "    public ?{$phpType} \${$propName} = null;\n\n";
+            $cast = $castMap[$phpType] ?? '';
+            $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
+                . " ? {$cast}\$data['{$propName}'] : null;\n";
+        } else {
+            $propsCode .= "    public \${$propName} = null;\n\n";
+            $constructorBody .= "        \$this->{$propName} = \$data['{$propName}'] ?? null;\n";
+        }
+    }
+
+    return [$propsCode, $constructorBody, $extraFiles];
 }
 
 /**
@@ -309,7 +547,7 @@ function wlCollectParams(array $spec, array $operations): array
             $params[$name] = [
                 'phpType' => wlSchemaToPhpType($spec, $schema),
                 'docType' => wlSchemaToDocType($spec, $schema),
-                'description' => trim($param['description'] ?? ''),
+                'description' => wlConvertDescriptionLinks(trim($param['description'] ?? '')),
                 'enumClass' => wlGetEnumSchemaName($spec, $schema),
                 'required' => !empty($param['required']),
             ];
@@ -337,7 +575,7 @@ function wlCollectParams(array $spec, array $operations): array
             $params[$propName] = [
                 'phpType' => wlSchemaToPhpType($spec, $propSchema),
                 'docType' => wlSchemaToDocType($spec, $propSchema),
-                'description' => trim($propSchema['description'] ?? ''),
+                'description' => wlConvertDescriptionLinks(trim($propSchema['description'] ?? '')),
                 'enumClass' => wlGetEnumSchemaName($spec, $propSchema),
                 'required' => in_array($propName, $requiredFields, true),
             ];
@@ -363,8 +601,8 @@ function wlBuildVerbDoc(array $spec, array $operation, string $verb, string $pat
 
     $lines = [];
 
-    $summary = trim($operation['summary'] ?? '');
-    $description = trim($operation['description'] ?? '');
+    $summary = wlConvertDescriptionLinks(trim($operation['summary'] ?? ''));
+    $description = wlConvertDescriptionLinks(trim($operation['description'] ?? ''));
 
     if ($summary !== '') {
         $lines[] = $L . $summary;
@@ -397,8 +635,10 @@ function wlBuildVerbDoc(array $spec, array $operation, string $verb, string $pat
 }
 
 /**
- * Generates a typed response class for one HTTP verb on a given endpoint.
+ * Generates typed response class(es) for one HTTP verb on a given endpoint.
  *
+ * Returns the main response class plus any auto-generated sub-classes for nested object
+ * properties (see {@link wlBuildResponseProperties()} for the three handled cases).
  * Properties are nullable so the class handles missing fields in partial responses gracefully.
  *
  * @param array $spec Full OpenAPI spec.
@@ -407,7 +647,7 @@ function wlBuildVerbDoc(array $spec, array $operation, string $verb, string $pat
  * @param string $namespace PHP namespace (e.g., 'WlSdk\Core\Request').
  * @param string $responseClassName Simple class name (e.g., 'ExampleGetResponse').
  * @param string $relDir Relative directory (e.g., 'Core/Request'), empty string for root.
- * @return array{file: string, content: string} Generated file descriptor.
+ * @return array<array{file: string, content: string}> Main response class file plus any sub-class files.
  */
 function wlGenerateResponseClass(
     array $spec,
@@ -436,40 +676,9 @@ function wlGenerateResponseClass(
 
     $properties = ($successSchema !== null) ? ($successSchema['properties'] ?? []) : [];
 
-    $castMap = [
-        'string' => '(string)',
-        'int' => '(int)',
-        'float' => '(float)',
-        'bool' => '(bool)',
-        'array' => '(array)',
-    ];
-
-    $propsCode = '';
-    $constructorBody = '';
-
-    foreach ($properties as $propName => $propSchema) {
-        $phpType = wlSchemaToPhpType($spec, $propSchema);
-        $docType = wlSchemaToDocType($spec, $propSchema);
-        $rawDesc = trim($propSchema['description'] ?? '');
-
-        $propsCode .= "    /**\n";
-        foreach (explode("\n", wordwrap($rawDesc ?: 'No description.', 108, "\n")) as $l) {
-            $propsCode .= "     * {$l}\n";
-        }
-        $propsCode .= "     *\n";
-        $propsCode .= "     * @var {$docType}|null\n";
-        $propsCode .= "     */\n";
-
-        if ($phpType !== null) {
-            $propsCode .= "    public ?{$phpType} \${$propName} = null;\n\n";
-            $cast = $castMap[$phpType] ?? '';
-            $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
-                . " ? {$cast}\$data['{$propName}'] : null;\n";
-        } else {
-            $propsCode .= "    public \${$propName} = null;\n\n";
-            $constructorBody .= "        \$this->{$propName} = \$data['{$propName}'] ?? null;\n";
-        }
-    }
+    [$propsCode, $constructorBody, $extraFiles] = wlBuildResponseProperties(
+        $spec, $properties, $namespace, $relDir, $responseClassName
+    );
 
     $relFile = ($relDir ? $relDir . '/' : '') . $responseClassName . '.php';
 
@@ -487,7 +696,7 @@ function wlGenerateResponseClass(
         . "    }\n"
         . "}\n";
 
-    return ['file' => $relFile, 'content' => $content];
+    return array_merge([['file' => $relFile, 'content' => $content]], $extraFiles);
 }
 
 /**
@@ -676,7 +885,7 @@ function wlGenerateApiClass(array $spec, string $path, array $pathItem): array
         $verbParams = wlCollectParams($spec, [$verb => $operation]);
 
         $files[] = wlGenerateRequestClass($verbParams, $namespace, $requestClass, $relDir);
-        $files[] = wlGenerateResponseClass($spec, $verb, $operation, $namespace, $responseClass, $relDir);
+        array_push($files, ...wlGenerateResponseClass($spec, $verb, $operation, $namespace, $responseClass, $relDir));
     }
 
     $files[] = wlGenerateEndpointClass($spec, $path, $namespace, $classBaseName, $operations, $relDir);
