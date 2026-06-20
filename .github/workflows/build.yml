@@ -18,7 +18,6 @@ concurrency:
 
 permissions:
   contents: write
-  packages: write
 
 jobs:
   build:
@@ -64,18 +63,21 @@ jobs:
           STABLE_VER=$(php -r "require 'stable/src/WlSdkInfo.php'; echo \WlSdk\WlSdkInfo::SPEC_VERSION;" 2>/dev/null || echo "unknown")
           DEV_VER=$(php -r "require 'dev/src/WlSdkInfo.php'; echo \WlSdk\WlSdkInfo::SPEC_VERSION;" 2>/dev/null || echo "unknown")
           PROD_VER=$(php -r "require 'src/WlSdkInfo.php'; echo \WlSdk\WlSdkInfo::SPEC_VERSION;" 2>/dev/null || echo "pending")
-          echo "stable_version=${STABLE_VER}" >> "$GITHUB_OUTPUT"
-          echo "dev_version=${DEV_VER}"       >> "$GITHUB_OUTPUT"
-          echo "prod_version=${PROD_VER}"     >> "$GITHUB_OUTPUT"
+          echo "stable_ver=${STABLE_VER}" >> "$GITHUB_OUTPUT"
+          echo "dev_ver=${DEV_VER}"       >> "$GITHUB_OUTPUT"
+          echo "prod_ver=${PROD_VER}"     >> "$GITHUB_OUTPUT"
 
       - name: Commit production to main
         if: steps.changes.outputs.prod_changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: regenerate production SDK
-
-          production: ${{ steps.changes.outputs.prod_version }}"
+          MSG=$(printf 'chore: regenerate SDK from OpenAPI spec\n\nstable: %s\ndev: %s\nproduction: %s' \
+            "${{ steps.changes.outputs.stable_ver }}" \
+            "${{ steps.changes.outputs.dev_ver }}" \
+            "${{ steps.changes.outputs.prod_ver }}")
+          git commit -m "$MSG"
+          git pull --rebase origin main
           git push
 
       - name: Update channel branches
@@ -92,7 +94,7 @@ jobs:
               return 0
             fi
 
-            local BRANCH="channel/${CHANNEL}"
+            local BRANCH="${CHANNEL}"
             local WT="${RUNNER_TEMP}/wt-${CHANNEL}"
 
             echo "  Checking ${BRANCH}..."
@@ -126,8 +128,8 @@ jobs:
             git worktree remove "${WT}" --force
           }
 
-          push_channel "stable" "${{ steps.changes.outputs.stable_version }}" "wellnessliving/wl-openapi-php"
-          push_channel "dev"    "${{ steps.changes.outputs.dev_version }}"    "wellnessliving/wl-openapi-php-dev"
+          push_channel "stable" "${{ steps.changes.outputs.stable_ver }}" "wellnessliving/wl-openapi-php-stable"
+          push_channel "dev"    "${{ steps.changes.outputs.dev_ver }}"    "wellnessliving/wl-openapi-php-dev"
 
       - name: Package stable archive
         if: steps.channel_push.outputs.stable_pushed == 'true'
@@ -137,13 +139,13 @@ jobs:
         if: steps.channel_push.outputs.stable_pushed == 'true'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: stable-${{ steps.changes.outputs.stable_version }}
-          name: stable ${{ steps.changes.outputs.stable_version }}
+          tag_name: stable-${{ steps.changes.outputs.stable_ver }}
+          name: stable ${{ steps.changes.outputs.stable_ver }}
           body: |
             ## WellnessLiving PHP SDK - stable channel
 
-            Spec version: `${{ steps.changes.outputs.stable_version }}`
-            Branch: [`channel/stable`](https://github.com/wellnessliving/wl-openapi-php/tree/channel/stable)
+            Spec version: `${{ steps.changes.outputs.stable_ver }}`
+            Branch: [`stable`](https://github.com/wellnessliving/wl-openapi-php/tree/stable)
 
             ### Install
 
@@ -151,8 +153,9 @@ jobs:
             # Add source once (per project)
             composer config repositories.wl-sdk vcs https://github.com/wellnessliving/wl-openapi-php
 
-            composer require wellnessliving/wl-openapi-php
+            composer require wellnessliving/wl-openapi-php-stable
             ```
+          prerelease: true
           files: wl-openapi-php.zip
           fail_on_unmatched_files: false
           make_latest: false
@@ -165,14 +168,13 @@ jobs:
         if: steps.channel_push.outputs.dev_pushed == 'true'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: dev-${{ steps.changes.outputs.dev_version }}
-          name: dev ${{ steps.changes.outputs.dev_version }}
-          prerelease: true
+          tag_name: dev-${{ steps.changes.outputs.dev_ver }}
+          name: dev ${{ steps.changes.outputs.dev_ver }}
           body: |
             ## WellnessLiving PHP SDK - dev channel
 
-            Spec version: `${{ steps.changes.outputs.dev_version }}`
-            Branch: [`channel/dev`](https://github.com/wellnessliving/wl-openapi-php/tree/channel/dev)
+            Spec version: `${{ steps.changes.outputs.dev_ver }}`
+            Branch: [`dev`](https://github.com/wellnessliving/wl-openapi-php/tree/dev)
 
             > **Pre-release.** Built from the dev OpenAPI spec - may contain breaking changes.
 
@@ -196,12 +198,12 @@ jobs:
         if: steps.changes.outputs.prod_changed == 'true'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: production-${{ steps.changes.outputs.prod_version }}
-          name: production ${{ steps.changes.outputs.prod_version }}
+          tag_name: production-${{ steps.changes.outputs.prod_ver }}
+          name: production ${{ steps.changes.outputs.prod_ver }}
           body: |
             ## WellnessLiving PHP SDK - production channel
 
-            Spec version: `${{ steps.changes.outputs.prod_version }}`
+            Spec version: `${{ steps.changes.outputs.prod_ver }}`
             Branch: [`main`](https://github.com/wellnessliving/wl-openapi-php)
 
             ### Install
@@ -210,7 +212,7 @@ jobs:
             # Add source once (per project)
             composer config repositories.wl-sdk vcs https://github.com/wellnessliving/wl-openapi-php
 
-            composer require wellnessliving/wl-openapi-php-production
+            composer require wellnessliving/wl-openapi-php
             ```
           files: wl-openapi-php.zip
           fail_on_unmatched_files: false

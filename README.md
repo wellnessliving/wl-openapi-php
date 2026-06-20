@@ -8,11 +8,11 @@ and one method per HTTP verb (`get()`, `post()`, etc.).
 
 ## Channels
 
-| Channel      | Spec                      | Branch           | Description                                    |
-|--------------|---------------------------|------------------|------------------------------------------------|
-| `production` | `production/openapi.yaml` | `main`           | Dedicated production API channel.              |
-| `stable`     | `stable/openapi.yaml`     | `channel/stable` | Follows the live WellnessLiving platform.      |
-| `dev`        | `dev/openapi.yaml`        | `channel/dev`    | Latest features; may include breaking changes. |
+| Channel      | Spec                      | Branch   | Description                                    |
+|--------------|---------------------------|----------|------------------------------------------------|
+| `production` | `production/openapi.yaml` | `main`   | Dedicated production API channel.              |
+| `stable`     | `stable/openapi.yaml`     | `stable` | Follows the live WellnessLiving platform.      |
+| `dev`        | `dev/openapi.yaml`        | `dev`    | Latest features; may include breaking changes. |
 
 ## Structure
 
@@ -46,11 +46,11 @@ Add the VCS source once per project, then require the channel you need.
 composer config repositories.wl-sdk vcs https://github.com/wellnessliving/wl-openapi-php
 ```
 
-| Channel | Package | Branch | When to use |
-|---------|---------|--------|-------------|
-| production | `wellnessliving/wl-openapi-php-production` | `main` | Production API - default for live apps |
-| stable | `wellnessliving/wl-openapi-php` | `channel/stable` | Tracks the live platform |
-| dev | `wellnessliving/wl-openapi-php-dev` | `channel/dev` | Feature development - latest endpoints |
+| Channel    | Package                                    | Branch   | When to use                            |
+|------------|--------------------------------------------|----------|----------------------------------------|
+| production | `wellnessliving/wl-openapi-php`        | `main`   | Production API - default for live apps |
+| stable     | `wellnessliving/wl-openapi-php-stable` | `stable` | Tracks the live platform               |
+| dev        | `wellnessliving/wl-openapi-php-dev`    | `dev`    | Feature development - latest endpoints |
 
 ```bash
 # Development - use dev channel
@@ -58,11 +58,11 @@ composer require wellnessliving/wl-openapi-php-dev
 
 # Stabilizing / QA - switch to stable
 composer remove wellnessliving/wl-openapi-php-dev
-composer require wellnessliving/wl-openapi-php
+composer require wellnessliving/wl-openapi-php-stable
 
 # Deploy to production environment - switch to production channel
-composer remove wellnessliving/wl-openapi-php
-composer require wellnessliving/wl-openapi-php-production
+composer remove wellnessliving/wl-openapi-php-stable
+composer require wellnessliving/wl-openapi-php
 ```
 
 The namespace `WlSdk\` is identical across all channels - switching channels requires
@@ -147,11 +147,11 @@ GitHub Actions checks for upstream spec changes daily at 08:00 UTC. When a chann
 spec version changes, it commits the updated files and creates a separate GitHub Release
 for that channel:
 
-| Channel | Tag format | Release type |
-|---------|-----------|--------------|
-| stable | `stable-VERSION` | Latest release |
-| dev | `dev-VERSION` | Pre-release |
-| production | `production-VERSION` | Release |
+| Channel    | Tag format           | Release type   |
+|------------|----------------------|----------------|
+| production | `production-VERSION` | Latest release |
+| stable     | `stable-VERSION`     | Pre-release    |
+| dev        | `dev-VERSION`        | Release        |
 
 Each release contains only the zip for its channel (`wl-openapi-php-{channel}.zip`).
 Channels that did not change in a given run do not produce a new release.
@@ -165,5 +165,4 @@ To trigger automatic rebuilds when the OpenAPI spec changes, see
 
 - [API documentation](https://developers.wellnessliving.com)
 - [OpenAPI specification repository](https://github.com/wellnessliving/openapi)
-- [JavaScript SDK](https://github.com/wellnessliving/wl-sdk-js-v2)
 - [WellnessLiving](https://www.wellnessliving.com)

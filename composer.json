@@ -1,5 +1,5 @@
 {
-    "name": "wellnessliving/wl-openapi-php-production",
+    "name": "wellnessliving/wl-openapi-php",
     "description": "WellnessLiving PHP SDK - production channel",
     "license": "MIT",
     "require": {
