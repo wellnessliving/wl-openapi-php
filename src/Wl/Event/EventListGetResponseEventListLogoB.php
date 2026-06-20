@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Event;
 
 class EventListGetResponseEventListLogoB
@@ -37,21 +38,21 @@ class EventListGetResponseEventListLogoB
      *
      * @var bool|null
      */
-    public ?bool $is-resize = null;
+    public ?bool $is_resize = null;
 
     /**
      * URL of the resized thumbnail image.
      *
      * @var string|null
      */
-    public ?string $url-thumbnail = null;
+    public ?string $url_thumbnail = null;
 
     /**
      * URL of the original image in file storage.
      *
      * @var string|null
      */
-    public ?string $url-view = null;
+    public ?string $url_view = null;
 
     public function __construct(array $data)
     {
@@ -59,8 +60,8 @@ class EventListGetResponseEventListLogoB
         $this->i_rotate = isset($data['i_rotate']) ? (int)$data['i_rotate'] : null;
         $this->i_width_src = isset($data['i_width_src']) ? (int)$data['i_width_src'] : null;
         $this->id_type_src = isset($data['id_type_src']) ? (int)$data['id_type_src'] : null;
-        $this->is-resize = isset($data['is-resize']) ? (bool)$data['is-resize'] : null;
-        $this->url-thumbnail = isset($data['url-thumbnail']) ? (string)$data['url-thumbnail'] : null;
-        $this->url-view = isset($data['url-view']) ? (string)$data['url-view'] : null;
+        $this->is_resize = isset($data['is-resize']) ? (bool)$data['is-resize'] : null;
+        $this->url_thumbnail = isset($data['url-thumbnail']) ? (string)$data['url-thumbnail'] : null;
+        $this->url_view = isset($data['url-view']) ? (string)$data['url-view'] : null;
     }
 }

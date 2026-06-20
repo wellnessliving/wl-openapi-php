@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Store;
 
 class StorePostRequest
@@ -19,7 +20,7 @@ class StorePostRequest
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
-     * 
+     *
      * If `true` is sent, access to the business and to the client will be checked.
      * If `false` is sent, user can book only for himself or for relatives if this is allowed in business settings.
      *
@@ -30,7 +31,7 @@ class StorePostRequest
     /**
      * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag
      * is set to `false`.
-     * 
+     *
      * Use this field with caution.
      * The final booking will not use this flag, and the check will still be performed.
      *
@@ -82,7 +83,7 @@ class StorePostRequest
 
     /**
      * The selected sessions for an event.
-     * 
+     *
      * Keys are class period keys, values are indexed arrays of dates and times when the session occurred
      *  (in MySQL format, UTC).
      *
@@ -92,7 +93,7 @@ class StorePostRequest
 
     /**
      * The selected sessions for an event that are on the wait list and unpaid.
-     * 
+     *
      * Keys are class period keys, values are indexed arrays of dates and times when the session occurred
      *  (in MySQL format, UTC).
      *
@@ -111,7 +112,7 @@ class StorePostRequest
     /**
      * `true` to book unpaid.
      * `false` otherwise.
-     * 
+     *
      * Allows booking unpaid when client has a login promotion that can be used to pay for the service.
      * Allowed in {@link \WlSdk\Wl\Mode\ModeSid} mode only.
      *
@@ -163,7 +164,7 @@ class StorePostRequest
             'k_login_promotion' => $this->k_login_promotion,
             'k_session_pass' => $this->k_session_pass,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\Payment;
 
 class PaymentPostRequest
@@ -68,8 +69,8 @@ class PaymentPostRequest
 
     /**
      * The list of quiz response keys.
-     * Keys refer to quiz keys. 
-     * And values refer to responses. 
+     * Keys refer to quiz keys.
+     * And values refer to responses.
      * Or special values from the `skip` constant.
      *
      * @var string[]|null
@@ -107,7 +108,7 @@ class PaymentPostRequest
 
     /**
      * The manual surcharge amount.
-     * 
+     *
      * An empty string represents an automatic surcharge amount.
      *
      * @var string|null
@@ -158,7 +159,7 @@ class PaymentPostRequest
             'text_discount_code' => $this->text_discount_code,
             'text_receipt_note' => $this->text_receipt_note,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

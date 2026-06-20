@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Member\Group\GroupList;
 
 class ListGetRequest
 {
     /**
      * List of groups for filtering groups of business.
-     * 
+     *
      * `null` in the case when need to return all groups of business.
      *
      * @var string[]|null
@@ -42,7 +43,7 @@ class ListGetRequest
             'is_return_members' => $this->is_return_members,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

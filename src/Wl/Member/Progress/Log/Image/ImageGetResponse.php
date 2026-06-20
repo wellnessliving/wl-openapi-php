@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Log\Image;
 
 /**
@@ -15,6 +16,6 @@ class ImageGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_image = isset($data['a_image']) ? array_map(static fn($item) => new ImageGetResponseImage((array)$item), (array)$data['a_image']) : null;
+        $this->a_image = isset($data['a_image']) ? array_map(static fn ($item) => new ImageGetResponseImage((array)$item), (array)$data['a_image']) : null;
     }
 }

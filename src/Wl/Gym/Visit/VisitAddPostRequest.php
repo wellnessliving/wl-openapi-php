@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Gym\Visit;
 
 class VisitAddPostRequest
@@ -40,7 +41,7 @@ class VisitAddPostRequest
 
     /**
      * Determines whether payment is required for the visit.
-     * 
+     *
      * `true` if payment is needed for the visit.
      * `false` if visit should be not pay.
      *
@@ -59,7 +60,7 @@ class VisitAddPostRequest
             'dt_date' => $this->dt_date,
             'is_pay' => $this->is_pay,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

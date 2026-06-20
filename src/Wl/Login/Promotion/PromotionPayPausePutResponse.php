@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion;
 
 /**
@@ -9,7 +10,7 @@ class PromotionPayPausePutResponse
     /**
      * The promotion payment hold key. If this key is used, it will edit an existing hold.
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
-     * 
+     *
      * `null` if not yet initialized or if the request is based on `k_login_promotion`.
      *
      * @var string|null

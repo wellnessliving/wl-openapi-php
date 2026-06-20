@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Purchase;
 
 /**
@@ -437,7 +438,7 @@ class PurchaseElementGetResponse
 
     /**
      * The code to redeem gift card. This won't be empty only for gift cards.
-     * 
+     *
      * This can be auto-generated or custom (entered manually by the staff member during purchase).
      * The max length is 20 characters, which can include both numbers and letters.
      *
@@ -542,10 +543,10 @@ class PurchaseElementGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_component = isset($data['a_component']) ? array_map(static fn($item) => new PurchaseElementGetResponseComponent((array)$item), (array)$data['a_component']) : null;
-        $this->a_logo = isset($data['a_logo']) ? array_map(static fn($item) => new PurchaseElementGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
-        $this->a_restrict = isset($data['a_restrict']) ? array_map(static fn($item) => new PurchaseElementGetResponseRestrict((array)$item), (array)$data['a_restrict']) : null;
-        $this->a_tax = isset($data['a_tax']) ? array_map(static fn($item) => new PurchaseElementGetResponseTax((array)$item), (array)$data['a_tax']) : null;
+        $this->a_component = isset($data['a_component']) ? array_map(static fn ($item) => new PurchaseElementGetResponseComponent((array)$item), (array)$data['a_component']) : null;
+        $this->a_logo = isset($data['a_logo']) ? array_map(static fn ($item) => new PurchaseElementGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
+        $this->a_restrict = isset($data['a_restrict']) ? array_map(static fn ($item) => new PurchaseElementGetResponseRestrict((array)$item), (array)$data['a_restrict']) : null;
+        $this->a_tax = isset($data['a_tax']) ? array_map(static fn ($item) => new PurchaseElementGetResponseTax((array)$item), (array)$data['a_tax']) : null;
         $this->can_renew = isset($data['can_renew']) ? (bool)$data['can_renew'] : null;
         $this->dl_purchase = isset($data['dl_purchase']) ? (string)$data['dl_purchase'] : null;
         $this->dl_start = isset($data['dl_start']) ? (string)$data['dl_start'] : null;

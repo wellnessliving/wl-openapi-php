@@ -1,14 +1,15 @@
 <?php
+
 namespace WlSdk\Wl\Staff;
 
 class StaffElementPostRequest
 {
     /**
      * The key of the staff member resolved and used internally by this API.
-     * 
+     *
      * This property is populated from `uid_staff` in `post()` and
      * returned in API result for compatibility.
-     * 
+     *
      * Passing `k_staff` in request payload is not supported and causes an error.
      *
      * @var string|null
@@ -17,7 +18,7 @@ class StaffElementPostRequest
 
     /**
      * The list of locations where the staff member works.
-     * 
+     *
      * `null` means to not change the current value of the field.
      *
      * @var string[]|null
@@ -26,7 +27,7 @@ class StaffElementPostRequest
 
     /**
      * Employment end date.
-     * 
+     *
      * `null` means to not change the current value of the field.
      *
      * @var string|null
@@ -35,7 +36,7 @@ class StaffElementPostRequest
 
     /**
      * Employment start date.
-     * 
+     *
      * `null` means to not change the current value of the field.
      *
      * @var string|null
@@ -44,7 +45,7 @@ class StaffElementPostRequest
 
     /**
      * Gender of staff member. One of {@link \WlSdk\AGenderSid} constants.
-     * 
+     *
      * `null` means to not change the current value of the field or set gender by default for new staff.
      *
      * @var int|null
@@ -53,7 +54,7 @@ class StaffElementPostRequest
 
     /**
      * ID of the default system role. One of {@link \WlSdk\RsPrivilegeRoleSid}.
-     * 
+     *
      * `null` means to not change the current value of the field.
      *
      * @var int|null
@@ -62,7 +63,7 @@ class StaffElementPostRequest
 
     /**
      * Whether the staff is currently employed.
-     * 
+     *
      * `null` means to not change the current value of the field.
      *
      * @var bool|null
@@ -71,7 +72,7 @@ class StaffElementPostRequest
 
     /**
      * Determines whether the staff member be shown on the directory site of the business.
-     * 
+     *
      * If `null`, the current value of the field shouldn't be changed.
      *
      * @var bool|null
@@ -104,7 +105,7 @@ class StaffElementPostRequest
 
     /**
      * Business role key.
-     * 
+     *
      * `null` if not set.
      *
      * @var string|null
@@ -113,7 +114,7 @@ class StaffElementPostRequest
 
     /**
      * City key.
-     * 
+     *
      * `null` means to not change the current value of the field.
      *
      * @var string|null
@@ -122,7 +123,7 @@ class StaffElementPostRequest
 
     /**
      * Home location key.
-     * 
+     *
      * `null` if not set.
      *
      * @var string|null
@@ -131,7 +132,7 @@ class StaffElementPostRequest
 
     /**
      * Address.
-     * 
+     *
      * `null` means to not change the current value of the field.
      *
      * @var string|null
@@ -140,7 +141,7 @@ class StaffElementPostRequest
 
     /**
      * Staff biography.
-     * 
+     *
      * `null` means to not change the current value of the field.
      *
      * @var string|null
@@ -149,7 +150,7 @@ class StaffElementPostRequest
 
     /**
      * Custom city title.
-     * 
+     *
      * `null` means to not change the current value of the field or `k_city` is specified.
      *
      * @var string|null
@@ -159,7 +160,7 @@ class StaffElementPostRequest
     /**
      * The staff member's email address.
      * This field is required when creating a new staff member.
-     * 
+     *
      * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
@@ -169,7 +170,7 @@ class StaffElementPostRequest
     /**
      * The staff member's first name.
      * This field is required when creating a new staff member.
-     * 
+     *
      * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
@@ -178,7 +179,7 @@ class StaffElementPostRequest
 
     /**
      * The staff member's last name.
-     * 
+     *
      * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
@@ -188,7 +189,7 @@ class StaffElementPostRequest
     /**
      * The password.
      * This field is required when creating a new staff member.
-     * 
+     *
      * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
@@ -198,7 +199,7 @@ class StaffElementPostRequest
     /**
      * Confirmation of the password.
      * This field is required when creating a new staff member.
-     * 
+     *
      * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
@@ -207,7 +208,7 @@ class StaffElementPostRequest
 
     /**
      * Home phone.
-     * 
+     *
      * `null` means to not change the current value of the field.
      *
      * @var string|null
@@ -216,7 +217,7 @@ class StaffElementPostRequest
 
     /**
      * Cell phone.
-     * 
+     *
      * `null` means to not change the current value of the field.
      *
      * @var string|null
@@ -225,7 +226,7 @@ class StaffElementPostRequest
 
     /**
      * The staff member's job title.
-     * 
+     *
      * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
@@ -234,7 +235,7 @@ class StaffElementPostRequest
 
     /**
      * The staff member's job title.
-     * 
+     *
      * If `null`, the current value of the field shouldn't be changed.
      *
      * @var string|null
@@ -243,7 +244,7 @@ class StaffElementPostRequest
 
     /**
      * User key of a staff member.
-     * 
+     *
      * This is the supported request identifier for staff update operations.
      * Value is normalized into `k_staff` in `post()`.
      *
@@ -283,7 +284,7 @@ class StaffElementPostRequest
             'text_postal' => $this->text_postal,
             'uid_staff' => $this->uid_staff,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

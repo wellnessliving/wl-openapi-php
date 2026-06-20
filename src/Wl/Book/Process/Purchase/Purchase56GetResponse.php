@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Purchase;
 
 /**
@@ -58,11 +59,11 @@ class Purchase56GetResponse
 
     public function __construct(array $data)
     {
-        $this->a_login_prize = isset($data['a_login_prize']) ? array_map(static fn($item) => new Purchase56GetResponseLoginPrize((array)$item), (array)$data['a_login_prize']) : null;
-        $this->a_login_promotion = isset($data['a_login_promotion']) ? array_map(static fn($item) => new Purchase56GetResponseLoginPromotion((array)$item), (array)$data['a_login_promotion']) : null;
-        $this->a_purchase = isset($data['a_purchase']) ? array_map(static fn($item) => new Purchase56GetResponsePurchase((array)$item), (array)$data['a_purchase']) : null;
-        $this->a_reward_prize = isset($data['a_reward_prize']) ? array_map(static fn($item) => new Purchase56GetResponseRewardPrize((array)$item), (array)$data['a_reward_prize']) : null;
-        $this->a_session_pass = isset($data['a_session_pass']) ? array_map(static fn($item) => new Purchase56GetResponseSessionPass((array)$item), (array)$data['a_session_pass']) : null;
+        $this->a_login_prize = isset($data['a_login_prize']) ? array_map(static fn ($item) => new Purchase56GetResponseLoginPrize((array)$item), (array)$data['a_login_prize']) : null;
+        $this->a_login_promotion = isset($data['a_login_promotion']) ? array_map(static fn ($item) => new Purchase56GetResponseLoginPromotion((array)$item), (array)$data['a_login_promotion']) : null;
+        $this->a_purchase = isset($data['a_purchase']) ? array_map(static fn ($item) => new Purchase56GetResponsePurchase((array)$item), (array)$data['a_purchase']) : null;
+        $this->a_reward_prize = isset($data['a_reward_prize']) ? array_map(static fn ($item) => new Purchase56GetResponseRewardPrize((array)$item), (array)$data['a_reward_prize']) : null;
+        $this->a_session_pass = isset($data['a_session_pass']) ? array_map(static fn ($item) => new Purchase56GetResponseSessionPass((array)$item), (array)$data['a_session_pass']) : null;
         $this->is_single_default = isset($data['is_single_default']) ? (bool)$data['is_single_default'] : null;
         $this->k_promotion_default = isset($data['k_promotion_default']) ? (string)$data['k_promotion_default'] : null;
     }

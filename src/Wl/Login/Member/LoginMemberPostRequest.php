@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Member;
 
 class LoginMemberPostRequest
@@ -32,7 +33,7 @@ class LoginMemberPostRequest
             's_member' => $this->s_member,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

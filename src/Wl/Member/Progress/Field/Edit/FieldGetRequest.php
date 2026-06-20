@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Field\Edit;
 
 class FieldGetRequest
@@ -24,7 +25,7 @@ class FieldGetRequest
             'k_business' => $this->k_business,
             'k_field' => $this->k_field,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

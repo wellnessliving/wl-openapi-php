@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Drive\ImageUpload;
 
 /**
@@ -15,6 +16,6 @@ class ImageUploadPostResponse
 
     public function __construct(array $data)
     {
-        $this->a_image = isset($data['a_image']) ? array_map(static fn($item) => new ImageUploadPostResponseImage((array)$item), (array)$data['a_image']) : null;
+        $this->a_image = isset($data['a_image']) ? array_map(static fn ($item) => new ImageUploadPostResponseImage((array)$item), (array)$data['a_image']) : null;
     }
 }

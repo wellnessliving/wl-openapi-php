@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule;
 
 /**
@@ -8,7 +9,7 @@ class ScheduleAvailableDateGetResponse
 {
     /**
      * Nearest session date available for booking in user's or business timezone.
-     * 
+     *
      * `null` if there is no suitable session found.
      *
      * @var string|null

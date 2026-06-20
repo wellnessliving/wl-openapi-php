@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Goal\Edit;
 
 use WlSdk\WlSdkClient;

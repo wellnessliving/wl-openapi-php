@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Attendance\Add;
 
 /**
@@ -32,7 +33,7 @@ class AddPostResponse
 
     /**
      * The URL link to the store to allow for the payment of the visit.
-     * 
+     *
      * This link is for web only.
      *
      * @var string|null

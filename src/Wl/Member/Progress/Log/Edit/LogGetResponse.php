@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Log\Edit;
 
 /**
@@ -30,7 +31,7 @@ class LogGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_field_list = isset($data['a_field_list']) ? array_map(static fn($item) => new LogGetResponseFieldList((array)$item), (array)$data['a_field_list']) : null;
+        $this->a_field_list = isset($data['a_field_list']) ? array_map(static fn ($item) => new LogGetResponseFieldList((array)$item), (array)$data['a_field_list']) : null;
         $this->dt_last = isset($data['dt_last']) ? (string)$data['dt_last'] : null;
         $this->is_staff = isset($data['is_staff']) ? (bool)$data['is_staff'] : null;
     }

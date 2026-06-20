@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Group\Edit;
 
 class EditPutRequest
@@ -20,7 +21,7 @@ class EditPutRequest
     /**
      * Key of existing template.
      * Primary key in the SearchTemplateSql table.
-     * 
+     *
      * Can be empty if template needs to be created.
      *
      * @var string|null
@@ -146,7 +147,7 @@ class EditPutRequest
             's_color_foreground' => $this->s_color_foreground,
             's_icon' => $this->s_icon,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

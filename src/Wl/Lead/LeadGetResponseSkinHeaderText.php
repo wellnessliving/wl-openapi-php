@@ -1,7 +1,8 @@
 <?php
+
 namespace WlSdk\Wl\Lead;
 
-class LeadGetResponseSkinSubmit-text
+class LeadGetResponseSkinHeaderText
 {
     /**
      * CSS class names to apply to the element.
@@ -18,7 +19,7 @@ class LeadGetResponseSkinSubmit-text
     public ?string $css = null;
 
     /**
-     * Submit button text content.
+     * Header text content.
      *
      * @var string|null
      */

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ClassList;
 
 /**
@@ -9,7 +10,7 @@ class ClassList68PostResponse
     /**
      * Keys are dates of the days inside requested date range, when there is at least one class in the business.
      * If locations are sent as a parameter, then at least one class must exist in the given locations.
-     * 
+     *
      * Each key is a date string in `YYYY-MM-DD` format (local date in the business time zone).
      * Each value is an empty array reserved for future use.
      *
@@ -51,8 +52,8 @@ class ClassList68PostResponse
     public function __construct(array $data)
     {
         $this->a_calendar = isset($data['a_calendar']) ? (array)$data['a_calendar'] : null;
-        $this->a_quick = isset($data['a_quick']) ? array_map(static fn($item) => new ClassList68PostResponseQuick((array)$item), (array)$data['a_quick']) : null;
-        $this->a_session = isset($data['a_session']) ? array_map(static fn($item) => new ClassList68PostResponseSession((array)$item), (array)$data['a_session']) : null;
+        $this->a_quick = isset($data['a_quick']) ? array_map(static fn ($item) => new ClassList68PostResponseQuick((array)$item), (array)$data['a_quick']) : null;
+        $this->a_session = isset($data['a_session']) ? array_map(static fn ($item) => new ClassList68PostResponseSession((array)$item), (array)$data['a_session']) : null;
         $this->is_timezone_different = isset($data['is_timezone_different']) ? (bool)$data['is_timezone_different'] : null;
         $this->is_virtual_service = isset($data['is_virtual_service']) ? (bool)$data['is_virtual_service'] : null;
     }

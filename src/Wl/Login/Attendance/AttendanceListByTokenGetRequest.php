@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Attendance;
 
 class AttendanceListByTokenGetRequest
@@ -57,7 +58,7 @@ class AttendanceListByTokenGetRequest
             'k_class_period' => $this->k_class_period,
             'text_token' => $this->text_token,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

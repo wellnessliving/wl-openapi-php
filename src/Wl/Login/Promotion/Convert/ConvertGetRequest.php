@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\Convert;
 
 class ConvertGetRequest
@@ -24,7 +25,7 @@ class ConvertGetRequest
             'k_business' => $this->k_business,
             'k_login_promotion' => $this->k_login_promotion,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Resource;
 
 class ResourceGetResponseResourceAll
 {
     /**
      * A list of clients who have already occupied assets for this session.
-     * 1st level keys are asset keys. 
+     * 1st level keys are asset keys.
      * 2nd level keys are asset index numbers (starting from 1).
      * Values are `true` if the asset spot is occupied.
      * For example, to check if asset spot 10 with key '125' is occupied,

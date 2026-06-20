@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Asset;
 
 class CategoryGetRequest
@@ -42,7 +43,7 @@ class CategoryGetRequest
             'k_class_tab' => $this->k_class_tab,
             'k_location' => $this->k_location,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

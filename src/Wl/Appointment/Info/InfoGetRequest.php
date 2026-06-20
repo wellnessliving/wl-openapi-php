@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Info;
 
 class InfoGetRequest
@@ -16,7 +17,7 @@ class InfoGetRequest
             [
             'k_appointment' => $this->k_appointment,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

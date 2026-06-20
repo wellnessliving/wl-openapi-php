@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Asset;
 
 /**
@@ -15,6 +16,6 @@ class CategoryGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_category = isset($data['a_category']) ? array_map(static fn($item) => new CategoryGetResponseCategory((array)$item), (array)$data['a_category']) : null;
+        $this->a_category = isset($data['a_category']) ? array_map(static fn ($item) => new CategoryGetResponseCategory((array)$item), (array)$data['a_category']) : null;
     }
 }

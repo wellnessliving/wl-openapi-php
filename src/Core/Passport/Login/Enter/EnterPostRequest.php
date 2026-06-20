@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Passport\Login\Enter;
 
 class EnterPostRequest
@@ -26,7 +27,7 @@ class EnterPostRequest
 
     /**
      * A copy of the notepad that was used to hash the user password.
-     * 
+     *
      * See `s_password` for details.
      *
      * @var string|null
@@ -35,7 +36,7 @@ class EnterPostRequest
 
     /**
      * The hash of the user password.
-     * 
+     *
      * Use `Core_Passport_Login_Enter_NotepadModel.hash()` to evaluate the password hash.
      *
      * @var string|null
@@ -44,7 +45,7 @@ class EnterPostRequest
 
     /**
      * Determines whether the user login and password should be remembered, and how they should be remembered.
-     * 
+     *
      * The accepted values are:
      * <ul>
      *   <li>`&#039;&#039;` Empty line (default value) if you do not want to remember anything.</li>
@@ -75,7 +76,7 @@ class EnterPostRequest
             's_remember' => $this->s_remember,
             'url_return' => $this->url_return,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

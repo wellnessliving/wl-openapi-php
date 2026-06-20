@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\Tab;
 
 /**
@@ -15,6 +16,6 @@ class TabGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_tab = isset($data['a_tab']) ? array_map(static fn($item) => new TabGetResponseTab((array)$item), (array)$data['a_tab']) : null;
+        $this->a_tab = isset($data['a_tab']) ? array_map(static fn ($item) => new TabGetResponseTab((array)$item), (array)$data['a_tab']) : null;
     }
 }

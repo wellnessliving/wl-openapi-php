@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\User\Referrer;
 
 use WlSdk\WlSdkClient;

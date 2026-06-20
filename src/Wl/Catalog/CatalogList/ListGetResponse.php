@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\CatalogList;
 
 /**
@@ -22,7 +23,7 @@ class ListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_product = isset($data['a_product']) ? array_map(static fn($item) => new ListGetResponseProduct((array)$item), (array)$data['a_product']) : null;
-        $this->a_product_duplicate = isset($data['a_product_duplicate']) ? array_map(static fn($item) => new ListGetResponseProductDuplicate((array)$item), (array)$data['a_product_duplicate']) : null;
+        $this->a_product = isset($data['a_product']) ? array_map(static fn ($item) => new ListGetResponseProduct((array)$item), (array)$data['a_product']) : null;
+        $this->a_product_duplicate = isset($data['a_product_duplicate']) ? array_map(static fn ($item) => new ListGetResponseProductDuplicate((array)$item), (array)$data['a_product_duplicate']) : null;
     }
 }

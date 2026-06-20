@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Attach;
 
 /**
@@ -15,6 +16,6 @@ class AttachListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_list = isset($data['a_list']) ? array_map(static fn($item) => new AttachListGetResponseList((array)$item), (array)$data['a_list']) : null;
+        $this->a_list = isset($data['a_list']) ? array_map(static fn ($item) => new AttachListGetResponseList((array)$item), (array)$data['a_list']) : null;
     }
 }

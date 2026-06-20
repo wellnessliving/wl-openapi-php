@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Discount\Code;
 
 /**
@@ -15,6 +16,6 @@ class DiscountCodeGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_list = isset($data['a_list']) ? array_map(static fn($item) => new DiscountCodeGetResponseList((array)$item), (array)$data['a_list']) : null;
+        $this->a_list = isset($data['a_list']) ? array_map(static fn ($item) => new DiscountCodeGetResponseList((array)$item), (array)$data['a_list']) : null;
     }
 }

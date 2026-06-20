@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Coupon\CouponList;
 
 use WlSdk\WlSdkClient;
@@ -6,7 +7,7 @@ use WlSdk\WlSdkClient;
 /**
  * Gets list of coupons.
  */
-class List
+class ListEndpoint
 {
     /** @var WlSdkClient */
     private $client;
@@ -22,12 +23,12 @@ class List
      * Used to populate the gift card picker in the store and booking flows. Returns all gift card types
      * offered by the business. In franchise mode, gift cards from all franchise locations are included.
      *
-     * @return ListGetResponse
+     * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(ListGetRequest $request): ListGetResponse
+    public function get(ListEndpointGetRequest $request): ListEndpointGetResponse
     {
-        return new ListGetResponse($this->client->request('/Wl/Coupon/CouponList/List.json', $request->params(), 'GET'));
+        return new ListEndpointGetResponse($this->client->request('/Wl/Coupon/CouponList/List.json', $request->params(), 'GET'));
     }
 }

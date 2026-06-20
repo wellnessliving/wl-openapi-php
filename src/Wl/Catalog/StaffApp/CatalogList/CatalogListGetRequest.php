@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\StaffApp\CatalogList;
 
 class CatalogListGetRequest
@@ -33,7 +34,7 @@ class CatalogListGetRequest
             'k_location' => $this->k_location,
             'k_visit' => $this->k_visit,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

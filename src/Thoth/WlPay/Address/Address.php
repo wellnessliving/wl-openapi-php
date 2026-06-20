@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Address;
 
 use WlSdk\WlSdkClient;

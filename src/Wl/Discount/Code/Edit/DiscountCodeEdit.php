@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Discount\Code\Edit;
 
 use WlSdk\WlSdkClient;

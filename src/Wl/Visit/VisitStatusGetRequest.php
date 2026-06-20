@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Visit;
 
 class VisitStatusGetRequest
@@ -12,7 +13,7 @@ class VisitStatusGetRequest
 
     /**
      * The time zone key.
-     * 
+     *
      * `null` if not set then use default timezone client.
      *
      * @var string|null
@@ -34,7 +35,7 @@ class VisitStatusGetRequest
             'k_timezone' => $this->k_timezone,
             'k_visit' => $this->k_visit,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

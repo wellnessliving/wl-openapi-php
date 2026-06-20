@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Info;
 
 /**
@@ -120,7 +121,7 @@ class InfoGetResponse
 
     /**
      * Staff member who conducts this appointment.
-     * 
+     *
      * Deprecated: returned only for a limited list of third-party apps to keep backward compatibility.
      * Use `uid_staff` instead.
      *
@@ -151,11 +152,11 @@ class InfoGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_next = isset($data['a_next']) ? array_map(static fn($item) => new InfoGetResponseNext((array)$item), (array)$data['a_next']) : null;
-        $this->a_previous = isset($data['a_previous']) ? array_map(static fn($item) => new InfoGetResponsePrevious((array)$item), (array)$data['a_previous']) : null;
-        $this->a_question = isset($data['a_question']) ? array_map(static fn($item) => new InfoGetResponseQuestion((array)$item), (array)$data['a_question']) : null;
-        $this->a_resource = isset($data['a_resource']) ? array_map(static fn($item) => new InfoGetResponseResource((array)$item), (array)$data['a_resource']) : null;
-        $this->a_shop_product_option = isset($data['a_shop_product_option']) ? array_map(static fn($item) => new InfoGetResponseShopProductOption((array)$item), (array)$data['a_shop_product_option']) : null;
+        $this->a_next = isset($data['a_next']) ? array_map(static fn ($item) => new InfoGetResponseNext((array)$item), (array)$data['a_next']) : null;
+        $this->a_previous = isset($data['a_previous']) ? array_map(static fn ($item) => new InfoGetResponsePrevious((array)$item), (array)$data['a_previous']) : null;
+        $this->a_question = isset($data['a_question']) ? array_map(static fn ($item) => new InfoGetResponseQuestion((array)$item), (array)$data['a_question']) : null;
+        $this->a_resource = isset($data['a_resource']) ? array_map(static fn ($item) => new InfoGetResponseResource((array)$item), (array)$data['a_resource']) : null;
+        $this->a_shop_product_option = isset($data['a_shop_product_option']) ? array_map(static fn ($item) => new InfoGetResponseShopProductOption((array)$item), (array)$data['a_shop_product_option']) : null;
         $this->dt_date_local = isset($data['dt_date_local']) ? (string)$data['dt_date_local'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_index = isset($data['i_index']) ? (int)$data['i_index'] : null;

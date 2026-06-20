@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 class SubscribePostResponseMessageBroadcastT
 {
     /**
      * Card type ID.
-     * 
+     *
      * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
      * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
      *
@@ -15,7 +16,7 @@ class SubscribePostResponseMessageBroadcastT
 
     /**
      * Transaction exception ID.
-     * 
+     *
      * `null` if no errors occurred.
      *
      * @var int|null
@@ -24,7 +25,7 @@ class SubscribePostResponseMessageBroadcastT
 
     /**
      * Ticket status.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var int|null
@@ -40,7 +41,7 @@ class SubscribePostResponseMessageBroadcastT
 
     /**
      * Cardholder name.
-     * 
+     *
      * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
      * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
      *
@@ -50,7 +51,7 @@ class SubscribePostResponseMessageBroadcastT
 
     /**
      * Card expiration date.
-     * 
+     *
      * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
      * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
      *
@@ -60,7 +61,7 @@ class SubscribePostResponseMessageBroadcastT
 
     /**
      * Last four digits of the card number.
-     * 
+     *
      * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
      * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
      *
@@ -70,7 +71,7 @@ class SubscribePostResponseMessageBroadcastT
 
     /**
      * Text message to notify the client.
-     * 
+     *
      * `null` until initialized.
      *
      * @var string|null

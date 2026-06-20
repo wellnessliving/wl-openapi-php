@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Asset;
 
 class AssetListGetRequest
@@ -60,7 +61,7 @@ class AssetListGetRequest
 
     /**
      * Business key.
-     * 
+     *
      * If not set, location's business will be used.
      *
      * @var string|null
@@ -69,7 +70,7 @@ class AssetListGetRequest
 
     /**
      * The class tab key used to filter assets.
-     * 
+     *
      * This will be `null` if not set yet or if elements with no specified class tab are selected.
      *
      * @var string|null
@@ -92,7 +93,7 @@ class AssetListGetRequest
 
     /**
      * Timezone of date and time of asset booking.
-     * 
+     *
      * Empty if `dtl_date` not set or client can't change in which timezone dates should be shown.
      *
      * @var string|null
@@ -101,7 +102,7 @@ class AssetListGetRequest
 
     /**
      * Client to get information for.
-     * 
+     *
      * If client not set, returns full asset list without client restrictions.
      *
      * @var string|null
@@ -126,7 +127,7 @@ class AssetListGetRequest
             'k_timezone' => $this->k_timezone,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

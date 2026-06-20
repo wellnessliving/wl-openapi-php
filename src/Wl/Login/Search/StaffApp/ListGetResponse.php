@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Search\StaffApp;
 
 /**
@@ -22,7 +23,7 @@ class ListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_list = isset($data['a_list']) ? array_map(static fn($item) => new ListGetResponseList((array)$item), (array)$data['a_list']) : null;
+        $this->a_list = isset($data['a_list']) ? array_map(static fn ($item) => new ListGetResponseList((array)$item), (array)$data['a_list']) : null;
         $this->can_add = isset($data['can_add']) ? (bool)$data['can_add'] : null;
     }
 }

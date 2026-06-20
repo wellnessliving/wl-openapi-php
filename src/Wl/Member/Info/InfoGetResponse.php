@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Info;
 
 /**
@@ -58,7 +59,7 @@ class InfoGetResponse
 
     /**
      * The member ID.
-     * 
+     *
      * If `null`, the specified client isn't a member of the specified business.
      *
      * @var string|null
@@ -95,10 +96,10 @@ class InfoGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_info = isset($data['a_info']) ? array_map(static fn($item) => new InfoGetResponseInfo((array)$item), (array)$data['a_info']) : null;
-        $this->a_result_list = isset($data['a_result_list']) ? array_map(static fn($item) => new InfoGetResponseResultList((array)$item), (array)$data['a_result_list']) : null;
-        $this->a_visit_last = isset($data['a_visit_last']) ? array_map(static fn($item) => new InfoGetResponseVisitLast((array)$item), (array)$data['a_visit_last']) : null;
-        $this->a_visit_next = isset($data['a_visit_next']) ? array_map(static fn($item) => new InfoGetResponseVisitNext((array)$item), (array)$data['a_visit_next']) : null;
+        $this->a_info = isset($data['a_info']) ? array_map(static fn ($item) => new InfoGetResponseInfo((array)$item), (array)$data['a_info']) : null;
+        $this->a_result_list = isset($data['a_result_list']) ? array_map(static fn ($item) => new InfoGetResponseResultList((array)$item), (array)$data['a_result_list']) : null;
+        $this->a_visit_last = isset($data['a_visit_last']) ? array_map(static fn ($item) => new InfoGetResponseVisitLast((array)$item), (array)$data['a_visit_last']) : null;
+        $this->a_visit_next = isset($data['a_visit_next']) ? array_map(static fn ($item) => new InfoGetResponseVisitNext((array)$item), (array)$data['a_visit_next']) : null;
         $this->i_lifetime_visit = isset($data['i_lifetime_visit']) ? (int)$data['i_lifetime_visit'] : null;
         $this->is_traveller = isset($data['is_traveller']) ? (bool)$data['is_traveller'] : null;
         $this->m_lifetime_value = isset($data['m_lifetime_value']) ? (string)$data['m_lifetime_value'] : null;

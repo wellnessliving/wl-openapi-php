@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Purchase;
 
 class PurchaseElementGroupGetRequest
@@ -12,7 +13,7 @@ class PurchaseElementGroupGetRequest
 
     /**
      * Date/time of session is booking.
-     * 
+     *
      * `null` until initialized.
      *
      * @var string|null
@@ -59,7 +60,7 @@ class PurchaseElementGroupGetRequest
             'text_discount_code' => $this->text_discount_code,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

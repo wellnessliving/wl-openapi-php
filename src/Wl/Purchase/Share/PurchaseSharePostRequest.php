@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Purchase\Share;
 
 class PurchaseSharePostRequest
@@ -24,7 +25,7 @@ class PurchaseSharePostRequest
             'id_social' => $this->id_social,
             'k_purchase' => $this->k_purchase,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\StaffApp\CatalogList;
 
 use WlSdk\WlSdkClient;

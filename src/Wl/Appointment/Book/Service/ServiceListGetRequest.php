@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Service;
 
 class ServiceListGetRequest
 {
     /**
      * The class tab key to use to filter services. If empty, this can be found on the standard book tab.
-     * 
+     *
      * If multiple tabs are sent, appointment types, which are in at least in one of the tabs, will be in the
      * result.
      *
@@ -15,7 +16,7 @@ class ServiceListGetRequest
 
     /**
      * List of staff members to filter a result.
-     * 
+     *
      * Empty if the filtering is not necessary.
      *
      * @var string[]|null
@@ -92,12 +93,12 @@ class ServiceListGetRequest
 
     /**
      * The user key.
-     * 
+     *
      * This field is used if the client books for himself or for the relative.
-     * 
+     *
      * This field is incorrect to use for guest booking since in this case the client will be checked as a
      * relative.
-     * 
+     *
      * In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
      *
      * @var string|null
@@ -121,7 +122,7 @@ class ServiceListGetRequest
             'k_service_category' => $this->k_service_category,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

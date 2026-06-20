@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Sms\Phone;
 
 /**
@@ -8,7 +9,7 @@ class BusinessPhoneGetResponse
 {
     /**
      * Phone number of the business, which is added as sender for 2-Way SMS feature.
-     * 
+     *
      * `null` or an empty value if this business does not use this feature.
      *
      * @var string|null

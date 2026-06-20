@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Group\GroupList;
 
 class ListPutRequest
@@ -24,7 +25,7 @@ class ListPutRequest
             'k_business' => $this->k_business,
             'a_member_group_order' => $this->a_member_group_order,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

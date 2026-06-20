@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\ReportCore\Generator;
 
 /**
@@ -8,7 +9,7 @@ class QueryPostResponse
 {
     /**
      * A list of dynamic fields in this report.
-     * 
+     *
      * Copy of result of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
      *
      * @var QueryPostResponseDynamic[]|null
@@ -17,7 +18,7 @@ class QueryPostResponse
 
     /**
      * A list of fields in this report.
-     * 
+     *
      * This array is effectively a title row for table that is returned in
      * [QueryApi](/Thoth/ReportCore/Generator/Query.json).
      *
@@ -27,9 +28,9 @@ class QueryPostResponse
 
     /**
      * Report data.
-     * 
+     *
      * This is an indexed array in which one row is an indexed array also.
-     * 
+     *
      * Indexes of the columns correspond columns in [QueryApi](/Thoth/ReportCore/Generator/Query.json).
      *
      * @var string[][]|null
@@ -38,13 +39,13 @@ class QueryPostResponse
 
     /**
      * A list of stale rows.
-     * 
+     *
      * This array is only filled in when report is being updated now, or due to some other reasons contains mixed
      * version
      * data (some data from the latest generation, and other from one of previous generations).
-     * 
+     *
      * Value is index in [QueryApi](/Thoth/ReportCore/Generator/Query.json).
-     * 
+     *
      * If a row is not listed here, it is of the latest version.
      *
      * @var int[]|null
@@ -60,7 +61,7 @@ class QueryPostResponse
 
     /**
      * Date and time when this report has completed generation.
-     * 
+     *
      * `null` if generation of this report is not completed.
      *
      * @var string|null
@@ -69,7 +70,7 @@ class QueryPostResponse
 
     /**
      * Date and time when this report was put on generation queue.
-     * 
+     *
      * Effectively, this is the time when a user clicked to view this report.
      *
      * @var string|null
@@ -78,7 +79,7 @@ class QueryPostResponse
 
     /**
      * Date and time when generation of this report has started.
-     * 
+     *
      * `null` if generation of this report is not started.
      *
      * @var string|null
@@ -87,7 +88,7 @@ class QueryPostResponse
 
     /**
      * A CAS (compare-and-swap) number that allows to track changes in the report storage.
-     * 
+     *
      * This number is changed every time content of the report gets updated.
      * If this number is not changed, the content is not updated.
      *
@@ -97,7 +98,7 @@ class QueryPostResponse
 
     /**
      * Status of the report.
-     * 
+     *
      * One of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid} constants.
      *
      * @var int|null
@@ -106,7 +107,7 @@ class QueryPostResponse
 
     /**
      * Key of this report.
-     * 
+     *
      * This key may be used to subscribe to report changes with {@link \WlSdk\Core\WebSocket\ChannelBroadcast}.
      *
      * @var string|null
@@ -115,7 +116,7 @@ class QueryPostResponse
 
     /**
      * Text of an error message that occurred during generation of the report.
-     * 
+     *
      * An empty string in no error messages have occurred.
      *
      * @var string|null
@@ -124,7 +125,7 @@ class QueryPostResponse
 
     public function __construct(array $data)
     {
-        $this->a_dynamic = isset($data['a_dynamic']) ? array_map(static fn($item) => new QueryPostResponseDynamic((array)$item), (array)$data['a_dynamic']) : null;
+        $this->a_dynamic = isset($data['a_dynamic']) ? array_map(static fn ($item) => new QueryPostResponseDynamic((array)$item), (array)$data['a_dynamic']) : null;
         $this->a_field = isset($data['a_field']) ? (array)$data['a_field'] : null;
         $this->a_row = isset($data['a_row']) ? (array)$data['a_row'] : null;
         $this->a_stale = isset($data['a_stale']) ? (array)$data['a_stale'] : null;

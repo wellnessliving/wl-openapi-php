@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Location;
 
 class LocationPostRequest
@@ -86,7 +87,7 @@ class LocationPostRequest
             'text_postal' => $this->text_postal,
             'text_title' => $this->text_title,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

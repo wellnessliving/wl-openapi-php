@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Edit;
 
 class AddonUpdatePutRequest
@@ -40,7 +41,7 @@ class AddonUpdatePutRequest
             'a_addon' => $this->a_addon,
             'is_duration_update' => $this->is_duration_update,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

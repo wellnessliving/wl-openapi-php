@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\StaffApp\CatalogCart;
 
 /**
@@ -79,7 +80,7 @@ class CatalogCartGetResponse
 
     /**
      * The discount code's error code.
-     * 
+     *
      * `null` if no error.
      *
      * @var string|null
@@ -88,7 +89,7 @@ class CatalogCartGetResponse
 
     /**
      * The discount code's error message.
-     * 
+     *
      * `null` if no error.
      *
      * @var string|null
@@ -104,7 +105,7 @@ class CatalogCartGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_discount_code = isset($data['a_discount_code']) ? array_map(static fn($item) => new CatalogCartGetResponseDiscountCode((array)$item), (array)$data['a_discount_code']) : null;
+        $this->a_discount_code = isset($data['a_discount_code']) ? array_map(static fn ($item) => new CatalogCartGetResponseDiscountCode((array)$item), (array)$data['a_discount_code']) : null;
         $this->is_commission = isset($data['is_commission']) ? (bool)$data['is_commission'] : null;
         $this->is_discount_code_mode_select = isset($data['is_discount_code_mode_select']) ? (bool)$data['is_discount_code_mode_select'] : null;
         $this->is_receipt_note = isset($data['is_receipt_note']) ? (bool)$data['is_receipt_note'] : null;

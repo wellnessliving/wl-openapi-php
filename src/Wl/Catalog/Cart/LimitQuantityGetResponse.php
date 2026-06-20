@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\Cart;
 
 /**
@@ -8,9 +9,9 @@ class LimitQuantityGetResponse
 {
     /**
      * The quantity if promotions have already been purchased by the current user.
-     * 
+     *
      * If `true`, the quantity exceeded. Otherwise, this will be `false`.
-     * 
+     *
      * This will be `null` if not set yet, there's no limit quantity, or the limit quantity isn't exceeded.
      *
      * @var int|null
@@ -19,7 +20,7 @@ class LimitQuantityGetResponse
 
     /**
      * The current quantity of a promotion with the quantity limit in the cart.
-     * 
+     *
      * This will be `null` if not set yet, there's no limit quantity, or the limit quantity isn't exceeded.
      *
      * @var int|null
@@ -28,7 +29,7 @@ class LimitQuantityGetResponse
 
     /**
      * The quantity limit of the promotion.
-     * 
+     *
      * This will be `null` if not set yet or if there's no limit quantity.
      *
      * @var int|null
@@ -37,9 +38,9 @@ class LimitQuantityGetResponse
 
     /**
      * Determines whether the limit quantity has been exceeded.
-     * 
+     *
      * If `true`, the limit quantity has been exceeded. Otherwise, this will be `false`.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var bool|null

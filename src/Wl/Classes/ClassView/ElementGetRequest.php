@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Classes\ClassView;
 
 class ElementGetRequest
@@ -28,7 +29,7 @@ class ElementGetRequest
 
     /**
      * The class key used to get information for a specific class.
-     * 
+     *
      * An empty value returns information for all classes of the business.
      *
      * @var string|null
@@ -37,7 +38,7 @@ class ElementGetRequest
 
     /**
      * Defines if canceled schedules should be included in the result.
-     * 
+     *
      * If `true`, canceled schedules will be shown. Otherwise, this will be `false`.
      *
      * @var bool|null
@@ -54,7 +55,7 @@ class ElementGetRequest
             'k_class' => $this->k_class,
             'show_cancelled' => $this->show_cancelled,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

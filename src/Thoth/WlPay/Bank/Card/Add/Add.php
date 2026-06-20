@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Bank\Card\Add;
 
 use WlSdk\WlSdkClient;

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Field;
 
 class StatePutRequest
@@ -56,7 +57,7 @@ class StatePutRequest
             'is_require' => $this->is_require,
             'is_require_staff' => $this->is_require_staff,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

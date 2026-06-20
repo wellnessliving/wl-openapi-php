@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Social\Share;
 
 class SocialSharePostRequest
@@ -6,9 +7,9 @@ class SocialSharePostRequest
     /**
      * The primary keys of the shared objects. Depends on `id_share_object`.
      * If `id_share_object` is:
-     * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the visit. 
-     * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the location. 
-     * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the purchase. 
+     * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the visit.
+     * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the location.
+     * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the purchase.
      * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the review.
      *
      * @var int[]|null
@@ -53,7 +54,7 @@ class SocialSharePostRequest
             'k_business' => $this->k_business,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

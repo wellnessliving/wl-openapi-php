@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Google\Captcha;
 
 class CaptchaScoreGetRequest

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\Convert;
 
 class ConvertPostRequest
@@ -20,7 +21,7 @@ class ConvertPostRequest
     /**
      * When conversion should be done. One of the {@link \WlSdk\Wl\Login\Promotion\Convert\ConvertWhenSid}
      * constants.
-     * 
+     *
      * `null` if it's not set yet.
      *
      * @var int|null
@@ -67,7 +68,7 @@ class ConvertPostRequest
             'k_promotion_to' => $this->k_promotion_to,
             'text_note' => $this->text_note,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

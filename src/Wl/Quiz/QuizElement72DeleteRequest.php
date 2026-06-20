@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz;
 
 class QuizElement72DeleteRequest
@@ -32,7 +33,7 @@ class QuizElement72DeleteRequest
             'k_quiz' => $this->k_quiz,
             'k_quiz_login' => $this->k_quiz_login,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

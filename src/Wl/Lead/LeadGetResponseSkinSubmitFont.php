@@ -1,7 +1,8 @@
 <?php
+
 namespace WlSdk\Wl\Lead;
 
-class LeadGetResponseSkinSubmit-font
+class LeadGetResponseSkinSubmitFont
 {
     /**
      * CSS class names to apply to the element.

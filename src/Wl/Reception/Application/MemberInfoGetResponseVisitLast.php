@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Application;
 
 class MemberInfoGetResponseVisitLast
@@ -11,7 +12,7 @@ class MemberInfoGetResponseVisitLast
     public ?string $dtu_visit = null;
 
     /**
-     * Appointment key. 
+     * Appointment key.
      * `null` if it is not service or asset session.
      *
      * @var string|null
@@ -19,7 +20,7 @@ class MemberInfoGetResponseVisitLast
     public ?string $k_appointment = null;
 
     /**
-     * Class period key. 
+     * Class period key.
      * `null` if it is not class or event session.
      *
      * @var string|null

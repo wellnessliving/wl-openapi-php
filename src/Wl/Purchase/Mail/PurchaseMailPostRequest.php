@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Purchase\Mail;
 
 class PurchaseMailPostRequest
@@ -24,7 +25,7 @@ class PurchaseMailPostRequest
             'is_send_force' => $this->is_send_force,
             'k_purchase' => $this->k_purchase,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

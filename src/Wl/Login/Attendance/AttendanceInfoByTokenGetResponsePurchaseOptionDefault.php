@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Attendance;
 
 class AttendanceInfoByTokenGetResponsePurchaseOptionDefault
@@ -12,7 +13,7 @@ class AttendanceInfoByTokenGetResponsePurchaseOptionDefault
     public ?int $id_sale = null;
 
     /**
-     * The default Purchase Option key. 
+     * The default Purchase Option key.
      * This will be `null` if the class has no default Purchase Option, or it sets to "Drop-in rate".
      *
      * @var string|null

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Lead;
 
 class LeadPostRequest
@@ -46,11 +47,11 @@ class LeadPostRequest
 
     /**
      * `true` if newly created lead should be automatically signed in, `false` otherwise.
-     * 
+     *
      * Lead will not be signed in if:
      * - email is used already for another existing user;
      * - different user is signed in already (can be changed with `is_sing_in_force`).
-     * 
+     *
      * If lead is not signed in, then `text_sign_in_error` will contain an error message.
      *
      * @var bool|null
@@ -68,10 +69,10 @@ class LeadPostRequest
 
     /**
      * Key of the lead source.
-     * 
+     *
      * Must be `null` if `text_lead_source` is set.
      * If both parameters are empty, the {@link \WlSdk\Wl\Mode\ModeSid} lead source will be used.
-     * 
+     *
      * `LEAD_SOURCE_REPLACE_NONE` if Lead Source is to be unselected for the user.
      *
      * @var string|null
@@ -89,7 +90,7 @@ class LeadPostRequest
 
     /**
      * Lead source title.
-     * 
+     *
      * A new lead source will be created if it does not exist.
      * Must be `null` if `k_lead_source` is set.
      * If both parameters are empty, the {@link \WlSdk\Wl\Mode\ModeSid} lead source will be used.
@@ -113,7 +114,7 @@ class LeadPostRequest
             's_captcha' => $this->s_captcha,
             'text_lead_source' => $this->text_lead_source,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Promotion;
 
 use WlSdk\WlSdkClient;

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Event\Book\EventView;
 
 class ElementGetResponseScheduleRepeat

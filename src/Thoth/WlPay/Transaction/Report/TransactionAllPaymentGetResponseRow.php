@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Transaction\Report;
 
 class TransactionAllPaymentGetResponseRow
@@ -43,28 +44,28 @@ class TransactionAllPaymentGetResponseRow
      *
      * @var string|null
      */
-    public ?string $o_client.text_first = null;
+    public ?string $o_client_text_first = null;
 
     /**
      * Last name of the client.
      *
      * @var string|null
      */
-    public ?string $o_client.text_last = null;
+    public ?string $o_client_text_last = null;
 
     /**
      * Full name of the client.
      *
      * @var string|null
      */
-    public ?string $o_client.text_name = null;
+    public ?string $o_client_text_name = null;
 
     /**
      * Location key.
      *
      * @var string|null
      */
-    public ?string $o_location.k_location = null;
+    public ?string $o_location_k_location = null;
 
     /**
      * Batch number of the first transaction in the row.
@@ -144,10 +145,10 @@ class TransactionAllPaymentGetResponseRow
         $this->k_purchase = isset($data['k_purchase']) ? (string)$data['k_purchase'] : null;
         $this->m_net_sale = isset($data['m_net_sale']) ? (string)$data['m_net_sale'] : null;
         $this->m_total_tax = isset($data['m_total_tax']) ? (string)$data['m_total_tax'] : null;
-        $this->o_client.text_first = isset($data['o_client.text_first']) ? (string)$data['o_client.text_first'] : null;
-        $this->o_client.text_last = isset($data['o_client.text_last']) ? (string)$data['o_client.text_last'] : null;
-        $this->o_client.text_name = isset($data['o_client.text_name']) ? (string)$data['o_client.text_name'] : null;
-        $this->o_location.k_location = isset($data['o_location.k_location']) ? (string)$data['o_location.k_location'] : null;
+        $this->o_client_text_first = isset($data['o_client.text_first']) ? (string)$data['o_client.text_first'] : null;
+        $this->o_client_text_last = isset($data['o_client.text_last']) ? (string)$data['o_client.text_last'] : null;
+        $this->o_client_text_name = isset($data['o_client.text_name']) ? (string)$data['o_client.text_name'] : null;
+        $this->o_location_k_location = isset($data['o_location.k_location']) ? (string)$data['o_location.k_location'] : null;
         $this->s_batch_number = isset($data['s_batch_number']) ? (string)$data['s_batch_number'] : null;
         $this->text_location_address = isset($data['text_location_address']) ? (string)$data['text_location_address'] : null;
         $this->text_location_city = isset($data['text_location_city']) ? (string)$data['text_location_city'] : null;

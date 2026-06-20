@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Store;
 
 /**
@@ -23,7 +24,7 @@ class StorePostResponse
     /**
      * If `true`, the next steps of the booking wizard are required to purchase an item or book the selected
      * session.
-     * 
+     *
      * If `false`, no further steps in the booking wizard are required.
      *
      * @var bool|null

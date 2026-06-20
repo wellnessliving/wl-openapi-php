@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Search\Tag;
 
 /**
@@ -15,6 +16,6 @@ class SearchTagListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_search_tag = isset($data['a_search_tag']) ? array_map(static fn($item) => new SearchTagListGetResponseSearchTag((array)$item), (array)$data['a_search_tag']) : null;
+        $this->a_search_tag = isset($data['a_search_tag']) ? array_map(static fn ($item) => new SearchTagListGetResponseSearchTag((array)$item), (array)$data['a_search_tag']) : null;
     }
 }

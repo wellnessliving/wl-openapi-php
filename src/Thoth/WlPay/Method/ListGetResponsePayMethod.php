@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Method;
 
 class ListGetResponsePayMethod
@@ -11,7 +12,7 @@ class ListGetResponsePayMethod
     public ?int $id_pay_method = null;
 
     /**
-     * Payment method key. 
+     * Payment method key.
      * May be `null` if it is a system payment method.
      *
      * @var string|null

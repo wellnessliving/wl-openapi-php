@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Drive\ImageUpload;
 
 class ImageUploadPostRequest
@@ -19,7 +20,7 @@ class ImageUploadPostRequest
 
     /**
      * A list of image IDs set in `s_class`, serialized using JSON.
-     * 
+     *
      * This will be `null` if there's no data being sent by the client.
      *
      * @var string|null
@@ -34,7 +35,7 @@ class ImageUploadPostRequest
             's_class' => $this->s_class,
             'text_id' => $this->text_id,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

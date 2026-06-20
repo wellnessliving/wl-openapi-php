@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Classes\Period\Modify;
 
 /**
@@ -15,11 +16,11 @@ class ModifyPostResponse
 
     /**
      * The step direction.
-     * 
+     *
      * `true` - step forward.
-     * 
+     *
      * `false` - step back.
-     * 
+     *
      * After each step, this variable sets to the default position.
      * By default, the step direction is forward.
      *

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Term;
 
 use WlSdk\WlSdkClient;

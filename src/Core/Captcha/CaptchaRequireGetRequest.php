@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Captcha;
 
 class CaptchaRequireGetRequest
@@ -24,7 +25,7 @@ class CaptchaRequireGetRequest
             'a_arguments' => $this->a_arguments,
             'cid_captcha' => $this->cid_captcha,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

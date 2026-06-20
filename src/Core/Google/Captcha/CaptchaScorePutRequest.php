@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Core\Google\Captcha;
 
 class CaptchaScorePutRequest
 {
     /**
      * Overridden score value for V3 captcha.
-     * 
+     *
      * `null` to reset override.
      *
      * @var float|null
@@ -18,7 +19,7 @@ class CaptchaScorePutRequest
             [
             'f_score' => $this->f_score,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Service;
 
 class ServiceCheckGetRequest
@@ -48,7 +49,7 @@ class ServiceCheckGetRequest
             'k_service' => $this->k_service,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

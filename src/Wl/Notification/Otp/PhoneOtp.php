@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Notification\Otp;
 
 use WlSdk\WlSdkClient;

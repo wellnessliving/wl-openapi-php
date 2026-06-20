@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Roster\Design;
 
 /**
@@ -118,7 +119,7 @@ class ReceptionRosterDesignGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_image = isset($data['a_image']) ? array_map(static fn($item) => new ReceptionRosterDesignGetResponseImage((array)$item), (array)$data['a_image']) : null;
+        $this->a_image = isset($data['a_image']) ? array_map(static fn ($item) => new ReceptionRosterDesignGetResponseImage((array)$item), (array)$data['a_image']) : null;
         $this->hide_profile_images = isset($data['hide_profile_images']) ? (bool)$data['hide_profile_images'] : null;
         $this->i_attendance_direct_delay = isset($data['i_attendance_direct_delay']) ? (int)$data['i_attendance_direct_delay'] : null;
         $this->i_book_open = isset($data['i_book_open']) ? (int)$data['i_book_open'] : null;

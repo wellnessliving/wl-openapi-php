@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Quiz;
 
 class QuizElement72GetResponseSetting
 {
     /**
      * List of additional email addresses which should receive email notification after quiz is submitted.
-     * 
+     *
      * Considered only if `is_notify_additional` is `true`.
      *
      * @var string[]|null
@@ -14,7 +15,7 @@ class QuizElement72GetResponseSetting
 
     /**
      * List of services grouped by service ID.
-     * 
+     *
      * Key is service ID. One of {@link \WlSdk\Wl\Quiz\Service\ServiceSid} constants.
      * Values is list of services.
      *
@@ -40,7 +41,7 @@ class QuizElement72GetResponseSetting
 
     /**
      * Whether response is required every time they book service.
-     * 
+     *
      * Considered only if `is_book` is `true`.
      *
      * @var int|null
@@ -56,7 +57,7 @@ class QuizElement72GetResponseSetting
 
     /**
      * Whether response is required every time they purchase service.
-     * 
+     *
      * Considered only if `is_purchase` is `true`.
      *
      * @var int|null
@@ -83,7 +84,7 @@ class QuizElement72GetResponseSetting
 
     /**
      * Whether quiz is required during booking process.
-     * 
+     *
      * Considered only if `is_book` is `true`.
      *
      * @var bool|null
@@ -103,7 +104,7 @@ class QuizElement72GetResponseSetting
 
     /**
      * Whether email notification should be sent to specific email addresses after quiz is submitted.
-     * 
+     *
      * List of email addresses stored in `a_notify_additional`.
      *
      * @var bool|null
@@ -168,7 +169,7 @@ class QuizElement72GetResponseSetting
 
     /**
      * Whether quiz is required during purchase process.
-     * 
+     *
      * Considered only if `is_purchase` is `true`.
      *
      * @var bool|null
@@ -184,7 +185,7 @@ class QuizElement72GetResponseSetting
 
     /**
      * Whether quiz is required during registration process.
-     * 
+     *
      * Considered only if `is_register_after` is `true`.
      *
      * @var bool|null

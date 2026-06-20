@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Event;
 
 class EventListPutRequest
 {
     /**
      * The event business key to retrieve a list of all event sessions in business.
-     * 
+     *
      * `null` to retrieve events from `k_location`.
      *
      * @var string|null
@@ -35,7 +36,7 @@ class EventListPutRequest
             'uid' => $this->uid,
             'is_cache_reset' => $this->is_cache_reset,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

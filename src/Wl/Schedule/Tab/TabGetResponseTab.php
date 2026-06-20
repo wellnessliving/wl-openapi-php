@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\Tab;
 
 class TabGetResponseTab
@@ -13,7 +14,7 @@ class TabGetResponseTab
     /**
      * If this tab has redefined a default system Class Tab then it references a constant defined in
      * {@link \WlSdk\Wl\Classes\Tab\TabSid}.
-     * 
+     *
      * Otherwise, this will be `null`.
      *
      * @var int|null

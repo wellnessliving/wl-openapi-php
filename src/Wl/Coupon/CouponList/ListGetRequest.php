@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Coupon\CouponList;
 
 class ListGetRequest
@@ -41,7 +42,7 @@ class ListGetRequest
             'is_inactive_include' => $this->is_inactive_include,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

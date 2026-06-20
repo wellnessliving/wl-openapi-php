@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Review\ReviewList;
 
 /**
@@ -15,6 +16,6 @@ class ReviewElementGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_review = isset($data['a_review']) ? array_map(static fn($item) => new ReviewElementGetResponseReview((array)$item), (array)$data['a_review']) : null;
+        $this->a_review = isset($data['a_review']) ? array_map(static fn ($item) => new ReviewElementGetResponseReview((array)$item), (array)$data['a_review']) : null;
     }
 }

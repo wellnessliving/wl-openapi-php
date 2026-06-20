@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business;
 
 class BusinessPutRequest
@@ -20,7 +21,7 @@ class BusinessPutRequest
 
     /**
      * The key of the business.
-     * 
+     *
      * When using `post()` returned key of the created business.
      * When using `put()` used for update business.
      *
@@ -70,7 +71,7 @@ class BusinessPutRequest
             'text_mail' => $this->text_mail,
             'text_phone' => $this->text_phone,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

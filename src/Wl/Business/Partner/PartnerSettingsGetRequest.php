@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Partner;
 
 class PartnerSettingsGetRequest
@@ -16,7 +17,7 @@ class PartnerSettingsGetRequest
             [
             'text_code' => $this->text_code,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

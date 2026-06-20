@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Passport\Login\Enter;
 
 class PassportOtpGetRequest
@@ -44,7 +45,7 @@ class PassportOtpGetRequest
             'k_business' => $this->k_business,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

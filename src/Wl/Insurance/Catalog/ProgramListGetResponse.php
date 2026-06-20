@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Insurance\Catalog;
 
 /**
@@ -15,6 +16,6 @@ class ProgramListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_wellness_program = isset($data['a_wellness_program']) ? array_map(static fn($item) => new ProgramListGetResponseWellnessProgram((array)$item), (array)$data['a_wellness_program']) : null;
+        $this->a_wellness_program = isset($data['a_wellness_program']) ? array_map(static fn ($item) => new ProgramListGetResponseWellnessProgram((array)$item), (array)$data['a_wellness_program']) : null;
     }
 }

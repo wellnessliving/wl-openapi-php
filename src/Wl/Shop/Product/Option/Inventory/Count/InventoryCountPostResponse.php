@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Shop\Product\Option\Inventory\Count;
 
 /**

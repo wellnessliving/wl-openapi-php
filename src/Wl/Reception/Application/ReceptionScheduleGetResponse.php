@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Application;
 
 /**
@@ -31,7 +32,7 @@ class ReceptionScheduleGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_class = isset($data['a_class']) ? array_map(static fn($item) => new ReceptionScheduleGetResponseClass((array)$item), (array)$data['a_class']) : null;
+        $this->a_class = isset($data['a_class']) ? array_map(static fn ($item) => new ReceptionScheduleGetResponseClass((array)$item), (array)$data['a_class']) : null;
         $this->a_schedule_class_all = isset($data['a_schedule_class_all']) ? (array)$data['a_schedule_class_all'] : null;
         $this->html_schedule = isset($data['html_schedule']) ? (string)$data['html_schedule'] : null;
     }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Info;
 
 /**
@@ -8,7 +9,7 @@ class InfoGetResponse
 {
     /**
      * Week days available for recurring booking. Constants of {@link \WlSdk\ADateWeekSid} class.
-     * 
+     *
      * `null` if recurring booking is not available.
      *
      * @var int[]|null
@@ -91,7 +92,7 @@ class InfoGetResponse
 
     /**
      * Number of available spots.
-     * 
+     *
      * `null` if this information is not available.
      *
      * @var int|null
@@ -100,7 +101,7 @@ class InfoGetResponse
 
     /**
      * Number of booked spots.
-     * 
+     *
      * `null` if this information is not available.
      *
      * @var int|null
@@ -218,7 +219,7 @@ class InfoGetResponse
 
     /**
      * Event price at an early discount.
-     * 
+     *
      * An empty string if there is no discount.
      *
      * @var string|null
@@ -285,9 +286,9 @@ class InfoGetResponse
     public function __construct(array $data)
     {
         $this->a_day_available = isset($data['a_day_available']) ? (array)$data['a_day_available'] : null;
-        $this->a_session_all = isset($data['a_session_all']) ? array_map(static fn($item) => new InfoGetResponseSessionAll((array)$item), (array)$data['a_session_all']) : null;
-        $this->a_session_free = isset($data['a_session_free']) ? array_map(static fn($item) => new InfoGetResponseSessionFree((array)$item), (array)$data['a_session_free']) : null;
-        $this->a_staff = isset($data['a_staff']) ? array_map(static fn($item) => new InfoGetResponseStaff((array)$item), (array)$data['a_staff']) : null;
+        $this->a_session_all = isset($data['a_session_all']) ? array_map(static fn ($item) => new InfoGetResponseSessionAll((array)$item), (array)$data['a_session_all']) : null;
+        $this->a_session_free = isset($data['a_session_free']) ? array_map(static fn ($item) => new InfoGetResponseSessionFree((array)$item), (array)$data['a_session_free']) : null;
+        $this->a_staff = isset($data['a_staff']) ? array_map(static fn ($item) => new InfoGetResponseStaff((array)$item), (array)$data['a_staff']) : null;
         $this->dl_end = isset($data['dl_end']) ? (string)$data['dl_end'] : null;
         $this->dt_date_local = isset($data['dt_date_local']) ? (string)$data['dt_date_local'] : null;
         $this->hide_price = isset($data['hide_price']) ? (bool)$data['hide_price'] : null;

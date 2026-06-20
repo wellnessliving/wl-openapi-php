@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Board;
 
 /**
@@ -36,7 +37,7 @@ class ElementGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_reward = isset($data['a_reward']) ? array_map(static fn($item) => new ElementGetResponseReward((array)$item), (array)$data['a_reward']) : null;
+        $this->a_reward = isset($data['a_reward']) ? array_map(static fn ($item) => new ElementGetResponseReward((array)$item), (array)$data['a_reward']) : null;
         $this->i_score = isset($data['i_score']) ? (int)$data['i_score'] : null;
         $this->s_name = isset($data['s_name']) ? (string)$data['s_name'] : null;
         $this->url_logo = isset($data['url_logo']) ? (string)$data['url_logo'] : null;

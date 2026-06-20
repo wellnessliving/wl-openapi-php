@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Holiday;
 
 use WlSdk\WlSdkClient;

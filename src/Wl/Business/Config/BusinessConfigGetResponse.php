@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Config;
 
 /**
@@ -29,7 +30,7 @@ class BusinessConfigGetResponse
 
     /**
      * Determines whether staff members should select a location at checkout.
-     * 
+     *
      * If `true`, staff members should select a location at checkout. Otherwise, this will be `false`.
      *
      * @var bool|null
@@ -38,7 +39,7 @@ class BusinessConfigGetResponse
 
     /**
      * Determines whether the business has white label setting enabled in the admin settings.
-     * 
+     *
      * If `true`, admin settings are enabled. Otherwise, this will be `false`.
      *
      * @var bool|null
@@ -47,8 +48,8 @@ class BusinessConfigGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_business_policy = isset($data['a_business_policy']) ? array_map(static fn($item) => new BusinessConfigGetResponseBusinessPolicy((array)$item), (array)$data['a_business_policy']) : null;
-        $this->a_penalty = isset($data['a_penalty']) ? array_map(static fn($item) => new BusinessConfigGetResponsePenalty((array)$item), (array)$data['a_penalty']) : null;
+        $this->a_business_policy = isset($data['a_business_policy']) ? array_map(static fn ($item) => new BusinessConfigGetResponseBusinessPolicy((array)$item), (array)$data['a_business_policy']) : null;
+        $this->a_penalty = isset($data['a_penalty']) ? array_map(static fn ($item) => new BusinessConfigGetResponsePenalty((array)$item), (array)$data['a_penalty']) : null;
         $this->is_location_client_select = isset($data['is_location_client_select']) ? (bool)$data['is_location_client_select'] : null;
         $this->is_location_select = isset($data['is_location_select']) ? (bool)$data['is_location_select'] : null;
         $this->is_white_label = isset($data['is_white_label']) ? (bool)$data['is_white_label'] : null;

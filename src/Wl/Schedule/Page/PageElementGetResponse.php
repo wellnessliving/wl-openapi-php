@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\Page;
 
 /**
@@ -109,7 +110,7 @@ class PageElementGetResponse
     /**
      * The note type ID. This will be set to `null` if notes aren't allowed.
      * This is one of the {@link \WlSdk\Wl\Visit\Note\Sid\NoteSid} constants.
-     * 
+     *
      * This will be `null` if notes aren't allowed.
      *
      * @var int|null
@@ -118,7 +119,7 @@ class PageElementGetResponse
 
     /**
      * The virtual provider ID. One of the {@link \WlSdk\Wl\Virtual\VirtualProviderSid} constants.
-     * 
+     *
      * This will be `null` for non-virtual services.
      *
      * @var int|null
@@ -127,7 +128,7 @@ class PageElementGetResponse
 
     /**
      * The visit type ID. One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
-     * 
+     *
      * This will be `null` if not loaded yet.
      *
      * @var int|null
@@ -173,7 +174,7 @@ class PageElementGetResponse
     /**
      * The appointment key.
      * This will be set only if the visit is an appointment.
-     * 
+     *
      * If the visit is a class or event, this will be `null`.
      *
      * @var string|null
@@ -190,7 +191,7 @@ class PageElementGetResponse
 
     /**
      * The class period key. This will be set only if the visit is a class or an event.
-     * 
+     *
      * If the visit is an appointment, this will be `null`.
      *
      * @var string|null
@@ -269,11 +270,11 @@ class PageElementGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_appointment_visit_info = isset($data['a_appointment_visit_info']) ? array_map(static fn($item) => new PageElementGetResponseAppointmentVisitInfo((array)$item), (array)$data['a_appointment_visit_info']) : null;
-        $this->a_asset = isset($data['a_asset']) ? array_map(static fn($item) => new PageElementGetResponseAsset((array)$item), (array)$data['a_asset']) : null;
-        $this->a_class_info = isset($data['a_class_info']) ? array_map(static fn($item) => new PageElementGetResponseClassInfo((array)$item), (array)$data['a_class_info']) : null;
-        $this->a_resource_image = isset($data['a_resource_image']) ? array_map(static fn($item) => new PageElementGetResponseResourceImage((array)$item), (array)$data['a_resource_image']) : null;
-        $this->a_staff = isset($data['a_staff']) ? array_map(static fn($item) => new PageElementGetResponseStaff((array)$item), (array)$data['a_staff']) : null;
+        $this->a_appointment_visit_info = isset($data['a_appointment_visit_info']) ? array_map(static fn ($item) => new PageElementGetResponseAppointmentVisitInfo((array)$item), (array)$data['a_appointment_visit_info']) : null;
+        $this->a_asset = isset($data['a_asset']) ? array_map(static fn ($item) => new PageElementGetResponseAsset((array)$item), (array)$data['a_asset']) : null;
+        $this->a_class_info = isset($data['a_class_info']) ? array_map(static fn ($item) => new PageElementGetResponseClassInfo((array)$item), (array)$data['a_class_info']) : null;
+        $this->a_resource_image = isset($data['a_resource_image']) ? array_map(static fn ($item) => new PageElementGetResponseResourceImage((array)$item), (array)$data['a_resource_image']) : null;
+        $this->a_staff = isset($data['a_staff']) ? array_map(static fn ($item) => new PageElementGetResponseStaff((array)$item), (array)$data['a_staff']) : null;
         $this->dt_cancel = isset($data['dt_cancel']) ? (string)$data['dt_cancel'] : null;
         $this->dt_date_global = isset($data['dt_date_global']) ? (string)$data['dt_date_global'] : null;
         $this->dt_date_local = isset($data['dt_date_local']) ? (string)$data['dt_date_local'] : null;

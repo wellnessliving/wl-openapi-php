@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Core\Google\Captcha;
 
 class CaptchaScorePostRequest
 {
     /**
      * The user token CAPTCHA from {@link \WlSdk\Core\Google\Captcha\CaptchaVersionSid} captcha.
-     * 
+     *
      * Be careful when use this endpoint for validate token, because token can be used only once,
      * so if you validate token in this endpoint, you must generate new token for next requests.
      *
@@ -19,7 +20,7 @@ class CaptchaScorePostRequest
             [
             'text_token' => $this->text_token,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

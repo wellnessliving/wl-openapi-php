@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Collector;
 
 /**
@@ -15,6 +16,6 @@ class DebtListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_debt = isset($data['a_debt']) ? array_map(static fn($item) => new DebtListGetResponseDebt((array)$item), (array)$data['a_debt']) : null;
+        $this->a_debt = isset($data['a_debt']) ? array_map(static fn ($item) => new DebtListGetResponseDebt((array)$item), (array)$data['a_debt']) : null;
     }
 }

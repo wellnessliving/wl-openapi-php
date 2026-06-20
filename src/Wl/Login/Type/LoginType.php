@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Type;
 
 use WlSdk\WlSdkClient;

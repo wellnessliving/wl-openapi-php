@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Staff\StaffView;
 
 class StaffViewGetRequest
@@ -70,7 +71,7 @@ class StaffViewGetRequest
             'k_staff' => $this->k_staff,
             'uid_staff' => $this->uid_staff,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

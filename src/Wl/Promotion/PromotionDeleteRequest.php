@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Promotion;
 
 class PromotionDeleteRequest
@@ -24,7 +25,7 @@ class PromotionDeleteRequest
             'k_business' => $this->k_business,
             'k_promotion' => $this->k_promotion,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

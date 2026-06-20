@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video;
 
 class VideoElementPutRequest
@@ -16,7 +17,7 @@ class VideoElementPutRequest
             [
             'html_embed' => $this->html_embed,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

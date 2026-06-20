@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\User\Referrer;
 
 /**
@@ -65,7 +66,7 @@ class ReferrerGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_photo = isset($data['a_photo']) ? array_map(static fn($item) => new ReferrerGetResponsePhoto((array)$item), (array)$data['a_photo']) : null;
+        $this->a_photo = isset($data['a_photo']) ? array_map(static fn ($item) => new ReferrerGetResponsePhoto((array)$item), (array)$data['a_photo']) : null;
         $this->s_email = isset($data['s_email']) ? (string)$data['s_email'] : null;
         $this->s_member = isset($data['s_member']) ? (string)$data['s_member'] : null;
         $this->s_name_first = isset($data['s_name_first']) ? (string)$data['s_name_first'] : null;

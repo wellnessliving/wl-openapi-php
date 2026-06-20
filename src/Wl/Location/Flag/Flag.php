@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Location\Flag;
 
 use WlSdk\WlSdkClient;

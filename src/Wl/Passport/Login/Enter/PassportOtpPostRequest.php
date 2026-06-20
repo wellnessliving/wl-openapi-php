@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Passport\Login\Enter;
 
 class PassportOtpPostRequest
@@ -32,7 +33,7 @@ class PassportOtpPostRequest
             'uid' => $this->uid,
             's_otp_code' => $this->s_otp_code,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\StaffApp\CatalogList;
 
 class CatalogListGetResponseShopProduct
@@ -21,7 +22,7 @@ class CatalogListGetResponseShopProduct
 
     /**
      * The list of member groups available to purchase the sale item.
-     * 
+     *
      * Empty list means that the sale item is available to all member groups.
      *
      * @var string[]|null

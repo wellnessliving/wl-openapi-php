@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\User\Referrer;
 
 class ReferrerGetRequest
@@ -24,7 +25,7 @@ class ReferrerGetRequest
             'k_business' => $this->k_business,
             's_search' => $this->s_search,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

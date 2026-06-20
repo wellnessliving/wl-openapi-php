@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\PurchaseList;
 
 /**
@@ -513,7 +514,7 @@ class PurchaseListElementGetResponse
 
     /**
      * Cancellation fee amount.
-     * 
+     *
      * `null` if no need charge fee.
      *
      * @var string|null
@@ -529,7 +530,7 @@ class PurchaseListElementGetResponse
 
     /**
      * The code to redeem the gift card. This isn't empty only for gift cards.
-     * 
+     *
      * This can be auto-generated or custom (entered manually by the staff member during purchase).
      * The max length is 20 characters, including numbers and letters.
      *
@@ -651,9 +652,9 @@ class PurchaseListElementGetResponse
     public function __construct(array $data)
     {
         $this->a_component = $data['a_component'] ?? null;
-        $this->a_logo = isset($data['a_logo']) ? array_map(static fn($item) => new PurchaseListElementGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
-        $this->a_restrict = isset($data['a_restrict']) ? array_map(static fn($item) => new PurchaseListElementGetResponseRestrict((array)$item), (array)$data['a_restrict']) : null;
-        $this->a_tax = isset($data['a_tax']) ? array_map(static fn($item) => new PurchaseListElementGetResponseTax((array)$item), (array)$data['a_tax']) : null;
+        $this->a_logo = isset($data['a_logo']) ? array_map(static fn ($item) => new PurchaseListElementGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
+        $this->a_restrict = isset($data['a_restrict']) ? array_map(static fn ($item) => new PurchaseListElementGetResponseRestrict((array)$item), (array)$data['a_restrict']) : null;
+        $this->a_tax = isset($data['a_tax']) ? array_map(static fn ($item) => new PurchaseListElementGetResponseTax((array)$item), (array)$data['a_tax']) : null;
         $this->can_renew = isset($data['can_renew']) ? (bool)$data['can_renew'] : null;
         $this->dl_cancel = isset($data['dl_cancel']) ? (string)$data['dl_cancel'] : null;
         $this->dl_end = isset($data['dl_end']) ? (string)$data['dl_end'] : null;

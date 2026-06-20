@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Resource\ResourceList;
 
 /**
@@ -15,6 +16,6 @@ class ListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_resource = isset($data['a_resource']) ? array_map(static fn($item) => new ListGetResponseResource((array)$item), (array)$data['a_resource']) : null;
+        $this->a_resource = isset($data['a_resource']) ? array_map(static fn ($item) => new ListGetResponseResource((array)$item), (array)$data['a_resource']) : null;
     }
 }

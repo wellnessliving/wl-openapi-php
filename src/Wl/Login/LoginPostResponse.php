@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login;
 
 /**
@@ -15,6 +16,6 @@ class LoginPostResponse
 
     public function __construct(array $data)
     {
-        $this->a_login = isset($data['a_login']) ? array_map(static fn($item) => new LoginPostResponseLogin((array)$item), (array)$data['a_login']) : null;
+        $this->a_login = isset($data['a_login']) ? array_map(static fn ($item) => new LoginPostResponseLogin((array)$item), (array)$data['a_login']) : null;
     }
 }

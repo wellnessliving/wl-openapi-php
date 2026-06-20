@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Application;
 
 class ReceptionSchedulePostRequest
@@ -40,7 +41,7 @@ class ReceptionSchedulePostRequest
 
     /**
      * The key of the appointment to check in.
-     * 
+     *
      * If `null`, this is class visit or gym visit.
      *
      * @var string|null
@@ -49,7 +50,7 @@ class ReceptionSchedulePostRequest
 
     /**
      * The key of the class schedule to check in.
-     * 
+     *
      * If `null`, this is an appointment visit or gym visit.
      *
      * @var string|null
@@ -68,7 +69,7 @@ class ReceptionSchedulePostRequest
             'k_appointment' => $this->k_appointment,
             'k_class_period' => $this->k_class_period,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

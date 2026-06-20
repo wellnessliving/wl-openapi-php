@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\GuestPass;
 
 class GuestPassGetResponseGuestPassImage
@@ -22,12 +23,12 @@ class GuestPassGetResponseGuestPassImage
      *
      * @var string|null
      */
-    public ?string $url-thumbnail = null;
+    public ?string $url_thumbnail = null;
 
     public function __construct(array $data)
     {
         $this->i_height = isset($data['i_height']) ? (int)$data['i_height'] : null;
         $this->i_width = isset($data['i_width']) ? (int)$data['i_width'] : null;
-        $this->url-thumbnail = isset($data['url-thumbnail']) ? (string)$data['url-thumbnail'] : null;
+        $this->url_thumbnail = isset($data['url-thumbnail']) ? (string)$data['url-thumbnail'] : null;
     }
 }

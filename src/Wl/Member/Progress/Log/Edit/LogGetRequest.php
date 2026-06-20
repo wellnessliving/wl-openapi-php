@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Log\Edit;
 
 class LogGetRequest
 {
     /**
      * Progress log local date.
-     * 
+     *
      * If `null` use the current date.
      *
      * @var string|null
@@ -34,7 +35,7 @@ class LogGetRequest
             'k_business' => $this->k_business,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

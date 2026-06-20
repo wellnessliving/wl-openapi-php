@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\ExplorerSearch\ClassSession;
 
 /**
@@ -15,6 +16,6 @@ class ClassSessionSearchGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_class_session = isset($data['a_class_session']) ? array_map(static fn($item) => new ClassSessionSearchGetResponseClassSession((array)$item), (array)$data['a_class_session']) : null;
+        $this->a_class_session = isset($data['a_class_session']) ? array_map(static fn ($item) => new ClassSessionSearchGetResponseClassSession((array)$item), (array)$data['a_class_session']) : null;
     }
 }

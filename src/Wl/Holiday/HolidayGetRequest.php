@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Holiday;
 
 class HolidayGetRequest
@@ -25,7 +26,7 @@ class HolidayGetRequest
             'dl_work' => $this->dl_work,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

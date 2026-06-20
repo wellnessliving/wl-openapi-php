@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Discount\Code\Edit;
 
 class DiscountCodeEditPostRequest
@@ -100,7 +101,7 @@ class DiscountCodeEditPostRequest
     /**
      * `true` means discount code can reduce price of the gift cards.
      * `false` means discount code cannot reduce price of the gift cards.
-     * 
+     *
      * If `is_purchase_all` is `true` this fields does not matter.
      *
      * @var bool|null
@@ -205,7 +206,7 @@ class DiscountCodeEditPostRequest
             'text_description' => $this->text_description,
             'text_title' => $this->text_title,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

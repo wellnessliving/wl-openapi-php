@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\GuestPass;
 
 class GuestPassListGetRequest
@@ -12,7 +13,7 @@ class GuestPassListGetRequest
 
     /**
      * Class key to filter guest passes by.
-     * 
+     *
      * `null` if guest passes should not be filtered by class.
      *
      * @var string|null
@@ -21,7 +22,7 @@ class GuestPassListGetRequest
 
     /**
      * Location key to filter guest passes by.
-     * 
+     *
      * `null` if guest passes should not be filtered by location.
      *
      * @var string|null
@@ -44,7 +45,7 @@ class GuestPassListGetRequest
             'k_location' => $this->k_location,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

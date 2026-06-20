@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Address;
 
 /**
@@ -15,6 +16,6 @@ class AddressGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_pay_address = isset($data['a_pay_address']) ? array_map(static fn($item) => new AddressGetResponsePayAddress((array)$item), (array)$data['a_pay_address']) : null;
+        $this->a_pay_address = isset($data['a_pay_address']) ? array_map(static fn ($item) => new AddressGetResponsePayAddress((array)$item), (array)$data['a_pay_address']) : null;
     }
 }

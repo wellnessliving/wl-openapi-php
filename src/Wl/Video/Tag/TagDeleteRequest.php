@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Tag;
 
 class TagDeleteRequest
@@ -32,7 +33,7 @@ class TagDeleteRequest
             'k_business' => $this->k_business,
             'k_video_tag' => $this->k_video_tag,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

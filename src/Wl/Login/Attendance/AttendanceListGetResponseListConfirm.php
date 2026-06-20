@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Attendance;
 
 class AttendanceListGetResponseListConfirm
@@ -444,35 +445,35 @@ class AttendanceListGetResponseListConfirm
      *
      * @var string|null
      */
-    public ?string $url-cancel = null;
+    public ?string $url_cancel = null;
 
     /**
      * The URL that can be used by an admin to cancel the visit.
      *
      * @var string|null
      */
-    public ?string $url-cancel-admin = null;
+    public ?string $url_cancel_admin = null;
 
     /**
      * The URL that for the user's page.
      *
      * @var string|null
      */
-    public ?string $url-login-view = null;
+    public ?string $url_login_view = null;
 
     /**
      * The URL to a page for sending an email to the client.
      *
      * @var string|null
      */
-    public ?string $url-mail = null;
+    public ?string $url_mail = null;
 
     /**
      * The URL that for the client's profile.
      *
      * @var string|null
      */
-    public ?string $url-profile = null;
+    public ?string $url_profile = null;
 
     public function __construct(array $data)
     {
@@ -537,10 +538,10 @@ class AttendanceListGetResponseListConfirm
         $this->text_wearable = isset($data['text_wearable']) ? (string)$data['text_wearable'] : null;
         $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
         $this->uid_book = isset($data['uid_book']) ? (string)$data['uid_book'] : null;
-        $this->url-cancel = isset($data['url-cancel']) ? (string)$data['url-cancel'] : null;
-        $this->url-cancel-admin = isset($data['url-cancel-admin']) ? (string)$data['url-cancel-admin'] : null;
-        $this->url-login-view = isset($data['url-login-view']) ? (string)$data['url-login-view'] : null;
-        $this->url-mail = isset($data['url-mail']) ? (string)$data['url-mail'] : null;
-        $this->url-profile = isset($data['url-profile']) ? (string)$data['url-profile'] : null;
+        $this->url_cancel = isset($data['url-cancel']) ? (string)$data['url-cancel'] : null;
+        $this->url_cancel_admin = isset($data['url-cancel-admin']) ? (string)$data['url-cancel-admin'] : null;
+        $this->url_login_view = isset($data['url-login-view']) ? (string)$data['url-login-view'] : null;
+        $this->url_mail = isset($data['url-mail']) ? (string)$data['url-mail'] : null;
+        $this->url_profile = isset($data['url-profile']) ? (string)$data['url-profile'] : null;
     }
 }

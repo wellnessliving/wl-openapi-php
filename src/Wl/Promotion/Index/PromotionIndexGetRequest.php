@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Promotion\Index;
 
 class PromotionIndexGetRequest
@@ -21,7 +22,7 @@ class PromotionIndexGetRequest
 
     /**
      * The program type ID, which will be one of the {@link \WlSdk\RsProgramTypeSid} constants.
-     * 
+     *
      * `0` to not filter Purchase Options with type of the Purchase Option.
      *
      * @var int|null
@@ -44,7 +45,7 @@ class PromotionIndexGetRequest
             'id_program_type' => $this->id_program_type,
             'k_location' => $this->k_location,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

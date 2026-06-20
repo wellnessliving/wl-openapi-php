@@ -1,10 +1,11 @@
 <?php
+
 namespace WlSdk\Wl\Classes\ClassList;
 
 class ListGetResponseClass
 {
     /**
-     * List of class book now tabs, where this class is presented. Each element is 
+     * List of class book now tabs, where this class is presented. Each element is
      *  or `null` if class is presented in default system tab Classes. Events can also be added in class tabs.
      *
      * @var string[]|null
@@ -12,7 +13,7 @@ class ListGetResponseClass
     public ?array $a_class_tab = null;
 
     /**
-     * List of event book now tabs, where this event is presented. Each element is 
+     * List of event book now tabs, where this event is presented. Each element is
      *   or `null` if event is presented in default system tab Enrollments. Classes cannot be added in event tabs.
      *
      * @var string[]|null

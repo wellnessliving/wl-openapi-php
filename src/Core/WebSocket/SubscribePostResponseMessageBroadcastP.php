@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 class SubscribePostResponseMessageBroadcastP
@@ -20,7 +21,7 @@ class SubscribePostResponseMessageBroadcastP
     /**
      * Key of the changed appointment.
      * Is set only if changed session is appointment.
-     * 
+     *
      * `null` if changed session is not an appointment.
      *
      * @var string|null
@@ -30,7 +31,7 @@ class SubscribePostResponseMessageBroadcastP
     /**
      * Key of the changed class session.
      * Is set only if changed session is class.
-     * 
+     *
      * `null` if changed session is not a class.
      *
      * @var string|null

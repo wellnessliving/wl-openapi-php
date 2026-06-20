@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Store;
 
 /**
@@ -15,6 +16,6 @@ class StoreGroupPostResponse
 
     public function __construct(array $data)
     {
-        $this->a_purchase_item_distribute = isset($data['a_purchase_item_distribute']) ? array_map(static fn($item) => new StoreGroupPostResponsePurchaseItemDistribute((array)$item), (array)$data['a_purchase_item_distribute']) : null;
+        $this->a_purchase_item_distribute = isset($data['a_purchase_item_distribute']) ? array_map(static fn ($item) => new StoreGroupPostResponsePurchaseItemDistribute((array)$item), (array)$data['a_purchase_item_distribute']) : null;
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Skin;
 
 class SkinForeignPostRequest
@@ -56,7 +57,7 @@ class SkinForeignPostRequest
             'a_fields' => $this->a_fields,
             'text_name' => $this->text_name,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

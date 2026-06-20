@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Waiver;
 
 class WaiverGetRequest
@@ -36,7 +37,7 @@ class WaiverGetRequest
             'text_fullname' => $this->text_fullname,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

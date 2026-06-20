@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Score;
 
 use WlSdk\WlSdkClient;

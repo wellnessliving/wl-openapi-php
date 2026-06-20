@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Integration\Autymate;
 
 class ReportGetRequest
@@ -28,10 +29,10 @@ class ReportGetRequest
 
     /**
      * Determines whether this report should be refreshed.
-     * 
+     *
      * `true` to refresh this report if it's already generated.
      * Refreshing of the report may not be queried while report is being generated.
-     * 
+     *
      * `false` to only return contents of the report.
      * If report isn't yet generated, it automatically starts the generation in the background.
      *
@@ -64,7 +65,7 @@ class ReportGetRequest
             'k_business' => $this->k_business,
             's_guid' => $this->s_guid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

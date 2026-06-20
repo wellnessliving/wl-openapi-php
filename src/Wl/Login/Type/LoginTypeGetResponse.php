@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Type;
 
 /**
@@ -15,6 +16,6 @@ class LoginTypeGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_login_type_list = isset($data['a_login_type_list']) ? array_map(static fn($item) => new LoginTypeGetResponseLoginTypeList((array)$item), (array)$data['a_login_type_list']) : null;
+        $this->a_login_type_list = isset($data['a_login_type_list']) ? array_map(static fn ($item) => new LoginTypeGetResponseLoginTypeList((array)$item), (array)$data['a_login_type_list']) : null;
     }
 }

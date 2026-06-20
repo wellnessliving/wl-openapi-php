@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Request\Api\Application\Credential;
 
 class CredentialPutRequest
@@ -24,7 +25,7 @@ class CredentialPutRequest
             'cid_credential' => $this->cid_credential,
             'json_credential' => $this->json_credential,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 class SubscribePostResponseMessageBroadcastO
 {
     /**
      * End of change interval.
-     * 
+     *
      * Empty string if change interval has no end.
      *
      * @var string|null
@@ -21,7 +22,7 @@ class SubscribePostResponseMessageBroadcastO
 
     /**
      * New "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
-     * 
+     *
      * `null` means system default tab.
      *
      * @var string|null
@@ -30,7 +31,7 @@ class SubscribePostResponseMessageBroadcastO
 
     /**
      * Old "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
-     * 
+     *
      * `null` means system default tab.
      *
      * @var string|null

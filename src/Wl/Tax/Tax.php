@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Tax;
 
 use WlSdk\WlSdkClient;

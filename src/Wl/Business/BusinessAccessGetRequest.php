@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business;
 
 class BusinessAccessGetRequest
@@ -71,7 +72,7 @@ class BusinessAccessGetRequest
             'text_mail' => $this->text_mail,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

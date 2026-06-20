@@ -1,18 +1,19 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Purchase;
 
 class Purchase72GetRequest
 {
     /**
      * List of selected services without current [PurchaseApi](/Wl/Appointment/Book/Purchase/Purchase.json).
-     * 
+     *
      * The list of these services directly affects the list of selected promotions.
      * Depending on the number and order of services, there may be different results.
-     * 
+     *
      * The current [PurchaseApi](/Wl/Appointment/Book/Purchase/Purchase.json) will be added to the end of this
      * list.
      * It is worth considering this list as a list of previously selected services.
-     * 
+     *
      * Each element has the following structure:
      *
      * @var array[]|null
@@ -80,7 +81,7 @@ class Purchase72GetRequest
     public ?bool $is_walk_in = null;
 
     /**
-     * Appointment key. 
+     * Appointment key.
      * Not empty in case when we return payment options for rescheduling existing appointment.
      *
      * @var string|null
@@ -120,11 +121,11 @@ class Purchase72GetRequest
 
     /**
      * The timezone key for [PurchaseApi](/Wl/Appointment/Book/Purchase/Purchase.json).
-     * 
+     *
      * Can be `null` if timezone is not selected.
      * If not selected, the default client timezone will be used.
-     * 
-     * 
+     *
+     *
      * In any case, the timezone will be used if the business allows client timezones.
      *
      * @var string|null
@@ -133,12 +134,12 @@ class Purchase72GetRequest
 
     /**
      * The user key.
-     * 
+     *
      * This field is used if the client books for himself or for the relative.
-     * 
+     *
      * This field is incorrect to use for guest booking since in this case the client will be checked as a
      * relative.
-     * 
+     *
      * In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
      *
      * @var string|null
@@ -166,7 +167,7 @@ class Purchase72GetRequest
             'k_timezone' => $this->k_timezone,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

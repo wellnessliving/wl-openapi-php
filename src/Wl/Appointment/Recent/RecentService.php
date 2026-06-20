@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Recent;
 
 use WlSdk\WlSdkClient;

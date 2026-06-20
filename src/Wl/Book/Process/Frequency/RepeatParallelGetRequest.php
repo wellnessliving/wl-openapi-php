@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Frequency;
 
 class RepeatParallelGetRequest
@@ -89,7 +90,7 @@ class RepeatParallelGetRequest
      * `true` to also include sessions running in parallel at the same time and location
      *  (other class period series); `false` to return only the selected series (parent
      *  period and its reschedules).
-     * 
+     *
      * Controlled by the "Also include other sessions happening at the same time" toggle on the form.
      * Defaults to `false`.
      *
@@ -162,7 +163,7 @@ class RepeatParallelGetRequest
             'uid' => $this->uid,
             'uid_actor' => $this->uid_actor,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

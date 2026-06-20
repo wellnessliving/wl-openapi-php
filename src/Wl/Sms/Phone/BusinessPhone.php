@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Sms\Phone;
 
 use WlSdk\WlSdkClient;

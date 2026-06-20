@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Category;
 
 class CategoryListGetResponseVideoCategory

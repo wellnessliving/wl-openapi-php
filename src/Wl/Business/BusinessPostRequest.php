@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business;
 
 class BusinessPostRequest
@@ -119,7 +120,7 @@ class BusinessPostRequest
             'text_title' => $this->text_title,
             'url_site' => $this->url_site,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

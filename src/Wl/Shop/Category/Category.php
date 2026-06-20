@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Shop\Category;
 
 use WlSdk\WlSdkClient;

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Config;
 
 class BusinessConfigGetResponsePenalty
@@ -12,7 +13,7 @@ class BusinessConfigGetResponsePenalty
 
     /**
      * List of client type keys.
-     * 
+     *
      * Empty array means all active login types at concrete business.
      *
      * @var string[]|null

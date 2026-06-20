@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Field\Edit;
 
 /**
@@ -9,7 +10,7 @@ class FieldPostResponse
     /**
      * Field title.
      * Only titles of the custom progress fields can be changed.
-     * 
+     *
      * `null` If default title should be used.
      *
      * @var string|null

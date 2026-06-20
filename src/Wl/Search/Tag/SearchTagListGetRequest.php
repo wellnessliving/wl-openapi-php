@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Search\Tag;
 
 class SearchTagListGetRequest

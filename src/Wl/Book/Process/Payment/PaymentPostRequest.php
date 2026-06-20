@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Payment;
 
 class PaymentPostRequest
@@ -19,7 +20,7 @@ class PaymentPostRequest
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
-     * 
+     *
      * If `true` is sent, access to the business and to the client will be checked.
      * If `false` is sent, user can book only for himself or for relatives if this is allowed in business settings.
      *
@@ -30,7 +31,7 @@ class PaymentPostRequest
     /**
      * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag
      * is set to `false`.
-     * 
+     *
      * Use this field with caution.
      * The final booking will not use this flag, and the check will still be performed.
      *
@@ -75,9 +76,9 @@ class PaymentPostRequest
 
     /**
      * List of quiz response keys.
-     * 
-     * Keys are quiz keys. 
-     * Values are response keys. 
+     *
+     * Keys are quiz keys.
+     * Values are response keys.
      * Or the `skip` to skip the quiz.
      *
      * @var string[]|null
@@ -100,8 +101,8 @@ class PaymentPostRequest
 
     /**
      * A list of sessions being booked.
-     * 
-     * Keys are class period keys. 
+     *
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null
@@ -110,8 +111,8 @@ class PaymentPostRequest
 
     /**
      * Selected sessions on the waiting list without pay.
-     * 
-     * Keys are class period keys. 
+     *
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT
      *
      * @var string[]|null
@@ -129,7 +130,7 @@ class PaymentPostRequest
     /**
      * `true` to book unpaid.
      * `false` otherwise.
-     * 
+     *
      * Allows booking unpaid when client has a login promotion that can be used to pay for the service.
      * Allowed in {@link \WlSdk\Wl\Mode\ModeSid} mode only.
      *
@@ -211,7 +212,7 @@ class PaymentPostRequest
             'k_session_pass' => $this->k_session_pass,
             'text_discount_code' => $this->text_discount_code,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

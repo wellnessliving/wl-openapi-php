@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\CatalogList;
 
 class ElementGetRequest
@@ -20,7 +21,7 @@ class ElementGetRequest
 
     /**
      * The client prorate date.
-     * 
+     *
      * This will be `null` in cases where the client prorate date hasn't passed.
      *
      * @var string|null
@@ -99,7 +100,7 @@ class ElementGetRequest
 
     /**
      * The product option key.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null
@@ -108,14 +109,14 @@ class ElementGetRequest
 
     /**
      * A list of goods to get information for. Every element must contain the next keys:
-     * 
+     *
      * Note that this must be serialized via JSON.
-     * 
+     *
      * If this field is specified, don't specify any of the following fields:
      * * `id_sale`
      * * `k_id`
      * * `k_shop_product_option`
-     * 
+     *
      * This will be `null` to get information for only one item.
      *
      * @var string|null
@@ -150,7 +151,7 @@ class ElementGetRequest
             'text_item' => $this->text_item,
             'uid_customer' => $this->uid_customer,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

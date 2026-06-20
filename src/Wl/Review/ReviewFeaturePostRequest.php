@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Review;
 
 class ReviewFeaturePostRequest
@@ -32,7 +33,7 @@ class ReviewFeaturePostRequest
             'k_business' => $this->k_business,
             'k_review' => $this->k_review,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

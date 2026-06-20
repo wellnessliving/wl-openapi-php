@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Shop\Category;
 
 /**
@@ -15,6 +16,6 @@ class CategoryGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_shop_category = isset($data['a_shop_category']) ? array_map(static fn($item) => new CategoryGetResponseShopCategory((array)$item), (array)$data['a_shop_category']) : null;
+        $this->a_shop_category = isset($data['a_shop_category']) ? array_map(static fn ($item) => new CategoryGetResponseShopCategory((array)$item), (array)$data['a_shop_category']) : null;
     }
 }

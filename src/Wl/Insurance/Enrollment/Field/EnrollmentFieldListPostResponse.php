@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Insurance\Enrollment\Field;
 
 /**

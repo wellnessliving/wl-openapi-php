@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Report;
 
 class PageDataGetRequest
@@ -23,7 +24,7 @@ class PageDataGetRequest
     /**
      * The report page ID. One of the {@link \WlSdk\RsReportPageSid} constants.
      * The collection of that page will be used to get list of reports.
-     * 
+     *
      * The following report collections are currently available via the API:
      * * PROFILE_PURCHASE (ID 11) Collection with reports from client profile: memberships, packages,
      * session/duration
@@ -73,7 +74,7 @@ class PageDataGetRequest
             's_filter' => $this->s_filter,
             's_sort' => $this->s_sort,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

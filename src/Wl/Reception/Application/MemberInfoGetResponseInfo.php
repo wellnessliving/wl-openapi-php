@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Application;
 
 class MemberInfoGetResponseInfo
@@ -33,25 +34,25 @@ class MemberInfoGetResponseInfo
 
     /**
      * User`s login notes.&lt;/dd&gt;
-     * 
+     *
      *  &lt;dt&gt;int &lt;var&gt;i_visit_credit&lt;/var&gt;&lt;/dt&gt;
      *  &lt;dd&gt;Count of unpaid visits if client has at least one.&lt;/dd&gt;
-     * 
+     *
      *  &lt;dt&gt;bool &lt;var&gt;is_account_positive&lt;/var&gt;&lt;/dt&gt;
      *  &lt;dd&gt;If the user has a positive balance on his account.&lt;/dd&gt;
-     * 
+     *
      *  &lt;dt&gt;bool &lt;var&gt;is_birthday&lt;/var&gt;&lt;/dt&gt;
      *  &lt;dd&gt;If a user has a birthday today.&lt;/dd&gt;
-     * 
+     *
      *  &lt;dt&gt;bool &lt;var&gt;is_contract&lt;/var&gt;&lt;/dt&gt;
      *  &lt;dd&gt;&lt;tt&gt;true&lt;/tt&gt; if client has some contracts that he should agree.&lt;/dd&gt;
-     * 
+     *
      *  &lt;dt&gt;bool &lt;var&gt;is_family_payer&lt;/var&gt;&lt;/dt&gt;
      *  &lt;dd&gt;`true` if the user makes payments for a family member, `false` otherwise.&lt;/dd&gt;
-     * 
+     *
      *  &lt;dt&gt;bool &lt;var&gt;is_first&lt;/var&gt;&lt;/dt&gt;
      *  &lt;dd&gt;&lt;tt&gt;true&lt;/tt&gt; if this is a first visit of the client.&lt;/dd&gt;
-     * 
+     *
      *  &lt;dt&gt;bool &lt;var&gt;is_form&lt;/var&gt;&lt;/dt&gt;
      *  &lt;dd&gt;`true` if the client has uncompleted one or more forms.
      *
@@ -82,7 +83,7 @@ class MemberInfoGetResponseInfo
 
     /**
      * Currency of business `$k_business`.
-     *    
+     *
      *    It is currency of amount `m_credit`.
      *
      * @var string|null

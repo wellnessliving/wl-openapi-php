@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Rank;
 
 class RankGetRequest
@@ -24,7 +25,7 @@ class RankGetRequest
             'a_rank_category' => $this->a_rank_category,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

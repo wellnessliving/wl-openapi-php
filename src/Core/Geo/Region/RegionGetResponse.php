@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Geo\Region;
 
 /**
@@ -15,6 +16,6 @@ class RegionGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_region = isset($data['a_region']) ? array_map(static fn($item) => new RegionGetResponseRegion((array)$item), (array)$data['a_region']) : null;
+        $this->a_region = isset($data['a_region']) ? array_map(static fn ($item) => new RegionGetResponseRegion((array)$item), (array)$data['a_region']) : null;
     }
 }

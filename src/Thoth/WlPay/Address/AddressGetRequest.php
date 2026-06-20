@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Address;
 
 class AddressGetRequest
@@ -35,7 +36,7 @@ class AddressGetRequest
             'k_business' => $this->k_business,
             'k_id' => $this->k_id,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

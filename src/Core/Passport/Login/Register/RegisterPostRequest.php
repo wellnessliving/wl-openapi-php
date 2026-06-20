@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Passport\Login\Register;
 
 class RegisterPostRequest
@@ -12,7 +13,7 @@ class RegisterPostRequest
 
     /**
      * ID of source mode.
-     * 
+     *
      * One of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * `null` if not initialized or the api is not called in the Wellnessliving project.
      *
@@ -57,7 +58,7 @@ class RegisterPostRequest
 
     /**
      * The URL to the confirmation page. This link is used in a confirmation email.
-     * 
+     *
      * If empty, URL to default page is used.
      *
      * @var string|null
@@ -77,7 +78,7 @@ class RegisterPostRequest
             's_password' => $this->s_password,
             'url_confirm' => $this->url_confirm,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

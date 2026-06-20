@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Service;
 
 class ServiceList52GetResponseService
@@ -36,7 +37,7 @@ class ServiceList52GetResponseService
     public ?ServiceList52GetResponseServiceImage $a_image = null;
 
     /**
-     * Keys are login type keys. 
+     * Keys are login type keys.
      * Values - List of login types' titles for current service. Clients that have one of these types can book
      * service.
      *
@@ -45,7 +46,7 @@ class ServiceList52GetResponseService
     public ?array $a_login_type_restriction = null;
 
     /**
-     * Keys are member group keys. 
+     * Keys are member group keys.
      * Values - list of member groups' titles for current service. Clients that belongs to these groups can book
      * service.
      *

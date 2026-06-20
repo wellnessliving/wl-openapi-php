@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Member;
 
 class MemberValidateGetRequest
@@ -24,7 +25,7 @@ class MemberValidateGetRequest
             'k_business' => $this->k_business,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

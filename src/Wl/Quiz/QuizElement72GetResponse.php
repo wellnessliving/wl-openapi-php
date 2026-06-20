@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz;
 
 /**
@@ -43,7 +44,7 @@ class QuizElement72GetResponse
 
     /**
      * Quiz active status.
-     * 
+     *
      * `true` if quiz is active.
      * `false` if quiz is not active.
      *
@@ -68,7 +69,7 @@ class QuizElement72GetResponse
 
     /**
      * Business type key. Used only for forms in the system business.
-     * 
+     *
      * `null` if not initialized.
      *
      * @var string|null
@@ -77,7 +78,7 @@ class QuizElement72GetResponse
 
     /**
      * Whether to show numbering of the form elements that supports numbering.
-     * 
+     *
      * `true` to show numbering on the form for elements that supports numbering.
      * `false` to not show numbering.
      *
@@ -108,9 +109,9 @@ class QuizElement72GetResponse
 
     public function __construct(array $data)
     {
-        $this->a_access_log = isset($data['a_access_log']) ? array_map(static fn($item) => new QuizElement72GetResponseAccessLog((array)$item), (array)$data['a_access_log']) : null;
+        $this->a_access_log = isset($data['a_access_log']) ? array_map(static fn ($item) => new QuizElement72GetResponseAccessLog((array)$item), (array)$data['a_access_log']) : null;
         $this->a_element = $data['a_element'] ?? null;
-        $this->a_setting = isset($data['a_setting']) ? array_map(static fn($item) => new QuizElement72GetResponseSetting((array)$item), (array)$data['a_setting']) : null;
+        $this->a_setting = isset($data['a_setting']) ? array_map(static fn ($item) => new QuizElement72GetResponseSetting((array)$item), (array)$data['a_setting']) : null;
         $this->can_amend = isset($data['can_amend']) ? (bool)$data['can_amend'] : null;
         $this->i_responses = isset($data['i_responses']) ? (int)$data['i_responses'] : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\GuestPass\Apply;
 
 use WlSdk\WlSdkClient;

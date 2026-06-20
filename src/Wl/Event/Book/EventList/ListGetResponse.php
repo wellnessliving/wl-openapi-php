@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Event\Book\EventList;
 
 /**
@@ -8,7 +9,7 @@ class ListGetResponse
 {
     /**
      * A list of event identifiers.
-     * 
+     *
      * The order of items in this array matches the order in which elements should be displayed.
      *
      * @var string[]|null
@@ -17,11 +18,11 @@ class ListGetResponse
 
     /**
      * Event availability map.
-     * 
+     *
      * Unavailable events are those that cannot be booked,
      *  but they can be shown to the client (for example, under the "not available" filter).
-     * 
-     * Key is the event class key. 
+     *
+     * Key is the event class key.
      * Value is `true` if the event is available for booking, `false` if it is unavailable.
      *
      * @var bool[]|null

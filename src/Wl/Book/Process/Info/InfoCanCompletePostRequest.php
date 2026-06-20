@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Info;
 
 class InfoCanCompletePostRequest
@@ -57,7 +58,7 @@ class InfoCanCompletePostRequest
             'uid' => $this->uid,
             'a_session_select_post' => $this->a_session_select_post,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

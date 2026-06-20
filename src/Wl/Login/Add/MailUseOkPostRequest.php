@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Add;
 
 class MailUseOkPostRequest
@@ -40,7 +41,7 @@ class MailUseOkPostRequest
             'k_skin' => $this->k_skin,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Thoth\ExplorerSearch\ClassSession;
 
 class ClassSessionSearchGetRequest
 {
     /**
      * List of business keys to search by.
-     * 
+     *
      * Empty array to not filter by business keys.
      *
      * @var string[]|null
@@ -15,7 +16,7 @@ class ClassSessionSearchGetRequest
     /**
      * List of experience types to search by. Each value is one of {@link
      * \WlSdk\Thoth\ExplorerSearch\ClassSession\SearchWord\ClassSessionExperienceTypeEnum} case values.
-     * 
+     *
      * Empty array to not filter by experience type.
      *
      * @var int[]|null
@@ -24,7 +25,7 @@ class ClassSessionSearchGetRequest
 
     /**
      * List of home tour activity types to search by. Each value is from {@link \WlSdk\RsHomeTourSid}.
-     * 
+     *
      * Empty array to not filter by home tour type.
      *
      * @var int[]|null
@@ -33,7 +34,7 @@ class ClassSessionSearchGetRequest
 
     /**
      * List of location keys to search by.
-     * 
+     *
      * Empty array to not filter by location keys.
      *
      * @var string[]|null
@@ -42,7 +43,7 @@ class ClassSessionSearchGetRequest
 
     /**
      * List of location ratings to search by. Values are integers from 1 to 5, or `null`/`0` for unrated locations.
-     * 
+     *
      * Empty array to not filter by location rating.
      *
      * @var int[]|string[]|null
@@ -51,7 +52,7 @@ class ClassSessionSearchGetRequest
 
     /**
      * List of staff user keys to search by. Each value is a user key (uid) of a staff member.
-     * 
+     *
      * Empty array to not filter by staff.
      *
      * @var string[]|null
@@ -60,7 +61,7 @@ class ClassSessionSearchGetRequest
 
     /**
      * Start date of the session search date range in MySQL format (`Y-m-d`). Required.
-     * 
+     *
      * `null` if not set by request.
      *
      * @var string|null
@@ -69,7 +70,7 @@ class ClassSessionSearchGetRequest
 
     /**
      * End date of the session search date range in MySQL format (`Y-m-d`). Required.
-     * 
+     *
      * `null` if not set by request.
      *
      * @var string|null
@@ -78,7 +79,7 @@ class ClassSessionSearchGetRequest
 
     /**
      * Latitude coordinate for search. Required.
-     * 
+     *
      * `null` if not set by request.
      *
      * @var float|null
@@ -87,7 +88,7 @@ class ClassSessionSearchGetRequest
 
     /**
      * Longitude coordinate for search. Required.
-     * 
+     *
      * `null` if not set by request.
      *
      * @var float|null
@@ -96,7 +97,7 @@ class ClassSessionSearchGetRequest
 
     /**
      * Search radius in kilometers. Required.
-     * 
+     *
      * `null` if not set by request.
      *
      * @var float|null
@@ -105,7 +106,7 @@ class ClassSessionSearchGetRequest
 
     /**
      * Maximum price to search by (inclusive). Decimal string in dollars (e.g. `&quot;100.00&quot;`).
-     * 
+     *
      * `null` to not limit by maximum price.
      *
      * @var string|null
@@ -114,7 +115,7 @@ class ClassSessionSearchGetRequest
 
     /**
      * Minimum price to search by (inclusive). Decimal string in dollars (e.g. `&quot;0.00&quot;`).
-     * 
+     *
      * `null` to not limit by minimum price.
      *
      * @var string|null
@@ -139,7 +140,7 @@ class ClassSessionSearchGetRequest
             'm_price_max' => $this->m_price_max,
             'm_price_min' => $this->m_price_min,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

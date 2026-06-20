@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Attendance\Schedule\Frontend;
 
 /**
@@ -15,6 +16,6 @@ class LifetimeTotalsGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_total = isset($data['a_total']) ? array_map(static fn($item) => new LifetimeTotalsGetResponseTotal((array)$item), (array)$data['a_total']) : null;
+        $this->a_total = isset($data['a_total']) ? array_map(static fn ($item) => new LifetimeTotalsGetResponseTotal((array)$item), (array)$data['a_total']) : null;
     }
 }

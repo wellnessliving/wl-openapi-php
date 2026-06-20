@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video;
 
 /**
@@ -9,7 +10,7 @@ class VideoElementPutResponse
     /**
      * Embedded video source.
      * One of {@link \WlSdk\Wl\Video\VideoEmbedSourceSid} constants.
-     * 
+     *
      * `null` if video is uploaded.
      *
      * @var int|null
@@ -18,7 +19,7 @@ class VideoElementPutResponse
 
     /**
      * Video.js media player initialization parameters in JSON format.
-     * 
+     *
      * Usage example:
      *      <script>
      *          videojs($('video'), {

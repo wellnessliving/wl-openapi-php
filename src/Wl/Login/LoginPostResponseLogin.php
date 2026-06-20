@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login;
 
 class LoginPostResponseLogin
@@ -34,7 +35,7 @@ class LoginPostResponseLogin
     /**
      * Client`s mail.
      *   &lt;/dd&gt;
-     * 
+     *
      *   &lt;dt&gt;
      * string &lt;var&gt;text_mail_staff&lt;/var&gt;
      *   &lt;/dt&gt;

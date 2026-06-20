@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Classes\ClassList;
 
 class ListGetRequest
@@ -6,7 +7,7 @@ class ListGetRequest
     /**
      * List of tabs keys.
      * Filtering by Book Now Tab is not supported if `is_franchise` is `true`.
-     * 
+     *
      * `null` if no filtering by Book Now Tab is required.
      *
      * @var string[]|null
@@ -18,7 +19,7 @@ class ListGetRequest
      * Only {@link \WlSdk\Wl\Classes\Tab\TabSid} and {@link \WlSdk\Wl\Classes\Tab\TabSid} book now tab are
      * supported.
      * Filtering by Book Now Tab is not supported if `is_franchise` is `true`.
-     * 
+     *
      * `null` if no filtering by Book Now Tab is required.
      *
      * @var int|null
@@ -27,13 +28,13 @@ class ListGetRequest
 
     /**
      * Whether all events should be returned from same enrollment block.
-     * 
+     *
      * * `true` to return all events from same enrollment block.
      * * `false` to return only one event from each enrollment block.
-     * 
+     *
      * Only published and non-empty events will be returned for the client.
      * To return empty events, use `is_enrollment_block_empty`.
-     * 
+     *
      * For the staff, filtering by publication or emptiness is not applied.
      *
      * @var bool|null
@@ -44,12 +45,12 @@ class ListGetRequest
      * Whether to include events without sessions.
      * An empty event is neither published nor unpublished. It simply has no sessions.
      * Such events can be useful for list filters.
-     * 
+     *
      * Affects clients only.
      * Does not affect staff. Staff always see empty events.
-     * 
+     *
      * Makes sense in conjunction with the flag `is_enrollment_block_all`.
-     * 
+     *
      * * `true` to include events without sessions.
      * * `false` to exclude events without sessions.
      *
@@ -59,7 +60,7 @@ class ListGetRequest
 
     /**
      * Whether to include events in the result.
-     * 
+     *
      * true` to include both classes and events.
      * false` to include only classes.
      *
@@ -94,7 +95,7 @@ class ListGetRequest
             'is_franchise' => $this->is_franchise,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

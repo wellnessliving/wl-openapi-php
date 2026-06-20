@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Schedule;
 
 /**
@@ -94,10 +95,10 @@ class CalendarGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_date = isset($data['a_date']) ? array_map(static fn($item) => new CalendarGetResponseDate((array)$item), (array)$data['a_date']) : null;
-        $this->a_time = isset($data['a_time']) ? array_map(static fn($item) => new CalendarGetResponseTime((array)$item), (array)$data['a_time']) : null;
-        $this->a_timezone_data = isset($data['a_timezone_data']) ? array_map(static fn($item) => new CalendarGetResponseTimezoneData((array)$item), (array)$data['a_timezone_data']) : null;
-        $this->a_week_name = isset($data['a_week_name']) ? array_map(static fn($item) => new CalendarGetResponseWeekName((array)$item), (array)$data['a_week_name']) : null;
+        $this->a_date = isset($data['a_date']) ? array_map(static fn ($item) => new CalendarGetResponseDate((array)$item), (array)$data['a_date']) : null;
+        $this->a_time = isset($data['a_time']) ? array_map(static fn ($item) => new CalendarGetResponseTime((array)$item), (array)$data['a_time']) : null;
+        $this->a_timezone_data = isset($data['a_timezone_data']) ? array_map(static fn ($item) => new CalendarGetResponseTimezoneData((array)$item), (array)$data['a_timezone_data']) : null;
+        $this->a_week_name = isset($data['a_week_name']) ? array_map(static fn ($item) => new CalendarGetResponseWeekName((array)$item), (array)$data['a_week_name']) : null;
         $this->can_backwards = isset($data['can_backwards']) ? (bool)$data['can_backwards'] : null;
         $this->dt_date = isset($data['dt_date']) ? (string)$data['dt_date'] : null;
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;

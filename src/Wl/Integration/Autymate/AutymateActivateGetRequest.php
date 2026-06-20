@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Integration\Autymate;
 
 class AutymateActivateGetRequest
 {
     /**
      * The mode of the request.
-     * 
+     *
      * One of {@link \WlSdk\Wl\Integration\Autymate\AutymateAccessModeSid} constants.
      *
      * @var int|null
@@ -14,7 +15,7 @@ class AutymateActivateGetRequest
 
     /**
      * The new status of the enrollment. If `0`, the current status is returned.
-     * 
+     *
      * One of {@link \WlSdk\Wl\Integration\Autymate\AutymateStatusSid} constants.
      *
      * @var int|null
@@ -52,7 +53,7 @@ class AutymateActivateGetRequest
             's_guid' => $this->s_guid,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

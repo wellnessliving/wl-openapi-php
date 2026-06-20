@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ClassList;
 
 class ClassList68PostRequest
@@ -6,7 +7,7 @@ class ClassList68PostRequest
     /**
      * The list of classes keys to filter.
      * Return sessions with matching class IDs.
-     * 
+     *
      * If it's empty and `show_class` is `true`, all classes will be returned.
      *
      * @var string[]|null
@@ -15,11 +16,11 @@ class ClassList68PostRequest
 
     /**
      * List of tabs keys.
-     * 
+     *
      * This will be ignored if `is_tab_all` is `true`.
-     * 
+     *
      * If list of tab keys is not empty, `id_class_tab` is mandatory.
-     * 
+     *
      * `null` if no filtering by Book Now Tab is required.
      *
      * @var string[]|null
@@ -31,7 +32,7 @@ class ClassList68PostRequest
      * Array of number representing the days of the week.
      * Return sessions matching the given weekdays.
      * (7 = Sunday, 1 = Monday, ..., 6 = Saturday)
-     * 
+     *
      * Empty array means no filtering.
      *
      * @var int[]|null
@@ -41,7 +42,7 @@ class ClassList68PostRequest
     /**
      * The list of event keys to filter.
      * Return sessions with matching event keys.
-     * 
+     *
      * If it's empty and `show_event` is `true`, all events will be returned.
      *
      * @var string[]|null
@@ -82,7 +83,7 @@ class ClassList68PostRequest
     /**
      * ID of tab. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
      * This will be ignored if `is_tab_all` is `true`.
-     * 
+     *
      * `null` if no filtering by tab is required.
      *
      * @var int|null
@@ -109,7 +110,7 @@ class ClassList68PostRequest
     /**
      * Class filter by type.
      * The class is virtual.
-     * 
+     *
      * `true`: Only virtual classes.
      * `false`: Only in-person.
      * `null` or not set: No filtering.
@@ -211,7 +212,7 @@ class ClassList68PostRequest
             'show_quick_filter' => $this->show_quick_filter,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

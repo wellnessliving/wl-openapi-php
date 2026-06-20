@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Board\BoardList;
 
 use WlSdk\WlSdkClient;
@@ -6,7 +7,7 @@ use WlSdk\WlSdkClient;
 /**
  * Retrieves all reward boards for business specified in `k_business`.
  */
-class List
+class ListEndpoint
 {
     /** @var WlSdkClient */
     private $client;
@@ -23,12 +24,12 @@ class List
      * title,
      * filtered to exclude boards the user is not eligible to view.
      *
-     * @return ListGetResponse
+     * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(ListGetRequest $request): ListGetResponse
+    public function get(ListEndpointGetRequest $request): ListEndpointGetResponse
     {
-        return new ListGetResponse($this->client->request('/Wl/Reward/Board/BoardList/List.json', $request->params(), 'GET'));
+        return new ListEndpointGetResponse($this->client->request('/Wl/Reward/Board/BoardList/List.json', $request->params(), 'GET'));
     }
 }

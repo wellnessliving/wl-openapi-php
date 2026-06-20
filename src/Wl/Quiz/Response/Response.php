@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz\Response;
 
 use WlSdk\WlSdkClient;

@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 class SubscribePostResponseMessageBroadcastG
 {
     /**
      * A CAS (compare-and-swap) number that allows to track changes in the report storage.
-     * 
+     *
      * This number is changed every time content of the report gets updated.
      * If this number is not changed, the content is not updated.
      *
@@ -15,7 +16,7 @@ class SubscribePostResponseMessageBroadcastG
 
     /**
      * Status of this report.
-     * 
+     *
      * One of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid} constants.
      *
      * @var int|null

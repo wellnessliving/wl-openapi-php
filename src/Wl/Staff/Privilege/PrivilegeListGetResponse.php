@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Staff\Privilege;
 
 /**
@@ -8,7 +9,7 @@ class PrivilegeListGetResponse
 {
     /**
      * List of privileges, if user is administrator.
-     * 
+     *
      * There is no certain list of admin privileges, as they are name-based.
      * If you need to check access to certain place contact WellnessLiving integration team.
      *
@@ -25,10 +26,10 @@ class PrivilegeListGetResponse
 
     /**
      * Whether this user is a super-administrator because he is a studio staff member.
-     * 
+     *
      * `true`, if this user is a super administrator because he is a studio staff member.
      * Super administrators have all privileges.
-     * 
+     *
      * `false` if this is an ordinary user.
      *
      * @var bool|null

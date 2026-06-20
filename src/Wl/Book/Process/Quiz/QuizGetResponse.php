@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Quiz;
 
 /**
@@ -15,6 +16,6 @@ class QuizGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_quiz = isset($data['a_quiz']) ? array_map(static fn($item) => new QuizGetResponseQuiz((array)$item), (array)$data['a_quiz']) : null;
+        $this->a_quiz = isset($data['a_quiz']) ? array_map(static fn ($item) => new QuizGetResponseQuiz((array)$item), (array)$data['a_quiz']) : null;
     }
 }

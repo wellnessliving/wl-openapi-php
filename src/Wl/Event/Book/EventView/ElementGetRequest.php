@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Event\Book\EventView;
 
 class ElementGetRequest
@@ -81,7 +82,7 @@ class ElementGetRequest
 
     /**
      * Key of a class period to show information for.
-     * 
+     *
      * Is not `null` only if we need to get information for an event with a specific class period and datetime.
      * If this is `null`, then the `dtu_session` should be `null` too.
      *
@@ -139,7 +140,7 @@ class ElementGetRequest
             'show_unpublished' => $this->show_unpublished,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

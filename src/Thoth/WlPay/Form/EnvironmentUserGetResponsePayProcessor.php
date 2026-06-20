@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Form;
 
 class EnvironmentUserGetResponsePayProcessor
 {
     /**
      * Public keys configured for this payment processor.
-     * 
+     *
      * `null` if this payment processor does not support public keys.
      *
      * @var array|null
@@ -14,7 +15,7 @@ class EnvironmentUserGetResponsePayProcessor
 
     /**
      * Public info configured for this payment processor.
-     * 
+     *
      * `null` if this payment processor does not support public info.
      *
      * @var array|null

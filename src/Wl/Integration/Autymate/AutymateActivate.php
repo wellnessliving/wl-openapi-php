@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Integration\Autymate;
 
 use WlSdk\WlSdkClient;

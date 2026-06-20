@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Action;
 
 class ActionGetRequest
@@ -32,7 +33,7 @@ class ActionGetRequest
             'k_reward_action_category' => $this->k_reward_action_category,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

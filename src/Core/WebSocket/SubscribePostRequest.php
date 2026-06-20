@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 class SubscribePostRequest
@@ -26,7 +27,7 @@ class SubscribePostRequest
 
     /**
      * Request token.
-     * 
+     *
      * This token is only used for asynchronous functions, and identifies a specific request.
      *
      * @var string|null
@@ -42,7 +43,7 @@ class SubscribePostRequest
             's_password' => $this->s_password,
             's_token' => $this->s_token,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

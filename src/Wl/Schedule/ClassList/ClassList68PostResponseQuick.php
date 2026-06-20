@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ClassList;
 
 class ClassList68PostResponseQuick

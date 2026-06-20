@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Design;
 
 /**
@@ -15,6 +16,6 @@ class BusinessDesignGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_data = isset($data['a_data']) ? array_map(static fn($item) => new BusinessDesignGetResponseData((array)$item), (array)$data['a_data']) : null;
+        $this->a_data = isset($data['a_data']) ? array_map(static fn ($item) => new BusinessDesignGetResponseData((array)$item), (array)$data['a_data']) : null;
     }
 }

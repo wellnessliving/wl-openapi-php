@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 class SubscribePostResponseMessageBroadcastI
 {
     /**
      * Key of the client type.
-     * 
+     *
      * `null` if client type is not set.
      *
      * @var string|null

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Passport\ChangePassword;
 
 class ChangePasswordApplyPostRequest
@@ -41,7 +42,7 @@ class ChangePasswordApplyPostRequest
             'text_mail' => $this->text_mail,
             'text_password' => $this->text_password,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Skin\Application\Resource;
 
 class ApplicationResourceUploadPostRequest
@@ -32,7 +33,7 @@ class ApplicationResourceUploadPostRequest
             'f_google_services_json' => $this->f_google_services_json,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

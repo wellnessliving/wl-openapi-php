@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Event;
 
 class EventListGetRequest
@@ -57,7 +58,7 @@ class EventListGetRequest
 
     /**
      * The end date of the range from which a list of events should be retrieved.
-     * 
+     *
      * `null` if the range has no end date.
      *
      * @var string|null
@@ -66,7 +67,7 @@ class EventListGetRequest
 
     /**
      * The start date of the range from which a list of events should be retrieved.
-     * 
+     *
      * `null` if the range has no start date.
      *
      * @var string|null
@@ -75,9 +76,9 @@ class EventListGetRequest
 
     /**
      * Defines how the event availability flag filter should be applied.
-     * 
+     *
      * One of {@link \WlSdk\AFlagSid} constants.
-     * 
+     *
      * * {@link \WlSdk\AFlagSid} to show only available events.
      * * {@link \WlSdk\AFlagSid} to show only unavailable events.
      * * {@link \WlSdk\AFlagSid} to show all events (available and unavailable).
@@ -103,7 +104,7 @@ class EventListGetRequest
     /**
      * Determines whether you need to retrieve a list of event sessions regardless of the tab specified in
      * `k_class_tab`.
-     * 
+     *
      * * `true` - retrieves a list regardless of the specified tab.
      * * `false` - retrieves a list only for the specific tab.
      *
@@ -113,7 +114,7 @@ class EventListGetRequest
 
     /**
      * The event business key to retrieve a list of all event sessions in business.
-     * 
+     *
      * `null` to retrieve events from `k_location`.
      *
      * @var string|null
@@ -131,7 +132,7 @@ class EventListGetRequest
     /**
      * The class tab key to retrieve a list of event sessions from a specific tab only.
      * An empty value to retrieve a list of event sessions that don't belong to any tab.
-     * 
+     *
      * Will be ignored in next cases:
      * * `k_skin` specified.
      * * `is_tab_all` is `true`.
@@ -142,7 +143,7 @@ class EventListGetRequest
 
     /**
      * The event location key to retrieve a list of all event sessions in a specific location.
-     * 
+     *
      * Required if `k_business` isn't specified.
      * `null` if you need to retrieve a list of event sessions in all locations of `k_business`.
      *
@@ -152,7 +153,7 @@ class EventListGetRequest
 
     /**
      * The skin key if an event list is used for widget mode.
-     * 
+     *
      * `k_class_tab` will be ignored for widget mode.
      *
      * @var string|null
@@ -199,7 +200,7 @@ class EventListGetRequest
             'text_search' => $this->text_search,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

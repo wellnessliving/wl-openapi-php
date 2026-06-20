@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion;
 
 class PromotionPayPauseGetRequest
@@ -6,7 +7,7 @@ class PromotionPayPauseGetRequest
     /**
      * The end date of the current hold, in the local time zone.
      * This can be set to a special value `0000-00-00` to make the period indefinite until further action.
-     * 
+     *
      * `null` if it shouldn't be updated.
      *
      * @var string|null
@@ -15,7 +16,7 @@ class PromotionPayPauseGetRequest
 
     /**
      * The start date of the current hold, in the local time zone.
-     * 
+     *
      * `null` if it shouldn't be updated.
      *
      * @var string|null
@@ -35,7 +36,7 @@ class PromotionPayPauseGetRequest
 
     /**
      * Key of business to which currently handled pause period or login promotion belongs.
-     * 
+     *
      * `null` if not initialized.
      *
      * @var string|null
@@ -46,9 +47,9 @@ class PromotionPayPauseGetRequest
      * The Purchase Option key. If this key is used, a new hold will be created. The endpoint will return a
      * `start-cross`
      * status code if a hold is already in place.
-     * 
+     *
      * Ignored if `k_promotion_pay_pause` is provided.
-     * 
+     *
      * `null` if not yet initialized.
      *
      * @var string|null
@@ -58,7 +59,7 @@ class PromotionPayPauseGetRequest
     /**
      * The promotion payment hold key. If this key is used, it will edit an existing hold.
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
-     * 
+     *
      * `null` if not yet initialized or if the request is based on `k_login_promotion`.
      *
      * @var string|null
@@ -76,7 +77,7 @@ class PromotionPayPauseGetRequest
             'k_login_promotion' => $this->k_login_promotion,
             'k_promotion_pay_pause' => $this->k_promotion_pay_pause,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

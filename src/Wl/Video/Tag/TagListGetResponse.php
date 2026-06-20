@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Tag;
 
 /**
@@ -15,6 +16,6 @@ class TagListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_tag_list = isset($data['a_tag_list']) ? array_map(static fn($item) => new TagListGetResponseTagList((array)$item), (array)$data['a_tag_list']) : null;
+        $this->a_tag_list = isset($data['a_tag_list']) ? array_map(static fn ($item) => new TagListGetResponseTagList((array)$item), (array)$data['a_tag_list']) : null;
     }
 }

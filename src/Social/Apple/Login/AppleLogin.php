@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Social\Apple\Login;
 
 use WlSdk\WlSdkClient;

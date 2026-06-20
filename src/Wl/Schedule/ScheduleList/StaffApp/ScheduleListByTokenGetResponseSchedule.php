@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ScheduleList\StaffApp;
 
 class ScheduleListByTokenGetResponseSchedule
@@ -26,7 +27,7 @@ class ScheduleListByTokenGetResponseSchedule
 
     /**
      * A list of staff members who will conduct the session.
-     * 
+     *
      * Deprecated, use `a_staff_list` instead.
      *
      * @var string[]|null
@@ -167,7 +168,7 @@ class ScheduleListByTokenGetResponseSchedule
     public ?bool $is_repeat = null;
 
     /**
-     * The appointment key. 
+     * The appointment key.
      * If the session isn't an appointment, this will be `0`.
      *
      * @var string|null
@@ -183,7 +184,7 @@ class ScheduleListByTokenGetResponseSchedule
     public ?string $dt_confirm = null;
 
     /**
-     * The class key. 
+     * The class key.
      * If the session isn't a class, this will be `0`.
      *
      * @var string|null
@@ -191,7 +192,7 @@ class ScheduleListByTokenGetResponseSchedule
     public ?string $k_class = null;
 
     /**
-     * The class period key. 
+     * The class period key.
      * If the session isn't a class, this will be `0`.
      *
      * @var string|null
@@ -207,7 +208,7 @@ class ScheduleListByTokenGetResponseSchedule
 
     /**
      * This is the key of the appointment type, while `k_appointment` is the specific instance.
-     * 
+     *
      * For other cases, this will be `0`.
      *
      * @var string|null

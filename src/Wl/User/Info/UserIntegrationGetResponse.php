@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\User\Info;
 
 /**
@@ -15,6 +16,6 @@ class UserIntegrationGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_integration = isset($data['a_integration']) ? array_map(static fn($item) => new UserIntegrationGetResponseIntegration((array)$item), (array)$data['a_integration']) : null;
+        $this->a_integration = isset($data['a_integration']) ? array_map(static fn ($item) => new UserIntegrationGetResponseIntegration((array)$item), (array)$data['a_integration']) : null;
     }
 }

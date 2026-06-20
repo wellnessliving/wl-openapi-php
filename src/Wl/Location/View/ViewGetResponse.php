@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Location\View;
 
 /**
@@ -295,9 +296,9 @@ class ViewGetResponse
         $this->a_age = isset($data['a_age']) ? (array)$data['a_age'] : null;
         $this->a_amenities = isset($data['a_amenities']) ? (array)$data['a_amenities'] : null;
         $this->a_level = isset($data['a_level']) ? (array)$data['a_level'] : null;
-        $this->a_logo = isset($data['a_logo']) ? array_map(static fn($item) => new ViewGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
-        $this->a_slide = isset($data['a_slide']) ? array_map(static fn($item) => new ViewGetResponseSlide((array)$item), (array)$data['a_slide']) : null;
-        $this->a_work = isset($data['a_work']) ? array_map(static fn($item) => new ViewGetResponseWork((array)$item), (array)$data['a_work']) : null;
+        $this->a_logo = isset($data['a_logo']) ? array_map(static fn ($item) => new ViewGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
+        $this->a_slide = isset($data['a_slide']) ? array_map(static fn ($item) => new ViewGetResponseSlide((array)$item), (array)$data['a_slide']) : null;
+        $this->a_work = isset($data['a_work']) ? array_map(static fn ($item) => new ViewGetResponseWork((array)$item), (array)$data['a_work']) : null;
         $this->f_latitude = isset($data['f_latitude']) ? (float)$data['f_latitude'] : null;
         $this->f_longitude = isset($data['f_longitude']) ? (float)$data['f_longitude'] : null;
         $this->html_description_full = isset($data['html_description_full']) ? (string)$data['html_description_full'] : null;

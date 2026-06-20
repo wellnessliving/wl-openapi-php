@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Family\Relation;
 
 class Relation72PostRequest
@@ -50,7 +51,7 @@ class Relation72PostRequest
             'a_new' => $this->a_new,
             'id_mode' => $this->id_mode,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

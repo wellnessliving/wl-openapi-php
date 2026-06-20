@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Transaction\Report;
 
 /**
@@ -8,7 +9,7 @@ class TransactionAllPaymentGetResponse
 {
     /**
      * A list of fields in the report.
-     * 
+     *
      * This array is effectively a title row for the table returned in
      * [TransactionAllPaymentApi](/Thoth/WlPay/Transaction/Report/TransactionAllPayment.json).
      *
@@ -53,7 +54,7 @@ class TransactionAllPaymentGetResponse
 
     /**
      * The report status.
-     * 
+     *
      * One of {@link \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid} constants.
      *
      * @var int|null
@@ -62,7 +63,7 @@ class TransactionAllPaymentGetResponse
 
     /**
      * Determines whether to show more rows in the report.
-     * 
+     *
      * If `true`, there are more report rows to get. Otherwise, `false` to indicate that all rows in the report
      * have
      * already been retrieved.
@@ -73,11 +74,11 @@ class TransactionAllPaymentGetResponse
 
     /**
      * Determines whether the report is complete.
-     * 
+     *
      * If the report is accessed on the current day, or is returning a result that was cached on the current day,
      * it could
      * be incomplete as not all the transactions for the day are present.
-     * 
+     *
      * If `true`, the report has been completed. Otherwise, `false`.
      *
      * @var bool|null
@@ -87,7 +88,7 @@ class TransactionAllPaymentGetResponse
     public function __construct(array $data)
     {
         $this->a_field = isset($data['a_field']) ? (array)$data['a_field'] : null;
-        $this->a_row = isset($data['a_row']) ? array_map(static fn($item) => new TransactionAllPaymentGetResponseRow((array)$item), (array)$data['a_row']) : null;
+        $this->a_row = isset($data['a_row']) ? array_map(static fn ($item) => new TransactionAllPaymentGetResponseRow((array)$item), (array)$data['a_row']) : null;
         $this->a_warning = isset($data['a_warning']) ? (array)$data['a_warning'] : null;
         $this->dtu_complete = isset($data['dtu_complete']) ? (string)$data['dtu_complete'] : null;
         $this->dtu_queue = isset($data['dtu_queue']) ? (string)$data['dtu_queue'] : null;

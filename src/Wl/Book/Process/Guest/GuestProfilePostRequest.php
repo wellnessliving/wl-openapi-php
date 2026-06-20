@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Guest;
 
 class GuestProfilePostRequest
@@ -79,7 +80,7 @@ class GuestProfilePostRequest
             'text_mail' => $this->text_mail,
             'id_mode' => $this->id_mode,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

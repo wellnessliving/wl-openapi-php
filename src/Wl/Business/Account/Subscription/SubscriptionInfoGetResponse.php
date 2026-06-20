@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Account\Subscription;
 
 /**
@@ -22,7 +23,7 @@ class SubscriptionInfoGetResponse
 
     /**
      * Whether subscription is active.
-     * 
+     *
      * `true` if subscription is active, `false` otherwise.
      *
      * @var bool|null

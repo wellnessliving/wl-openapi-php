@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Attach;
 
 class AttachElementPostRequest
@@ -41,7 +42,7 @@ class AttachElementPostRequest
 
     /**
      * Attachment description.
-     * 
+     *
      * `null` for not update description.
      *
      * @var string|null
@@ -50,7 +51,7 @@ class AttachElementPostRequest
 
     /**
      * Attachment file name.
-     * 
+     *
      * `null` for not update file name.
      *
      * @var string|null
@@ -69,7 +70,7 @@ class AttachElementPostRequest
             'text_description' => $this->text_description,
             'text_filename' => $this->text_filename,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

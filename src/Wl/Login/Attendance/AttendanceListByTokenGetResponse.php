@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Attendance;
 
 /**
@@ -68,9 +69,9 @@ class AttendanceListByTokenGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_list_active = isset($data['a_list_active']) ? array_map(static fn($item) => new AttendanceListByTokenGetResponseListActive((array)$item), (array)$data['a_list_active']) : null;
-        $this->a_list_confirm = isset($data['a_list_confirm']) ? array_map(static fn($item) => new AttendanceListByTokenGetResponseListConfirm((array)$item), (array)$data['a_list_confirm']) : null;
-        $this->a_list_wait = isset($data['a_list_wait']) ? array_map(static fn($item) => new AttendanceListByTokenGetResponseListWait((array)$item), (array)$data['a_list_wait']) : null;
+        $this->a_list_active = isset($data['a_list_active']) ? array_map(static fn ($item) => new AttendanceListByTokenGetResponseListActive((array)$item), (array)$data['a_list_active']) : null;
+        $this->a_list_confirm = isset($data['a_list_confirm']) ? array_map(static fn ($item) => new AttendanceListByTokenGetResponseListConfirm((array)$item), (array)$data['a_list_confirm']) : null;
+        $this->a_list_wait = isset($data['a_list_wait']) ? array_map(static fn ($item) => new AttendanceListByTokenGetResponseListWait((array)$item), (array)$data['a_list_wait']) : null;
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
         $this->i_client = isset($data['i_client']) ? (int)$data['i_client'] : null;
         $this->i_wait_list_limit = isset($data['i_wait_list_limit']) ? (int)$data['i_wait_list_limit'] : null;

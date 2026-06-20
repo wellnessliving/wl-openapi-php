@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
 
 class InviteListPostRequest
@@ -12,7 +13,7 @@ class InviteListPostRequest
 
     /**
      * Key of the login promotion which provides the guest pass invitation.
-     * 
+     *
      * &gt; * Used for `GET` to get list of initial invitations for the specific login promotion.
      * &gt; * Used for `POST` to send invitation to the specific user for the specific login promotion.
      *
@@ -22,7 +23,7 @@ class InviteListPostRequest
 
     /**
      * Key of the invited user.
-     * 
+     *
      * &gt; * Used for `GET` to get list of incoming invitations for the specific user.
      * &gt; * Used for `POST` to send invitation to the specific user.
      *
@@ -46,7 +47,7 @@ class InviteListPostRequest
             'uid_guest' => $this->uid_guest,
             'a_guest' => $this->a_guest,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Info;
 
 use WlSdk\WlSdkClient;

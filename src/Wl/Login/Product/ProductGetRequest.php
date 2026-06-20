@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Product;
 
 class ProductGetRequest
@@ -97,7 +98,7 @@ class ProductGetRequest
             'm_price_min' => $this->m_price_min,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

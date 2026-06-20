@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz;
 
 class QuizElementPostRequest
@@ -15,7 +16,7 @@ class QuizElementPostRequest
 
     /**
      * Whether quiz response received by kiosk or direct mode link.
-     * 
+     *
      * `true` quiz response received by kiosk mode.
      * `false` quiz response received by direct or direct mode.
      *
@@ -60,7 +61,7 @@ class QuizElementPostRequest
 
     /**
      * Quiz active status.
-     * 
+     *
      * `true` if quiz is active.
      * `false` if quiz is not active.
      *
@@ -70,7 +71,7 @@ class QuizElementPostRequest
 
     /**
      * List of quiz elements in json format.
-     * 
+     *
      * Order of the element in array corresponds to order of elements on the form.
      *
      * @var string|null
@@ -79,7 +80,7 @@ class QuizElementPostRequest
 
     /**
      * Business type key. Used only for forms in the system business.
-     * 
+     *
      * `null` if not initialized.
      *
      * @var string|null
@@ -88,7 +89,7 @@ class QuizElementPostRequest
 
     /**
      * Whether to show numbering of the form elements that supports numbering.
-     * 
+     *
      * `true` to show numbering on the form for elements that supports numbering.
      * `false` to not show numbering.
      *
@@ -120,7 +121,7 @@ class QuizElementPostRequest
             'show_numbering' => $this->show_numbering,
             'text_title' => $this->text_title,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

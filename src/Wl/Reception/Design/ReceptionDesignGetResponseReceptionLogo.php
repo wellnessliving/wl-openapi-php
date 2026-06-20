@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Design;
 
 class ReceptionDesignGetResponseReceptionLogo

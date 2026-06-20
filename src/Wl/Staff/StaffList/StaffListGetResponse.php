@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Staff\StaffList;
 
 /**
@@ -15,6 +16,6 @@ class StaffListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_staff = isset($data['a_staff']) ? array_map(static fn($item) => new StaffListGetResponseStaff((array)$item), (array)$data['a_staff']) : null;
+        $this->a_staff = isset($data['a_staff']) ? array_map(static fn ($item) => new StaffListGetResponseStaff((array)$item), (array)$data['a_staff']) : null;
     }
 }

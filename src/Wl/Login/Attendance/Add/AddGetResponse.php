@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Attendance\Add;
 
 /**
@@ -52,7 +53,7 @@ class AddGetResponse
 
     /**
      * The price of the session, including any taxes and discounts.
-     * 
+     *
      * If `null`, the price of the session hasn't been loaded yet.
      *
      * @var string|null
@@ -68,8 +69,8 @@ class AddGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_login_promotion = isset($data['a_login_promotion']) ? array_map(static fn($item) => new AddGetResponseLoginPromotion((array)$item), (array)$data['a_login_promotion']) : null;
-        $this->a_session_pass = isset($data['a_session_pass']) ? array_map(static fn($item) => new AddGetResponseSessionPass((array)$item), (array)$data['a_session_pass']) : null;
+        $this->a_login_promotion = isset($data['a_login_promotion']) ? array_map(static fn ($item) => new AddGetResponseLoginPromotion((array)$item), (array)$data['a_login_promotion']) : null;
+        $this->a_session_pass = isset($data['a_session_pass']) ? array_map(static fn ($item) => new AddGetResponseSessionPass((array)$item), (array)$data['a_session_pass']) : null;
         $this->is_free = isset($data['is_free']) ? (bool)$data['is_free'] : null;
         $this->k_login_promotion = isset($data['k_login_promotion']) ? (string)$data['k_login_promotion'] : null;
         $this->k_session_pass = isset($data['k_session_pass']) ? (string)$data['k_session_pass'] : null;

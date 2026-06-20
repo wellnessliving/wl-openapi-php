@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Purchase;
 
 /**
@@ -15,6 +16,6 @@ class PurchaseListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_purchase = isset($data['a_purchase']) ? array_map(static fn($item) => new PurchaseListGetResponsePurchase((array)$item), (array)$data['a_purchase']) : null;
+        $this->a_purchase = isset($data['a_purchase']) ? array_map(static fn ($item) => new PurchaseListGetResponsePurchase((array)$item), (array)$data['a_purchase']) : null;
     }
 }

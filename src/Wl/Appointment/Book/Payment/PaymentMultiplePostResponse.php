@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Payment;
 
 /**
@@ -22,7 +23,7 @@ class PaymentMultiplePostResponse
 
     /**
      * The keys of purchased items.
-     * 
+     *
      * The first level of the array is the list of appointments from the batch.
      * The second level of the array is the list of items purchased for this appointment.
      *

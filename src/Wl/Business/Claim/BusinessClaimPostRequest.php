@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Claim;
 
 class BusinessClaimPostRequest
@@ -32,7 +33,7 @@ class BusinessClaimPostRequest
             'k_location' => $this->k_location,
             'uid_verified' => $this->uid_verified,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

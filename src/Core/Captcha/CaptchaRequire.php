@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Captcha;
 
 use WlSdk\WlSdkClient;

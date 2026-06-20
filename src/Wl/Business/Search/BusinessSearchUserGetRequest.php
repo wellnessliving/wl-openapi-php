@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Search;
 
 class BusinessSearchUserGetRequest
@@ -32,7 +33,7 @@ class BusinessSearchUserGetRequest
             'text_mail' => $this->text_mail,
             'text_name' => $this->text_name,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

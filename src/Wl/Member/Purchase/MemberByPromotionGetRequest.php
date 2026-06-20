@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Purchase;
 
 class MemberByPromotionGetRequest
@@ -13,7 +14,7 @@ class MemberByPromotionGetRequest
     /**
      * The comma-separated list of the Purchase Option keys.
      * Only active clients with at least one active Purchase Option from this list will be returned.
-     * 
+     *
      * For example: '324,123,11,556'
      *
      * @var string|null
@@ -27,7 +28,7 @@ class MemberByPromotionGetRequest
             'k_business' => $this->k_business,
             's_promotion_keys' => $this->s_promotion_keys,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

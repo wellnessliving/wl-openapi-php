@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 class SubscribePostResponseMessageBroadcastB
@@ -12,7 +13,7 @@ class SubscribePostResponseMessageBroadcastB
 
     /**
      * New task status of the changed task.
-     * 
+     *
      * One of {@link \WlSdk\Wl\Task\TaskStatusSid}.
      *
      * @var int|null

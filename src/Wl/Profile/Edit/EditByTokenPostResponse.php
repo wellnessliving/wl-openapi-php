@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Edit;
 
 /**
@@ -47,7 +48,7 @@ class EditByTokenPostResponse
 
     /**
      * The key of the user to edit.
-     * 
+     *
      * If empty, an empty form will be displayed to add a new user.
      *
      * @var string|null
@@ -56,7 +57,7 @@ class EditByTokenPostResponse
 
     public function __construct(array $data)
     {
-        $this->a_error_list = isset($data['a_error_list']) ? array_map(static fn($item) => new EditByTokenPostResponseErrorList((array)$item), (array)$data['a_error_list']) : null;
+        $this->a_error_list = isset($data['a_error_list']) ? array_map(static fn ($item) => new EditByTokenPostResponseErrorList((array)$item), (array)$data['a_error_list']) : null;
         $this->s_class = isset($data['s_class']) ? (string)$data['s_class'] : null;
         $this->s_code = isset($data['s_code']) ? (string)$data['s_code'] : null;
         $this->s_status = isset($data['s_status']) ? (string)$data['s_status'] : null;

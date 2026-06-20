@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Edit;
 
 /**
@@ -15,6 +16,6 @@ class AddonUpdateGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_addon_data = isset($data['a_addon_data']) ? array_map(static fn($item) => new AddonUpdateGetResponseAddonData((array)$item), (array)$data['a_addon_data']) : null;
+        $this->a_addon_data = isset($data['a_addon_data']) ? array_map(static fn ($item) => new AddonUpdateGetResponseAddonData((array)$item), (array)$data['a_addon_data']) : null;
     }
 }

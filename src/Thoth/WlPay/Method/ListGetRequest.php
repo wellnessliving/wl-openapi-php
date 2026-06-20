@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Method;
 
 class ListGetRequest
@@ -40,7 +41,7 @@ class ListGetRequest
             'show_manual' => $this->show_manual,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

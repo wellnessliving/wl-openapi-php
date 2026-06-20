@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Classes\ClassList;
 
 use WlSdk\WlSdkClient;

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Reward\Config;
 
 use WlSdk\WlSdkClient;

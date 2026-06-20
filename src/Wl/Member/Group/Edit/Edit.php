@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Group\Edit;
 
 use WlSdk\WlSdkClient;

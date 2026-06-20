@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Roster;
 
 class AttendanceListAttendPostRequest
@@ -48,7 +49,7 @@ class AttendanceListAttendPostRequest
             's_secret' => $this->s_secret,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

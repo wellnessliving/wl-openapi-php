@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Franchise\Location;
 
 class BusinessFranchiseLocationGetResponseLocationList

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz\Response;
 
 class ResponseGetRequest
@@ -22,7 +23,7 @@ class ResponseGetRequest
 
     /**
      * Whether quiz response received by kiosk or direct mode link.
-     * 
+     *
      * `true` quiz response received by kiosk mode.
      * `false` quiz response received by direct or direct mode.
      *
@@ -39,7 +40,7 @@ class ResponseGetRequest
 
     /**
      * Quiz response key.
-     * 
+     *
      * `null` in a case of response creation or
      * removing set of responses in [QuizResponseApi](/Core/Quiz/QuizResponse.json).
      *
@@ -57,7 +58,7 @@ class ResponseGetRequest
             'k_business' => $this->k_business,
             'k_quiz_response' => $this->k_quiz_response,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

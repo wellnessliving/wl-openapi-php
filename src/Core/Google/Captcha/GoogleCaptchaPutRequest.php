@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Google\Captcha;
 
 class GoogleCaptchaPutRequest
@@ -12,7 +13,7 @@ class GoogleCaptchaPutRequest
 
     /**
      * The action name.
-     * 
+     *
      * Used to determine the place where the CAPTCHA is needed in documentation for endpoints that used
      * the CAPTCHA.
      *
@@ -35,7 +36,7 @@ class GoogleCaptchaPutRequest
             'text_action' => $this->text_action,
             'text_token' => $this->text_token,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

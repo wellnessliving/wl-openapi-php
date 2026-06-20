@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Resource\Layout;
 
 /**
@@ -71,9 +72,9 @@ class LayoutGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_resource = isset($data['a_resource']) ? array_map(static fn($item) => new LayoutGetResponseResource((array)$item), (array)$data['a_resource']) : null;
-        $this->a_shape_custom = isset($data['a_shape_custom']) ? array_map(static fn($item) => new LayoutGetResponseShapeCustom((array)$item), (array)$data['a_shape_custom']) : null;
-        $this->a_shape_icon = isset($data['a_shape_icon']) ? array_map(static fn($item) => new LayoutGetResponseShapeIcon((array)$item), (array)$data['a_shape_icon']) : null;
+        $this->a_resource = isset($data['a_resource']) ? array_map(static fn ($item) => new LayoutGetResponseResource((array)$item), (array)$data['a_resource']) : null;
+        $this->a_shape_custom = isset($data['a_shape_custom']) ? array_map(static fn ($item) => new LayoutGetResponseShapeCustom((array)$item), (array)$data['a_shape_custom']) : null;
+        $this->a_shape_icon = isset($data['a_shape_icon']) ? array_map(static fn ($item) => new LayoutGetResponseShapeIcon((array)$item), (array)$data['a_shape_icon']) : null;
         $this->i_grid = isset($data['i_grid']) ? (int)$data['i_grid'] : null;
         $this->is_grid = isset($data['is_grid']) ? (bool)$data['is_grid'] : null;
         $this->k_resource_type = isset($data['k_resource_type']) ? (string)$data['k_resource_type'] : null;

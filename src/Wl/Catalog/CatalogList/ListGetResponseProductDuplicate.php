@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\CatalogList;
 
 class ListGetResponseProductDuplicate

@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Purchase;
 
 class PurchaseGetRequest
 {
     /**
      * A list of existing purchase options that were selected for previous clients (group).
-     * 
+     *
      * Note:
      * * It makes sense if for all clients the list is loaded within
      *      the same pair `dt_date_gmt` and `k_class_period`.
@@ -18,7 +19,7 @@ class PurchaseGetRequest
      *      selected) in it do not allow it to be applied to the selected session, then such promotion will simply
      *      not be returned for the client.
      * * The order of clients across all APIs must be the same to guarantee their results.
-     * 
+     *
      * Each element has the following structure:
      *
      * @var array[]|null
@@ -27,8 +28,8 @@ class PurchaseGetRequest
 
     /**
      * The list of sessions being booked.
-     * 
-     * Keys are class period keys. 
+     *
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null
@@ -37,8 +38,8 @@ class PurchaseGetRequest
 
     /**
      * The selected sessions on the wait list that are unpaid.
-     * 
-     * Keys are class period keys. 
+     *
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null
@@ -77,7 +78,7 @@ class PurchaseGetRequest
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
-     * 
+     *
      * If `true` is sent, access to the business and to the client will be checked.
      * If `false` is sent, user can book only for himself or for relatives if this is allowed in business settings.
      *
@@ -95,7 +96,7 @@ class PurchaseGetRequest
     /**
      * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag
      * is set to `false`.
-     * 
+     *
      * Use this field with caution.
      * The final booking will not use this flag, and the check will still be performed.
      *
@@ -105,7 +106,7 @@ class PurchaseGetRequest
 
     /**
      * The business key.
-     * 
+     *
      * `null` if business key was not passed.
      *
      * @var string|null
@@ -152,7 +153,7 @@ class PurchaseGetRequest
             'show_relation' => $this->show_relation,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

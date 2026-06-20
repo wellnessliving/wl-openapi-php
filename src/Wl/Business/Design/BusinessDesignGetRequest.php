@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Business\Design;
 
 class BusinessDesignGetRequest
 {
     /**
      * Business key to get design data.
-     * 
+     *
      * May be `null`. In this case default business design data is returned.
      *
      * @var string|null
@@ -18,7 +19,7 @@ class BusinessDesignGetRequest
             [
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

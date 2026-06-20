@@ -1,13 +1,14 @@
 <?php
+
 namespace WlSdk\Core\Geo;
 
 class ComboboxGetRequest
 {
     /**
      * The locale ID used as a filter. The locale is generally a country.
-     * 
+     *
      * One of the {@link \WlSdk\Core\Locale\LocaleSid} constants.
-     * 
+     *
      * This will be `0` if all locations are searched.
      *
      * @var int|null
@@ -28,7 +29,7 @@ class ComboboxGetRequest
             'id_locale' => $this->id_locale,
             's_value' => $this->s_value,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Geo\Region;
 
 class RegionGetResponseRegion

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Partner;
 
 /**
@@ -50,7 +51,7 @@ class PartnerSettingsGetResponse
 
     /**
      * A link to the photo of the business representative.
-     * 
+     *
      * `null` in case when image is not uploaded.
      *
      * @var string|null

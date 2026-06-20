@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Alert;
 
 /**
@@ -15,6 +16,6 @@ class AlertEditGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_login_note_data = isset($data['a_login_note_data']) ? array_map(static fn($item) => new AlertEditGetResponseLoginNoteData((array)$item), (array)$data['a_login_note_data']) : null;
+        $this->a_login_note_data = isset($data['a_login_note_data']) ? array_map(static fn ($item) => new AlertEditGetResponseLoginNoteData((array)$item), (array)$data['a_login_note_data']) : null;
     }
 }

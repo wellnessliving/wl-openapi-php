@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\Cart;
 
 class LimitQuantityGetRequest
@@ -40,7 +41,7 @@ class LimitQuantityGetRequest
             'k_promotion' => $this->k_promotion,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

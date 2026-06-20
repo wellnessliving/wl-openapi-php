@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Group\Edit;
 
 /**
@@ -52,7 +53,7 @@ class EditGetResponse
     /**
      * Key of existing template.
      * Primary key in the SearchTemplateSql table.
-     * 
+     *
      * Can be empty if template needs to be created.
      *
      * @var string|null

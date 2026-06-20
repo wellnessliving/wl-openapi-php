@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Collector;
 
 use WlSdk\WlSdkClient;

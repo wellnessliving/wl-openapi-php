@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Attendance\Add;
 
 class AddGetRequest
@@ -40,7 +41,7 @@ class AddGetRequest
             'k_class_period' => $this->k_class_period,
             'uid_client' => $this->uid_client,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

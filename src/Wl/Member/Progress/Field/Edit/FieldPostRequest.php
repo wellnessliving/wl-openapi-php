@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Field\Edit;
 
 class FieldPostRequest
@@ -19,7 +20,7 @@ class FieldPostRequest
 
     /**
      * Field measurement unit ID.
-     * 
+     *
      * One of the {@link \WlSdk\Wl\Member\Progress\Field\MeasurementSid} constants.
      *
      * @var int|null
@@ -28,7 +29,7 @@ class FieldPostRequest
 
     /**
      * Field type ID.
-     * 
+     *
      * One of the {@link \WlSdk\Wl\Member\Progress\Field\TypeSid} constants.
      *
      * @var int|null
@@ -66,7 +67,7 @@ class FieldPostRequest
     /**
      * Field title.
      * Only titles of the custom progress fields can be changed.
-     * 
+     *
      * `null` If default title should be used.
      *
      * @var string|null
@@ -87,7 +88,7 @@ class FieldPostRequest
             'is_require_staff' => $this->is_require_staff,
             'text_title' => $this->text_title,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

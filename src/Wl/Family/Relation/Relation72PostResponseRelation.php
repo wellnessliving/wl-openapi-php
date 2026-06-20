@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Family\Relation;
 
 class Relation72PostResponseRelation

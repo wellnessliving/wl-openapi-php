@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Skin;
 
 class SkinForeignDeleteRequest
@@ -32,7 +33,7 @@ class SkinForeignDeleteRequest
             'k_business' => $this->k_business,
             's_foreign_id' => $this->s_foreign_id,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

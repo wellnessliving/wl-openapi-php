@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\ReportCore\Generator;
 
 class QueryPostResponseDynamic

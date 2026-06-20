@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Action\CategoryList;
 
 /**
@@ -15,6 +16,6 @@ class CategoryListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_category = isset($data['a_category']) ? array_map(static fn($item) => new CategoryListGetResponseCategory((array)$item), (array)$data['a_category']) : null;
+        $this->a_category = isset($data['a_category']) ? array_map(static fn ($item) => new CategoryListGetResponseCategory((array)$item), (array)$data['a_category']) : null;
     }
 }

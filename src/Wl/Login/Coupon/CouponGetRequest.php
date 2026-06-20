@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Coupon;
 
 class CouponGetRequest
@@ -24,7 +25,7 @@ class CouponGetRequest
             'k_business' => $this->k_business,
             's_code' => $this->s_code,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

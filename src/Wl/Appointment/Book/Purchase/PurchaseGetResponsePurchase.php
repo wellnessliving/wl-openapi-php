@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Purchase;
 
 class PurchaseGetResponsePurchase

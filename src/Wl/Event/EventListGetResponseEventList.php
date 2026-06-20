@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Event;
 
 class EventListGetResponseEventList
@@ -327,11 +328,11 @@ class EventListGetResponseEventList
 
     public function __construct(array $data)
     {
-        $this->a_age_restriction = isset($data['a_age_restriction']) ? array_map(static fn($item) => new EventListGetResponseEventListAgeRestriction((array)$item), (array)$data['a_age_restriction']) : null;
+        $this->a_age_restriction = isset($data['a_age_restriction']) ? array_map(static fn ($item) => new EventListGetResponseEventListAgeRestriction((array)$item), (array)$data['a_age_restriction']) : null;
         $this->a_class_tab = isset($data['a_class_tab']) ? (array)$data['a_class_tab'] : null;
         $this->a_logo = $data['a_logo'] ?? null;
-        $this->a_schedule = isset($data['a_schedule']) ? array_map(static fn($item) => new EventListGetResponseEventListSchedule((array)$item), (array)$data['a_schedule']) : null;
-        $this->a_search_tag = isset($data['a_search_tag']) ? array_map(static fn($item) => new EventListGetResponseEventListSearchTag((array)$item), (array)$data['a_search_tag']) : null;
+        $this->a_schedule = isset($data['a_schedule']) ? array_map(static fn ($item) => new EventListGetResponseEventListSchedule((array)$item), (array)$data['a_schedule']) : null;
+        $this->a_search_tag = isset($data['a_search_tag']) ? array_map(static fn ($item) => new EventListGetResponseEventListSearchTag((array)$item), (array)$data['a_search_tag']) : null;
         $this->can_book = isset($data['can_book']) ? (bool)$data['can_book'] : null;
         $this->can_cancel = isset($data['can_cancel']) ? (bool)$data['can_cancel'] : null;
         $this->dl_early = isset($data['dl_early']) ? (string)$data['dl_early'] : null;

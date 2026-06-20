@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Schedule;
 
 class ScheduleAvailableDateGetRequest
 {
     /**
      * Class keys to filter.
-     * 
+     *
      * Empty to search for all classes.
      *
      * @var string[]|null
@@ -14,7 +15,7 @@ class ScheduleAvailableDateGetRequest
 
     /**
      * IDs of week days from {@link \WlSdk\ADateWeekSid} class.
-     * 
+     *
      * Empty to search for all week days.
      *
      * @var int[]|null
@@ -23,7 +24,7 @@ class ScheduleAvailableDateGetRequest
 
     /**
      * Event keys to filter.
-     * 
+     *
      * Empty to search for all events.
      *
      * @var string[]|null
@@ -32,7 +33,7 @@ class ScheduleAvailableDateGetRequest
 
     /**
      * Location keys to filter.
-     * 
+     *
      * Empty to search in all locations.
      *
      * @var string[]|null
@@ -41,7 +42,7 @@ class ScheduleAvailableDateGetRequest
 
     /**
      * Staff member keys to filter.
-     * 
+     *
      * Empty to search for all staff members.
      *
      * @var string[]|null
@@ -50,8 +51,8 @@ class ScheduleAvailableDateGetRequest
 
     /**
      * Time interval:
-     * 
-     * 
+     *
+     *
      * Empty to search for all time.
      *
      * @var array[]|null
@@ -127,7 +128,7 @@ class ScheduleAvailableDateGetRequest
             'k_business' => $this->k_business,
             'k_timezone' => $this->k_timezone,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Resource\ResourceList;
 
 use WlSdk\WlSdkClient;
@@ -6,7 +7,7 @@ use WlSdk\WlSdkClient;
 /**
  * Returns assets list in the business.
  */
-class List
+class ListEndpoint
 {
     /** @var WlSdkClient */
     private $client;
@@ -22,12 +23,12 @@ class List
      * Returns all assets if `$id_category` is not specified or only certain category assets. Includes
      *   main information about assets.
      *
-     * @return ListGetResponse
+     * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(ListGetRequest $request): ListGetResponse
+    public function get(ListEndpointGetRequest $request): ListEndpointGetResponse
     {
-        return new ListGetResponse($this->client->request('/Wl/Resource/ResourceList/List.json', $request->params(), 'GET'));
+        return new ListEndpointGetResponse($this->client->request('/Wl/Resource/ResourceList/List.json', $request->params(), 'GET'));
     }
 }
