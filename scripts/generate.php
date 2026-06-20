@@ -165,10 +165,6 @@ function wlSchemaToDocType(array $spec, array $schema, int $depth = 0): string
 
     if (isset($schema['$ref'])) {
         $resolved = wlResolveRef($spec, $schema['$ref']);
-        if ($resolved && isset($resolved['enum']) && isset($resolved['x-enum-varnames'])) {
-            $parts = explode('/', $schema['$ref']);
-            return wlEnumSchemaToClassRef(end($parts));
-        }
         return $resolved ? wlSchemaToDocType($spec, $resolved, $depth + 1) : 'mixed';
     }
 
@@ -442,20 +438,6 @@ function wlBuildResponseProperties(
                 continue;
             }
 
-            // Case 2c: items is a $ref to an enum -> typed array with enum casting.
-            $enumItemName = wlGetEnumSchemaName($spec, $items);
-            if ($enumItemName !== null) {
-                $enumRef = wlEnumSchemaToClassRef($enumItemName);
-                $resolvedItem = wlResolveRef($spec, $items['$ref']);
-                $itemPhpType = wlSchemaToPhpType($spec, $resolvedItem ?: []);
-                $cast = ($itemPhpType !== null && isset($castMap[$itemPhpType])) ? $castMap[$itemPhpType] : '';
-                $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $enumRef . '[]|null');
-                $propsCode .= "    public ?array \${$propName} = null;\n\n";
-                $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
-                    . " ? array_map(static fn(\$v) => {$enumRef}::tryFrom({$cast}\$v), (array)\$data['{$propName}']) : null;\n";
-                continue;
-            }
-
             // Case 2b: items is an object with properties -> generate a sub-class for the item type.
             $resolvedItems = isset($items['$ref']) ? (wlResolveRef($spec, $items['$ref']) ?: $items) : $items;
             $itemType = $resolvedItems['type'] ?? null;
@@ -476,28 +458,17 @@ function wlBuildResponseProperties(
         }
 
         // Default: scalar or unresolvable type.
-        $enumSchemaName = wlGetEnumSchemaName($spec, $originalSchema);
-        if ($enumSchemaName !== null) {
-            $enumRef = wlEnumSchemaToClassRef($enumSchemaName);
-            $phpType = wlSchemaToPhpType($spec, $propSchema);
-            $cast = ($phpType !== null && isset($castMap[$phpType])) ? $castMap[$phpType] : '';
-            $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $enumRef . '|null');
-            $propsCode .= "    public ?{$enumRef} \${$propName} = null;\n\n";
+        $phpType = wlSchemaToPhpType($spec, $propSchema);
+        $docType = wlSchemaToDocType($spec, $originalSchema);
+        $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $docType . '|null');
+        if ($phpType !== null) {
+            $propsCode .= "    public ?{$phpType} \${$propName} = null;\n\n";
+            $cast = $castMap[$phpType] ?? '';
             $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
-                . " ? {$enumRef}::tryFrom({$cast}\$data['{$propName}']) : null;\n";
+                . " ? {$cast}\$data['{$propName}'] : null;\n";
         } else {
-            $phpType = wlSchemaToPhpType($spec, $propSchema);
-            $docType = wlSchemaToDocType($spec, $originalSchema);
-            $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $docType . '|null');
-            if ($phpType !== null) {
-                $propsCode .= "    public ?{$phpType} \${$propName} = null;\n\n";
-                $cast = $castMap[$phpType] ?? '';
-                $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
-                    . " ? {$cast}\$data['{$propName}'] : null;\n";
-            } else {
-                $propsCode .= "    public \${$propName} = null;\n\n";
-                $constructorBody .= "        \$this->{$propName} = \$data['{$propName}'] ?? null;\n";
-            }
+            $propsCode .= "    public \${$propName} = null;\n\n";
+            $constructorBody .= "        \$this->{$propName} = \$data['{$propName}'] ?? null;\n";
         }
     }
 
@@ -751,10 +722,7 @@ function wlGenerateRequestClass(
         $propsCode .= "     *\n";
         $propsCode .= "     * @var {$docType}\n";
         $propsCode .= "     */\n";
-        if ($info['enumClass'] !== null) {
-            $enumRef = wlEnumSchemaToClassRef($info['enumClass']);
-            $propsCode .= "    public ?{$enumRef} \${$name} = null;\n\n";
-        } elseif ($info['phpType'] !== null) {
+        if ($info['phpType'] !== null) {
             $propsCode .= "    public ?{$info['phpType']} \${$name} = null;\n\n";
         } else {
             $propsCode .= "    public \${$name} = null;\n\n";
@@ -763,11 +731,7 @@ function wlGenerateRequestClass(
 
     $paramsEntries = '';
     foreach ($params as $name => $info) {
-        if ($info['enumClass'] !== null) {
-            $paramsEntries .= "            '{$name}' => \$this->{$name}?->value,\n";
-        } else {
-            $paramsEntries .= "            '{$name}' => \$this->{$name},\n";
-        }
+        $paramsEntries .= "            '{$name}' => \$this->{$name},\n";
     }
     if ($paramsEntries !== '') {
         $paramsMethod = "    public function params(): array\n"
@@ -920,7 +884,7 @@ function wlGenerateApiClass(array $spec, string $path, array $pathItem): array
 }
 
 /**
- * Generates a PHP 8.1 backed enum class from an OpenAPI schema definition.
+ * Generates a PHP class with integer or string constants from an OpenAPI schema definition.
  *
  * Returns null if the schema is not an enum or lacks x-enum-varnames.
  *
@@ -954,21 +918,31 @@ function wlGenerateEnumClass(string $schemaName, array $schema): ?array
     }
     $classDoc = "/**\n" . implode("\n", $classDocLines) . "\n */\n";
 
+    // Build a varname -> description map from the class description text when x-enum-description
+    // is absent. The description format is: "- {value} (`{VARNAME}`): {description}."
+    $varnameDescMap = [];
+    if (empty($descriptions)) {
+        preg_match_all('/- \S+ \(`([^`]+)`\): (.+)/', $classDesc, $matches, PREG_SET_ORDER);
+        foreach ($matches as $match) {
+            $varnameDescMap[$match[1]] = trim($match[2]);
+        }
+    }
+
     $casesCode = '';
     foreach ($values as $i => $value) {
         $caseName = $varnames[$i] ?? ('VALUE_' . $i);
-        $caseDesc = trim((string)($descriptions[$i] ?? ''));
+        $caseDesc = trim((string)($descriptions[$i] ?? $varnameDescMap[$caseName] ?? ''));
         if ($caseDesc !== '') {
             $casesCode .= "    /** {$caseDesc} */\n";
         }
         $caseValue = ($phpType === 'string') ? "'" . addslashes((string)$value) . "'" : (string)(int)$value;
-        $casesCode .= "    case {$caseName} = {$caseValue};\n";
+        $casesCode .= "    const {$caseName} = {$caseValue};\n";
     }
 
     $content = "<?php\n"
         . "namespace {$namespace};\n\n"
         . $classDoc
-        . "enum {$className}: {$phpType}\n"
+        . "class {$className}\n"
         . "{\n"
         . $casesCode
         . "}\n";
