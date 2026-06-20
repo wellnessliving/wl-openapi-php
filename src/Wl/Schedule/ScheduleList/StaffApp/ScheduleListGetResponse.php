@@ -9,7 +9,7 @@ class ScheduleListGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ScheduleListGetResponseSchedule[]|null
      */
     public ?array $a_schedule = null;
 
@@ -22,7 +22,7 @@ class ScheduleListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_schedule = isset($data['a_schedule']) ? (array)$data['a_schedule'] : null;
+        $this->a_schedule = isset($data['a_schedule']) ? array_map(static fn($item) => new ScheduleListGetResponseSchedule((array)$item), (array)$data['a_schedule']) : null;
         $this->is_virtual_service = isset($data['is_virtual_service']) ? (bool)$data['is_virtual_service'] : null;
     }
 }

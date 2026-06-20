@@ -80,7 +80,7 @@ class ClassList68PostRequest
     public ?string $dt_end = null;
 
     /**
-     * ID of tab. One of [TabSid](#/components/schemas/Wl.Classes.Tab.TabSid) constants.
+     * ID of tab. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
      * This will be ignored if `is_tab_all` is `true`.
      * 
      * `null` if no filtering by tab is required.

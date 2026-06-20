@@ -9,7 +9,7 @@ class ServiceList52GetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ServiceList52GetResponseService[]|null
      */
     public ?array $a_service = null;
 
@@ -29,7 +29,7 @@ class ServiceList52GetResponse
 
     public function __construct(array $data)
     {
-        $this->a_service = isset($data['a_service']) ? (array)$data['a_service'] : null;
+        $this->a_service = isset($data['a_service']) ? array_map(static fn($item) => new ServiceList52GetResponseService((array)$item), (array)$data['a_service']) : null;
         $this->is_multiple_booking = isset($data['is_multiple_booking']) ? (bool)$data['is_multiple_booking'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
     }

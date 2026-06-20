@@ -11,9 +11,8 @@ class BusinessPutRequest
     public ?array $a_staff_member = null;
 
     /**
-     * `true` to send [RsMailSid::BUSINESS_CREATE](#/components/schemas/RsMailSid) mail when creating a staff
-     * member.
-     * Otherwise send [RsMailSid::LOGIN_WELCOME](#/components/schemas/RsMailSid) mail.
+     * `true` to send {@link \WlSdk\RsMailSid} mail when creating a staff member.
+     * Otherwise send {@link \WlSdk\RsMailSid} mail.
      *
      * @var bool|null
      */

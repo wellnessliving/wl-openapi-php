@@ -28,9 +28,9 @@ class GuestProfilePostRequest
      * Key of service to book.
      * Depending on `id_service` value:,
      * <ul>
-     *     <li>[ServiceSid::CLASSES](#/components/schemas/Wl.Service.ServiceSid) - class key. </li>
-     *     <li>[ServiceSid::APPOINTMENT](#/components/schemas/Wl.Service.ServiceSid) - service key.</li>
-     *     <li>[ServiceSid::BOOKABLE_ASSET](#/components/schemas/Wl.Service.ServiceSid) - resource key.</li>
+     *     <li>{@link \WlSdk\Wl\Service\ServiceSid} - class key. </li>
+     *     <li>{@link \WlSdk\Wl\Service\ServiceSid} - service key.</li>
+     *     <li>{@link \WlSdk\Wl\Service\ServiceSid} - resource key.</li>
      * </ul>
      *
      * @var string|null
@@ -60,8 +60,7 @@ class GuestProfilePostRequest
 
     /**
      * The mode type used to determine the Lead Source for the created guest.
-     * One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants. Default is
-     * [ModeSid::API](#/components/schemas/Wl.Mode.ModeSid).
+     * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants. Default is {@link \WlSdk\Wl\Mode\ModeSid}.
      *
      * @var int|null
      */

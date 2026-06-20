@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Skin;
 class SkinForeignPostRequest
 {
     /**
-     * Skin type, one of [RsSkinSid](#/components/schemas/RsSkinSid) constants.
+     * Skin type, one of {@link \WlSdk\RsSkinSid} constants.
      *
      * @var int|null
      */

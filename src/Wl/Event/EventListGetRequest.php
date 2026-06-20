@@ -11,7 +11,7 @@ class EventListGetRequest
     public ?array $a_class_filter = null;
 
     /**
-     * List of day the week applied by filter [ADateWeekSid](#/components/schemas/ADateWeekSid).
+     * List of day the week applied by filter {@link \WlSdk\ADateWeekSid}.
      *
      * @var int[]|null
      */
@@ -39,7 +39,7 @@ class EventListGetRequest
     public ?array $a_staff = null;
 
     /**
-     * List of time day applied by filter [RsScheduleTimeSid](#/components/schemas/RsScheduleTimeSid).
+     * List of time day applied by filter {@link \WlSdk\RsScheduleTimeSid}.
      *
      * @var int[]|null
      */
@@ -47,9 +47,8 @@ class EventListGetRequest
 
     /**
      * List of IDs to include/exclude virtual events.
-     * If the only ID is [YesNoSid::YES](#/components/schemas/Core.Sid.YesNoSid), only virtual events are included.
-     * If the only ID is [YesNoSid::NO](#/components/schemas/Core.Sid.YesNoSid), only in-person events are
-     * included.
+     * If the only ID is {@link \WlSdk\Core\Sid\YesNoSid}, only virtual events are included.
+     * If the only ID is {@link \WlSdk\Core\Sid\YesNoSid}, only in-person events are included.
      * Otherwise, no filtering is done.
      *
      * @var string[]|null
@@ -77,11 +76,11 @@ class EventListGetRequest
     /**
      * Defines how the event availability flag filter should be applied.
      * 
-     * One of [AFlagSid](#/components/schemas/AFlagSid) constants.
+     * One of {@link \WlSdk\AFlagSid} constants.
      * 
-     * * [AFlagSid::ON](#/components/schemas/AFlagSid) to show only available events.
-     * * [AFlagSid::OFF](#/components/schemas/AFlagSid) to show only unavailable events.
-     * * [AFlagSid::ALL](#/components/schemas/AFlagSid) to show all events (available and unavailable).
+     * * {@link \WlSdk\AFlagSid} to show only available events.
+     * * {@link \WlSdk\AFlagSid} to show only unavailable events.
+     * * {@link \WlSdk\AFlagSid} to show all events (available and unavailable).
      *
      * @var int|null
      */

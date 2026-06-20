@@ -9,14 +9,14 @@ class PaymentPostGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var PaymentPostGetResponsePromotionData[]|null
      */
     public ?array $a_promotion_data = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var PaymentPostGetResponsePurchase[]|null
      */
     public ?array $a_purchase = null;
 
@@ -71,8 +71,8 @@ class PaymentPostGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_promotion_data = isset($data['a_promotion_data']) ? (array)$data['a_promotion_data'] : null;
-        $this->a_purchase = isset($data['a_purchase']) ? (array)$data['a_purchase'] : null;
+        $this->a_promotion_data = isset($data['a_promotion_data']) ? array_map(static fn($item) => new PaymentPostGetResponsePromotionData((array)$item), (array)$data['a_promotion_data']) : null;
+        $this->a_purchase = isset($data['a_purchase']) ? array_map(static fn($item) => new PaymentPostGetResponsePurchase((array)$item), (array)$data['a_purchase']) : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
         $this->m_coupon = isset($data['m_coupon']) ? (string)$data['m_coupon'] : null;
         $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;

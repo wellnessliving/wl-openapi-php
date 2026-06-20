@@ -12,8 +12,7 @@ class ApplicationResourceMaterialPostRequest
 
     /**
      * Application category in the store.
-     * One of [ApplicationCategorySid](#/components/schemas/Wl.Skin.Application.Resource.ApplicationCategorySid)
-     * constants.
+     * One of {@link \WlSdk\Wl\Skin\Application\Resource\ApplicationCategorySid} constants.
      * `0` if no category is selected.
      *
      * @var int|null
@@ -22,7 +21,7 @@ class ApplicationResourceMaterialPostRequest
 
     /**
      * Type of application update.
-     * One of [AppUpdateTypeEnum](#/components/schemas/Wl.Skin.Application.Upgrade.AppUpdateTypeEnum) constants.
+     * One of {@link \WlSdk\Wl\Skin\Application\Upgrade\AppUpdateTypeEnum} constants.
      *
      * @var int|null
      */

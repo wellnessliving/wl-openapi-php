@@ -20,7 +20,7 @@ class FieldPostRequest
     /**
      * Field measurement unit ID.
      * 
-     * One of the [MeasurementSid](#/components/schemas/Wl.Member.Progress.Field.MeasurementSid) constants.
+     * One of the {@link \WlSdk\Wl\Member\Progress\Field\MeasurementSid} constants.
      *
      * @var int|null
      */
@@ -29,7 +29,7 @@ class FieldPostRequest
     /**
      * Field type ID.
      * 
-     * One of the [TypeSid](#/components/schemas/Wl.Member.Progress.Field.TypeSid) constants.
+     * One of the {@link \WlSdk\Wl\Member\Progress\Field\TypeSid} constants.
      *
      * @var int|null
      */

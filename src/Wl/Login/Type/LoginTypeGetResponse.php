@@ -9,12 +9,12 @@ class LoginTypeGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var LoginTypeGetResponseLoginTypeList[]|null
      */
     public ?array $a_login_type_list = null;
 
     public function __construct(array $data)
     {
-        $this->a_login_type_list = isset($data['a_login_type_list']) ? (array)$data['a_login_type_list'] : null;
+        $this->a_login_type_list = isset($data['a_login_type_list']) ? array_map(static fn($item) => new LoginTypeGetResponseLoginTypeList((array)$item), (array)$data['a_login_type_list']) : null;
     }
 }

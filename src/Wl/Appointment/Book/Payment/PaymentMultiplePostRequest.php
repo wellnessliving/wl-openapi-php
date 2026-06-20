@@ -12,7 +12,7 @@ class PaymentMultiplePostRequest
     public ?array $a_uid = null;
 
     /**
-     * The ID of the source mode. One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * The ID of the source mode. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */

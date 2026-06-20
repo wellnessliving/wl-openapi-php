@@ -9,12 +9,12 @@ class ApplicationResourceGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ApplicationResourceGetResponseApplication[]|null
      */
     public ?array $a_application = null;
 
     public function __construct(array $data)
     {
-        $this->a_application = isset($data['a_application']) ? (array)$data['a_application'] : null;
+        $this->a_application = isset($data['a_application']) ? array_map(static fn($item) => new ApplicationResourceGetResponseApplication((array)$item), (array)$data['a_application']) : null;
     }
 }

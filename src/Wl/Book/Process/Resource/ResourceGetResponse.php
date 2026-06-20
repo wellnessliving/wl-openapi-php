@@ -9,12 +9,12 @@ class ResourceGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ResourceGetResponseResourceAll[]|null
      */
     public ?array $a_resource_all = null;
 
     public function __construct(array $data)
     {
-        $this->a_resource_all = isset($data['a_resource_all']) ? (array)$data['a_resource_all'] : null;
+        $this->a_resource_all = isset($data['a_resource_all']) ? array_map(static fn($item) => new ResourceGetResponseResourceAll((array)$item), (array)$data['a_resource_all']) : null;
     }
 }

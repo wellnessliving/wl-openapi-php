@@ -9,7 +9,7 @@ class ReceptionSchedulePostResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ReceptionSchedulePostResponseConfirmationData[]|null
      */
     public ?array $a_confirmation_data = null;
 
@@ -29,7 +29,7 @@ class ReceptionSchedulePostResponse
 
     public function __construct(array $data)
     {
-        $this->a_confirmation_data = isset($data['a_confirmation_data']) ? (array)$data['a_confirmation_data'] : null;
+        $this->a_confirmation_data = isset($data['a_confirmation_data']) ? array_map(static fn($item) => new ReceptionSchedulePostResponseConfirmationData((array)$item), (array)$data['a_confirmation_data']) : null;
         $this->html_confirmation = isset($data['html_confirmation']) ? (string)$data['html_confirmation'] : null;
         $this->k_visit = isset($data['k_visit']) ? (string)$data['k_visit'] : null;
     }

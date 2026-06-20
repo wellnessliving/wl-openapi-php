@@ -14,9 +14,9 @@ class ListGetRequest
     public ?array $a_class_tab = null;
 
     /**
-     * ID of book now tab. One of [TabSid](#/components/schemas/Wl.Classes.Tab.TabSid) constants.
-     * Only [TabSid::TRAINING](#/components/schemas/Wl.Classes.Tab.TabSid) and
-     * [TabSid::ENROLLMENT](#/components/schemas/Wl.Classes.Tab.TabSid) book now tab are supported.
+     * ID of book now tab. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
+     * Only {@link \WlSdk\Wl\Classes\Tab\TabSid} and {@link \WlSdk\Wl\Classes\Tab\TabSid} book now tab are
+     * supported.
      * Filtering by Book Now Tab is not supported if `is_franchise` is `true`.
      * 
      * `null` if no filtering by Book Now Tab is required.

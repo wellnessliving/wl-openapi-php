@@ -4,8 +4,7 @@ namespace WlSdk\Core\Geo\Region;
 class RegionGetRequest
 {
     /**
-     * The locale ID to find regions for. One of the [LocaleSid](#/components/schemas/Core.Locale.LocaleSid)
-     * constants.
+     * The locale ID to find regions for. One of the {@link \WlSdk\Core\Locale\LocaleSid} constants.
      *
      * @var int|null
      */

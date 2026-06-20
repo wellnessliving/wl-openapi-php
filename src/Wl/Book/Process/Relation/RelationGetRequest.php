@@ -5,7 +5,7 @@ class RelationGetRequest
 {
     /**
      * List of check that must be skipped.
-     * Each element must be a member of [ProcessCheckSid](#/components/schemas/Wl.Book.Process.ProcessCheckSid).
+     * Each element must be a member of {@link \WlSdk\Wl\Book\Process\ProcessCheckSid}.
      *
      * @var int[]|null
      */

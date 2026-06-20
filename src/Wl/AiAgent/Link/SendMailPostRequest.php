@@ -6,7 +6,7 @@ class SendMailPostRequest
     /**
      * Purchase item ID. Required if `text_action` is 'purchase'.
      * 
-     * One of the [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid) constants.
+     * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
      */

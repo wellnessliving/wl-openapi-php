@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Reward\Action;
 class ActionTypeGetRequest
 {
     /**
-     * ID of type of reward action. One of [RsRewardScoreSid](#/components/schemas/RsRewardScoreSid) constants.
+     * ID of type of reward action. One of {@link \WlSdk\RsRewardScoreSid} constants.
      *
      * @var int|null
      */

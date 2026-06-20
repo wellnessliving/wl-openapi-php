@@ -9,12 +9,12 @@ class CategoryGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var CategoryGetResponseShopCategory[]|null
      */
     public ?array $a_shop_category = null;
 
     public function __construct(array $data)
     {
-        $this->a_shop_category = isset($data['a_shop_category']) ? (array)$data['a_shop_category'] : null;
+        $this->a_shop_category = isset($data['a_shop_category']) ? array_map(static fn($item) => new CategoryGetResponseShopCategory((array)$item), (array)$data['a_shop_category']) : null;
     }
 }

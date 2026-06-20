@@ -5,7 +5,7 @@ class RelationDeleteRequest
 {
     /**
      * ID of the user behavior flow.
-     * One of [FlowSid](#/components/schemas/Wl.User.Tracking.FlowSid) constants.
+     * One of {@link \WlSdk\Wl\User\Tracking\FlowSid} constants.
      *
      * @var int|null
      */
@@ -34,7 +34,7 @@ class RelationDeleteRequest
 
     /**
      * ID of source mode.
-     * One of [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * One of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */

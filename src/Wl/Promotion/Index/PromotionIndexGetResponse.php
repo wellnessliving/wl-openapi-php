@@ -9,12 +9,12 @@ class PromotionIndexGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var PromotionIndexGetResponsePromotion[]|null
      */
     public ?array $a_promotion = null;
 
     public function __construct(array $data)
     {
-        $this->a_promotion = isset($data['a_promotion']) ? (array)$data['a_promotion'] : null;
+        $this->a_promotion = isset($data['a_promotion']) ? array_map(static fn($item) => new PromotionIndexGetResponsePromotion((array)$item), (array)$data['a_promotion']) : null;
     }
 }

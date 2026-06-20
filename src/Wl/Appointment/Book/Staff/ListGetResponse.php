@@ -9,7 +9,7 @@ class ListGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ListGetResponseStaff[]|null
      */
     public ?array $a_staff = null;
 
@@ -43,7 +43,7 @@ class ListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_staff = isset($data['a_staff']) ? (array)$data['a_staff'] : null;
+        $this->a_staff = isset($data['a_staff']) ? array_map(static fn($item) => new ListGetResponseStaff((array)$item), (array)$data['a_staff']) : null;
         $this->can_book_unavailable_staff = isset($data['can_book_unavailable_staff']) ? (bool)$data['can_book_unavailable_staff'] : null;
         $this->has_gender = isset($data['has_gender']) ? (bool)$data['has_gender'] : null;
         $this->has_staff = isset($data['has_staff']) ? (bool)$data['has_staff'] : null;

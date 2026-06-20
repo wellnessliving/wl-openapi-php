@@ -5,7 +5,7 @@ class AddressGetRequest
 {
     /**
      * The ID of the payment owner type.
-     * One of [RsPayOwnerSid](#/components/schemas/RsPayOwnerSid) constants.
+     * One of {@link \WlSdk\RsPayOwnerSid} constants.
      *
      * @var int|null
      */

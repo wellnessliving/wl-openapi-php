@@ -9,35 +9,35 @@ class MemberInfoGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var MemberInfoGetResponseInfo[]|null
      */
     public ?array $a_info = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var MemberInfoGetResponseItems[]|null
      */
     public ?array $a_items = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var MemberInfoGetResponseResultList[]|null
      */
     public ?array $a_result_list = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var MemberInfoGetResponseVisitLast[]|null
      */
     public ?array $a_visit_last = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var MemberInfoGetResponseVisitNext[]|null
      */
     public ?array $a_visit_next = null;
 
@@ -102,11 +102,11 @@ class MemberInfoGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_info = isset($data['a_info']) ? (array)$data['a_info'] : null;
-        $this->a_items = isset($data['a_items']) ? (array)$data['a_items'] : null;
-        $this->a_result_list = isset($data['a_result_list']) ? (array)$data['a_result_list'] : null;
-        $this->a_visit_last = isset($data['a_visit_last']) ? (array)$data['a_visit_last'] : null;
-        $this->a_visit_next = isset($data['a_visit_next']) ? (array)$data['a_visit_next'] : null;
+        $this->a_info = isset($data['a_info']) ? array_map(static fn($item) => new MemberInfoGetResponseInfo((array)$item), (array)$data['a_info']) : null;
+        $this->a_items = isset($data['a_items']) ? array_map(static fn($item) => new MemberInfoGetResponseItems((array)$item), (array)$data['a_items']) : null;
+        $this->a_result_list = isset($data['a_result_list']) ? array_map(static fn($item) => new MemberInfoGetResponseResultList((array)$item), (array)$data['a_result_list']) : null;
+        $this->a_visit_last = isset($data['a_visit_last']) ? array_map(static fn($item) => new MemberInfoGetResponseVisitLast((array)$item), (array)$data['a_visit_last']) : null;
+        $this->a_visit_next = isset($data['a_visit_next']) ? array_map(static fn($item) => new MemberInfoGetResponseVisitNext((array)$item), (array)$data['a_visit_next']) : null;
         $this->i_lifetime_visit = isset($data['i_lifetime_visit']) ? (int)$data['i_lifetime_visit'] : null;
         $this->is_traveller = isset($data['is_traveller']) ? (bool)$data['is_traveller'] : null;
         $this->m_lifetime_value = isset($data['m_lifetime_value']) ? (string)$data['m_lifetime_value'] : null;

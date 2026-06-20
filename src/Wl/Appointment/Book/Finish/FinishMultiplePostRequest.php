@@ -4,8 +4,7 @@ namespace WlSdk\Wl\Appointment\Book\Finish;
 class FinishMultiplePostRequest
 {
     /**
-     * The payment type for the appointment. One of the
-     * [RsAppointmentPaySid](#/components/schemas/RsAppointmentPaySid) constants.
+     * The payment type for the appointment. One of the {@link \WlSdk\RsAppointmentPaySid} constants.
      * 
      * Keys refer to provider indexes.
      *
@@ -141,7 +140,7 @@ class FinishMultiplePostRequest
     public ?array $a_quiz_response = null;
 
     /**
-     * The mode type. One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */

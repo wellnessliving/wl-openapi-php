@@ -11,7 +11,7 @@ class StoreGroupPostRequest
     public ?string $dt_date_gmt = null;
 
     /**
-     * The mode type. One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */

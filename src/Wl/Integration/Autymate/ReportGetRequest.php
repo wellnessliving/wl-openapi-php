@@ -5,7 +5,7 @@ class ReportGetRequest
 {
     /**
      * List of payment methods to filter out in the report.
-     * Each element is one of the [RsPayMethodSid](#/components/schemas/RsPayMethodSid) constants.
+     * Each element is one of the {@link \WlSdk\RsPayMethodSid} constants.
      *
      * @var int[]|null
      */

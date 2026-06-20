@@ -19,13 +19,13 @@ class EventListGetResponse
     /**
      * A list of events corresponding to requested parameters.
      *
-     * @var array[]|null
+     * @var EventListGetResponseEventList[]|null
      */
     public ?array $a_event_list = null;
 
     public function __construct(array $data)
     {
         $this->a_enrollment_block_list = isset($data['a_enrollment_block_list']) ? (array)$data['a_enrollment_block_list'] : null;
-        $this->a_event_list = isset($data['a_event_list']) ? (array)$data['a_event_list'] : null;
+        $this->a_event_list = isset($data['a_event_list']) ? array_map(static fn($item) => new EventListGetResponseEventList((array)$item), (array)$data['a_event_list']) : null;
     }
 }

@@ -9,12 +9,12 @@ class LeadSourceListGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var LeadSourceListGetResponseLeadSource[]|null
      */
     public ?array $a_lead_source = null;
 
     public function __construct(array $data)
     {
-        $this->a_lead_source = isset($data['a_lead_source']) ? (array)$data['a_lead_source'] : null;
+        $this->a_lead_source = isset($data['a_lead_source']) ? array_map(static fn($item) => new LeadSourceListGetResponseLeadSource((array)$item), (array)$data['a_lead_source']) : null;
     }
 }

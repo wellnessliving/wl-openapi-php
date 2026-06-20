@@ -9,20 +9,20 @@ class AlertGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var AlertGetResponseAlert[]|null
      */
     public ?array $a_alert = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var AlertGetResponseWarning[]|null
      */
     public ?array $a_warning = null;
 
     public function __construct(array $data)
     {
-        $this->a_alert = isset($data['a_alert']) ? (array)$data['a_alert'] : null;
-        $this->a_warning = isset($data['a_warning']) ? (array)$data['a_warning'] : null;
+        $this->a_alert = isset($data['a_alert']) ? array_map(static fn($item) => new AlertGetResponseAlert((array)$item), (array)$data['a_alert']) : null;
+        $this->a_warning = isset($data['a_warning']) ? array_map(static fn($item) => new AlertGetResponseWarning((array)$item), (array)$data['a_warning']) : null;
     }
 }

@@ -6,11 +6,11 @@ class ListGetRequest
     /**
      * Defines how the event availability flag filter should be applied.
      * 
-     * One of [AFlagSid](#/components/schemas/AFlagSid) constants.
+     * One of {@link \WlSdk\AFlagSid} constants.
      * 
-     * * [AFlagSid::ON](#/components/schemas/AFlagSid) to show only available events.
-     * * [AFlagSid::OFF](#/components/schemas/AFlagSid) to show only unavailable events.
-     * * [AFlagSid::ALL](#/components/schemas/AFlagSid) to show all events (available and unavailable).
+     * * {@link \WlSdk\AFlagSid} to show only available events.
+     * * {@link \WlSdk\AFlagSid} to show only unavailable events.
+     * * {@link \WlSdk\AFlagSid} to show all events (available and unavailable).
      *
      * @var int|null
      */

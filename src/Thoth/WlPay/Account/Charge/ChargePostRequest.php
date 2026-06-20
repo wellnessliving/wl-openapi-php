@@ -6,7 +6,7 @@ class ChargePostRequest
     /**
      * The account charge mode.
      * 
-     * One of the [RsPayAccountChargeSid](#/components/schemas/RsPayAccountChargeSid) constants.
+     * One of the {@link \WlSdk\RsPayAccountChargeSid} constants.
      *
      * @var int|null
      */
@@ -65,7 +65,7 @@ class ChargePostRequest
     public ?array $a_pay_form = null;
 
     /**
-     * The source mode key. One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * The source mode key. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */

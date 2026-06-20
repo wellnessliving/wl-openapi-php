@@ -9,35 +9,35 @@ class InfoGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var InfoGetResponseNext[]|null
      */
     public ?array $a_next = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var InfoGetResponsePrevious[]|null
      */
     public ?array $a_previous = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var InfoGetResponseQuestion[]|null
      */
     public ?array $a_question = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var InfoGetResponseResource[]|null
      */
     public ?array $a_resource = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var InfoGetResponseShopProductOption[]|null
      */
     public ?array $a_shop_product_option = null;
 
@@ -152,11 +152,11 @@ class InfoGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_next = isset($data['a_next']) ? (array)$data['a_next'] : null;
-        $this->a_previous = isset($data['a_previous']) ? (array)$data['a_previous'] : null;
-        $this->a_question = isset($data['a_question']) ? (array)$data['a_question'] : null;
-        $this->a_resource = isset($data['a_resource']) ? (array)$data['a_resource'] : null;
-        $this->a_shop_product_option = isset($data['a_shop_product_option']) ? (array)$data['a_shop_product_option'] : null;
+        $this->a_next = isset($data['a_next']) ? array_map(static fn($item) => new InfoGetResponseNext((array)$item), (array)$data['a_next']) : null;
+        $this->a_previous = isset($data['a_previous']) ? array_map(static fn($item) => new InfoGetResponsePrevious((array)$item), (array)$data['a_previous']) : null;
+        $this->a_question = isset($data['a_question']) ? array_map(static fn($item) => new InfoGetResponseQuestion((array)$item), (array)$data['a_question']) : null;
+        $this->a_resource = isset($data['a_resource']) ? array_map(static fn($item) => new InfoGetResponseResource((array)$item), (array)$data['a_resource']) : null;
+        $this->a_shop_product_option = isset($data['a_shop_product_option']) ? array_map(static fn($item) => new InfoGetResponseShopProductOption((array)$item), (array)$data['a_shop_product_option']) : null;
         $this->dt_date_local = isset($data['dt_date_local']) ? (string)$data['dt_date_local'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_index = isset($data['i_index']) ? (int)$data['i_index'] : null;

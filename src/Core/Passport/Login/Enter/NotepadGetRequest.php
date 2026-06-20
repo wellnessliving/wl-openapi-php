@@ -8,10 +8,8 @@ class NotepadGetRequest
      * 
      * If specified, additional information about user may be returned such as datacenter of the user.
      * 
-     * This value is only considered when
-     * [AmazonRegionSid::currentId()](#/components/schemas/Core.Amazon.Region.AmazonRegionSid) is not empty,
-     * and [AmazonRegionSid::isRegionFixed()](#/components/schemas/Core.Amazon.Region.AmazonRegionSid) returns
-     * `false`.
+     * This value is only considered when {@link \WlSdk\Core\Amazon\Region\AmazonRegionSid} is not empty,
+     * and {@link \WlSdk\Core\Amazon\Region\AmazonRegionSid} returns `false`.
      * In this case, regional cookie may be set, and the request may be forwarded internally to a different
      * datacenter.
      * 

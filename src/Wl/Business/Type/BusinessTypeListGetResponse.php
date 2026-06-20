@@ -9,12 +9,12 @@ class BusinessTypeListGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var BusinessTypeListGetResponseBusinessType[]|null
      */
     public ?array $a_business_type = null;
 
     public function __construct(array $data)
     {
-        $this->a_business_type = isset($data['a_business_type']) ? (array)$data['a_business_type'] : null;
+        $this->a_business_type = isset($data['a_business_type']) ? array_map(static fn($item) => new BusinessTypeListGetResponseBusinessType((array)$item), (array)$data['a_business_type']) : null;
     }
 }

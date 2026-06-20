@@ -9,7 +9,7 @@ class UserInfoGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var UserInfoGetResponseCustomField[]|null
      */
     public ?array $a_custom_field = null;
 
@@ -23,14 +23,14 @@ class UserInfoGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var UserInfoGetResponsePhoto[]|null
      */
     public ?array $a_photo = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var UserInfoGetResponseResultList[]|null
      */
     public ?array $a_result_list = null;
 
@@ -224,10 +224,10 @@ class UserInfoGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_custom_field = isset($data['a_custom_field']) ? (array)$data['a_custom_field'] : null;
+        $this->a_custom_field = isset($data['a_custom_field']) ? array_map(static fn($item) => new UserInfoGetResponseCustomField((array)$item), (array)$data['a_custom_field']) : null;
         $this->a_member_group = isset($data['a_member_group']) ? (array)$data['a_member_group'] : null;
-        $this->a_photo = isset($data['a_photo']) ? (array)$data['a_photo'] : null;
-        $this->a_result_list = isset($data['a_result_list']) ? (array)$data['a_result_list'] : null;
+        $this->a_photo = isset($data['a_photo']) ? array_map(static fn($item) => new UserInfoGetResponsePhoto((array)$item), (array)$data['a_photo']) : null;
+        $this->a_result_list = isset($data['a_result_list']) ? array_map(static fn($item) => new UserInfoGetResponseResultList((array)$item), (array)$data['a_result_list']) : null;
         $this->can_introductory = isset($data['can_introductory']) ? (bool)$data['can_introductory'] : null;
         $this->dt_add = isset($data['dt_add']) ? (string)$data['dt_add'] : null;
         $this->dt_birth = isset($data['dt_birth']) ? (string)$data['dt_birth'] : null;

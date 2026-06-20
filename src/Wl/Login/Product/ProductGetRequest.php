@@ -32,8 +32,8 @@ class ProductGetRequest
     public ?int $i_page_size = null;
 
     /**
-     * ID of the payment method. One of the [RsPayMethodSid](#/components/schemas/RsPayMethodSid) constants. Zero
-     * means no filter by payment method.
+     * ID of the payment method. One of the {@link \WlSdk\RsPayMethodSid} constants. Zero means no filter by
+     * payment method.
      *
      * @var int|null
      */

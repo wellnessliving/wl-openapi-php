@@ -19,21 +19,21 @@ class Info54GetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var Info54GetResponseSessionAll[]|null
      */
     public ?array $a_session_all = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var Info54GetResponseSessionFree[]|null
      */
     public ?array $a_session_free = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var Info54GetResponseStaff[]|null
      */
     public ?array $a_staff = null;
 
@@ -286,9 +286,9 @@ class Info54GetResponse
     public function __construct(array $data)
     {
         $this->a_day_available = isset($data['a_day_available']) ? (array)$data['a_day_available'] : null;
-        $this->a_session_all = isset($data['a_session_all']) ? (array)$data['a_session_all'] : null;
-        $this->a_session_free = isset($data['a_session_free']) ? (array)$data['a_session_free'] : null;
-        $this->a_staff = isset($data['a_staff']) ? (array)$data['a_staff'] : null;
+        $this->a_session_all = isset($data['a_session_all']) ? array_map(static fn($item) => new Info54GetResponseSessionAll((array)$item), (array)$data['a_session_all']) : null;
+        $this->a_session_free = isset($data['a_session_free']) ? array_map(static fn($item) => new Info54GetResponseSessionFree((array)$item), (array)$data['a_session_free']) : null;
+        $this->a_staff = isset($data['a_staff']) ? array_map(static fn($item) => new Info54GetResponseStaff((array)$item), (array)$data['a_staff']) : null;
         $this->dl_end = isset($data['dl_end']) ? (string)$data['dl_end'] : null;
         $this->dt_date_local = isset($data['dt_date_local']) ? (string)$data['dt_date_local'] : null;
         $this->hide_price = isset($data['hide_price']) ? (bool)$data['hide_price'] : null;

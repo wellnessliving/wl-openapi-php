@@ -8,8 +8,8 @@ class StaffListGetRequest
      * 
      * This property acts as a filter.
      * Only staff members possessing all the privileges specified in this list will be included in the result.
-     * Each element in the array represents a privilege ID, and should be one of
-     * [PrivilegeSid](#/components/schemas/Wl.Privilege.PrivilegeSid) constants.
+     * Each element in the array represents a privilege ID, and should be one of {@link
+     * \WlSdk\Wl\Privilege\PrivilegeSid} constants.
      *
      * @var int[]|null
      */

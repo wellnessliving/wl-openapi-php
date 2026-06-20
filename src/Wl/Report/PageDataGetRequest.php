@@ -6,16 +6,14 @@ class PageDataGetRequest
     /**
      * The page of results to show for each report in collection, starting at zero (set by default). The API will
      * return
-     * 256 results per page. Key is report id from [RsReportSid](#/components/schemas/RsReportSid), value is the
-     * page of results.
+     * 256 results per page. Key is report id from {@link \WlSdk\RsReportSid}, value is the page of results.
      *
      * @var int[]|null
      */
     public ?array $a_page = null;
 
     /**
-     * The report group ID. One of the [RsReportGroupSid](#/components/schemas/RsReportGroupSid) constants that
-     * describes the time
+     * The report group ID. One of the {@link \WlSdk\RsReportGroupSid} constants that describes the time
      * period (day, week, month, or year) for the report to cover.
      *
      * @var int|null
@@ -23,7 +21,7 @@ class PageDataGetRequest
     public ?int $id_report_group = null;
 
     /**
-     * The report page ID. One of the [RsReportPageSid](#/components/schemas/RsReportPageSid) constants.
+     * The report page ID. One of the {@link \WlSdk\RsReportPageSid} constants.
      * The collection of that page will be used to get list of reports.
      * 
      * The following report collections are currently available via the API:
@@ -36,7 +34,7 @@ class PageDataGetRequest
     public ?int $id_report_page = null;
 
     /**
-     * The report view ID. One of the [RsReportChartViewSid](#/components/schemas/RsReportChartViewSid) constants.
+     * The report view ID. One of the {@link \WlSdk\RsReportChartViewSid} constants.
      *
      * @var int|null
      */

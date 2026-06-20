@@ -27,7 +27,7 @@ class EnvironmentUserGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var EnvironmentUserGetResponseMethodSupport[]|null
      */
     public ?array $a_method_support = null;
 
@@ -43,7 +43,7 @@ class EnvironmentUserGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var EnvironmentUserGetResponsePayProcessor[]|null
      */
     public ?array $a_pay_processor = null;
 
@@ -126,9 +126,9 @@ class EnvironmentUserGetResponse
     {
         $this->a_card_system = isset($data['a_card_system']) ? (array)$data['a_card_system'] : null;
         $this->a_method_staff = isset($data['a_method_staff']) ? (array)$data['a_method_staff'] : null;
-        $this->a_method_support = isset($data['a_method_support']) ? (array)$data['a_method_support'] : null;
+        $this->a_method_support = isset($data['a_method_support']) ? array_map(static fn($item) => new EnvironmentUserGetResponseMethodSupport((array)$item), (array)$data['a_method_support']) : null;
         $this->a_mobile_config = isset($data['a_mobile_config']) ? (array)$data['a_mobile_config'] : null;
-        $this->a_pay_processor = isset($data['a_pay_processor']) ? (array)$data['a_pay_processor'] : null;
+        $this->a_pay_processor = isset($data['a_pay_processor']) ? array_map(static fn($item) => new EnvironmentUserGetResponsePayProcessor((array)$item), (array)$data['a_pay_processor']) : null;
         $this->dl_now = isset($data['dl_now']) ? (string)$data['dl_now'] : null;
         $this->f_surcharge = isset($data['f_surcharge']) ? (string)$data['f_surcharge'] : null;
         $this->f_surcharge_ach = isset($data['f_surcharge_ach']) ? (string)$data['f_surcharge_ach'] : null;

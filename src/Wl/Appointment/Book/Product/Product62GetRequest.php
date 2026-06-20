@@ -20,8 +20,7 @@ class Product62GetRequest
     /**
      * The key of a user to show information for.
      * 
-     * Products with a [PurchaseRestrictionSid::TYPE](#/components/schemas/Wl.Shop.Product.PurchaseRestrictionSid)
-     * restriction will be filtered out.
+     * Products with a {@link \WlSdk\Wl\Shop\Product\PurchaseRestrictionSid} restriction will be filtered out.
      * Only those products that match the client type or those that have no restrictions will be shown.
      * 
      * `null` if the client is not logged in.

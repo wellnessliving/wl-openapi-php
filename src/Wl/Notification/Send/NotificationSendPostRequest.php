@@ -23,7 +23,7 @@ class NotificationSendPostRequest
     public ?string $dtu_send = null;
 
     /**
-     * ID of the notification. See [RsMailSid](#/components/schemas/RsMailSid).
+     * ID of the notification. See {@link \WlSdk\RsMailSid}.
      * 
      * Contact with WellnessLiving support to get the list of available notifications.
      *

@@ -9,21 +9,21 @@ class FlagGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var FlagGetResponseFlag[]|null
      */
     public ?array $a_flag = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var FlagGetResponseRestrictionsMultiple[]|null
      */
     public ?array $a_restrictions_multiple = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var FlagGetResponseRestrictionsSingle[]|null
      */
     public ?array $a_restrictions_single = null;
 
@@ -39,9 +39,9 @@ class FlagGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_flag = isset($data['a_flag']) ? (array)$data['a_flag'] : null;
-        $this->a_restrictions_multiple = isset($data['a_restrictions_multiple']) ? (array)$data['a_restrictions_multiple'] : null;
-        $this->a_restrictions_single = isset($data['a_restrictions_single']) ? (array)$data['a_restrictions_single'] : null;
+        $this->a_flag = isset($data['a_flag']) ? array_map(static fn($item) => new FlagGetResponseFlag((array)$item), (array)$data['a_flag']) : null;
+        $this->a_restrictions_multiple = isset($data['a_restrictions_multiple']) ? array_map(static fn($item) => new FlagGetResponseRestrictionsMultiple((array)$item), (array)$data['a_restrictions_multiple']) : null;
+        $this->a_restrictions_single = isset($data['a_restrictions_single']) ? array_map(static fn($item) => new FlagGetResponseRestrictionsSingle((array)$item), (array)$data['a_restrictions_single']) : null;
         $this->is_flag = isset($data['is_flag']) ? (bool)$data['is_flag'] : null;
     }
 }

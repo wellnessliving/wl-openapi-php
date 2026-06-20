@@ -9,7 +9,7 @@ class RepeatParallelGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var RepeatParallelGetResponseVisit[]|null
      */
     public ?array $a_visit = null;
 
@@ -53,7 +53,7 @@ class RepeatParallelGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_visit = isset($data['a_visit']) ? (array)$data['a_visit'] : null;
+        $this->a_visit = isset($data['a_visit']) ? array_map(static fn($item) => new RepeatParallelGetResponseVisit((array)$item), (array)$data['a_visit']) : null;
         $this->dt_from = isset($data['dt_from']) ? (string)$data['dt_from'] : null;
         $this->dt_to = isset($data['dt_to']) ? (string)$data['dt_to'] : null;
         $this->i_count = isset($data['i_count']) ? (int)$data['i_count'] : null;

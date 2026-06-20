@@ -9,7 +9,7 @@ class QuizElement72PutResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var QuizElement72PutResponseSetting[]|null
      */
     public ?array $a_setting = null;
 
@@ -29,7 +29,7 @@ class QuizElement72PutResponse
 
     public function __construct(array $data)
     {
-        $this->a_setting = isset($data['a_setting']) ? (array)$data['a_setting'] : null;
+        $this->a_setting = isset($data['a_setting']) ? array_map(static fn($item) => new QuizElement72PutResponseSetting((array)$item), (array)$data['a_setting']) : null;
         $this->url_quiz = isset($data['url_quiz']) ? (string)$data['url_quiz'] : null;
         $this->url_quiz_kiosk = isset($data['url_quiz_kiosk']) ? (string)$data['url_quiz_kiosk'] : null;
     }

@@ -19,14 +19,14 @@ class PaymentPostRequest
     public ?array $a_uid = null;
 
     /**
-     * The key of source mode. A constant of [ModeSid](#/components/schemas/Wl.Mode.ModeSid).
+     * The key of source mode. A constant of {@link \WlSdk\Wl\Mode\ModeSid}.
      *
      * @var int|null
      */
     public ?int $id_mode = null;
 
     /**
-     * The purchase item ID. A constant of [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid).
+     * The purchase item ID. A constant of {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
      */

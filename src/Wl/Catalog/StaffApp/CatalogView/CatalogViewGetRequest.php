@@ -31,7 +31,7 @@ class CatalogViewGetRequest
     public ?int $i_quantity = null;
 
     /**
-     * The ID of the sale category. One of the [RsSaleSid](#/components/schemas/RsSaleSid) constants.
+     * The ID of the sale category. One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
      */

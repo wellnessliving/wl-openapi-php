@@ -19,7 +19,7 @@ class Process54GetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var Process54GetResponsePath[]|null
      */
     public ?array $a_path = null;
 
@@ -113,7 +113,7 @@ class Process54GetResponse
     public function __construct(array $data)
     {
         $this->a_family_relation_login_allow = isset($data['a_family_relation_login_allow']) ? (array)$data['a_family_relation_login_allow'] : null;
-        $this->a_path = isset($data['a_path']) ? (array)$data['a_path'] : null;
+        $this->a_path = isset($data['a_path']) ? array_map(static fn($item) => new Process54GetResponsePath((array)$item), (array)$data['a_path']) : null;
         $this->id_pay_require = isset($data['id_pay_require']) ? (int)$data['id_pay_require'] : null;
         $this->is_age_require = isset($data['is_age_require']) ? (bool)$data['is_age_require'] : null;
         $this->is_card_authorize = isset($data['is_card_authorize']) ? (bool)$data['is_card_authorize'] : null;

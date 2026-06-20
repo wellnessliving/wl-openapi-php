@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Review;
 class ReviewReplyPostRequest
 {
     /**
-     * Status of the Review. One of [RsReviewStatusSid](#/components/schemas/RsReviewStatusSid) constants.
+     * Status of the Review. One of {@link \WlSdk\RsReviewStatusSid} constants.
      * 
      * `null` until passed to the api when admin replies to the review.
      *

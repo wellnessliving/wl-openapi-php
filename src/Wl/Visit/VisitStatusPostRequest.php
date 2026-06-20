@@ -43,7 +43,7 @@ class VisitStatusPostRequest
 
     /**
      * The source of the visit or the visit change.
-     * One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * If you're unsure about the value to use, keep the default value.
      *
      * @var int|null
@@ -52,15 +52,15 @@ class VisitStatusPostRequest
 
     /**
      * The status of the visit.
-     * One of the [VisitSid](#/components/schemas/Wl.Visit.VisitSid) constants.
+     * One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
      * @var int|null
      */
     public ?int $id_visit = null;
 
     /**
-     * The status of the visit from which the transition is made. One of the
-     * [VisitSid](#/components/schemas/Wl.Visit.VisitSid) constants.
+     * The status of the visit from which the transition is made. One of the {@link \WlSdk\Wl\Visit\VisitSid}
+     * constants.
      * 
      * If the visit status is passed, it will be used to check with the actual status in the database.
      * If `null`, the visit hasn't yet passed.

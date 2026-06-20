@@ -9,14 +9,14 @@ class LeadGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var LeadGetResponseFieldList[]|null
      */
     public ?array $a_field_list = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var LeadGetResponseSkin[]|null
      */
     public ?array $a_skin = null;
 
@@ -40,8 +40,8 @@ class LeadGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_field_list = isset($data['a_field_list']) ? (array)$data['a_field_list'] : null;
-        $this->a_skin = isset($data['a_skin']) ? (array)$data['a_skin'] : null;
+        $this->a_field_list = isset($data['a_field_list']) ? array_map(static fn($item) => new LeadGetResponseFieldList((array)$item), (array)$data['a_field_list']) : null;
+        $this->a_skin = isset($data['a_skin']) ? array_map(static fn($item) => new LeadGetResponseSkin((array)$item), (array)$data['a_skin']) : null;
         $this->can_use_free_purchase = isset($data['can_use_free_purchase']) ? (bool)$data['can_use_free_purchase'] : null;
         $this->url_captcha = isset($data['url_captcha']) ? (string)$data['url_captcha'] : null;
     }

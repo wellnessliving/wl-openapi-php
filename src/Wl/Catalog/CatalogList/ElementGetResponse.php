@@ -9,49 +9,49 @@ class ElementGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseAgeRestriction[]|null
      */
     public ?array $a_age_restriction = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseData[]|null
      */
     public ?array $a_data = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseImage[]|null
      */
     public ?array $a_image = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseImageList[]|null
      */
     public ?array $a_image_list = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseInstallmentTemplate[]|null
      */
     public ?array $a_installment_template = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseItem[]|null
      */
     public ?array $a_item = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseTax[]|null
      */
     public ?array $a_tax = null;
 
@@ -252,13 +252,13 @@ class ElementGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_age_restriction = isset($data['a_age_restriction']) ? (array)$data['a_age_restriction'] : null;
-        $this->a_data = isset($data['a_data']) ? (array)$data['a_data'] : null;
-        $this->a_image = isset($data['a_image']) ? (array)$data['a_image'] : null;
-        $this->a_image_list = isset($data['a_image_list']) ? (array)$data['a_image_list'] : null;
-        $this->a_installment_template = isset($data['a_installment_template']) ? (array)$data['a_installment_template'] : null;
-        $this->a_item = isset($data['a_item']) ? (array)$data['a_item'] : null;
-        $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
+        $this->a_age_restriction = isset($data['a_age_restriction']) ? array_map(static fn($item) => new ElementGetResponseAgeRestriction((array)$item), (array)$data['a_age_restriction']) : null;
+        $this->a_data = isset($data['a_data']) ? array_map(static fn($item) => new ElementGetResponseData((array)$item), (array)$data['a_data']) : null;
+        $this->a_image = isset($data['a_image']) ? array_map(static fn($item) => new ElementGetResponseImage((array)$item), (array)$data['a_image']) : null;
+        $this->a_image_list = isset($data['a_image_list']) ? array_map(static fn($item) => new ElementGetResponseImageList((array)$item), (array)$data['a_image_list']) : null;
+        $this->a_installment_template = isset($data['a_installment_template']) ? array_map(static fn($item) => new ElementGetResponseInstallmentTemplate((array)$item), (array)$data['a_installment_template']) : null;
+        $this->a_item = isset($data['a_item']) ? array_map(static fn($item) => new ElementGetResponseItem((array)$item), (array)$data['a_item']) : null;
+        $this->a_tax = isset($data['a_tax']) ? array_map(static fn($item) => new ElementGetResponseTax((array)$item), (array)$data['a_tax']) : null;
         $this->f_price = isset($data['f_price']) ? (string)$data['f_price'] : null;
         $this->f_price_include = isset($data['f_price_include']) ? (string)$data['f_price_include'] : null;
         $this->f_price_retail_product = isset($data['f_price_retail_product']) ? (string)$data['f_price_retail_product'] : null;

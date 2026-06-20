@@ -15,11 +15,10 @@ class ReviewListGetRequest
     public ?int $i_page = null;
 
     /**
-     * The order in which the review should be arranged. One of the
-     * [ReviewOrderSid](#/components/schemas/Wl.Review.ReviewList.ReviewOrderSid) constants.
+     * The order in which the review should be arranged. One of the {@link
+     * \WlSdk\Wl\Review\ReviewList\ReviewOrderSid} constants.
      * 
-     * If not passed use default order
-     * [ReviewOrderSid::LATEST](#/components/schemas/Wl.Review.ReviewList.ReviewOrderSid).
+     * If not passed use default order {@link \WlSdk\Wl\Review\ReviewList\ReviewOrderSid}.
      *
      * @var int|null
      */

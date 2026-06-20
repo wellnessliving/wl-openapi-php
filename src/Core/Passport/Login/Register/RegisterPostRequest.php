@@ -13,7 +13,7 @@ class RegisterPostRequest
     /**
      * ID of source mode.
      * 
-     * One of [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * One of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * `null` if not initialized or the api is not called in the Wellnessliving project.
      *
      * @var int|null

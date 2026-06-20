@@ -23,7 +23,7 @@ class Resource54PostRequest
     public ?string $dt_date_gmt = null;
 
     /**
-     * The mode type. One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */
@@ -122,7 +122,7 @@ class Resource54PostRequest
      * `false` otherwise.
      * 
      * Allows booking unpaid when client has a login promotion that can be used to pay for the service.
-     * Allowed in [ModeSid::WIDGET](#/components/schemas/Wl.Mode.ModeSid) mode only.
+     * Allowed in {@link \WlSdk\Wl\Mode\ModeSid} mode only.
      *
      * @var bool|null
      */

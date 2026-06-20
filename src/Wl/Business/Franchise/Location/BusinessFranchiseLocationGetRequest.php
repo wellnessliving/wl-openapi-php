@@ -6,13 +6,9 @@ class BusinessFranchiseLocationGetRequest
     /**
      * Determines which locations should be returned.
      * 
-     * One of the
-     * [BusinessFranchiseLocationSid](#/components/schemas/Wl.Business.Franchise.Location.BusinessFranchiseLocationSid)
-     * constants.
+     * One of the {@link \WlSdk\Wl\Business\Franchise\Location\BusinessFranchiseLocationSid} constants.
      * 
-     * If `null`,
-     * [BusinessFranchiseLocationSid::ALL](#/components/schemas/Wl.Business.Franchise.Location.BusinessFranchiseLocationSid)
-     * is used.
+     * If `null`, {@link \WlSdk\Wl\Business\Franchise\Location\BusinessFranchiseLocationSid} is used.
      *
      * @var int|null
      */

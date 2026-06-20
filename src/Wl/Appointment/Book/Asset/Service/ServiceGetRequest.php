@@ -11,7 +11,7 @@ class ServiceGetRequest
     public ?string $dt_start = null;
 
     /**
-     * Mode type, one of [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * Mode type, one of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */

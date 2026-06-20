@@ -18,28 +18,28 @@ class CartGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var CartGetResponseItem[]|null
      */
     public ?array $a_item = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var CartGetResponsePrizePropose[]|null
      */
     public ?array $a_prize_propose = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var CartGetResponseRewardItem[]|null
      */
     public ?array $a_reward_item = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var CartGetResponseRewardPropose[]|null
      */
     public ?array $a_reward_propose = null;
 
@@ -112,10 +112,10 @@ class CartGetResponse
     public function __construct(array $data)
     {
         $this->a_discount_item = isset($data['a_discount_item']) ? (array)$data['a_discount_item'] : null;
-        $this->a_item = isset($data['a_item']) ? (array)$data['a_item'] : null;
-        $this->a_prize_propose = isset($data['a_prize_propose']) ? (array)$data['a_prize_propose'] : null;
-        $this->a_reward_item = isset($data['a_reward_item']) ? (array)$data['a_reward_item'] : null;
-        $this->a_reward_propose = isset($data['a_reward_propose']) ? (array)$data['a_reward_propose'] : null;
+        $this->a_item = isset($data['a_item']) ? array_map(static fn($item) => new CartGetResponseItem((array)$item), (array)$data['a_item']) : null;
+        $this->a_prize_propose = isset($data['a_prize_propose']) ? array_map(static fn($item) => new CartGetResponsePrizePropose((array)$item), (array)$data['a_prize_propose']) : null;
+        $this->a_reward_item = isset($data['a_reward_item']) ? array_map(static fn($item) => new CartGetResponseRewardItem((array)$item), (array)$data['a_reward_item']) : null;
+        $this->a_reward_propose = isset($data['a_reward_propose']) ? array_map(static fn($item) => new CartGetResponseRewardPropose((array)$item), (array)$data['a_reward_propose']) : null;
         $this->a_tax_list = isset($data['a_tax_list']) ? (array)$data['a_tax_list'] : null;
         $this->i_score = isset($data['i_score']) ? (int)$data['i_score'] : null;
         $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;

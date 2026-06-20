@@ -14,14 +14,11 @@ class DataGetRequest
      * The report ID.
      * The following reports are currently available via the API:
      * <ul>
-     *     <li>[RsReportSid::LOGIN_LIST](#/components/schemas/RsReportSid) - All Clients Report (Reports tab,
-     * features date search)</li>
-     *     <li>[RsReportSid::LOGIN_LIST_ALL](#/components/schemas/RsReportSid) - All Clients Report (Clients tab)
-     * Batch Report</li>
-     *     <li>[RsReportSid::PAY_TRANSACTION_BATCH](#/components/schemas/RsReportSid) - Batch Report</li>
-     *     <li>[RsReportSid::PURCHASE_ITEM_LIST_USER](#/components/schemas/RsReportSid) - Sales per Client
-     * Report</li>
-     *     <li>[RsReportSid::PURCHASE_ITEM_ACCRUAL_CASH](#/components/schemas/RsReportSid) - All Sales Report</li>
+     *     <li>{@link \WlSdk\RsReportSid} - All Clients Report (Reports tab, features date search)</li>
+     *     <li>{@link \WlSdk\RsReportSid} - All Clients Report (Clients tab) Batch Report</li>
+     *     <li>{@link \WlSdk\RsReportSid} - Batch Report</li>
+     *     <li>{@link \WlSdk\RsReportSid} - Sales per Client Report</li>
+     *     <li>{@link \WlSdk\RsReportSid} - All Sales Report</li>
      * </ul>
      *
      * @var int|null
@@ -36,7 +33,7 @@ class DataGetRequest
     public ?int $id_report_group = null;
 
     /**
-     * The report page ID. One of the [RsReportPageSid](#/components/schemas/RsReportPageSid) constants.
+     * The report page ID. One of the {@link \WlSdk\RsReportPageSid} constants.
      * If set, the collection of that page will be used, otherwise a collection of single report will be used.
      *
      * @var int|null
@@ -44,7 +41,7 @@ class DataGetRequest
     public ?int $id_report_page = null;
 
     /**
-     * The report view ID. One of the [RsReportChartViewSid](#/components/schemas/RsReportChartViewSid) constants.
+     * The report view ID. One of the {@link \WlSdk\RsReportChartViewSid} constants.
      *
      * @var int|null
      */

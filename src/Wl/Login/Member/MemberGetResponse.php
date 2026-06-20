@@ -9,12 +9,12 @@ class MemberGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var MemberGetResponseBusiness[]|null
      */
     public ?array $a_business = null;
 
     public function __construct(array $data)
     {
-        $this->a_business = isset($data['a_business']) ? (array)$data['a_business'] : null;
+        $this->a_business = isset($data['a_business']) ? array_map(static fn($item) => new MemberGetResponseBusiness((array)$item), (array)$data['a_business']) : null;
     }
 }

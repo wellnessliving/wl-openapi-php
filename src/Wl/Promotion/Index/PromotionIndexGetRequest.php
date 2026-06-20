@@ -20,8 +20,7 @@ class PromotionIndexGetRequest
     public ?int $i_image_width = null;
 
     /**
-     * The program type ID, which will be one of the [RsProgramTypeSid](#/components/schemas/RsProgramTypeSid)
-     * constants.
+     * The program type ID, which will be one of the {@link \WlSdk\RsProgramTypeSid} constants.
      * 
      * `0` to not filter Purchase Options with type of the Purchase Option.
      *

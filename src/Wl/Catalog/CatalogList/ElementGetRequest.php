@@ -12,8 +12,7 @@ class ElementGetRequest
 
     /**
      * The list of items grouped by sale categories on the store page.
-     * Keys refer to sale IDs from [RsSaleSid](#/components/schemas/RsSaleSid), and values refer to data to
-     * identify an item:
+     * Keys refer to sale IDs from {@link \WlSdk\RsSaleSid}, and values refer to data to identify an item:
      *
      * @var array[]|null
      */
@@ -64,7 +63,7 @@ class ElementGetRequest
 
     /**
      * The ID of item category.
-     * One of the [RsSaleSid](#/components/schemas/RsSaleSid) constants.
+     * One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
      */

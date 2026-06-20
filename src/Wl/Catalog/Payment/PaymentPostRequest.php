@@ -11,8 +11,7 @@ class PaymentPostRequest
     public ?array $a_commission = null;
 
     /**
-     * The WellnessLiving mode type (required). One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid)
-     * constants.
+     * The WellnessLiving mode type (required). One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */

@@ -20,7 +20,7 @@ class ClassListGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ClassListGetResponseSession[]|null
      */
     public ?array $a_session = null;
 
@@ -44,7 +44,7 @@ class ClassListGetResponse
     public function __construct(array $data)
     {
         $this->a_calendar = isset($data['a_calendar']) ? (array)$data['a_calendar'] : null;
-        $this->a_session = isset($data['a_session']) ? (array)$data['a_session'] : null;
+        $this->a_session = isset($data['a_session']) ? array_map(static fn($item) => new ClassListGetResponseSession((array)$item), (array)$data['a_session']) : null;
         $this->is_timezone_different = isset($data['is_timezone_different']) ? (bool)$data['is_timezone_different'] : null;
         $this->is_virtual_service = isset($data['is_virtual_service']) ? (bool)$data['is_virtual_service'] : null;
     }

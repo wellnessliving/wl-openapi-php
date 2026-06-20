@@ -9,12 +9,12 @@ class InviteListGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var InviteListGetResponseList[]|null
      */
     public ?array $a_list = null;
 
     public function __construct(array $data)
     {
-        $this->a_list = isset($data['a_list']) ? (array)$data['a_list'] : null;
+        $this->a_list = isset($data['a_list']) ? array_map(static fn($item) => new InviteListGetResponseList((array)$item), (array)$data['a_list']) : null;
     }
 }

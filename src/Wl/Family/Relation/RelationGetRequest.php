@@ -5,7 +5,7 @@ class RelationGetRequest
 {
     /**
      * ID of the user behavior flow.
-     * One of [FlowSid](#/components/schemas/Wl.User.Tracking.FlowSid) constants.
+     * One of {@link \WlSdk\Wl\User\Tracking\FlowSid} constants.
      *
      * @var int|null
      */

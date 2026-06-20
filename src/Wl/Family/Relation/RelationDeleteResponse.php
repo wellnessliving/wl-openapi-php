@@ -9,12 +9,12 @@ class RelationDeleteResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var RelationDeleteResponseRelation[]|null
      */
     public ?array $a_relation = null;
 
     public function __construct(array $data)
     {
-        $this->a_relation = isset($data['a_relation']) ? (array)$data['a_relation'] : null;
+        $this->a_relation = isset($data['a_relation']) ? array_map(static fn($item) => new RelationDeleteResponseRelation((array)$item), (array)$data['a_relation']) : null;
     }
 }

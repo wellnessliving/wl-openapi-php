@@ -13,9 +13,8 @@ class ClassSessionSearchGetRequest
     public ?array $a_business = null;
 
     /**
-     * List of experience types to search by. Each value is one of
-     * [ClassSessionExperienceTypeEnum](#/components/schemas/Thoth.ExplorerSearch.ClassSession.SearchWord.ClassSessionExperienceTypeEnum)
-     * case values.
+     * List of experience types to search by. Each value is one of {@link
+     * \WlSdk\Thoth\ExplorerSearch\ClassSession\SearchWord\ClassSessionExperienceTypeEnum} case values.
      * 
      * Empty array to not filter by experience type.
      *
@@ -24,8 +23,7 @@ class ClassSessionSearchGetRequest
     public ?array $a_experience_type = null;
 
     /**
-     * List of home tour activity types to search by. Each value is from
-     * [RsHomeTourSid](#/components/schemas/RsHomeTourSid).
+     * List of home tour activity types to search by. Each value is from {@link \WlSdk\RsHomeTourSid}.
      * 
      * Empty array to not filter by home tour type.
      *

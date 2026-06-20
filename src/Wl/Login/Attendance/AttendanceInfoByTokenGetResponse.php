@@ -9,21 +9,21 @@ class AttendanceInfoByTokenGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var AttendanceInfoByTokenGetResponseAppointmentVisitInfo[]|null
      */
     public ?array $a_appointment_visit_info = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var AttendanceInfoByTokenGetResponseLogo[]|null
      */
     public ?array $a_logo = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var AttendanceInfoByTokenGetResponsePurchaseOptionDefault[]|null
      */
     public ?array $a_purchase_option_default = null;
 
@@ -37,14 +37,14 @@ class AttendanceInfoByTokenGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var AttendanceInfoByTokenGetResponseResourceLayout[]|null
      */
     public ?array $a_resource_layout = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var AttendanceInfoByTokenGetResponseStaff[]|null
      */
     public ?array $a_staff = null;
 
@@ -188,12 +188,12 @@ class AttendanceInfoByTokenGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_appointment_visit_info = isset($data['a_appointment_visit_info']) ? (array)$data['a_appointment_visit_info'] : null;
-        $this->a_logo = isset($data['a_logo']) ? (array)$data['a_logo'] : null;
-        $this->a_purchase_option_default = isset($data['a_purchase_option_default']) ? (array)$data['a_purchase_option_default'] : null;
+        $this->a_appointment_visit_info = isset($data['a_appointment_visit_info']) ? array_map(static fn($item) => new AttendanceInfoByTokenGetResponseAppointmentVisitInfo((array)$item), (array)$data['a_appointment_visit_info']) : null;
+        $this->a_logo = isset($data['a_logo']) ? array_map(static fn($item) => new AttendanceInfoByTokenGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
+        $this->a_purchase_option_default = isset($data['a_purchase_option_default']) ? array_map(static fn($item) => new AttendanceInfoByTokenGetResponsePurchaseOptionDefault((array)$item), (array)$data['a_purchase_option_default']) : null;
         $this->a_resource = isset($data['a_resource']) ? (array)$data['a_resource'] : null;
-        $this->a_resource_layout = isset($data['a_resource_layout']) ? (array)$data['a_resource_layout'] : null;
-        $this->a_staff = isset($data['a_staff']) ? (array)$data['a_staff'] : null;
+        $this->a_resource_layout = isset($data['a_resource_layout']) ? array_map(static fn($item) => new AttendanceInfoByTokenGetResponseResourceLayout((array)$item), (array)$data['a_resource_layout']) : null;
+        $this->a_staff = isset($data['a_staff']) ? array_map(static fn($item) => new AttendanceInfoByTokenGetResponseStaff((array)$item), (array)$data['a_staff']) : null;
         $this->dt_confirm = isset($data['dt_confirm']) ? (string)$data['dt_confirm'] : null;
         $this->dt_date_global = isset($data['dt_date_global']) ? (string)$data['dt_date_global'] : null;
         $this->dtl_end = isset($data['dtl_end']) ? (string)$data['dtl_end'] : null;

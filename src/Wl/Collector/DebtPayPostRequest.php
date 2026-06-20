@@ -5,7 +5,7 @@ class DebtPayPostRequest
 {
     /**
      * The currency of the payment.
-     * One of [CurrencySid](#/components/schemas/Core.Locale.CurrencySid) constants.
+     * One of {@link \WlSdk\Core\Locale\CurrencySid} constants.
      * 
      * Important! The currency must coincide with currency of the debt that was sent to collections.
      *
@@ -29,10 +29,9 @@ class DebtPayPostRequest
 
     /**
      * The payment method ID.
-     * One of [RsPayMethodSid](#/components/schemas/RsPayMethodSid) constants.
+     * One of {@link \WlSdk\RsPayMethodSid} constants.
      * 
-     * `null` if the payment method is unknown. In such cases,
-     * [RsPayMethodSid::CASH](#/components/schemas/RsPayMethodSid) would be used.
+     * `null` if the payment method is unknown. In such cases, {@link \WlSdk\RsPayMethodSid} would be used.
      *
      * @var int|null
      */

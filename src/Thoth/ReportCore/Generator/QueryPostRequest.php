@@ -6,9 +6,7 @@ class QueryPostRequest
     /**
      * CID of the report to show.
      * 
-     * One of
-     * [ReportGeneratorReportAbstract](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
-     * subclasses.
+     * One of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} subclasses.
      *
      * @var int|null
      */

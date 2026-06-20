@@ -9,14 +9,14 @@ class ResponseListGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ResponseListGetResponseQuizLogin[]|null
      */
     public ?array $a_quiz_login = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ResponseListGetResponseQuizResponse[]|null
      */
     public ?array $a_quiz_response = null;
 
@@ -50,8 +50,8 @@ class ResponseListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_quiz_login = isset($data['a_quiz_login']) ? (array)$data['a_quiz_login'] : null;
-        $this->a_quiz_response = isset($data['a_quiz_response']) ? (array)$data['a_quiz_response'] : null;
+        $this->a_quiz_login = isset($data['a_quiz_login']) ? array_map(static fn($item) => new ResponseListGetResponseQuizLogin((array)$item), (array)$data['a_quiz_login']) : null;
+        $this->a_quiz_response = isset($data['a_quiz_response']) ? array_map(static fn($item) => new ResponseListGetResponseQuizResponse((array)$item), (array)$data['a_quiz_response']) : null;
         $this->can_amend = isset($data['can_amend']) ? (bool)$data['can_amend'] : null;
         $this->can_fill = isset($data['can_fill']) ? (bool)$data['can_fill'] : null;
         $this->can_remove = isset($data['can_remove']) ? (bool)$data['can_remove'] : null;

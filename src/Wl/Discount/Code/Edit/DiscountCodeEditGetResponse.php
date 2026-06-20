@@ -9,7 +9,7 @@ class DiscountCodeEditGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var DiscountCodeEditGetResponseComponent[]|null
      */
     public ?array $a_component = null;
 
@@ -175,7 +175,7 @@ class DiscountCodeEditGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_component = isset($data['a_component']) ? (array)$data['a_component'] : null;
+        $this->a_component = isset($data['a_component']) ? array_map(static fn($item) => new DiscountCodeEditGetResponseComponent((array)$item), (array)$data['a_component']) : null;
         $this->a_login_type = isset($data['a_login_type']) ? (array)$data['a_login_type'] : null;
         $this->a_member_group = isset($data['a_member_group']) ? (array)$data['a_member_group'] : null;
         $this->dl_end = isset($data['dl_end']) ? (string)$data['dl_end'] : null;

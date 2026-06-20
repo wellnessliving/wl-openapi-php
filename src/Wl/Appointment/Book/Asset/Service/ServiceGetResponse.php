@@ -26,7 +26,7 @@ class ServiceGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ServiceGetResponseResourceType[]|null
      */
     public ?array $a_resource_type = null;
 
@@ -40,7 +40,7 @@ class ServiceGetResponse
     public function __construct(array $data)
     {
         $this->a_resource_busy = isset($data['a_resource_busy']) ? (array)$data['a_resource_busy'] : null;
-        $this->a_resource_type = isset($data['a_resource_type']) ? (array)$data['a_resource_type'] : null;
+        $this->a_resource_type = isset($data['a_resource_type']) ? array_map(static fn($item) => new ServiceGetResponseResourceType((array)$item), (array)$data['a_resource_type']) : null;
         $this->can_book_unavailable_assets = isset($data['can_book_unavailable_assets']) ? (bool)$data['can_book_unavailable_assets'] : null;
     }
 }

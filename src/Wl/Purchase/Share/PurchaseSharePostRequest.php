@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Purchase\Share;
 class PurchaseSharePostRequest
 {
     /**
-     * The social network. One of the [ASocialSid](#/components/schemas/ASocialSid) constants.
+     * The social network. One of the {@link \WlSdk\ASocialSid} constants.
      *
      * @var int|null
      */

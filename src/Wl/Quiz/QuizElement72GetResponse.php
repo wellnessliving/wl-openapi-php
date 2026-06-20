@@ -9,21 +9,21 @@ class QuizElement72GetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var QuizElement72GetResponseAccessLog[]|null
      */
     public ?array $a_access_log = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var QuizElement72GetResponseElementA[]|QuizElement72GetResponseElementB[]|QuizElement72GetResponseElementC[]|QuizElement72GetResponseElementD[]|QuizElement72GetResponseElementE[]|QuizElement72GetResponseElementF[]|QuizElement72GetResponseElementG[]|QuizElement72GetResponseElementH[]|QuizElement72GetResponseElementI[]|QuizElement72GetResponseElementJ[]|QuizElement72GetResponseElementK[]|QuizElement72GetResponseElementL[]|QuizElement72GetResponseElementM[]|QuizElement72GetResponseElementN[]|null
      */
     public ?array $a_element = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var QuizElement72GetResponseSetting[]|null
      */
     public ?array $a_setting = null;
 
@@ -108,9 +108,9 @@ class QuizElement72GetResponse
 
     public function __construct(array $data)
     {
-        $this->a_access_log = isset($data['a_access_log']) ? (array)$data['a_access_log'] : null;
-        $this->a_element = isset($data['a_element']) ? (array)$data['a_element'] : null;
-        $this->a_setting = isset($data['a_setting']) ? (array)$data['a_setting'] : null;
+        $this->a_access_log = isset($data['a_access_log']) ? array_map(static fn($item) => new QuizElement72GetResponseAccessLog((array)$item), (array)$data['a_access_log']) : null;
+        $this->a_element = $data['a_element'] ?? null;
+        $this->a_setting = isset($data['a_setting']) ? array_map(static fn($item) => new QuizElement72GetResponseSetting((array)$item), (array)$data['a_setting']) : null;
         $this->can_amend = isset($data['can_amend']) ? (bool)$data['can_amend'] : null;
         $this->i_responses = isset($data['i_responses']) ? (int)$data['i_responses'] : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;

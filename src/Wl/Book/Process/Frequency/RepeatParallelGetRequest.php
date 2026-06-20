@@ -4,8 +4,7 @@ namespace WlSdk\Wl\Book\Process\Frequency;
 class RepeatParallelGetRequest
 {
     /**
-     * List of days of the week to create visits. Each value is a [ADateWeekSid](#/components/schemas/ADateWeekSid)
-     * constant.
+     * List of days of the week to create visits. Each value is a {@link \WlSdk\ADateWeekSid} constant.
      *
      * @var int[]|null
      */
@@ -29,7 +28,7 @@ class RepeatParallelGetRequest
 
     /**
      * Date to start recurring booking. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json) ==
-     * [RsRepeatEndSid::DATE](#/components/schemas/RsRepeatEndSid).
+     * {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var string|null
      */
@@ -37,7 +36,7 @@ class RepeatParallelGetRequest
 
     /**
      * Date to finish recurring booking. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json) ==
-     * [RsRepeatEndSid::DATE](#/components/schemas/RsRepeatEndSid).
+     * {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var string|null
      */
@@ -45,7 +44,7 @@ class RepeatParallelGetRequest
 
     /**
      * Count of the visits to be created. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json)
-     * == [RsRepeatEndSid::COUNT](#/components/schemas/RsRepeatEndSid).
+     * == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var int|null
      */
@@ -59,21 +58,21 @@ class RepeatParallelGetRequest
     public ?int $i_duration = null;
 
     /**
-     * Recurring booking interval, one of [ADurationSid](#/components/schemas/ADurationSid) constants.
+     * Recurring booking interval, one of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
      */
     public ?int $id_duration = null;
 
     /**
-     * WellnessLiving mode, one of [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * WellnessLiving mode, one of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */
     public ?int $id_mode = null;
 
     /**
-     * Type of repeating, one of [RsRepeatEndSid](#/components/schemas/RsRepeatEndSid) constants.
+     * Type of repeating, one of {@link \WlSdk\RsRepeatEndSid} constants.
      *
      * @var int|null
      */

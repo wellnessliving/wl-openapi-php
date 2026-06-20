@@ -18,8 +18,7 @@ class ContractGetRequest
     public ?float $f_manual_discount = null;
 
     /**
-     * The type of purchase item. This is one of the [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid)
-     * constants.
+     * The type of purchase item. This is one of the {@link \WlSdk\RsPurchaseItemSid} constants.
      * Optional if `k_purchase_item` is not empty.
      *
      * @var int|null

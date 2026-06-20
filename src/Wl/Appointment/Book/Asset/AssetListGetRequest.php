@@ -28,7 +28,7 @@ class AssetListGetRequest
     public ?int $i_image_width = null;
 
     /**
-     * Mode type, one of [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * Mode type, one of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */

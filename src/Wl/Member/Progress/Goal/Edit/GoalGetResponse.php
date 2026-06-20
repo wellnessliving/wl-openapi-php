@@ -9,7 +9,7 @@ class GoalGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var GoalGetResponseFieldList[]|null
      */
     public ?array $a_field_list = null;
 
@@ -22,7 +22,7 @@ class GoalGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_field_list = isset($data['a_field_list']) ? (array)$data['a_field_list'] : null;
+        $this->a_field_list = isset($data['a_field_list']) ? array_map(static fn($item) => new GoalGetResponseFieldList((array)$item), (array)$data['a_field_list']) : null;
         $this->is_staff = isset($data['is_staff']) ? (bool)$data['is_staff'] : null;
     }
 }

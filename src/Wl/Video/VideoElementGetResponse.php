@@ -23,7 +23,7 @@ class VideoElementGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var VideoElementGetResponseStaffInfo[]|null
      */
     public ?array $a_staff_info = null;
 
@@ -312,7 +312,7 @@ class VideoElementGetResponse
     {
         $this->a_location = isset($data['a_location']) ? (array)$data['a_location'] : null;
         $this->a_staff = isset($data['a_staff']) ? (array)$data['a_staff'] : null;
-        $this->a_staff_info = isset($data['a_staff_info']) ? (array)$data['a_staff_info'] : null;
+        $this->a_staff_info = isset($data['a_staff_info']) ? array_map(static fn($item) => new VideoElementGetResponseStaffInfo((array)$item), (array)$data['a_staff_info']) : null;
         $this->a_staff_uid = isset($data['a_staff_uid']) ? (array)$data['a_staff_uid'] : null;
         $this->a_video_category = isset($data['a_video_category']) ? (array)$data['a_video_category'] : null;
         $this->a_video_tag = isset($data['a_video_tag']) ? (array)$data['a_video_tag'] : null;

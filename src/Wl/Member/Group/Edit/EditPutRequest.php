@@ -60,7 +60,7 @@ class EditPutRequest
 
     /**
      * Search entity CID list.
-     * Constants from [SearchEntityAbstract](#/components/schemas/Wl.Search.SearchEntityAbstract) subclasses.
+     * Constants from {@link \WlSdk\Wl\Search\SearchEntityAbstract} subclasses.
      *
      * @var int[]|null
      */
@@ -74,7 +74,7 @@ class EditPutRequest
     public ?array $a_staff_role_selected = null;
 
     /**
-     * Shape of icon. One of [ShapeSid](#/components/schemas/Wl.Member.Group.ShapeSid) constants.
+     * Shape of icon. One of {@link \WlSdk\Wl\Member\Group\ShapeSid} constants.
      *
      * @var int|null
      */
@@ -82,7 +82,7 @@ class EditPutRequest
 
     /**
      * Type of share option.
-     * One of [ShareSid](#/components/schemas/Wl.Share.ShareSid) constants.
+     * One of {@link \WlSdk\Wl\Share\ShareSid} constants.
      *
      * @var int|null
      */

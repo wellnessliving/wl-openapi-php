@@ -16,7 +16,7 @@ class EditEmailGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var EditEmailGetResponseUser[]|null
      */
     public ?array $a_user = null;
 
@@ -81,7 +81,7 @@ class EditEmailGetResponse
     public function __construct(array $data)
     {
         $this->a_business_member_key = isset($data['a_business_member_key']) ? (array)$data['a_business_member_key'] : null;
-        $this->a_user = isset($data['a_user']) ? (array)$data['a_user'] : null;
+        $this->a_user = isset($data['a_user']) ? array_map(static fn($item) => new EditEmailGetResponseUser((array)$item), (array)$data['a_user']) : null;
         $this->is_added = isset($data['is_added']) ? (bool)$data['is_added'] : null;
         $this->is_current_member = isset($data['is_current_member']) ? (bool)$data['is_current_member'] : null;
         $this->is_limit = isset($data['is_limit']) ? (bool)$data['is_limit'] : null;

@@ -9,14 +9,14 @@ class VideoListGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var VideoListGetResponseList[]|null
      */
     public ?array $a_list = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var VideoListGetResponsePage[]|null
      */
     public ?array $a_page = null;
 
@@ -66,8 +66,8 @@ class VideoListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_list = isset($data['a_list']) ? (array)$data['a_list'] : null;
-        $this->a_page = isset($data['a_page']) ? (array)$data['a_page'] : null;
+        $this->a_list = isset($data['a_list']) ? array_map(static fn($item) => new VideoListGetResponseList((array)$item), (array)$data['a_list']) : null;
+        $this->a_page = isset($data['a_page']) ? array_map(static fn($item) => new VideoListGetResponsePage((array)$item), (array)$data['a_page']) : null;
         $this->id_embed_source = isset($data['id_embed_source']) ? (int)$data['id_embed_source'] : null;
         $this->id_order = isset($data['id_order']) ? (int)$data['id_order'] : null;
         $this->id_sort = isset($data['id_sort']) ? (int)$data['id_sort'] : null;

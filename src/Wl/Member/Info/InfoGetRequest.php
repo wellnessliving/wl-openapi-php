@@ -63,8 +63,7 @@ class InfoGetRequest
     /**
      * A list of icons with additional information about the business member.
      * If empty, all available icons will be displayed.
-     * Comma separated values from [MemberInfoSid::idSid()](#/components/schemas/Wl.Member.Info.MemberInfoSid)
-     * method.
+     * Comma separated values from {@link \WlSdk\Wl\Member\Info\MemberInfoSid} method.
      *
      * @var string|null
      */

@@ -18,8 +18,7 @@ class ListGetRequest
     public ?string $k_business = null;
 
     /**
-     * Whether payment method [RsPayMethodSid::ACCOUNT_MANUAL](#/components/schemas/RsPayMethodSid) should be
-     * included in response.
+     * Whether payment method {@link \WlSdk\RsPayMethodSid} should be included in response.
      *
      * @var bool|null
      */

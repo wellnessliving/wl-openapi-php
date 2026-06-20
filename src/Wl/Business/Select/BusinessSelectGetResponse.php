@@ -9,12 +9,12 @@ class BusinessSelectGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var BusinessSelectGetResponseSelect[]|null
      */
     public ?array $a_select = null;
 
     public function __construct(array $data)
     {
-        $this->a_select = isset($data['a_select']) ? (array)$data['a_select'] : null;
+        $this->a_select = isset($data['a_select']) ? array_map(static fn($item) => new BusinessSelectGetResponseSelect((array)$item), (array)$data['a_select']) : null;
     }
 }

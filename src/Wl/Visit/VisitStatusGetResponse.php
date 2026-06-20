@@ -9,7 +9,7 @@ class VisitStatusGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var VisitStatusGetResponseCancel[]|null
      */
     public ?array $a_cancel = null;
 
@@ -29,7 +29,7 @@ class VisitStatusGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var VisitStatusGetResponseResourceAlias[]|null
      */
     public ?array $a_resource_alias = null;
 
@@ -224,9 +224,9 @@ class VisitStatusGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_cancel = isset($data['a_cancel']) ? (array)$data['a_cancel'] : null;
+        $this->a_cancel = isset($data['a_cancel']) ? array_map(static fn($item) => new VisitStatusGetResponseCancel((array)$item), (array)$data['a_cancel']) : null;
         $this->a_resource = isset($data['a_resource']) ? (array)$data['a_resource'] : null;
-        $this->a_resource_alias = isset($data['a_resource_alias']) ? (array)$data['a_resource_alias'] : null;
+        $this->a_resource_alias = isset($data['a_resource_alias']) ? array_map(static fn($item) => new VisitStatusGetResponseResourceAlias((array)$item), (array)$data['a_resource_alias']) : null;
         $this->a_staff = isset($data['a_staff']) ? (array)$data['a_staff'] : null;
         $this->a_uid_staff = isset($data['a_uid_staff']) ? (array)$data['a_uid_staff'] : null;
         $this->dt_date = isset($data['dt_date']) ? (string)$data['dt_date'] : null;

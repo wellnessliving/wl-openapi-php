@@ -9,21 +9,21 @@ class QuizElementGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var QuizElementGetResponseAccessLog[]|null
      */
     public ?array $a_access_log = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var QuizElementGetResponseElementA[]|QuizElementGetResponseElementB[]|QuizElementGetResponseElementC[]|QuizElementGetResponseElementD[]|QuizElementGetResponseElementE[]|QuizElementGetResponseElementF[]|QuizElementGetResponseElementG[]|QuizElementGetResponseElementH[]|QuizElementGetResponseElementI[]|QuizElementGetResponseElementJ[]|QuizElementGetResponseElementK[]|QuizElementGetResponseElementL[]|QuizElementGetResponseElementM[]|QuizElementGetResponseElementN[]|null
      */
     public ?array $a_element = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var QuizElementGetResponseSetting[]|null
      */
     public ?array $a_setting = null;
 
@@ -108,9 +108,9 @@ class QuizElementGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_access_log = isset($data['a_access_log']) ? (array)$data['a_access_log'] : null;
-        $this->a_element = isset($data['a_element']) ? (array)$data['a_element'] : null;
-        $this->a_setting = isset($data['a_setting']) ? (array)$data['a_setting'] : null;
+        $this->a_access_log = isset($data['a_access_log']) ? array_map(static fn($item) => new QuizElementGetResponseAccessLog((array)$item), (array)$data['a_access_log']) : null;
+        $this->a_element = $data['a_element'] ?? null;
+        $this->a_setting = isset($data['a_setting']) ? array_map(static fn($item) => new QuizElementGetResponseSetting((array)$item), (array)$data['a_setting']) : null;
         $this->can_amend = isset($data['can_amend']) ? (bool)$data['can_amend'] : null;
         $this->i_responses = isset($data['i_responses']) ? (int)$data['i_responses'] : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;

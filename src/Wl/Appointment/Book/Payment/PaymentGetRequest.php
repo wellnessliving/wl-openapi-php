@@ -19,14 +19,14 @@ class PaymentGetRequest
     public ?array $a_uid = null;
 
     /**
-     * The key of source mode. A constant of [ModeSid](#/components/schemas/Wl.Mode.ModeSid).
+     * The key of source mode. A constant of {@link \WlSdk\Wl\Mode\ModeSid}.
      *
      * @var int|null
      */
     public ?int $id_mode = null;
 
     /**
-     * The purchase item ID. A constant of [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid).
+     * The purchase item ID. A constant of {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
      */
@@ -76,8 +76,7 @@ class PaymentGetRequest
 
     /**
      * Variable price. Is set only during booking an appointment with variable type of the price
-     *   [RsServicePriceSid::VARIES](#/components/schemas/RsServicePriceSid) from spa backend
-     * [ModeSid::SPA_BACKEND](#/components/schemas/Wl.Mode.ModeSid).
+     *   {@link \WlSdk\RsServicePriceSid} from spa backend {@link \WlSdk\Wl\Mode\ModeSid}.
      *
      * @var string|null
      */

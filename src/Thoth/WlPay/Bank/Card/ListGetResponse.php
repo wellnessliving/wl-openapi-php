@@ -9,7 +9,7 @@ class ListGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ListGetResponseBankCard[]|null
      */
     public ?array $a_bank_card = null;
 
@@ -33,7 +33,7 @@ class ListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_bank_card = isset($data['a_bank_card']) ? (array)$data['a_bank_card'] : null;
+        $this->a_bank_card = isset($data['a_bank_card']) ? array_map(static fn($item) => new ListGetResponseBankCard((array)$item), (array)$data['a_bank_card']) : null;
         $this->a_list = isset($data['a_list']) ? (array)$data['a_list'] : null;
         $this->can_add = isset($data['can_add']) ? (bool)$data['can_add'] : null;
     }

@@ -15,15 +15,14 @@ class PurchaseElementGetRequest
     /**
      * The number of sessions which are booked simultaneously.
      * 
-     * Required when `id_purchase_item` =
-     * [RsPurchaseItemSid::CLASS_PERIOD](#/components/schemas/RsPurchaseItemSid).
+     * Required when `id_purchase_item` = {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
      */
     public ?int $i_session = null;
 
     /**
-     * The ID of the purchase item type. One of [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid).
+     * The ID of the purchase item type. One of {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
      */

@@ -14,11 +14,10 @@ class FacebookLoginPostRequest
      * The application id.
      * 
      * When application not passed, credential loaded from the application, which makes the request,
-     * used [FacebookCredential](#/components/schemas/Core.Request.Api.Application.Credential.CredentialAbstract)
-     * for load the credential.
+     * used {@link \WlSdk\Core\Request\Api\Application\Credential\CredentialAbstract} for load the credential.
      * For set credential need used [CredentialApi](/Core/Request/Api/Application/Credential/Credential.json) and
-     * set [CredentialApi](/Core/Request/Api/Application/Credential/Credential.json) to
-     * [FacebookCredential::CID](#/components/schemas/Core.Request.Api.Application.Credential.CredentialAbstract).
+     * set [CredentialApi](/Core/Request/Api/Application/Credential/Credential.json) to {@link
+     * \WlSdk\Core\Request\Api\Application\Credential\CredentialAbstract}.
      * 
      * When application passed, the credential loaded by application id.
      *

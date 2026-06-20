@@ -9,7 +9,7 @@ class ConvertGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ConvertGetResponsePromotion[]|null
      */
     public ?array $a_promotion = null;
 
@@ -122,7 +122,7 @@ class ConvertGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_promotion = isset($data['a_promotion']) ? (array)$data['a_promotion'] : null;
+        $this->a_promotion = isset($data['a_promotion']) ? array_map(static fn($item) => new ConvertGetResponsePromotion((array)$item), (array)$data['a_promotion']) : null;
         $this->dl_convert_max = isset($data['dl_convert_max']) ? (string)$data['dl_convert_max'] : null;
         $this->dl_convert_min = isset($data['dl_convert_min']) ? (string)$data['dl_convert_min'] : null;
         $this->dl_hold_end = isset($data['dl_hold_end']) ? (string)$data['dl_hold_end'] : null;

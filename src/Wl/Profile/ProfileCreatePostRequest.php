@@ -4,8 +4,8 @@ namespace WlSdk\Wl\Profile;
 class ProfileCreatePostRequest
 {
     /**
-     * List of intent identifiers. Each element is one of
-     * [MemberIntentsSid](#/components/schemas/Wl.Login.Member.Intents.MemberIntentsSid) constants.
+     * List of intent identifiers. Each element is one of {@link \WlSdk\Wl\Login\Member\Intents\MemberIntentsSid}
+     * constants.
      * 
      * Available only for leads added by CAASI agent.
      *
@@ -22,7 +22,7 @@ class ProfileCreatePostRequest
 
     /**
      * Gender ID.
-     * One of the [GenderSid](#/components/schemas/Wl.Gender.GenderSid) constants.
+     * One of the {@link \WlSdk\Wl\Gender\GenderSid} constants.
      * 
      * `0` if not specified.
      *
@@ -33,7 +33,7 @@ class ProfileCreatePostRequest
     /**
      * Lead source ID.
      * 
-     * One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * `0` if not specified.
      *
      * @var int|null
@@ -43,9 +43,7 @@ class ProfileCreatePostRequest
     /**
      * Vaccination status ID.
      * 
-     * One of the
-     * [VaccinationStatusSid](#/components/schemas/Wl.Login.Member.VaccinationStatus.VaccinationStatusSid)
-     * constants.
+     * One of the {@link \WlSdk\Wl\Login\Member\VaccinationStatus\VaccinationStatusSid} constants.
      * 
      * `0` if not specified.
      *

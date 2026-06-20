@@ -9,12 +9,12 @@ class RankGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var RankGetResponseRankList[]|null
      */
     public ?array $a_rank_list = null;
 
     public function __construct(array $data)
     {
-        $this->a_rank_list = isset($data['a_rank_list']) ? (array)$data['a_rank_list'] : null;
+        $this->a_rank_list = isset($data['a_rank_list']) ? array_map(static fn($item) => new RankGetResponseRankList((array)$item), (array)$data['a_rank_list']) : null;
     }
 }

@@ -9,28 +9,28 @@ class PurchaseListElementGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var PurchaseListElementGetResponseComponentA[]|PurchaseListElementGetResponseComponentB[]|null
      */
     public ?array $a_component = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var PurchaseListElementGetResponseLogo[]|null
      */
     public ?array $a_logo = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var PurchaseListElementGetResponseRestrict[]|null
      */
     public ?array $a_restrict = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var PurchaseListElementGetResponseTax[]|null
      */
     public ?array $a_tax = null;
 
@@ -652,10 +652,10 @@ class PurchaseListElementGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_component = isset($data['a_component']) ? (array)$data['a_component'] : null;
-        $this->a_logo = isset($data['a_logo']) ? (array)$data['a_logo'] : null;
-        $this->a_restrict = isset($data['a_restrict']) ? (array)$data['a_restrict'] : null;
-        $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
+        $this->a_component = $data['a_component'] ?? null;
+        $this->a_logo = isset($data['a_logo']) ? array_map(static fn($item) => new PurchaseListElementGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
+        $this->a_restrict = isset($data['a_restrict']) ? array_map(static fn($item) => new PurchaseListElementGetResponseRestrict((array)$item), (array)$data['a_restrict']) : null;
+        $this->a_tax = isset($data['a_tax']) ? array_map(static fn($item) => new PurchaseListElementGetResponseTax((array)$item), (array)$data['a_tax']) : null;
         $this->can_renew = isset($data['can_renew']) ? (bool)$data['can_renew'] : null;
         $this->dl_cancel = isset($data['dl_cancel']) ? (string)$data['dl_cancel'] : null;
         $this->dl_end = isset($data['dl_end']) ? (string)$data['dl_end'] : null;

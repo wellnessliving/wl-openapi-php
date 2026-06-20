@@ -9,7 +9,7 @@ class PromotionPayPauseGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var PromotionPayPauseGetResponsePayPauseList[]|null
      */
     public ?array $a_pay_pause_list = null;
 
@@ -110,7 +110,7 @@ class PromotionPayPauseGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_pay_pause_list = isset($data['a_pay_pause_list']) ? (array)$data['a_pay_pause_list'] : null;
+        $this->a_pay_pause_list = isset($data['a_pay_pause_list']) ? array_map(static fn($item) => new PromotionPayPauseGetResponsePayPauseList((array)$item), (array)$data['a_pay_pause_list']) : null;
         $this->dt_end = isset($data['dt_end']) ? (string)$data['dt_end'] : null;
         $this->dt_start = isset($data['dt_start']) ? (string)$data['dt_start'] : null;
         $this->dtu_date_notification = isset($data['dtu_date_notification']) ? (string)$data['dtu_date_notification'] : null;

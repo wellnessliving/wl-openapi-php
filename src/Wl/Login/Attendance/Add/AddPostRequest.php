@@ -46,7 +46,7 @@ class AddPostRequest
 
     /**
      * Determines how the payment was handled for the session.
-     * One of the [AddOptionSid](#/components/schemas/Wl.Login.Attendance.AddOptionSid) constants.
+     * One of the {@link \WlSdk\Wl\Login\Attendance\AddOptionSid} constants.
      *
      * @var int|null
      */
@@ -54,7 +54,7 @@ class AddPostRequest
 
     /**
      * Determines how the session was booked.
-     * One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * We recommend using the `WEB_BACKEND` value.
      *
      * @var int|null

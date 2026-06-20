@@ -13,7 +13,7 @@ class ScheduleAvailableDateGetRequest
     public ?array $a_class = null;
 
     /**
-     * IDs of week days from [ADateWeekSid](#/components/schemas/ADateWeekSid) class.
+     * IDs of week days from {@link \WlSdk\ADateWeekSid} class.
      * 
      * Empty to search for all week days.
      *
@@ -66,7 +66,7 @@ class ScheduleAvailableDateGetRequest
     public ?string $dtu_start = null;
 
     /**
-     * "Book now" tab ID. One of [TabSid](#/components/schemas/Wl.Classes.Tab.TabSid) constants.
+     * "Book now" tab ID. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
      *
      * @var int|null
      */

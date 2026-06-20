@@ -43,7 +43,7 @@ class RelationPostRequest
 
     /**
      * The mode type.
-     * One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */
@@ -51,7 +51,7 @@ class RelationPostRequest
 
     /**
      * The relation type.
-     * One of the [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) constants.
+     * One of the {@link \WlSdk\RsFamilyRelationSid} constants.
      *
      * @var int|null
      */

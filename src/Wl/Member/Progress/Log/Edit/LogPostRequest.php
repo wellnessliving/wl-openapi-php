@@ -29,8 +29,7 @@ class LogPostRequest
     /**
      * List of fields.
      * 
-     * Keys are field IDs ([ProgressFieldSid](#/components/schemas/Wl.Member.Progress.Field.ProgressFieldSid)
-     * constants).
+     * Keys are field IDs ({@link \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid} constants).
      * Values are new field values.
      * Structure of value completely defined by individual fields.
      *

@@ -9,14 +9,14 @@ class CatalogProductGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var CatalogProductGetResponseCategorySort[]|null
      */
     public ?array $a_category_sort = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var CatalogProductGetResponseProduct[]|null
      */
     public ?array $a_product = null;
 
@@ -43,8 +43,8 @@ class CatalogProductGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_category_sort = isset($data['a_category_sort']) ? (array)$data['a_category_sort'] : null;
-        $this->a_product = isset($data['a_product']) ? (array)$data['a_product'] : null;
+        $this->a_category_sort = isset($data['a_category_sort']) ? array_map(static fn($item) => new CatalogProductGetResponseCategorySort((array)$item), (array)$data['a_category_sort']) : null;
+        $this->a_product = isset($data['a_product']) ? array_map(static fn($item) => new CatalogProductGetResponseProduct((array)$item), (array)$data['a_product']) : null;
         $this->i_last = isset($data['i_last']) ? (int)$data['i_last'] : null;
         $this->is_load_more = isset($data['is_load_more']) ? (bool)$data['is_load_more'] : null;
         $this->s_cache_key = isset($data['s_cache_key']) ? (string)$data['s_cache_key'] : null;

@@ -9,12 +9,12 @@ class RegionGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var RegionGetResponseRegion[]|null
      */
     public ?array $a_region = null;
 
     public function __construct(array $data)
     {
-        $this->a_region = isset($data['a_region']) ? (array)$data['a_region'] : null;
+        $this->a_region = isset($data['a_region']) ? array_map(static fn($item) => new RegionGetResponseRegion((array)$item), (array)$data['a_region']) : null;
     }
 }

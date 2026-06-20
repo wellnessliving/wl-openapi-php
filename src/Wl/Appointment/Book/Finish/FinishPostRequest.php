@@ -28,8 +28,7 @@ class FinishPostRequest
     public ?array $a_user = null;
 
     /**
-     * The payment type ID for the appointment. One of the
-     * [RsAppointmentPaySid](#/components/schemas/RsAppointmentPaySid) constants.
+     * The payment type ID for the appointment. One of the {@link \WlSdk\RsAppointmentPaySid} constants.
      *
      * @var int|null
      */
@@ -136,7 +135,7 @@ class FinishPostRequest
     public ?array $a_quiz_response = null;
 
     /**
-     * The booking mode ID. One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * The booking mode ID. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */

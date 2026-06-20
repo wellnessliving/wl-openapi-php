@@ -9,7 +9,7 @@ class FinishMultiplePostResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var FinishMultiplePostResponseAppointment[]|null
      */
     public ?array $a_appointment = null;
 
@@ -39,7 +39,7 @@ class FinishMultiplePostResponse
 
     public function __construct(array $data)
     {
-        $this->a_appointment = isset($data['a_appointment']) ? (array)$data['a_appointment'] : null;
+        $this->a_appointment = isset($data['a_appointment']) ? array_map(static fn($item) => new FinishMultiplePostResponseAppointment((array)$item), (array)$data['a_appointment']) : null;
         $this->a_login_activity_visit = isset($data['a_login_activity_visit']) ? (array)$data['a_login_activity_visit'] : null;
         $this->a_visit = isset($data['a_visit']) ? (array)$data['a_visit'] : null;
         $this->a_visit_provider = isset($data['a_visit_provider']) ? (array)$data['a_visit_provider'] : null;

@@ -9,21 +9,21 @@ class Response65GetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var Response65GetResponseAccessLog[]|null
      */
     public ?array $a_access_log = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var Response65GetResponseElementA[]|Response65GetResponseElementB[]|Response65GetResponseElementC[]|Response65GetResponseElementD[]|Response65GetResponseElementE[]|Response65GetResponseElementF[]|Response65GetResponseElementG[]|Response65GetResponseElementH[]|Response65GetResponseElementI[]|Response65GetResponseElementJ[]|Response65GetResponseElementK[]|Response65GetResponseElementL[]|Response65GetResponseElementM[]|Response65GetResponseElementN[]|null
      */
     public ?array $a_element = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var Response65GetResponseServiceInfo[]|null
      */
     public ?array $a_service_info = null;
 
@@ -118,9 +118,9 @@ class Response65GetResponse
 
     public function __construct(array $data)
     {
-        $this->a_access_log = isset($data['a_access_log']) ? (array)$data['a_access_log'] : null;
-        $this->a_element = isset($data['a_element']) ? (array)$data['a_element'] : null;
-        $this->a_service_info = isset($data['a_service_info']) ? (array)$data['a_service_info'] : null;
+        $this->a_access_log = isset($data['a_access_log']) ? array_map(static fn($item) => new Response65GetResponseAccessLog((array)$item), (array)$data['a_access_log']) : null;
+        $this->a_element = $data['a_element'] ?? null;
+        $this->a_service_info = isset($data['a_service_info']) ? array_map(static fn($item) => new Response65GetResponseServiceInfo((array)$item), (array)$data['a_service_info']) : null;
         $this->can_amend = isset($data['can_amend']) ? (bool)$data['can_amend'] : null;
         $this->dtu_response = isset($data['dtu_response']) ? (string)$data['dtu_response'] : null;
         $this->id_source = isset($data['id_source']) ? (int)$data['id_source'] : null;

@@ -6,7 +6,7 @@ class ComboboxGetRequest
     /**
      * The locale ID used as a filter. The locale is generally a country.
      * 
-     * One of the [LocaleSid](#/components/schemas/Core.Locale.LocaleSid) constants.
+     * One of the {@link \WlSdk\Core\Locale\LocaleSid} constants.
      * 
      * This will be `0` if all locations are searched.
      *

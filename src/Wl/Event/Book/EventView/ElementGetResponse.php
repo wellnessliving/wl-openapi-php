@@ -9,28 +9,28 @@ class ElementGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseAgeRestrictions[]|null
      */
     public ?array $a_age_restrictions = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseBookAvailable[]|null
      */
     public ?array $a_book_available = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseBusinessPolicy[]|null
      */
     public ?array $a_business_policy = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseClassLogo[]|null
      */
     public ?array $a_class_logo = null;
 
@@ -44,21 +44,21 @@ class ElementGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseEvent[]|null
      */
     public ?array $a_event = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseInstallmentTemplate[]|null
      */
     public ?array $a_installment_template = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseSchedule[]|null
      */
     public ?array $a_schedule = null;
 
@@ -72,21 +72,21 @@ class ElementGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseStaffLogo[]|null
      */
     public ?array $a_staff_logo = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseTimezoneInfo[]|null
      */
     public ?array $a_timezone_info = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ElementGetResponseVisitsRequired[]|null
      */
     public ?array $a_visits_required = null;
 
@@ -371,18 +371,18 @@ class ElementGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_age_restrictions = isset($data['a_age_restrictions']) ? (array)$data['a_age_restrictions'] : null;
-        $this->a_book_available = isset($data['a_book_available']) ? (array)$data['a_book_available'] : null;
-        $this->a_business_policy = isset($data['a_business_policy']) ? (array)$data['a_business_policy'] : null;
-        $this->a_class_logo = isset($data['a_class_logo']) ? (array)$data['a_class_logo'] : null;
+        $this->a_age_restrictions = isset($data['a_age_restrictions']) ? array_map(static fn($item) => new ElementGetResponseAgeRestrictions((array)$item), (array)$data['a_age_restrictions']) : null;
+        $this->a_book_available = isset($data['a_book_available']) ? array_map(static fn($item) => new ElementGetResponseBookAvailable((array)$item), (array)$data['a_book_available']) : null;
+        $this->a_business_policy = isset($data['a_business_policy']) ? array_map(static fn($item) => new ElementGetResponseBusinessPolicy((array)$item), (array)$data['a_business_policy']) : null;
+        $this->a_class_logo = isset($data['a_class_logo']) ? array_map(static fn($item) => new ElementGetResponseClassLogo((array)$item), (array)$data['a_class_logo']) : null;
         $this->a_class_tab = isset($data['a_class_tab']) ? (array)$data['a_class_tab'] : null;
-        $this->a_event = isset($data['a_event']) ? (array)$data['a_event'] : null;
-        $this->a_installment_template = isset($data['a_installment_template']) ? (array)$data['a_installment_template'] : null;
-        $this->a_schedule = isset($data['a_schedule']) ? (array)$data['a_schedule'] : null;
+        $this->a_event = isset($data['a_event']) ? array_map(static fn($item) => new ElementGetResponseEvent((array)$item), (array)$data['a_event']) : null;
+        $this->a_installment_template = isset($data['a_installment_template']) ? array_map(static fn($item) => new ElementGetResponseInstallmentTemplate((array)$item), (array)$data['a_installment_template']) : null;
+        $this->a_schedule = isset($data['a_schedule']) ? array_map(static fn($item) => new ElementGetResponseSchedule((array)$item), (array)$data['a_schedule']) : null;
         $this->a_shop_category = isset($data['a_shop_category']) ? (array)$data['a_shop_category'] : null;
-        $this->a_staff_logo = isset($data['a_staff_logo']) ? (array)$data['a_staff_logo'] : null;
-        $this->a_timezone_info = isset($data['a_timezone_info']) ? (array)$data['a_timezone_info'] : null;
-        $this->a_visits_required = isset($data['a_visits_required']) ? (array)$data['a_visits_required'] : null;
+        $this->a_staff_logo = isset($data['a_staff_logo']) ? array_map(static fn($item) => new ElementGetResponseStaffLogo((array)$item), (array)$data['a_staff_logo']) : null;
+        $this->a_timezone_info = isset($data['a_timezone_info']) ? array_map(static fn($item) => new ElementGetResponseTimezoneInfo((array)$item), (array)$data['a_timezone_info']) : null;
+        $this->a_visits_required = isset($data['a_visits_required']) ? array_map(static fn($item) => new ElementGetResponseVisitsRequired((array)$item), (array)$data['a_visits_required']) : null;
         $this->dt_book_date = isset($data['dt_book_date']) ? (string)$data['dt_book_date'] : null;
         $this->dt_early = isset($data['dt_early']) ? (string)$data['dt_early'] : null;
         $this->dt_end = isset($data['dt_end']) ? (string)$data['dt_end'] : null;

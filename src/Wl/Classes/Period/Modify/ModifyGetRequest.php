@@ -18,24 +18,21 @@ class ModifyGetRequest
     public ?string $dt_start = null;
 
     /**
-     * The class modify step type. One of the [RsClassModifyActionSid](#/components/schemas/RsClassModifyActionSid)
-     * constants.
+     * The class modify step type. One of the {@link \WlSdk\RsClassModifyActionSid} constants.
      *
      * @var int|null
      */
     public ?int $id_class_modify_action = null;
 
     /**
-     * The modify mode type. One of the [RsClassModifyModeSid](#/components/schemas/RsClassModifyModeSid)
-     * constants.
+     * The modify mode type. One of the {@link \WlSdk\RsClassModifyModeSid} constants.
      *
      * @var int|null
      */
     public ?int $id_class_modify_mode = null;
 
     /**
-     * The class modify action type. One of the [RsClassModifyModeSid](#/components/schemas/RsClassModifyModeSid)
-     * constants.
+     * The class modify action type. One of the {@link \WlSdk\RsClassModifyModeSid} constants.
      *
      * @var int|null
      */

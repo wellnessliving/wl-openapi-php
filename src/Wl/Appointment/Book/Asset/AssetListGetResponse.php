@@ -9,7 +9,7 @@ class AssetListGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var AssetListGetResponseAsset[]|null
      */
     public ?array $a_asset = null;
 
@@ -41,7 +41,7 @@ class AssetListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_asset = isset($data['a_asset']) ? (array)$data['a_asset'] : null;
+        $this->a_asset = isset($data['a_asset']) ? array_map(static fn($item) => new AssetListGetResponseAsset((array)$item), (array)$data['a_asset']) : null;
         $this->a_asset_busy = isset($data['a_asset_busy']) ? (array)$data['a_asset_busy'] : null;
         $this->k_resource_layout = isset($data['k_resource_layout']) ? (string)$data['k_resource_layout'] : null;
     }

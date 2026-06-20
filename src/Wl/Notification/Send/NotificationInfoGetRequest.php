@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Notification\Send;
 class NotificationInfoGetRequest
 {
     /**
-     * ID of the notification. See [RsMailSid](#/components/schemas/RsMailSid).
+     * ID of the notification. See {@link \WlSdk\RsMailSid}.
      *
      * @var int|null
      */

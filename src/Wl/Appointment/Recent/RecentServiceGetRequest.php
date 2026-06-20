@@ -11,7 +11,7 @@ class RecentServiceGetRequest
     public ?int $i_visit = null;
 
     /**
-     * Type of service to return. One of [ServiceSid](#/components/schemas/Wl.Service.ServiceSid) constants.
+     * Type of service to return. One of {@link \WlSdk\Wl\Service\ServiceSid} constants.
      *
      * @var int|null
      */

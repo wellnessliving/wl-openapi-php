@@ -6,14 +6,10 @@ class SocialSharePostRequest
     /**
      * The primary keys of the shared objects. Depends on `id_share_object`.
      * If `id_share_object` is:
-     * * [ShareObjectSid::BOOK](#/components/schemas/Wl.Social.Share.ShareObjectSid) - each value is key of the
-     * visit.
-     * * [ShareObjectSid::LOCATION](#/components/schemas/Wl.Social.Share.ShareObjectSid) - each value is key of the
-     * location.
-     * * [ShareObjectSid::PURCHASE](#/components/schemas/Wl.Social.Share.ShareObjectSid) - each value is key of the
-     * purchase.
-     * * [ShareObjectSid::REVIEW](#/components/schemas/Wl.Social.Share.ShareObjectSid) - each value is key of the
-     * review.
+     * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the visit.
+     * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the location.
+     * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the purchase.
+     * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the review.
      *
      * @var int[]|null
      */

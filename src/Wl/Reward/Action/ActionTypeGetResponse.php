@@ -9,12 +9,12 @@ class ActionTypeGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ActionTypeGetResponseRewardAction[]|null
      */
     public ?array $a_reward_action = null;
 
     public function __construct(array $data)
     {
-        $this->a_reward_action = isset($data['a_reward_action']) ? (array)$data['a_reward_action'] : null;
+        $this->a_reward_action = isset($data['a_reward_action']) ? array_map(static fn($item) => new ActionTypeGetResponseRewardAction((array)$item), (array)$data['a_reward_action']) : null;
     }
 }

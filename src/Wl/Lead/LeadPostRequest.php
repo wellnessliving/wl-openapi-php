@@ -70,8 +70,7 @@ class LeadPostRequest
      * Key of the lead source.
      * 
      * Must be `null` if `text_lead_source` is set.
-     * If both parameters are empty, the [ModeSid::API](#/components/schemas/Wl.Mode.ModeSid) lead source will be
-     * used.
+     * If both parameters are empty, the {@link \WlSdk\Wl\Mode\ModeSid} lead source will be used.
      * 
      * `LEAD_SOURCE_REPLACE_NONE` if Lead Source is to be unselected for the user.
      *
@@ -93,8 +92,7 @@ class LeadPostRequest
      * 
      * A new lead source will be created if it does not exist.
      * Must be `null` if `k_lead_source` is set.
-     * If both parameters are empty, the [ModeSid::API](#/components/schemas/Wl.Mode.ModeSid) lead source will be
-     * used.
+     * If both parameters are empty, the {@link \WlSdk\Wl\Mode\ModeSid} lead source will be used.
      *
      * @var string|null
      */

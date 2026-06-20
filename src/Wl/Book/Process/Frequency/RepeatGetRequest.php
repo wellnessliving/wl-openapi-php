@@ -4,8 +4,7 @@ namespace WlSdk\Wl\Book\Process\Frequency;
 class RepeatGetRequest
 {
     /**
-     * List of days of the week to create visits. Each value is a [ADateWeekSid](#/components/schemas/ADateWeekSid)
-     * constant.
+     * List of days of the week to create visits. Each value is a {@link \WlSdk\ADateWeekSid} constant.
      *
      * @var int[]|null
      */
@@ -28,24 +27,21 @@ class RepeatGetRequest
     public ?string $dt_date = null;
 
     /**
-     * Date to start recurring booking. Not empty only when `id_repeat_end` ==
-     * [RsRepeatEndSid::DATE](#/components/schemas/RsRepeatEndSid).
+     * Date to start recurring booking. Not empty only when `id_repeat_end` == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var string|null
      */
     public ?string $dt_from = null;
 
     /**
-     * Date to finish recurring booking. Not empty only when `id_repeat_end` ==
-     * [RsRepeatEndSid::DATE](#/components/schemas/RsRepeatEndSid).
+     * Date to finish recurring booking. Not empty only when `id_repeat_end` == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var string|null
      */
     public ?string $dt_to = null;
 
     /**
-     * Count of the visits to be created. Not empty only when `id_repeat_end` ==
-     * [RsRepeatEndSid::COUNT](#/components/schemas/RsRepeatEndSid).
+     * Count of the visits to be created. Not empty only when `id_repeat_end` == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var int|null
      */
@@ -59,21 +55,21 @@ class RepeatGetRequest
     public ?int $i_duration = null;
 
     /**
-     * Recurring booking interval, one of [ADurationSid](#/components/schemas/ADurationSid) constants.
+     * Recurring booking interval, one of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
      */
     public ?int $id_duration = null;
 
     /**
-     * WellnessLiving mode, one of [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * WellnessLiving mode, one of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */
     public ?int $id_mode = null;
 
     /**
-     * Type of repeating, one of [RsRepeatEndSid](#/components/schemas/RsRepeatEndSid) constants.
+     * Type of repeating, one of {@link \WlSdk\RsRepeatEndSid} constants.
      *
      * @var int|null
      */

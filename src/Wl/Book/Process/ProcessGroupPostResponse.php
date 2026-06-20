@@ -9,7 +9,7 @@ class ProcessGroupPostResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var ProcessGroupPostResponseBookError[]|null
      */
     public ?array $a_book_error = null;
 
@@ -37,7 +37,7 @@ class ProcessGroupPostResponse
 
     public function __construct(array $data)
     {
-        $this->a_book_error = isset($data['a_book_error']) ? (array)$data['a_book_error'] : null;
+        $this->a_book_error = isset($data['a_book_error']) ? array_map(static fn($item) => new ProcessGroupPostResponseBookError((array)$item), (array)$data['a_book_error']) : null;
         $this->a_login_activity_book = isset($data['a_login_activity_book']) ? (array)$data['a_login_activity_book'] : null;
         $this->a_visit = isset($data['a_visit']) ? (array)$data['a_visit'] : null;
         $this->k_login_activity_purchase = isset($data['k_login_activity_purchase']) ? (string)$data['k_login_activity_purchase'] : null;

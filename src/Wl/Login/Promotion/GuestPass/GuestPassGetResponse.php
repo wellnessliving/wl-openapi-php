@@ -9,12 +9,12 @@ class GuestPassGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var GuestPassGetResponseGuestPass[]|null
      */
     public ?array $a_guest_pass = null;
 
     public function __construct(array $data)
     {
-        $this->a_guest_pass = isset($data['a_guest_pass']) ? (array)$data['a_guest_pass'] : null;
+        $this->a_guest_pass = isset($data['a_guest_pass']) ? array_map(static fn($item) => new GuestPassGetResponseGuestPass((array)$item), (array)$data['a_guest_pass']) : null;
     }
 }

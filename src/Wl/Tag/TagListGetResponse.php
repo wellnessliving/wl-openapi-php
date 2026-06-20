@@ -9,7 +9,7 @@ class TagListGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var TagListGetResponseList[]|null
      */
     public ?array $a_list = null;
 
@@ -29,7 +29,7 @@ class TagListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_list = isset($data['a_list']) ? (array)$data['a_list'] : null;
+        $this->a_list = isset($data['a_list']) ? array_map(static fn($item) => new TagListGetResponseList((array)$item), (array)$data['a_list']) : null;
         $this->has_fee = isset($data['has_fee']) ? (bool)$data['has_fee'] : null;
         $this->has_surcharge = isset($data['has_surcharge']) ? (bool)$data['has_surcharge'] : null;
     }

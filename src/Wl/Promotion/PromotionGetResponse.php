@@ -9,7 +9,7 @@ class PromotionGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var PromotionGetResponsePromotion[]|null
      */
     public ?array $a_promotion = null;
 
@@ -23,7 +23,7 @@ class PromotionGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_promotion = isset($data['a_promotion']) ? (array)$data['a_promotion'] : null;
+        $this->a_promotion = isset($data['a_promotion']) ? array_map(static fn($item) => new PromotionGetResponsePromotion((array)$item), (array)$data['a_promotion']) : null;
         $this->o_guest_settings = $data['o_guest_settings'] ?? null;
     }
 }

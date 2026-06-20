@@ -9,21 +9,21 @@ class EditByTokenGetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var EditByTokenGetResponseErrorList[]|null
      */
     public ?array $a_error_list = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var EditByTokenGetResponsePhoneInherit[]|null
      */
     public ?array $a_phone_inherit = null;
 
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var EditByTokenGetResponseStructure[]|null
      */
     public ?array $a_structure = null;
 
@@ -107,9 +107,9 @@ class EditByTokenGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_error_list = isset($data['a_error_list']) ? (array)$data['a_error_list'] : null;
-        $this->a_phone_inherit = isset($data['a_phone_inherit']) ? (array)$data['a_phone_inherit'] : null;
-        $this->a_structure = isset($data['a_structure']) ? (array)$data['a_structure'] : null;
+        $this->a_error_list = isset($data['a_error_list']) ? array_map(static fn($item) => new EditByTokenGetResponseErrorList((array)$item), (array)$data['a_error_list']) : null;
+        $this->a_phone_inherit = isset($data['a_phone_inherit']) ? array_map(static fn($item) => new EditByTokenGetResponsePhoneInherit((array)$item), (array)$data['a_phone_inherit']) : null;
+        $this->a_structure = isset($data['a_structure']) ? array_map(static fn($item) => new EditByTokenGetResponseStructure((array)$item), (array)$data['a_structure']) : null;
         $this->can_password_change = isset($data['can_password_change']) ? (bool)$data['can_password_change'] : null;
         $this->is_a2p = isset($data['is_a2p']) ? (bool)$data['is_a2p'] : null;
         $this->is_address_inherit = isset($data['is_address_inherit']) ? (bool)$data['is_address_inherit'] : null;

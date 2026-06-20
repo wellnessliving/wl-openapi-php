@@ -37,8 +37,7 @@ class CalendarGetRequest
     /**
      * The ID of the staff member's gender.
      * In case of back-to-back booking - staff gender of first appointment.
-     * One of the [AGenderSid](#/components/schemas/AGenderSid) constants. `0` means no limitations on staff
-     * gender.
+     * One of the {@link \WlSdk\AGenderSid} constants. `0` means no limitations on staff gender.
      *
      * @var int|null
      */

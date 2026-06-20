@@ -43,7 +43,7 @@ class StaffElementPostRequest
     public ?string $dl_start = null;
 
     /**
-     * Gender of staff member. One of [AGenderSid](#/components/schemas/AGenderSid) constants.
+     * Gender of staff member. One of {@link \WlSdk\AGenderSid} constants.
      * 
      * `null` means to not change the current value of the field or set gender by default for new staff.
      *
@@ -52,7 +52,7 @@ class StaffElementPostRequest
     public ?int $id_gender = null;
 
     /**
-     * ID of the default system role. One of [RsPrivilegeRoleSid](#/components/schemas/RsPrivilegeRoleSid).
+     * ID of the default system role. One of {@link \WlSdk\RsPrivilegeRoleSid}.
      * 
      * `null` means to not change the current value of the field.
      *

@@ -9,7 +9,7 @@ class Finish47GetResponse
     /**
      * No description.
      *
-     * @var array[]|null
+     * @var Finish47GetResponseNotification[]|null
      */
     public ?array $a_notification = null;
 
@@ -22,7 +22,7 @@ class Finish47GetResponse
 
     public function __construct(array $data)
     {
-        $this->a_notification = isset($data['a_notification']) ? (array)$data['a_notification'] : null;
+        $this->a_notification = isset($data['a_notification']) ? array_map(static fn($item) => new Finish47GetResponseNotification((array)$item), (array)$data['a_notification']) : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
     }
 }

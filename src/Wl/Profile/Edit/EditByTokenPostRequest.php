@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Profile\Edit;
 class EditByTokenPostRequest
 {
     /**
-     * ID of source mode. One of [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * ID of source mode. One of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
      */
@@ -12,12 +12,12 @@ class EditByTokenPostRequest
 
     /**
      * Registration source ID.
-     * One of [RegisterSourceSid](#/components/schemas/Wl.Profile.RegisterSourceSid) constants.
+     * One of {@link \WlSdk\Wl\Profile\RegisterSourceSid} constants.
      * 
      * Used only to register new clients.
      * * If the client is already authorized, the field value will not be used.
-     * * If the client is not authorized and no value is set,
-     * [RegisterSourceSid::SELF](#/components/schemas/Wl.Profile.RegisterSourceSid) will be used.
+     * * If the client is not authorized and no value is set, {@link \WlSdk\Wl\Profile\RegisterSourceSid} will be
+     * used.
      *
      * @var int|null
      */
@@ -130,8 +130,8 @@ class EditByTokenPostRequest
     public ?string $a_image_upload = null;
 
     /**
-     * List of intent identifiers. Each element is one of
-     * [MemberIntentsSid](#/components/schemas/Wl.Login.Member.Intents.MemberIntentsSid) constants.
+     * List of intent identifiers. Each element is one of {@link \WlSdk\Wl\Login\Member\Intents\MemberIntentsSid}
+     * constants.
      * 
      * Available only for leads added by CAASI agent.
      *
