@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Login\Attendance;
 class AttendanceInfoByTokenGetResponsePurchaseOptionDefault
 {
     /**
-     * The sale item type, one of the [RsSaleSid](#/components/schemas/RsSaleSid) constants.
+     * The sale item type, one of the {@link \WlSdk\RsSaleSid} constants.
      * This will be `null` if the class has no default Purchase Option, or it sets to "Drop-in rate".
      *
      * @var int|null

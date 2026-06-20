@@ -12,7 +12,7 @@ class PaymentPostGetResponsePurchase
     public ?PaymentPostGetResponsePurchaseTax $a_tax = null;
 
     /**
-     * The purchase item ID. A constant of [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid).
+     * The purchase item ID. A constant of {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
      */

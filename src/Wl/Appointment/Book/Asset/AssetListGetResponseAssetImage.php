@@ -18,18 +18,16 @@ class AssetListGetResponseAssetImage
     public ?bool $is_empty = null;
 
     /**
-     * The icon name. String representation of one of the
-     * [ImageIconSid](#/components/schemas/Wl.Resource.Image.ImageIconSid) constants. This is only set if the image
-     * kind equals to `image`.
+     * The icon name. String representation of one of the {@link \WlSdk\Wl\Resource\Image\ImageIconSid} constants.
+     * This is only set if the image kind equals to `image`.
      *
      * @var string|null
      */
     public ?string $sid_image_icon = null;
 
     /**
-     * The shape name. String representation of one of the
-     * [ImageShapeSid](#/components/schemas/Wl.Resource.Image.ImageShapeSid) constants. This is set only if the
-     * image kind equals to `shape`.
+     * The shape name. String representation of one of the {@link \WlSdk\Wl\Resource\Image\ImageShapeSid}
+     * constants. This is set only if the image kind equals to `shape`.
      *
      * @var string|null
      */

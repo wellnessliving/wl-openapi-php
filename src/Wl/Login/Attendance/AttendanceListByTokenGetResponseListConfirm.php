@@ -159,7 +159,7 @@ class AttendanceListByTokenGetResponseListConfirm
     public ?int $i_visit_return = null;
 
     /**
-     * The gender ID of the client. One of the [AGenderSid](#/components/schemas/AGenderSid) constants.
+     * The gender ID of the client. One of the {@link \WlSdk\AGenderSid} constants.
      *
      * @var int|null
      */
@@ -167,22 +167,21 @@ class AttendanceListByTokenGetResponseListConfirm
 
     /**
      * If this visit was paid for by an external system, this ID will be set. Otherwise, it will be `0`. One of
-     * [PassProspectSid](#/components/schemas/Wl.Visit.PassProspectSid) constants.
+     * {@link \WlSdk\Wl\Visit\PassProspectSid} constants.
      *
      * @var int|null
      */
     public ?int $id_pass_prospect = null;
 
     /**
-     * The program ID of the Purchase Option. One of the [RsProgramSid](#/components/schemas/RsProgramSid)
-     * constants.
+     * The program ID of the Purchase Option. One of the {@link \WlSdk\RsProgramSid} constants.
      *
      * @var int|null
      */
     public ?int $id_program = null;
 
     /**
-     * The status of the visit. One of the [VisitSid](#/components/schemas/Wl.Visit.VisitSid) constants.
+     * The status of the visit. One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
      * @var int|null
      */

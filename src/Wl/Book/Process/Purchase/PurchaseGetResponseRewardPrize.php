@@ -25,8 +25,7 @@ class PurchaseGetResponseRewardPrize
     public ?int $i_score = null;
 
     /**
-     * The ID of Purchase Option type. One of the [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid)
-     * constants.
+     * The ID of Purchase Option type. One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
      */

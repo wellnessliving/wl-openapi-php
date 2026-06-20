@@ -11,7 +11,7 @@ class PurchaseReceiptGetResponseCard
     public ?string $text_card_number = null;
 
     /**
-     * The card system name from [ACardSystemSid](#/components/schemas/ACardSystemSid).
+     * The card system name from {@link \WlSdk\ACardSystemSid}.
      *
      * @var string|null
      */

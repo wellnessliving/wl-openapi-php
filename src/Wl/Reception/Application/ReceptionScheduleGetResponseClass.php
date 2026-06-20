@@ -39,7 +39,7 @@ class ReceptionScheduleGetResponseClass
     public ?int $i_duration = null;
 
     /**
-     * Service ID. One of the [ServiceSid](#/components/schemas/Wl.Service.ServiceSid) constants.
+     * Service ID. One of the {@link \WlSdk\Wl\Service\ServiceSid} constants.
      *
      * @var int|null
      */

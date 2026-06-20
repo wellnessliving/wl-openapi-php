@@ -26,22 +26,22 @@ class PurchaseReceiptGetResponsePurchaseItem
     public ?int $i_count = null;
 
     /**
-     * Program ID. One of [RsProgramSid](#/components/schemas/RsProgramSid) constants. Only applies to promotions.
-     * `null` if the purchase item is not a promotion.
+     * Program ID. One of {@link \WlSdk\RsProgramSid} constants. Only applies to promotions. `null` if the purchase
+     * item is not a promotion.
      *
      * @var int|null
      */
     public ?int $id_program = null;
 
     /**
-     * Purchase item ID. One of [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid) constants.
+     * Purchase item ID. One of {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
      */
     public ?int $id_purchase_item = null;
 
     /**
-     * Sale ID. One of [RsSaleSid](#/components/schemas/RsSaleSid) constants.
+     * Sale ID. One of {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
      */
@@ -63,7 +63,7 @@ class PurchaseReceiptGetResponsePurchaseItem
 
     /**
      * Product key.
-     * Set only if `id_purchase_item`is [RsPurchaseItemSid::PRODUCT](#/components/schemas/RsPurchaseItemSid).
+     * Set only if `id_purchase_item`is {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var string|null
      */

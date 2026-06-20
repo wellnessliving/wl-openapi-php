@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Appointment\Book\Schedule;
 class CalendarGetResponseWeekName
 {
     /**
-     * Week day, one of the [ADateWeekSid](#/components/schemas/ADateWeekSid) constants.
+     * Week day, one of the {@link \WlSdk\ADateWeekSid} constants.
      *
      * @var int|null
      */

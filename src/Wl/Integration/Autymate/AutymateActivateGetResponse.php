@@ -9,7 +9,7 @@ class AutymateActivateGetResponse
     /**
      * The new status of the enrollment. If `0`, the current status is returned.
      * 
-     * One of [AutymateStatusSid](#/components/schemas/Wl.Integration.Autymate.AutymateStatusSid) constants.
+     * One of {@link \WlSdk\Wl\Integration\Autymate\AutymateStatusSid} constants.
      *
      * @var int|null
      */

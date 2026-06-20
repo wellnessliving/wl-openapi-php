@@ -53,8 +53,7 @@ class AnnouncementListGetResponseList
     public ?int $i_order = null;
 
     /**
-     * Announcement status ID. One of
-     * [AnnouncementStatusEnum](#/components/schemas/Wl.Announcement.AnnouncementStatusEnum) constants.
+     * Announcement status ID. One of {@link \WlSdk\Wl\Announcement\AnnouncementStatusEnum} constants.
      *
      * @var int|null
      */

@@ -12,7 +12,7 @@ class ElementGetResponseClassListScheduleRepeat
 
     /**
      * The measuring unit of `i_repeat`.
-     * One of [ADurationSid](#/components/schemas/ADurationSid) constants.
+     * One of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
      */

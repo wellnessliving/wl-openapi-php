@@ -6,10 +6,8 @@ class SubscribePostResponseMessageBroadcastH
     /**
      * Card type ID.
      * 
-     * Not `null` when
-     * [DirectConnectTicketStatusChannel::$id_ticket_status](#/components/schemas/Core.WebSocket.ChannelBroadcast)
-     * is equal
-     * [DirectConnectTicketStatusSid::COMPLETE](#/components/schemas/Thoth.PayProcessor.DirectConnect.Ticket.DirectConnectTicketStatusSid).
+     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
+     * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
      *
      * @var int|null
      */
@@ -43,10 +41,8 @@ class SubscribePostResponseMessageBroadcastH
     /**
      * Cardholder name.
      * 
-     * Not `null` when
-     * [DirectConnectTicketStatusChannel::$id_ticket_status](#/components/schemas/Core.WebSocket.ChannelBroadcast)
-     * is equal
-     * [DirectConnectTicketStatusSid::COMPLETE](#/components/schemas/Thoth.PayProcessor.DirectConnect.Ticket.DirectConnectTicketStatusSid).
+     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
+     * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
      *
      * @var string|null
      */
@@ -55,10 +51,8 @@ class SubscribePostResponseMessageBroadcastH
     /**
      * Card expiration date.
      * 
-     * Not `null` when
-     * [DirectConnectTicketStatusChannel::$id_ticket_status](#/components/schemas/Core.WebSocket.ChannelBroadcast)
-     * is equal
-     * [DirectConnectTicketStatusSid::COMPLETE](#/components/schemas/Thoth.PayProcessor.DirectConnect.Ticket.DirectConnectTicketStatusSid).
+     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
+     * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
      *
      * @var string|null
      */
@@ -67,10 +61,8 @@ class SubscribePostResponseMessageBroadcastH
     /**
      * Last four digits of the card number.
      * 
-     * Not `null` when
-     * [DirectConnectTicketStatusChannel::$id_ticket_status](#/components/schemas/Core.WebSocket.ChannelBroadcast)
-     * is equal
-     * [DirectConnectTicketStatusSid::COMPLETE](#/components/schemas/Thoth.PayProcessor.DirectConnect.Ticket.DirectConnectTicketStatusSid).
+     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
+     * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
      *
      * @var string|null
      */

@@ -39,7 +39,7 @@ class MemberInfoGetResponseResultListInfoIcon
     public ?string $s_title = null;
 
     /**
-     * SID of the icon type shape. Constant from [ShapeSid](#/components/schemas/Wl.Login.Type.ShapeSid).
+     * SID of the icon type shape. Constant from {@link \WlSdk\Wl\Login\Type\ShapeSid}.
      *
      * @var string|null
      */

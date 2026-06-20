@@ -20,7 +20,7 @@ class SubscribePostResponseMessageBroadcastJ
     public ?string $dt_start_local = null;
 
     /**
-     * New "Book now" tab primary key in [TabSid](#/components/schemas/Wl.Classes.Tab.TabSid) table.
+     * New "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
      * 
      * `null` means system default tab.
      *
@@ -29,7 +29,7 @@ class SubscribePostResponseMessageBroadcastJ
     public ?string $k_class_tab_new = null;
 
     /**
-     * Old "Book now" tab primary key in [TabSid](#/components/schemas/Wl.Classes.Tab.TabSid) table.
+     * Old "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
      * 
      * `null` means system default tab.
      *

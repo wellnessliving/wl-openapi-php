@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Appointment\Book\Staff;
 class ListGetResponseStaff
 {
     /**
-     * Staff member's gender. One of [AGenderSid](#/components/schemas/AGenderSid) constants.
+     * Staff member's gender. One of {@link \WlSdk\AGenderSid} constants.
      *
      * @var int|null
      */

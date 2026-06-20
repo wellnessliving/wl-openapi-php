@@ -25,7 +25,7 @@ class StaffView74GetResponseResultListStaffPhoto
     public ?int $i_width = null;
 
     /**
-     * One of [GenderSid](#/components/schemas/Wl.Gender.GenderSid).
+     * One of {@link \WlSdk\Wl\Gender\GenderSid}.
      *
      * @var int|null
      */

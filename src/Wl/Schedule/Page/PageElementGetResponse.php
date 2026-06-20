@@ -113,7 +113,7 @@ class PageElementGetResponse
 
     /**
      * The note type ID. This will be set to `null` if notes aren't allowed.
-     * This is one of the [NoteSid](#/components/schemas/Wl.Visit.Note.Sid.NoteSid) constants.
+     * This is one of the {@link \WlSdk\Wl\Visit\Note\Sid\NoteSid} constants.
      * 
      * This will be `null` if notes aren't allowed.
      *
@@ -122,8 +122,7 @@ class PageElementGetResponse
     public ?int $id_note = null;
 
     /**
-     * The virtual provider ID. One of the [VirtualProviderSid](#/components/schemas/Wl.Virtual.VirtualProviderSid)
-     * constants.
+     * The virtual provider ID. One of the {@link \WlSdk\Wl\Virtual\VirtualProviderSid} constants.
      * 
      * This will be `null` for non-virtual services.
      *
@@ -132,7 +131,7 @@ class PageElementGetResponse
     public ?int $id_virtual_provider = null;
 
     /**
-     * The visit type ID. One of the [VisitSid](#/components/schemas/Wl.Visit.VisitSid) constants.
+     * The visit type ID. One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      * 
      * This will be `null` if not loaded yet.
      *

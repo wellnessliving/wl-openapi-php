@@ -13,8 +13,7 @@ class LeadGetResponseFieldList
     public ?LeadGetResponseFieldListItem $a_item = null;
 
     /**
-     * The type of the general field. This is one of the
-     * [RsFieldGeneralSid](#/components/schemas/RsFieldGeneralSid).
+     * The type of the general field. This is one of the {@link \WlSdk\RsFieldGeneralSid}.
      * This value is only set if the field is one of the general fields.
      *
      * @var int|null
@@ -22,7 +21,7 @@ class LeadGetResponseFieldList
     public ?int $id_field_general = null;
 
     /**
-     * The field type. This is one of the [RsFieldTypeSid](#/components/schemas/RsFieldTypeSid) constants.
+     * The field type. This is one of the {@link \WlSdk\RsFieldTypeSid} constants.
      *
      * @var int|null
      */

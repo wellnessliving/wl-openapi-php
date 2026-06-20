@@ -32,7 +32,7 @@ class CatalogViewGetResponseTaxData
     public ?float $f_value = null;
 
     /**
-     * The tax type. One of [RsTaxSid](#/components/schemas/RsTaxSid) constants.
+     * The tax type. One of {@link \WlSdk\RsTaxSid} constants.
      *
      * @var int|null
      */

@@ -32,7 +32,7 @@ class ReceptionRosterDesignGetResponseImage
     public ?int $i_width_src = null;
 
     /**
-     * Image type ID. One of [DriveTypeSid](#/components/schemas/Core.Drive.DriveTypeSid) constants.
+     * Image type ID. One of {@link \WlSdk\Core\Drive\DriveTypeSid} constants.
      *  Will be present only for \Core\Drive\Drive images.
      *
      * @var int|null

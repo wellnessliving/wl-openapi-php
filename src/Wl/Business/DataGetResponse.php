@@ -8,8 +8,8 @@ class DataGetResponse
 {
     /**
      * A list of all business services and their availability data.
-     * This is presented as an array, where keys are SIDs from
-     * [ServiceSid](#/components/schemas/Wl.Service.ServiceSid) and values are Boolean.
+     * This is presented as an array, where keys are SIDs from {@link \WlSdk\Wl\Service\ServiceSid} and values are
+     * Boolean.
      * If `true`, at least one service is enabled in the business. Otherwise, this will be `false`.
      *
      * @var int[]|null
@@ -33,7 +33,7 @@ class DataGetResponse
     /**
      * Business status for managing claim request behavior.
      * 
-     * Constant from [BusinessClaimStatusSid](#/components/schemas/Wl.Business.Claim.BusinessClaimStatusSid).
+     * Constant from {@link \WlSdk\Wl\Business\Claim\BusinessClaimStatusSid}.
      *
      * @var int|null
      */
@@ -56,7 +56,7 @@ class DataGetResponse
     /**
      * The rank type ID of the business.
      * 
-     * One of the [RsRankTypeSid](#/components/schemas/RsRankTypeSid) constants.
+     * One of the {@link \WlSdk\RsRankTypeSid} constants.
      * 
      * This will be `null` if the business doesn't have a rank type.
      *
@@ -66,7 +66,7 @@ class DataGetResponse
 
     /**
      * The region ID. This indicates the data center where the information about the business is stored.
-     * One of the [AmazonRegionSid](#/components/schemas/Core.Amazon.Region.AmazonRegionSid) constants.
+     * One of the {@link \WlSdk\Core\Amazon\Region\AmazonRegionSid} constants.
      * 
      * Requests made to different regions can lead to known issues such as responses indicating that the
      * business (or its elements) doesn't exist. This is because databases on different data centers are

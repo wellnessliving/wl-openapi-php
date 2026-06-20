@@ -5,7 +5,7 @@ class SearchTagListGetResponseSearchTag
 {
     /**
      * The business category that can use this search tag.
-     * One of the [RsBusinessCategorySid](#/components/schemas/RsBusinessCategorySid) constants.
+     * One of the {@link \WlSdk\RsBusinessCategorySid} constants.
      * This can be found in the business information found in [DataApi](/Wl/Business/Data.json).
      *
      * @var int|null

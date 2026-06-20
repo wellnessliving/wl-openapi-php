@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Login\Type;
 class LoginTypeGetResponseLoginTypeList
 {
     /**
-     * Client Type ID. One of [ClientTypeSid](#/components/schemas/Wl.Login.Type.ClientTypeSid) constants.
+     * Client Type ID. One of {@link \WlSdk\Wl\Login\Type\ClientTypeSid} constants.
      *
      * @var int|null
      */

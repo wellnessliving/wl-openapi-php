@@ -4,15 +4,14 @@ namespace WlSdk\Wl\Profile\PurchaseList;
 class PurchaseListElementGetResponseComponentB
 {
     /**
-     * Purchase item type. One of [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid) constants.
+     * Purchase item type. One of {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
      */
     public ?int $id_purchase_item = null;
 
     /**
-     * ID of the item. Will be different for different [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid)
-     * constants.
+     * ID of the item. Will be different for different {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var string|null
      */

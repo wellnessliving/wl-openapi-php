@@ -39,7 +39,7 @@ class ElementGetResponseItemImageImage
     public ?int $i_width_src = null;
 
     /**
-     * Type ID of the image. Constant from [DriveTypeSid](#/components/schemas/Core.Drive.DriveTypeSid).
+     * Type ID of the image. Constant from {@link \WlSdk\Core\Drive\DriveTypeSid}.
      *
      * @var int|null
      */

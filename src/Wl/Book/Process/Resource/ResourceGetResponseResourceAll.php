@@ -30,8 +30,7 @@ class ResourceGetResponseResourceAll
     public ?bool $has_current = null;
 
     /**
-     * Type of the asset category. One of
-     * [ResourceCategoryEnum](#/components/schemas/Wl.Resource.ResourceCategoryEnum) constants.
+     * Type of the asset category. One of {@link \WlSdk\Wl\Resource\ResourceCategoryEnum} constants.
      *
      * @var int|null
      */

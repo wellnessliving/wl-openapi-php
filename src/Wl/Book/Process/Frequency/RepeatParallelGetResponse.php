@@ -15,7 +15,7 @@ class RepeatParallelGetResponse
 
     /**
      * Date to start recurring booking. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json) ==
-     * [RsRepeatEndSid::DATE](#/components/schemas/RsRepeatEndSid).
+     * {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var string|null
      */
@@ -23,7 +23,7 @@ class RepeatParallelGetResponse
 
     /**
      * Date to finish recurring booking. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json) ==
-     * [RsRepeatEndSid::DATE](#/components/schemas/RsRepeatEndSid).
+     * {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var string|null
      */
@@ -31,7 +31,7 @@ class RepeatParallelGetResponse
 
     /**
      * Count of the visits to be created. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json)
-     * == [RsRepeatEndSid::COUNT](#/components/schemas/RsRepeatEndSid).
+     * == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var int|null
      */

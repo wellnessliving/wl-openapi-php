@@ -55,21 +55,21 @@ class BusinessConfigGetResponsePenalty
     public ?int $i_charge_measure = null;
 
     /**
-     * One of [BlameSid](#/components/schemas/Wl.Business.Policy.BlameSid) constants.
+     * One of {@link \WlSdk\Wl\Business\Policy\BlameSid} constants.
      *
      * @var int|null
      */
     public ?int $id_blame = null;
 
     /**
-     * Duration ID. One of [ADurationSid](#/components/schemas/ADurationSid) constants.
+     * Duration ID. One of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
      */
     public ?int $id_cancel_period = null;
 
     /**
-     * One of [ChargeSid](#/components/schemas/Wl.Business.Policy.ChargeSid) constants.
+     * One of {@link \WlSdk\Wl\Business\Policy\ChargeSid} constants.
      *
      * @var int|null
      */

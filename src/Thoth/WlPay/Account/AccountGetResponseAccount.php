@@ -4,7 +4,7 @@ namespace WlSdk\Thoth\WlPay\Account;
 class AccountGetResponseAccount
 {
     /**
-     * Currency ID. One of [CurrencySid](#/components/schemas/Core.Locale.CurrencySid) constant.
+     * Currency ID. One of {@link \WlSdk\Core\Locale\CurrencySid} constant.
      *
      * @var int|null
      */

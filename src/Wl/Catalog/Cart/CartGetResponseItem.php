@@ -18,7 +18,7 @@ class CartGetResponseItem
     public ?int $i_quantity = null;
 
     /**
-     * The sale item type, one of the [RsSaleSid](#/components/schemas/RsSaleSid) constants.
+     * The sale item type, one of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
      */
@@ -44,7 +44,7 @@ class CartGetResponseItem
 
     /**
      * Note:
-     *      Used for products only `id_sale` = [RsSaleSid::PRODUCT](#/components/schemas/RsSaleSid).
+     *      Used for products only `id_sale` = {@link \WlSdk\RsSaleSid}.
      *      If empty the first available option will be used automatically.
      *
      * @var string|null

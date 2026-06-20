@@ -7,23 +7,21 @@ namespace WlSdk\Wl\Member\Progress\Field\Edit;
 class FieldGetResponse
 {
     /**
-     * A list of field measurement. See
-     * [MeasurementSid](#/components/schemas/Wl.Member.Progress.Field.MeasurementSid).
+     * A list of field measurement. See {@link \WlSdk\Wl\Member\Progress\Field\MeasurementSid}.
      *
      * @var int[]|null
      */
     public ?array $a_measurement = null;
 
     /**
-     * A list of field type. See [TypeSid](#/components/schemas/Wl.Member.Progress.Field.TypeSid).
+     * A list of field type. See {@link \WlSdk\Wl\Member\Progress\Field\TypeSid}.
      *
      * @var int[]|null
      */
     public ?array $a_type = null;
 
     /**
-     * Field ID. One of the [ProgressFieldSid](#/components/schemas/Wl.Member.Progress.Field.ProgressFieldSid)
-     * constant.
+     * Field ID. One of the {@link \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid} constant.
      *
      * @var int|null
      */
@@ -32,7 +30,7 @@ class FieldGetResponse
     /**
      * Field measurement unit ID.
      * 
-     * One of the [MeasurementSid](#/components/schemas/Wl.Member.Progress.Field.MeasurementSid) constants.
+     * One of the {@link \WlSdk\Wl\Member\Progress\Field\MeasurementSid} constants.
      *
      * @var int|null
      */
@@ -41,7 +39,7 @@ class FieldGetResponse
     /**
      * Field type ID.
      * 
-     * One of the [TypeSid](#/components/schemas/Wl.Member.Progress.Field.TypeSid) constants.
+     * One of the {@link \WlSdk\Wl\Member\Progress\Field\TypeSid} constants.
      *
      * @var int|null
      */

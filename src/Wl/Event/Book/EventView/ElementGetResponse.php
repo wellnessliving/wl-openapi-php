@@ -183,17 +183,15 @@ class ElementGetResponse
 
     /**
      * The purchase rule ID.
-     * One of the [RequirePaySid](#/components/schemas/Wl.Classes.RequirePaySid) constants.
+     * One of the {@link \WlSdk\Wl\Classes\RequirePaySid} constants.
      *
      * @var int|null
      */
     public ?int $id_pay_require = null;
 
     /**
-     * Default required value for [RequirePaySid::ADVANCE](#/components/schemas/Wl.Classes.RequirePaySid) payment
-     * mode,
-     *  one of [RequirePaySid::ONLINE](#/components/schemas/Wl.Classes.RequirePaySid) or
-     * [RequirePaySid::VISIT](#/components/schemas/Wl.Classes.RequirePaySid).
+     * Default required value for {@link \WlSdk\Wl\Classes\RequirePaySid} payment mode,
+     *  one of {@link \WlSdk\Wl\Classes\RequirePaySid} or {@link \WlSdk\Wl\Classes\RequirePaySid}.
      * 
      * `null` means default value not selected.
      *
@@ -202,8 +200,7 @@ class ElementGetResponse
     public ?int $id_pay_require_option = null;
 
     /**
-     * The virtual provider ID. One of the [VirtualProviderSid](#/components/schemas/Wl.Virtual.VirtualProviderSid)
-     * constants.
+     * The virtual provider ID. One of the {@link \WlSdk\Wl\Virtual\VirtualProviderSid} constants.
      * 
      * `null` if an in-person event.
      *

@@ -8,16 +8,16 @@ class EnvironmentUserGetResponse
 {
     /**
      * A list of supported bank card systems.
-     * Keys refer to card types based on card numbers (see [ACardSystemSid](#/components/schemas/ACardSystemSid)),
-     * and values are IDs of card systems (one of [ACardSystemSid](#/components/schemas/ACardSystemSid) constants).
+     * Keys refer to card types based on card numbers (see {@link \WlSdk\ACardSystemSid}),
+     * and values are IDs of card systems (one of {@link \WlSdk\ACardSystemSid} constants).
      *
      * @var int[]|null
      */
     public ?array $a_card_system = null;
 
     /**
-     * A list of payment methods enabled for staff members. The ID is one of
-     * [RsPayMethodSid](#/components/schemas/RsPayMethodSid) constants.
+     * A list of payment methods enabled for staff members. The ID is one of {@link \WlSdk\RsPayMethodSid}
+     * constants.
      * The value is always `true`.
      *
      * @var int[]|null
@@ -45,7 +45,7 @@ class EnvironmentUserGetResponse
     /**
      * Represents information about payment processors.
      * 
-     * Keys are payment methods IDs, one of [RsPayMethodSid](#/components/schemas/RsPayMethodSid) constants.
+     * Keys are payment methods IDs, one of {@link \WlSdk\RsPayMethodSid} constants.
      * 
      * Value is the following array: 
      * 

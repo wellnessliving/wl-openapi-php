@@ -7,8 +7,7 @@ namespace WlSdk\Wl\Member\Progress\Field;
 class StatePutResponse
 {
     /**
-     * Field ID. One of the [ProgressFieldSid](#/components/schemas/Wl.Member.Progress.Field.ProgressFieldSid)
-     * constant.
+     * Field ID. One of the {@link \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid} constant.
      *
      * @var int|null
      */

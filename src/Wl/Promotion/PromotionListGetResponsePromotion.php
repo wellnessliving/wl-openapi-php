@@ -4,15 +4,14 @@ namespace WlSdk\Wl\Promotion;
 class PromotionListGetResponsePromotion
 {
     /**
-     * The promotion program. One of the [RsProgramSid](#/components/schemas/RsProgramSid) constants.
+     * The promotion program. One of the {@link \WlSdk\RsProgramSid} constants.
      *
      * @var int|null
      */
     public ?int $id_program = null;
 
     /**
-     * The type of the promotion program. One of the [RsProgramTypeSid](#/components/schemas/RsProgramTypeSid)
-     * constants.
+     * The type of the promotion program. One of the {@link \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
      */

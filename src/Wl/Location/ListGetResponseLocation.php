@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Location;
 class ListGetResponseLocation
 {
     /**
-     * List of directories from [RsProjectSid](#/components/schemas/RsProjectSid), where location is published.
+     * List of directories from {@link \WlSdk\RsProjectSid}, where location is published.
      *
      * @var int[]|null
      */

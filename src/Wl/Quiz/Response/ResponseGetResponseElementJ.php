@@ -35,14 +35,14 @@ class ResponseGetResponseElementJ
     /**
      * Rate scale.
      * 
-     * One of values from [Rate::SCALE_LIST](#/components/schemas/Core.Quiz.Element.ElementQuestionAbstract) array.
+     * One of values from {@link \WlSdk\Core\Quiz\Element\ElementQuestionAbstract} array.
      *
      * @var int|null
      */
     public ?int $i_scale = null;
 
     /**
-     * Element ID. One of [ElementSid](#/components/schemas/Core.Quiz.Element.ElementSid) constants.
+     * Element ID. One of {@link \WlSdk\Core\Quiz\Element\ElementSid} constants.
      * 
      * Defined automatically according to the name of the class.
      *

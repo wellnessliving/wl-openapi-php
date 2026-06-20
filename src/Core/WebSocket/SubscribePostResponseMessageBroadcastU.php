@@ -6,9 +6,8 @@ class SubscribePostResponseMessageBroadcastU
     /**
      * Card type ID.
      * 
-     * Not `null` when
-     * [PaymentStatusChannel::$id_payment_status](#/components/schemas/Core.WebSocket.ChannelBroadcast)
-     * is equal [CSResponseSid::APPROVED](#/components/schemas/Thoth.PayProcessor.Nuvei.Code.CSResponseSid).
+     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
+     * is equal {@link \WlSdk\Thoth\PayProcessor\Nuvei\Code\CSResponseSid}.
      *
      * @var int|null
      */
@@ -53,9 +52,8 @@ class SubscribePostResponseMessageBroadcastU
     /**
      * Last four digits of the card number.
      * 
-     * Not `null` when
-     * [PaymentStatusChannel::$id_payment_status](#/components/schemas/Core.WebSocket.ChannelBroadcast)
-     * is equal [CSResponseSid::APPROVED](#/components/schemas/Thoth.PayProcessor.Nuvei.Code.CSResponseSid).
+     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
+     * is equal {@link \WlSdk\Thoth\PayProcessor\Nuvei\Code\CSResponseSid}.
      *
      * @var string|null
      */
@@ -64,9 +62,8 @@ class SubscribePostResponseMessageBroadcastU
     /**
      * Cardholder name.
      * 
-     * Not `null` when
-     * [PaymentStatusChannel::$id_payment_status](#/components/schemas/Core.WebSocket.ChannelBroadcast)
-     * is equal [CSResponseSid::APPROVED](#/components/schemas/Thoth.PayProcessor.Nuvei.Code.CSResponseSid).
+     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
+     * is equal {@link \WlSdk\Thoth\PayProcessor\Nuvei\Code\CSResponseSid}.
      *
      * @var string|null
      */

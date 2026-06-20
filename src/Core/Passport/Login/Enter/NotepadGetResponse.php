@@ -10,7 +10,7 @@ class NotepadGetResponse
      * ID of the datacenter which is a preferred datacenter for the user specified in
      * `s_login`.
      * 
-     * One of [AmazonRegionSid](#/components/schemas/Core.Amazon.Region.AmazonRegionSid) constants.
+     * One of {@link \WlSdk\Core\Amazon\Region\AmazonRegionSid} constants.
      * 
      * If ID of the datacenter returned in this property differs from the current datacenter, this means that this
      * API request was forwarded to the datacenter returned here, and the notepad was created there.

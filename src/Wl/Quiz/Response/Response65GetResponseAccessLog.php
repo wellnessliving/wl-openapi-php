@@ -18,7 +18,7 @@ class Response65GetResponseAccessLog
     public ?string $uid_actor = null;
 
     /**
-     * One of [ActivitySid](#/components/schemas/Wl.Quiz.Activity.ActivitySid) constants.
+     * One of {@link \WlSdk\Wl\Quiz\Activity\ActivitySid} constants.
      *
      * @var int|null
      */

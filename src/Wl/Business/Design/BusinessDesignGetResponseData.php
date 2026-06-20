@@ -11,24 +11,21 @@ class BusinessDesignGetResponseData
     public ?bool $hide_past_days = null;
 
     /**
-     * Layout ID. For more details, see
-     * [RsPageFrontendHeaderLayoutSid](#/components/schemas/RsPageFrontendHeaderLayoutSid).
+     * Layout ID. For more details, see {@link \WlSdk\RsPageFrontendHeaderLayoutSid}.
      *
      * @var int|null
      */
     public ?int $id_layout = null;
 
     /**
-     * Logo position ID. For more details, see
-     * [RsBusinessDesignLogoPositionSid](#/components/schemas/RsBusinessDesignLogoPositionSid).
+     * Logo position ID. For more details, see {@link \WlSdk\RsBusinessDesignLogoPositionSid}.
      *
      * @var int|null
      */
     public ?int $id_logo_position = null;
 
     /**
-     * Logo style ID. For more details, see
-     * [RsBusinessDesignLogoStyleSid](#/components/schemas/RsBusinessDesignLogoStyleSid).
+     * Logo style ID. For more details, see {@link \WlSdk\RsBusinessDesignLogoStyleSid}.
      *
      * @var int|null
      */

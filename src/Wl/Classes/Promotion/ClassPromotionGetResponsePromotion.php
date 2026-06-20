@@ -18,7 +18,7 @@ class ClassPromotionGetResponsePromotion
     public ?string $text_title = null;
 
     /**
-     * One of the [RsProgramSid](#/components/schemas/RsProgramSid) constants.
+     * One of the {@link \WlSdk\RsProgramSid} constants.
      *
      * @var int|null
      */

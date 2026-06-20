@@ -15,7 +15,7 @@ class QuizElementPutResponseSetting
     /**
      * List of services grouped by service ID.
      * 
-     * Key is service ID. One of [ServiceSid](#/components/schemas/Wl.Quiz.Service.ServiceSid) constants.
+     * Key is service ID. One of {@link \WlSdk\Wl\Quiz\Service\ServiceSid} constants.
      * Values is list of services.
      *
      * @var string[][]|null
@@ -48,7 +48,7 @@ class QuizElementPutResponseSetting
     public ?int $id_book_request_type = null;
 
     /**
-     * Time interval ID. One of [ADurationSid](#/components/schemas/ADurationSid) constants.
+     * Time interval ID. One of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
      */

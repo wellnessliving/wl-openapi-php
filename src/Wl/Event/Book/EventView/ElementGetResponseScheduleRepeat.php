@@ -11,8 +11,7 @@ class ElementGetResponseScheduleRepeat
     public ?int $i_repeat = null;
 
     /**
-     * Measuring unit of `i_repeat` (week, month, year). One of [ADurationSid](#/components/schemas/ADurationSid)
-     * constants.
+     * Measuring unit of `i_repeat` (week, month, year). One of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
      */

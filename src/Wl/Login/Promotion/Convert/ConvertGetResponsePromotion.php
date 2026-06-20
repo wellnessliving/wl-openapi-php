@@ -18,7 +18,7 @@ class ConvertGetResponsePromotion
     public ?string $text_title = null;
 
     /**
-     * One of [RsProgramSid](#/components/schemas/RsProgramSid) constants.
+     * One of {@link \WlSdk\RsProgramSid} constants.
      *
      * @var int|null
      */

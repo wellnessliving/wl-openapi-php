@@ -4,8 +4,8 @@ namespace WlSdk\Wl\Business;
 class BusinessAccessGetResponseBusinessData
 {
     /**
-     * The business region. One of the [AmazonRegionSid](#/components/schemas/Core.Amazon.Region.AmazonRegionSid)
-     * constants. This will be `null` if no regions are currently set.
+     * The business region. One of the {@link \WlSdk\Core\Amazon\Region\AmazonRegionSid} constants. This will be
+     * `null` if no regions are currently set.
      *
      * @var int|null
      */

@@ -5,16 +5,13 @@ class ElementGetResponseData
 {
     /**
      * Access to services for a purchase option.
-     * Keys are one of the [ServiceSid](#/components/schemas/Wl.Service.ServiceSid) constants, values are one of
-     * the [AFlagSid](#/components/schemas/AFlagSid)
+     * Keys are one of the {@link \WlSdk\Wl\Service\ServiceSid} constants, values are one of the {@link
+     * \WlSdk\AFlagSid}
      * constants. Set only for relevant purchase option service category.
-     * [AFlagSid::ON](#/components/schemas/AFlagSid) access to some services.
-     * [AFlagSid::OFF](#/components/schemas/AFlagSid) no access to services. It can be set only for classes and
-     * events.
-     * [AFlagSid::ALL](#/components/schemas/AFlagSid) access to all services. It can be set only for classes and
-     * events.
-     * For purchase options with appointments and assets service category status is always
-     * [AFlagSid::ON](#/components/schemas/AFlagSid).
+     * {@link \WlSdk\AFlagSid} access to some services.
+     * {@link \WlSdk\AFlagSid} no access to services. It can be set only for classes and events.
+     * {@link \WlSdk\AFlagSid} access to all services. It can be set only for classes and events.
+     * For purchase options with appointments and assets service category status is always {@link \WlSdk\AFlagSid}.
      *
      * @var int[]|null
      */
@@ -74,23 +71,22 @@ class ElementGetResponseData
     public ?int $i_duration = null;
 
     /**
-     * Type of a coupon activation date specification. One of
-     * [ActivationSid](#/components/schemas/Wl.Coupon.Edit.ActivationSid) constants.
+     * Type of a coupon activation date specification. One of {@link \WlSdk\Wl\Coupon\Edit\ActivationSid}
+     * constants.
      *
      * @var int|null
      */
     public ?int $id_activation = null;
 
     /**
-     * Duration of a period. A constant from [ADurationSid](#/components/schemas/ADurationSid).
+     * Duration of a period. A constant from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
      */
     public ?int $id_duration = null;
 
     /**
-     * A way to specify a duration. One of [DurationTypeSid](#/components/schemas/Wl.Coupon.Edit.DurationTypeSid)
-     * constants.
+     * A way to specify a duration. One of {@link \WlSdk\Wl\Coupon\Edit\DurationTypeSid} constants.
      *
      * @var int|null
      */
