@@ -13,9 +13,9 @@ class ServiceGetRequest
     /**
      * Mode type, one of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * If `true`, back-end mode is selected.
@@ -89,7 +89,7 @@ class ServiceGetRequest
         return array_filter(
             [
             'dt_start' => $this->dt_start,
-            'id_mode' => $this->id_mode,
+            'id_mode' => $this->id_mode?->value,
             'is_backend' => $this->is_backend,
             'is_grid_any' => $this->is_grid_any,
             'is_show_unavailable_assets' => $this->is_show_unavailable_assets,

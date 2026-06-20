@@ -20,9 +20,9 @@ class ReviewListGetRequest
      * 
      * If not passed use default order {@link \WlSdk\Wl\Review\ReviewList\ReviewOrderSid}.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Review\ReviewList\ReviewOrderSid|null
      */
-    public ?int $id_order = null;
+    public ?\WlSdk\Wl\Review\ReviewList\ReviewOrderSid $id_order = null;
 
     /**
      * Business key. If not specified, location key needs to be specified.
@@ -52,7 +52,7 @@ class ReviewListGetRequest
         return array_filter(
             [
             'i_page' => $this->i_page,
-            'id_order' => $this->id_order,
+            'id_order' => $this->id_order?->value,
             'k_business' => $this->k_business,
             'k_location' => $this->k_location,
             'uid' => $this->uid,

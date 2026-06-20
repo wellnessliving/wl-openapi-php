@@ -15,17 +15,17 @@ class ApplicationResourceMaterialPostRequest
      * One of {@link \WlSdk\Wl\Skin\Application\Resource\ApplicationCategorySid} constants.
      * `0` if no category is selected.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Skin\Application\Resource\ApplicationCategorySid|null
      */
-    public ?int $id_category = null;
+    public ?\WlSdk\Wl\Skin\Application\Resource\ApplicationCategorySid $id_category = null;
 
     /**
      * Type of application update.
      * One of {@link \WlSdk\Wl\Skin\Application\Upgrade\AppUpdateTypeEnum} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Skin\Application\Upgrade\AppUpdateTypeEnum|null
      */
-    public ?int $id_version_change = null;
+    public ?\WlSdk\Wl\Skin\Application\Upgrade\AppUpdateTypeEnum $id_version_change = null;
 
     /**
      * Business key.
@@ -138,8 +138,8 @@ class ApplicationResourceMaterialPostRequest
         return array_filter(
             [
             'i_version' => $this->i_version,
-            'id_category' => $this->id_category,
-            'id_version_change' => $this->id_version_change,
+            'id_category' => $this->id_category?->value,
+            'id_version_change' => $this->id_version_change?->value,
             'k_business' => $this->k_business,
             's_firebase_ios' => $this->s_firebase_ios,
             's_version_name' => $this->s_version_name,

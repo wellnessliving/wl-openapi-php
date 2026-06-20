@@ -185,9 +185,9 @@ class ElementGetResponse
      * The purchase rule ID.
      * One of the {@link \WlSdk\Wl\Classes\RequirePaySid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Classes\RequirePaySid|null
      */
-    public ?int $id_pay_require = null;
+    public ?\WlSdk\Wl\Classes\RequirePaySid $id_pay_require = null;
 
     /**
      * Default required value for {@link \WlSdk\Wl\Classes\RequirePaySid} payment mode,
@@ -195,18 +195,18 @@ class ElementGetResponse
      * 
      * `null` means default value not selected.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Classes\RequirePaySid|null
      */
-    public ?int $id_pay_require_option = null;
+    public ?\WlSdk\Wl\Classes\RequirePaySid $id_pay_require_option = null;
 
     /**
      * The virtual provider ID. One of the {@link \WlSdk\Wl\Virtual\VirtualProviderSid} constants.
      * 
      * `null` if an in-person event.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Virtual\VirtualProviderSid|null
      */
-    public ?int $id_virtual_provider = null;
+    public ?\WlSdk\Wl\Virtual\VirtualProviderSid $id_virtual_provider = null;
 
     /**
      * Whether the event is age restricted.
@@ -408,9 +408,9 @@ class ElementGetResponse
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
         $this->i_session = isset($data['i_session']) ? (int)$data['i_session'] : null;
         $this->i_session_remain = isset($data['i_session_remain']) ? (int)$data['i_session_remain'] : null;
-        $this->id_pay_require = isset($data['id_pay_require']) ? (int)$data['id_pay_require'] : null;
-        $this->id_pay_require_option = isset($data['id_pay_require_option']) ? (int)$data['id_pay_require_option'] : null;
-        $this->id_virtual_provider = isset($data['id_virtual_provider']) ? (int)$data['id_virtual_provider'] : null;
+        $this->id_pay_require = isset($data['id_pay_require']) ? \WlSdk\Wl\Classes\RequirePaySid::tryFrom((int)$data['id_pay_require']) : null;
+        $this->id_pay_require_option = isset($data['id_pay_require_option']) ? \WlSdk\Wl\Classes\RequirePaySid::tryFrom((int)$data['id_pay_require_option']) : null;
+        $this->id_virtual_provider = isset($data['id_virtual_provider']) ? \WlSdk\Wl\Virtual\VirtualProviderSid::tryFrom((int)$data['id_virtual_provider']) : null;
         $this->is_age_restrict = isset($data['is_age_restrict']) ? (bool)$data['is_age_restrict'] : null;
         $this->is_availability_checked = isset($data['is_availability_checked']) ? (bool)$data['is_availability_checked'] : null;
         $this->is_book = isset($data['is_book']) ? (bool)$data['is_book'] : null;

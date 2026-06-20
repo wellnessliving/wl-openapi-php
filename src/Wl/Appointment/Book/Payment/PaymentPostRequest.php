@@ -21,9 +21,9 @@ class PaymentPostRequest
     /**
      * The key of source mode. A constant of {@link \WlSdk\Wl\Mode\ModeSid}.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * The purchase item ID. A constant of {@link \WlSdk\RsPurchaseItemSid}.
@@ -105,7 +105,7 @@ class PaymentPostRequest
             [
             'a_book_data' => $this->a_book_data,
             'a_uid' => $this->a_uid,
-            'id_mode' => $this->id_mode,
+            'id_mode' => $this->id_mode?->value,
             'id_purchase_item' => $this->id_purchase_item?->value,
             'is_walk_in' => $this->is_walk_in,
             'k_id' => $this->k_id,

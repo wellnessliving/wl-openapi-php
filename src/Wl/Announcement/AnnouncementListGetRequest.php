@@ -10,9 +10,9 @@ class AnnouncementListGetRequest
      * 
      * `null` in case when use default order.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Sid\SortOrderSid|null
      */
-    public ?int $id_order = null;
+    public ?\WlSdk\Core\Sid\SortOrderSid $id_order = null;
 
     /**
      * Sort field ID for list of announcements.
@@ -21,9 +21,9 @@ class AnnouncementListGetRequest
      * 
      * `null` in case when use default field.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Announcement\SortFieldSid|null
      */
-    public ?int $id_sort_field = null;
+    public ?\WlSdk\Wl\Announcement\SortFieldSid $id_sort_field = null;
 
     /**
      * If `true`, the API is being used from backend. Otherwise, this will be `false`.
@@ -59,8 +59,8 @@ class AnnouncementListGetRequest
     {
         return array_filter(
             [
-            'id_order' => $this->id_order,
-            'id_sort_field' => $this->id_sort_field,
+            'id_order' => $this->id_order?->value,
+            'id_sort_field' => $this->id_sort_field?->value,
             'is_backend' => $this->is_backend,
             'k_business' => $this->k_business,
             'k_location' => $this->k_location,

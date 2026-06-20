@@ -20,25 +20,25 @@ class AlertEditGetResponseLoginNoteData
     /**
      * Login note access type. One of {@link \WlSdk\RsLoginNoteAccessSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsLoginNoteAccessSid|null
      */
-    public ?int $id_login_note_access = null;
+    public ?\WlSdk\RsLoginNoteAccessSid $id_login_note_access = null;
 
     /**
      * Login note flag type. One of {@link \WlSdk\RsLoginNoteFlagSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsLoginNoteFlagSid|null
      */
-    public ?int $id_login_note_flag = null;
+    public ?\WlSdk\RsLoginNoteFlagSid $id_login_note_flag = null;
 
     /**
      * Flag source identifier.
      * One of {@link \WlSdk\Wl\Location\Flag\FlagSourceEnum} constant.
      * `null` if the flag was created manually.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Location\Flag\FlagSourceEnum|null
      */
-    public ?int $id_source = null;
+    public ?\WlSdk\Wl\Location\Flag\FlagSourceEnum $id_source = null;
 
     /**
      * `true` if the note was created by an automated process; `false` if created manually.
@@ -142,9 +142,9 @@ class AlertEditGetResponseLoginNoteData
     {
         $this->a_location = isset($data['a_location']) ? new AlertEditGetResponseLoginNoteDataLocation((array)$data['a_location']) : null;
         $this->can_flag = isset($data['can_flag']) ? (bool)$data['can_flag'] : null;
-        $this->id_login_note_access = isset($data['id_login_note_access']) ? (int)$data['id_login_note_access'] : null;
-        $this->id_login_note_flag = isset($data['id_login_note_flag']) ? (int)$data['id_login_note_flag'] : null;
-        $this->id_source = isset($data['id_source']) ? (int)$data['id_source'] : null;
+        $this->id_login_note_access = isset($data['id_login_note_access']) ? \WlSdk\RsLoginNoteAccessSid::tryFrom((int)$data['id_login_note_access']) : null;
+        $this->id_login_note_flag = isset($data['id_login_note_flag']) ? \WlSdk\RsLoginNoteFlagSid::tryFrom((int)$data['id_login_note_flag']) : null;
+        $this->id_source = isset($data['id_source']) ? \WlSdk\Wl\Location\Flag\FlagSourceEnum::tryFrom((int)$data['id_source']) : null;
         $this->is_automated = isset($data['is_automated']) ? (bool)$data['is_automated'] : null;
         $this->is_book = isset($data['is_book']) ? (bool)$data['is_book'] : null;
         $this->is_flag = isset($data['is_flag']) ? (bool)$data['is_flag'] : null;

@@ -36,9 +36,9 @@ class PurchaseListGetResponsePurchase
     /**
      * The ID of the sale category in the store. One of the constants {@link \WlSdk\RsSaleSid}.
      *
-     * @var int|null
+     * @var \WlSdk\RsSaleSid|null
      */
-    public ?int $id_sale = null;
+    public ?\WlSdk\RsSaleSid $id_sale = null;
 
     /**
      * If `true`, then the purchase item is active. Otherwise, this will be `false`.
@@ -159,7 +159,7 @@ class PurchaseListGetResponsePurchase
         $this->a_sale = isset($data['a_sale']) ? (array)$data['a_sale'] : null;
         $this->dt_add = isset($data['dt_add']) ? (string)$data['dt_add'] : null;
         $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
-        $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
+        $this->id_sale = isset($data['id_sale']) ? \WlSdk\RsSaleSid::tryFrom((int)$data['id_sale']) : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
         $this->is_component = isset($data['is_component']) ? (bool)$data['is_component'] : null;
         $this->is_package = isset($data['is_package']) ? (bool)$data['is_package'] : null;

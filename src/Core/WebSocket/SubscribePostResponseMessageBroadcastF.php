@@ -15,9 +15,9 @@ class SubscribePostResponseMessageBroadcastF
      * 
      * One of {@link \WlSdk\Wl\Task\TaskStatusSid}.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Task\TaskStatusSid|null
      */
-    public ?int $id_task_status = null;
+    public ?\WlSdk\Wl\Task\TaskStatusSid $id_task_status = null;
 
     /**
      * Key of the changed task.
@@ -29,7 +29,7 @@ class SubscribePostResponseMessageBroadcastF
     public function __construct(array $data)
     {
         $this->i_overdue = isset($data['i_overdue']) ? (int)$data['i_overdue'] : null;
-        $this->id_task_status = isset($data['id_task_status']) ? (int)$data['id_task_status'] : null;
+        $this->id_task_status = isset($data['id_task_status']) ? \WlSdk\Wl\Task\TaskStatusSid::tryFrom((int)$data['id_task_status']) : null;
         $this->k_task = isset($data['k_task']) ? (string)$data['k_task'] : null;
     }
 }

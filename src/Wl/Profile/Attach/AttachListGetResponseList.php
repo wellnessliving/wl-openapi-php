@@ -42,9 +42,9 @@ class AttachListGetResponseList
     /**
      * Preview type identifier. One of {@link \WlSdk\Wl\Profile\Attach\AttachPreviewSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Profile\Attach\AttachPreviewSid|null
      */
-    public ?int $id_preview = null;
+    public ?\WlSdk\Wl\Profile\Attach\AttachPreviewSid $id_preview = null;
 
     /**
      * `true` if the attachment is private (not visible to the client); `false` otherwise.
@@ -148,7 +148,7 @@ class AttachListGetResponseList
         $this->i_height = isset($data['i_height']) ? (int)$data['i_height'] : null;
         $this->i_show_delete = isset($data['i_show_delete']) ? (int)$data['i_show_delete'] : null;
         $this->i_width = isset($data['i_width']) ? (int)$data['i_width'] : null;
-        $this->id_preview = isset($data['id_preview']) ? (int)$data['id_preview'] : null;
+        $this->id_preview = isset($data['id_preview']) ? \WlSdk\Wl\Profile\Attach\AttachPreviewSid::tryFrom((int)$data['id_preview']) : null;
         $this->is_private = isset($data['is_private']) ? (bool)$data['is_private'] : null;
         $this->k_attach = isset($data['k_attach']) ? (string)$data['k_attach'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;

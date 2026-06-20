@@ -83,9 +83,9 @@ class ResponsePostRequest
     /**
      * Response source. One of {@link \WlSdk\Wl\Quiz\Response\SourceSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Quiz\Response\SourceSid|null
      */
-    public ?int $id_source = null;
+    public ?\WlSdk\Wl\Quiz\Response\SourceSid $id_source = null;
 
     /**
      * `true` if API is being used from backend, `false` otherwise.
@@ -172,7 +172,7 @@ class ResponsePostRequest
             'a_element_file' => $this->a_element_file,
             'a_purchase_item' => $this->a_purchase_item,
             'a_quick_config' => $this->a_quick_config,
-            'id_source' => $this->id_source,
+            'id_source' => $this->id_source?->value,
             'is_backend' => $this->is_backend,
             'is_draft' => $this->is_draft,
             'is_skip' => $this->is_skip,

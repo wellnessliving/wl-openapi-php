@@ -11,7 +11,7 @@ class StaffListGetRequest
      * Each element in the array represents a privilege ID, and should be one of {@link
      * \WlSdk\Wl\Privilege\PrivilegeSid} constants.
      *
-     * @var int[]|null
+     * @var \WlSdk\Wl\Privilege\PrivilegeSid[]|null
      */
     public ?array $a_privilege = null;
 

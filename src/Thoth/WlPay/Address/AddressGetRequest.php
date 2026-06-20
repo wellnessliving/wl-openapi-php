@@ -7,9 +7,9 @@ class AddressGetRequest
      * The ID of the payment owner type.
      * One of {@link \WlSdk\RsPayOwnerSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsPayOwnerSid|null
      */
-    public ?int $id_pay_owner = null;
+    public ?\WlSdk\RsPayOwnerSid $id_pay_owner = null;
 
     /**
      * Business key, where the payment is performed.
@@ -31,7 +31,7 @@ class AddressGetRequest
     {
         return array_filter(
             [
-            'id_pay_owner' => $this->id_pay_owner,
+            'id_pay_owner' => $this->id_pay_owner?->value,
             'k_business' => $this->k_business,
             'k_id' => $this->k_id,
             ],

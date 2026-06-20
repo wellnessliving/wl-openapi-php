@@ -23,9 +23,9 @@ class ResponseListGetResponseQuizLogin
      * The place where the request to fill out a quiz form occurred. One of the {@link
      * \WlSdk\Wl\Quiz\Response\SourceSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Quiz\Response\SourceSid|null
      */
-    public ?int $id_source = null;
+    public ?\WlSdk\Wl\Quiz\Response\SourceSid $id_source = null;
 
     /**
      * Determines whether the form can be viewed by staff member only after confirmation.
@@ -69,7 +69,7 @@ class ResponseListGetResponseQuizLogin
     {
         $this->a_visit = isset($data['a_visit']) ? (array)$data['a_visit'] : null;
         $this->dtl_date = isset($data['dtl_date']) ? (string)$data['dtl_date'] : null;
-        $this->id_source = isset($data['id_source']) ? (int)$data['id_source'] : null;
+        $this->id_source = isset($data['id_source']) ? \WlSdk\Wl\Quiz\Response\SourceSid::tryFrom((int)$data['id_source']) : null;
         $this->is_private = isset($data['is_private']) ? (bool)$data['is_private'] : null;
         $this->k_quiz = isset($data['k_quiz']) ? (string)$data['k_quiz'] : null;
         $this->k_quiz_login = isset($data['k_quiz_login']) ? (string)$data['k_quiz_login'] : null;

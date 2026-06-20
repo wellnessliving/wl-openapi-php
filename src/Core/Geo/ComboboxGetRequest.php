@@ -10,9 +10,9 @@ class ComboboxGetRequest
      * 
      * This will be `0` if all locations are searched.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Locale\LocaleSid|null
      */
-    public ?int $id_locale = null;
+    public ?\WlSdk\Core\Locale\LocaleSid $id_locale = null;
 
     /**
      * The city name (or a fragment of the city name) used for the search.
@@ -25,7 +25,7 @@ class ComboboxGetRequest
     {
         return array_filter(
             [
-            'id_locale' => $this->id_locale,
+            'id_locale' => $this->id_locale?->value,
             's_value' => $this->s_value,
             ],
             static fn($v) => $v !== null

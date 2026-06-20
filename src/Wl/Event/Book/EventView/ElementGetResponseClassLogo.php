@@ -21,9 +21,9 @@ class ElementGetResponseClassLogo
      * Is returned only if staff does not have a photo. ID of staff gender. One of {@link \WlSdk\AGenderSid}
      * constants.
      *
-     * @var int|null
+     * @var \WlSdk\AGenderSid|null
      */
-    public ?int $id_gender = null;
+    public ?\WlSdk\AGenderSid $id_gender = null;
 
     /**
      * Is returned only if staff has a photo. URL to image.
@@ -36,7 +36,7 @@ class ElementGetResponseClassLogo
     {
         $this->i_height = isset($data['i_height']) ? (int)$data['i_height'] : null;
         $this->i_width = isset($data['i_width']) ? (int)$data['i_width'] : null;
-        $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
+        $this->id_gender = isset($data['id_gender']) ? \WlSdk\AGenderSid::tryFrom((int)$data['id_gender']) : null;
         $this->url_logo = isset($data['url_logo']) ? (string)$data['url_logo'] : null;
     }
 }

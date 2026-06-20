@@ -6,9 +6,9 @@ class ClassViewGetResponseSessionResultStaffLogo
     /**
      * ID of gender. One of {@link \WlSdk\Wl\Gender\GenderSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Gender\GenderSid|null
      */
-    public ?int $id_gender = null;
+    public ?\WlSdk\Wl\Gender\GenderSid $id_gender = null;
 
     /**
      * `true` - staff has photo; `false` - has no photo.
@@ -26,7 +26,7 @@ class ClassViewGetResponseSessionResultStaffLogo
 
     public function __construct(array $data)
     {
-        $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
+        $this->id_gender = isset($data['id_gender']) ? \WlSdk\Wl\Gender\GenderSid::tryFrom((int)$data['id_gender']) : null;
         $this->is_empty = isset($data['is_empty']) ? (bool)$data['is_empty'] : null;
         $this->s_url = isset($data['s_url']) ? (string)$data['s_url'] : null;
     }

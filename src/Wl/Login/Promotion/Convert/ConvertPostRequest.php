@@ -13,9 +13,9 @@ class ConvertPostRequest
     /**
      * The conversion ID. One of the {@link \WlSdk\Wl\Promotion\Convert\PromotionConvertSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Promotion\Convert\PromotionConvertSid|null
      */
-    public ?int $id_convert = null;
+    public ?\WlSdk\Wl\Promotion\Convert\PromotionConvertSid $id_convert = null;
 
     /**
      * When conversion should be done. One of the {@link \WlSdk\Wl\Login\Promotion\Convert\ConvertWhenSid}
@@ -23,9 +23,9 @@ class ConvertPostRequest
      * 
      * `null` if it's not set yet.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Login\Promotion\Convert\ConvertWhenSid|null
      */
-    public ?int $id_convert_when = null;
+    public ?\WlSdk\Wl\Login\Promotion\Convert\ConvertWhenSid $id_convert_when = null;
 
     /**
      * The business key.
@@ -60,8 +60,8 @@ class ConvertPostRequest
         return array_filter(
             [
             'dl_convert' => $this->dl_convert,
-            'id_convert' => $this->id_convert,
-            'id_convert_when' => $this->id_convert_when,
+            'id_convert' => $this->id_convert?->value,
+            'id_convert_when' => $this->id_convert_when?->value,
             'k_business' => $this->k_business,
             'k_login_promotion' => $this->k_login_promotion,
             'k_promotion_to' => $this->k_promotion_to,

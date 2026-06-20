@@ -49,9 +49,9 @@ class StaffView74GetResponseResultListStaff
     /**
      * The staff member's gender. One of the {@link \WlSdk\AGenderSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\AGenderSid|null
      */
-    public ?int $id_gender = null;
+    public ?\WlSdk\AGenderSid $id_gender = null;
 
     /**
      * `true` in case when staff provides classes/events in home location, `false` otherwise.
@@ -163,7 +163,7 @@ class StaffView74GetResponseResultListStaff
         $this->html_first = isset($data['html_first']) ? (string)$data['html_first'] : null;
         $this->html_last = isset($data['html_last']) ? (string)$data['html_last'] : null;
         $this->html_location_title = isset($data['html_location_title']) ? (string)$data['html_location_title'] : null;
-        $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
+        $this->id_gender = isset($data['id_gender']) ? \WlSdk\AGenderSid::tryFrom((int)$data['id_gender']) : null;
         $this->is_classes_events = isset($data['is_classes_events']) ? (bool)$data['is_classes_events'] : null;
         $this->is_publish_business_page = isset($data['is_publish_business_page']) ? (bool)$data['is_publish_business_page'] : null;
         $this->is_schedule_enabled = isset($data['is_schedule_enabled']) ? (bool)$data['is_schedule_enabled'] : null;

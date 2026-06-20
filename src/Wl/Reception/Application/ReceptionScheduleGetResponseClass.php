@@ -41,9 +41,9 @@ class ReceptionScheduleGetResponseClass
     /**
      * Service ID. One of the {@link \WlSdk\Wl\Service\ServiceSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Service\ServiceSid|null
      */
-    public ?int $id_service = null;
+    public ?\WlSdk\Wl\Service\ServiceSid $id_service = null;
 
     /**
      * If `true`, the session can be checked in automatically. Otherwise, this will be `false`.
@@ -115,7 +115,7 @@ class ReceptionScheduleGetResponseClass
         $this->dtu_date = isset($data['dtu_date']) ? (string)$data['dtu_date'] : null;
         $this->html_class_js = isset($data['html_class_js']) ? (string)$data['html_class_js'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
-        $this->id_service = isset($data['id_service']) ? (int)$data['id_service'] : null;
+        $this->id_service = isset($data['id_service']) ? \WlSdk\Wl\Service\ServiceSid::tryFrom((int)$data['id_service']) : null;
         $this->is_auto = isset($data['is_auto']) ? (bool)$data['is_auto'] : null;
         $this->is_book = isset($data['is_book']) ? (bool)$data['is_book'] : null;
         $this->is_wait = isset($data['is_wait']) ? (bool)$data['is_wait'] : null;

@@ -21,31 +21,31 @@ class DataGetRequest
      *     <li>{@link \WlSdk\RsReportSid} - All Sales Report</li>
      * </ul>
      *
-     * @var int|null
+     * @var \WlSdk\RsReportSid|null
      */
-    public ?int $id_report = null;
+    public ?\WlSdk\RsReportSid $id_report = null;
 
     /**
      * The report group ID.
      *
-     * @var int|null
+     * @var \WlSdk\RsReportGroupSid|null
      */
-    public ?int $id_report_group = null;
+    public ?\WlSdk\RsReportGroupSid $id_report_group = null;
 
     /**
      * The report page ID. One of the {@link \WlSdk\RsReportPageSid} constants.
      * If set, the collection of that page will be used, otherwise a collection of single report will be used.
      *
-     * @var int|null
+     * @var \WlSdk\RsReportPageSid|null
      */
-    public ?int $id_report_page = null;
+    public ?\WlSdk\RsReportPageSid $id_report_page = null;
 
     /**
      * The report view ID. One of the {@link \WlSdk\RsReportChartViewSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsReportChartViewSid|null
      */
-    public ?int $id_report_view = null;
+    public ?\WlSdk\RsReportChartViewSid $id_report_view = null;
 
     /**
      * The key of business for which the report must be generated.
@@ -73,10 +73,10 @@ class DataGetRequest
         return array_filter(
             [
             'i_page' => $this->i_page,
-            'id_report' => $this->id_report,
-            'id_report_group' => $this->id_report_group,
-            'id_report_page' => $this->id_report_page,
-            'id_report_view' => $this->id_report_view,
+            'id_report' => $this->id_report?->value,
+            'id_report_group' => $this->id_report_group?->value,
+            'id_report_page' => $this->id_report_page?->value,
+            'id_report_view' => $this->id_report_view?->value,
             'k_business' => $this->k_business,
             's_filter' => $this->s_filter,
             's_sort' => $this->s_sort,

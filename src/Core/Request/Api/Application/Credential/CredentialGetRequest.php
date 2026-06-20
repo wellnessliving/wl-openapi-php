@@ -6,15 +6,15 @@ class CredentialGetRequest
     /**
      * The CID of the credential.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Request\Api\Application\Credential\CredentialAbstract|null
      */
-    public ?int $cid_credential = null;
+    public ?\WlSdk\Core\Request\Api\Application\Credential\CredentialAbstract $cid_credential = null;
 
     public function params(): array
     {
         return array_filter(
             [
-            'cid_credential' => $this->cid_credential,
+            'cid_credential' => $this->cid_credential?->value,
             ],
             static fn($v) => $v !== null
         );

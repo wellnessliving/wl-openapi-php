@@ -27,15 +27,15 @@ class PageListGetResponseVisit
     /**
      * Visit status ID. One of {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Visit\VisitSid|null
      */
-    public ?int $id_visit = null;
+    public ?\WlSdk\Wl\Visit\VisitSid $id_visit = null;
 
     public function __construct(array $data)
     {
         $this->dtu_date = isset($data['dtu_date']) ? (string)$data['dtu_date'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;
         $this->k_visit = isset($data['k_visit']) ? (string)$data['k_visit'] : null;
-        $this->id_visit = isset($data['id_visit']) ? (int)$data['id_visit'] : null;
+        $this->id_visit = isset($data['id_visit']) ? \WlSdk\Wl\Visit\VisitSid::tryFrom((int)$data['id_visit']) : null;
     }
 }

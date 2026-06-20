@@ -40,9 +40,9 @@ class NextAvailableDayGetRequest
      * In case of back-to-back booking - staff gender of first appointment.
      * One of the {@link \WlSdk\AGenderSid} constants. `0` means no limitations on staff gender.
      *
-     * @var int|null
+     * @var \WlSdk\AGenderSid|null
      */
-    public ?int $id_gender_staff = null;
+    public ?\WlSdk\AGenderSid $id_gender_staff = null;
 
     /**
      * Determines whether multiple appointments are booked in back-to-back mode.
@@ -169,7 +169,7 @@ class NextAvailableDayGetRequest
             'dt_date' => $this->dt_date,
             'i_duration' => $this->i_duration,
             'i_index' => $this->i_index,
-            'id_gender_staff' => $this->id_gender_staff,
+            'id_gender_staff' => $this->id_gender_staff?->value,
             'is_back_to_back' => $this->is_back_to_back,
             'is_staff' => $this->is_staff,
             'is_tab_all' => $this->is_tab_all,

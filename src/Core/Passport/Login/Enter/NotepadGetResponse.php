@@ -20,9 +20,9 @@ class NotepadGetResponse
      * `null` if datacenter preference was not evaluated, or it is not known.
      * In this case, the notepad is created in datacenter where the API request was initially sent.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Amazon\Region\AmazonRegionSid|null
      */
-    public ?int $id_region = null;
+    public ?\WlSdk\Core\Amazon\Region\AmazonRegionSid $id_region = null;
 
     /**
      * The hash type.
@@ -41,7 +41,7 @@ class NotepadGetResponse
 
     public function __construct(array $data)
     {
-        $this->id_region = isset($data['id_region']) ? (int)$data['id_region'] : null;
+        $this->id_region = isset($data['id_region']) ? \WlSdk\Core\Amazon\Region\AmazonRegionSid::tryFrom((int)$data['id_region']) : null;
         $this->s_hash = isset($data['s_hash']) ? (string)$data['s_hash'] : null;
         $this->s_notepad = isset($data['s_notepad']) ? (string)$data['s_notepad'] : null;
     }

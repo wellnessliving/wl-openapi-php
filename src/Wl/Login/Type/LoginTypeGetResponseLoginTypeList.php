@@ -6,9 +6,9 @@ class LoginTypeGetResponseLoginTypeList
     /**
      * Client Type ID. One of {@link \WlSdk\Wl\Login\Type\ClientTypeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Login\Type\ClientTypeSid|null
      */
-    public ?int $id_client_type = null;
+    public ?\WlSdk\Wl\Login\Type\ClientTypeSid $id_client_type = null;
 
     /**
      * Deprecated Use `id_client_type` instead.
@@ -43,7 +43,7 @@ class LoginTypeGetResponseLoginTypeList
 
     public function __construct(array $data)
     {
-        $this->id_client_type = isset($data['id_client_type']) ? (int)$data['id_client_type'] : null;
+        $this->id_client_type = isset($data['id_client_type']) ? \WlSdk\Wl\Login\Type\ClientTypeSid::tryFrom((int)$data['id_client_type']) : null;
         $this->is_member = isset($data['is_member']) ? (bool)$data['is_member'] : null;
         $this->k_login_type = isset($data['k_login_type']) ? (string)$data['k_login_type'] : null;
         $this->s_title = isset($data['s_title']) ? (string)$data['s_title'] : null;

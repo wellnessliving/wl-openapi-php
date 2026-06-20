@@ -48,18 +48,18 @@ class AddPostRequest
      * Determines how the payment was handled for the session.
      * One of the {@link \WlSdk\Wl\Login\Attendance\AddOptionSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Login\Attendance\AddOptionSid|null
      */
-    public ?int $id_add_option = null;
+    public ?\WlSdk\Wl\Login\Attendance\AddOptionSid $id_add_option = null;
 
     /**
      * Determines how the session was booked.
      * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * We recommend using the `WEB_BACKEND` value.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * The key of the user's promotion to be used for booking.
@@ -86,8 +86,8 @@ class AddPostRequest
             'k_business' => $this->k_business,
             'k_class_period' => $this->k_class_period,
             'uid_client' => $this->uid_client,
-            'id_add_option' => $this->id_add_option,
-            'id_mode' => $this->id_mode,
+            'id_add_option' => $this->id_add_option?->value,
+            'id_mode' => $this->id_mode?->value,
             'k_login_promotion' => $this->k_login_promotion,
             'k_session_pass' => $this->k_session_pass,
             ],

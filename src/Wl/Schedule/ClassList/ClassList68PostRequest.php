@@ -34,7 +34,7 @@ class ClassList68PostRequest
      * 
      * Empty array means no filtering.
      *
-     * @var int[]|null
+     * @var \WlSdk\ADateWeekSid[]|null
      */
     public ?array $a_day = null;
 
@@ -92,9 +92,9 @@ class ClassList68PostRequest
      * 
      * `null` if no filtering by tab is required.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Classes\Tab\TabSid|null
      */
-    public ?int $id_class_tab = null;
+    public ?\WlSdk\Wl\Classes\Tab\TabSid $id_class_tab = null;
 
     /**
      * `true` means to not generate `a_session` result.
@@ -204,7 +204,7 @@ class ClassList68PostRequest
             'a_time' => $this->a_time,
             'dt_date' => $this->dt_date,
             'dt_end' => $this->dt_end,
-            'id_class_tab' => $this->id_class_tab,
+            'id_class_tab' => $this->id_class_tab?->value,
             'is_response_short' => $this->is_response_short,
             'is_tab_all' => $this->is_tab_all,
             'is_virtual' => $this->is_virtual,

@@ -23,9 +23,9 @@ class Finish47PostRequest
     /**
      * The payment type ID for the appointment. One of the {@link \WlSdk\RsAppointmentPaySid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsAppointmentPaySid|null
      */
-    public ?int $id_pay = null;
+    public ?\WlSdk\RsAppointmentPaySid $id_pay = null;
 
     /**
      * If `true`, the client is a walk-in. Otherwise, this will be `false`.
@@ -137,9 +137,9 @@ class Finish47PostRequest
     /**
      * The booking mode ID. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * Determines whether multiple appointments are booked in back-to-back mode.
@@ -176,7 +176,7 @@ class Finish47PostRequest
             [
             'a_uid' => $this->a_uid,
             'a_user' => $this->a_user,
-            'id_pay' => $this->id_pay,
+            'id_pay' => $this->id_pay?->value,
             'is_walk_in' => $this->is_walk_in,
             'k_appointment' => $this->k_appointment,
             'k_business' => $this->k_business,
@@ -190,7 +190,7 @@ class Finish47PostRequest
             'a_payment_data' => $this->a_payment_data,
             'a_purchase_item' => $this->a_purchase_item,
             'a_quiz_response' => $this->a_quiz_response,
-            'id_mode' => $this->id_mode,
+            'id_mode' => $this->id_mode?->value,
             'is_back_to_back' => $this->is_back_to_back,
             'is_unpaid_force' => $this->is_unpaid_force,
             'm_pay' => $this->m_pay,

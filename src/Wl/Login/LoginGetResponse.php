@@ -23,9 +23,9 @@ class LoginGetResponse
     /**
      * The gender ID. It will be one of the {@link \WlSdk\AGenderSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\AGenderSid|null
      */
-    public ?int $id_gender = null;
+    public ?\WlSdk\AGenderSid $id_gender = null;
 
     /**
      * Whether photo is uploaded.
@@ -133,7 +133,7 @@ class LoginGetResponse
     {
         $this->can_postcard = isset($data['can_postcard']) ? (bool)$data['can_postcard'] : null;
         $this->can_send_message = isset($data['can_send_message']) ? (bool)$data['can_send_message'] : null;
-        $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
+        $this->id_gender = isset($data['id_gender']) ? \WlSdk\AGenderSid::tryFrom((int)$data['id_gender']) : null;
         $this->is_photo_empty = isset($data['is_photo_empty']) ? (bool)$data['is_photo_empty'] : null;
         $this->k_staff = isset($data['k_staff']) ? (string)$data['k_staff'] : null;
         $this->s_first_name = isset($data['s_first_name']) ? (string)$data['s_first_name'] : null;

@@ -9,14 +9,14 @@ class ViewGetResponse
     /**
      * A list of ages that are permitted for visiting this location.
      *
-     * @var int[]|null
+     * @var \WlSdk\RsAgeSid[]|null
      */
     public ?array $a_age = null;
 
     /**
      * A list of facilities that are available in this location.
      *
-     * @var int[]|null
+     * @var \WlSdk\RsFacilitySid[]|null
      */
     public ?array $a_amenities = null;
 
@@ -84,9 +84,9 @@ class ViewGetResponse
      * `null` in case when industry didn't set for chosen business type, or for business types
      * where set value which is absent.
      *
-     * @var int|null
+     * @var \WlSdk\RsHomeTourSid|null
      */
-    public ?int $id_industry = null;
+    public ?\WlSdk\RsHomeTourSid $id_industry = null;
 
     /**
      * `true` if to display phone number on location page. `false` otherwise.
@@ -295,8 +295,8 @@ class ViewGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_age = isset($data['a_age']) ? (array)$data['a_age'] : null;
-        $this->a_amenities = isset($data['a_amenities']) ? (array)$data['a_amenities'] : null;
+        $this->a_age = isset($data['a_age']) ? array_map(static fn($v) => \WlSdk\RsAgeSid::tryFrom((int)$v), (array)$data['a_age']) : null;
+        $this->a_amenities = isset($data['a_amenities']) ? array_map(static fn($v) => \WlSdk\RsFacilitySid::tryFrom((int)$v), (array)$data['a_amenities']) : null;
         $this->a_level = isset($data['a_level']) ? (array)$data['a_level'] : null;
         $this->a_logo = isset($data['a_logo']) ? new ViewGetResponseLogo((array)$data['a_logo']) : null;
         $this->a_slide = isset($data['a_slide']) ? new ViewGetResponseSlide((array)$data['a_slide']) : null;
@@ -305,7 +305,7 @@ class ViewGetResponse
         $this->f_longitude = isset($data['f_longitude']) ? (float)$data['f_longitude'] : null;
         $this->html_description_full = isset($data['html_description_full']) ? (string)$data['html_description_full'] : null;
         $this->html_description_preview = isset($data['html_description_preview']) ? (string)$data['html_description_preview'] : null;
-        $this->id_industry = isset($data['id_industry']) ? (int)$data['id_industry'] : null;
+        $this->id_industry = isset($data['id_industry']) ? \WlSdk\RsHomeTourSid::tryFrom((int)$data['id_industry']) : null;
         $this->is_phone = isset($data['is_phone']) ? (bool)$data['is_phone'] : null;
         $this->is_top_choice = isset($data['is_top_choice']) ? (bool)$data['is_top_choice'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;

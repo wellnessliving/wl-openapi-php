@@ -20,9 +20,9 @@ class CartGetResponseItem
     /**
      * The sale item type, one of the {@link \WlSdk\RsSaleSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsSaleSid|null
      */
-    public ?int $id_sale = null;
+    public ?\WlSdk\RsSaleSid $id_sale = null;
 
     /**
      * The sale item key.
@@ -55,7 +55,7 @@ class CartGetResponseItem
     {
         $this->dl_client_prorate = isset($data['dl_client_prorate']) ? (string)$data['dl_client_prorate'] : null;
         $this->i_quantity = isset($data['i_quantity']) ? (int)$data['i_quantity'] : null;
-        $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
+        $this->id_sale = isset($data['id_sale']) ? \WlSdk\RsSaleSid::tryFrom((int)$data['id_sale']) : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->k_login_prize = isset($data['k_login_prize']) ? (string)$data['k_login_prize'] : null;
         $this->k_shop_product_option = isset($data['k_shop_product_option']) ? (string)$data['k_shop_product_option'] : null;

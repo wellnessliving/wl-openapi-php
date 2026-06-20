@@ -6,16 +6,16 @@ class PromotionListGetResponsePromotion
     /**
      * The promotion program. One of the {@link \WlSdk\RsProgramSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramSid|null
      */
-    public ?int $id_program = null;
+    public ?\WlSdk\RsProgramSid $id_program = null;
 
     /**
      * The type of the promotion program. One of the {@link \WlSdk\RsProgramTypeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramTypeSid|null
      */
-    public ?int $id_program_type = null;
+    public ?\WlSdk\RsProgramTypeSid $id_program_type = null;
 
     /**
      * Whether the promotion is active.
@@ -40,8 +40,8 @@ class PromotionListGetResponsePromotion
 
     public function __construct(array $data)
     {
-        $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
-        $this->id_program_type = isset($data['id_program_type']) ? (int)$data['id_program_type'] : null;
+        $this->id_program = isset($data['id_program']) ? \WlSdk\RsProgramSid::tryFrom((int)$data['id_program']) : null;
+        $this->id_program_type = isset($data['id_program_type']) ? \WlSdk\RsProgramTypeSid::tryFrom((int)$data['id_program_type']) : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
         $this->k_promotion = isset($data['k_promotion']) ? (string)$data['k_promotion'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;

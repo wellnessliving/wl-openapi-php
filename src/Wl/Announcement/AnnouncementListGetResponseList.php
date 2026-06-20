@@ -55,9 +55,9 @@ class AnnouncementListGetResponseList
     /**
      * Announcement status ID. One of {@link \WlSdk\Wl\Announcement\AnnouncementStatusEnum} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Announcement\AnnouncementStatusEnum|null
      */
-    public ?int $id_status = null;
+    public ?\WlSdk\Wl\Announcement\AnnouncementStatusEnum $id_status = null;
 
     /**
      * `true` if the announcement is pinned, `false` otherwise.
@@ -152,7 +152,7 @@ class AnnouncementListGetResponseList
         $this->html_description = isset($data['html_description']) ? (string)$data['html_description'] : null;
         $this->html_description_clear = isset($data['html_description_clear']) ? (string)$data['html_description_clear'] : null;
         $this->i_order = isset($data['i_order']) ? (int)$data['i_order'] : null;
-        $this->id_status = isset($data['id_status']) ? (int)$data['id_status'] : null;
+        $this->id_status = isset($data['id_status']) ? \WlSdk\Wl\Announcement\AnnouncementStatusEnum::tryFrom((int)$data['id_status']) : null;
         $this->is_pin = isset($data['is_pin']) ? (bool)$data['is_pin'] : null;
         $this->k_announcement = isset($data['k_announcement']) ? (string)$data['k_announcement'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;

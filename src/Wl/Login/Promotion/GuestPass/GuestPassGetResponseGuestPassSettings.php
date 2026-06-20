@@ -29,9 +29,9 @@ class GuestPassGetResponseGuestPassSettings
     /**
      * Type of the duration of `i_limit_duration`. One of {@link \WlSdk\ADurationSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\ADurationSid|null
      */
-    public ?int $id_limit_duration = null;
+    public ?\WlSdk\ADurationSid $id_limit_duration = null;
 
     /**
      * Whether guests can only enter the gym when the inviting member is checked in.
@@ -52,7 +52,7 @@ class GuestPassGetResponseGuestPassSettings
         $this->i_claim_day = isset($data['i_claim_day']) ? (int)$data['i_claim_day'] : null;
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
         $this->i_limit_duration = isset($data['i_limit_duration']) ? (int)$data['i_limit_duration'] : null;
-        $this->id_limit_duration = isset($data['id_limit_duration']) ? (int)$data['id_limit_duration'] : null;
+        $this->id_limit_duration = isset($data['id_limit_duration']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_limit_duration']) : null;
         $this->is_checkin = isset($data['is_checkin']) ? (bool)$data['is_checkin'] : null;
         $this->is_limit = isset($data['is_limit']) ? (bool)$data['is_limit'] : null;
     }

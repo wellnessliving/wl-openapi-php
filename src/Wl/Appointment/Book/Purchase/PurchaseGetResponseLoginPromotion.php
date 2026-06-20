@@ -55,9 +55,9 @@ class PurchaseGetResponseLoginPromotion
     /**
      * The program ID for promotions. One of the {@link \WlSdk\RsProgramSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramSid|null
      */
-    public ?int $id_program = null;
+    public ?\WlSdk\RsProgramSid $id_program = null;
 
     /**
      * `true` if this purchase option is shared from another user.
@@ -127,7 +127,7 @@ class PurchaseGetResponseLoginPromotion
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
         $this->i_limit_duration = isset($data['i_limit_duration']) ? (int)$data['i_limit_duration'] : null;
         $this->i_promotion_priority = isset($data['i_promotion_priority']) ? (int)$data['i_promotion_priority'] : null;
-        $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
+        $this->id_program = isset($data['id_program']) ? \WlSdk\RsProgramSid::tryFrom((int)$data['id_program']) : null;
         $this->is_share = isset($data['is_share']) ? (bool)$data['is_share'] : null;
         $this->k_login_promotion = isset($data['k_login_promotion']) ? (string)$data['k_login_promotion'] : null;
         $this->s_class_include = isset($data['s_class_include']) ? (string)$data['s_class_include'] : null;

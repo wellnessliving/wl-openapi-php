@@ -14,9 +14,9 @@ class BusinessPostRequest
     /**
      * The business locale.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Locale\LocaleSid|null
      */
-    public ?int $id_locale = null;
+    public ?\WlSdk\Core\Locale\LocaleSid $id_locale = null;
 
     /**
      * `true` if location should be also created for the business.
@@ -107,7 +107,7 @@ class BusinessPostRequest
         return array_filter(
             [
             'a_staff_member' => $this->a_staff_member,
-            'id_locale' => $this->id_locale,
+            'id_locale' => $this->id_locale?->value,
             'is_location_create' => $this->is_location_create,
             'is_mail_send' => $this->is_mail_send,
             'k_business_type' => $this->k_business_type,

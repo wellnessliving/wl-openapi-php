@@ -57,23 +57,23 @@ class BusinessConfigGetResponsePenalty
     /**
      * One of {@link \WlSdk\Wl\Business\Policy\BlameSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Business\Policy\BlameSid|null
      */
-    public ?int $id_blame = null;
+    public ?\WlSdk\Wl\Business\Policy\BlameSid $id_blame = null;
 
     /**
      * Duration ID. One of {@link \WlSdk\ADurationSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\ADurationSid|null
      */
-    public ?int $id_cancel_period = null;
+    public ?\WlSdk\ADurationSid $id_cancel_period = null;
 
     /**
      * One of {@link \WlSdk\Wl\Business\Policy\ChargeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Business\Policy\ChargeSid|null
      */
-    public ?int $id_charge = null;
+    public ?\WlSdk\Wl\Business\Policy\ChargeSid $id_charge = null;
 
     /**
      * Charge measure type. `0` for percent, `1` for money amount.
@@ -140,9 +140,9 @@ class BusinessConfigGetResponsePenalty
         $this->i_blame = isset($data['i_blame']) ? (int)$data['i_blame'] : null;
         $this->i_cancel_period = isset($data['i_cancel_period']) ? (int)$data['i_cancel_period'] : null;
         $this->i_charge_measure = isset($data['i_charge_measure']) ? (int)$data['i_charge_measure'] : null;
-        $this->id_blame = isset($data['id_blame']) ? (int)$data['id_blame'] : null;
-        $this->id_cancel_period = isset($data['id_cancel_period']) ? (int)$data['id_cancel_period'] : null;
-        $this->id_charge = isset($data['id_charge']) ? (int)$data['id_charge'] : null;
+        $this->id_blame = isset($data['id_blame']) ? \WlSdk\Wl\Business\Policy\BlameSid::tryFrom((int)$data['id_blame']) : null;
+        $this->id_cancel_period = isset($data['id_cancel_period']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_cancel_period']) : null;
+        $this->id_charge = isset($data['id_charge']) ? \WlSdk\Wl\Business\Policy\ChargeSid::tryFrom((int)$data['id_charge']) : null;
         $this->id_charge_measure = isset($data['id_charge_measure']) ? (int)$data['id_charge_measure'] : null;
         $this->is_appointment_all = isset($data['is_appointment_all']) ? (bool)$data['is_appointment_all'] : null;
         $this->is_class_all = isset($data['is_class_all']) ? (bool)$data['is_class_all'] : null;

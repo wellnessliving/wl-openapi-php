@@ -6,9 +6,9 @@ class CurvesFranchiseLocationGetResponseLocationList
     /**
      * Currency ID. One of {@link \WlSdk\Core\Locale\CurrencySid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Locale\CurrencySid|null
      */
-    public ?int $id_currency = null;
+    public ?\WlSdk\Core\Locale\CurrencySid $id_currency = null;
 
     /**
      * City key.
@@ -54,7 +54,7 @@ class CurvesFranchiseLocationGetResponseLocationList
 
     public function __construct(array $data)
     {
-        $this->id_currency = isset($data['id_currency']) ? (int)$data['id_currency'] : null;
+        $this->id_currency = isset($data['id_currency']) ? \WlSdk\Core\Locale\CurrencySid::tryFrom((int)$data['id_currency']) : null;
         $this->k_city = isset($data['k_city']) ? (string)$data['k_city'] : null;
         $this->k_country = isset($data['k_country']) ? (string)$data['k_country'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;

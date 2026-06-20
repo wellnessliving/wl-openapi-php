@@ -72,9 +72,9 @@ class Purchase56GetRequest
     /**
      * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
@@ -181,7 +181,7 @@ class Purchase56GetRequest
             'dt_date_gmt' => $this->dt_date_gmt,
             'i_image_height' => $this->i_image_height,
             'i_image_width' => $this->i_image_width,
-            'id_mode' => $this->id_mode,
+            'id_mode' => $this->id_mode?->value,
             'is_backend' => $this->is_backend,
             'is_card_authorize' => $this->is_card_authorize,
             'is_credit_card_check' => $this->is_credit_card_check,

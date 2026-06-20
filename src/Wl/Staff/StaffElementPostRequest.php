@@ -47,18 +47,18 @@ class StaffElementPostRequest
      * 
      * `null` means to not change the current value of the field or set gender by default for new staff.
      *
-     * @var int|null
+     * @var \WlSdk\AGenderSid|null
      */
-    public ?int $id_gender = null;
+    public ?\WlSdk\AGenderSid $id_gender = null;
 
     /**
      * ID of the default system role. One of {@link \WlSdk\RsPrivilegeRoleSid}.
      * 
      * `null` means to not change the current value of the field.
      *
-     * @var int|null
+     * @var \WlSdk\RsPrivilegeRoleSid|null
      */
-    public ?int $id_role = null;
+    public ?\WlSdk\RsPrivilegeRoleSid $id_role = null;
 
     /**
      * Whether the staff is currently employed.
@@ -259,8 +259,8 @@ class StaffElementPostRequest
             'a_location' => $this->a_location,
             'dl_end' => $this->dl_end,
             'dl_start' => $this->dl_start,
-            'id_gender' => $this->id_gender,
-            'id_role' => $this->id_role,
+            'id_gender' => $this->id_gender?->value,
+            'id_role' => $this->id_role?->value,
             'is_employ' => $this->is_employ,
             'is_microsite' => $this->is_microsite,
             'is_password_set_disable' => $this->is_password_set_disable,

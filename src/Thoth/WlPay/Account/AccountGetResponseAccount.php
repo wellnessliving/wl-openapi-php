@@ -6,9 +6,9 @@ class AccountGetResponseAccount
     /**
      * Currency ID. One of {@link \WlSdk\Core\Locale\CurrencySid} constant.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Locale\CurrencySid|null
      */
-    public ?int $id_currency = null;
+    public ?\WlSdk\Core\Locale\CurrencySid $id_currency = null;
 
     /**
      * Key of account currency. Primary key in RsCurrencySql table.
@@ -49,7 +49,7 @@ class AccountGetResponseAccount
 
     public function __construct(array $data)
     {
-        $this->id_currency = isset($data['id_currency']) ? (int)$data['id_currency'] : null;
+        $this->id_currency = isset($data['id_currency']) ? \WlSdk\Core\Locale\CurrencySid::tryFrom((int)$data['id_currency']) : null;
         $this->k_currency = isset($data['k_currency']) ? (string)$data['k_currency'] : null;
         $this->k_pay_account = isset($data['k_pay_account']) ? (string)$data['k_pay_account'] : null;
         $this->k_pay_method = isset($data['k_pay_method']) ? (string)$data['k_pay_method'] : null;

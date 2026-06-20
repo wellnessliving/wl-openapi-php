@@ -13,9 +13,9 @@ class PhoneGetResponse
      * address
      * country that is outside its locale.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Locale\LocaleSid|null
      */
-    public ?int $id_locale = null;
+    public ?\WlSdk\Core\Locale\LocaleSid $id_locale = null;
 
     /**
      * Business phone number(in locale format).
@@ -34,7 +34,7 @@ class PhoneGetResponse
 
     public function __construct(array $data)
     {
-        $this->id_locale = isset($data['id_locale']) ? (int)$data['id_locale'] : null;
+        $this->id_locale = isset($data['id_locale']) ? \WlSdk\Core\Locale\LocaleSid::tryFrom((int)$data['id_locale']) : null;
         $this->text_phone = isset($data['text_phone']) ? (string)$data['text_phone'] : null;
         $this->text_phone_mask = isset($data['text_phone_mask']) ? (string)$data['text_phone_mask'] : null;
     }

@@ -23,9 +23,9 @@ class ListGetRequest
      * User role by whom this api called.
      * For different roles different results might be generated.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Login\LoginRoleSid|null
      */
-    public ?int $id_role = null;
+    public ?\WlSdk\Wl\Login\LoginRoleSid $id_role = null;
 
     /**
      * `true` - returns service categories that have no staff members available to conduct them.
@@ -80,7 +80,7 @@ class ListGetRequest
             [
             'dt_date' => $this->dt_date,
             'i_duration_custom' => $this->i_duration_custom,
-            'id_role' => $this->id_role,
+            'id_role' => $this->id_role?->value,
             'is_unavailable' => $this->is_unavailable,
             'k_appointment_ignore' => $this->k_appointment_ignore,
             'k_location' => $this->k_location,
