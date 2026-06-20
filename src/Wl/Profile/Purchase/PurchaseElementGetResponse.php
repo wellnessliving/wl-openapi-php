@@ -228,9 +228,9 @@ class PurchaseElementGetResponse
      * The ID of the purchase item type.
      * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsPurchaseItemSid|null
      */
-    public ?int $id_purchase_item = null;
+    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
 
     /**
      * The ID of the sale category.
@@ -572,7 +572,7 @@ class PurchaseElementGetResponse
         $this->id_discount_commission_type = isset($data['id_discount_commission_type']) ? (int)$data['id_discount_commission_type'] : null;
         $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;
         $this->id_program_type = isset($data['id_program_type']) ? (int)$data['id_program_type'] : null;
-        $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
+        $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
         $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
         $this->is_component = isset($data['is_component']) ? (bool)$data['is_component'] : null;

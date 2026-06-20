@@ -29,9 +29,9 @@ class PurchaseListGetResponsePurchase
     /**
      * The ID of the purchase type. One of the constants {@link \WlSdk\RsPurchaseItemSid}.
      *
-     * @var int|null
+     * @var \WlSdk\RsPurchaseItemSid|null
      */
-    public ?int $id_purchase_item = null;
+    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
 
     /**
      * The ID of the sale category in the store. One of the constants {@link \WlSdk\RsSaleSid}.
@@ -158,7 +158,7 @@ class PurchaseListGetResponsePurchase
         $this->a_active = isset($data['a_active']) ? (array)$data['a_active'] : null;
         $this->a_sale = isset($data['a_sale']) ? (array)$data['a_sale'] : null;
         $this->dt_add = isset($data['dt_add']) ? (string)$data['dt_add'] : null;
-        $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
+        $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
         $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
         $this->is_component = isset($data['is_component']) ? (bool)$data['is_component'] : null;

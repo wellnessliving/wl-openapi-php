@@ -95,9 +95,9 @@ class PurchaseGetResponsePurchase
     /**
      * The ID of Purchase Option type. One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsPurchaseItemSid|null
      */
-    public ?int $id_purchase_item = null;
+    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
 
     /**
      * If `true`, the Purchase Option requires a contract assignment. Otherwise, this will be `false`.
@@ -208,7 +208,7 @@ class PurchaseGetResponsePurchase
         $this->i_session = isset($data['i_session']) ? (int)$data['i_session'] : null;
         $this->id_program_category = isset($data['id_program_category']) ? (int)$data['id_program_category'] : null;
         $this->id_program_type = isset($data['id_program_type']) ? (int)$data['id_program_type'] : null;
-        $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
+        $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
         $this->is_contract = isset($data['is_contract']) ? (bool)$data['is_contract'] : null;
         $this->is_convert = isset($data['is_convert']) ? (bool)$data['is_convert'] : null;
         $this->is_renew = isset($data['is_renew']) ? (bool)$data['is_renew'] : null;
