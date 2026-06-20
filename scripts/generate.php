@@ -366,6 +366,7 @@ function wlBuildResponseProperties(
 
     foreach ($properties as $propName => $propSchema) {
         // Preserve a caller-level description before resolving $ref (OpenAPI allows overriding).
+        $originalSchema = $propSchema;
         $overrideDesc = $propSchema['description'] ?? null;
         if (isset($propSchema['$ref'])) {
             $resolved = wlResolveRef($spec, $propSchema['$ref']);
@@ -441,6 +442,20 @@ function wlBuildResponseProperties(
                 continue;
             }
 
+            // Case 2c: items is a $ref to an enum -> typed array with enum casting.
+            $enumItemName = wlGetEnumSchemaName($spec, $items);
+            if ($enumItemName !== null) {
+                $enumRef = wlEnumSchemaToClassRef($enumItemName);
+                $resolvedItem = wlResolveRef($spec, $items['$ref']);
+                $itemPhpType = wlSchemaToPhpType($spec, $resolvedItem ?: []);
+                $cast = ($itemPhpType !== null && isset($castMap[$itemPhpType])) ? $castMap[$itemPhpType] : '';
+                $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $enumRef . '[]|null');
+                $propsCode .= "    public ?array \${$propName} = null;\n\n";
+                $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
+                    . " ? array_map(static fn(\$v) => {$enumRef}::tryFrom({$cast}\$v), (array)\$data['{$propName}']) : null;\n";
+                continue;
+            }
+
             // Case 2b: items is an object with properties -> generate a sub-class for the item type.
             $resolvedItems = isset($items['$ref']) ? (wlResolveRef($spec, $items['$ref']) ?: $items) : $items;
             $itemType = $resolvedItems['type'] ?? null;
@@ -461,17 +476,28 @@ function wlBuildResponseProperties(
         }
 
         // Default: scalar or unresolvable type.
-        $phpType = wlSchemaToPhpType($spec, $propSchema);
-        $docType = wlSchemaToDocType($spec, $propSchema);
-        $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $docType . '|null');
-        if ($phpType !== null) {
-            $propsCode .= "    public ?{$phpType} \${$propName} = null;\n\n";
-            $cast = $castMap[$phpType] ?? '';
+        $enumSchemaName = wlGetEnumSchemaName($spec, $originalSchema);
+        if ($enumSchemaName !== null) {
+            $enumRef = wlEnumSchemaToClassRef($enumSchemaName);
+            $phpType = wlSchemaToPhpType($spec, $propSchema);
+            $cast = ($phpType !== null && isset($castMap[$phpType])) ? $castMap[$phpType] : '';
+            $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $enumRef . '|null');
+            $propsCode .= "    public ?{$enumRef} \${$propName} = null;\n\n";
             $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
-                . " ? {$cast}\$data['{$propName}'] : null;\n";
+                . " ? {$enumRef}::tryFrom({$cast}\$data['{$propName}']) : null;\n";
         } else {
-            $propsCode .= "    public \${$propName} = null;\n\n";
-            $constructorBody .= "        \$this->{$propName} = \$data['{$propName}'] ?? null;\n";
+            $phpType = wlSchemaToPhpType($spec, $propSchema);
+            $docType = wlSchemaToDocType($spec, $originalSchema);
+            $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $docType . '|null');
+            if ($phpType !== null) {
+                $propsCode .= "    public ?{$phpType} \${$propName} = null;\n\n";
+                $cast = $castMap[$phpType] ?? '';
+                $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
+                    . " ? {$cast}\$data['{$propName}'] : null;\n";
+            } else {
+                $propsCode .= "    public \${$propName} = null;\n\n";
+                $constructorBody .= "        \$this->{$propName} = \$data['{$propName}'] ?? null;\n";
+            }
         }
     }
 
