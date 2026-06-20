@@ -7,14 +7,14 @@ namespace WlSdk\Wl\Login\Product;
 class ProductGetResponse
 {
     /**
-     * No description.
+     * List of purchased products:
      *
-     * @var ProductGetResponseLoginProduct[]|null
+     * @var ProductGetResponseLoginProduct|null
      */
-    public ?array $a_login_product = null;
+    public ?ProductGetResponseLoginProduct $a_login_product = null;
 
     public function __construct(array $data)
     {
-        $this->a_login_product = isset($data['a_login_product']) ? array_map(static fn($item) => new ProductGetResponseLoginProduct((array)$item), (array)$data['a_login_product']) : null;
+        $this->a_login_product = isset($data['a_login_product']) ? new ProductGetResponseLoginProduct((array)$data['a_login_product']) : null;
     }
 }

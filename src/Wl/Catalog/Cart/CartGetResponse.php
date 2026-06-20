@@ -16,28 +16,28 @@ class CartGetResponse
     public ?array $a_discount_item = null;
 
     /**
-     * No description.
+     * The list of items in the cart.
      *
      * @var CartGetResponseItem[]|null
      */
     public ?array $a_item = null;
 
     /**
-     * No description.
+     * List of prizes that can be redeemed and applied to items in the cart.
      *
      * @var CartGetResponsePrizePropose[]|null
      */
     public ?array $a_prize_propose = null;
 
     /**
-     * No description.
+     * List of cart items to which the selected prize can be applied
      *
      * @var CartGetResponseRewardItem[]|null
      */
     public ?array $a_reward_item = null;
 
     /**
-     * No description.
+     * List of login prizes that can be applied to items in the cart.
      *
      * @var CartGetResponseRewardPropose[]|null
      */

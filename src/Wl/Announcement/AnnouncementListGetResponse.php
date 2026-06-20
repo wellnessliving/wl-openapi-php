@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Announcement;
 class AnnouncementListGetResponse
 {
     /**
-     * No description.
+     * List of announcements. Each element has the following keys:
      *
      * @var AnnouncementListGetResponseList[]|null
      */

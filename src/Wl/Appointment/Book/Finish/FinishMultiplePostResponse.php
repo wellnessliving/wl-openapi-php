@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Appointment\Book\Finish;
 class FinishMultiplePostResponse
 {
     /**
-     * No description.
+     * The booked appointments. Every element has the key:
      *
      * @var FinishMultiplePostResponseAppointment[]|null
      */

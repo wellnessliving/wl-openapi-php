@@ -7,7 +7,7 @@ namespace WlSdk\Thoth\WlPay\Method;
 class ListGetResponse
 {
     /**
-     * No description.
+     * A list of payment methods:
      *
      * @var ListGetResponsePayMethod[]|null
      */

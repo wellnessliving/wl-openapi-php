@@ -28,25 +28,28 @@ class ViewGetResponse
     public ?array $a_level = null;
 
     /**
-     * No description.
+     * Information about the location logo used in WellnessLiving:
      *
-     * @var ViewGetResponseLogo[]|null
+     * @var ViewGetResponseLogo|null
      */
-    public ?array $a_logo = null;
+    public ?ViewGetResponseLogo $a_logo = null;
 
     /**
-     * No description.
+     * A list of the location images.
+     * Every element has the following keys:
      *
-     * @var ViewGetResponseSlide[]|null
+     * @var ViewGetResponseSlide|null
      */
-    public ?array $a_slide = null;
+    public ?ViewGetResponseSlide $a_slide = null;
 
     /**
-     * No description.
+     * The hours of operation for the location.
+     * Fields are numbers representing specific days (1 is Monday, 7 is Sunday). Values are objects with the next
+     * fields:
      *
-     * @var ViewGetResponseWork[]|null
+     * @var ViewGetResponseWork|null
      */
-    public ?array $a_work = null;
+    public ?ViewGetResponseWork $a_work = null;
 
     /**
      * The latitude coordinate of the location.
@@ -295,9 +298,9 @@ class ViewGetResponse
         $this->a_age = isset($data['a_age']) ? (array)$data['a_age'] : null;
         $this->a_amenities = isset($data['a_amenities']) ? (array)$data['a_amenities'] : null;
         $this->a_level = isset($data['a_level']) ? (array)$data['a_level'] : null;
-        $this->a_logo = isset($data['a_logo']) ? array_map(static fn($item) => new ViewGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
-        $this->a_slide = isset($data['a_slide']) ? array_map(static fn($item) => new ViewGetResponseSlide((array)$item), (array)$data['a_slide']) : null;
-        $this->a_work = isset($data['a_work']) ? array_map(static fn($item) => new ViewGetResponseWork((array)$item), (array)$data['a_work']) : null;
+        $this->a_logo = isset($data['a_logo']) ? new ViewGetResponseLogo((array)$data['a_logo']) : null;
+        $this->a_slide = isset($data['a_slide']) ? new ViewGetResponseSlide((array)$data['a_slide']) : null;
+        $this->a_work = isset($data['a_work']) ? new ViewGetResponseWork((array)$data['a_work']) : null;
         $this->f_latitude = isset($data['f_latitude']) ? (float)$data['f_latitude'] : null;
         $this->f_longitude = isset($data['f_longitude']) ? (float)$data['f_longitude'] : null;
         $this->html_description_full = isset($data['html_description_full']) ? (string)$data['html_description_full'] : null;

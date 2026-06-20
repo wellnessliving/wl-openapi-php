@@ -7,49 +7,63 @@ namespace WlSdk\Wl\Catalog\CatalogList;
 class ElementGetResponse
 {
     /**
-     * No description.
+     * The age restriction configuration.
+     * 
+     * Age restrictions for an item apply when they're configured for a specific item and the API is requested from
+     * the backend
+     * or when age restriction are public.
      *
-     * @var ElementGetResponseAgeRestriction[]|null
+     * @var ElementGetResponseAgeRestriction|null
      */
-    public ?array $a_age_restriction = null;
+    public ?ElementGetResponseAgeRestriction $a_age_restriction = null;
 
     /**
-     * No description.
+     * Additional information specific for the item.
+     * 
+     * The structure may be different depending on the item category.
+     * 
+     * 
+     * Consider the following examples:
+     * * For a product, this contains inventory information.
+     * * For a gift card, this contains possible amounts.
+     * * For a session pass/membership/package, this contains information about start and stop dates.
      *
-     * @var ElementGetResponseData[]|null
+     * @var ElementGetResponseData|null
      */
-    public ?array $a_data = null;
+    public ?ElementGetResponseData $a_data = null;
 
     /**
-     * No description.
+     * Image information:
      *
-     * @var ElementGetResponseImage[]|null
+     * @var ElementGetResponseImage|null
      */
-    public ?array $a_image = null;
+    public ?ElementGetResponseImage $a_image = null;
 
     /**
-     * No description.
+     * List of images.
+     * Keys are index and value is below information:
      *
      * @var ElementGetResponseImageList[]|null
      */
     public ?array $a_image_list = null;
 
     /**
-     * No description.
+     * A list of installment plans. Each element has the following next keys:
      *
      * @var ElementGetResponseInstallmentTemplate[]|null
      */
     public ?array $a_installment_template = null;
 
     /**
-     * No description.
+     * The list of information pertaining to the specified item.
      *
      * @var ElementGetResponseItem[]|null
      */
     public ?array $a_item = null;
 
     /**
-     * No description.
+     * A list of the item's taxes.
+     * Keys refer tax keys, and values refer to the amount of tax.
      *
      * @var ElementGetResponseTax[]|null
      */
@@ -252,9 +266,9 @@ class ElementGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_age_restriction = isset($data['a_age_restriction']) ? array_map(static fn($item) => new ElementGetResponseAgeRestriction((array)$item), (array)$data['a_age_restriction']) : null;
-        $this->a_data = isset($data['a_data']) ? array_map(static fn($item) => new ElementGetResponseData((array)$item), (array)$data['a_data']) : null;
-        $this->a_image = isset($data['a_image']) ? array_map(static fn($item) => new ElementGetResponseImage((array)$item), (array)$data['a_image']) : null;
+        $this->a_age_restriction = isset($data['a_age_restriction']) ? new ElementGetResponseAgeRestriction((array)$data['a_age_restriction']) : null;
+        $this->a_data = isset($data['a_data']) ? new ElementGetResponseData((array)$data['a_data']) : null;
+        $this->a_image = isset($data['a_image']) ? new ElementGetResponseImage((array)$data['a_image']) : null;
         $this->a_image_list = isset($data['a_image_list']) ? array_map(static fn($item) => new ElementGetResponseImageList((array)$item), (array)$data['a_image_list']) : null;
         $this->a_installment_template = isset($data['a_installment_template']) ? array_map(static fn($item) => new ElementGetResponseInstallmentTemplate((array)$item), (array)$data['a_installment_template']) : null;
         $this->a_item = isset($data['a_item']) ? array_map(static fn($item) => new ElementGetResponseItem((array)$item), (array)$data['a_item']) : null;

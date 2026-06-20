@@ -67,7 +67,7 @@ class EditPostRequest
     public ?array $a_search_entity = null;
 
     /**
-     * No description.
+     * Selected staff roles of the search template.
      *
      * @var array[]|null
      */

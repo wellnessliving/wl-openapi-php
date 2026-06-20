@@ -7,14 +7,14 @@ namespace WlSdk\Wl\Review\ReviewList;
 class ReviewElementGetResponse
 {
     /**
-     * No description.
+     * Review data:
      *
-     * @var ReviewElementGetResponseReview[]|null
+     * @var ReviewElementGetResponseReview|null
      */
-    public ?array $a_review = null;
+    public ?ReviewElementGetResponseReview $a_review = null;
 
     public function __construct(array $data)
     {
-        $this->a_review = isset($data['a_review']) ? array_map(static fn($item) => new ReviewElementGetResponseReview((array)$item), (array)$data['a_review']) : null;
+        $this->a_review = isset($data['a_review']) ? new ReviewElementGetResponseReview((array)$data['a_review']) : null;
     }
 }

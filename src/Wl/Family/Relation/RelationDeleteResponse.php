@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Family\Relation;
 class RelationDeleteResponse
 {
     /**
-     * No description.
+     * Information about the user's relationships. Every element has the following fields:
      *
      * @var RelationDeleteResponseRelation[]|null
      */

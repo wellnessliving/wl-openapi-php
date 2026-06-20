@@ -25,16 +25,21 @@ class SkinForeignPutRequest
     public ?string $s_foreign_id = null;
 
     /**
-     * No description.
+     * Data specific for the skin type.
+     * It is passed to RsSkinData::data_set() method.
+     * 
+     * All fields are optional and may be omitted if not needed.
+     * 
+     * For Lead Capture widget it may contain:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_data_specific = null;
 
     /**
-     * No description.
+     * Profile fields, which should be shown on the widget and if they are required or optional.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_fields = null;
 

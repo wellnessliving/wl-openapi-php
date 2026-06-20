@@ -24,11 +24,13 @@ class ServiceGetResponse
     public ?array $a_resource_busy = null;
 
     /**
-     * No description.
+     * A list of assets required for the service booking.
+     * Keys refer the asset category key(s).
+     * Values refer to sub-arrays with next key(s).
      *
-     * @var ServiceGetResponseResourceType[]|null
+     * @var ServiceGetResponseResourceType|null
      */
-    public ?array $a_resource_type = null;
+    public ?ServiceGetResponseResourceType $a_resource_type = null;
 
     /**
      * Can the staff members book reserved assets.
@@ -40,7 +42,7 @@ class ServiceGetResponse
     public function __construct(array $data)
     {
         $this->a_resource_busy = isset($data['a_resource_busy']) ? (array)$data['a_resource_busy'] : null;
-        $this->a_resource_type = isset($data['a_resource_type']) ? array_map(static fn($item) => new ServiceGetResponseResourceType((array)$item), (array)$data['a_resource_type']) : null;
+        $this->a_resource_type = isset($data['a_resource_type']) ? new ServiceGetResponseResourceType((array)$data['a_resource_type']) : null;
         $this->can_book_unavailable_assets = isset($data['can_book_unavailable_assets']) ? (bool)$data['can_book_unavailable_assets'] : null;
     }
 }

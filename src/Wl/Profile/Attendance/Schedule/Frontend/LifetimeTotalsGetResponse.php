@@ -7,7 +7,11 @@ namespace WlSdk\Wl\Profile\Attendance\Schedule\Frontend;
 class LifetimeTotalsGetResponse
 {
     /**
-     * No description.
+     * Report totals.
+     * 
+     * A set of key-value pairs.
+     * 
+     * Each element has followed structure:
      *
      * @var LifetimeTotalsGetResponseTotal[]|null
      */

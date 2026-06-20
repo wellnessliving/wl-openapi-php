@@ -7,7 +7,8 @@ namespace WlSdk\Wl\Profile\Edit;
 class EditByTokenPostResponse
 {
     /**
-     * No description.
+     * List of validation errors. `null` if no error occurred.
+     * Each element:
      *
      * @var EditByTokenPostResponseErrorList[]|null
      */

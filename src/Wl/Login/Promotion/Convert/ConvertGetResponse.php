@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Login\Promotion\Convert;
 class ConvertGetResponse
 {
     /**
-     * No description.
+     * Promotion data containing the following structure:.
      *
      * @var ConvertGetResponsePromotion[]|null
      */

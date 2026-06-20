@@ -25,7 +25,9 @@ class EnvironmentGetResponse
     public ?array $a_method_staff = null;
 
     /**
-     * No description.
+     * A list of all payment methods that can be used within this business.
+     * This array is sorted in the order in which payment methods should be shown to the user.
+     * Each element of the array has the following structure:
      *
      * @var EnvironmentGetResponseMethodSupport[]|null
      */
@@ -41,7 +43,13 @@ class EnvironmentGetResponse
     public ?array $a_mobile_config = null;
 
     /**
-     * No description.
+     * Represents information about payment processors.
+     * 
+     * Keys are payment methods IDs, one of [RsPayMethodSid](#/components/schemas/RsPayMethodSid) constants.
+     * 
+     * Value is the following array:
+     * 
+     * `null` if no processors are set up.
      *
      * @var EnvironmentGetResponsePayProcessor[]|null
      */

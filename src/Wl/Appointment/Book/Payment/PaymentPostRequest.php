@@ -6,7 +6,7 @@ class PaymentPostRequest
     /**
      * Information detailing an appointment booking:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_book_data = null;
 
@@ -28,9 +28,9 @@ class PaymentPostRequest
     /**
      * The purchase item ID. A constant of {@link \WlSdk\RsPurchaseItemSid}.
      *
-     * @var int|null
+     * @var \WlSdk\RsPurchaseItemSid|null
      */
-    public ?int $id_purchase_item = null;
+    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
 
     /**
      * If `true`, the client is a walk-in. Otherwise, this will be `false`.
@@ -82,7 +82,9 @@ class PaymentPostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * A list of payment sources to pay with.
+     * 
+     * Each element has next keys:
      *
      * @var array[]|null
      */
@@ -104,7 +106,7 @@ class PaymentPostRequest
             'a_book_data' => $this->a_book_data,
             'a_uid' => $this->a_uid,
             'id_mode' => $this->id_mode,
-            'id_purchase_item' => $this->id_purchase_item,
+            'id_purchase_item' => $this->id_purchase_item?->value,
             'is_walk_in' => $this->is_walk_in,
             'k_id' => $this->k_id,
             'k_location' => $this->k_location,

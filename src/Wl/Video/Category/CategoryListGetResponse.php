@@ -7,7 +7,9 @@ namespace WlSdk\Wl\Video\Category;
 class CategoryListGetResponse
 {
     /**
-     * No description.
+     * The business video library categories as found in `k_business`.
+     * 
+     * Each element has the following structure:
      *
      * @var CategoryListGetResponseVideoCategory[]|null
      */

@@ -7,14 +7,16 @@ namespace WlSdk\Wl\Business\Design;
 class BusinessDesignGetResponse
 {
     /**
-     * No description.
+     * Design data for a business.
+     * 
+     * Contains the following keys:
      *
-     * @var BusinessDesignGetResponseData[]|null
+     * @var BusinessDesignGetResponseData|null
      */
-    public ?array $a_data = null;
+    public ?BusinessDesignGetResponseData $a_data = null;
 
     public function __construct(array $data)
     {
-        $this->a_data = isset($data['a_data']) ? array_map(static fn($item) => new BusinessDesignGetResponseData((array)$item), (array)$data['a_data']) : null;
+        $this->a_data = isset($data['a_data']) ? new BusinessDesignGetResponseData((array)$data['a_data']) : null;
     }
 }

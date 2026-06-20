@@ -7,7 +7,8 @@ namespace WlSdk\Wl\Discount\Code\Edit;
 class DiscountCodeEditGetResponse
 {
     /**
-     * No description.
+     * List of components that are affected by this discount code.
+     * Each element is an array containing:
      *
      * @var DiscountCodeEditGetResponseComponent[]|null
      */

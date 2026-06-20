@@ -7,7 +7,9 @@ namespace WlSdk\Wl\Skin\Application\Resource;
 class ApplicationResourceGetResponse
 {
     /**
-     * No description.
+     * The application data. Key is the business key.
+     * Value is application resource data for that business.
+     * Each element:
      *
      * @var ApplicationResourceGetResponseApplication[]|null
      */

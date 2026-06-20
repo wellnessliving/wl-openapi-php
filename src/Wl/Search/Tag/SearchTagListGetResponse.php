@@ -7,7 +7,9 @@ namespace WlSdk\Wl\Search\Tag;
 class SearchTagListGetResponse
 {
     /**
-     * No description.
+     * A list of all the search tags.
+     * 
+     * Each element is an array with the following keys:
      *
      * @var SearchTagListGetResponseSearchTag[]|null
      */

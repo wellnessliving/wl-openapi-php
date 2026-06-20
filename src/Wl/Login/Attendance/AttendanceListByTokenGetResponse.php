@@ -7,21 +7,22 @@ namespace WlSdk\Wl\Login\Attendance;
 class AttendanceListByTokenGetResponse
 {
     /**
-     * No description.
+     * The list of clients in the active attendance list who haven't confirmed or canceled.
+     * Each element is an array with the following fields:
      *
      * @var AttendanceListByTokenGetResponseListActive[]|null
      */
     public ?array $a_list_active = null;
 
     /**
-     * No description.
+     * The list of clients who have confirmed their attendance.
      *
      * @var AttendanceListByTokenGetResponseListConfirm[]|null
      */
     public ?array $a_list_confirm = null;
 
     /**
-     * No description.
+     * The list of clients who are on the wait list.
      *
      * @var AttendanceListByTokenGetResponseListWait[]|null
      */

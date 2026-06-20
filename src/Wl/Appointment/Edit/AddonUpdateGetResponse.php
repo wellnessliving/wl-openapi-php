@@ -7,14 +7,14 @@ namespace WlSdk\Wl\Appointment\Edit;
 class AddonUpdateGetResponse
 {
     /**
-     * No description.
+     * Data to show appointment add-ons:
      *
-     * @var AddonUpdateGetResponseAddonData[]|null
+     * @var AddonUpdateGetResponseAddonData|null
      */
-    public ?array $a_addon_data = null;
+    public ?AddonUpdateGetResponseAddonData $a_addon_data = null;
 
     public function __construct(array $data)
     {
-        $this->a_addon_data = isset($data['a_addon_data']) ? array_map(static fn($item) => new AddonUpdateGetResponseAddonData((array)$item), (array)$data['a_addon_data']) : null;
+        $this->a_addon_data = isset($data['a_addon_data']) ? new AddonUpdateGetResponseAddonData((array)$data['a_addon_data']) : null;
     }
 }

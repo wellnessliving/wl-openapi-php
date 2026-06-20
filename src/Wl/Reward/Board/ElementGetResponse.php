@@ -7,7 +7,8 @@ namespace WlSdk\Wl\Reward\Board;
 class ElementGetResponse
 {
     /**
-     * No description.
+     * List of reward board elements. `null` if not loaded.
+     * Each element:
      *
      * @var ElementGetResponseReward[]|null
      */

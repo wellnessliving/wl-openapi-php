@@ -7,7 +7,9 @@ namespace WlSdk\Core\Geo;
 class ComboboxGetResponse
 {
     /**
-     * No description.
+     * A list of items to show in the combobox list.
+     * 
+     * Each element of the array is a city matching the string with the following structure:
      *
      * @var ComboboxGetResponseList[]|null
      */

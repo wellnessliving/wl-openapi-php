@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Service\ServiceList;
 class ListGetResponse
 {
     /**
-     * No description.
+     * Appointment types list:
      *
      * @var ListGetResponseService[]|null
      */

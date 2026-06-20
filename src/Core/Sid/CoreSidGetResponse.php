@@ -7,14 +7,14 @@ namespace WlSdk\Core\Sid;
 class CoreSidGetResponse
 {
     /**
-     * No description.
+     * List of items. Keys are IDs, values are arrays with additional information:
      *
-     * @var CoreSidGetResponseList[]|null
+     * @var CoreSidGetResponseList|null
      */
-    public ?array $a_list = null;
+    public ?CoreSidGetResponseList $a_list = null;
 
     public function __construct(array $data)
     {
-        $this->a_list = isset($data['a_list']) ? array_map(static fn($item) => new CoreSidGetResponseList((array)$item), (array)$data['a_list']) : null;
+        $this->a_list = isset($data['a_list']) ? new CoreSidGetResponseList((array)$data['a_list']) : null;
     }
 }

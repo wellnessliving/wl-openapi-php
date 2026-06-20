@@ -7,11 +7,11 @@ namespace WlSdk\Wl\Appointment\Book\Finish;
 class Finish47GetResponse
 {
     /**
-     * No description.
+     * Information for sending an appointment notification.
      *
-     * @var Finish47GetResponseNotification[]|null
+     * @var Finish47GetResponseNotification|null
      */
-    public ?array $a_notification = null;
+    public ?Finish47GetResponseNotification $a_notification = null;
 
     /**
      * Location to show available appointment booking schedule.
@@ -22,7 +22,7 @@ class Finish47GetResponse
 
     public function __construct(array $data)
     {
-        $this->a_notification = isset($data['a_notification']) ? array_map(static fn($item) => new Finish47GetResponseNotification((array)$item), (array)$data['a_notification']) : null;
+        $this->a_notification = isset($data['a_notification']) ? new Finish47GetResponseNotification((array)$data['a_notification']) : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
     }
 }

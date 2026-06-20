@@ -8,9 +8,9 @@ class SendMailPostRequest
      * 
      * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsPurchaseItemSid|null
      */
-    public ?int $id_purchase_item = null;
+    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
 
     /**
      * Service ID. Required if `text_action` is 'booking'.
@@ -51,7 +51,7 @@ class SendMailPostRequest
     {
         return array_filter(
             [
-            'id_purchase_item' => $this->id_purchase_item,
+            'id_purchase_item' => $this->id_purchase_item?->value,
             'id_service' => $this->id_service,
             'k_business' => $this->k_business,
             'k_id' => $this->k_id,

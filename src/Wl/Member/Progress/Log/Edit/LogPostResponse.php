@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Member\Progress\Log\Edit;
 class LogPostResponse
 {
     /**
-     * No description.
+     * Field log data.
      *
      * @var LogPostResponseFieldList[]|null
      */

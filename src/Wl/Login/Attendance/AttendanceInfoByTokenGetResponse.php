@@ -7,25 +7,25 @@ namespace WlSdk\Wl\Login\Attendance;
 class AttendanceInfoByTokenGetResponse
 {
     /**
-     * No description.
+     * Additional visit information about this appointment. Empty array if it's not an appointment:
      *
-     * @var AttendanceInfoByTokenGetResponseAppointmentVisitInfo[]|null
+     * @var AttendanceInfoByTokenGetResponseAppointmentVisitInfo|null
      */
-    public ?array $a_appointment_visit_info = null;
+    public ?AttendanceInfoByTokenGetResponseAppointmentVisitInfo $a_appointment_visit_info = null;
 
     /**
-     * No description.
+     * Service logo information:
      *
-     * @var AttendanceInfoByTokenGetResponseLogo[]|null
+     * @var AttendanceInfoByTokenGetResponseLogo|null
      */
-    public ?array $a_logo = null;
+    public ?AttendanceInfoByTokenGetResponseLogo $a_logo = null;
 
     /**
-     * No description.
+     * Default purchase option information.
      *
-     * @var AttendanceInfoByTokenGetResponsePurchaseOptionDefault[]|null
+     * @var AttendanceInfoByTokenGetResponsePurchaseOptionDefault|null
      */
-    public ?array $a_purchase_option_default = null;
+    public ?AttendanceInfoByTokenGetResponsePurchaseOptionDefault $a_purchase_option_default = null;
 
     /**
      * Assets which are bound to this session.
@@ -35,14 +35,14 @@ class AttendanceInfoByTokenGetResponse
     public ?array $a_resource = null;
 
     /**
-     * No description.
+     * Asset layouts of session:
      *
      * @var AttendanceInfoByTokenGetResponseResourceLayout[]|null
      */
     public ?array $a_resource_layout = null;
 
     /**
-     * No description.
+     * List of staff members who provide service:
      *
      * @var AttendanceInfoByTokenGetResponseStaff[]|null
      */
@@ -188,9 +188,9 @@ class AttendanceInfoByTokenGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_appointment_visit_info = isset($data['a_appointment_visit_info']) ? array_map(static fn($item) => new AttendanceInfoByTokenGetResponseAppointmentVisitInfo((array)$item), (array)$data['a_appointment_visit_info']) : null;
-        $this->a_logo = isset($data['a_logo']) ? array_map(static fn($item) => new AttendanceInfoByTokenGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
-        $this->a_purchase_option_default = isset($data['a_purchase_option_default']) ? array_map(static fn($item) => new AttendanceInfoByTokenGetResponsePurchaseOptionDefault((array)$item), (array)$data['a_purchase_option_default']) : null;
+        $this->a_appointment_visit_info = isset($data['a_appointment_visit_info']) ? new AttendanceInfoByTokenGetResponseAppointmentVisitInfo((array)$data['a_appointment_visit_info']) : null;
+        $this->a_logo = isset($data['a_logo']) ? new AttendanceInfoByTokenGetResponseLogo((array)$data['a_logo']) : null;
+        $this->a_purchase_option_default = isset($data['a_purchase_option_default']) ? new AttendanceInfoByTokenGetResponsePurchaseOptionDefault((array)$data['a_purchase_option_default']) : null;
         $this->a_resource = isset($data['a_resource']) ? (array)$data['a_resource'] : null;
         $this->a_resource_layout = isset($data['a_resource_layout']) ? array_map(static fn($item) => new AttendanceInfoByTokenGetResponseResourceLayout((array)$item), (array)$data['a_resource_layout']) : null;
         $this->a_staff = isset($data['a_staff']) ? array_map(static fn($item) => new AttendanceInfoByTokenGetResponseStaff((array)$item), (array)$data['a_staff']) : null;

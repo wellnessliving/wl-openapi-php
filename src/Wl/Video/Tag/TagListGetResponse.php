@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Video\Tag;
 class TagListGetResponse
 {
     /**
-     * No description.
+     * A list of video tags with the following structure:
      *
      * @var TagListGetResponseTagList[]|null
      */

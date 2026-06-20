@@ -7,14 +7,14 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass;
 class GuestPassGetResponse
 {
     /**
-     * No description.
+     * Guest pass information.
      *
-     * @var GuestPassGetResponseGuestPass[]|null
+     * @var GuestPassGetResponseGuestPass|null
      */
-    public ?array $a_guest_pass = null;
+    public ?GuestPassGetResponseGuestPass $a_guest_pass = null;
 
     public function __construct(array $data)
     {
-        $this->a_guest_pass = isset($data['a_guest_pass']) ? array_map(static fn($item) => new GuestPassGetResponseGuestPass((array)$item), (array)$data['a_guest_pass']) : null;
+        $this->a_guest_pass = isset($data['a_guest_pass']) ? new GuestPassGetResponseGuestPass((array)$data['a_guest_pass']) : null;
     }
 }

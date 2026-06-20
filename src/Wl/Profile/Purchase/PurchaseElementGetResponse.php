@@ -7,28 +7,29 @@ namespace WlSdk\Wl\Profile\Purchase;
 class PurchaseElementGetResponse
 {
     /**
-     * No description.
+     * List of components (not empty if this purchase element is a package). Every element has keys:
      *
      * @var PurchaseElementGetResponseComponent[]|null
      */
     public ?array $a_component = null;
 
     /**
-     * No description.
+     * An array containing information about the image of the purchased item. Every element has the following keys:
      *
-     * @var PurchaseElementGetResponseLogo[]|null
+     * @var PurchaseElementGetResponseLogo|null
      */
-    public ?array $a_logo = null;
+    public ?PurchaseElementGetResponseLogo $a_logo = null;
 
     /**
-     * No description.
+     * This field is used only for promotions. It contains restrictions that will
+     * apply to bookings made with this promotion. Every element has the following keys:
      *
      * @var PurchaseElementGetResponseRestrict[]|null
      */
     public ?array $a_restrict = null;
 
     /**
-     * No description.
+     * The list of taxes paid for the purchased item. Every element has the following fields:
      *
      * @var PurchaseElementGetResponseTax[]|null
      */
@@ -544,7 +545,7 @@ class PurchaseElementGetResponse
     public function __construct(array $data)
     {
         $this->a_component = isset($data['a_component']) ? array_map(static fn($item) => new PurchaseElementGetResponseComponent((array)$item), (array)$data['a_component']) : null;
-        $this->a_logo = isset($data['a_logo']) ? array_map(static fn($item) => new PurchaseElementGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
+        $this->a_logo = isset($data['a_logo']) ? new PurchaseElementGetResponseLogo((array)$data['a_logo']) : null;
         $this->a_restrict = isset($data['a_restrict']) ? array_map(static fn($item) => new PurchaseElementGetResponseRestrict((array)$item), (array)$data['a_restrict']) : null;
         $this->a_tax = isset($data['a_tax']) ? array_map(static fn($item) => new PurchaseElementGetResponseTax((array)$item), (array)$data['a_tax']) : null;
         $this->can_renew = isset($data['can_renew']) ? (bool)$data['can_renew'] : null;

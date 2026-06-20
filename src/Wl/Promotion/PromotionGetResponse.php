@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Promotion;
 class PromotionGetResponse
 {
     /**
-     * No description.
+     * Promotion information.
      *
      * @var PromotionGetResponsePromotion[]|null
      */

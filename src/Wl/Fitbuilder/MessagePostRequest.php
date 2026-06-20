@@ -11,9 +11,9 @@ class MessagePostRequest
     public ?string $k_channel = null;
 
     /**
-     * No description.
+     * Messenger information:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_data = null;
 

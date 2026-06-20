@@ -7,7 +7,10 @@ namespace WlSdk\Wl\Holiday;
 class BulkBusinessHolidayGetResponse
 {
     /**
-     * No description.
+     * An array consisting of the business's closed day data for all locations by holiday keys
+     * [HolidayApi](/Wl/Holiday/Holiday.json).
+     * 
+     * List of holidays.
      *
      * @var BulkBusinessHolidayGetResponseBusinessHolidays[]|null
      */

@@ -7,14 +7,14 @@ namespace WlSdk\Wl\Member\Progress\Log\Image;
 class ImageGetResponse
 {
     /**
-     * No description.
+     * Image data:
      *
-     * @var ImageGetResponseImage[]|null
+     * @var ImageGetResponseImage|null
      */
-    public ?array $a_image = null;
+    public ?ImageGetResponseImage $a_image = null;
 
     public function __construct(array $data)
     {
-        $this->a_image = isset($data['a_image']) ? array_map(static fn($item) => new ImageGetResponseImage((array)$item), (array)$data['a_image']) : null;
+        $this->a_image = isset($data['a_image']) ? new ImageGetResponseImage((array)$data['a_image']) : null;
     }
 }

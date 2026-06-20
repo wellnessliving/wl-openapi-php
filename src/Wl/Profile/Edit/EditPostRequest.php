@@ -112,9 +112,10 @@ class EditPostRequest
     public ?string $uid_relative_key = null;
 
     /**
-     * No description.
+     * Family relation data for the newly created user.
+     * `null` if no family relation is required:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_family_relation = null;
 
@@ -148,9 +149,10 @@ class EditPostRequest
     public ?array $a_new = null;
 
     /**
-     * No description.
+     * An array contained with information about phone inheritance.
+     * The array has the following structure:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_phone_inherit = null;
 

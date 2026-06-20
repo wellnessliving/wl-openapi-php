@@ -7,11 +7,11 @@ namespace WlSdk\Wl\Reception\Roster\Design;
 class ReceptionRosterDesignGetResponse
 {
     /**
-     * No description.
+     * Image data for image which will be displayed in attendance web app page.
      *
-     * @var ReceptionRosterDesignGetResponseImage[]|null
+     * @var ReceptionRosterDesignGetResponseImage|null
      */
-    public ?array $a_image = null;
+    public ?ReceptionRosterDesignGetResponseImage $a_image = null;
 
     /**
      * Whether to hide client profile images.
@@ -118,7 +118,7 @@ class ReceptionRosterDesignGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_image = isset($data['a_image']) ? array_map(static fn($item) => new ReceptionRosterDesignGetResponseImage((array)$item), (array)$data['a_image']) : null;
+        $this->a_image = isset($data['a_image']) ? new ReceptionRosterDesignGetResponseImage((array)$data['a_image']) : null;
         $this->hide_profile_images = isset($data['hide_profile_images']) ? (bool)$data['hide_profile_images'] : null;
         $this->i_attendance_direct_delay = isset($data['i_attendance_direct_delay']) ? (int)$data['i_attendance_direct_delay'] : null;
         $this->i_book_open = isset($data['i_book_open']) ? (int)$data['i_book_open'] : null;

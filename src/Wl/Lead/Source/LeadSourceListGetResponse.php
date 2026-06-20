@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Lead\Source;
 class LeadSourceListGetResponse
 {
     /**
-     * No description.
+     * List of Lead Sources.
      *
      * @var LeadSourceListGetResponseLeadSource[]|null
      */

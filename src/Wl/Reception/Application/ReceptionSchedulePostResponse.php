@@ -7,11 +7,11 @@ namespace WlSdk\Wl\Reception\Application;
 class ReceptionSchedulePostResponse
 {
     /**
-     * No description.
+     * Data for the confirmation screen with the following fields:
      *
-     * @var ReceptionSchedulePostResponseConfirmationData[]|null
+     * @var ReceptionSchedulePostResponseConfirmationData|null
      */
-    public ?array $a_confirmation_data = null;
+    public ?ReceptionSchedulePostResponseConfirmationData $a_confirmation_data = null;
 
     /**
      * The confirmation template to be shown in the Self Check-In Web App for the selected user.
@@ -29,7 +29,7 @@ class ReceptionSchedulePostResponse
 
     public function __construct(array $data)
     {
-        $this->a_confirmation_data = isset($data['a_confirmation_data']) ? array_map(static fn($item) => new ReceptionSchedulePostResponseConfirmationData((array)$item), (array)$data['a_confirmation_data']) : null;
+        $this->a_confirmation_data = isset($data['a_confirmation_data']) ? new ReceptionSchedulePostResponseConfirmationData((array)$data['a_confirmation_data']) : null;
         $this->html_confirmation = isset($data['html_confirmation']) ? (string)$data['html_confirmation'] : null;
         $this->k_visit = isset($data['k_visit']) ? (string)$data['k_visit'] : null;
     }

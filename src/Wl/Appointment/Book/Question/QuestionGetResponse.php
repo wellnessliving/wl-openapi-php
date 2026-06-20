@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Appointment\Book\Question;
 class QuestionGetResponse
 {
     /**
-     * No description.
+     * A list of questions for the service. Each element contains:
      *
      * @var QuestionGetResponseQuestion[]|null
      */

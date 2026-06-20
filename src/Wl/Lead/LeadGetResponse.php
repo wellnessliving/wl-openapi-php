@@ -7,18 +7,18 @@ namespace WlSdk\Wl\Lead;
 class LeadGetResponse
 {
     /**
-     * No description.
+     * A list of profile fields in the business. Every element has the following keys:
      *
      * @var LeadGetResponseFieldList[]|null
      */
     public ?array $a_field_list = null;
 
     /**
-     * No description.
+     * The skin configuration:
      *
-     * @var LeadGetResponseSkin[]|null
+     * @var LeadGetResponseSkin|null
      */
-    public ?array $a_skin = null;
+    public ?LeadGetResponseSkin $a_skin = null;
 
     /**
      * Whether it is possible to give free promotion when adding a user (only if free promotion is configured in
@@ -41,7 +41,7 @@ class LeadGetResponse
     public function __construct(array $data)
     {
         $this->a_field_list = isset($data['a_field_list']) ? array_map(static fn($item) => new LeadGetResponseFieldList((array)$item), (array)$data['a_field_list']) : null;
-        $this->a_skin = isset($data['a_skin']) ? array_map(static fn($item) => new LeadGetResponseSkin((array)$item), (array)$data['a_skin']) : null;
+        $this->a_skin = isset($data['a_skin']) ? new LeadGetResponseSkin((array)$data['a_skin']) : null;
         $this->can_use_free_purchase = isset($data['can_use_free_purchase']) ? (bool)$data['can_use_free_purchase'] : null;
         $this->url_captcha = isset($data['url_captcha']) ? (string)$data['url_captcha'] : null;
     }

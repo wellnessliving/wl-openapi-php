@@ -45,16 +45,21 @@ class QuizElementPostRequest
     public ?string $k_quiz_login = null;
 
     /**
-     * No description.
+     * List of quiz elements.
+     * 
+     * Each element responsible for one quiz element and structure of each value depend
+     * on type of element and contains public arguments of responsible class element.
+     * 
+     * Order of the elements in array corresponds to order of elements on the form.
      *
      * @var array[]|null
      */
     public ?array $a_element = null;
 
     /**
-     * No description.
+     * Quiz settings.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_setting = null;
 

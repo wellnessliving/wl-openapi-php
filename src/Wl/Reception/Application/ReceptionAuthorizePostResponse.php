@@ -7,7 +7,10 @@ namespace WlSdk\Wl\Reception\Application;
 class ReceptionAuthorizePostResponse
 {
     /**
-     * No description.
+     * List of the users, which can be authorized.
+     * 
+     * Can be set only this field or `uid`.
+     * It depends, whether we found one user or multiple.
      *
      * @var ReceptionAuthorizePostResponseSelect[]|null
      */

@@ -7,7 +7,8 @@ namespace WlSdk\Wl\Profile\Attach;
 class AttachListGetResponse
 {
     /**
-     * No description.
+     * List of client attachments.
+     * Each element:
      *
      * @var AttachListGetResponseList[]|null
      */

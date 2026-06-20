@@ -7,7 +7,7 @@ class ListGetRequest
      * Arguments from direct purchase link, which can give additional access to products, which are available
      *   only by such link.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_direct_link = null;
 

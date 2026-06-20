@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Book\Process\Frequency;
 class RepeatGetResponse
 {
     /**
-     * No description.
+     * List of visits to be created for the given settings:
      *
      * @var RepeatGetResponseVisit[]|null
      */

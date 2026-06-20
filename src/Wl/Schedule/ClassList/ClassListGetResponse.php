@@ -18,7 +18,9 @@ class ClassListGetResponse
     public ?array $a_calendar = null;
 
     /**
-     * No description.
+     * A list of classes sessions starting with the date `dt_date`
+     * and in the 62 days ahead (or up to `dt_end`).
+     * Every element has the following keys:
      *
      * @var ClassListGetResponseSession[]|null
      */

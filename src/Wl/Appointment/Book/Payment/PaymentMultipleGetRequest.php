@@ -9,7 +9,7 @@ class PaymentMultipleGetRequest
      * 
      * Set this field value for GET requests.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_book_data = null;
 

@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass;
 class GuestPassListGetResponse
 {
     /**
-     * No description.
+     * List of client's guest passes.
      *
      * @var GuestPassListGetResponseList[]|null
      */

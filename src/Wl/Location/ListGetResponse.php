@@ -7,7 +7,10 @@ namespace WlSdk\Wl\Location;
 class ListGetResponse
 {
     /**
-     * No description.
+     * Information about the business's location(s). If you've specified multiple businesses for this endpoint,
+     * this will
+     * return location information for multiple businesses. Keys refer to location keys. Values refer to nested
+     * arrays with the next keys:
      *
      * @var ListGetResponseLocation[]|null
      */

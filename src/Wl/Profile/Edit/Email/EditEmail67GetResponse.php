@@ -14,11 +14,13 @@ class EditEmail67GetResponse
     public ?array $a_business_member_key = null;
 
     /**
-     * No description.
+     * Information about the user who occupies the specified email.
+     * This will be empty if the email is free or if the rate limit has been reached.
+     * Otherwise, has next keys:
      *
-     * @var EditEmail67GetResponseUser[]|null
+     * @var EditEmail67GetResponseUser|null
      */
-    public ?array $a_user = null;
+    public ?EditEmail67GetResponseUser $a_user = null;
 
     /**
      * Shows, whether client was registered in the business: `true` if user was added to the business,
@@ -81,7 +83,7 @@ class EditEmail67GetResponse
     public function __construct(array $data)
     {
         $this->a_business_member_key = isset($data['a_business_member_key']) ? (array)$data['a_business_member_key'] : null;
-        $this->a_user = isset($data['a_user']) ? array_map(static fn($item) => new EditEmail67GetResponseUser((array)$item), (array)$data['a_user']) : null;
+        $this->a_user = isset($data['a_user']) ? new EditEmail67GetResponseUser((array)$data['a_user']) : null;
         $this->is_added = isset($data['is_added']) ? (bool)$data['is_added'] : null;
         $this->is_current_member = isset($data['is_current_member']) ? (bool)$data['is_current_member'] : null;
         $this->is_limit = isset($data['is_limit']) ? (bool)$data['is_limit'] : null;

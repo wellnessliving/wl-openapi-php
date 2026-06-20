@@ -25,7 +25,7 @@ class FinishMultiplePostRequest
      * Specify this if `$uid` is empty.
      * The data must contain the next keys:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_user = null;
 
@@ -83,16 +83,16 @@ class FinishMultiplePostRequest
     public ?array $a_answer = null;
 
     /**
-     * No description.
+     * All data required to book an appointment.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_book_data = null;
 
     /**
-     * No description.
+     * Information for sending an appointment notification.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_notification = null;
 
@@ -106,16 +106,18 @@ class FinishMultiplePostRequest
     public ?array $a_paid = null;
 
     /**
-     * No description.
+     * A list of payment sources to pay with.
+     * 
+     * Each source contains:
      *
      * @var array[]|null
      */
     public ?array $a_pay_form = null;
 
     /**
-     * No description.
+     * Data required for payment with the next structure:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_payment_data = null;
 

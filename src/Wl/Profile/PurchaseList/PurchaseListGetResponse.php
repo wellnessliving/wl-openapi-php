@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Profile\PurchaseList;
 class PurchaseListGetResponse
 {
     /**
-     * No description.
+     * A list of purchased items. Every element contains a sub-array with the following fields:
      *
      * @var PurchaseListGetResponsePurchase[]|null
      */

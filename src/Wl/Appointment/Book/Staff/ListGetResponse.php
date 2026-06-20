@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Appointment\Book\Staff;
 class ListGetResponse
 {
     /**
-     * No description.
+     * A list of staff members with information about them.
      *
      * @var ListGetResponseStaff[]|null
      */

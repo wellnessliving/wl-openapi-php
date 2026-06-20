@@ -6,7 +6,7 @@ class ElementGetRequest
     /**
      * Information about the discount code:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_discount_code = null;
 

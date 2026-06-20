@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Reward\Action;
 class ActionGetResponse
 {
     /**
-     * No description.
+     * A list reward actions. Every element has next keys:
      *
      * @var ActionGetResponseRewardAction[]|null
      */

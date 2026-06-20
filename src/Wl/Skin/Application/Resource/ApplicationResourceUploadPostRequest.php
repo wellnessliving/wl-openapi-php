@@ -4,7 +4,11 @@ namespace WlSdk\Wl\Skin\Application\Resource;
 class ApplicationResourceUploadPostRequest
 {
     /**
-     * No description.
+     * Image assets keyed by image ID:
+     * 
+     * 
+     * Each value contains array with keys that are the sanitized asset file paths (e.g.
+     * `icon_ios_Icon_60_3x_png`).
      *
      * @var string|null
      */

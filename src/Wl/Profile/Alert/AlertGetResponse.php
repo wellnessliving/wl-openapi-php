@@ -7,14 +7,14 @@ namespace WlSdk\Wl\Profile\Alert;
 class AlertGetResponse
 {
     /**
-     * No description.
+     * A list of alerts. Every element is an array with the following keys:
      *
      * @var AlertGetResponseAlert[]|null
      */
     public ?array $a_alert = null;
 
     /**
-     * No description.
+     * A list of warnings. Every element is an array with the following keys:
      *
      * @var AlertGetResponseWarning[]|null
      */

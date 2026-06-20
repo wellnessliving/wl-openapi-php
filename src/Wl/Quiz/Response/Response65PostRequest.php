@@ -55,7 +55,7 @@ class Response65PostRequest
     public ?string $k_quiz_response = null;
 
     /**
-     * No description.
+     * List of quiz questions with responses.
      *
      * @var array[]|null
      */
@@ -69,16 +69,21 @@ class Response65PostRequest
     public ?string $a_element_file = null;
 
     /**
-     * No description.
+     * List of purchase items for which this form is loaded.
+     * 
+     * The list of purchase items.
+     * Each element has the format `[id_purchase_item]::[k_id]`, where:
+     * 
+     * Empty in case when purchase item not specified or form loaded from direct link.
      *
      * @var array[]|null
      */
     public ?array $a_purchase_item = null;
 
     /**
-     * No description.
+     * Data for Quick Buy. Empty array if this is not a Quick Buy session.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_quick_config = null;
 

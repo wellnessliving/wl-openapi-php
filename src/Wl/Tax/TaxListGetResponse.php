@@ -7,7 +7,9 @@ namespace WlSdk\Wl\Tax;
 class TaxListGetResponse
 {
     /**
-     * No description.
+     * A list of taxes.
+     * 
+     * Each element has the following structure:
      *
      * @var TaxListGetResponseList[]|null
      */

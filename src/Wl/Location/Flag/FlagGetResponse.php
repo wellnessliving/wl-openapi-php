@@ -7,25 +7,34 @@ namespace WlSdk\Wl\Location\Flag;
 class FlagGetResponse
 {
     /**
-     * No description.
+     * Array with structure:
+     * `null` until loaded or when `a_uid` was not set.
      *
-     * @var FlagGetResponseFlag[]|null
+     * @var FlagGetResponseFlag|null
      */
-    public ?array $a_flag = null;
+    public ?FlagGetResponseFlag $a_flag = null;
 
     /**
-     * No description.
+     * Array, where keys are UIDs to be checked and values are same as `a_restrictions_single`.
+     * `null` if user is not flagged in the location.
+     * 
+     * This field is set, if API gets `a_uid` and not `uid` properties.
+     * 
+     * Keys are user keys (primary keys in the PassportLoginSql table).
+     * Values are flag restriction arrays:
      *
-     * @var FlagGetResponseRestrictionsMultiple[]|null
+     * @var FlagGetResponseRestrictionsMultiple|null
      */
-    public ?array $a_restrictions_multiple = null;
+    public ?FlagGetResponseRestrictionsMultiple $a_restrictions_multiple = null;
 
     /**
-     * No description.
+     * `null` if user is not flagged in the location.
+     * 
+     * This field is set, if API gets `uid` and not `a_uid` properties.
      *
-     * @var FlagGetResponseRestrictionsSingle[]|null
+     * @var FlagGetResponseRestrictionsSingle|null
      */
-    public ?array $a_restrictions_single = null;
+    public ?FlagGetResponseRestrictionsSingle $a_restrictions_single = null;
 
     /**
      * `true` if the user is flagged and can make purchases, but cannot make new reservations, `false` if
@@ -39,9 +48,9 @@ class FlagGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_flag = isset($data['a_flag']) ? array_map(static fn($item) => new FlagGetResponseFlag((array)$item), (array)$data['a_flag']) : null;
-        $this->a_restrictions_multiple = isset($data['a_restrictions_multiple']) ? array_map(static fn($item) => new FlagGetResponseRestrictionsMultiple((array)$item), (array)$data['a_restrictions_multiple']) : null;
-        $this->a_restrictions_single = isset($data['a_restrictions_single']) ? array_map(static fn($item) => new FlagGetResponseRestrictionsSingle((array)$item), (array)$data['a_restrictions_single']) : null;
+        $this->a_flag = isset($data['a_flag']) ? new FlagGetResponseFlag((array)$data['a_flag']) : null;
+        $this->a_restrictions_multiple = isset($data['a_restrictions_multiple']) ? new FlagGetResponseRestrictionsMultiple((array)$data['a_restrictions_multiple']) : null;
+        $this->a_restrictions_single = isset($data['a_restrictions_single']) ? new FlagGetResponseRestrictionsSingle((array)$data['a_restrictions_single']) : null;
         $this->is_flag = isset($data['is_flag']) ? (bool)$data['is_flag'] : null;
     }
 }

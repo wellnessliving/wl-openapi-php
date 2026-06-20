@@ -7,7 +7,9 @@ namespace WlSdk\Wl\Schedule\Tab;
 class TabGetResponse
 {
     /**
-     * No description.
+     * An array containing information about tabs to present to the user.
+     * Each array index corresponds to a tab.
+     * Each array element is an array that contains the following fields:
      *
      * @var TabGetResponseTab[]|null
      */

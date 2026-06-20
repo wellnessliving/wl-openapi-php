@@ -18,7 +18,10 @@ class AddonUpdatePutRequest
     public ?string $k_business = null;
 
     /**
-     * No description.
+     * The appointment addon-ons.
+     * 
+     * Old format - an array where each value is key of the add-on.
+     * New format - each element is an array:
      *
      * @var array|null
      */

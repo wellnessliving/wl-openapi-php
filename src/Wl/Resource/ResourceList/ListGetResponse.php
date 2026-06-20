@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Resource\ResourceList;
 class ListGetResponse
 {
     /**
-     * No description.
+     * Resources list:
      *
      * @var ListGetResponseResource[]|null
      */

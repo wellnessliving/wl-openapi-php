@@ -7,25 +7,30 @@ namespace WlSdk\Wl\Quiz;
 class QuizElementGetResponse
 {
     /**
-     * No description.
+     * Access log data.
      *
      * @var QuizElementGetResponseAccessLog[]|null
      */
     public ?array $a_access_log = null;
 
     /**
-     * No description.
+     * List of quiz elements.
+     * 
+     * Each element responsible for one quiz element and structure of each value depend
+     * on type of element and contains public arguments of responsible class element.
+     * 
+     * Order of the elements in array corresponds to order of elements on the form.
      *
      * @var QuizElementGetResponseElementA[]|QuizElementGetResponseElementB[]|QuizElementGetResponseElementC[]|QuizElementGetResponseElementD[]|QuizElementGetResponseElementE[]|QuizElementGetResponseElementF[]|QuizElementGetResponseElementG[]|QuizElementGetResponseElementH[]|QuizElementGetResponseElementI[]|QuizElementGetResponseElementJ[]|QuizElementGetResponseElementK[]|QuizElementGetResponseElementL[]|QuizElementGetResponseElementM[]|QuizElementGetResponseElementN[]|null
      */
     public ?array $a_element = null;
 
     /**
-     * No description.
+     * Quiz settings.
      *
-     * @var QuizElementGetResponseSetting[]|null
+     * @var QuizElementGetResponseSetting|null
      */
-    public ?array $a_setting = null;
+    public ?QuizElementGetResponseSetting $a_setting = null;
 
     /**
      * Whether user has privileges to amend form.
@@ -110,7 +115,7 @@ class QuizElementGetResponse
     {
         $this->a_access_log = isset($data['a_access_log']) ? array_map(static fn($item) => new QuizElementGetResponseAccessLog((array)$item), (array)$data['a_access_log']) : null;
         $this->a_element = $data['a_element'] ?? null;
-        $this->a_setting = isset($data['a_setting']) ? array_map(static fn($item) => new QuizElementGetResponseSetting((array)$item), (array)$data['a_setting']) : null;
+        $this->a_setting = isset($data['a_setting']) ? new QuizElementGetResponseSetting((array)$data['a_setting']) : null;
         $this->can_amend = isset($data['can_amend']) ? (bool)$data['can_amend'] : null;
         $this->i_responses = isset($data['i_responses']) ? (int)$data['i_responses'] : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;

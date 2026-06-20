@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Login\Member;
 class MemberGetResponse
 {
     /**
-     * No description.
+     * A list of businesses where the client is present. Every element is an array with the following keys:
      *
      * @var MemberGetResponseBusiness[]|null
      */

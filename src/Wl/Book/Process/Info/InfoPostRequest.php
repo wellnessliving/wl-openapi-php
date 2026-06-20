@@ -60,14 +60,17 @@ class InfoPostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * Information about the recurring booking:
+     * 
+     * 
+     * This will be `null` if the booking isn't recurring.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_repeat = null;
 
     /**
-     * No description.
+     * A list of assets being booked. Every element has the next structure:
      *
      * @var array[]|null
      */

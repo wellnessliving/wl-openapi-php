@@ -6,7 +6,7 @@ class PaymentGetRequest
     /**
      * Information detailing an appointment booking:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_book_data = null;
 
@@ -28,9 +28,9 @@ class PaymentGetRequest
     /**
      * The purchase item ID. A constant of {@link \WlSdk\RsPurchaseItemSid}.
      *
-     * @var int|null
+     * @var \WlSdk\RsPurchaseItemSid|null
      */
-    public ?int $id_purchase_item = null;
+    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
 
     /**
      * If `true`, the client is a walk-in. Otherwise, this will be `false`.
@@ -125,7 +125,7 @@ class PaymentGetRequest
             'a_book_data' => $this->a_book_data,
             'a_uid' => $this->a_uid,
             'id_mode' => $this->id_mode,
-            'id_purchase_item' => $this->id_purchase_item,
+            'id_purchase_item' => $this->id_purchase_item?->value,
             'is_walk_in' => $this->is_walk_in,
             'k_business' => $this->k_business,
             'k_id' => $this->k_id,

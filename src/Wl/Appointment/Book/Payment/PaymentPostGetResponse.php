@@ -7,14 +7,18 @@ namespace WlSdk\Wl\Appointment\Book\Payment;
 class PaymentPostGetResponse
 {
     /**
-     * No description.
+     * Information about selected Purchase Options.
      *
      * @var PaymentPostGetResponsePromotionData[]|null
      */
     public ?array $a_promotion_data = null;
 
     /**
-     * No description.
+     * Information about selected purchase items.
+     * 
+     * Indexes are strings in the format `id_purchase_item-k_id`.
+     * 
+     * Values are an array with the following structure:
      *
      * @var PaymentPostGetResponsePurchase[]|null
      */

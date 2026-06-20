@@ -83,9 +83,11 @@ class ModifyPostRequest
     public ?string $s_id = null;
 
     /**
-     * No description.
+     * The list of data to save.
+     * 
+     * Data depends on current `id_step`:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_set = null;
 

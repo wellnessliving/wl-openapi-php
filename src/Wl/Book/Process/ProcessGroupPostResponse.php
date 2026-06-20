@@ -7,7 +7,10 @@ namespace WlSdk\Wl\Book\Process;
 class ProcessGroupPostResponse
 {
     /**
-     * No description.
+     * List of errors that occurred during booking.
+     * 
+     * Keys are user keys.
+     * Each value has the next structure:
      *
      * @var ProcessGroupPostResponseBookError[]|null
      */

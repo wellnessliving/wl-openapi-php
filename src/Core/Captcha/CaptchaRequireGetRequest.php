@@ -6,9 +6,9 @@ class CaptchaRequireGetRequest
     /**
      * Arguments for creating CAPTCHA object.
      *
-     * @var array[]|null
+     * @var array|null
      */
-    public ?array $a_arguments = null;
+    public $a_arguments = null;
 
     /**
      * The CID of the CAPTCHA.

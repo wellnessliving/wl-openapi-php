@@ -7,18 +7,19 @@ namespace WlSdk\Wl\Appointment\Book\Payment;
 class PaymentMultipleGetResponse
 {
     /**
-     * No description.
+     * Information about the selected login promotion.
      *
-     * @var PaymentMultipleGetResponsePromotionData[]|null
+     * @var PaymentMultipleGetResponsePromotionData|null
      */
-    public ?array $a_promotion_data = null;
+    public ?PaymentMultipleGetResponsePromotionData $a_promotion_data = null;
 
     /**
-     * No description.
+     * Fields refer to strings in the format `id_purchase_item-k_id`. Values refer to an array with the next
+     * stricture:
      *
-     * @var PaymentMultipleGetResponsePurchase[]|null
+     * @var PaymentMultipleGetResponsePurchase|null
      */
-    public ?array $a_purchase = null;
+    public ?PaymentMultipleGetResponsePurchase $a_purchase = null;
 
     /**
      * The list of amounts to pay for appointments from the batch, with taxes and without surcharges.
@@ -78,8 +79,8 @@ class PaymentMultipleGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_promotion_data = isset($data['a_promotion_data']) ? array_map(static fn($item) => new PaymentMultipleGetResponsePromotionData((array)$item), (array)$data['a_promotion_data']) : null;
-        $this->a_purchase = isset($data['a_purchase']) ? array_map(static fn($item) => new PaymentMultipleGetResponsePurchase((array)$item), (array)$data['a_purchase']) : null;
+        $this->a_promotion_data = isset($data['a_promotion_data']) ? new PaymentMultipleGetResponsePromotionData((array)$data['a_promotion_data']) : null;
+        $this->a_purchase = isset($data['a_purchase']) ? new PaymentMultipleGetResponsePurchase((array)$data['a_purchase']) : null;
         $this->a_total = isset($data['a_total']) ? (array)$data['a_total'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
         $this->m_coupon = isset($data['m_coupon']) ? (string)$data['m_coupon'] : null;

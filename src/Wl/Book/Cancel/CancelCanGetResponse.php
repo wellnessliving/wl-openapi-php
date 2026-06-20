@@ -7,11 +7,14 @@ namespace WlSdk\Wl\Book\Cancel;
 class CancelCanGetResponse
 {
     /**
-     * No description.
+     * Penalty data.
+     * 
+     * 
+     * `null` if penalty must be not applied.
      *
-     * @var CancelCanGetResponsePenalty[]|null
+     * @var CancelCanGetResponsePenalty|null
      */
-    public ?array $a_penalty = null;
+    public ?CancelCanGetResponsePenalty $a_penalty = null;
 
     /**
      * `true` if the booking can be canceled online by the specified user, `false` otherwise.
@@ -59,7 +62,7 @@ class CancelCanGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_penalty = isset($data['a_penalty']) ? array_map(static fn($item) => new CancelCanGetResponsePenalty((array)$item), (array)$data['a_penalty']) : null;
+        $this->a_penalty = isset($data['a_penalty']) ? new CancelCanGetResponsePenalty((array)$data['a_penalty']) : null;
         $this->can_cancel = isset($data['can_cancel']) ? (bool)$data['can_cancel'] : null;
         $this->is_flag = isset($data['is_flag']) ? (bool)$data['is_flag'] : null;
         $this->is_late = isset($data['is_late']) ? (bool)$data['is_late'] : null;

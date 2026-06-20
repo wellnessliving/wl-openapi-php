@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Member\Progress\Goal\Edit;
 class GoalGetResponse
 {
     /**
-     * No description.
+     * Field log data.
      *
      * @var GoalGetResponseFieldList[]|null
      */

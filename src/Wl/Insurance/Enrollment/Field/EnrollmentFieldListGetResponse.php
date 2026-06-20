@@ -7,14 +7,14 @@ namespace WlSdk\Wl\Insurance\Enrollment\Field;
 class EnrollmentFieldListGetResponse
 {
     /**
-     * No description.
+     * The partner field list:
      *
-     * @var EnrollmentFieldListGetResponseFieldList[]|null
+     * @var EnrollmentFieldListGetResponseFieldList|null
      */
-    public ?array $a_field_list = null;
+    public ?EnrollmentFieldListGetResponseFieldList $a_field_list = null;
 
     public function __construct(array $data)
     {
-        $this->a_field_list = isset($data['a_field_list']) ? array_map(static fn($item) => new EnrollmentFieldListGetResponseFieldList((array)$item), (array)$data['a_field_list']) : null;
+        $this->a_field_list = isset($data['a_field_list']) ? new EnrollmentFieldListGetResponseFieldList((array)$data['a_field_list']) : null;
     }
 }

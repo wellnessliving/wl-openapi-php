@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Book\Process\Resource;
 class ResourceGetResponse
 {
     /**
-     * No description.
+     * A list of asset categories which are available for specified session. Every element has next keys:
      *
      * @var ResourceGetResponseResourceAll[]|null
      */

@@ -7,7 +7,9 @@ namespace WlSdk\Wl\Staff\StaffList;
 class StaffListGetResponse
 {
     /**
-     * No description.
+     * Information about staff members.
+     * Each array index is the staff member keys.
+     * Each array element is an array containing the following fields:
      *
      * @var StaffListGetResponseStaff[]|null
      */

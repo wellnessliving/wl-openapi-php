@@ -17,7 +17,7 @@ class ProcessGetResponse
     public ?array $a_family_relation_login_allow = null;
 
     /**
-     * No description.
+     * All the steps to be performed to make a booking. Every element has the next keys:
      *
      * @var ProcessGetResponsePath[]|null
      */

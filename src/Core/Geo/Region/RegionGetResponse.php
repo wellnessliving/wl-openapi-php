@@ -7,7 +7,7 @@ namespace WlSdk\Core\Geo\Region;
 class RegionGetResponse
 {
     /**
-     * No description.
+     * A list of regions grouped by their country.
      *
      * @var RegionGetResponseRegion[]|null
      */

@@ -7,28 +7,33 @@ namespace WlSdk\Wl\Profile\PurchaseList;
 class PurchaseListElementGetResponse
 {
     /**
-     * No description.
+     * A list of components. This won't be empty if this purchase element is a package or a coupon.
+     * In the case of a package, every element has keys:
      *
      * @var PurchaseListElementGetResponseComponentA[]|PurchaseListElementGetResponseComponentB[]|null
      */
     public ?array $a_component = null;
 
     /**
-     * No description.
+     * An array containing information about the image of the purchased item. Every element has the following keys:
+     * 
+     * `null` in a case when the item has no logo.
      *
-     * @var PurchaseListElementGetResponseLogo[]|null
+     * @var PurchaseListElementGetResponseLogo|null
      */
-    public ?array $a_logo = null;
+    public ?PurchaseListElementGetResponseLogo $a_logo = null;
 
     /**
-     * No description.
+     * This field is used only for promotions. It contains restrictions that will apply to bookings made with
+     * this promotion. Every element has the following keys:
+     * This will be an empty array for other purchased items.
      *
      * @var PurchaseListElementGetResponseRestrict[]|null
      */
     public ?array $a_restrict = null;
 
     /**
-     * No description.
+     * The list of taxes paid for the purchased item. Every element has the following fields:
      *
      * @var PurchaseListElementGetResponseTax[]|null
      */
@@ -653,7 +658,7 @@ class PurchaseListElementGetResponse
     public function __construct(array $data)
     {
         $this->a_component = $data['a_component'] ?? null;
-        $this->a_logo = isset($data['a_logo']) ? array_map(static fn($item) => new PurchaseListElementGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
+        $this->a_logo = isset($data['a_logo']) ? new PurchaseListElementGetResponseLogo((array)$data['a_logo']) : null;
         $this->a_restrict = isset($data['a_restrict']) ? array_map(static fn($item) => new PurchaseListElementGetResponseRestrict((array)$item), (array)$data['a_restrict']) : null;
         $this->a_tax = isset($data['a_tax']) ? array_map(static fn($item) => new PurchaseListElementGetResponseTax((array)$item), (array)$data['a_tax']) : null;
         $this->can_renew = isset($data['can_renew']) ? (bool)$data['can_renew'] : null;

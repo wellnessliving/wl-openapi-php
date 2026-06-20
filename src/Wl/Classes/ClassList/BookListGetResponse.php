@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Classes\ClassList;
 class BookListGetResponse
 {
     /**
-     * No description.
+     * The class list. Every element has the following structure:
      *
      * @var BookListGetResponseClass[]|null
      */

@@ -38,7 +38,12 @@ class LeadPostRequest
     public ?string $k_skin = null;
 
     /**
-     * No description.
+     * A list of fields containing the lead information.
+     * The keys are the field keys and values are field values.
+     * 
+     * If field key is `Address` field key, value may be an array or string.
+     * Can be a string if only address field is used. Will be an array if city and postal code are used,
+     * with the following keys:
      *
      * @var array[]|null
      */

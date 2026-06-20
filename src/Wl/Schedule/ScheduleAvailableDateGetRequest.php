@@ -54,7 +54,7 @@ class ScheduleAvailableDateGetRequest
      * 
      * Empty to search for all time.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_time = null;
 

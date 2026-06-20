@@ -86,16 +86,19 @@ class Resource54PostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * Information about the recurring booking:
+     * 
+     * 
+     * This will be `null` if the booking isn't recurring.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_repeat = null;
 
     /**
-     * No description.
+     * The selected assets. Every element has the next keys:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_resource_select = null;
 

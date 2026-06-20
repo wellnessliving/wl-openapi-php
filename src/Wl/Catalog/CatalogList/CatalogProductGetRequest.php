@@ -6,7 +6,7 @@ class CatalogProductGetRequest
     /**
      * Additional data to filter products.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_filter = null;
 

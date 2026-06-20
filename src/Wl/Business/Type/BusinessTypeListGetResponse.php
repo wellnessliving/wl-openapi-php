@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Business\Type;
 class BusinessTypeListGetResponse
 {
     /**
-     * No description.
+     * A list of business types. Each element has the next structure:
      *
      * @var BusinessTypeListGetResponseBusinessType[]|null
      */

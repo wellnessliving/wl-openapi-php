@@ -7,7 +7,7 @@ namespace WlSdk\Wl\Appointment\Book\Asset;
 class AssetListGetResponse
 {
     /**
-     * No description.
+     * A list of information about assets:
      *
      * @var AssetListGetResponseAsset[]|null
      */

@@ -26,9 +26,9 @@ class RelationPostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * The new relationship to be added to user, specified with `uid`:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_new = null;
 

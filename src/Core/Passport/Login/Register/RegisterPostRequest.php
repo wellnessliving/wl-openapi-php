@@ -4,9 +4,9 @@ namespace WlSdk\Core\Passport\Login\Register;
 class RegisterPostRequest
 {
     /**
-     * No description.
+     * The additional data about new users.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_data = null;
 

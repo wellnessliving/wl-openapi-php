@@ -17,21 +17,27 @@ class Info54GetResponse
     public ?array $a_day_available = null;
 
     /**
-     * No description.
+     * A list of all class sessions that can be booked together. Every element has the next structure:
      *
      * @var Info54GetResponseSessionAll[]|null
      */
     public ?array $a_session_all = null;
 
     /**
-     * No description.
+     * List of sessions that can be paid without new purchases.
+     * Such as previously prepaid or free sessions.
+     * 
+     * A result of the RsBookProcess::sessionFreeGet() method execution.
+     * 
+     * Each its item has the key of following format: `dt_date::k_class_period` and
+     * the value of following structure:
      *
      * @var Info54GetResponseSessionFree[]|null
      */
     public ?array $a_session_free = null;
 
     /**
-     * No description.
+     * The staff member conducting the session. Every element has the next structure:
      *
      * @var Info54GetResponseStaff[]|null
      */
