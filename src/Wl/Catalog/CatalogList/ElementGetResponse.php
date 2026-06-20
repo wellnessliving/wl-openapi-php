@@ -122,9 +122,9 @@ class ElementGetResponse
      * The purchase item category ID.
      * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsPurchaseItemSid|null
      */
-    public ?int $id_purchase_item = null;
+    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
 
     /**
      * The ID of the item view category. One of the {@link \WlSdk\Wl\Catalog\PurchaseOptionViewSid} constants.
@@ -279,7 +279,7 @@ class ElementGetResponse
         $this->f_tax = isset($data['f_tax']) ? (string)$data['f_tax'] : null;
         $this->html_description = isset($data['html_description']) ? (string)$data['html_description'] : null;
         $this->html_special = isset($data['html_special']) ? (string)$data['html_special'] : null;
-        $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
+        $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
         $this->id_purchase_option_view = isset($data['id_purchase_option_view']) ? (int)$data['id_purchase_option_view'] : null;
         $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->is_contract = isset($data['is_contract']) ? (bool)$data['is_contract'] : null;

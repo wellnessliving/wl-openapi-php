@@ -14,9 +14,9 @@ class PaymentGetResponsePurchase
     /**
      * The purchase item ID. A constant of {@link \WlSdk\RsPurchaseItemSid}.
      *
-     * @var int|null
+     * @var \WlSdk\RsPurchaseItemSid|null
      */
-    public ?int $id_purchase_item = null;
+    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
 
     /**
      * The value of the discount used for the purchase.
@@ -56,7 +56,7 @@ class PaymentGetResponsePurchase
     public function __construct(array $data)
     {
         $this->a_tax = isset($data['a_tax']) ? new PaymentGetResponsePurchaseTax((array)$data['a_tax']) : null;
-        $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
+        $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;
         $this->m_discount_login = isset($data['m_discount_login']) ? (string)$data['m_discount_login'] : null;

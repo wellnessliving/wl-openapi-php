@@ -6,9 +6,9 @@ class DiscountCodeEditGetResponseComponent
     /**
      * Type ID of the purchase item. One of {@link \WlSdk\RsPurchaseItemSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsPurchaseItemSid|null
      */
-    public ?int $id_purchase_item = null;
+    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
 
     /**
      * Primary key of the component.
@@ -31,7 +31,7 @@ class DiscountCodeEditGetResponseComponent
 
     public function __construct(array $data)
     {
-        $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
+        $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }

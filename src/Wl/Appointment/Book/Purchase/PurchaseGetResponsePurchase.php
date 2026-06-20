@@ -107,9 +107,9 @@ class PurchaseGetResponsePurchase
     /**
      * ID of the purchase item from {@link \WlSdk\RsPurchaseItemSid}
      *
-     * @var int|null
+     * @var \WlSdk\RsPurchaseItemSid|null
      */
-    public ?int $id_purchase_item = null;
+    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
 
     /**
      * This will be `true` if the Purchase Option is a contract. It will `false` otherwise.
@@ -255,7 +255,7 @@ class PurchaseGetResponsePurchase
         $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
         $this->id_program_type = isset($data['id_program_type']) ? (int)$data['id_program_type'] : null;
         $this->id_promotion_price = isset($data['id_promotion_price']) ? (int)$data['id_promotion_price'] : null;
-        $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
+        $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
         $this->is_contract = isset($data['is_contract']) ? (bool)$data['is_contract'] : null;
         $this->is_description = isset($data['is_description']) ? (bool)$data['is_description'] : null;
         $this->is_introductory = isset($data['is_introductory']) ? (bool)$data['is_introductory'] : null;
