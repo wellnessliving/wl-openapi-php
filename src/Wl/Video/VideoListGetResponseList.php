@@ -90,9 +90,9 @@ class VideoListGetResponseList
     /**
      * Video source. One of {@link \WlSdk\Wl\Video\VideoSourceSid} constants.
      *
-     * @var \WlSdk\Wl\Video\VideoSourceSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Video\VideoSourceSid $id_source = null;
+    public ?int $id_source = null;
 
     /**
      * `true` if calorie information is enabled for this video; `false` otherwise.
@@ -214,7 +214,7 @@ class VideoListGetResponseList
         $this->i_current_time = isset($data['i_current_time']) ? (int)$data['i_current_time'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_watch = isset($data['i_watch']) ? (int)$data['i_watch'] : null;
-        $this->id_source = isset($data['id_source']) ? \WlSdk\Wl\Video\VideoSourceSid::tryFrom((int)$data['id_source']) : null;
+        $this->id_source = isset($data['id_source']) ? (int)$data['id_source'] : null;
         $this->is_calorie = isset($data['is_calorie']) ? (bool)$data['is_calorie'] : null;
         $this->is_converted = isset($data['is_converted']) ? (bool)$data['is_converted'] : null;
         $this->is_published = isset($data['is_published']) ? (bool)$data['is_published'] : null;

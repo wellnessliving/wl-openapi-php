@@ -39,9 +39,9 @@ class DayTimeGetRequest
      * In case of back-to-back booking - staff gender of first appointment.
      * One of the {@link \WlSdk\AGenderSid} constants. `0` means no limitations on staff gender.
      *
-     * @var \WlSdk\AGenderSid|null
+     * @var int|null
      */
-    public ?\WlSdk\AGenderSid $id_gender_staff = null;
+    public ?int $id_gender_staff = null;
 
     /**
      * Determines whether multiple appointments are booked in back-to-back mode.
@@ -184,7 +184,7 @@ class DayTimeGetRequest
             'dt_date' => $this->dt_date,
             'i_duration' => $this->i_duration,
             'i_index' => $this->i_index,
-            'id_gender_staff' => $this->id_gender_staff?->value,
+            'id_gender_staff' => $this->id_gender_staff,
             'is_back_to_back' => $this->is_back_to_back,
             'is_staff' => $this->is_staff,
             'is_tab_all' => $this->is_tab_all,

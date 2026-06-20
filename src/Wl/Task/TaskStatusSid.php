@@ -9,9 +9,12 @@ namespace WlSdk\Wl\Task;
  * - 3 (`COMPLETE`): Task completed.
  * - 2 (`PROGRESS`): Task in progress.
  */
-enum TaskStatusSid: int
+class TaskStatusSid
 {
-    case BACKLOG = 1;
-    case COMPLETE = 3;
-    case PROGRESS = 2;
+    /** Task is not started. */
+    const BACKLOG = 1;
+    /** Task completed. */
+    const COMPLETE = 3;
+    /** Task in progress. */
+    const PROGRESS = 2;
 }

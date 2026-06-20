@@ -48,9 +48,9 @@ class BookListGetResponseClass
     /**
      * Bookable type ID. One of {@link \WlSdk\Wl\Service\BookableSid} constants.
      *
-     * @var \WlSdk\Wl\Service\BookableSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Service\BookableSid $id_bookable = null;
+    public ?int $id_bookable = null;
 
     /**
      * This will be `true` if the class is active. Otherwise, this will be `false`.
@@ -117,7 +117,7 @@ class BookListGetResponseClass
         $this->a_url_book = isset($data['a_url_book']) ? (array)$data['a_url_book'] : null;
         $this->dtu_book_date = isset($data['dtu_book_date']) ? (string)$data['dtu_book_date'] : null;
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
-        $this->id_bookable = isset($data['id_bookable']) ? \WlSdk\Wl\Service\BookableSid::tryFrom((int)$data['id_bookable']) : null;
+        $this->id_bookable = isset($data['id_bookable']) ? (int)$data['id_bookable'] : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
         $this->is_event = isset($data['is_event']) ? (bool)$data['is_event'] : null;
         $this->is_online_private = isset($data['is_online_private']) ? (bool)$data['is_online_private'] : null;

@@ -11,9 +11,12 @@ namespace WlSdk\Wl\Coupon\Edit;
  * - 3 (`FIXED`): Custom date.
  * - 1 (`SALE`): Date of the sale.
  */
-enum ActivationSid: int
+class ActivationSid
 {
-    case DAY = 7;
-    case FIXED = 3;
-    case SALE = 1;
+    /** Number of a day of the month or of the week. */
+    const DAY = 7;
+    /** Custom date. */
+    const FIXED = 3;
+    /** Date of the sale. */
+    const SALE = 1;
 }

@@ -15,13 +15,20 @@ namespace WlSdk\Wl\Quiz\Response;
  * - 4 (`PURCHASE`): Quiz response received during purchase process.
  * - 3 (`REGISTRATION`): Quiz response received during registration process.
  */
-enum SourceSid: int
+class SourceSid
 {
-    case BOOKING = 2;
-    case IMPORT = 6;
-    case KIOSK = 7;
-    case LINK = 1;
-    case MANUAL = 5;
-    case PURCHASE = 4;
-    case REGISTRATION = 3;
+    /** Quiz response received during booking process. */
+    const BOOKING = 2;
+    /** Quiz response was imported. */
+    const IMPORT = 6;
+    /** Quiz response received by kiosk mode link. */
+    const KIOSK = 7;
+    /** Quiz response received by direct link. */
+    const LINK = 1;
+    /** Quiz response received by direct link. */
+    const MANUAL = 5;
+    /** Quiz response received during purchase process. */
+    const PURCHASE = 4;
+    /** Quiz response received during registration process. */
+    const REGISTRATION = 3;
 }

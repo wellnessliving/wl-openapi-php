@@ -14,9 +14,9 @@ class PaymentMultiplePostRequest
     /**
      * The ID of the source mode. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var \WlSdk\Wl\Mode\ModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
+    public ?int $id_mode = null;
 
     /**
      * If `true`, the client is a walk-in. Otherwise, this will be `false`.
@@ -91,7 +91,7 @@ class PaymentMultiplePostRequest
         return array_filter(
             [
             'a_uid' => $this->a_uid,
-            'id_mode' => $this->id_mode?->value,
+            'id_mode' => $this->id_mode,
             'is_walk_in' => $this->is_walk_in,
             'k_location' => $this->k_location,
             'text_coupon_code' => $this->text_coupon_code,

@@ -101,16 +101,16 @@ class AttendanceInfoGetResponse
     /**
      * Type of note. One of {@link \WlSdk\Wl\Visit\Note\Sid\NoteSid} constants. `false` if notes not allowed.
      *
-     * @var \WlSdk\Wl\Visit\Note\Sid\NoteSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Visit\Note\Sid\NoteSid $id_note = null;
+    public ?int $id_note = null;
 
     /**
      * Service type, one of {@link \WlSdk\RsServiceSid}.
      *
-     * @var \WlSdk\RsServiceSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsServiceSid $id_service = null;
+    public ?int $id_service = null;
 
     /**
      * Whether this service be carried out in Zoom.
@@ -200,8 +200,8 @@ class AttendanceInfoGetResponse
         $this->dtu_wait_promote = isset($data['dtu_wait_promote']) ? (string)$data['dtu_wait_promote'] : null;
         $this->has_note = isset($data['has_note']) ? (bool)$data['has_note'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
-        $this->id_note = isset($data['id_note']) ? \WlSdk\Wl\Visit\Note\Sid\NoteSid::tryFrom((int)$data['id_note']) : null;
-        $this->id_service = isset($data['id_service']) ? \WlSdk\RsServiceSid::tryFrom((int)$data['id_service']) : null;
+        $this->id_note = isset($data['id_note']) ? (int)$data['id_note'] : null;
+        $this->id_service = isset($data['id_service']) ? (int)$data['id_service'] : null;
         $this->is_start_virtual_service = isset($data['is_start_virtual_service']) ? (bool)$data['is_start_virtual_service'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;

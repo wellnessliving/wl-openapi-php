@@ -13,9 +13,9 @@ class PurchaseGetResponsePurchaseInstallmentTemplate
     /**
      * The duration of a single period. One of the {@link \WlSdk\ADurationSid} constants.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_duration = null;
+    public ?int $id_duration = null;
 
     /**
      * The number of periods specified by `id_period` between individual payments.
@@ -55,7 +55,7 @@ class PurchaseGetResponsePurchaseInstallmentTemplate
     public function __construct(array $data)
     {
         $this->i_count = isset($data['i_count']) ? (int)$data['i_count'] : null;
-        $this->id_duration = isset($data['id_duration']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_duration']) : null;
+        $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;
         $this->i_period = isset($data['i_period']) ? (int)$data['i_period'] : null;
         $this->k_currency = isset($data['k_currency']) ? (string)$data['k_currency'] : null;
         $this->k_pay_installment_template = isset($data['k_pay_installment_template']) ? (string)$data['k_pay_installment_template'] : null;

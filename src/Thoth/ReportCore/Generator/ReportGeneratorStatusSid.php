@@ -66,12 +66,18 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *   * `READY` =&gt; `QUEUED` when user clicks to regenerate this report
  *     (inside [ReportGeneratorMainAsync::schedule()](#/components/schemas/Core.Async.CoreAsyncDetachedAbstract)).
  */
-enum ReportGeneratorStatusSid: int
+class ReportGeneratorStatusSid
 {
-    case ABORTED = 6;
-    case ABORTING = 5;
-    case DELETING = 4;
-    case GENERATING = 2;
-    case QUEUED = 1;
-    case READY = 3;
+    /** Report is in an inconsistent state. */
+    const ABORTED = 6;
+    /** Current operation is being aborted now. */
+    const ABORTING = 5;
+    /** This report is being deleted now. */
+    const DELETING = 4;
+    /** This report is being generated now. */
+    const GENERATING = 2;
+    /** Generation of this report is queued. */
+    const QUEUED = 1;
+    /** Generation of this report is now completed. */
+    const READY = 3;
 }

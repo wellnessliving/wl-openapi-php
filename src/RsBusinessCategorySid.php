@@ -12,10 +12,14 @@ namespace WlSdk;
  * - 2 (`RECREATION`): Spa saloons.
  * - 1 (`SPORT`): Yoga and Fitness studios and gyms.
  */
-enum RsBusinessCategorySid: int
+class RsBusinessCategorySid
 {
-    case EDUCATION = 6;
-    case HEALTH = 3;
-    case RECREATION = 2;
-    case SPORT = 1;
+    /** Musician schools. */
+    const EDUCATION = 6;
+    /** Traditional medicine */
+    const HEALTH = 3;
+    /** Spa saloons. */
+    const RECREATION = 2;
+    /** Yoga and Fitness studios and gyms. */
+    const SPORT = 1;
 }

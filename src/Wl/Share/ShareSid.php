@@ -9,9 +9,12 @@ namespace WlSdk\Wl\Share;
  * - 1 (`ONLY_ME`): Item is available for current user.
  * - 3 (`SELECTED_STAFF_ROLE`): Item is available for selected staff roles.
  */
-enum ShareSid: int
+class ShareSid
 {
-    case EVERYONE = 2;
-    case ONLY_ME = 1;
-    case SELECTED_STAFF_ROLE = 3;
+    /** Item is available for all staffs in a business. */
+    const EVERYONE = 2;
+    /** Item is available for current user. */
+    const ONLY_ME = 1;
+    /** Item is available for selected staff roles. */
+    const SELECTED_STAFF_ROLE = 3;
 }

@@ -62,7 +62,7 @@ class EditPostRequest
      * Search entity CID list.
      * Constants from {@link \WlSdk\Wl\Search\SearchEntityAbstract} subclasses.
      *
-     * @var \WlSdk\Wl\Search\SearchEntityAbstract[]|null
+     * @var int[]|null
      */
     public ?array $a_search_entity = null;
 
@@ -77,24 +77,24 @@ class EditPostRequest
      * Lead conversion type.
      * `null` if this group is not used for to track lead conversion.
      *
-     * @var \WlSdk\Wl\Lead\Conversion\LeadConversionTypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Lead\Conversion\LeadConversionTypeSid $id_conversion_type = null;
+    public ?int $id_conversion_type = null;
 
     /**
      * Shape of icon. One of {@link \WlSdk\Wl\Member\Group\ShapeSid} constants.
      *
-     * @var \WlSdk\Wl\Member\Group\ShapeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Member\Group\ShapeSid $id_member_group_shape = null;
+    public ?int $id_member_group_shape = null;
 
     /**
      * Type of share option.
      * One of {@link \WlSdk\Wl\Share\ShareSid} constants.
      *
-     * @var \WlSdk\Wl\Share\ShareSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Share\ShareSid $id_share = null;
+    public ?int $id_share = null;
 
     /**
      * Whether Facility Access enabled for group.
@@ -174,9 +174,9 @@ class EditPostRequest
             'a_logic' => $this->a_logic,
             'a_search_entity' => $this->a_search_entity,
             'a_staff_role_selected' => $this->a_staff_role_selected,
-            'id_conversion_type' => $this->id_conversion_type?->value,
-            'id_member_group_shape' => $this->id_member_group_shape?->value,
-            'id_share' => $this->id_share?->value,
+            'id_conversion_type' => $this->id_conversion_type,
+            'id_member_group_shape' => $this->id_member_group_shape,
+            'id_share' => $this->id_share,
             'is_brivo_active' => $this->is_brivo_active,
             'is_brivo_invitation_active' => $this->is_brivo_invitation_active,
             'is_icon' => $this->is_icon,

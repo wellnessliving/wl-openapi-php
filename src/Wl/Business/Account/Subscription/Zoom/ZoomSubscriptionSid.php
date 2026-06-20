@@ -10,9 +10,12 @@ namespace WlSdk\Wl\Business\Account\Subscription\Zoom;
  * - 1 (`FREE`): None
  * - 3 (`PROFESSIONAL`): Professional
  */
-enum ZoomSubscriptionSid: int
+class ZoomSubscriptionSid
 {
-    case BASIC = 2;
-    case FREE = 1;
-    case PROFESSIONAL = 3;
+    /** Basic */
+    const BASIC = 2;
+    /** None */
+    const FREE = 1;
+    /** Professional */
+    const PROFESSIONAL = 3;
 }

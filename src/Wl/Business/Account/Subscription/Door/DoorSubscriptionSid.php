@@ -10,9 +10,12 @@ namespace WlSdk\Wl\Business\Account\Subscription\Door;
  * - 1 (`FREE`): None
  * - 3 (`PASSPORT`): Passport
  */
-enum DoorSubscriptionSid: int
+class DoorSubscriptionSid
 {
-    case BASE = 2;
-    case FREE = 1;
-    case PASSPORT = 3;
+    /** Brivo */
+    const BASE = 2;
+    /** None */
+    const FREE = 1;
+    /** Passport */
+    const PASSPORT = 3;
 }

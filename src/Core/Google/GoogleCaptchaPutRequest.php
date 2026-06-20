@@ -6,9 +6,9 @@ class GoogleCaptchaPutRequest
     /**
      * Captcha version ID.
      *
-     * @var \WlSdk\Core\Google\Captcha\CaptchaVersionSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Core\Google\Captcha\CaptchaVersionSid $id_version = null;
+    public ?int $id_version = null;
 
     /**
      * The action name.
@@ -31,7 +31,7 @@ class GoogleCaptchaPutRequest
     {
         return array_filter(
             [
-            'id_version' => $this->id_version?->value,
+            'id_version' => $this->id_version,
             'text_action' => $this->text_action,
             'text_token' => $this->text_token,
             ],

@@ -10,9 +10,12 @@ namespace WlSdk;
  * - 1 (`ETERNAL`): Eternal appointments. Such appointments are scheduled for one year
  *   and will be scheduled again every month.
  */
-enum RsRepeatEndSid: int
+class RsRepeatEndSid
 {
-    case COUNT = 2;
-    case DATE = 3;
-    case ETERNAL = 1;
+    /** Stop after a certain number of repeats. */
+    const COUNT = 2;
+    /** Stop after a certain date. Including this date. */
+    const DATE = 3;
+    /** Eternal appointments. Such appointments are scheduled for one year */
+    const ETERNAL = 1;
 }

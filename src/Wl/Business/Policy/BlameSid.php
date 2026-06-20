@@ -9,9 +9,12 @@ namespace WlSdk\Wl\Business\Policy;
  * - 2 (`LATE_CANCEL`): If client has "Late cancel" sessions.
  * - 3 (`NO_SHOWS`): If client has "No shows" sessions.
  */
-enum BlameSid: int
+class BlameSid
 {
-    case BOTH = 1;
-    case LATE_CANCEL = 2;
-    case NO_SHOWS = 3;
+    /** If client has "Late cancel" and "No shows" sessions. */
+    const BOTH = 1;
+    /** If client has "Late cancel" sessions. */
+    const LATE_CANCEL = 2;
+    /** If client has "No shows" sessions. */
+    const NO_SHOWS = 3;
 }

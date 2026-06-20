@@ -53,16 +53,16 @@ class ReceptionDesignGetResponse
     /**
      * ID of the sound for failed check in.
      *
-     * @var \WlSdk\Wl\Reception\Design\CheckInSoundSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Reception\Design\CheckInSoundSid $id_failed_sound = null;
+    public ?int $id_failed_sound = null;
 
     /**
      * ID of the sound for successful check in.
      *
-     * @var \WlSdk\Wl\Reception\Design\CheckInSoundSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Reception\Design\CheckInSoundSid $id_success_sound = null;
+    public ?int $id_success_sound = null;
 
     /**
      * `true` - allow client to check-in unpaid;
@@ -166,8 +166,8 @@ class ReceptionDesignGetResponse
         $this->i_book_open = isset($data['i_book_open']) ? (int)$data['i_book_open'] : null;
         $this->i_confirm_delay = isset($data['i_confirm_delay']) ? (int)$data['i_confirm_delay'] : null;
         $this->i_schedule_delay = isset($data['i_schedule_delay']) ? (int)$data['i_schedule_delay'] : null;
-        $this->id_failed_sound = isset($data['id_failed_sound']) ? \WlSdk\Wl\Reception\Design\CheckInSoundSid::tryFrom((int)$data['id_failed_sound']) : null;
-        $this->id_success_sound = isset($data['id_success_sound']) ? \WlSdk\Wl\Reception\Design\CheckInSoundSid::tryFrom((int)$data['id_success_sound']) : null;
+        $this->id_failed_sound = isset($data['id_failed_sound']) ? (int)$data['id_failed_sound'] : null;
+        $this->id_success_sound = isset($data['id_success_sound']) ? (int)$data['id_success_sound'] : null;
         $this->is_attend_free = isset($data['is_attend_free']) ? (bool)$data['is_attend_free'] : null;
         $this->is_auto_check_in = isset($data['is_auto_check_in']) ? (bool)$data['is_auto_check_in'] : null;
         $this->is_book_open = isset($data['is_book_open']) ? (bool)$data['is_book_open'] : null;

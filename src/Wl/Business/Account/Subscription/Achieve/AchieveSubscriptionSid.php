@@ -14,13 +14,20 @@ namespace WlSdk\Wl\Business\Account\Subscription\Achieve;
  * - 6 (`WHITE_PLUS`): White Label (Legacy)
  * - 5 (`WHITE_PRO`): White Label (Business Pro)
  */
-enum AchieveSubscriptionSid: int
+class AchieveSubscriptionSid
 {
-    case FREE = 1;
-    case PREMIUM = 2;
-    case WHITE = 3;
-    case WHITE0125 = 7;
-    case WHITE_MAX = 4;
-    case WHITE_PLUS = 6;
-    case WHITE_PRO = 5;
+    /** Basic */
+    const FREE = 1;
+    /** Premium */
+    const PREMIUM = 2;
+    /** White Label (Legacy) */
+    const WHITE = 3;
+    /** White Label */
+    const WHITE0125 = 7;
+    /** White Label (Business Max) */
+    const WHITE_MAX = 4;
+    /** White Label (Legacy) */
+    const WHITE_PLUS = 6;
+    /** White Label (Business Pro) */
+    const WHITE_PRO = 5;
 }

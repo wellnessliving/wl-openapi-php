@@ -31,23 +31,40 @@ namespace WlSdk;
  * - 12 (`STAFF`): Staff widget.
  * - 11 (`STORE`): Online store widget.
  */
-enum RsSkinSid: int
+class RsSkinSid
 {
-    case AI_AGENT = 19;
-    case APPLICATION = 13;
-    case APPOINTMENT = 7;
-    case CATALOG_FOREIGN = 21;
-    case ENROLLMENT = 8;
-    case FITBUILDER = 17;
-    case LEAD = 9;
-    case LEAD_FOREIGN = 20;
-    case MOBILE_SCHEDULE = 10;
-    case RESOURCE = 16;
-    case REVIEW_LIST = 4;
-    case SCHEDULE_DESIGN = 15;
-    case SCHEDULE_FOREIGN = 18;
-    case SCHEDULE_LIST = 1;
-    case SCHEDULE_STANDARD = 14;
-    case STAFF = 12;
-    case STORE = 11;
+    /** Ai Agent web-chat. */
+    const AI_AGENT = 19;
+    /** Application skin. */
+    const APPLICATION = 13;
+    /** Appointment booking wizard. */
+    const APPOINTMENT = 7;
+    /** Online store widget. */
+    const CATALOG_FOREIGN = 21;
+    /** Event enrollment wizard widget. */
+    const ENROLLMENT = 8;
+    /** Fitbuilder widget. */
+    const FITBUILDER = 17;
+    /** Skin for lead tracking form. */
+    const LEAD = 9;
+    /** Skin for lead tracking form from microservice. */
+    const LEAD_FOREIGN = 20;
+    /** Mobile schedule version. */
+    const MOBILE_SCHEDULE = 10;
+    /** Asset booking wizard. */
+    const RESOURCE = 16;
+    /** Review list widget. */
+    const REVIEW_LIST = 4;
+    /** General schedule design appearance. */
+    const SCHEDULE_DESIGN = 15;
+    /** Foreign schedule widget on react language. */
+    const SCHEDULE_FOREIGN = 18;
+    /** Schedule list widget. */
+    const SCHEDULE_LIST = 1;
+    /** Standard version of schedule. */
+    const SCHEDULE_STANDARD = 14;
+    /** Staff widget. */
+    const STAFF = 12;
+    /** Online store widget. */
+    const STORE = 11;
 }

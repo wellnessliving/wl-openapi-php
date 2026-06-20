@@ -57,9 +57,9 @@ class LayoutGetResponseShapeCustom
     /**
      * The shape type ID. One of the {@link \WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid} constants.
      *
-     * @var \WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid $id_resource_layout_shape = null;
+    public ?int $id_resource_layout_shape = null;
 
     /**
      * The shape key.
@@ -98,7 +98,7 @@ class LayoutGetResponseShapeCustom
         $this->i_left = isset($data['i_left']) ? (int)$data['i_left'] : null;
         $this->i_radius = isset($data['i_radius']) ? (int)$data['i_radius'] : null;
         $this->i_top = isset($data['i_top']) ? (int)$data['i_top'] : null;
-        $this->id_resource_layout_shape = isset($data['id_resource_layout_shape']) ? \WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid::tryFrom((int)$data['id_resource_layout_shape']) : null;
+        $this->id_resource_layout_shape = isset($data['id_resource_layout_shape']) ? (int)$data['id_resource_layout_shape'] : null;
         $this->k_resource_layout_shape = isset($data['k_resource_layout_shape']) ? (string)$data['k_resource_layout_shape'] : null;
         $this->s_color_background = isset($data['s_color_background']) ? (string)$data['s_color_background'] : null;
         $this->s_color_foreground = isset($data['s_color_foreground']) ? (string)$data['s_color_foreground'] : null;

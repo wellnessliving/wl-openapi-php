@@ -9,9 +9,12 @@ namespace WlSdk\Wl\Resource\Layout\Shape;
  * - 3 (`PIE`): Pies.
  * - 1 (`RECTANGLE`): Rectangles and squares.
  */
-enum LayoutShapeSid: int
+class LayoutShapeSid
 {
-    case CIRCLE = 2;
-    case PIE = 3;
-    case RECTANGLE = 1;
+    /** Circles. */
+    const CIRCLE = 2;
+    /** Pies. */
+    const PIE = 3;
+    /** Rectangles and squares. */
+    const RECTANGLE = 1;
 }

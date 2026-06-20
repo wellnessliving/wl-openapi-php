@@ -10,8 +10,10 @@ namespace WlSdk\Wl\Video;
  * - 2 (`EMBED`): Embedded video.
  * - 1 (`UPLOAD`): Uploaded video.
  */
-enum VideoSourceSid: int
+class VideoSourceSid
 {
-    case EMBED = 2;
-    case UPLOAD = 1;
+    /** Embedded video. */
+    const EMBED = 2;
+    /** Uploaded video. */
+    const UPLOAD = 1;
 }

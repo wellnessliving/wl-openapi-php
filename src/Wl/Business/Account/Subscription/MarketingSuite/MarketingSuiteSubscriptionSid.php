@@ -13,11 +13,16 @@ namespace WlSdk\Wl\Business\Account\Subscription\MarketingSuite;
  * - 1 (`FREE`): Base
  * - 5 (`PRO`): Ultimate
  */
-enum MarketingSuiteSubscriptionSid: int
+class MarketingSuiteSubscriptionSid
 {
-    case BASIC = 2;
-    case BASIC_BUSINESS = 4;
-    case BASIC_OLD = 3;
-    case FREE = 1;
-    case PRO = 5;
+    /** Pro */
+    const BASIC = 2;
+    /** Standard (Business) */
+    const BASIC_BUSINESS = 4;
+    /** Standard (Legacy) */
+    const BASIC_OLD = 3;
+    /** Base */
+    const FREE = 1;
+    /** Ultimate */
+    const PRO = 5;
 }

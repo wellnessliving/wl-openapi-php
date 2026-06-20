@@ -70,16 +70,16 @@ class DiscountCodeEditPostRequest
      * Calendar periods for discount code duration from {@link \WlSdk\ADurationSid}. Zero if discount code is never
      * expires.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_duration = null;
+    public ?int $id_duration = null;
 
     /**
      * Type of the discount code duration from {@link \WlSdk\RsDurationTypeSid}.
      *
-     * @var \WlSdk\RsDurationTypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsDurationTypeSid $id_duration_type = null;
+    public ?int $id_duration_type = null;
 
     /**
      * `true` means discount code is active.
@@ -190,8 +190,8 @@ class DiscountCodeEditPostRequest
             'f_value' => $this->f_value,
             'i_duration' => $this->i_duration,
             'i_limit' => $this->i_limit,
-            'id_duration' => $this->id_duration?->value,
-            'id_duration_type' => $this->id_duration_type?->value,
+            'id_duration' => $this->id_duration,
+            'id_duration_type' => $this->id_duration_type,
             'is_active' => $this->is_active,
             'is_auto_renew' => $this->is_auto_renew,
             'is_coupon' => $this->is_coupon,

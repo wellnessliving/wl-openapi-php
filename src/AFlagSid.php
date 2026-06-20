@@ -10,9 +10,12 @@ namespace WlSdk;
  * - 2 (`OFF`): Records with the flag turned off.
  * - 3 (`ON`): Records with the flag turned on.
  */
-enum AFlagSid: int
+class AFlagSid
 {
-    case ALL = 1;
-    case OFF = 2;
-    case ON = 3;
+    /** All records. */
+    const ALL = 1;
+    /** Records with the flag turned off. */
+    const OFF = 2;
+    /** Records with the flag turned on. */
+    const ON = 3;
 }

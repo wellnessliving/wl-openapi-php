@@ -36,14 +36,22 @@ namespace WlSdk;
  *   Such passes cannot be bought, they can be only components of the special system packages,
  *   packages with `k_business` = `null`.
  */
-enum RsProgramTypeSid: int
+class RsProgramTypeSid
 {
-    case DURATION = 7;
-    case GUEST = 8;
-    case LIMIT = 1;
-    case MEMBERSHIP = 3;
-    case OTHER = 6;
-    case PACKAGE = 4;
-    case PASS = 2;
-    case PROSPECT = 5;
+    /** Duration Pass. */
+    const DURATION = 7;
+    /** Guest passes. */
+    const GUEST = 8;
+    /** Class pass. */
+    const LIMIT = 1;
+    /** This promotion is a membership. */
+    const MEMBERSHIP = 3;
+    /** Type for programs that are not presented in [RsProgramSid](#/components/schemas/RsProgramSid). */
+    const OTHER = 6;
+    /** Packages and Daily deals. */
+    const PACKAGE = 4;
+    /** Unlimited pass. Day/week/month pass. */
+    const PASS = 2;
+    /** Special WellnessLiving promote passes that allow to visit specific classes to get acquainted with the business. */
+    const PROSPECT = 5;
 }

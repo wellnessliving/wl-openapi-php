@@ -20,9 +20,9 @@ class ClassPromotionGetResponsePromotion
     /**
      * One of the {@link \WlSdk\RsProgramSid} constants.
      *
-     * @var \WlSdk\RsProgramSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsProgramSid $id_program = null;
+    public ?int $id_program = null;
 
     /**
      * `true` if the promotion is related to the class or event, `false` otherwise.
@@ -35,7 +35,7 @@ class ClassPromotionGetResponsePromotion
     {
         $this->k_promotion = isset($data['k_promotion']) ? (string)$data['k_promotion'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
-        $this->id_program = isset($data['id_program']) ? \WlSdk\RsProgramSid::tryFrom((int)$data['id_program']) : null;
+        $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
         $this->is_select = isset($data['is_select']) ? (bool)$data['is_select'] : null;
     }
 }

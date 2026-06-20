@@ -11,7 +11,7 @@ class Info54GetResponse
      * 
      * `null` if recurring booking is not available.
      *
-     * @var \WlSdk\ADateWeekSid[]|null
+     * @var int[]|null
      */
     public ?array $a_day_available = null;
 
@@ -290,7 +290,7 @@ class Info54GetResponse
 
     public function __construct(array $data)
     {
-        $this->a_day_available = isset($data['a_day_available']) ? array_map(static fn($v) => \WlSdk\ADateWeekSid::tryFrom((int)$v), (array)$data['a_day_available']) : null;
+        $this->a_day_available = isset($data['a_day_available']) ? (array)$data['a_day_available'] : null;
         $this->a_session_all = isset($data['a_session_all']) ? array_map(static fn($item) => new Info54GetResponseSessionAll((array)$item), (array)$data['a_session_all']) : null;
         $this->a_session_free = isset($data['a_session_free']) ? array_map(static fn($item) => new Info54GetResponseSessionFree((array)$item), (array)$data['a_session_free']) : null;
         $this->a_staff = isset($data['a_staff']) ? array_map(static fn($item) => new Info54GetResponseStaff((array)$item), (array)$data['a_staff']) : null;

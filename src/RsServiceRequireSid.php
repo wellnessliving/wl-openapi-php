@@ -19,11 +19,16 @@ namespace WlSdk;
  *   Clients can pay only when they visit.
  * - 5 (`ZERO`): Credit card authorisation without payment is required.
  */
-enum RsServiceRequireSid: int
+class RsServiceRequireSid
 {
-    case ADVANCE = 4;
-    case FULL = 2;
-    case NOTHING = 1;
-    case OFFLINE = 6;
-    case ZERO = 5;
+    /** Some part of the price is required. Type of the deposit can be flat or percentage. */
+    const ADVANCE = 4;
+    /** Full payment is required. */
+    const FULL = 2;
+    /** Nothing is required. */
+    const NOTHING = 1;
+    /** Clients can book, but online purchase is not available. */
+    const OFFLINE = 6;
+    /** Credit card authorisation without payment is required. */
+    const ZERO = 5;
 }

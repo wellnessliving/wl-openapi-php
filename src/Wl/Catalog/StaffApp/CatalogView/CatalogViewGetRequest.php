@@ -33,9 +33,9 @@ class CatalogViewGetRequest
     /**
      * The ID of the sale category. One of the {@link \WlSdk\RsSaleSid} constants.
      *
-     * @var \WlSdk\RsSaleSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsSaleSid $id_sale = null;
+    public ?int $id_sale = null;
 
     /**
      * The business key.
@@ -83,7 +83,7 @@ class CatalogViewGetRequest
             'a_config' => $this->a_config,
             'a_tax' => $this->a_tax,
             'i_quantity' => $this->i_quantity,
-            'id_sale' => $this->id_sale?->value,
+            'id_sale' => $this->id_sale,
             'k_business' => $this->k_business,
             'k_id' => $this->k_id,
             'k_shop_product_option' => $this->k_shop_product_option,

@@ -12,11 +12,16 @@ namespace WlSdk\Wl\Business\Account\Subscription\Fitlive;
  * - 2 (`LICENCED`): Professional
  * - 3 (`SUSPENDED`): Suspended
  */
-enum FitliveSubscriptionSid: int
+class FitliveSubscriptionSid
 {
-    case ADVANCED = 5;
-    case BASIC = 4;
-    case FREE = 1;
-    case LICENCED = 2;
-    case SUSPENDED = 3;
+    /** Advanced */
+    const ADVANCED = 5;
+    /** Basic */
+    const BASIC = 4;
+    /** None */
+    const FREE = 1;
+    /** Professional */
+    const LICENCED = 2;
+    /** Suspended */
+    const SUSPENDED = 3;
 }

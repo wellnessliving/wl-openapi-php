@@ -26,16 +26,26 @@ namespace WlSdk;
  *   In online store this method should not be available.
  * - 1 (`POS`): Payment method at a Points of sale.
  */
-enum RsPayMethodSid: int
+class RsPayMethodSid
 {
-    case ACCOUNT = 7;
-    case ACH = 9;
-    case CASH = 4;
-    case CHEQUE = 5;
-    case COUPON = 8;
-    case DIRECT_ENTRY = 10;
-    case ECOMMERCE = 2;
-    case EXTERNAL = 6;
-    case IMPORT_ACCRUAL = 11;
-    case POS = 1;
+    /** Payment with personal user account (rs.pay.account). */
+    const ACCOUNT = 7;
+    /** ACH system (USA-specific direct banking transactions). */
+    const ACH = 9;
+    /** Payment with cash. */
+    const CASH = 4;
+    /** Payment with a cheque. */
+    const CHEQUE = 5;
+    /** Payment with a coupon. */
+    const COUPON = 8;
+    /** Direct Entry system (australian-specific direct banking transactions). */
+    const DIRECT_ENTRY = 10;
+    /** Online payment. Card not present. */
+    const ECOMMERCE = 2;
+    /** Payment with an external terminal. */
+    const EXTERNAL = 6;
+    /** Special method to be used for migration process. */
+    const IMPORT_ACCRUAL = 11;
+    /** Payment method at a Points of sale. */
+    const POS = 1;
 }

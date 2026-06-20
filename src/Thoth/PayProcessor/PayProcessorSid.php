@@ -14,14 +14,22 @@ namespace WlSdk\Thoth\PayProcessor;
  * - 7 (`PAYCHOICE`): Payment gateway for http://www.paychoice.com.au/ Paychoice.
  * - 10 (`STRIPE_COM`): Payment gateway for `stripe.com`.
  */
-enum PayProcessorSid: int
+class PayProcessorSid
 {
-    case CYBER_SOURCE = 11;
-    case DIRECT_CONNECT = 9;
-    case LUCY = 2;
-    case NETBANX = 1;
-    case NMI = 6;
-    case NUVEI = 12;
-    case PAYCHOICE = 7;
-    case STRIPE_COM = 10;
+    /** Payment gateway for `cybersource.com`. */
+    const CYBER_SOURCE = 11;
+    /** Payment gateway for Direct Connect. */
+    const DIRECT_CONNECT = 9;
+    /** Payment gateway for Lucy. */
+    const LUCY = 2;
+    /** Payment gateway for Netbanx. */
+    const NETBANX = 1;
+    /** Payment gateway for NMI. */
+    const NMI = 6;
+    /** Payment gateway for Nuvei. */
+    const NUVEI = 12;
+    /** Payment gateway for http://www.paychoice.com.au/ Paychoice. */
+    const PAYCHOICE = 7;
+    /** Payment gateway for `stripe.com`. */
+    const STRIPE_COM = 10;
 }

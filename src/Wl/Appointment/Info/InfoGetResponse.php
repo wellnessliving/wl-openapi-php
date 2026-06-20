@@ -65,9 +65,9 @@ class InfoGetResponse
     /**
      * Status of appointment payment. One of {@link \WlSdk\RsAppointmentPaySid} constants.
      *
-     * @var \WlSdk\RsAppointmentPaySid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsAppointmentPaySid $id_appointment_pay = null;
+    public ?int $id_appointment_pay = null;
 
     /**
      * Location key.
@@ -159,7 +159,7 @@ class InfoGetResponse
         $this->dt_date_local = isset($data['dt_date_local']) ? (string)$data['dt_date_local'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_index = isset($data['i_index']) ? (int)$data['i_index'] : null;
-        $this->id_appointment_pay = isset($data['id_appointment_pay']) ? \WlSdk\RsAppointmentPaySid::tryFrom((int)$data['id_appointment_pay']) : null;
+        $this->id_appointment_pay = isset($data['id_appointment_pay']) ? (int)$data['id_appointment_pay'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
         $this->k_login_promotion = isset($data['k_login_promotion']) ? (string)$data['k_login_promotion'] : null;
         $this->k_resource = isset($data['k_resource']) ? (string)$data['k_resource'] : null;

@@ -14,13 +14,20 @@ namespace WlSdk\Wl\Business\Account\Subscription\Website;
  * - 7 (`PREMIUM_MAX`): Premium (Business Max)
  * - 5 (`PROFESSIONAL`): Professional
  */
-enum WebsiteSubscriptionSid: int
+class WebsiteSubscriptionSid
 {
-    case BASIC = 2;
-    case BASIC_LARGE = 6;
-    case ENTERPRISE = 4;
-    case FREE = 1;
-    case PREMIUM = 3;
-    case PREMIUM_MAX = 7;
-    case PROFESSIONAL = 5;
+    /** Basic */
+    const BASIC = 2;
+    /** Basic */
+    const BASIC_LARGE = 6;
+    /** Enterprise */
+    const ENTERPRISE = 4;
+    /** None */
+    const FREE = 1;
+    /** Premium */
+    const PREMIUM = 3;
+    /** Premium (Business Max) */
+    const PREMIUM_MAX = 7;
+    /** Professional */
+    const PROFESSIONAL = 5;
 }

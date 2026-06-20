@@ -10,9 +10,9 @@ class AddPostResponse
      * The status of the visit.
      * One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
-     * @var \WlSdk\Wl\Visit\VisitSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Visit\VisitSid $id_visit = null;
+    public ?int $id_visit = null;
 
     /**
      * If `true`, the visit was automatically paid for in any available way during the booking.
@@ -41,7 +41,7 @@ class AddPostResponse
 
     public function __construct(array $data)
     {
-        $this->id_visit = isset($data['id_visit']) ? \WlSdk\Wl\Visit\VisitSid::tryFrom((int)$data['id_visit']) : null;
+        $this->id_visit = isset($data['id_visit']) ? (int)$data['id_visit'] : null;
         $this->is_paid = isset($data['is_paid']) ? (bool)$data['is_paid'] : null;
         $this->k_visit = isset($data['k_visit']) ? (string)$data['k_visit'] : null;
         $this->url_store = isset($data['url_store']) ? (string)$data['url_store'] : null;

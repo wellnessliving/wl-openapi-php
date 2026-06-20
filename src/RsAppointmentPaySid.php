@@ -10,10 +10,14 @@ namespace WlSdk;
  * - 3 (`FULL`): The full price was paid.
  * - 1 (`NONE`): Nothing was paid.
  */
-enum RsAppointmentPaySid: int
+class RsAppointmentPaySid
 {
-    case DEPOSIT = 2;
-    case FREE = 4;
-    case FULL = 3;
-    case NONE = 1;
+    /** A deposit was paid. */
+    const DEPOSIT = 2;
+    /** Appointment is free and does not require payment. */
+    const FREE = 4;
+    /** The full price was paid. */
+    const FULL = 3;
+    /** Nothing was paid. */
+    const NONE = 1;
 }

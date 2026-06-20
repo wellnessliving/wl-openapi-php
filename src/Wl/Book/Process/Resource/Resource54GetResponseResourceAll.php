@@ -32,9 +32,9 @@ class Resource54GetResponseResourceAll
     /**
      * Type of the asset category. One of {@link \WlSdk\Wl\Resource\ResourceCategoryEnum} constants.
      *
-     * @var \WlSdk\Wl\Resource\ResourceCategoryEnum|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Resource\ResourceCategoryEnum $id_category = null;
+    public ?int $id_category = null;
 
     /**
      * `true` - the client selected the resource from the current group; `false` otherwise.
@@ -84,7 +84,7 @@ class Resource54GetResponseResourceAll
         $this->a_client = isset($data['a_client']) ? (array)$data['a_client'] : null;
         $this->a_resource_list = isset($data['a_resource_list']) ? new Resource54GetResponseResourceAllResourceList((array)$data['a_resource_list']) : null;
         $this->has_current = isset($data['has_current']) ? (bool)$data['has_current'] : null;
-        $this->id_category = isset($data['id_category']) ? \WlSdk\Wl\Resource\ResourceCategoryEnum::tryFrom((int)$data['id_category']) : null;
+        $this->id_category = isset($data['id_category']) ? (int)$data['id_category'] : null;
         $this->is_client_select = isset($data['is_client_select']) ? (bool)$data['is_client_select'] : null;
         $this->is_select = isset($data['is_select']) ? (bool)$data['is_select'] : null;
         $this->is_share = isset($data['is_share']) ? (bool)$data['is_share'] : null;

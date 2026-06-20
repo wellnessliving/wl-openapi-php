@@ -15,15 +15,24 @@ namespace WlSdk\Wl\Announcement;
  * - 8 (`TITLE`): Title field.
  * - 9 (`UNPUBLISH_DATE`): Unpublish date field.
  */
-enum SortFieldSid: int
+class SortFieldSid
 {
-    case CREATED_BY = 1;
-    case CREATED_DATE = 2;
-    case DESCRIPTION = 3;
-    case IMAGE = 4;
-    case LOCATION = 5;
-    case PUBLISH_DATE = 6;
-    case STATUS = 7;
-    case TITLE = 8;
-    case UNPUBLISH_DATE = 9;
+    /** Created by field. */
+    const CREATED_BY = 1;
+    /** Created date field. */
+    const CREATED_DATE = 2;
+    /** Description field. */
+    const DESCRIPTION = 3;
+    /** Image field. */
+    const IMAGE = 4;
+    /** Location field. */
+    const LOCATION = 5;
+    /** Publish date field. */
+    const PUBLISH_DATE = 6;
+    /** Status field. */
+    const STATUS = 7;
+    /** Title field. */
+    const TITLE = 8;
+    /** Unpublish date field. */
+    const UNPUBLISH_DATE = 9;
 }

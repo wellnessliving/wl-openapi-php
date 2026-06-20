@@ -20,9 +20,9 @@ class AnnouncementListGetResponse
      * 
      * `null` in case when use default order.
      *
-     * @var \WlSdk\Core\Sid\SortOrderSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Core\Sid\SortOrderSid $id_order = null;
+    public ?int $id_order = null;
 
     /**
      * Sort field ID for list of announcements.
@@ -31,14 +31,14 @@ class AnnouncementListGetResponse
      * 
      * `null` in case when use default field.
      *
-     * @var \WlSdk\Wl\Announcement\SortFieldSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Announcement\SortFieldSid $id_sort_field = null;
+    public ?int $id_sort_field = null;
 
     public function __construct(array $data)
     {
         $this->a_list = isset($data['a_list']) ? array_map(static fn($item) => new AnnouncementListGetResponseList((array)$item), (array)$data['a_list']) : null;
-        $this->id_order = isset($data['id_order']) ? \WlSdk\Core\Sid\SortOrderSid::tryFrom((int)$data['id_order']) : null;
-        $this->id_sort_field = isset($data['id_sort_field']) ? \WlSdk\Wl\Announcement\SortFieldSid::tryFrom((int)$data['id_sort_field']) : null;
+        $this->id_order = isset($data['id_order']) ? (int)$data['id_order'] : null;
+        $this->id_sort_field = isset($data['id_sort_field']) ? (int)$data['id_sort_field'] : null;
     }
 }

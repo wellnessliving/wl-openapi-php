@@ -22,18 +22,18 @@ class FieldPostRequest
      * 
      * One of the {@link \WlSdk\Wl\Member\Progress\Field\MeasurementSid} constants.
      *
-     * @var \WlSdk\Wl\Member\Progress\Field\MeasurementSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Member\Progress\Field\MeasurementSid $id_measurement_unit = null;
+    public ?int $id_measurement_unit = null;
 
     /**
      * Field type ID.
      * 
      * One of the {@link \WlSdk\Wl\Member\Progress\Field\TypeSid} constants.
      *
-     * @var \WlSdk\Wl\Member\Progress\Field\TypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Member\Progress\Field\TypeSid $id_type = null;
+    public ?int $id_type = null;
 
     /**
      * Whether field is active and should be displayed on page.
@@ -79,8 +79,8 @@ class FieldPostRequest
             [
             'k_business' => $this->k_business,
             'k_field' => $this->k_field,
-            'id_measurement_unit' => $this->id_measurement_unit?->value,
-            'id_type' => $this->id_type?->value,
+            'id_measurement_unit' => $this->id_measurement_unit,
+            'id_type' => $this->id_type,
             'is_active' => $this->is_active,
             'is_public' => $this->is_public,
             'is_require' => $this->is_require,

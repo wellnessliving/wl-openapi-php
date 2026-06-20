@@ -20,17 +20,28 @@ namespace WlSdk\Wl\Design;
  * - 1 (`SOAP`): Paper with medical symbolic for medical notes.
  * - 11 (`SPA_CLOCK`): Clock activity list icon in SPA application.
  */
-enum IconSid: int
+class IconSid
 {
-    case APPOINTMENT = 4;
-    case ASSET = 7;
-    case CLASSES = 5;
-    case CYCLE = 3;
-    case EARLY_CANCELED = 8;
-    case GYM_VISIT = 6;
-    case LATE_CANCELED = 9;
-    case NOTE = 2;
-    case NO_SHOW = 10;
-    case SOAP = 1;
-    case SPA_CLOCK = 11;
+    /** Signs that session or pass is an appointment connected. */
+    const APPOINTMENT = 4;
+    /** Signs that session or pass is an asset connected. */
+    const ASSET = 7;
+    /** Signs that session or pass is a class or event connected. */
+    const CLASSES = 5;
+    /** Cycle icon. Used, for example, to show transferred status of the promotion. */
+    const CYCLE = 3;
+    /** Early cancel activity list icon. */
+    const EARLY_CANCELED = 8;
+    /** Signs that session or pass is a gym visit connected. */
+    const GYM_VISIT = 6;
+    /** Late cancel activity list icon. */
+    const LATE_CANCELED = 9;
+    /** Piece of paper with the curved end for different text notes. */
+    const NOTE = 2;
+    /** No show at visit activity list icon. */
+    const NO_SHOW = 10;
+    /** Paper with medical symbolic for medical notes. */
+    const SOAP = 1;
+    /** Clock activity list icon in SPA application. */
+    const SPA_CLOCK = 11;
 }

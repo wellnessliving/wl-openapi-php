@@ -12,10 +12,14 @@ namespace WlSdk\Wl\Classes\Tab;
  * - 3 (`SERVICE`): Appointments.
  * - 1 (`TRAINING`): Classes.
  */
-enum TabSid: int
+class TabSid
 {
-    case ENROLLMENT = 2;
-    case RESOURCE = 4;
-    case SERVICE = 3;
-    case TRAINING = 1;
+    /** Enrolments. */
+    const ENROLLMENT = 2;
+    /** Bookable Assets. */
+    const RESOURCE = 4;
+    /** Appointments. */
+    const SERVICE = 3;
+    /** Classes. */
+    const TRAINING = 1;
 }

@@ -9,7 +9,8 @@ namespace WlSdk\Wl\Location\Flag;
  * purchases.
  *   Flag is set and removed only automatically.
  */
-enum FlagSourceEnum: int
+class FlagSourceEnum
 {
-    case COLLECTIONS = 1;
+    /** Flag is set because user is sent to collections. This means user has debt and cannot make new purchases. */
+    const COLLECTIONS = 1;
 }

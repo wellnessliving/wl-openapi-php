@@ -12,10 +12,14 @@ namespace WlSdk\Wl\Login\Promotion\Convert;
  * - 4 (`SCHEDULE_PAID`): Purchase Option converts on the specified date and the client is charged for the new Purchase
  * Option.
  */
-enum ConvertWhenSid: int
+class ConvertWhenSid
 {
-    case EXPIRATION_PAID = 1;
-    case NOW_FREE = 2;
-    case NOW_PAID = 3;
-    case SCHEDULE_PAID = 4;
+    /** Purchase Option converts one day after the scheduled expiration date and the client is charged for the new purchase option. */
+    const EXPIRATION_PAID = 1;
+    /** Purchase Option converts now and the client is not charged for the new Purchase Option. */
+    const NOW_FREE = 2;
+    /** Purchase Option converts now and the client is changed for the new Purchase Option. */
+    const NOW_PAID = 3;
+    /** Purchase Option converts on the specified date and the client is charged for the new Purchase Option. */
+    const SCHEDULE_PAID = 4;
 }

@@ -9,9 +9,12 @@ namespace WlSdk;
  * - 1 (`IGNORE`): Ignore this conflict and create event as it is.
  * - 2 (`SKIP`): Do not create conflicted event.
  */
-enum RsAppointmentEditConflictSid: int
+class RsAppointmentEditConflictSid
 {
-    case EDIT = 3;
-    case IGNORE = 1;
-    case SKIP = 2;
+    /** Create an event with other staff, date or time. */
+    const EDIT = 3;
+    /** Ignore this conflict and create event as it is. */
+    const IGNORE = 1;
+    /** Do not create conflicted event. */
+    const SKIP = 2;
 }

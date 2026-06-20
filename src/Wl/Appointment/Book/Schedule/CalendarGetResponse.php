@@ -69,16 +69,16 @@ class CalendarGetResponse
     /**
      * Last day of the week. One of {@link \WlSdk\ADateWeekSid} constants.
      *
-     * @var \WlSdk\ADateWeekSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADateWeekSid $i_week_end = null;
+    public ?int $i_week_end = null;
 
     /**
      * First day of the week. One of {@link \WlSdk\ADateWeekSid} constants.
      *
-     * @var \WlSdk\ADateWeekSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADateWeekSid $i_week_start = null;
+    public ?int $i_week_start = null;
 
     /**
      * Whether list of available times contains slots with only waitlist booking available.
@@ -104,8 +104,8 @@ class CalendarGetResponse
         $this->dt_date = isset($data['dt_date']) ? (string)$data['dt_date'] : null;
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
         $this->i_capacity_waitlist = isset($data['i_capacity_waitlist']) ? (int)$data['i_capacity_waitlist'] : null;
-        $this->i_week_end = isset($data['i_week_end']) ? \WlSdk\ADateWeekSid::tryFrom((int)$data['i_week_end']) : null;
-        $this->i_week_start = isset($data['i_week_start']) ? \WlSdk\ADateWeekSid::tryFrom((int)$data['i_week_start']) : null;
+        $this->i_week_end = isset($data['i_week_end']) ? (int)$data['i_week_end'] : null;
+        $this->i_week_start = isset($data['i_week_start']) ? (int)$data['i_week_start'] : null;
         $this->is_waitlist = isset($data['is_waitlist']) ? (bool)$data['is_waitlist'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
     }

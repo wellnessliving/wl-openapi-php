@@ -13,11 +13,16 @@ namespace WlSdk;
  * - 4 (`NATAL`): Natal.
  * - 3 (`SENIOR`): Senior.
  */
-enum RsAgeSid: int
+class RsAgeSid
 {
-    case ADAPTIVE = 5;
-    case ADULT = 2;
-    case KID = 1;
-    case NATAL = 4;
-    case SENIOR = 3;
+    /** An Adaptive / Inclusive Programs. */
+    const ADAPTIVE = 5;
+    /** An adult. */
+    const ADULT = 2;
+    /** A kid. */
+    const KID = 1;
+    /** Natal. */
+    const NATAL = 4;
+    /** Senior. */
+    const SENIOR = 3;
 }

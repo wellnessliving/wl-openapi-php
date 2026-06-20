@@ -9,9 +9,12 @@ namespace WlSdk\Wl\Catalog;
  * - 681 (`RESOURCE`): Resource.
  * - 690 (`SERVICE`): Service.
  */
-enum QuickPurchaseTypeSid: int
+class QuickPurchaseTypeSid
 {
-    case CLASSES = 224;
-    case RESOURCE = 681;
-    case SERVICE = 690;
+    /** Classes. */
+    const CLASSES = 224;
+    /** Resource. */
+    const RESOURCE = 681;
+    /** Service. */
+    const SERVICE = 690;
 }

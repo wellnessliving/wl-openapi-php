@@ -90,32 +90,32 @@ class PromotionGetResponsePromotion
      * month.
      * For all possible options, see {@link \WlSdk\ADurationSid}.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_duration = null;
+    public ?int $id_duration = null;
 
     /**
      * The duration type. Possible duration types can be 'Without End', 'Expires on a certain date', 'Period'.
      * For more information, see {@link \WlSdk\RsDurationTypeSid}.
      *
-     * @var \WlSdk\RsDurationTypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsDurationTypeSid $id_duration_type = null;
+    public ?int $id_duration_type = null;
 
     /**
      * The Purchase Option type.
      * For more information, see {@link \WlSdk\RsProgramSid}.
      *
-     * @var \WlSdk\RsProgramSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsProgramSid $id_program = null;
+    public ?int $id_program = null;
 
     /**
      * Purchase restriction for this product, one of {@link \WlSdk\Wl\Promotion\PurchaseRestrictionSid} constants.
      *
-     * @var \WlSdk\Wl\Promotion\PurchaseRestrictionSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Promotion\PurchaseRestrictionSid $id_restriction = null;
+    public ?int $id_restriction = null;
 
     /**
      * Whether this promotion is active.
@@ -228,10 +228,10 @@ class PromotionGetResponsePromotion
         $this->f_revenue_single = isset($data['f_revenue_single']) ? (string)$data['f_revenue_single'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
-        $this->id_duration = isset($data['id_duration']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_duration']) : null;
-        $this->id_duration_type = isset($data['id_duration_type']) ? \WlSdk\RsDurationTypeSid::tryFrom((int)$data['id_duration_type']) : null;
-        $this->id_program = isset($data['id_program']) ? \WlSdk\RsProgramSid::tryFrom((int)$data['id_program']) : null;
-        $this->id_restriction = isset($data['id_restriction']) ? \WlSdk\Wl\Promotion\PurchaseRestrictionSid::tryFrom((int)$data['id_restriction']) : null;
+        $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;
+        $this->id_duration_type = isset($data['id_duration_type']) ? (int)$data['id_duration_type'] : null;
+        $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
+        $this->id_restriction = isset($data['id_restriction']) ? (int)$data['id_restriction'] : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
         $this->is_business_wide = isset($data['is_business_wide']) ? (bool)$data['is_business_wide'] : null;
         $this->is_introductory = isset($data['is_introductory']) ? (bool)$data['is_introductory'] : null;

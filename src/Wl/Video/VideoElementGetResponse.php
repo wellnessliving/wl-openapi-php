@@ -122,26 +122,26 @@ class VideoElementGetResponse
      * 
      * `null` if video is uploaded.
      *
-     * @var \WlSdk\Wl\Video\VideoEmbedSourceSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Video\VideoEmbedSourceSid $id_embed_source = null;
+    public ?int $id_embed_source = null;
 
     /**
      * {@link \WlSdk\Core\Sid\YesNoSid} if the video is available in all locations.
      * {@link \WlSdk\Core\Sid\YesNoSid} if the video is available only in certain locations.
      *
-     * @var \WlSdk\Core\Sid\YesNoSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Core\Sid\YesNoSid $id_location_select = null;
+    public ?int $id_location_select = null;
 
     /**
      * Source of the video.
      * 
      * One of {@link \WlSdk\Wl\Video\VideoSourceSid} constants.
      *
-     * @var \WlSdk\Wl\Video\VideoSourceSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Video\VideoSourceSid $id_source = null;
+    public ?int $id_source = null;
 
     /**
      * If `true`, the calorie count will be displayed on the video.
@@ -325,9 +325,9 @@ class VideoElementGetResponse
         $this->i_current_time = isset($data['i_current_time']) ? (int)$data['i_current_time'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_watch = isset($data['i_watch']) ? (int)$data['i_watch'] : null;
-        $this->id_embed_source = isset($data['id_embed_source']) ? \WlSdk\Wl\Video\VideoEmbedSourceSid::tryFrom((int)$data['id_embed_source']) : null;
-        $this->id_location_select = isset($data['id_location_select']) ? \WlSdk\Core\Sid\YesNoSid::tryFrom((int)$data['id_location_select']) : null;
-        $this->id_source = isset($data['id_source']) ? \WlSdk\Wl\Video\VideoSourceSid::tryFrom((int)$data['id_source']) : null;
+        $this->id_embed_source = isset($data['id_embed_source']) ? (int)$data['id_embed_source'] : null;
+        $this->id_location_select = isset($data['id_location_select']) ? (int)$data['id_location_select'] : null;
+        $this->id_source = isset($data['id_source']) ? (int)$data['id_source'] : null;
         $this->is_calorie = isset($data['is_calorie']) ? (bool)$data['is_calorie'] : null;
         $this->is_converted = isset($data['is_converted']) ? (bool)$data['is_converted'] : null;
         $this->is_published = isset($data['is_published']) ? (bool)$data['is_published'] : null;

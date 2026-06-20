@@ -41,9 +41,9 @@ class ListGetResponseProductDuplicate
     /**
      * The sale category ID. One of the {@link \WlSdk\RsSaleSid} constants.
      *
-     * @var \WlSdk\RsSaleSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsSaleSid $id_sale = null;
+    public ?int $id_sale = null;
 
     /**
      * `true` if the item was accessed via a direct purchase link, `false` otherwise.
@@ -101,7 +101,7 @@ class ListGetResponseProductDuplicate
         $this->dtu_create = isset($data['dtu_create']) ? (string)$data['dtu_create'] : null;
         $this->f_price = isset($data['f_price']) ? (string)$data['f_price'] : null;
         $this->hide_application = isset($data['hide_application']) ? (bool)$data['hide_application'] : null;
-        $this->id_sale = isset($data['id_sale']) ? \WlSdk\RsSaleSid::tryFrom((int)$data['id_sale']) : null;
+        $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->is_direct = isset($data['is_direct']) ? (bool)$data['is_direct'] : null;
         $this->is_introductory = isset($data['is_introductory']) ? (bool)$data['is_introductory'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;

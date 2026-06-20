@@ -11,9 +11,12 @@ namespace WlSdk\Wl\Promotion\Convert;
  * - 2 (`EQUAL_VALUE`): Type of the promotion conversion.
  * - 3 (`UPGRADE`): Promotion conversion upgraded.
  */
-enum PromotionConvertSid: int
+class PromotionConvertSid
 {
-    case DOWNGRADE = 1;
-    case EQUAL_VALUE = 2;
-    case UPGRADE = 3;
+    /** Promotion conversion downgraded. */
+    const DOWNGRADE = 1;
+    /** Type of the promotion conversion. */
+    const EQUAL_VALUE = 2;
+    /** Promotion conversion upgraded. */
+    const UPGRADE = 3;
 }

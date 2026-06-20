@@ -53,16 +53,16 @@ class ReceptionRosterDesignGetResponse
      * ID of the action to take when automatically redirecting.
      * One of {@link \WlSdk\Wl\Reception\Roster\DirectSid} constants.
      *
-     * @var \WlSdk\Wl\Reception\Roster\DirectSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Reception\Roster\DirectSid $id_attendance_direct = null;
+    public ?int $id_attendance_direct = null;
 
     /**
      * Unit of time for the look ahead window for attendance app.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_book_quick_app = null;
+    public ?int $id_book_quick_app = null;
 
     /**
      * `true` if clients are allowed to check-in unpaid, `false` otherwise.
@@ -124,8 +124,8 @@ class ReceptionRosterDesignGetResponse
         $this->i_book_open = isset($data['i_book_open']) ? (int)$data['i_book_open'] : null;
         $this->i_book_quick_app = isset($data['i_book_quick_app']) ? (int)$data['i_book_quick_app'] : null;
         $this->i_confirm_delay = isset($data['i_confirm_delay']) ? (int)$data['i_confirm_delay'] : null;
-        $this->id_attendance_direct = isset($data['id_attendance_direct']) ? \WlSdk\Wl\Reception\Roster\DirectSid::tryFrom((int)$data['id_attendance_direct']) : null;
-        $this->id_book_quick_app = isset($data['id_book_quick_app']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_book_quick_app']) : null;
+        $this->id_attendance_direct = isset($data['id_attendance_direct']) ? (int)$data['id_attendance_direct'] : null;
+        $this->id_book_quick_app = isset($data['id_book_quick_app']) ? (int)$data['id_book_quick_app'] : null;
         $this->is_attend_free = isset($data['is_attend_free']) ? (bool)$data['is_attend_free'] : null;
         $this->is_book_open = isset($data['is_book_open']) ? (bool)$data['is_book_open'] : null;
         $this->is_book_optional = isset($data['is_book_optional']) ? (bool)$data['is_book_optional'] : null;

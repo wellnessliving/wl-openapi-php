@@ -45,14 +45,22 @@ namespace WlSdk;
  *     <li>[RsProgramSid::VISIT_PASS](#/components/schemas/RsProgramSid)</li>
  *   </ul>
  */
-enum RsProgramCategorySid: int
+class RsProgramCategorySid
 {
-    case ACCOUNT = 7;
-    case CLASSES = 1;
-    case INSURANCE = 8;
-    case OTHER = 5;
-    case RESOURCE = 6;
-    case SERVICE = 3;
-    case VIDEO = 9;
-    case VISIT = 2;
+    /** Purchase options to fill user's account: */
+    const ACCOUNT = 7;
+    /** Purchase options to pay for classes, events and enrollments: */
+    const CLASSES = 1;
+    /** Special "Wellness Program" purchase option. */
+    const INSURANCE = 8;
+    /** Packages and daily deals. */
+    const OTHER = 5;
+    /** Resource category. */
+    const RESOURCE = 6;
+    /** Purchase options to pay for appointments: */
+    const SERVICE = 3;
+    /** Purchase options to pay for videos:<ui> */
+    const VIDEO = 9;
+    /** Purchase options to pay for gym visits: */
+    const VISIT = 2;
 }

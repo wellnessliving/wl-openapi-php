@@ -120,16 +120,16 @@ class ServiceListGetResponseService
     /**
      * The type of client booking flow. One of {@link \WlSdk\Wl\Service\ServiceBookFlowSid} constants.
      *
-     * @var \WlSdk\Wl\Service\ServiceBookFlowSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Service\ServiceBookFlowSid $id_book_flow = null;
+    public ?int $id_book_flow = null;
 
     /**
      * The required payment type ID. One of {@link \WlSdk\RsServiceRequireSid} constants.
      *
-     * @var \WlSdk\RsServiceRequireSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsServiceRequireSid $id_service_require = null;
+    public ?int $id_service_require = null;
 
     /**
      * `true` if age restrictions are public. Otherwise, `false` if they should be hidden from clients.
@@ -315,8 +315,8 @@ class ServiceListGetResponseService
         $this->i_age_to = isset($data['i_age_to']) ? (int)$data['i_age_to'] : null;
         $this->i_price = isset($data['i_price']) ? (int)$data['i_price'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
-        $this->id_book_flow = isset($data['id_book_flow']) ? \WlSdk\Wl\Service\ServiceBookFlowSid::tryFrom((int)$data['id_book_flow']) : null;
-        $this->id_service_require = isset($data['id_service_require']) ? \WlSdk\RsServiceRequireSid::tryFrom((int)$data['id_service_require']) : null;
+        $this->id_book_flow = isset($data['id_book_flow']) ? (int)$data['id_book_flow'] : null;
+        $this->id_service_require = isset($data['id_service_require']) ? (int)$data['id_service_require'] : null;
         $this->is_age_public = isset($data['is_age_public']) ? (bool)$data['is_age_public'] : null;
         $this->is_age_restricted = isset($data['is_age_restricted']) ? (bool)$data['is_age_restricted'] : null;
         $this->is_back_to_back = isset($data['is_back_to_back']) ? (bool)$data['is_back_to_back'] : null;

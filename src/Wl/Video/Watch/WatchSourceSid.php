@@ -14,10 +14,14 @@ namespace WlSdk\Wl\Video\Watch;
  * 
  *   Used for old videos.
  */
-enum WatchSourceSid: int
+class WatchSourceSid
 {
-    case APP = 1;
-    case DIRECT_URL = 2;
-    case FRONTEND = 3;
-    case UNDEFINED = 4;
+    /** Video watched from application. */
+    const APP = 1;
+    /** Video watched from direct URL. */
+    const DIRECT_URL = 2;
+    /** Video watched from frontend. */
+    const FRONTEND = 3;
+    /** Source of watched is undefined. */
+    const UNDEFINED = 4;
 }

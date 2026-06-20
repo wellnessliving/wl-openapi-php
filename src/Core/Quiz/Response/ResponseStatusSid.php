@@ -22,11 +22,16 @@ namespace WlSdk\Core\Quiz\Response;
  *   after this process is ended response status changed to
  * [ResponseStatusSid::DRAFT](#/components/schemas/Core.Quiz.Response.ResponseStatusSid).
  */
-enum ResponseStatusSid: int
+class ResponseStatusSid
 {
-    case ACTIVE = 1;
-    case ACTIVE_AMEND = 5;
-    case DRAFT = 2;
-    case INACTIVE = 3;
-    case INACTIVE_DRAFT = 4;
+    /** Response is active. */
+    const ACTIVE = 1;
+    /** Response is active and has amendments. */
+    const ACTIVE_AMEND = 5;
+    /** Response in draft mode. */
+    const DRAFT = 2;
+    /** Response in inactive. */
+    const INACTIVE = 3;
+    /** Response in inactive and in draft mode. */
+    const INACTIVE_DRAFT = 4;
 }

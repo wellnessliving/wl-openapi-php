@@ -10,8 +10,10 @@ namespace WlSdk\Wl\Book\Process;
  * - 1 (`CARD`): Check that a client has a credit card.
  * - 2 (`WAIVER`): Check a client has no unsigned waiver.
  */
-enum ProcessCheckSid: int
+class ProcessCheckSid
 {
-    case CARD = 1;
-    case WAIVER = 2;
+    /** Check that a client has a credit card. */
+    const CARD = 1;
+    /** Check a client has no unsigned waiver. */
+    const WAIVER = 2;
 }

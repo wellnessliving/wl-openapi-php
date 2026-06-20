@@ -21,11 +21,16 @@ namespace WlSdk\Core\Google\Captcha;
  * 
  *   Used by [CaptchaVersionSid::V3](#/components/schemas/Core.Google.Captcha.CaptchaVersionSid) only.
  */
-enum CaptchaResponseSid: int
+class CaptchaResponseSid
 {
-    case ERROR = 5;
-    case INVALID = 1;
-    case REQUIRE_V2 = 2;
-    case VALID = 3;
-    case VALID_BLOCK = 4;
+    /** Token can be verified due to error from Google Captcha. */
+    const ERROR = 5;
+    /** Token is invalid or expired. */
+    const INVALID = 1;
+    /** Token is valid, but v2 captcha require. */
+    const REQUIRE_V2 = 2;
+    /** Token is valid. */
+    const VALID = 3;
+    /** Token is valid but score is risky. */
+    const VALID_BLOCK = 4;
 }

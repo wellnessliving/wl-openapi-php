@@ -8,7 +8,7 @@ class FinishMultiplePostRequest
      * 
      * Keys refer to provider indexes.
      *
-     * @var \WlSdk\RsAppointmentPaySid[]|null
+     * @var int[]|null
      */
     public ?array $a_pay = null;
 
@@ -144,9 +144,9 @@ class FinishMultiplePostRequest
     /**
      * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var \WlSdk\Wl\Mode\ModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
+    public ?int $id_mode = null;
 
     /**
      * Determines whether multiple appointments have been booked in back-to-back mode.
@@ -192,7 +192,7 @@ class FinishMultiplePostRequest
             'a_payment_data' => $this->a_payment_data,
             'a_purchase_item' => $this->a_purchase_item,
             'a_quiz_response' => $this->a_quiz_response,
-            'id_mode' => $this->id_mode?->value,
+            'id_mode' => $this->id_mode,
             'is_back_to_back' => $this->is_back_to_back,
             'is_try' => $this->is_try,
             's_id' => $this->s_id,

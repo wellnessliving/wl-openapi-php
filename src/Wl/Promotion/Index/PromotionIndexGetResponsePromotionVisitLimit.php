@@ -41,16 +41,16 @@ class PromotionIndexGetResponsePromotionVisitLimit
      *     <li>{@link \WlSdk\ADurationSid}</li>
      * </ul>
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_roll_over_expire = null;
+    public ?int $id_roll_over_expire = null;
 
     /**
      * The type of the limit cycle {@link \WlSdk\Wl\Promotion\Edit\Limit\Cycle\Sid}.
      *
-     * @var \WlSdk\Wl\Promotion\Edit\Limit\Cycle\Sid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Promotion\Edit\Limit\Cycle\Sid $id_limit_cycle = null;
+    public ?int $id_limit_cycle = null;
 
     /**
      * Determines whether to reconcile unpaid sessions on restrictions reset.
@@ -93,8 +93,8 @@ class PromotionIndexGetResponsePromotionVisitLimit
         $this->i_period = isset($data['i_period']) ? (int)$data['i_period'] : null;
         $this->i_roll_over_cap = isset($data['i_roll_over_cap']) ? (int)$data['i_roll_over_cap'] : null;
         $this->i_roll_over_expire = isset($data['i_roll_over_expire']) ? (int)$data['i_roll_over_expire'] : null;
-        $this->id_roll_over_expire = isset($data['id_roll_over_expire']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_roll_over_expire']) : null;
-        $this->id_limit_cycle = isset($data['id_limit_cycle']) ? \WlSdk\Wl\Promotion\Edit\Limit\Cycle\Sid::tryFrom((int)$data['id_limit_cycle']) : null;
+        $this->id_roll_over_expire = isset($data['id_roll_over_expire']) ? (int)$data['id_roll_over_expire'] : null;
+        $this->id_limit_cycle = isset($data['id_limit_cycle']) ? (int)$data['id_limit_cycle'] : null;
         $this->is_reconcile_visit = isset($data['is_reconcile_visit']) ? (bool)$data['is_reconcile_visit'] : null;
         $this->is_roll_over_expire = isset($data['is_roll_over_expire']) ? (bool)$data['is_roll_over_expire'] : null;
         $this->is_roll_over_renew = isset($data['is_roll_over_renew']) ? (bool)$data['is_roll_over_renew'] : null;

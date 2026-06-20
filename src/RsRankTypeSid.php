@@ -8,7 +8,8 @@ namespace WlSdk;
  * Values:
  * - 1 (`BELT`): Belts for Martial Arts.
  */
-enum RsRankTypeSid: int
+class RsRankTypeSid
 {
-    case BELT = 1;
+    /** Belts for Martial Arts. */
+    const BELT = 1;
 }

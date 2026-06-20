@@ -8,8 +8,10 @@ namespace WlSdk\Core\Request\Api\Application\Credential;
  * - 973 (`Core\Request\Api\Application\Credential\FacebookCredential`): Class for manage Facebook credential.
  * - 972 (`Core\Request\Api\Application\Credential\GoogleCredential`): Class for manage Google credential.
  */
-enum CredentialAbstract: int
+class CredentialAbstract
 {
-    case Core\Request\Api\Application\Credential\FacebookCredential = 973;
-    case Core\Request\Api\Application\Credential\GoogleCredential = 972;
+    /** Class for manage Facebook credential. */
+    const Core\Request\Api\Application\Credential\FacebookCredential = 973;
+    /** Class for manage Google credential. */
+    const Core\Request\Api\Application\Credential\GoogleCredential = 972;
 }

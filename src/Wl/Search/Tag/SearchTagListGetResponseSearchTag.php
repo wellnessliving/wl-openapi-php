@@ -8,9 +8,9 @@ class SearchTagListGetResponseSearchTag
      * One of the {@link \WlSdk\RsBusinessCategorySid} constants.
      * This can be found in the business information found in [DataApi](/Wl/Business/Data.json).
      *
-     * @var \WlSdk\RsBusinessCategorySid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsBusinessCategorySid $id_business_category = null;
+    public ?int $id_business_category = null;
 
     /**
      * The key of the tag. The primary key in the table of tags.
@@ -28,7 +28,7 @@ class SearchTagListGetResponseSearchTag
 
     public function __construct(array $data)
     {
-        $this->id_business_category = isset($data['id_business_category']) ? \WlSdk\RsBusinessCategorySid::tryFrom((int)$data['id_business_category']) : null;
+        $this->id_business_category = isset($data['id_business_category']) ? (int)$data['id_business_category'] : null;
         $this->k_search_tag = isset($data['k_search_tag']) ? (string)$data['k_search_tag'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }

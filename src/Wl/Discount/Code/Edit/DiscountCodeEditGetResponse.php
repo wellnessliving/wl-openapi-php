@@ -67,16 +67,16 @@ class DiscountCodeEditGetResponse
      * Calendar periods for discount code duration from {@link \WlSdk\ADurationSid}. Zero if discount code is never
      * expires.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_duration = null;
+    public ?int $id_duration = null;
 
     /**
      * Type of the discount code duration from {@link \WlSdk\RsDurationTypeSid}.
      *
-     * @var \WlSdk\RsDurationTypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsDurationTypeSid $id_duration_type = null;
+    public ?int $id_duration_type = null;
 
     /**
      * `true` means discount code is active.
@@ -184,8 +184,8 @@ class DiscountCodeEditGetResponse
         $this->f_value = isset($data['f_value']) ? (string)$data['f_value'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
-        $this->id_duration = isset($data['id_duration']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_duration']) : null;
-        $this->id_duration_type = isset($data['id_duration_type']) ? \WlSdk\RsDurationTypeSid::tryFrom((int)$data['id_duration_type']) : null;
+        $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;
+        $this->id_duration_type = isset($data['id_duration_type']) ? (int)$data['id_duration_type'] : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
         $this->is_auto_renew = isset($data['is_auto_renew']) ? (bool)$data['is_auto_renew'] : null;
         $this->is_coupon = isset($data['is_coupon']) ? (bool)$data['is_coupon'] : null;

@@ -30,9 +30,9 @@ class ElementGetResponseItem
     /**
      * The Purchase Option view type. One of the {@link \WlSdk\Wl\Catalog\PurchaseOptionViewSid} constants.
      *
-     * @var \WlSdk\Wl\Catalog\PurchaseOptionViewSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Catalog\PurchaseOptionViewSid $id_purchase_option_view = null;
+    public ?int $id_purchase_option_view = null;
 
     /**
      * The discount code amount.
@@ -81,7 +81,7 @@ class ElementGetResponseItem
         $this->a_data = isset($data['a_data']) ? new ElementGetResponseItemData((array)$data['a_data']) : null;
         $this->a_image = isset($data['a_image']) ? new ElementGetResponseItemImage((array)$data['a_image']) : null;
         $this->a_tax = isset($data['a_tax']) ? new ElementGetResponseItemTax((array)$data['a_tax']) : null;
-        $this->id_purchase_option_view = isset($data['id_purchase_option_view']) ? \WlSdk\Wl\Catalog\PurchaseOptionViewSid::tryFrom((int)$data['id_purchase_option_view']) : null;
+        $this->id_purchase_option_view = isset($data['id_purchase_option_view']) ? (int)$data['id_purchase_option_view'] : null;
         $this->m_discount_code = isset($data['m_discount_code']) ? (string)$data['m_discount_code'] : null;
         $this->m_discount_login = isset($data['m_discount_login']) ? (string)$data['m_discount_login'] : null;
         $this->s_comment = isset($data['s_comment']) ? (string)$data['s_comment'] : null;

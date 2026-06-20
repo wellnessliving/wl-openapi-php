@@ -8,9 +8,9 @@ class ListBulkGetRequest
      * 
      * `0` if a directory filter isn't required.
      *
-     * @var \WlSdk\RsProjectSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsProjectSid $id_directory = null;
+    public ?int $id_directory = null;
 
     /**
      * A list of businesses. Business primary keys are serialized with JSON.
@@ -32,7 +32,7 @@ class ListBulkGetRequest
     {
         return array_filter(
             [
-            'id_directory' => $this->id_directory?->value,
+            'id_directory' => $this->id_directory,
             's_business' => $this->s_business,
             's_location' => $this->s_location,
             ],

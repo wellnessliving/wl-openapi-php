@@ -10,9 +10,12 @@ namespace WlSdk\Wl\Business\Account\Subscription\Postcard;
  * - 1 (`FREE`): None
  * - 2 (`PROFESSIONAL`): Professional
  */
-enum PostcardSubscriptionSid: int
+class PostcardSubscriptionSid
 {
-    case BASIC = 3;
-    case FREE = 1;
-    case PROFESSIONAL = 2;
+    /** Basic */
+    const BASIC = 3;
+    /** None */
+    const FREE = 1;
+    /** Professional */
+    const PROFESSIONAL = 2;
 }

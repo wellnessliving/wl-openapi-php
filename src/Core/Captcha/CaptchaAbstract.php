@@ -13,13 +13,20 @@ namespace WlSdk\Core\Captcha;
  * - 1508 (`Wl\Business\Search\BusinessSearchCaptcha`): Captcha for business search action.
  * - 1220 (`Wl\Profile\Setting\Delete\DeleteCaptcha`): Captcha for delete account.
  */
-enum CaptchaAbstract: int
+class CaptchaAbstract
 {
-    case Wl\Business\BusinessPaymentCaptcha = 1064;
-    case Wl\Lead\LeadCaptcha = 1072;
-    case Wl\Review\ReviewCaptcha = 1066;
-    case Wl\Profile\Edit\RegisterCaptcha = 1139;
-    case Wl\Profile\Edit\RegisterCompleteCaptcha = 1914;
-    case Wl\Business\Search\BusinessSearchCaptcha = 1508;
-    case Wl\Profile\Setting\Delete\DeleteCaptcha = 1220;
+    /** Captcha for payment action. */
+    const Wl\Business\BusinessPaymentCaptcha = 1064;
+    /** Captcha for "Lead Capture Widget". */
+    const Wl\Lead\LeadCaptcha = 1072;
+    /** Captcha for post review. */
+    const Wl\Review\ReviewCaptcha = 1066;
+    /** Captcha for user registration action. */
+    const Wl\Profile\Edit\RegisterCaptcha = 1139;
+    /** Captcha for user registration completion action. */
+    const Wl\Profile\Edit\RegisterCompleteCaptcha = 1914;
+    /** Captcha for business search action. */
+    const Wl\Business\Search\BusinessSearchCaptcha = 1508;
+    /** Captcha for delete account. */
+    const Wl\Profile\Setting\Delete\DeleteCaptcha = 1220;
 }

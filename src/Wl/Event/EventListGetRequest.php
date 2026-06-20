@@ -13,7 +13,7 @@ class EventListGetRequest
     /**
      * List of day the week applied by filter {@link \WlSdk\ADateWeekSid}.
      *
-     * @var \WlSdk\ADateWeekSid[]|null
+     * @var int[]|null
      */
     public ?array $a_day = null;
 
@@ -41,7 +41,7 @@ class EventListGetRequest
     /**
      * List of time day applied by filter {@link \WlSdk\RsScheduleTimeSid}.
      *
-     * @var \WlSdk\RsScheduleTimeSid[]|null
+     * @var int[]|null
      */
     public ?array $a_time = null;
 
@@ -82,9 +82,9 @@ class EventListGetRequest
      * * {@link \WlSdk\AFlagSid} to show only unavailable events.
      * * {@link \WlSdk\AFlagSid} to show all events (available and unavailable).
      *
-     * @var \WlSdk\AFlagSid|null
+     * @var int|null
      */
-    public ?\WlSdk\AFlagSid $id_flag = null;
+    public ?int $id_flag = null;
 
     /**
      * Determines whether the endpoint is used for backend mode.
@@ -187,7 +187,7 @@ class EventListGetRequest
             'a_virtual' => $this->a_virtual,
             'dl_end' => $this->dl_end,
             'dl_start' => $this->dl_start,
-            'id_flag' => $this->id_flag?->value,
+            'id_flag' => $this->id_flag,
             'is_backend' => $this->is_backend,
             'is_ignore_requirement' => $this->is_ignore_requirement,
             'is_tab_all' => $this->is_tab_all,

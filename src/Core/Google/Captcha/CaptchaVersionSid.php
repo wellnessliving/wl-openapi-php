@@ -8,8 +8,10 @@ namespace WlSdk\Core\Google\Captcha;
  * - 1 (`V2`): Version 2 (invisible).
  * - 2 (`V3`): Version 3.
  */
-enum CaptchaVersionSid: int
+class CaptchaVersionSid
 {
-    case V2 = 1;
-    case V3 = 2;
+    /** Version 2 (invisible). */
+    const V2 = 1;
+    /** Version 3. */
+    const V3 = 2;
 }

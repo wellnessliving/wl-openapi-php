@@ -85,52 +85,52 @@ class PromotionIndexGetResponsePromotion
      *     <li>{@link \WlSdk\ADurationSid}</li>
      * </ul>
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_limit_duration = null;
+    public ?int $id_limit_duration = null;
 
     /**
      * The type of periods for the duration type "Period".
      * For example, if the duration of the Purchase Option is 12 months, this field will be the ID of the month.
      * See all the possible options here: {@link \WlSdk\ADurationSid}.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_duration = null;
+    public ?int $id_duration = null;
 
     /**
      * The type of the duration. This can be "Without End", "Expires on a certain date", "Period".
      * See more information here: {@link \WlSdk\RsDurationTypeSid}.
      *
-     * @var \WlSdk\RsDurationTypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsDurationTypeSid $id_duration_type = null;
+    public ?int $id_duration_type = null;
 
     /**
      * The type of the Purchase Option. The `id_program` relates to only one `id_program_type` and one
      * `id_program_category`.
      * See more information here: {@link \WlSdk\RsProgramSid}.
      *
-     * @var \WlSdk\RsProgramSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsProgramSid $id_program = null;
+    public ?int $id_program = null;
 
     /**
      * The category of the program for promotions. The `id_program_category` relates to more than one
      * `id_program`.
      * See more information here: {@link \WlSdk\RsProgramCategorySid}.
      *
-     * @var \WlSdk\RsProgramCategorySid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsProgramCategorySid $id_program_category = null;
+    public ?int $id_program_category = null;
 
     /**
      * The ID of the promotion program type. The `id_program_type` relates to more than one `id_program`.
      * See more information here: {@link \WlSdk\RsProgramTypeSid}.
      *
-     * @var \WlSdk\RsProgramTypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsProgramTypeSid $id_program_type = null;
+    public ?int $id_program_type = null;
 
     /**
      * If `true`, the pricing option can be sold only by direct link. This means it shouldn't be shown in the store
@@ -207,12 +207,12 @@ class PromotionIndexGetResponsePromotion
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
         $this->i_limit_duration = isset($data['i_limit_duration']) ? (int)$data['i_limit_duration'] : null;
-        $this->id_limit_duration = isset($data['id_limit_duration']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_limit_duration']) : null;
-        $this->id_duration = isset($data['id_duration']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_duration']) : null;
-        $this->id_duration_type = isset($data['id_duration_type']) ? \WlSdk\RsDurationTypeSid::tryFrom((int)$data['id_duration_type']) : null;
-        $this->id_program = isset($data['id_program']) ? \WlSdk\RsProgramSid::tryFrom((int)$data['id_program']) : null;
-        $this->id_program_category = isset($data['id_program_category']) ? \WlSdk\RsProgramCategorySid::tryFrom((int)$data['id_program_category']) : null;
-        $this->id_program_type = isset($data['id_program_type']) ? \WlSdk\RsProgramTypeSid::tryFrom((int)$data['id_program_type']) : null;
+        $this->id_limit_duration = isset($data['id_limit_duration']) ? (int)$data['id_limit_duration'] : null;
+        $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;
+        $this->id_duration_type = isset($data['id_duration_type']) ? (int)$data['id_duration_type'] : null;
+        $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
+        $this->id_program_category = isset($data['id_program_category']) ? (int)$data['id_program_category'] : null;
+        $this->id_program_type = isset($data['id_program_type']) ? (int)$data['id_program_type'] : null;
         $this->is_direct_buy_only = isset($data['is_direct_buy_only']) ? (bool)$data['is_direct_buy_only'] : null;
         $this->is_introductory = isset($data['is_introductory']) ? (bool)$data['is_introductory'] : null;
         $this->is_online = isset($data['is_online']) ? (bool)$data['is_online'] : null;

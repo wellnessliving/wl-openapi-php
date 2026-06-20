@@ -14,16 +14,16 @@ class PaymentPostPostRequest
     /**
      * The key of source mode. A constant of {@link \WlSdk\Wl\Mode\ModeSid}.
      *
-     * @var \WlSdk\Wl\Mode\ModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
+    public ?int $id_mode = null;
 
     /**
      * The purchase item ID. A constant of {@link \WlSdk\RsPurchaseItemSid}.
      *
-     * @var \WlSdk\RsPurchaseItemSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
+    public ?int $id_purchase_item = null;
 
     /**
      * If `true`, the client is a walk-in. Otherwise, this will be `false`.
@@ -105,8 +105,8 @@ class PaymentPostPostRequest
         return array_filter(
             [
             'a_uid' => $this->a_uid,
-            'id_mode' => $this->id_mode?->value,
-            'id_purchase_item' => $this->id_purchase_item?->value,
+            'id_mode' => $this->id_mode,
+            'id_purchase_item' => $this->id_purchase_item,
             'is_walk_in' => $this->is_walk_in,
             'k_id' => $this->k_id,
             'k_location' => $this->k_location,

@@ -75,17 +75,17 @@ class ElementGetResponse
      * 
      * This will be `null` is no special icon for this activity.
      *
-     * @var \WlSdk\Wl\Design\IconSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Design\IconSid $id_icon = null;
+    public ?int $id_icon = null;
 
     /**
      * The ID of the activity item returned by this endpoint. One of {@link \WlSdk\RsLoginActivityTypeSid}
      * constants.
      *
-     * @var \WlSdk\RsLoginActivityTypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsLoginActivityTypeSid $id_type = null;
+    public ?int $id_type = null;
 
     /**
      * Object ID, for example, class period ID for books and visits.
@@ -119,8 +119,8 @@ class ElementGetResponse
         $this->i_credit_score = isset($data['i_credit_score']) ? (int)$data['i_credit_score'] : null;
         $this->i_score = isset($data['i_score']) ? (int)$data['i_score'] : null;
         $this->i_spend = isset($data['i_spend']) ? (int)$data['i_spend'] : null;
-        $this->id_icon = isset($data['id_icon']) ? \WlSdk\Wl\Design\IconSid::tryFrom((int)$data['id_icon']) : null;
-        $this->id_type = isset($data['id_type']) ? \WlSdk\RsLoginActivityTypeSid::tryFrom((int)$data['id_type']) : null;
+        $this->id_icon = isset($data['id_icon']) ? (int)$data['id_icon'] : null;
+        $this->id_type = isset($data['id_type']) ? (int)$data['id_type'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->s_message = isset($data['s_message']) ? (string)$data['s_message'] : null;
         $this->url_link = isset($data['url_link']) ? (string)$data['url_link'] : null;

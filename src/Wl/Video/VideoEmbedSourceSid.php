@@ -12,10 +12,14 @@ namespace WlSdk\Wl\Video;
  * - 3 (`WISTIA`): Wistia.
  * - 1 (`YOUTUBE`): YouTube.
  */
-enum VideoEmbedSourceSid: int
+class VideoEmbedSourceSid
 {
-    case LES_MILLS = 4;
-    case VIMEO = 2;
-    case WISTIA = 3;
-    case YOUTUBE = 1;
+    /** Les Mills. */
+    const LES_MILLS = 4;
+    /** Vimeo. */
+    const VIMEO = 2;
+    /** Wistia. */
+    const WISTIA = 3;
+    /** YouTube. */
+    const YOUTUBE = 1;
 }

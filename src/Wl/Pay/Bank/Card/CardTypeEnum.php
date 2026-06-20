@@ -10,8 +10,10 @@ namespace WlSdk\Wl\Pay\Bank\Card;
  * - 1 (`CREDIT`): Credit Card.
  * - 2 (`DEBIT`): Debit Card.
  */
-enum CardTypeEnum: int
+class CardTypeEnum
 {
-    case CREDIT = 1;
-    case DEBIT = 2;
+    /** Credit Card. */
+    const CREDIT = 1;
+    /** Debit Card. */
+    const DEBIT = 2;
 }

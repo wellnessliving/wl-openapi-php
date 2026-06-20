@@ -8,8 +8,10 @@ namespace WlSdk\Wl\Business\Policy;
  * - 1 (`CHARGE`): The client should be to pay a penalty.
  * - 2 (`FLAG_ACCOUNT`): Mark account as has "Late cancel" and "No shows" sessions.
  */
-enum ChargeSid: int
+class ChargeSid
 {
-    case CHARGE = 1;
-    case FLAG_ACCOUNT = 2;
+    /** The client should be to pay a penalty. */
+    const CHARGE = 1;
+    /** Mark account as has "Late cancel" and "No shows" sessions. */
+    const FLAG_ACCOUNT = 2;
 }

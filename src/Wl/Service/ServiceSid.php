@@ -14,12 +14,18 @@ namespace WlSdk\Wl\Service;
  * - 3 (`EVENT`): Event.
  * - 5 (`GYM`): Gym visits.
  */
-enum ServiceSid: int
+class ServiceSid
 {
-    case APPOINTMENT = 1;
-    case BELT = 6;
-    case BOOKABLE_ASSET = 4;
-    case CLASSES = 2;
-    case EVENT = 3;
-    case GYM = 5;
+    /** Appointment. */
+    const APPOINTMENT = 1;
+    /** Belts. */
+    const BELT = 6;
+    /** Bookable asset. */
+    const BOOKABLE_ASSET = 4;
+    /** Class. */
+    const CLASSES = 2;
+    /** Event. */
+    const EVENT = 3;
+    /** Gym visits. */
+    const GYM = 5;
 }

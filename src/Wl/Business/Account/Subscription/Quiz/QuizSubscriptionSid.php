@@ -11,10 +11,14 @@ namespace WlSdk\Wl\Business\Account\Subscription\Quiz;
  * - 2 (`PROFESSIONAL`): Professional
  * - 4 (`STARTER`): Starter
  */
-enum QuizSubscriptionSid: int
+class QuizSubscriptionSid
 {
-    case BUSINESS = 3;
-    case FREE = 1;
-    case PROFESSIONAL = 2;
-    case STARTER = 4;
+    /** Business */
+    const BUSINESS = 3;
+    /** None */
+    const FREE = 1;
+    /** Professional */
+    const PROFESSIONAL = 2;
+    /** Starter */
+    const STARTER = 4;
 }

@@ -13,13 +13,20 @@ namespace WlSdk;
  * - 2 (`TUESDAY`): Tuesday.
  * - 3 (`WEDNESDAY`): Wednesday.
  */
-enum ADateWeekSid: int
+class ADateWeekSid
 {
-    case FRIDAY = 5;
-    case MONDAY = 1;
-    case SATURDAY = 6;
-    case SUNDAY = 7;
-    case THURSDAY = 4;
-    case TUESDAY = 2;
-    case WEDNESDAY = 3;
+    /** Friday. */
+    const FRIDAY = 5;
+    /** Monday. */
+    const MONDAY = 1;
+    /** Saturday. */
+    const SATURDAY = 6;
+    /** Sunday. */
+    const SUNDAY = 7;
+    /** Thursday. */
+    const THURSDAY = 4;
+    /** Tuesday. */
+    const TUESDAY = 2;
+    /** Wednesday. */
+    const WEDNESDAY = 3;
 }

@@ -9,8 +9,10 @@ namespace WlSdk\Wl\Business\Account\Subscription\Api;
  * - 1 (`FREE`): None
  * - 2 (`PREMIUM`): Premium
  */
-enum ApiSubscriptionSid: int
+class ApiSubscriptionSid
 {
-    case FREE = 1;
-    case PREMIUM = 2;
+    /** None */
+    const FREE = 1;
+    /** Premium */
+    const PREMIUM = 2;
 }

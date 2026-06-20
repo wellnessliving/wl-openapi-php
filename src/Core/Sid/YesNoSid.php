@@ -8,8 +8,10 @@ namespace WlSdk\Core\Sid;
  * - 2 (`NO`): The answer is "no".
  * - 1 (`YES`): The answer is "yes".
  */
-enum YesNoSid: int
+class YesNoSid
 {
-    case NO = 2;
-    case YES = 1;
+    /** The answer is "no". */
+    const NO = 2;
+    /** The answer is "yes". */
+    const YES = 1;
 }

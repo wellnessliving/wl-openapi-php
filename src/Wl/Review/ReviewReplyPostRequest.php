@@ -8,9 +8,9 @@ class ReviewReplyPostRequest
      * 
      * `null` until passed to the api when admin replies to the review.
      *
-     * @var \WlSdk\RsReviewStatusSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsReviewStatusSid $id_review_status = null;
+    public ?int $id_review_status = null;
 
     /**
      * Key of the business to which the review belongs.
@@ -42,7 +42,7 @@ class ReviewReplyPostRequest
     {
         return array_filter(
             [
-            'id_review_status' => $this->id_review_status?->value,
+            'id_review_status' => $this->id_review_status,
             'k_business' => $this->k_business,
             'k_review' => $this->k_review,
             'text_reply' => $this->text_reply,

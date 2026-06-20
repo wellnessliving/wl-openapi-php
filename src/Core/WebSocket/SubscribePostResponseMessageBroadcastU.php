@@ -9,18 +9,18 @@ class SubscribePostResponseMessageBroadcastU
      * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
      * is equal {@link \WlSdk\Thoth\PayProcessor\Nuvei\Code\CSResponseSid}.
      *
-     * @var \WlSdk\ACardSystemSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ACardSystemSid $id_card_system = null;
+    public ?int $id_card_system = null;
 
     /**
      * Card type ID.
      * 
      * `null` If were unable to determine the card type. See `id_card_type`.
      *
-     * @var \WlSdk\Wl\Pay\Bank\Card\CardTypeEnum|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Pay\Bank\Card\CardTypeEnum $id_card_type = null;
+    public ?int $id_card_type = null;
 
     /**
      * Transaction exception ID.
@@ -36,9 +36,9 @@ class SubscribePostResponseMessageBroadcastU
      * 
      * `null` if not set yet.
      *
-     * @var \WlSdk\Thoth\PayProcessor\Nuvei\Code\CSResponseSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Thoth\PayProcessor\Nuvei\Code\CSResponseSid $id_payment_status = null;
+    public ?int $id_payment_status = null;
 
     /**
      * Tip amount entered by the customer at the terminal.
@@ -80,10 +80,10 @@ class SubscribePostResponseMessageBroadcastU
 
     public function __construct(array $data)
     {
-        $this->id_card_system = isset($data['id_card_system']) ? \WlSdk\ACardSystemSid::tryFrom((int)$data['id_card_system']) : null;
-        $this->id_card_type = isset($data['id_card_type']) ? \WlSdk\Wl\Pay\Bank\Card\CardTypeEnum::tryFrom((int)$data['id_card_type']) : null;
+        $this->id_card_system = isset($data['id_card_system']) ? (int)$data['id_card_system'] : null;
+        $this->id_card_type = isset($data['id_card_type']) ? (int)$data['id_card_type'] : null;
         $this->id_pay_exception = isset($data['id_pay_exception']) ? (int)$data['id_pay_exception'] : null;
-        $this->id_payment_status = isset($data['id_payment_status']) ? \WlSdk\Thoth\PayProcessor\Nuvei\Code\CSResponseSid::tryFrom((int)$data['id_payment_status']) : null;
+        $this->id_payment_status = isset($data['id_payment_status']) ? (int)$data['id_payment_status'] : null;
         $this->m_tip = isset($data['m_tip']) ? (string)$data['m_tip'] : null;
         $this->s_last4 = isset($data['s_last4']) ? (string)$data['s_last4'] : null;
         $this->text_card_holder = isset($data['text_card_holder']) ? (string)$data['text_card_holder'] : null;

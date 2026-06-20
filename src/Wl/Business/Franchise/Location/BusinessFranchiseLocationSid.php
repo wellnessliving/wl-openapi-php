@@ -11,9 +11,12 @@ namespace WlSdk\Wl\Business\Franchise\Location;
  * - 2 (`REGION_NO`): Locations without the region.
  * - 3 (`REGION_YES`): Location with the region.
  */
-enum BusinessFranchiseLocationSid: int
+class BusinessFranchiseLocationSid
 {
-    case ALL = 1;
-    case REGION_NO = 2;
-    case REGION_YES = 3;
+    /** All locations. */
+    const ALL = 1;
+    /** Locations without the region. */
+    const REGION_NO = 2;
+    /** Location with the region. */
+    const REGION_YES = 3;
 }

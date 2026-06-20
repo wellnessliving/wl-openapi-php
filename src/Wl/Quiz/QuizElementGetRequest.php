@@ -43,7 +43,7 @@ class QuizElementGetRequest
      * 
      * Empty in case when purchase item not specified or form loaded from direct link.
      *
-     * @var \WlSdk\RsPurchaseItemSid|null
+     * @var int|null
      */
     public $json_purchase_item = null;
 

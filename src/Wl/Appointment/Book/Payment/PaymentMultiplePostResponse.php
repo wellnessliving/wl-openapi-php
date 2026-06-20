@@ -16,7 +16,7 @@ class PaymentMultiplePostResponse
     /**
      * The payment type for the appointment. One of the {@link \WlSdk\RsAppointmentPaySid} constants.
      *
-     * @var \WlSdk\RsAppointmentPaySid[]|null
+     * @var int[]|null
      */
     public ?array $a_pay = null;
 
@@ -40,7 +40,7 @@ class PaymentMultiplePostResponse
     public function __construct(array $data)
     {
         $this->a_login_prize = isset($data['a_login_prize']) ? (array)$data['a_login_prize'] : null;
-        $this->a_pay = isset($data['a_pay']) ? array_map(static fn($v) => \WlSdk\RsAppointmentPaySid::tryFrom((int)$v), (array)$data['a_pay']) : null;
+        $this->a_pay = isset($data['a_pay']) ? (array)$data['a_pay'] : null;
         $this->a_purchase_item = isset($data['a_purchase_item']) ? (array)$data['a_purchase_item'] : null;
         $this->k_login_activity_purchase = isset($data['k_login_activity_purchase']) ? (string)$data['k_login_activity_purchase'] : null;
     }

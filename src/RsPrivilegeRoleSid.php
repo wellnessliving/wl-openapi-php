@@ -12,10 +12,14 @@ namespace WlSdk;
  * - 3 (`INSTRUCTOR`): Staff role instructor.
  * - 2 (`LOCATION_OWNER`): Staff role location owner.
  */
-enum RsPrivilegeRoleSid: int
+class RsPrivilegeRoleSid
 {
-    case BUSINESS_OWNER = 1;
-    case FRONT_DESK = 4;
-    case INSTRUCTOR = 3;
-    case LOCATION_OWNER = 2;
+    /** Staff role business owner. */
+    const BUSINESS_OWNER = 1;
+    /** Staff role front desk. */
+    const FRONT_DESK = 4;
+    /** Staff role instructor. */
+    const INSTRUCTOR = 3;
+    /** Staff role location owner. */
+    const LOCATION_OWNER = 2;
 }

@@ -12,10 +12,14 @@ namespace WlSdk\Wl\Video\Catalog\Filter\Sort;
  * - 2 (`RECENT`): Sort by most recently added.
  * - 3 (`VIEW`): Sorted by number of views.
  */
-enum FilterSortSid: int
+class FilterSortSid
 {
-    case ALPHABET = 1;
-    case CUSTOM = 4;
-    case RECENT = 2;
-    case VIEW = 3;
+    /** Sort alphabetically. */
+    const ALPHABET = 1;
+    /** Sort by custom. */
+    const CUSTOM = 4;
+    /** Sort by most recently added. */
+    const RECENT = 2;
+    /** Sorted by number of views. */
+    const VIEW = 3;
 }

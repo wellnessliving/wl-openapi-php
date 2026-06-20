@@ -20,13 +20,13 @@ class SubscribePostResponseMessageBroadcastA
      * 
      * One of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid} constants.
      *
-     * @var \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid $id_report_status = null;
+    public ?int $id_report_status = null;
 
     public function __construct(array $data)
     {
         $this->i_cas_change = isset($data['i_cas_change']) ? (int)$data['i_cas_change'] : null;
-        $this->id_report_status = isset($data['id_report_status']) ? \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid::tryFrom((int)$data['id_report_status']) : null;
+        $this->id_report_status = isset($data['id_report_status']) ? (int)$data['id_report_status'] : null;
     }
 }

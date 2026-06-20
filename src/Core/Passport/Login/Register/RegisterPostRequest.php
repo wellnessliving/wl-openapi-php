@@ -16,9 +16,9 @@ class RegisterPostRequest
      * One of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * `null` if not initialized or the api is not called in the Wellnessliving project.
      *
-     * @var \WlSdk\Wl\Mode\ModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
+    public ?int $id_mode = null;
 
     /**
      * The application ID. This is a business specific ID required to register clients.
@@ -69,7 +69,7 @@ class RegisterPostRequest
         return array_filter(
             [
             'a_data' => $this->a_data,
-            'id_mode' => $this->id_mode?->value,
+            'id_mode' => $this->id_mode,
             's_application' => $this->s_application,
             's_mail' => $this->s_mail,
             's_name_first' => $this->s_name_first,

@@ -46,9 +46,9 @@ class ConvertGetResponse
     /**
      * The conversion ID. One of the {@link \WlSdk\Wl\Promotion\Convert\PromotionConvertSid} constants.
      *
-     * @var \WlSdk\Wl\Promotion\Convert\PromotionConvertSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Promotion\Convert\PromotionConvertSid $id_convert = null;
+    public ?int $id_convert = null;
 
     /**
      * When conversion should be done. One of the {@link \WlSdk\Wl\Login\Promotion\Convert\ConvertWhenSid}
@@ -56,9 +56,9 @@ class ConvertGetResponse
      * 
      * `null` if it's not set yet.
      *
-     * @var \WlSdk\Wl\Login\Promotion\Convert\ConvertWhenSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Login\Promotion\Convert\ConvertWhenSid $id_convert_when = null;
+    public ?int $id_convert_when = null;
 
     /**
      * Determines whether the conversion request is new or editing an existing conversion.
@@ -126,8 +126,8 @@ class ConvertGetResponse
         $this->dl_convert_min = isset($data['dl_convert_min']) ? (string)$data['dl_convert_min'] : null;
         $this->dl_hold_end = isset($data['dl_hold_end']) ? (string)$data['dl_hold_end'] : null;
         $this->dl_hold_start = isset($data['dl_hold_start']) ? (string)$data['dl_hold_start'] : null;
-        $this->id_convert = isset($data['id_convert']) ? \WlSdk\Wl\Promotion\Convert\PromotionConvertSid::tryFrom((int)$data['id_convert']) : null;
-        $this->id_convert_when = isset($data['id_convert_when']) ? \WlSdk\Wl\Login\Promotion\Convert\ConvertWhenSid::tryFrom((int)$data['id_convert_when']) : null;
+        $this->id_convert = isset($data['id_convert']) ? (int)$data['id_convert'] : null;
+        $this->id_convert_when = isset($data['id_convert_when']) ? (int)$data['id_convert_when'] : null;
         $this->is_edit = isset($data['is_edit']) ? (bool)$data['is_edit'] : null;
         $this->is_renew = isset($data['is_renew']) ? (bool)$data['is_renew'] : null;
         $this->s_date_convert = isset($data['s_date_convert']) ? (string)$data['s_date_convert'] : null;

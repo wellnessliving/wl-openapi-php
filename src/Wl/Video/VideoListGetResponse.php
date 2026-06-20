@@ -29,26 +29,26 @@ class VideoListGetResponse
      * 
      * `null` if video is uploaded.
      *
-     * @var \WlSdk\Wl\Video\VideoEmbedSourceSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Video\VideoEmbedSourceSid $id_embed_source = null;
+    public ?int $id_embed_source = null;
 
     /**
      * Sort order ID. One of {@link \WlSdk\Core\Sid\SortOrderSid} constants. `null` or 0 if order is undefined and
      * depends on sort order.
      *
-     * @var \WlSdk\Core\Sid\SortOrderSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Core\Sid\SortOrderSid $id_order = null;
+    public ?int $id_order = null;
 
     /**
      * The sorting type.
      * A constant from {@link \WlSdk\Wl\Video\Catalog\Filter\Sort\FilterSortSid}. `null` or 0 if sort is undefined
      * and custom sort order is used.
      *
-     * @var \WlSdk\Wl\Video\Catalog\Filter\Sort\FilterSortSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Video\Catalog\Filter\Sort\FilterSortSid $id_sort = null;
+    public ?int $id_sort = null;
 
     /**
      * Video.js media player initialization parameters in JSON format.
@@ -71,9 +71,9 @@ class VideoListGetResponse
     {
         $this->a_list = isset($data['a_list']) ? array_map(static fn($item) => new VideoListGetResponseList((array)$item), (array)$data['a_list']) : null;
         $this->a_page = isset($data['a_page']) ? new VideoListGetResponsePage((array)$data['a_page']) : null;
-        $this->id_embed_source = isset($data['id_embed_source']) ? \WlSdk\Wl\Video\VideoEmbedSourceSid::tryFrom((int)$data['id_embed_source']) : null;
-        $this->id_order = isset($data['id_order']) ? \WlSdk\Core\Sid\SortOrderSid::tryFrom((int)$data['id_order']) : null;
-        $this->id_sort = isset($data['id_sort']) ? \WlSdk\Wl\Video\Catalog\Filter\Sort\FilterSortSid::tryFrom((int)$data['id_sort']) : null;
+        $this->id_embed_source = isset($data['id_embed_source']) ? (int)$data['id_embed_source'] : null;
+        $this->id_order = isset($data['id_order']) ? (int)$data['id_order'] : null;
+        $this->id_sort = isset($data['id_sort']) ? (int)$data['id_sort'] : null;
         $this->json_setup = isset($data['json_setup']) ? (string)$data['json_setup'] : null;
     }
 }

@@ -300,89 +300,172 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 1474 (`Wl\Visit\Franchise\Location\Cross\Summary\VisitFranchiseeLocationCrossDetailSummaryReport`): Franchisee
  * "Cross-Location Visit Summary" report.
  */
-enum ReportGeneratorReportAbstract: int
+class ReportGeneratorReportAbstract
 {
-    case Thoth\ProgressLog\Report\ProgressLogClientReport = 1854;
-    case Thoth\ProgressLog\Report\ProgressLogListReport = 1849;
-    case Thoth\Report\SalesReport\Transaction\TransactionAllPaymentReport = 799;
-    case Thoth\Report\SalesReport\Transaction\TransactionAllItemReport = 739;
-    case Thoth\Report\SalesReport\Transaction\TransactionFailReport = 1350;
-    case Thoth\Report\SalesReport\Client\TransactionAllPaymentClientReport = 1255;
-    case Thoth\Report\SalesReport\Client\TransactionAllPaymentStaffClientReport = 1321;
-    case Thoth\Report\SalesReport\Client\TransactionAllItemStaffClientReport = 1324;
-    case Thoth\Report\SalesReport\Product\ProductCostItemReport = 900;
-    case Thoth\MarketingCampaigns\Report\CampaignList\CampaignListReport = 1763;
-    case Thoth\MarketingCampaigns\Report\CampaignDetail\CampaignDetailReport = 1777;
-    case Thoth\ReportCore\Generator\Example\ExampleReport = 919;
-    case Thoth\ReportCore\QueryEngine\Report\ReportQueryReport = 2226;
-    case Wl\Appointment\Report\BookingFlowReport = 1050;
-    case Wl\Visit\Report\VisitLifetimeReport = 1740;
-    case Wl\Visit\Report\VisitBuySummaryReport = 1556;
-    case Wl\Collector\Report\TransactionReport = 1290;
-    case Wl\Collector\Report\DebtReport = 1271;
-    case Wl\Collector\Report\TransactionCollectorReport = 1297;
-    case Wl\Lead\Report\LeadManagementReport = 1791;
-    case Wl\Login\Account\LoginAccountReport = 1358;
-    case Wl\Purchase\Reconcile\ReconcileReport = 1713;
-    case Wl\Purchase\Tip\PurchaseTipReport = 1670;
-    case Wl\Member\Report\MemberReport = 1287;
-    case Wl\Member\Report\MemberAllReport = 689;
-    case Thoth\Report\SalesReport\Transaction\Batch\BatchReport = 1283;
-    case Thoth\Report\SalesReport\Transaction\Cash\SummaryReport = 1572;
-    case Thoth\Report\SalesReport\Client\SummaryReport\SummaryReport = 1295;
-    case Thoth\Report\SalesReport\Client\AccountReport\AccountHistoryReport = 1908;
-    case Thoth\Report\SalesReport\Client\ClientStatementHistoryReport\ClientStatementHistoryReport = 2223;
-    case Thoth\Report\SalesReport\PayMethod\SummaryReport\SummaryReport = 1398;
-    case Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport = 1448;
-    case Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReport = 1498;
-    case Thoth\Report\SalesReport\Tag\Summary\ListReport = 1268;
-    case Thoth\Report\SalesReport\Tag\Detail\ListRevenueReport = 1262;
-    case Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryPaymentReport = 1042;
-    case Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryReport = 1031;
-    case Thoth\Report\SalesReport\Integration\Autymate\AutymateTransactionAllItemReport = 1216;
-    case Thoth\Report\SalesReport\PurchaseOption\Summary\SummaryReport = 1264;
-    case Thoth\WlPay\Transaction\StripeCom\PayoutReconciliation\PayoutReconciliationReport = 1254;
-    case Wl\Visit\Remain\Report\VisitRemainReport = 1628;
-    case Wl\Visit\Revenue\Report\VisitRevenueServiceTypeReport = 1602;
-    case Wl\Visit\Revenue\Report\VisitRevenueServiceReport = 1603;
-    case Wl\Visit\Revenue\Report\VisitRevenueDetailReport = 1608;
-    case Wl\Franchise\Fee\Report\FeeLocationReport = 1705;
-    case Wl\Lead\Franchise\Report\LeadByLocationReport = 1451;
-    case Wl\Login\Rank\Report\LoginRankReport = 1619;
-    case Wl\Login\Franchise\Detail\DetailListReport = 1504;
-    case Wl\Login\Franchise\Coupon\LoginFranchiseCouponReport = 1385;
-    case Wl\Login\Franchise\Status\StatusListReport = 1450;
-    case Wl\Mail\History\Report\MailHistoryReport = 1697;
-    case Wl\Purchase\Tip\FilterLimiter\FilterLimiterReport = 1684;
-    case Wl\Purchase\Tip\Sum\PurchaseTipSumReport = 1666;
-    case Wl\Sms\History\Report\SmsHistoryReport = 2193;
-    case Wl\Staff\Pay\Report\StaffPayDetailReport = 1744;
-    case Wl\Staff\Pay\Report\StaffPaySummaryReport = 1751;
-    case Wl\Staff\Pay\Report\StaffPayDetailWithUpcomingReport = 1971;
-    case Wl\Attendance\Report\Appointment\SummaryReport = 1523;
-    case Wl\Attendance\Report\Appointment\DetailReport = 1522;
-    case Thoth\Report\SalesReport\Transaction\Batch\Summary\ApprovedReport = 1557;
-    case Thoth\Report\SalesReport\Transaction\Batch\Summary\SettledReport = 1560;
-    case Thoth\Report\SalesReport\Closeout\Report\PurchaseOption\UsageReport = 1580;
-    case Thoth\Report\SalesReport\Franchise\Location\Detail\PurchaseFranchiseLocationReport = 961;
-    case Thoth\Report\SalesReport\Franchise\Location\Detail\PurchaseFranchiseLocationPaymentReport = 1034;
-    case Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryPaymentReport = 1041;
-    case Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryReport = 1025;
-    case Thoth\Report\SalesReport\Franchise\Sale\Compare\CompareListReport = 1274;
-    case Wl\Visit\Location\Cross\Detail\VisitLocationCrossDetailReport = 1456;
-    case Wl\Visit\Location\Cross\Summary\VisitLocationCrossDetailSummaryReport = 1480;
-    case Wl\Business\Account\Revenue\Processing\RevenueProcessingReport = 1161;
-    case Wl\Business\Franchise\Location\Asset\LocationAssetReport = 2237;
-    case Wl\Business\Franchise\Hours\ReportGeneration\BusinessHoursReport = 1455;
-    case Wl\Login\Promotion\GuestPass\Report\GuestPassHistoryReport = 2218;
-    case Wl\Purchase\Item\Report\FilterLimiter\FilterLimiterReport = 930;
-    case Wl\Purchase\Item\Report\FilterLimiterClient\FilterLimiterReport = 1261;
-    case Wl\Staff\Pay\Report\StaffMemberLimiter\FilterLimiterReport = 1748;
-    case Wl\Contact\Member\History\Report\ContactHistoryReport = 1668;
-    case Wl\Contact\Member\History\Report\ContactHistoryClientReport = 1692;
-    case Wl\Shop\Product\Inventory\Report\InventoryReport = 1727;
-    case Wl\Visit\Franchise\Location\Cross\Detail\VisitFranchiseLocationCrossDetailReport = 1472;
-    case Wl\Visit\Franchise\Location\Cross\Detail\VisitFranchiseeLocationCrossDetailReport = 1470;
-    case Wl\Visit\Franchise\Location\Cross\Summary\VisitFranchiseLocationCrossDetailSummaryReport = 1477;
-    case Wl\Visit\Franchise\Location\Cross\Summary\VisitFranchiseeLocationCrossDetailSummaryReport = 1474;
+    /** "Transformation Log" report outside of client's profile, listing the latest Progress Log entry (within a date range) */
+    const Thoth\ProgressLog\Report\ProgressLogClientReport = 1854;
+    /** Progress log list report. */
+    const Thoth\ProgressLog\Report\ProgressLogListReport = 1849;
+    /** "All Transactions" report. */
+    const Thoth\Report\SalesReport\Transaction\TransactionAllPaymentReport = 799;
+    /** "All Transactions" report / "All Sales" report (item view). */
+    const Thoth\Report\SalesReport\Transaction\TransactionAllItemReport = 739;
+    /** "Failed Transactions" report. */
+    const Thoth\Report\SalesReport\Transaction\TransactionFailReport = 1350;
+    /** Report about user's transactions. */
+    const Thoth\Report\SalesReport\Client\TransactionAllPaymentClientReport = 1255;
+    /** Report about client's transactions. */
+    const Thoth\Report\SalesReport\Client\TransactionAllPaymentStaffClientReport = 1321;
+    /** Client's 'Purchases' report. */
+    const Thoth\Report\SalesReport\Client\TransactionAllItemStaffClientReport = 1324;
+    /** "Cost of Goods Sold" report. */
+    const Thoth\Report\SalesReport\Product\ProductCostItemReport = 900;
+    /** "Marketing Campaigns" list report. */
+    const Thoth\MarketingCampaigns\Report\CampaignList\CampaignListReport = 1763;
+    /** "Marketing Campaigns" detail report. */
+    const Thoth\MarketingCampaigns\Report\CampaignDetail\CampaignDetailReport = 1777;
+    /** Example report used to demonstrate report creation in step by step guide. */
+    const Thoth\ReportCore\Generator\Example\ExampleReport = 919;
+    /** Executes a registry-stored SQL query and exposes the result as a report. */
+    const Thoth\ReportCore\QueryEngine\Report\ReportQueryReport = 2226;
+    /** Client Appointment Booking Flow report. */
+    const Wl\Appointment\Report\BookingFlowReport = 1050;
+    /** Controls list for "Lifetime Value & Visit Milestones" report. */
+    const Wl\Visit\Report\VisitLifetimeReport = 1740;
+    /** Controls list report for attendance. */
+    const Wl\Visit\Report\VisitBuySummaryReport = 1556;
+    /** Report with list of all debt payments. */
+    const Wl\Collector\Report\TransactionReport = 1290;
+    /** Report with list of debts that should be sent to third party service to collect a debt by force. */
+    const Wl\Collector\Report\DebtReport = 1271;
+    /** Report with list of payments that were performed via collections service. */
+    const Wl\Collector\Report\TransactionCollectorReport = 1297;
+    /** "Lead Management Report". */
+    const Wl\Lead\Report\LeadManagementReport = 1791;
+    /** "Balance Due Report". */
+    const Wl\Login\Account\LoginAccountReport = 1358;
+    /** External reconciliation report for franchisee. */
+    const Wl\Purchase\Reconcile\ReconcileReport = 1713;
+    /** Report to show details of the earned tips by staff members who takes tips. */
+    const Wl\Purchase\Tip\PurchaseTipReport = 1670;
+    /** "All clients" report generator (this report used for the "Clients" link accessed from the top nav or WL menu). */
+    const Wl\Member\Report\MemberReport = 1287;
+    /** "All clients" report generator. */
+    const Wl\Member\Report\MemberAllReport = 689;
+    /** "Batch Report". */
+    const Thoth\Report\SalesReport\Transaction\Batch\BatchReport = 1283;
+    /** "Cash Reconciliation Summary" report. */
+    const Thoth\Report\SalesReport\Transaction\Cash\SummaryReport = 1572;
+    /** "Sales Summary by Client" report. */
+    const Thoth\Report\SalesReport\Client\SummaryReport\SummaryReport = 1295;
+    /** "Account Balance History" report. */
+    const Thoth\Report\SalesReport\Client\AccountReport\AccountHistoryReport = 1908;
+    /** "Statement History" report. */
+    const Thoth\Report\SalesReport\Client\ClientStatementHistoryReport\ClientStatementHistoryReport = 2223;
+    /** "Sales Summary by Payment Method" report. */
+    const Thoth\Report\SalesReport\PayMethod\SummaryReport\SummaryReport = 1398;
+    /** "Enterprise Reports -&gt; Memberships Details by Location" report. Detailed list of all memberships in the franchise. */
+    const Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport = 1448;
+    /** Franchise "Memberships Summary by Location" report. */
+    const Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReport = 1498;
+    /** "Sales Summary by Revenue Category" report. */
+    const Thoth\Report\SalesReport\Tag\Summary\ListReport = 1268;
+    /** "Sales Details by Revenue Category" report. */
+    const Thoth\Report\SalesReport\Tag\Detail\ListRevenueReport = 1262;
+    /** Generator class for "Sales Summary By Location" report (payment view). */
+    const Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryPaymentReport = 1042;
+    /** Generator class for "Sales Summary By Location" report (item view). */
+    const Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryReport = 1031;
+    /** Autymate extension of the "All Transactions" report. */
+    const Thoth\Report\SalesReport\Integration\Autymate\AutymateTransactionAllItemReport = 1216;
+    /** "Sales Summary by Purchase Options" report. */
+    const Thoth\Report\SalesReport\PurchaseOption\Summary\SummaryReport = 1264;
+    /** "Stripe Payout Reconciliation" report. */
+    const Thoth\WlPay\Transaction\StripeCom\PayoutReconciliation\PayoutReconciliationReport = 1254;
+    /** "Visits Remaining" report. */
+    const Wl\Visit\Remain\Report\VisitRemainReport = 1628;
+    /** "Revenue by Service Type" report. */
+    const Wl\Visit\Revenue\Report\VisitRevenueServiceTypeReport = 1602;
+    /** "Service Revenue Summary" report. */
+    const Wl\Visit\Revenue\Report\VisitRevenueServiceReport = 1603;
+    /** "Revenue by Service" report. */
+    const Wl\Visit\Revenue\Report\VisitRevenueDetailReport = 1608;
+    /** "Royalties And Fees By Location" corporate report. */
+    const Wl\Franchise\Fee\Report\FeeLocationReport = 1705;
+    /** "Leads by location" report. */
+    const Wl\Lead\Franchise\Report\LeadByLocationReport = 1451;
+    /** "Belts" report. */
+    const Wl\Login\Rank\Report\LoginRankReport = 1619;
+    /** Franchise client detail report generator. */
+    const Wl\Login\Franchise\Detail\DetailListReport = 1504;
+    /** "All Transactions" report. */
+    const Wl\Login\Franchise\Coupon\LoginFranchiseCouponReport = 1385;
+    /** Franchise client status report. */
+    const Wl\Login\Franchise\Status\StatusListReport = 1450;
+    /** "Email History" report. */
+    const Wl\Mail\History\Report\MailHistoryReport = 1697;
+    /** Supporting report which used for purchase tip filter limiter. */
+    const Wl\Purchase\Tip\FilterLimiter\FilterLimiterReport = 1684;
+    /** Report to show sum of the earned tips by staff members. */
+    const Wl\Purchase\Tip\Sum\PurchaseTipSumReport = 1666;
+    /** "SMS History" report. */
+    const Wl\Sms\History\Report\SmsHistoryReport = 2193;
+    /** Report to show detailed list of instructor's classes and payments for these classes. */
+    const Wl\Staff\Pay\Report\StaffPayDetailReport = 1744;
+    /** "Payroll Summary" report. */
+    const Wl\Staff\Pay\Report\StaffPaySummaryReport = 1751;
+    /** Special version of the report to calculate upcoming visits revenue. */
+    const Wl\Staff\Pay\Report\StaffPayDetailWithUpcomingReport = 1971;
+    /** Controls appointment summary report in list format. */
+    const Wl\Attendance\Report\Appointment\SummaryReport = 1523;
+    /** Controls detailed appointment analysis report in list format. */
+    const Wl\Attendance\Report\Appointment\DetailReport = 1522;
+    /** "Batch Reconciliation Summary" (Approved) report. */
+    const Thoth\Report\SalesReport\Transaction\Batch\Summary\ApprovedReport = 1557;
+    /** "Batch Reconciliation Summary" (Settled) report. */
+    const Thoth\Report\SalesReport\Transaction\Batch\Summary\SettledReport = 1560;
+    /** "Purchase Option Usage Summary" report. */
+    const Thoth\Report\SalesReport\Closeout\Report\PurchaseOption\UsageReport = 1580;
+    /** Generates data for "Sales Details By Location" corporate report. */
+    const Thoth\Report\SalesReport\Franchise\Location\Detail\PurchaseFranchiseLocationReport = 961;
+    /** Generates data for "Sales Details By Location" corporate report. */
+    const Thoth\Report\SalesReport\Franchise\Location\Detail\PurchaseFranchiseLocationPaymentReport = 1034;
+    /** Generates data for "Sales Summary By Location" corporate report - version of */
+    const Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryPaymentReport = 1041;
+    /** Generates data for "Sales Summary By Location" corporate report - version of [PurchaseFranchiseLocationReport](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract) */
+    const Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryReport = 1025;
+    /** "YOY Sales Comparison" report. */
+    const Thoth\Report\SalesReport\Franchise\Sale\Compare\CompareListReport = 1274;
+    /** "Cross-Location Visit Details" report. */
+    const Wl\Visit\Location\Cross\Detail\VisitLocationCrossDetailReport = 1456;
+    /** "Cross-Location Visit Summary" report. */
+    const Wl\Visit\Location\Cross\Summary\VisitLocationCrossDetailSummaryReport = 1480;
+    /** Report with total processing amounts by customers. */
+    const Wl\Business\Account\Revenue\Processing\RevenueProcessingReport = 1161;
+    /** "Location Assets" franchise report. */
+    const Wl\Business\Franchise\Location\Asset\LocationAssetReport = 2237;
+    /** Wl\Business\Franchise\Hours\ReportGeneration\BusinessHoursReport */
+    const Wl\Business\Franchise\Hours\ReportGeneration\BusinessHoursReport = 1455;
+    /** "Guest Pass History" report shown on the client profile under Account. */
+    const Wl\Login\Promotion\GuestPass\Report\GuestPassHistoryReport = 2218;
+    /** Supporting report which used for filter limiter. */
+    const Wl\Purchase\Item\Report\FilterLimiter\FilterLimiterReport = 930;
+    /** Supporting report which used for filter limiter of client reports. */
+    const Wl\Purchase\Item\Report\FilterLimiterClient\FilterLimiterReport = 1261;
+    /** Supporting report which used for payroll details filter limiter. */
+    const Wl\Staff\Pay\Report\StaffMemberLimiter\FilterLimiterReport = 1748;
+    /** "Contact History" report. */
+    const Wl\Contact\Member\History\Report\ContactHistoryReport = 1668;
+    /** "Contact History" report for the specified client. */
+    const Wl\Contact\Member\History\Report\ContactHistoryClientReport = 1692;
+    /** "Inventory On Hand" report. */
+    const Wl\Shop\Product\Inventory\Report\InventoryReport = 1727;
+    /** Franchise "Cross-Location Visit Details" report. */
+    const Wl\Visit\Franchise\Location\Cross\Detail\VisitFranchiseLocationCrossDetailReport = 1472;
+    /** Franchisee "Cross-Location Visit Details" report. */
+    const Wl\Visit\Franchise\Location\Cross\Detail\VisitFranchiseeLocationCrossDetailReport = 1470;
+    /** Franchise "Cross-Location Visit Summary" report. */
+    const Wl\Visit\Franchise\Location\Cross\Summary\VisitFranchiseLocationCrossDetailSummaryReport = 1477;
+    /** Franchisee "Cross-Location Visit Summary" report. */
+    const Wl\Visit\Franchise\Location\Cross\Summary\VisitFranchiseeLocationCrossDetailSummaryReport = 1474;
 }

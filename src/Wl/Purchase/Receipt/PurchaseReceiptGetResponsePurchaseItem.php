@@ -29,23 +29,23 @@ class PurchaseReceiptGetResponsePurchaseItem
      * Program ID. One of {@link \WlSdk\RsProgramSid} constants. Only applies to promotions. `null` if the purchase
      * item is not a promotion.
      *
-     * @var \WlSdk\RsProgramSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsProgramSid $id_program = null;
+    public ?int $id_program = null;
 
     /**
      * Purchase item ID. One of {@link \WlSdk\RsPurchaseItemSid} constants.
      *
-     * @var \WlSdk\RsPurchaseItemSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
+    public ?int $id_purchase_item = null;
 
     /**
      * Sale ID. One of {@link \WlSdk\RsSaleSid} constants.
      *
-     * @var \WlSdk\RsSaleSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsSaleSid $id_sale = null;
+    public ?int $id_sale = null;
 
     /**
      * The identifier of the item.
@@ -130,9 +130,9 @@ class PurchaseReceiptGetResponsePurchaseItem
         $this->a_logo = isset($data['a_logo']) ? new PurchaseReceiptGetResponsePurchaseItemLogo((array)$data['a_logo']) : null;
         $this->a_visit = isset($data['a_visit']) ? (array)$data['a_visit'] : null;
         $this->i_count = isset($data['i_count']) ? (int)$data['i_count'] : null;
-        $this->id_program = isset($data['id_program']) ? \WlSdk\RsProgramSid::tryFrom((int)$data['id_program']) : null;
-        $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
-        $this->id_sale = isset($data['id_sale']) ? \WlSdk\RsSaleSid::tryFrom((int)$data['id_sale']) : null;
+        $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
+        $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
+        $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->k_purchase_item = isset($data['k_purchase_item']) ? (string)$data['k_purchase_item'] : null;
         $this->k_shop_product = isset($data['k_shop_product']) ? (string)$data['k_shop_product'] : null;

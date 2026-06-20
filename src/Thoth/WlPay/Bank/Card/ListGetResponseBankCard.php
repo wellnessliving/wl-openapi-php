@@ -20,9 +20,9 @@ class ListGetResponseBankCard
     /**
      * The card system ID. This is one of the {@link \WlSdk\ACardSystemSid} constants.
      *
-     * @var \WlSdk\ACardSystemSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ACardSystemSid $id_card_system = null;
+    public ?int $id_card_system = null;
 
     /**
      * If `true`, then this card is the user default card.
@@ -73,7 +73,7 @@ class ListGetResponseBankCard
     {
         $this->i_month = isset($data['i_month']) ? (int)$data['i_month'] : null;
         $this->i_year = isset($data['i_year']) ? (int)$data['i_year'] : null;
-        $this->id_card_system = isset($data['id_card_system']) ? \WlSdk\ACardSystemSid::tryFrom((int)$data['id_card_system']) : null;
+        $this->id_card_system = isset($data['id_card_system']) ? (int)$data['id_card_system'] : null;
         $this->is_default = isset($data['is_default']) ? (bool)$data['is_default'] : null;
         $this->k_pay_address = isset($data['k_pay_address']) ? (string)$data['k_pay_address'] : null;
         $this->k_pay_bank = isset($data['k_pay_bank']) ? (string)$data['k_pay_bank'] : null;

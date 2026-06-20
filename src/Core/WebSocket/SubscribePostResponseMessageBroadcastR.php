@@ -17,9 +17,9 @@ class SubscribePostResponseMessageBroadcastR
      * 
      * `null` if the business does not have a mail domain set up.
      *
-     * @var \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid $id_domain_status = null;
+    public ?int $id_domain_status = null;
 
     /**
      * CSS class for the icon representing the email domain status.
@@ -33,7 +33,7 @@ class SubscribePostResponseMessageBroadcastR
     public function __construct(array $data)
     {
         $this->a_domain_token = isset($data['a_domain_token']) ? new SubscribePostResponseMessageBroadcastRDomainToken((array)$data['a_domain_token']) : null;
-        $this->id_domain_status = isset($data['id_domain_status']) ? \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid::tryFrom((int)$data['id_domain_status']) : null;
+        $this->id_domain_status = isset($data['id_domain_status']) ? (int)$data['id_domain_status'] : null;
         $this->text_domain_status_icon = isset($data['text_domain_status_icon']) ? (string)$data['text_domain_status_icon'] : null;
     }
 }

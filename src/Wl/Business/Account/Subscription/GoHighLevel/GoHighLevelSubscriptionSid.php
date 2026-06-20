@@ -9,8 +9,10 @@ namespace WlSdk\Wl\Business\Account\Subscription\GoHighLevel;
  * - 2 (`BASIC`): Standard
  * - 1 (`FREE`): Free
  */
-enum GoHighLevelSubscriptionSid: int
+class GoHighLevelSubscriptionSid
 {
-    case BASIC = 2;
-    case FREE = 1;
+    /** Standard */
+    const BASIC = 2;
+    /** Free */
+    const FREE = 1;
 }

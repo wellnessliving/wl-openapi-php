@@ -14,9 +14,9 @@ class SubscribePostResponseMessageBroadcastQ
      * ID of the report that was generated.
      * One of the {@link \WlSdk\RsReportSid} constants.
      *
-     * @var \WlSdk\RsReportSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsReportSid $id_report = null;
+    public ?int $id_report = null;
 
     /**
      * Whether need to display a message about report generation, regardless of the generation time.
@@ -42,7 +42,7 @@ class SubscribePostResponseMessageBroadcastQ
     public function __construct(array $data)
     {
         $this->i_generation = isset($data['i_generation']) ? (int)$data['i_generation'] : null;
-        $this->id_report = isset($data['id_report']) ? \WlSdk\RsReportSid::tryFrom((int)$data['id_report']) : null;
+        $this->id_report = isset($data['id_report']) ? (int)$data['id_report'] : null;
         $this->is_need_show = isset($data['is_need_show']) ? (bool)$data['is_need_show'] : null;
         $this->k_report_accumulation = isset($data['k_report_accumulation']) ? (string)$data['k_report_accumulation'] : null;
         $this->text_report = isset($data['text_report']) ? (string)$data['text_report'] : null;

@@ -14,11 +14,16 @@ namespace WlSdk\Wl\Business\Account\Subscription\AiAgent;
  * - 2 (`PROFESSIONAL`): Professional
  * - 3 (`STANDARD`): Assistant
  */
-enum AiAgentSubscriptionSid: int
+class AiAgentSubscriptionSid
 {
-    case CHAT_AGENT = 4;
-    case DENTAL_PHONE_AGENT = 5;
-    case FREE = 1;
-    case PROFESSIONAL = 2;
-    case STANDARD = 3;
+    /** Chat Agent */
+    const CHAT_AGENT = 4;
+    /** Dental Phone Agent */
+    const DENTAL_PHONE_AGENT = 5;
+    /** None */
+    const FREE = 1;
+    /** Professional */
+    const PROFESSIONAL = 2;
+    /** Assistant */
+    const STANDARD = 3;
 }

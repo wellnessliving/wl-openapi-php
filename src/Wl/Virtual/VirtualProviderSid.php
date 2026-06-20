@@ -10,8 +10,10 @@ namespace WlSdk\Wl\Virtual;
  * - 2 (`NON_INTEGRATED`): Virtual integration non implemented.
  * - 1 (`ZOOM`): Virtual Zoom service integration.
  */
-enum VirtualProviderSid: int
+class VirtualProviderSid
 {
-    case NON_INTEGRATED = 2;
-    case ZOOM = 1;
+    /** Virtual integration non implemented. */
+    const NON_INTEGRATED = 2;
+    /** Virtual Zoom service integration. */
+    const ZOOM = 1;
 }

@@ -9,9 +9,9 @@ class ModifyPostResponse
     /**
      * The class modify action type. One of the {@link \WlSdk\RsClassModifyModeSid} constants.
      *
-     * @var \WlSdk\RsClassModifyModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsClassModifyModeSid $id_step = null;
+    public ?int $id_step = null;
 
     /**
      * The step direction.
@@ -43,7 +43,7 @@ class ModifyPostResponse
 
     public function __construct(array $data)
     {
-        $this->id_step = isset($data['id_step']) ? \WlSdk\RsClassModifyModeSid::tryFrom((int)$data['id_step']) : null;
+        $this->id_step = isset($data['id_step']) ? (int)$data['id_step'] : null;
         $this->is_back = isset($data['is_back']) ? (bool)$data['is_back'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
         $this->s_id = isset($data['s_id']) ? (string)$data['s_id'] : null;

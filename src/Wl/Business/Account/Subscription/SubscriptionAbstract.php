@@ -49,32 +49,58 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * 
  *   Does not change or open any functional. Just financial subscription.
  */
-enum SubscriptionAbstract: int
+class SubscriptionAbstract
 {
-    case Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription = 1868;
-    case Wl\Business\Account\Subscription\Achieve\AchieveSubscription = 858;
-    case Wl\Business\Account\Subscription\Base\BaseSubscription = 861;
-    case Wl\Business\Account\Subscription\Sms\SmsSubscription = 857;
-    case Wl\Business\Account\Subscription\Fitlive\FitliveSubscription = 986;
-    case Wl\Business\Account\Subscription\Zoom\ZoomSubscription = 864;
-    case Wl\Business\Account\Subscription\Finance\FinanceSubscription = 1225;
-    case Wl\Business\Account\Subscription\Fitbuilder\FitbuilderSubscription = 883;
-    case Wl\Business\Account\Subscription\Fitvid\FitvidSubscription = 875;
-    case Wl\Business\Account\Subscription\Fitzone\FitzoneSubscription = 884;
-    case Wl\Business\Account\Subscription\MarketingSuite\MarketingSuiteSubscription = 1838;
-    case Wl\Business\Account\Subscription\Postcard\PostcardSubscription = 862;
-    case Wl\Business\Account\Subscription\Quiz\QuizSubscription = 1133;
-    case Wl\Business\Account\Subscription\Review\ReviewSubscription = 885;
-    case Wl\Business\Account\Subscription\Reward\RewardSubscription = 886;
-    case Wl\Business\Account\Subscription\Website\WebsiteSubscription = 863;
-    case Wl\Business\Account\Subscription\Asset\AssetSubscription = 882;
-    case Wl\Business\Account\Subscription\Door\DoorSubscription = 1370;
-    case Wl\Business\Account\Subscription\Api\ApiSubscription = 1266;
-    case Wl\Business\Account\Subscription\Zapier\ZapierSubscription = 1349;
-    case Wl\Business\Account\Subscription\Collections\CollectionsSubscription = 1250;
-    case Wl\Business\Account\Subscription\GoHighLevel\GoHighLevelSubscription = 1964;
-    case Wl\Business\Account\Subscription\Email\EmailSubscription = 1965;
-    case Wl\Business\Account\Subscription\Eml\ConstantContactSubscription = 2166;
-    case Wl\Business\Account\Subscription\Eml\MailchimpSubscription = 2165;
-    case Wl\Business\Account\Subscription\BusinessCoach\BusinessCoachSubscription = 2225;
+    /** Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription */
+    const Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription = 1868;
+    /** Wl\Business\Account\Subscription\Achieve\AchieveSubscription */
+    const Wl\Business\Account\Subscription\Achieve\AchieveSubscription = 858;
+    /** Base subscription settings reader. */
+    const Wl\Business\Account\Subscription\Base\BaseSubscription = 861;
+    /** Wl\Business\Account\Subscription\Sms\SmsSubscription */
+    const Wl\Business\Account\Subscription\Sms\SmsSubscription = 857;
+    /** Subscription allows business to access virtual sessions features. */
+    const Wl\Business\Account\Subscription\Fitlive\FitliveSubscription = 986;
+    /** Zoom subscription. */
+    const Wl\Business\Account\Subscription\Zoom\ZoomSubscription = 864;
+    /** Wl\Business\Account\Subscription\Finance\FinanceSubscription */
+    const Wl\Business\Account\Subscription\Finance\FinanceSubscription = 1225;
+    /** Wl\Business\Account\Subscription\Fitbuilder\FitbuilderSubscription */
+    const Wl\Business\Account\Subscription\Fitbuilder\FitbuilderSubscription = 883;
+    /** Wl\Business\Account\Subscription\Fitvid\FitvidSubscription */
+    const Wl\Business\Account\Subscription\Fitvid\FitvidSubscription = 875;
+    /** Wl\Business\Account\Subscription\Fitzone\FitzoneSubscription */
+    const Wl\Business\Account\Subscription\Fitzone\FitzoneSubscription = 884;
+    /** Marketing Suite subscription. */
+    const Wl\Business\Account\Subscription\MarketingSuite\MarketingSuiteSubscription = 1838;
+    /** Postcard subscription settings reader. */
+    const Wl\Business\Account\Subscription\Postcard\PostcardSubscription = 862;
+    /** Wl\Business\Account\Subscription\Quiz\QuizSubscription */
+    const Wl\Business\Account\Subscription\Quiz\QuizSubscription = 1133;
+    /** Wl\Business\Account\Subscription\Review\ReviewSubscription */
+    const Wl\Business\Account\Subscription\Review\ReviewSubscription = 885;
+    /** Rewards and loyalty subscription settings reader. */
+    const Wl\Business\Account\Subscription\Reward\RewardSubscription = 886;
+    /** Website subscription. */
+    const Wl\Business\Account\Subscription\Website\WebsiteSubscription = 863;
+    /** Asset subscription settings reader. */
+    const Wl\Business\Account\Subscription\Asset\AssetSubscription = 882;
+    /** Subscription manager. */
+    const Wl\Business\Account\Subscription\Door\DoorSubscription = 1370;
+    /** Api subscription settings reader. */
+    const Wl\Business\Account\Subscription\Api\ApiSubscription = 1266;
+    /** Class for "Zapier" subscription. */
+    const Wl\Business\Account\Subscription\Zapier\ZapierSubscription = 1349;
+    /** Class for "Collections" subscription. */
+    const Wl\Business\Account\Subscription\Collections\CollectionsSubscription = 1250;
+    /** Marketing Suite subscription. */
+    const Wl\Business\Account\Subscription\GoHighLevel\GoHighLevelSubscription = 1964;
+    /** Email marketing services. */
+    const Wl\Business\Account\Subscription\Email\EmailSubscription = 1965;
+    /** Eml marketing subscription for `ConstantContact` integration. */
+    const Wl\Business\Account\Subscription\Eml\ConstantContactSubscription = 2166;
+    /** Eml marketing subscription for `Mailchimp` integration. */
+    const Wl\Business\Account\Subscription\Eml\MailchimpSubscription = 2165;
+    /** Business Success Coaching. */
+    const Wl\Business\Account\Subscription\BusinessCoach\BusinessCoachSubscription = 2225;
 }

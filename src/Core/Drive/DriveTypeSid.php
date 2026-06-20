@@ -10,10 +10,14 @@ namespace WlSdk\Core\Drive;
  * - 2 (`JPEG`): Jpeg image.
  * - 3 (`PNG`): Png image.
  */
-enum DriveTypeSid: int
+class DriveTypeSid
 {
-    case BMP = 4;
-    case GIF = 1;
-    case JPEG = 2;
-    case PNG = 3;
+    /** Bmp image. */
+    const BMP = 4;
+    /** Gif image. */
+    const GIF = 1;
+    /** Jpeg image. */
+    const JPEG = 2;
+    /** Png image. */
+    const PNG = 3;
 }

@@ -41,9 +41,9 @@ class UserInfoGetResponseResultList
     /**
      * The ID of the user's gender. One of the {@link \WlSdk\AGenderSid} constants.
      *
-     * @var \WlSdk\AGenderSid|null
+     * @var int|null
      */
-    public ?\WlSdk\AGenderSid $id_gender = null;
+    public ?int $id_gender = null;
 
     /**
      * This will be `true` if the user has never made purchases or reservations in this business.
@@ -148,7 +148,7 @@ class UserInfoGetResponseResultList
         $this->a_photo = isset($data['a_photo']) ? new UserInfoGetResponseResultListPhoto((array)$data['a_photo']) : null;
         $this->dt_add = isset($data['dt_add']) ? (string)$data['dt_add'] : null;
         $this->dt_birth = isset($data['dt_birth']) ? (string)$data['dt_birth'] : null;
-        $this->id_gender = isset($data['id_gender']) ? \WlSdk\AGenderSid::tryFrom((int)$data['id_gender']) : null;
+        $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
         $this->is_customer_new = isset($data['is_customer_new']) ? (bool)$data['is_customer_new'] : null;
         $this->is_traveller = isset($data['is_traveller']) ? (bool)$data['is_traveller'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;

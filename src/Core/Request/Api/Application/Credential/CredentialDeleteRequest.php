@@ -6,15 +6,15 @@ class CredentialDeleteRequest
     /**
      * The CID of the credential.
      *
-     * @var \WlSdk\Core\Request\Api\Application\Credential\CredentialAbstract|null
+     * @var int|null
      */
-    public ?\WlSdk\Core\Request\Api\Application\Credential\CredentialAbstract $cid_credential = null;
+    public ?int $cid_credential = null;
 
     public function params(): array
     {
         return array_filter(
             [
-            'cid_credential' => $this->cid_credential?->value,
+            'cid_credential' => $this->cid_credential,
             ],
             static fn($v) => $v !== null
         );

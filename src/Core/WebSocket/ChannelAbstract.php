@@ -89,39 +89,72 @@ namespace WlSdk\Core\WebSocket;
  * - 549 (`Wl\Business\Franchise\Report\Curves\AccumulationProcessChannel`): When accumulation progress was changed new
  * value is sent over this channel.
  */
-enum ChannelAbstract: int
+class ChannelAbstract
 {
-    case Thoth\ReportCore\Generator\UpdateChannel = 735;
-    case Wl\Visit\VisitStatusChannel = 1921;
-    case Wl\Fitbuilder\MessageChannel = 1583;
-    case Wl\Virtual\AccountUpdateChannel = 733;
-    case Wl\Virtual\MeetingScheduleChannel = 688;
-    case Wl\Task\TaskChangeChannel = 1869;
-    case Wl\Alert\AlertChannel = 1342;
-    case Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusChannel = 1421;
-    case Core\WebSocket\Example\ExampleFunctionChannel = 19;
-    case Wl\Schedule\ClassList\ClassListChannel = 298;
-    case Wl\Schedule\ScheduleList\ScheduleListChannel = 305;
-    case Wl\Book\Multiple\MultipleTaskSessionChannel = 1163;
-    case Wl\Profile\Schedule\ProfileScheduleChannel = 510;
-    case Wl\Profile\Contract\ContractChannel = 1660;
-    case Wl\Import\Progress\ProgressChannel = 1850;
-    case Wl\Business\Sms\SmsSendErrorChannel = 977;
-    case Wl\Business\Edit\TitleChangeChannel = 16;
-    case Wl\Report\Background\ReportBackgroundProcessChannel = 842;
-    case Wl\Report\AutoUpdate\ReportAutoUpdateChannel = 1543;
-    case Wl\Mail\Domain\DomainVerifyStatusChannel = 1834;
-    case Wl\Mail\Verify\MailVerifyStatusChangeChannel = 677;
-    case Wl\Reception\Design\ReceptionDesignChannel = 1657;
-    case Wl\Member\Info\ClientTypeChangeChannel = 1820;
-    case Thoth\PayProcessor\Nuvei\Terminal\OMNIChannelApi\PaymentStatusChannel = 1736;
-    case Wl\Schedule\ScheduleList\StaffApp\ScheduleListChannel = 523;
-    case Wl\Business\Sms\Unread\SmsUnreadCountChannel = 960;
-    case Wl\Business\AuthorizeSupport\Request\RequestChannel = 34;
-    case Wl\Business\AuthorizeSupport\Response\ResponseChannel = 41;
-    case Wl\Business\AuthorizeSupport\ResponseStaff\ResponseStaffChannel = 57;
-    case Wl\Postcard\Campaign\CampaignEdit\AddressVerificationChannel = 828;
-    case Wl\Business\Sms\Chat\Dialog\DialogChannel = 963;
-    case Wl\Business\Sms\Chat\Dialog\MessageHistoryChannel = 952;
-    case Wl\Business\Franchise\Report\Curves\AccumulationProcessChannel = 549;
+    /** A message is sent through this channel every time a report gets updated. */
+    const Thoth\ReportCore\Generator\UpdateChannel = 735;
+    /** A message is sent through this channel when the status of a visit is changed. */
+    const Wl\Visit\VisitStatusChannel = 1921;
+    /** Channel to inform Fitbuilder messenger about new information. */
+    const Wl\Fitbuilder\MessageChannel = 1583;
+    /** Channel to pass over information about virtual account release. */
+    const Wl\Virtual\AccountUpdateChannel = 733;
+    /** Channel to pass over information about meeting creation. */
+    const Wl\Virtual\MeetingScheduleChannel = 688;
+    /** A message is sent through this channel every time a task created or edited. */
+    const Wl\Task\TaskChangeChannel = 1869;
+    /** A message is sent through this channel every time an alert created or read. */
+    const Wl\Alert\AlertChannel = 1342;
+    /** Channel to pass over information about ticket status. */
+    const Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusChannel = 1421;
+    /** Example channel to test how asynchronous function calls work. */
+    const Core\WebSocket\Example\ExampleFunctionChannel = 19;
+    /** Channel to notify user that class schedule is changed. */
+    const Wl\Schedule\ClassList\ClassListChannel = 298;
+    /** Channel to notify user that a session has been booked or book cancelled. */
+    const Wl\Schedule\ScheduleList\ScheduleListChannel = 305;
+    /** Channel to pass over information about booking. */
+    const Wl\Book\Multiple\MultipleTaskSessionChannel = 1163;
+    /** Channel to notify certain clients about changes of they schedule. */
+    const Wl\Profile\Schedule\ProfileScheduleChannel = 510;
+    /** Channel to notify user about new unsigned documents. */
+    const Wl\Profile\Contract\ContractChannel = 1660;
+    /** Channel to pass over information about business import progress. */
+    const Wl\Import\Progress\ProgressChannel = 1850;
+    /** Channel to pass over error message when failed sent SMS. */
+    const Wl\Business\Sms\SmsSendErrorChannel = 977;
+    /** When title of a business is changed, new title is sent over this channel. */
+    const Wl\Business\Edit\TitleChangeChannel = 16;
+    /** Channel to notify certain user about complete of report accumulation process. */
+    const Wl\Report\Background\ReportBackgroundProcessChannel = 842;
+    /** When the specified report is updated, auto-update request is sent over this channel. */
+    const Wl\Report\AutoUpdate\ReportAutoUpdateChannel = 1543;
+    /** Domain verification status verification channel. */
+    const Wl\Mail\Domain\DomainVerifyStatusChannel = 1834;
+    /** When mail verify status was changed new value is sent over this channel. */
+    const Wl\Mail\Verify\MailVerifyStatusChangeChannel = 677;
+    /** Channel to pass over information about changing the Self Check-In settings. */
+    const Wl\Reception\Design\ReceptionDesignChannel = 1657;
+    /** A message is sent through this channel every time a client type is changed. */
+    const Wl\Member\Info\ClientTypeChangeChannel = 1820;
+    /** Channel to pass over information about payment status. */
+    const Thoth\PayProcessor\Nuvei\Terminal\OMNIChannelApi\PaymentStatusChannel = 1736;
+    /** Channel to notify certain staff members about changes of schedule. */
+    const Wl\Schedule\ScheduleList\StaffApp\ScheduleListChannel = 523;
+    /** Channel to pass over information about unread SMS in the business. */
+    const Wl\Business\Sms\Unread\SmsUnreadCountChannel = 960;
+    /** Channel to listen requests to access from franchisee. */
+    const Wl\Business\AuthorizeSupport\Request\RequestChannel = 34;
+    /** Channel to response support employee who is requesting access to business. */
+    const Wl\Business\AuthorizeSupport\Response\ResponseChannel = 41;
+    /** Channel to inform staff members that request from support employee has been processed. */
+    const Wl\Business\AuthorizeSupport\ResponseStaff\ResponseStaffChannel = 57;
+    /** Channel to pass over information about address verification. */
+    const Wl\Postcard\Campaign\CampaignEdit\AddressVerificationChannel = 828;
+    /** Channel to pass over information about changing the dialog with specific client. */
+    const Wl\Business\Sms\Chat\Dialog\DialogChannel = 963;
+    /** Channel to pass over information about new message in the chat. */
+    const Wl\Business\Sms\Chat\Dialog\MessageHistoryChannel = 952;
+    /** When accumulation progress was changed new value is sent over this channel. */
+    const Wl\Business\Franchise\Report\Curves\AccumulationProcessChannel = 549;
 }

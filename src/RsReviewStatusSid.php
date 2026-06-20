@@ -9,9 +9,12 @@ namespace WlSdk;
  * - 4 (`HIDDEN`): Hidden.
  * - 3 (`PUBLISH`): Publish.
  */
-enum RsReviewStatusSid: int
+class RsReviewStatusSid
 {
-    case ADMIN = 1;
-    case HIDDEN = 4;
-    case PUBLISH = 3;
+    /** Admin. */
+    const ADMIN = 1;
+    /** Hidden. */
+    const HIDDEN = 4;
+    /** Publish. */
+    const PUBLISH = 3;
 }

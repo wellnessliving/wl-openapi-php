@@ -11,9 +11,9 @@ class AccessGetRequest
      * 
      * Only one of these two fields should be sent, but not both.
      *
-     * @var \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract|null
+     * @var int|null
      */
-    public ?\WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract $cid_report = null;
+    public ?int $cid_report = null;
 
     /**
      * Report ID.
@@ -23,9 +23,9 @@ class AccessGetRequest
      * 
      * Only one of these two fields should be sent, but not both.
      *
-     * @var \WlSdk\RsReportSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsReportSid $id_report = null;
+    public ?int $id_report = null;
 
     /**
      * ID of business for which access must be checked.
@@ -38,8 +38,8 @@ class AccessGetRequest
     {
         return array_filter(
             [
-            'cid_report' => $this->cid_report?->value,
-            'id_report' => $this->id_report?->value,
+            'cid_report' => $this->cid_report,
+            'id_report' => $this->id_report,
             'k_business' => $this->k_business,
             ],
             static fn($v) => $v !== null

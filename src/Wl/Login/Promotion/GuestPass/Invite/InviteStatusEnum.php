@@ -28,15 +28,24 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
  * - 4 (`NO_SHOW`): Guest accepted the invitation but did not show up for the visit. Pass is
  *    consumed and counts toward "Used".
  */
-enum InviteStatusEnum: int
+class InviteStatusEnum
 {
-    case ATTEND = 9;
-    case BOOK = 8;
-    case CHECKED_IN = 3;
-    case GUEST_PASS_EXPIRED = 6;
-    case INVITE_ACCEPTED = 2;
-    case INVITE_EXPIRED = 7;
-    case INVITE_SENT = 1;
-    case LATE_CANCELLED = 5;
-    case NO_SHOW = 4;
+    /** Guest attended the visit booked with the guest pass. */
+    const ATTEND = 9;
+    /** Guest booked the visit booked with the guest pass. */
+    const BOOK = 8;
+    /** Guest attended the visit booked with the guest pass. */
+    const CHECKED_IN = 3;
+    /** Guest accepted the invitation but did not attend within the pass expiration */
+    const GUEST_PASS_EXPIRED = 6;
+    /** Guest claimed the invitation but the linked visit (if any) has not been */
+    const INVITE_ACCEPTED = 2;
+    /** Invitation expired before the guest claimed it. Pass returns to the host's */
+    const INVITE_EXPIRED = 7;
+    /** Invitation has been sent but the guest has not claimed it yet. Pass is held */
+    const INVITE_SENT = 1;
+    /** Guest cancelled the visit too late and was penalised. Pass is consumed and */
+    const LATE_CANCELLED = 5;
+    /** Guest accepted the invitation but did not show up for the visit. Pass is */
+    const NO_SHOW = 4;
 }

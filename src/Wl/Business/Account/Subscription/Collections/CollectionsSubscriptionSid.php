@@ -10,9 +10,12 @@ namespace WlSdk\Wl\Business\Account\Subscription\Collections;
  * - 3 (`INTEGRATION_REQUESTED`): Integration Requested
  * - 2 (`PROFESSIONAL`): Professional
  */
-enum CollectionsSubscriptionSid: int
+class CollectionsSubscriptionSid
 {
-    case FREE = 1;
-    case INTEGRATION_REQUESTED = 3;
-    case PROFESSIONAL = 2;
+    /** None */
+    const FREE = 1;
+    /** Integration Requested */
+    const INTEGRATION_REQUESTED = 3;
+    /** Professional */
+    const PROFESSIONAL = 2;
 }

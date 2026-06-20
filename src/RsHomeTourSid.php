@@ -40,38 +40,70 @@ namespace WlSdk;
  * - 1 (`YOGA`): Yoga.
  * - 27 (`ZUMBA`): Zumba.
  */
-enum RsHomeTourSid: int
+class RsHomeTourSid
 {
-    case BARBERSHOP = 26;
-    case BOOTCAMP = 24;
-    case BOXING = 25;
-    case BUSINESS_MANAGEMENT = 21;
-    case CLUB = 10;
-    case CROSSFIT = 9;
-    case DANCE = 11;
-    case DENTAL = 14;
-    case FITNESS = 6;
-    case FUNCTIONAL_FITNESS = 29;
-    case GYM = 22;
-    case HEALTH_CLUB = 23;
-    case INTEGRATIVE_HEALTH_CENTER = 30;
-    case MARTIAL_ART = 8;
-    case MASSAGE = 4;
-    case MEDICAL_SPA = 28;
-    case MEDICINE_ALTERNATIVE = 15;
-    case MEDICINE_TRADITIONAL = 13;
-    case MUSIC = 19;
-    case PERSONAL_TRAINING = 5;
-    case PILATES = 7;
-    case PLAY_CAFE = 32;
-    case POLE_DANCING = 18;
-    case SALON = 3;
-    case SPA = 2;
-    case SPINNING = 17;
-    case SWIM_SCHOOL = 33;
-    case TATTOO = 31;
-    case TOUR = 12;
-    case WELLNESS_CENTER = 20;
-    case YOGA = 1;
-    case ZUMBA = 27;
+    /** Barbershops. */
+    const BARBERSHOP = 26;
+    /** Boot camps. */
+    const BOOTCAMP = 24;
+    /** Boxing studios. */
+    const BOXING = 25;
+    /** Special industry free landing page with only contact us form. */
+    const BUSINESS_MANAGEMENT = 21;
+    /** Health clubs. */
+    const CLUB = 10;
+    /** Affiliate Gym. */
+    const CROSSFIT = 9;
+    /** Dance studios. */
+    const DANCE = 11;
+    /** Dental studios. */
+    const DENTAL = 14;
+    /** Fitness gyms. */
+    const FITNESS = 6;
+    /** Functional fitness also known as functional training or functional movement. */
+    const FUNCTIONAL_FITNESS = 29;
+    /** Fitness gyms. */
+    const GYM = 22;
+    /** Health clubs. */
+    const HEALTH_CLUB = 23;
+    /** Health and beauty salons at one place. */
+    const INTEGRATIVE_HEALTH_CENTER = 30;
+    /** Martial arts. */
+    const MARTIAL_ART = 8;
+    /** Massage salons. */
+    const MASSAGE = 4;
+    /** Massage salons. */
+    const MEDICAL_SPA = 28;
+    /** Alternative medical offices. */
+    const MEDICINE_ALTERNATIVE = 15;
+    /** Hospitals and private doctors. */
+    const MEDICINE_TRADITIONAL = 13;
+    /** Music schools. */
+    const MUSIC = 19;
+    /** Personal trainings. */
+    const PERSONAL_TRAINING = 5;
+    /** Pilates. */
+    const PILATES = 7;
+    /** Play cafes. */
+    const PLAY_CAFE = 32;
+    /** Pole dancing studios. */
+    const POLE_DANCING = 18;
+    /** Salons. */
+    const SALON = 3;
+    /** Spa salons. */
+    const SPA = 2;
+    /** Spinning. */
+    const SPINNING = 17;
+    /** Swim schools */
+    const SWIM_SCHOOL = 33;
+    /** Tattoo salons. */
+    const TATTOO = 31;
+    /** Tours and events. */
+    const TOUR = 12;
+    /** Wellness Centers */
+    const WELLNESS_CENTER = 20;
+    /** Yoga. */
+    const YOGA = 1;
+    /** Zumba. */
+    const ZUMBA = 27;
 }

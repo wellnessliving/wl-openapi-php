@@ -9,9 +9,12 @@ namespace WlSdk\Wl\Quiz;
  * - 2 (`FIRST`): Client will be asked to complete the quiz the first time they book a service or purchase item.
  * - 3 (`ONCE`): Client will be asked to complete the quiz only one time when they book a service or purchase item.
  */
-enum QuizFrequencySid: int
+class QuizFrequencySid
 {
-    case EVERY = 1;
-    case FIRST = 2;
-    case ONCE = 3;
+    /** Client will be asked to complete the quiz every time they book a service or purchase item. */
+    const EVERY = 1;
+    /** Client will be asked to complete the quiz the first time they book a service or purchase item. */
+    const FIRST = 2;
+    /** Client will be asked to complete the quiz only one time when they book a service or purchase item. */
+    const ONCE = 3;
 }

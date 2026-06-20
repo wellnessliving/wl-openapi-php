@@ -35,9 +35,9 @@ class AlertEditPostRequest
     /**
      * Login note access type ID.
      *
-     * @var \WlSdk\RsLoginNoteAccessSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsLoginNoteAccessSid $id_login_note_access = null;
+    public ?int $id_login_note_access = null;
 
     /**
      * Whether flagged user can book. Does not matter if `is_flag` is `false`.
@@ -75,7 +75,7 @@ class AlertEditPostRequest
             'k_login_note' => $this->k_login_note,
             'uid' => $this->uid,
             'a_location' => $this->a_location,
-            'id_login_note_access' => $this->id_login_note_access?->value,
+            'id_login_note_access' => $this->id_login_note_access,
             'is_book' => $this->is_book,
             'is_flag' => $this->is_flag,
             'is_purchase' => $this->is_purchase,

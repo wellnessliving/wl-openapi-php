@@ -8,9 +8,9 @@ class QueryPostRequest
      * 
      * One of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} subclasses.
      *
-     * @var \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract|null
+     * @var int|null
      */
-    public ?\WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract $cid_report = null;
+    public ?int $cid_report = null;
 
     /**
      * How many rows of the report to return.
@@ -157,7 +157,7 @@ class QueryPostRequest
     {
         return array_filter(
             [
-            'cid_report' => $this->cid_report?->value,
+            'cid_report' => $this->cid_report,
             'i_limit' => $this->i_limit,
             'i_offset' => $this->i_offset,
             'is_actual' => $this->is_actual,

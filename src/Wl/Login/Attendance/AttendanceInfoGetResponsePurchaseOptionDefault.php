@@ -7,9 +7,9 @@ class AttendanceInfoGetResponsePurchaseOptionDefault
      * The sale item type, one of the {@link \WlSdk\RsSaleSid} constants.
      * This will be `null` if the class has no default Purchase Option, or it sets to "Drop-in rate".
      *
-     * @var \WlSdk\RsSaleSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsSaleSid $id_sale = null;
+    public ?int $id_sale = null;
 
     /**
      * The default Purchase Option key. 
@@ -28,7 +28,7 @@ class AttendanceInfoGetResponsePurchaseOptionDefault
 
     public function __construct(array $data)
     {
-        $this->id_sale = isset($data['id_sale']) ? \WlSdk\RsSaleSid::tryFrom((int)$data['id_sale']) : null;
+        $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->is_single_default = isset($data['is_single_default']) ? (bool)$data['is_single_default'] : null;
     }

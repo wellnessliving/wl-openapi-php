@@ -24,14 +24,22 @@ namespace WlSdk\Wl\Visit;
  * - 2 (`WAIT`): Reservation in a wait list means that user is going to attend the session if someone will cancel his
  * reservation.
  */
-enum VisitSid: int
+class VisitSid
 {
-    case ATTEND = 3;
-    case BOOK = 1;
-    case CANCEL = 6;
-    case PENALTY = 4;
-    case PENDING = 7;
-    case REMOVE = 8;
-    case TRUANCY = 5;
-    case WAIT = 2;
+    /** Client has attended the session. */
+    const ATTEND = 3;
+    /** Active reservation means that user is going to attend the session. */
+    const BOOK = 1;
+    /** Client has cancelled the reservation in time and without penalty. */
+    const CANCEL = 6;
+    /** Client has cancelled his reservation too late. */
+    const PENALTY = 4;
+    /** This state means that visit is registered, but it is unknown is it [VisitSid::ATTEND](#/components/schemas/Wl.Visit.VisitSid) */
+    const PENDING = 7;
+    /** Visit was removed. */
+    const REMOVE = 8;
+    /** Client has missed the session without cancellation. */
+    const TRUANCY = 5;
+    /** Reservation in a wait list means that user is going to attend the session if someone will cancel his reservation. */
+    const WAIT = 2;
 }

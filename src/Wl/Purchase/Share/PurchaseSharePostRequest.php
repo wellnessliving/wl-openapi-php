@@ -6,9 +6,9 @@ class PurchaseSharePostRequest
     /**
      * The social network. One of the {@link \WlSdk\ASocialSid} constants.
      *
-     * @var \WlSdk\ASocialSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ASocialSid $id_social = null;
+    public ?int $id_social = null;
 
     /**
      * The key of the purchase.
@@ -21,7 +21,7 @@ class PurchaseSharePostRequest
     {
         return array_filter(
             [
-            'id_social' => $this->id_social?->value,
+            'id_social' => $this->id_social,
             'k_purchase' => $this->k_purchase,
             ],
             static fn($v) => $v !== null

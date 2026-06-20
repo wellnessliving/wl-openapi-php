@@ -7,7 +7,8 @@ namespace WlSdk;
  * Values:
  * - 4 (`WELLNESSLIVING`): WellnessLiving Explorer.
  */
-enum RsProjectSid: int
+class RsProjectSid
 {
-    case WELLNESSLIVING = 4;
+    /** WellnessLiving Explorer. */
+    const WELLNESSLIVING = 4;
 }

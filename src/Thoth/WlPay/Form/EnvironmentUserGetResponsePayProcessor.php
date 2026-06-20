@@ -31,9 +31,9 @@ class EnvironmentUserGetResponsePayProcessor
     /**
      * ID of the payment processor. One of {@link \WlSdk\Thoth\PayProcessor\PayProcessorSid} constants.
      *
-     * @var \WlSdk\Thoth\PayProcessor\PayProcessorSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Thoth\PayProcessor\PayProcessorSid $id_pay_processor = null;
+    public ?int $id_pay_processor = null;
 
     /**
      * `true` if 3DS should be performed, `false` if 3DS should not be performed. `null` if this is not defined for
@@ -64,7 +64,7 @@ class EnvironmentUserGetResponsePayProcessor
         $this->a_public_keys = isset($data['a_public_keys']) ? (array)$data['a_public_keys'] : null;
         $this->a_public_info = isset($data['a_public_info']) ? (array)$data['a_public_info'] : null;
         $this->hide_save_source = isset($data['hide_save_source']) ? (bool)$data['hide_save_source'] : null;
-        $this->id_pay_processor = isset($data['id_pay_processor']) ? \WlSdk\Thoth\PayProcessor\PayProcessorSid::tryFrom((int)$data['id_pay_processor']) : null;
+        $this->id_pay_processor = isset($data['id_pay_processor']) ? (int)$data['id_pay_processor'] : null;
         $this->is_enabled_3ds = isset($data['is_enabled_3ds']) ? (bool)$data['is_enabled_3ds'] : null;
         $this->is_test = isset($data['is_test']) ? (bool)$data['is_test'] : null;
         $this->k_business_merchant = isset($data['k_business_merchant']) ? (string)$data['k_business_merchant'] : null;

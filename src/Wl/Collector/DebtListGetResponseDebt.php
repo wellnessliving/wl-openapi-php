@@ -41,9 +41,9 @@ class DebtListGetResponseDebt
     /**
      * The debt currency ID. One of {@link \WlSdk\Core\Locale\CurrencySid} constants.
      *
-     * @var \WlSdk\Core\Locale\CurrencySid|null
+     * @var int|null
      */
-    public ?\WlSdk\Core\Locale\CurrencySid $id_currency = null;
+    public ?int $id_currency = null;
 
     /**
      * The business key where the debt occurred.
@@ -150,7 +150,7 @@ class DebtListGetResponseDebt
         $this->dtu_due = isset($data['dtu_due']) ? (string)$data['dtu_due'] : null;
         $this->dtu_add = isset($data['dtu_add']) ? (string)$data['dtu_add'] : null;
         $this->dtu_cease = isset($data['dtu_cease']) ? (string)$data['dtu_cease'] : null;
-        $this->id_currency = isset($data['id_currency']) ? \WlSdk\Core\Locale\CurrencySid::tryFrom((int)$data['id_currency']) : null;
+        $this->id_currency = isset($data['id_currency']) ? (int)$data['id_currency'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;
         $this->k_collector_debt = isset($data['k_collector_debt']) ? (string)$data['k_collector_debt'] : null;
         $this->k_pay_transaction_debt = isset($data['k_pay_transaction_debt']) ? (string)$data['k_pay_transaction_debt'] : null;

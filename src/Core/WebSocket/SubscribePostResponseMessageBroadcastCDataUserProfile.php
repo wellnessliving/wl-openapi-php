@@ -6,9 +6,9 @@ class SubscribePostResponseMessageBroadcastCDataUserProfile
     /**
      * User gender. One of {@link \WlSdk\Wl\Gender\GenderSid} constants.
      *
-     * @var \WlSdk\Wl\Gender\GenderSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Gender\GenderSid $id_gender = null;
+    public ?int $id_gender = null;
 
     /**
      * User first name.
@@ -40,7 +40,7 @@ class SubscribePostResponseMessageBroadcastCDataUserProfile
 
     public function __construct(array $data)
     {
-        $this->id_gender = isset($data['id_gender']) ? \WlSdk\Wl\Gender\GenderSid::tryFrom((int)$data['id_gender']) : null;
+        $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
         $this->s_first_name = isset($data['s_first_name']) ? (string)$data['s_first_name'] : null;
         $this->s_last_name = isset($data['s_last_name']) ? (string)$data['s_last_name'] : null;
         $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;

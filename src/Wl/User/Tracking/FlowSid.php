@@ -9,9 +9,12 @@ namespace WlSdk\Wl\User\Tracking;
  * - 2 (`BOOK_CLASS`): Class booking flow.
  * - 3 (`BOOK_EVENT`): Event booking flow.
  */
-enum FlowSid: int
+class FlowSid
 {
-    case BOOK_APPOINTMENT = 1;
-    case BOOK_CLASS = 2;
-    case BOOK_EVENT = 3;
+    /** Appointment booking flow. */
+    const BOOK_APPOINTMENT = 1;
+    /** Class booking flow. */
+    const BOOK_CLASS = 2;
+    /** Event booking flow. */
+    const BOOK_EVENT = 3;
 }

@@ -16,8 +16,10 @@ namespace WlSdk\Core\Amazon\Region;
  * - 2 (`AP_SOUTHEAST_2`): Sydney, Australia.
  * - 1 (`US_EAST_1`): North Virginia, USA.
  */
-enum AmazonRegionSid: int
+class AmazonRegionSid
 {
-    case AP_SOUTHEAST_2 = 2;
-    case US_EAST_1 = 1;
+    /** Sydney, Australia. */
+    const AP_SOUTHEAST_2 = 2;
+    /** North Virginia, USA. */
+    const US_EAST_1 = 1;
 }

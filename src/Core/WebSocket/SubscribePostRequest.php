@@ -19,9 +19,9 @@ class SubscribePostRequest
     /**
      * Channel controller CID.
      *
-     * @var \WlSdk\Core\WebSocket\ChannelAbstract|null
+     * @var int|null
      */
-    public ?\WlSdk\Core\WebSocket\ChannelAbstract $cid_channel = null;
+    public ?int $cid_channel = null;
 
     /**
      * Subscriber password.
@@ -44,7 +44,7 @@ class SubscribePostRequest
         return array_filter(
             [
             'a_key' => $this->a_key,
-            'cid_channel' => $this->cid_channel?->value,
+            'cid_channel' => $this->cid_channel,
             's_password' => $this->s_password,
             's_token' => $this->s_token,
             ],

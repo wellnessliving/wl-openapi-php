@@ -9,9 +9,12 @@ namespace WlSdk;
  * - 3 (`EVENING`): Evening.
  * - 1 (`MORNING`): Morning.
  */
-enum RsScheduleTimeSid: int
+class RsScheduleTimeSid
 {
-    case AFTERNOON = 2;
-    case EVENING = 3;
-    case MORNING = 1;
+    /** Afternoon. */
+    const AFTERNOON = 2;
+    /** Evening. */
+    const EVENING = 3;
+    /** Morning. */
+    const MORNING = 1;
 }

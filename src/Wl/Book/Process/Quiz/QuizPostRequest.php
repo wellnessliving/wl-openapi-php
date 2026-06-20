@@ -13,9 +13,9 @@ class QuizPostRequest
     /**
      * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var \WlSdk\Wl\Mode\ModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
+    public ?int $id_mode = null;
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
@@ -155,7 +155,7 @@ class QuizPostRequest
         return array_filter(
             [
             'dt_date_gmt' => $this->dt_date_gmt,
-            'id_mode' => $this->id_mode?->value,
+            'id_mode' => $this->id_mode,
             'is_backend' => $this->is_backend,
             'is_credit_card_check' => $this->is_credit_card_check,
             'k_class_period' => $this->k_class_period,

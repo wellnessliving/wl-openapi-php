@@ -30,17 +30,28 @@ namespace WlSdk;
  * - 6 (`STAFF_RETENTION`): Set of staff retention list reports.
  * - 2 (`VISIT`): Set of attendance reports.
  */
-enum RsReportPageSid: int
+class RsReportPageSid
 {
-    case APPOINTMENT_REQUEST = 4;
-    case BUSINESS_CUSTOMER_STATUS = 12;
-    case LOGIN_CLIENT_ALL = 7;
-    case MEMBER_PROGRESS_LOG_CHART = 8;
-    case MEMBER_PROGRESS_LOG_TABLE = 9;
-    case PROFILE_ATTENDANCE_SCHEDULE = 10;
-    case PROFILE_PURCHASE = 11;
-    case REWARD_BOARD = 5;
-    case SCHEDULE_PROSPECT = 3;
-    case STAFF_RETENTION = 6;
-    case VISIT = 2;
+    /** List of requested appointments. */
+    const APPOINTMENT_REQUEST = 4;
+    /** Collection with following reports: */
+    const BUSINESS_CUSTOMER_STATUS = 12;
+    /** Collection with list of searches and "All clients" report. */
+    const LOGIN_CLIENT_ALL = 7;
+    /** Collection with list of progress log charts. */
+    const MEMBER_PROGRESS_LOG_CHART = 8;
+    /** Collection with list of progress log table. */
+    const MEMBER_PROGRESS_LOG_TABLE = 9;
+    /** Collection with [RsReportSid::PROFILE_ATTENDANCE_SCHEDULE_FRONTEND_UPCOMING](#/components/schemas/RsReportSid) */
+    const PROFILE_ATTENDANCE_SCHEDULE = 10;
+    /** Collection with following reports: */
+    const PROFILE_PURCHASE = 11;
+    /** Leaderboard to display in backend. */
+    const REWARD_BOARD = 5;
+    /** Current schedule. */
+    const SCHEDULE_PROSPECT = 3;
+    /** Set of staff retention list reports. */
+    const STAFF_RETENTION = 6;
+    /** Set of attendance reports. */
+    const VISIT = 2;
 }

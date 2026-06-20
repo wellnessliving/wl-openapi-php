@@ -6,9 +6,9 @@ class SkinForeignPostRequest
     /**
      * Skin type, one of {@link \WlSdk\RsSkinSid} constants.
      *
-     * @var \WlSdk\RsSkinSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsSkinSid $id_skin = null;
+    public ?int $id_skin = null;
 
     /**
      * Key of the business.
@@ -54,7 +54,7 @@ class SkinForeignPostRequest
     {
         return array_filter(
             [
-            'id_skin' => $this->id_skin?->value,
+            'id_skin' => $this->id_skin,
             'k_business' => $this->k_business,
             's_foreign_id' => $this->s_foreign_id,
             'a_data_specific' => $this->a_data_specific,

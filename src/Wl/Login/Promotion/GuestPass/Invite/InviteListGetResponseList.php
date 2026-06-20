@@ -100,9 +100,9 @@ class InviteListGetResponseList
      * Invitation lifecycle status. One of {@link \WlSdk\Wl\Login\Promotion\GuestPass\Invite\InviteStatusEnum}
      * values.
      *
-     * @var \WlSdk\Wl\Login\Promotion\GuestPass\Invite\InviteStatusEnum|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Login\Promotion\GuestPass\Invite\InviteStatusEnum $id_status = null;
+    public ?int $id_status = null;
 
     /**
      * `true` if the guest may only enter when the inviting member is checked in.
@@ -226,7 +226,7 @@ class InviteListGetResponseList
         $this->dtu_invite = isset($data['dtu_invite']) ? (string)$data['dtu_invite'] : null;
         $this->dtu_redeem = isset($data['dtu_redeem']) ? (string)$data['dtu_redeem'] : null;
         $this->dtu_reject = isset($data['dtu_reject']) ? (string)$data['dtu_reject'] : null;
-        $this->id_status = isset($data['id_status']) ? \WlSdk\Wl\Login\Promotion\GuestPass\Invite\InviteStatusEnum::tryFrom((int)$data['id_status']) : null;
+        $this->id_status = isset($data['id_status']) ? (int)$data['id_status'] : null;
         $this->is_checkin = isset($data['is_checkin']) ? (bool)$data['is_checkin'] : null;
         $this->is_visit_future = isset($data['is_visit_future']) ? (bool)$data['is_visit_future'] : null;
         $this->k_login_promotion_guest = isset($data['k_login_promotion_guest']) ? (string)$data['k_login_promotion_guest'] : null;

@@ -13,11 +13,16 @@ namespace WlSdk;
  * - 2 (`WEEK`): Step 1 week.
  * - 4 (`YEAR`): Step 1 year.
  */
-enum RsReportGroupSid: int
+class RsReportGroupSid
 {
-    case DAY = 1;
-    case HOUR = 5;
-    case MONTH = 3;
-    case WEEK = 2;
-    case YEAR = 4;
+    /** Step 1 day. */
+    const DAY = 1;
+    /** Step 1 hour. */
+    const HOUR = 5;
+    /** Step 1 month. */
+    const MONTH = 3;
+    /** Step 1 week. */
+    const WEEK = 2;
+    /** Step 1 year. */
+    const YEAR = 4;
 }

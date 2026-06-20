@@ -10,10 +10,14 @@ namespace WlSdk;
  * - 4 (`HIDE`): Hide price.
  * - 3 (`VARIES`): Various price.
  */
-enum RsServicePriceSid: int
+class RsServicePriceSid
 {
-    case FIXED = 1;
-    case FREE = 2;
-    case HIDE = 4;
-    case VARIES = 3;
+    /** Fixed price. */
+    const FIXED = 1;
+    /** No need to pay. */
+    const FREE = 2;
+    /** Hide price. */
+    const HIDE = 4;
+    /** Various price. */
+    const VARIES = 3;
 }

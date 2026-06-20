@@ -7,7 +7,8 @@ namespace WlSdk;
  * Values:
  * - 2 (`PERCENT`): Tax is accounted based on percents.
  */
-enum RsTaxSid: int
+class RsTaxSid
 {
-    case PERCENT = 2;
+    /** Tax is accounted based on percents. */
+    const PERCENT = 2;
 }

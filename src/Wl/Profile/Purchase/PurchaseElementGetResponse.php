@@ -193,52 +193,52 @@ class PurchaseElementGetResponse
     /**
      * Activation mode. One on {@link \WlSdk\RsActivationSid} constants. This field is only added for promotions.
      *
-     * @var \WlSdk\RsActivationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsActivationSid $id_activation = null;
+    public ?int $id_activation = null;
 
     /**
      * The type of discount given via a reward prize.
      * One on the {@link \WlSdk\RsCommissionTypeSid} constants.
      * This will be empty if this discount wasn't applied.
      *
-     * @var \WlSdk\RsCommissionTypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsCommissionTypeSid $id_discount_commission_type = null;
+    public ?int $id_discount_commission_type = null;
 
     /**
      * The type of duration for the promotion. This is used only for “membership” type promotions.
      * This determines whether the promotion lasts indefinitely, has a fixed duration, or ends on a specific date.
      * One of the {@link \WlSdk\RsDurationTypeSid} consta
      *
-     * @var \WlSdk\RsDurationTypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsDurationTypeSid $id_duration = null;
+    public ?int $id_duration = null;
 
     /**
      * The ID of the promotion program.
      * One of the {@link \WlSdk\RsProgramTypeSid} constants.
      * This is used only for promotions.
      *
-     * @var \WlSdk\RsProgramTypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsProgramTypeSid $id_program_type = null;
+    public ?int $id_program_type = null;
 
     /**
      * The ID of the purchase item type.
      * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
-     * @var \WlSdk\RsPurchaseItemSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
+    public ?int $id_purchase_item = null;
 
     /**
      * The ID of the sale category.
      * One of the {@link \WlSdk\RsSaleSid} constants.
      *
-     * @var \WlSdk\RsSaleSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsSaleSid $id_sale = null;
+    public ?int $id_sale = null;
 
     /**
      * If `true`, then the purchase item is active. If `false`, then the purchase item isn't active.
@@ -568,12 +568,12 @@ class PurchaseElementGetResponse
         $this->i_remain_duration = isset($data['i_remain_duration']) ? (int)$data['i_remain_duration'] : null;
         $this->i_renew = isset($data['i_renew']) ? (int)$data['i_renew'] : null;
         $this->i_use = isset($data['i_use']) ? (int)$data['i_use'] : null;
-        $this->id_activation = isset($data['id_activation']) ? \WlSdk\RsActivationSid::tryFrom((int)$data['id_activation']) : null;
-        $this->id_discount_commission_type = isset($data['id_discount_commission_type']) ? \WlSdk\RsCommissionTypeSid::tryFrom((int)$data['id_discount_commission_type']) : null;
-        $this->id_duration = isset($data['id_duration']) ? \WlSdk\RsDurationTypeSid::tryFrom((int)$data['id_duration']) : null;
-        $this->id_program_type = isset($data['id_program_type']) ? \WlSdk\RsProgramTypeSid::tryFrom((int)$data['id_program_type']) : null;
-        $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
-        $this->id_sale = isset($data['id_sale']) ? \WlSdk\RsSaleSid::tryFrom((int)$data['id_sale']) : null;
+        $this->id_activation = isset($data['id_activation']) ? (int)$data['id_activation'] : null;
+        $this->id_discount_commission_type = isset($data['id_discount_commission_type']) ? (int)$data['id_discount_commission_type'] : null;
+        $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;
+        $this->id_program_type = isset($data['id_program_type']) ? (int)$data['id_program_type'] : null;
+        $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
+        $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
         $this->is_component = isset($data['is_component']) ? (bool)$data['is_component'] : null;
         $this->is_convert = isset($data['is_convert']) ? (bool)$data['is_convert'] : null;

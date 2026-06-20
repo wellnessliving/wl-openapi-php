@@ -10,8 +10,10 @@ namespace WlSdk\Wl\Business\Account\Subscription\BusinessCoach;
  * - 2 (`BUSINESS_SUCCESS_COACHING`): Business Success Coaching.
  * - 1 (`FREE`): No subscription.
  */
-enum BusinessCoachSubscriptionSid: int
+class BusinessCoachSubscriptionSid
 {
-    case BUSINESS_SUCCESS_COACHING = 2;
-    case FREE = 1;
+    /** Business Success Coaching. */
+    const BUSINESS_SUCCESS_COACHING = 2;
+    /** No subscription. */
+    const FREE = 1;
 }

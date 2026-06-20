@@ -8,8 +8,10 @@ namespace WlSdk\Wl\Promotion\Edit\Limit\Cycle;
  * - 1 (`CALENDAR`): Attendance Restriction is applied at the start of the calendar cycle.
  * - 2 (`PAYMENT`): Attendance Restriction is applied at the start of the payment cycle.
  */
-enum Sid: int
+class Sid
 {
-    case CALENDAR = 1;
-    case PAYMENT = 2;
+    /** Attendance Restriction is applied at the start of the calendar cycle. */
+    const CALENDAR = 1;
+    /** Attendance Restriction is applied at the start of the payment cycle. */
+    const PAYMENT = 2;
 }

@@ -20,9 +20,9 @@ class Purchase72GetResponseSessionPass
     /**
      * Type of the session pass purchase. One of {@link \WlSdk\RsPurchaseItemSid} constants.
      *
-     * @var \WlSdk\RsPurchaseItemSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
+    public ?int $id_purchase_item = null;
 
     /**
      * Session pass title.
@@ -35,7 +35,7 @@ class Purchase72GetResponseSessionPass
     {
         $this->i_remain = isset($data['i_remain']) ? (int)$data['i_remain'] : null;
         $this->k_session_pass = isset($data['k_session_pass']) ? (string)$data['k_session_pass'] : null;
-        $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
+        $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
         $this->s_title = isset($data['s_title']) ? (string)$data['s_title'] : null;
     }
 }

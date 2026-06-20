@@ -8,8 +8,10 @@ namespace WlSdk;
  * - 1 (`FLAT`): Fixed type.
  * - 2 (`PERCENT`): Percent type.
  */
-enum RsCommissionTypeSid: int
+class RsCommissionTypeSid
 {
-    case FLAT = 1;
-    case PERCENT = 2;
+    /** Fixed type. */
+    const FLAT = 1;
+    /** Percent type. */
+    const PERCENT = 2;
 }
