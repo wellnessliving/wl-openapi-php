@@ -8,6 +8,7 @@ class ListGetResponseStaff
      * Staff member's gender. One of {@link \WlSdk\AGenderSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\AGenderSid
      */
     public ?int $id_gender = null;
 

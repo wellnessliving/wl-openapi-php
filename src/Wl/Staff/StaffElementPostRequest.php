@@ -49,6 +49,7 @@ class StaffElementPostRequest
      * `null` means to not change the current value of the field or set gender by default for new staff.
      *
      * @var int|null
+     * @see \WlSdk\AGenderSid
      */
     public ?int $id_gender = null;
 
@@ -58,6 +59,7 @@ class StaffElementPostRequest
      * `null` means to not change the current value of the field.
      *
      * @var int|null
+     * @see \WlSdk\RsPrivilegeRoleSid
      */
     public ?int $id_role = null;
 

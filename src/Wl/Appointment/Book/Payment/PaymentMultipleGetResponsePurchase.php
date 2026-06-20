@@ -16,6 +16,7 @@ class PaymentMultipleGetResponsePurchase
      * The purchase item ID. One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 

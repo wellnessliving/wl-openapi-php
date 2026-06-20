@@ -9,6 +9,7 @@ class Relation72GetRequest
      * One of {@link \WlSdk\Wl\User\Tracking\FlowSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\User\Tracking\FlowSid
      */
     public ?int $id_flow = null;
 

@@ -46,6 +46,7 @@ class ActionWritePostRequest
      * `null` if not set yet.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_cap = null;
 
@@ -55,6 +56,7 @@ class ActionWritePostRequest
      * `null` if not set yet.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_duration = null;
 

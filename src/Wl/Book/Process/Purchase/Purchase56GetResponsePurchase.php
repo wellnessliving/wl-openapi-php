@@ -82,6 +82,7 @@ class Purchase56GetResponsePurchase
      * \WlSdk\RsProgramCategorySid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramCategorySid
      */
     public ?int $id_program_category = null;
 
@@ -90,6 +91,7 @@ class Purchase56GetResponsePurchase
      * \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
      */
     public ?int $id_program_type = null;
 
@@ -97,6 +99,7 @@ class Purchase56GetResponsePurchase
      * The ID of Purchase Option type. One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 

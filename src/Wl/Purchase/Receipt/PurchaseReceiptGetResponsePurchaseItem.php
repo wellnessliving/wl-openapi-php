@@ -31,6 +31,7 @@ class PurchaseReceiptGetResponsePurchaseItem
      * item is not a promotion.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramSid
      */
     public ?int $id_program = null;
 
@@ -38,6 +39,7 @@ class PurchaseReceiptGetResponsePurchaseItem
      * Purchase item ID. One of {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 
@@ -45,6 +47,7 @@ class PurchaseReceiptGetResponsePurchaseItem
      * Sale ID. One of {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 

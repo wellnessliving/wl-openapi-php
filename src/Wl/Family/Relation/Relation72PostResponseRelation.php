@@ -8,6 +8,7 @@ class Relation72PostResponseRelation
      * The relationship type. One of the {@link \WlSdk\RsFamilyRelationSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsFamilyRelationSid
      */
     public ?int $id_family_relation = null;
 
@@ -15,6 +16,7 @@ class Relation72PostResponseRelation
      * The type of reciprocated relationship. One of the {@link \WlSdk\RsFamilyRelationSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsFamilyRelationSid
      */
     public ?int $id_family_relation_reverse = null;
 

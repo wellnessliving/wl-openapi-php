@@ -16,6 +16,7 @@ class ElementGetResponseClassListScheduleRepeat
      * One of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_repeat = null;
 

@@ -22,6 +22,7 @@ class ListGetResponseBankCard
      * The card system ID. This is one of the {@link \WlSdk\ACardSystemSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ACardSystemSid
      */
     public ?int $id_card_system = null;
 

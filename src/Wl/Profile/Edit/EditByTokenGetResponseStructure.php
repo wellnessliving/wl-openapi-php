@@ -9,6 +9,7 @@ class EditByTokenGetResponseStructure
      * This value is only defined if `id_field_type`={@link \WlSdk\RsFieldTypeSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsFieldGeneralSid
      */
     public ?int $id_field_general = null;
 
@@ -24,6 +25,7 @@ class EditByTokenGetResponseStructure
      * The type of field. One of the {@link \WlSdk\RsFieldTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsFieldTypeSid
      */
     public ?int $id_field_type = null;
 

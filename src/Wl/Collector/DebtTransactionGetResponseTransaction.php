@@ -22,6 +22,7 @@ class DebtTransactionGetResponseTransaction
      * The payment method ID that was used for the payment. One of {@link \WlSdk\RsPayMethodSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPayMethodSid
      */
     public ?int $id_pay_method = null;
 

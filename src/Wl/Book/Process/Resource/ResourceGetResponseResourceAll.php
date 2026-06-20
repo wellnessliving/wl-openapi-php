@@ -34,6 +34,7 @@ class ResourceGetResponseResourceAll
      * Type of the asset category. One of {@link \WlSdk\Wl\Resource\ResourceCategoryEnum} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Resource\ResourceCategoryEnum
      */
     public ?int $id_category = null;
 

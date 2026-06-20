@@ -75,6 +75,7 @@ class BusinessConfigGetResponseBusinessPolicy
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_book_before = null;
 
@@ -82,6 +83,7 @@ class BusinessConfigGetResponseBusinessPolicy
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_book_future = null;
 
@@ -89,6 +91,7 @@ class BusinessConfigGetResponseBusinessPolicy
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_cancel = null;
 
@@ -96,6 +99,7 @@ class BusinessConfigGetResponseBusinessPolicy
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_promote = null;
 
@@ -103,6 +107,7 @@ class BusinessConfigGetResponseBusinessPolicy
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_promote_fastest_response = null;
 
@@ -110,6 +115,7 @@ class BusinessConfigGetResponseBusinessPolicy
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_promote_require_confirm = null;
 

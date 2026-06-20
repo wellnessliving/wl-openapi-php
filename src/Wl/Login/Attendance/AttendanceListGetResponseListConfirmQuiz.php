@@ -8,6 +8,7 @@ class AttendanceListGetResponseListConfirmQuiz
      * Response status ID. One of {@link \WlSdk\Core\Quiz\Response\ResponseStatusSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Core\Quiz\Response\ResponseStatusSid
      */
     public ?int $id_status = null;
 

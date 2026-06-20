@@ -37,6 +37,7 @@ class AlertEditPostRequest
      * Login note access type ID.
      *
      * @var int|null
+     * @see \WlSdk\RsLoginNoteAccessSid
      */
     public ?int $id_login_note_access = null;
 

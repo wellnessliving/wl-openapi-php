@@ -36,6 +36,7 @@ class ElementGetResponseTax
      * The tax type. One of {@link \WlSdk\RsTaxSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsTaxSid
      */
     public ?int $id_tax = null;
 

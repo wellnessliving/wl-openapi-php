@@ -119,6 +119,7 @@ class PageElementGetResponse
      * This will be `null` if notes aren't allowed.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Visit\Note\Sid\NoteSid
      */
     public ?int $id_note = null;
 
@@ -128,6 +129,7 @@ class PageElementGetResponse
      * This will be `null` for non-virtual services.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Virtual\VirtualProviderSid
      */
     public ?int $id_virtual_provider = null;
 
@@ -137,6 +139,7 @@ class PageElementGetResponse
      * This will be `null` if not loaded yet.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Visit\VisitSid
      */
     public ?int $id_visit = null;
 

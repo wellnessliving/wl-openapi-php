@@ -59,6 +59,7 @@ class LayoutGetResponseShapeCustom
      * The shape type ID. One of the {@link \WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid
      */
     public ?int $id_resource_layout_shape = null;
 

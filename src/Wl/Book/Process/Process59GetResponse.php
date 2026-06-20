@@ -29,6 +29,7 @@ class Process59GetResponse
      * One of the {@link \WlSdk\Wl\Classes\RequirePaySid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\RequirePaySid
      */
     public ?int $id_pay_require = null;
 

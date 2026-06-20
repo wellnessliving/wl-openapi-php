@@ -11,6 +11,7 @@ class ModifyPostResponse
      * The class modify action type. One of the {@link \WlSdk\RsClassModifyModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsClassModifyModeSid
      */
     public ?int $id_step = null;
 

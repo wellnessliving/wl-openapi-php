@@ -245,6 +245,7 @@ class PurchaseListElementGetResponse
      * promotions.
      *
      * @var int|null
+     * @see \WlSdk\RsActivationSid
      */
     public ?int $id_activation = null;
 
@@ -254,6 +255,7 @@ class PurchaseListElementGetResponse
      * if this discount wasn't applied.
      *
      * @var int|null
+     * @see \WlSdk\RsCommissionTypeSid
      */
     public ?int $id_discount_commission_type = null;
 
@@ -264,6 +266,7 @@ class PurchaseListElementGetResponse
      * for key `i_payment_period`. One of the {@link \WlSdk\RsDurationTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsDurationTypeSid
      */
     public ?int $id_duration = null;
 
@@ -273,6 +276,7 @@ class PurchaseListElementGetResponse
      * One of the {@link \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
      */
     public ?int $id_program_type = null;
 
@@ -281,6 +285,7 @@ class PurchaseListElementGetResponse
      * The ID of purchase item type. One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 
@@ -288,6 +293,7 @@ class PurchaseListElementGetResponse
      * The ID of the sale category. One of the constants {@link \WlSdk\RsSaleSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 

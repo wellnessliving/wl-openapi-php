@@ -13,6 +13,7 @@ class AutymateActivateGetResponse
      * One of {@link \WlSdk\Wl\Integration\Autymate\AutymateStatusSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Integration\Autymate\AutymateStatusSid
      */
     public ?int $id_status = null;
 

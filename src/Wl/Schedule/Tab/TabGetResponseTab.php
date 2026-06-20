@@ -8,6 +8,7 @@ class TabGetResponseTab
      * The tab type ID which is one of the {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\Tab\TabSid
      */
     public ?int $id_class_tab_object = null;
 
@@ -18,6 +19,7 @@ class TabGetResponseTab
      * Otherwise, this will be `null`.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\Tab\TabSid
      */
     public ?int $id_class_tab_system = null;
 

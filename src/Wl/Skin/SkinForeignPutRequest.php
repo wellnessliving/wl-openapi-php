@@ -8,6 +8,7 @@ class SkinForeignPutRequest
      * Skin type, one of {@link \WlSdk\RsSkinSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsSkinSid
      */
     public ?int $id_skin = null;
 

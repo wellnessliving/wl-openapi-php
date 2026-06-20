@@ -84,6 +84,7 @@ class EventListGetRequest
      * * {@link \WlSdk\AFlagSid} to show all events (available and unavailable).
      *
      * @var int|null
+     * @see \WlSdk\AFlagSid
      */
     public ?int $id_flag = null;
 

@@ -86,6 +86,7 @@ class EnvironmentGetResponse
      * The locale ID of the business.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\LocaleSid
      */
     public ?int $id_locale = null;
 

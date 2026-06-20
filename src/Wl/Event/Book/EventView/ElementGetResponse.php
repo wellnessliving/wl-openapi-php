@@ -187,6 +187,7 @@ class ElementGetResponse
      * One of the {@link \WlSdk\Wl\Classes\RequirePaySid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\RequirePaySid
      */
     public ?int $id_pay_require = null;
 
@@ -197,6 +198,7 @@ class ElementGetResponse
      * `null` means default value not selected.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\RequirePaySid
      */
     public ?int $id_pay_require_option = null;
 
@@ -206,6 +208,7 @@ class ElementGetResponse
      * `null` if an in-person event.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Virtual\VirtualProviderSid
      */
     public ?int $id_virtual_provider = null;
 

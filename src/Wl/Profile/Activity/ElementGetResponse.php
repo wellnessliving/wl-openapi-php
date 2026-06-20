@@ -77,6 +77,7 @@ class ElementGetResponse
      * This will be `null` is no special icon for this activity.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Design\IconSid
      */
     public ?int $id_icon = null;
 
@@ -85,6 +86,7 @@ class ElementGetResponse
      * constants.
      *
      * @var int|null
+     * @see \WlSdk\RsLoginActivityTypeSid
      */
     public ?int $id_type = null;
 

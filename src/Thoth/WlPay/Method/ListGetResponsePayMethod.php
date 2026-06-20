@@ -8,6 +8,7 @@ class ListGetResponsePayMethod
      * The payment method type ID. One of {@link \WlSdk\RsPayMethodSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPayMethodSid
      */
     public ?int $id_pay_method = null;
 

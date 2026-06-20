@@ -25,6 +25,7 @@ class ListGetRequest
      * For different roles different results might be generated.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Login\LoginRoleSid
      */
     public ?int $id_role = null;
 

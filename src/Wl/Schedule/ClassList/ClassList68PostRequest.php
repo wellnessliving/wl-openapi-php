@@ -94,6 +94,7 @@ class ClassList68PostRequest
      * `null` if no filtering by tab is required.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\Tab\TabSid
      */
     public ?int $id_class_tab = null;
 

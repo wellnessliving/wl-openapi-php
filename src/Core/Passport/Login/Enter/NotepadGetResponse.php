@@ -22,6 +22,7 @@ class NotepadGetResponse
      * In this case, the notepad is created in datacenter where the API request was initially sent.
      *
      * @var int|null
+     * @see \WlSdk\Core\Amazon\Region\AmazonRegionSid
      */
     public ?int $id_region = null;
 

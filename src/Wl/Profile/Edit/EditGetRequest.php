@@ -14,6 +14,7 @@ class EditGetRequest
      * used.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Profile\RegisterSourceSid
      */
     public ?int $id_register_source = null;
 

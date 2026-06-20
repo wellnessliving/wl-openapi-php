@@ -14,6 +14,7 @@ class VideoListPutResponse
      * `null` if video is uploaded.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Video\VideoEmbedSourceSid
      */
     public ?int $id_embed_source = null;
 

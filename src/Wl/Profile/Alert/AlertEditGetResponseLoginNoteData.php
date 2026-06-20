@@ -22,6 +22,7 @@ class AlertEditGetResponseLoginNoteData
      * Login note access type. One of {@link \WlSdk\RsLoginNoteAccessSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsLoginNoteAccessSid
      */
     public ?int $id_login_note_access = null;
 
@@ -29,6 +30,7 @@ class AlertEditGetResponseLoginNoteData
      * Login note flag type. One of {@link \WlSdk\RsLoginNoteFlagSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsLoginNoteFlagSid
      */
     public ?int $id_login_note_flag = null;
 
@@ -38,6 +40,7 @@ class AlertEditGetResponseLoginNoteData
      * `null` if the flag was created manually.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Location\Flag\FlagSourceEnum
      */
     public ?int $id_source = null;
 

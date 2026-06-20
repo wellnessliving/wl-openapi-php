@@ -32,6 +32,7 @@ class FinishPostRequest
      * The payment type ID for the appointment. One of the {@link \WlSdk\RsAppointmentPaySid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsAppointmentPaySid
      */
     public ?int $id_pay = null;
 
@@ -139,6 +140,7 @@ class FinishPostRequest
      * The booking mode ID. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 

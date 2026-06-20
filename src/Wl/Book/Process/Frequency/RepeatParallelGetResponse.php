@@ -35,6 +35,7 @@ class RepeatParallelGetResponse
      * == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsRepeatEndSid
      */
     public ?int $i_count = null;
 

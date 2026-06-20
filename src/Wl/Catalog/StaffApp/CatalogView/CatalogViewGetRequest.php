@@ -35,6 +35,7 @@ class CatalogViewGetRequest
      * The ID of the sale category. One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 

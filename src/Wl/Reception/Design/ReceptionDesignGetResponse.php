@@ -55,6 +55,7 @@ class ReceptionDesignGetResponse
      * ID of the sound for failed check in.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Reception\Design\CheckInSoundSid
      */
     public ?int $id_failed_sound = null;
 
@@ -62,6 +63,7 @@ class ReceptionDesignGetResponse
      * ID of the sound for successful check in.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Reception\Design\CheckInSoundSid
      */
     public ?int $id_success_sound = null;
 

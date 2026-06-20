@@ -124,6 +124,7 @@ class ElementGetResponse
      * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 
@@ -131,6 +132,7 @@ class ElementGetResponse
      * The ID of the item view category. One of the {@link \WlSdk\Wl\Catalog\PurchaseOptionViewSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Catalog\PurchaseOptionViewSid
      */
     public ?int $id_purchase_option_view = null;
 
@@ -139,6 +141,7 @@ class ElementGetResponse
      * One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 

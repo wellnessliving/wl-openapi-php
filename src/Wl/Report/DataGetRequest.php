@@ -23,6 +23,7 @@ class DataGetRequest
      * </ul>
      *
      * @var int|null
+     * @see \WlSdk\RsReportSid
      */
     public ?int $id_report = null;
 
@@ -30,6 +31,7 @@ class DataGetRequest
      * The report group ID.
      *
      * @var int|null
+     * @see \WlSdk\RsReportGroupSid
      */
     public ?int $id_report_group = null;
 
@@ -38,6 +40,7 @@ class DataGetRequest
      * If set, the collection of that page will be used, otherwise a collection of single report will be used.
      *
      * @var int|null
+     * @see \WlSdk\RsReportPageSid
      */
     public ?int $id_report_page = null;
 
@@ -45,6 +48,7 @@ class DataGetRequest
      * The report view ID. One of the {@link \WlSdk\RsReportChartViewSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsReportChartViewSid
      */
     public ?int $id_report_view = null;
 

@@ -10,6 +10,7 @@ class ListBulkGetRequest
      * `0` if a directory filter isn't required.
      *
      * @var int|null
+     * @see \WlSdk\RsProjectSid
      */
     public ?int $id_directory = null;
 

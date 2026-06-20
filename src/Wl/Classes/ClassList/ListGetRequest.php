@@ -23,6 +23,7 @@ class ListGetRequest
      * `null` if no filtering by Book Now Tab is required.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\Tab\TabSid
      */
     public ?int $id_class_tab = null;
 

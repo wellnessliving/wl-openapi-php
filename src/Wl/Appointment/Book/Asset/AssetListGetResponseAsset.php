@@ -79,6 +79,7 @@ class AssetListGetResponseAsset
      * The purchase rule. One of the {@link \WlSdk\RsServiceRequireSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsServiceRequireSid
      */
     public ?int $id_service_require = null;
 

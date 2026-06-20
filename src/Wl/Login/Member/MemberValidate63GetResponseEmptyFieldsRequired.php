@@ -8,6 +8,7 @@ class MemberValidate63GetResponseEmptyFieldsRequired
      * The general field ID. One of {@link \WlSdk\RsFieldGeneralSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsFieldGeneralSid
      */
     public ?int $id_field_general = null;
 

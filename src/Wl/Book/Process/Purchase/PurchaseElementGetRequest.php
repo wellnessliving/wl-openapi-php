@@ -19,6 +19,7 @@ class PurchaseElementGetRequest
      * Required when `id_purchase_item` = {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $i_session = null;
 
@@ -26,6 +27,7 @@ class PurchaseElementGetRequest
      * The ID of the purchase item type. One of {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 

@@ -48,6 +48,7 @@ class VisitStatusPostRequest
      * If you're unsure about the value to use, keep the default value.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -56,6 +57,7 @@ class VisitStatusPostRequest
      * One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Visit\VisitSid
      */
     public ?int $id_visit = null;
 
@@ -69,6 +71,7 @@ class VisitStatusPostRequest
      * If the status of this parameter is out of date, the API call will refresh it.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Visit\VisitSid
      */
     public ?int $id_visit_from = null;
 

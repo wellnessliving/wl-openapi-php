@@ -22,6 +22,7 @@ class CatalogProductGetResponseProduct
      * The sale category ID. One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 

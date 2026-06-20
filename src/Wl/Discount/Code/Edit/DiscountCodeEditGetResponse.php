@@ -69,6 +69,7 @@ class DiscountCodeEditGetResponse
      * expires.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_duration = null;
 
@@ -76,6 +77,7 @@ class DiscountCodeEditGetResponse
      * Type of the discount code duration from {@link \WlSdk\RsDurationTypeSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsDurationTypeSid
      */
     public ?int $id_duration_type = null;
 

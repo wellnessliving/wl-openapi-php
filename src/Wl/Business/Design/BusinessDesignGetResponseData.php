@@ -15,6 +15,7 @@ class BusinessDesignGetResponseData
      * Layout ID. For more details, see {@link \WlSdk\RsPageFrontendHeaderLayoutSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsPageFrontendHeaderLayoutSid
      */
     public ?int $id_layout = null;
 
@@ -22,6 +23,7 @@ class BusinessDesignGetResponseData
      * Logo position ID. For more details, see {@link \WlSdk\RsBusinessDesignLogoPositionSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsBusinessDesignLogoPositionSid
      */
     public ?int $id_logo_position = null;
 
@@ -29,6 +31,7 @@ class BusinessDesignGetResponseData
      * Logo style ID. For more details, see {@link \WlSdk\RsBusinessDesignLogoStyleSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsBusinessDesignLogoStyleSid
      */
     public ?int $id_logo_style = null;
 

@@ -43,6 +43,7 @@ class ReceptionScheduleGetResponseClass
      * Service ID. One of the {@link \WlSdk\Wl\Service\ServiceSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Service\ServiceSid
      */
     public ?int $id_service = null;
 

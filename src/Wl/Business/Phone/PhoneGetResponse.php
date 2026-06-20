@@ -15,6 +15,7 @@ class PhoneGetResponse
      * country that is outside its locale.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\LocaleSid
      */
     public ?int $id_locale = null;
 

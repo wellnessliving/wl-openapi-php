@@ -48,6 +48,7 @@ class ConvertGetResponse
      * The conversion ID. One of the {@link \WlSdk\Wl\Promotion\Convert\PromotionConvertSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Promotion\Convert\PromotionConvertSid
      */
     public ?int $id_convert = null;
 
@@ -58,6 +59,7 @@ class ConvertGetResponse
      * `null` if it's not set yet.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Login\Promotion\Convert\ConvertWhenSid
      */
     public ?int $id_convert_when = null;
 

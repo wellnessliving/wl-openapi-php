@@ -92,6 +92,7 @@ class Response65PostRequest
      * Response source. One of {@link \WlSdk\Wl\Quiz\Response\SourceSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Quiz\Response\SourceSid
      */
     public ?int $id_source = null;
 

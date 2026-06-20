@@ -20,6 +20,7 @@ class SocialSharePostRequest
      * The id of the social network.
      *
      * @var int|null
+     * @see \WlSdk\ASocialSid
      */
     public ?int $id_share_destination = null;
 
@@ -27,6 +28,7 @@ class SocialSharePostRequest
      * The id of type object for share post to social network.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Social\Share\ShareObjectSid
      */
     public ?int $id_share_object = null;
 

@@ -16,6 +16,7 @@ class SubscribePostResponseMessageBroadcastQ
      * One of the {@link \WlSdk\RsReportSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsReportSid
      */
     public ?int $id_report = null;
 

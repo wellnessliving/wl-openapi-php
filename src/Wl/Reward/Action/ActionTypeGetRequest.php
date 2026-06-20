@@ -8,6 +8,7 @@ class ActionTypeGetRequest
      * ID of type of reward action. One of {@link \WlSdk\RsRewardScoreSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsRewardScoreSid
      */
     public ?int $id_reward_score = null;
 

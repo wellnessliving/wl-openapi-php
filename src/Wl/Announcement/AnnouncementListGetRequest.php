@@ -12,6 +12,7 @@ class AnnouncementListGetRequest
      * `null` in case when use default order.
      *
      * @var int|null
+     * @see \WlSdk\Core\Sid\SortOrderSid
      */
     public ?int $id_order = null;
 
@@ -23,6 +24,7 @@ class AnnouncementListGetRequest
      * `null` in case when use default field.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Announcement\SortFieldSid
      */
     public ?int $id_sort_field = null;
 

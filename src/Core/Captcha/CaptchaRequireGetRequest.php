@@ -15,6 +15,7 @@ class CaptchaRequireGetRequest
      * The CID of the CAPTCHA.
      *
      * @var int|null
+     * @see \WlSdk\Core\Captcha\CaptchaAbstract
      */
     public ?int $cid_captcha = null;
 

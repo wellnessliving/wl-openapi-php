@@ -23,6 +23,7 @@ class AlertGetResponseAlert
      * ID of alert type. One of {@link \WlSdk\RsProfileNoteSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProfileNoteSid
      */
     public ?int $id_profile_note = null;
 

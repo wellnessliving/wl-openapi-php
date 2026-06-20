@@ -32,6 +32,7 @@ class ElementGetResponseItem
      * The Purchase Option view type. One of the {@link \WlSdk\Wl\Catalog\PurchaseOptionViewSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Catalog\PurchaseOptionViewSid
      */
     public ?int $id_purchase_option_view = null;
 

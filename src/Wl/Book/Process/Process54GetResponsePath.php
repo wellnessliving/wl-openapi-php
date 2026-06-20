@@ -8,6 +8,7 @@ class Process54GetResponsePath
      * The step ID. One of the {@link \WlSdk\Wl\Book\Process\ProcessSpaSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Book\Process\ProcessSpaSid
      */
     public ?int $id_book_process = null;
 

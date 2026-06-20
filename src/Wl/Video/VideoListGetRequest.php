@@ -83,6 +83,7 @@ class VideoListGetRequest
      * depends on sort order.
      *
      * @var int|null
+     * @see \WlSdk\Core\Sid\SortOrderSid
      */
     public ?int $id_order = null;
 
@@ -92,6 +93,7 @@ class VideoListGetRequest
      * and custom sort order is used.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Video\Catalog\Filter\Sort\FilterSortSid
      */
     public ?int $id_sort = null;
 

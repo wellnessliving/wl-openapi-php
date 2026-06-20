@@ -14,6 +14,7 @@ class PromotionIndexGetResponsePromotionComponent
      *  </ul>
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 

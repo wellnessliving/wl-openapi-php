@@ -92,6 +92,7 @@ class VideoListGetResponseList
      * Video source. One of {@link \WlSdk\Wl\Video\VideoSourceSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Video\VideoSourceSid
      */
     public ?int $id_source = null;
 

@@ -57,6 +57,7 @@ class AnnouncementListGetResponseList
      * Announcement status ID. One of {@link \WlSdk\Wl\Announcement\AnnouncementStatusEnum} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Announcement\AnnouncementStatusEnum
      */
     public ?int $id_status = null;
 

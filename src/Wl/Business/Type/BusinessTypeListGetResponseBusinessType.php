@@ -15,6 +15,7 @@ class BusinessTypeListGetResponseBusinessType
      * The business category. One of the {@link \WlSdk\RsBusinessCategorySid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsBusinessCategorySid
      */
     public ?int $id_business_category = null;
 
@@ -23,6 +24,7 @@ class BusinessTypeListGetResponseBusinessType
      * \WlSdk\RsHomeTourSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsHomeTourSid
      */
     public ?int $id_tour = null;
 

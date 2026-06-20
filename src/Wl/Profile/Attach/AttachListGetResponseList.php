@@ -44,6 +44,7 @@ class AttachListGetResponseList
      * Preview type identifier. One of {@link \WlSdk\Wl\Profile\Attach\AttachPreviewSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Profile\Attach\AttachPreviewSid
      */
     public ?int $id_preview = null;
 

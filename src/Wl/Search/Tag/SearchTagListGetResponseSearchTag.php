@@ -10,6 +10,7 @@ class SearchTagListGetResponseSearchTag
      * This can be found in the business information found in [DataApi](/Wl/Business/Data.json).
      *
      * @var int|null
+     * @see \WlSdk\RsBusinessCategorySid
      */
     public ?int $id_business_category = null;
 

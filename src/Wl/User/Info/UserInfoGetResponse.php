@@ -74,6 +74,7 @@ class UserInfoGetResponse
      * This will be `null` if the gender isn't set yet.
      *
      * @var int|null
+     * @see \WlSdk\AGenderSid
      */
     public ?int $id_gender = null;
 

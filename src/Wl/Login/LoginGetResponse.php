@@ -25,6 +25,7 @@ class LoginGetResponse
      * The gender ID. It will be one of the {@link \WlSdk\AGenderSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\AGenderSid
      */
     public ?int $id_gender = null;
 

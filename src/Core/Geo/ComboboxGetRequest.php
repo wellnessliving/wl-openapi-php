@@ -12,6 +12,7 @@ class ComboboxGetRequest
      * This will be `0` if all locations are searched.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\LocaleSid
      */
     public ?int $id_locale = null;
 

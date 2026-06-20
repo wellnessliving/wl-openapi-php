@@ -89,6 +89,7 @@ class ReceptionSchedulePostResponseConfirmationDataPayment
      * The promotion's program type ID. One of {@link \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
      */
     public ?int $id_program_type = null;
 

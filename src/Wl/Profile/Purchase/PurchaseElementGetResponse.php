@@ -195,6 +195,7 @@ class PurchaseElementGetResponse
      * Activation mode. One on {@link \WlSdk\RsActivationSid} constants. This field is only added for promotions.
      *
      * @var int|null
+     * @see \WlSdk\RsActivationSid
      */
     public ?int $id_activation = null;
 
@@ -204,6 +205,7 @@ class PurchaseElementGetResponse
      * This will be empty if this discount wasn't applied.
      *
      * @var int|null
+     * @see \WlSdk\RsCommissionTypeSid
      */
     public ?int $id_discount_commission_type = null;
 
@@ -213,6 +215,7 @@ class PurchaseElementGetResponse
      * One of the {@link \WlSdk\RsDurationTypeSid} consta
      *
      * @var int|null
+     * @see \WlSdk\RsDurationTypeSid
      */
     public ?int $id_duration = null;
 
@@ -222,6 +225,7 @@ class PurchaseElementGetResponse
      * This is used only for promotions.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
      */
     public ?int $id_program_type = null;
 
@@ -230,6 +234,7 @@ class PurchaseElementGetResponse
      * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 
@@ -238,6 +243,7 @@ class PurchaseElementGetResponse
      * One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 

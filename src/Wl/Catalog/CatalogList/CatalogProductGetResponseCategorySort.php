@@ -16,6 +16,7 @@ class CatalogProductGetResponseCategorySort
      * The sort order. One of the {@link \WlSdk\Core\Sid\SortOrderSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Core\Sid\SortOrderSid
      */
     public ?int $id_order = null;
 
@@ -23,6 +24,7 @@ class CatalogProductGetResponseCategorySort
      * The sort field ID. One of the {@link \WlSdk\Wl\Shop\Category\ShopCategorySortSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Shop\Category\ShopCategorySortSid
      */
     public ?int $id_sort = null;
 

@@ -8,6 +8,7 @@ class GoalGetResponseFieldList
      * Field ID. One of the {@link \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid
      */
     public ?int $id_field = null;
 
@@ -15,6 +16,7 @@ class GoalGetResponseFieldList
      * Field measurement unit ID. One of the {@link \WlSdk\Wl\Member\Progress\Field\MeasurementSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Member\Progress\Field\MeasurementSid
      */
     public ?int $id_measurement_unit = null;
 
@@ -22,6 +24,7 @@ class GoalGetResponseFieldList
      * Field type ID. One of the {@link \WlSdk\Wl\Member\Progress\Field\TypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Member\Progress\Field\TypeSid
      */
     public ?int $id_type = null;
 

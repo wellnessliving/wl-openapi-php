@@ -133,6 +133,7 @@ class ScheduleListByTokenGetResponseSchedule
      *  Constants from {@link \WlSdk\Wl\Schedule\Design\OptionSid}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Schedule\Design\OptionSid
      */
     public ?int $id_option = null;
 
@@ -140,6 +141,7 @@ class ScheduleListByTokenGetResponseSchedule
      * The ID of the service type. One of {@link \WlSdk\RsServiceSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsServiceSid
      */
     public ?int $id_service = null;
 

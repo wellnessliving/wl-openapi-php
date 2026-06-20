@@ -112,6 +112,7 @@ class ListBulkGetResponseLocationFull
      * where set value which is absent.
      *
      * @var int|null
+     * @see \WlSdk\RsHomeTourSid
      */
     public ?int $id_industry = null;
 

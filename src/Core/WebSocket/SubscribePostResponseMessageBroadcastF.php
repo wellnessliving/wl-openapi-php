@@ -17,6 +17,7 @@ class SubscribePostResponseMessageBroadcastF
      * One of {@link \WlSdk\Wl\Task\TaskStatusSid}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Task\TaskStatusSid
      */
     public ?int $id_task_status = null;
 
