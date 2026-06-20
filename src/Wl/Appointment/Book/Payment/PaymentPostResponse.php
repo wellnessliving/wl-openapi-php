@@ -20,6 +20,7 @@ class PaymentPostResponse
      * The payment type for the appointment. A constant of {@link \WlSdk\RsAppointmentPaySid}.
      *
      * @var int|null
+     * @see \WlSdk\RsAppointmentPaySid
      */
     public ?int $id_pay = null;
 

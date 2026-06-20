@@ -22,6 +22,7 @@ class ReviewListGetRequest
      * If not passed use default order {@link \WlSdk\Wl\Review\ReviewList\ReviewOrderSid}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Review\ReviewList\ReviewOrderSid
      */
     public ?int $id_order = null;
 

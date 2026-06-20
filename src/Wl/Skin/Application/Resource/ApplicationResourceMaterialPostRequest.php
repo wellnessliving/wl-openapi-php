@@ -17,6 +17,7 @@ class ApplicationResourceMaterialPostRequest
      * `0` if no category is selected.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Skin\Application\Resource\ApplicationCategorySid
      */
     public ?int $id_category = null;
 
@@ -25,6 +26,7 @@ class ApplicationResourceMaterialPostRequest
      * One of {@link \WlSdk\Wl\Skin\Application\Upgrade\AppUpdateTypeEnum} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Skin\Application\Upgrade\AppUpdateTypeEnum
      */
     public ?int $id_version_change = null;
 

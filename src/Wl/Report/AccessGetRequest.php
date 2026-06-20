@@ -13,6 +13,7 @@ class AccessGetRequest
      * Only one of these two fields should be sent, but not both.
      *
      * @var int|null
+     * @see \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract
      */
     public ?int $cid_report = null;
 
@@ -25,6 +26,7 @@ class AccessGetRequest
      * Only one of these two fields should be sent, but not both.
      *
      * @var int|null
+     * @see \WlSdk\RsReportSid
      */
     public ?int $id_report = null;
 

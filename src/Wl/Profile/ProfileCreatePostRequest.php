@@ -28,6 +28,7 @@ class ProfileCreatePostRequest
      * `0` if not specified.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Gender\GenderSid
      */
     public ?int $id_gender = null;
 
@@ -38,6 +39,7 @@ class ProfileCreatePostRequest
      * `0` if not specified.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_lead_source = null;
 
@@ -49,6 +51,7 @@ class ProfileCreatePostRequest
      * `0` if not specified.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Login\Member\VaccinationStatus\VaccinationStatusSid
      */
     public ?int $id_vaccination_status = null;
 

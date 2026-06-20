@@ -32,6 +32,7 @@ class AssetListGetRequest
      * Mode type, one of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 

@@ -21,6 +21,7 @@ class SubscribePostRequest
      * Channel controller CID.
      *
      * @var int|null
+     * @see \WlSdk\Core\WebSocket\ChannelAbstract
      */
     public ?int $cid_channel = null;
 

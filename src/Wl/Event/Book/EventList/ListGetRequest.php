@@ -14,6 +14,7 @@ class ListGetRequest
      * * {@link \WlSdk\AFlagSid} to show all events (available and unavailable).
      *
      * @var int|null
+     * @see \WlSdk\AFlagSid
      */
     public ?int $id_status = null;
 

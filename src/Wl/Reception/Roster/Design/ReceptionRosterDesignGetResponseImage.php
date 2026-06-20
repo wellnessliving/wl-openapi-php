@@ -37,6 +37,7 @@ class ReceptionRosterDesignGetResponseImage
      *  Will be present only for \Core\Drive\Drive images.
      *
      * @var int|null
+     * @see \WlSdk\Core\Drive\DriveTypeSid
      */
     public ?int $id_type_src = null;
 

@@ -8,6 +8,7 @@ class ListGetResponseCoupon
      * The type of coupon. One of {@link \WlSdk\Wl\Coupon\TypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Coupon\TypeSid
      */
     public ?int $id_type = null;
 

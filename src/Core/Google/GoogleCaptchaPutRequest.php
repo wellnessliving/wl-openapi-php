@@ -8,6 +8,7 @@ class GoogleCaptchaPutRequest
      * Captcha version ID.
      *
      * @var int|null
+     * @see \WlSdk\Core\Google\Captcha\CaptchaVersionSid
      */
     public ?int $id_version = null;
 

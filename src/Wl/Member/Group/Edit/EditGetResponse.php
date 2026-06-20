@@ -12,6 +12,7 @@ class EditGetResponse
      * `null` if this group is not used for to track lead conversion.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Lead\Conversion\LeadConversionTypeSid
      */
     public ?int $id_conversion_type = null;
 
@@ -19,6 +20,7 @@ class EditGetResponse
      * Shape of icon. One of {@link \WlSdk\Wl\Member\Group\ShapeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Member\Group\ShapeSid
      */
     public ?int $id_member_group_shape = null;
 

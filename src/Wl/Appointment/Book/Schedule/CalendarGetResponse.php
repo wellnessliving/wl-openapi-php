@@ -71,6 +71,7 @@ class CalendarGetResponse
      * Last day of the week. One of {@link \WlSdk\ADateWeekSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ADateWeekSid
      */
     public ?int $i_week_end = null;
 
@@ -78,6 +79,7 @@ class CalendarGetResponse
      * First day of the week. One of {@link \WlSdk\ADateWeekSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ADateWeekSid
      */
     public ?int $i_week_start = null;
 

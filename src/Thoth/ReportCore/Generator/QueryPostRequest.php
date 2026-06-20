@@ -10,6 +10,7 @@ class QueryPostRequest
      * One of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} subclasses.
      *
      * @var int|null
+     * @see \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract
      */
     public ?int $cid_report = null;
 

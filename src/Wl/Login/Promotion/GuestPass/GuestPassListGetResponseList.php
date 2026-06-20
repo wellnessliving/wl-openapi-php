@@ -106,6 +106,7 @@ class GuestPassListGetResponseList
      * `null` if the promotion has no reset period.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_period = null;
 
@@ -114,6 +115,7 @@ class GuestPassListGetResponseList
      * One of {@link \WlSdk\RsProgramSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramSid
      */
     public ?int $id_program_guest = null;
 
@@ -122,6 +124,7 @@ class GuestPassListGetResponseList
      * constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Promotion\Guest\Pass\GuestPassResetTypeSid
      */
     public ?int $id_reset_type_guest = null;
 

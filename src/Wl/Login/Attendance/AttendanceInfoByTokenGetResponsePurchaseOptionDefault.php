@@ -9,6 +9,7 @@ class AttendanceInfoByTokenGetResponsePurchaseOptionDefault
      * This will be `null` if the class has no default Purchase Option, or it sets to "Drop-in rate".
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 

@@ -43,6 +43,7 @@ class ElementGetResponseItemImageImage
      * Type ID of the image. Constant from {@link \WlSdk\Core\Drive\DriveTypeSid}.
      *
      * @var int|null
+     * @see \WlSdk\Core\Drive\DriveTypeSid
      */
     public ?int $id_type_src = null;
 

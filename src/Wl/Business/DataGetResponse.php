@@ -28,6 +28,7 @@ class DataGetResponse
      * The business category ID of the business.
      *
      * @var int|null
+     * @see \WlSdk\RsBusinessCategorySid
      */
     public ?int $id_category = null;
 
@@ -37,6 +38,7 @@ class DataGetResponse
      * Constant from {@link \WlSdk\Wl\Business\Claim\BusinessClaimStatusSid}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Business\Claim\BusinessClaimStatusSid
      */
     public ?int $id_claim_status = null;
 
@@ -44,6 +46,7 @@ class DataGetResponse
      * The currency ID of the given business (or the system currency ID if the business didn't pass).
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\CurrencySid
      */
     public ?int $id_currency = null;
 
@@ -51,6 +54,7 @@ class DataGetResponse
      * The Locale ID, used to search geo items.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\LocaleSid
      */
     public ?int $id_locale = null;
 
@@ -62,6 +66,7 @@ class DataGetResponse
      * This will be `null` if the business doesn't have a rank type.
      *
      * @var int|null
+     * @see \WlSdk\RsRankTypeSid
      */
     public ?int $id_rank_type = null;
 
@@ -75,6 +80,7 @@ class DataGetResponse
      * cluster business will return an empty list.
      *
      * @var int|null
+     * @see \WlSdk\Core\Amazon\Region\AmazonRegionSid
      */
     public ?int $id_region = null;
 

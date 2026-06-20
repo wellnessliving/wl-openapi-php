@@ -54,6 +54,7 @@ class ImageUploadTemporaryPostResponse
      * The image type ID. One of the {@link \WlSdk\Core\Drive\DriveTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Core\Drive\DriveTypeSid
      */
     public ?int $id_type_src = null;
 

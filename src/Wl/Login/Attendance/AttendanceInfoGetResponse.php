@@ -103,6 +103,7 @@ class AttendanceInfoGetResponse
      * Type of note. One of {@link \WlSdk\Wl\Visit\Note\Sid\NoteSid} constants. `false` if notes not allowed.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Visit\Note\Sid\NoteSid
      */
     public ?int $id_note = null;
 
@@ -110,6 +111,7 @@ class AttendanceInfoGetResponse
      * Service type, one of {@link \WlSdk\RsServiceSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsServiceSid
      */
     public ?int $id_service = null;
 

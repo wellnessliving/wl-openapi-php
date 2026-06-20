@@ -16,6 +16,7 @@ class PaymentPostGetRequest
      * The key of source mode. A constant of {@link \WlSdk\Wl\Mode\ModeSid}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -23,6 +24,7 @@ class PaymentPostGetRequest
      * The purchase item ID. A constant of {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 

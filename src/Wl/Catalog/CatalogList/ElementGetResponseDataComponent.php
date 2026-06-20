@@ -8,6 +8,7 @@ class ElementGetResponseDataComponent
      * Program ID. One of {@link \WlSdk\RsProgramSid} ID's. Only applies to promotions.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramSid
      */
     public ?int $id_program = null;
 
@@ -15,6 +16,7 @@ class ElementGetResponseDataComponent
      * Purchase item ID. One of {@link \WlSdk\RsPurchaseItemSid} ID's.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 
@@ -22,6 +24,7 @@ class ElementGetResponseDataComponent
      * Sale ID. One of {@link \WlSdk\RsSaleSid} ID's.
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 

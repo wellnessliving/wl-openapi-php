@@ -33,6 +33,7 @@ class EnvironmentUserGetResponsePayProcessor
      * ID of the payment processor. One of {@link \WlSdk\Thoth\PayProcessor\PayProcessorSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Thoth\PayProcessor\PayProcessorSid
      */
     public ?int $id_pay_processor = null;
 

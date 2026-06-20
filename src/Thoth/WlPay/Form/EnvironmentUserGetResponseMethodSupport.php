@@ -8,6 +8,7 @@ class EnvironmentUserGetResponseMethodSupport
      * The ID of type of payment method. One of {@link \WlSdk\RsPayMethodSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPayMethodSid
      */
     public ?int $id_pay_method = null;
 

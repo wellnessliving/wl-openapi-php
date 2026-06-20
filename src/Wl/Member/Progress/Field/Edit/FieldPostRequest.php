@@ -24,6 +24,7 @@ class FieldPostRequest
      * One of the {@link \WlSdk\Wl\Member\Progress\Field\MeasurementSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Member\Progress\Field\MeasurementSid
      */
     public ?int $id_measurement_unit = null;
 
@@ -33,6 +34,7 @@ class FieldPostRequest
      * One of the {@link \WlSdk\Wl\Member\Progress\Field\TypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Member\Progress\Field\TypeSid
      */
     public ?int $id_type = null;
 

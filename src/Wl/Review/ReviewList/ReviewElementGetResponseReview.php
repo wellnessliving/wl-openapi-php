@@ -22,6 +22,7 @@ class ReviewElementGetResponseReview
      * Status of the Review. One of {@link \WlSdk\RsReviewStatusSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsReviewStatusSid
      */
     public ?int $id_review_status = null;
 

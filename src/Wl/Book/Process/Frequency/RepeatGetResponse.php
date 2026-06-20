@@ -32,6 +32,7 @@ class RepeatGetResponse
      * Count of the visits to be created. Not empty only when `id_repeat_end` == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsRepeatEndSid
      */
     public ?int $i_count = null;
 

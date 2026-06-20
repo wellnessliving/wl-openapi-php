@@ -8,6 +8,7 @@ class SubscriptionInfoGetRequest
      * CID of the subscription information of which is requested.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract
      */
     public ?int $cid_subscription = null;
 

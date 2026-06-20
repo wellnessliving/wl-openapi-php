@@ -15,6 +15,7 @@ class WatchPostRequest
      * The source ID.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Video\Watch\WatchSourceSid
      */
     public ?int $id_source = null;
 

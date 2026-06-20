@@ -70,6 +70,7 @@ class ScheduleAvailableDateGetRequest
      * "Book now" tab ID. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\Tab\TabSid
      */
     public ?int $id_class_tab = null;
 

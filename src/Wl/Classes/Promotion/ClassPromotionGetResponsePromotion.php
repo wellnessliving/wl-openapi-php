@@ -22,6 +22,7 @@ class ClassPromotionGetResponsePromotion
      * One of the {@link \WlSdk\RsProgramSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramSid
      */
     public ?int $id_program = null;
 

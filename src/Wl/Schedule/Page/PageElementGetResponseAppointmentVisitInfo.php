@@ -8,6 +8,7 @@ class PageElementGetResponseAppointmentVisitInfo
      * Visit status. One of {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Visit\VisitSid
      */
     public ?int $id_visit = null;
 

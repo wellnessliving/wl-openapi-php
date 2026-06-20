@@ -15,6 +15,7 @@ class GuestProfileGetRequest
      * Type of the service to book.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Service\ServiceSid
      */
     public ?int $id_service = null;
 

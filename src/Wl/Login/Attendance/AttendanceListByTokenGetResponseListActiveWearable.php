@@ -8,6 +8,7 @@ class AttendanceListByTokenGetResponseListActiveWearable
      * Device type ID. One of {@link \WlSdk\Wl\Profile\Sensor\SensorTypesSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Profile\Sensor\SensorTypesSid
      */
     public ?int $id_type = null;
 

@@ -10,6 +10,7 @@ class ReviewReplyPostRequest
      * `null` until passed to the api when admin replies to the review.
      *
      * @var int|null
+     * @see \WlSdk\RsReviewStatusSid
      */
     public ?int $id_review_status = null;
 

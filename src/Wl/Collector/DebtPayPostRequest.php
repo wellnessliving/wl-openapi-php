@@ -11,6 +11,7 @@ class DebtPayPostRequest
      * Important! The currency must coincide with currency of the debt that was sent to collections.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\CurrencySid
      */
     public ?int $id_currency = null;
 
@@ -35,6 +36,7 @@ class DebtPayPostRequest
      * `null` if the payment method is unknown. In such cases, {@link \WlSdk\RsPayMethodSid} would be used.
      *
      * @var int|null
+     * @see \WlSdk\RsPayMethodSid
      */
     public ?int $id_pay_method = null;
 

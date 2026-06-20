@@ -18,6 +18,7 @@ class ElementGetResponse
      * Reward score type ID.
      *
      * @var int|null
+     * @see \WlSdk\RsRewardScoreSid
      */
     public ?int $id_reward_score = null;
 

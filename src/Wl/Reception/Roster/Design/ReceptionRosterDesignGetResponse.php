@@ -55,6 +55,7 @@ class ReceptionRosterDesignGetResponse
      * One of {@link \WlSdk\Wl\Reception\Roster\DirectSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Reception\Roster\DirectSid
      */
     public ?int $id_attendance_direct = null;
 
@@ -62,6 +63,7 @@ class ReceptionRosterDesignGetResponse
      * Unit of time for the look ahead window for attendance app.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_book_quick_app = null;
 

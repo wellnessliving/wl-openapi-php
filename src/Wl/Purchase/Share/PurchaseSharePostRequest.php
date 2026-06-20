@@ -8,6 +8,7 @@ class PurchaseSharePostRequest
      * The social network. One of the {@link \WlSdk\ASocialSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ASocialSid
      */
     public ?int $id_social = null;
 

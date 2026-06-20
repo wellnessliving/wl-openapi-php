@@ -47,6 +47,7 @@ class CatalogListGetResponseShopProduct
      *  </ul>
      *
      * @var int|null
+     * @see \WlSdk\RsProgramSid
      */
     public ?int $id_program = null;
 
@@ -54,6 +55,7 @@ class CatalogListGetResponseShopProduct
      * The restriction ID. One of the {@link \WlSdk\Wl\Shop\Product\PurchaseRestrictionSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Shop\Product\PurchaseRestrictionSid
      */
     public ?int $id_restriction = null;
 
@@ -61,6 +63,7 @@ class CatalogListGetResponseShopProduct
      * The sale category ID. One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 

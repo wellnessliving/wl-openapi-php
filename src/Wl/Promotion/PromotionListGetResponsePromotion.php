@@ -8,6 +8,7 @@ class PromotionListGetResponsePromotion
      * The promotion program. One of the {@link \WlSdk\RsProgramSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramSid
      */
     public ?int $id_program = null;
 
@@ -15,6 +16,7 @@ class PromotionListGetResponsePromotion
      * The type of the promotion program. One of the {@link \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
      */
     public ?int $id_program_type = null;
 

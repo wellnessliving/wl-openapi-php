@@ -15,6 +15,7 @@ class ElementGetResponseEventScheduleRepeat
      * Measuring unit of `i_repeat` (week, month, year). One of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_repeat = null;
 

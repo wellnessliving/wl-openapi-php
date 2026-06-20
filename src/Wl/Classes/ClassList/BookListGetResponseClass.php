@@ -50,6 +50,7 @@ class BookListGetResponseClass
      * Bookable type ID. One of {@link \WlSdk\Wl\Service\BookableSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Service\BookableSid
      */
     public ?int $id_bookable = null;
 

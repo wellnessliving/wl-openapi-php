@@ -50,6 +50,7 @@ class AddPostRequest
      * One of the {@link \WlSdk\Wl\Login\Attendance\AddOptionSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Login\Attendance\AddOptionSid
      */
     public ?int $id_add_option = null;
 
@@ -59,6 +60,7 @@ class AddPostRequest
      * We recommend using the `WEB_BACKEND` value.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 

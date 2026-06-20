@@ -47,6 +47,7 @@ class ResponseGetResponse
      * Response source. One of {@link \WlSdk\Wl\Quiz\Response\SourceSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Quiz\Response\SourceSid
      */
     public ?int $id_source = null;
 
@@ -54,6 +55,7 @@ class ResponseGetResponse
      * Response status ID.
      *
      * @var int|null
+     * @see \WlSdk\Core\Quiz\Response\ResponseStatusSid
      */
     public ?int $id_status = null;
 

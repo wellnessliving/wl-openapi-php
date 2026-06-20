@@ -8,6 +8,7 @@ class LoginTypeGetResponseLoginTypeList
      * Client Type ID. One of {@link \WlSdk\Wl\Login\Type\ClientTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Login\Type\ClientTypeSid
      */
     public ?int $id_client_type = null;
 

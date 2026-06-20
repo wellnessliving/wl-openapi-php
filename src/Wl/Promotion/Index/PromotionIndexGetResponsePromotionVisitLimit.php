@@ -43,6 +43,7 @@ class PromotionIndexGetResponsePromotionVisitLimit
      * </ul>
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_roll_over_expire = null;
 
@@ -50,6 +51,7 @@ class PromotionIndexGetResponsePromotionVisitLimit
      * The type of the limit cycle {@link \WlSdk\Wl\Promotion\Edit\Limit\Cycle\Sid}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Promotion\Edit\Limit\Cycle\Sid
      */
     public ?int $id_limit_cycle = null;
 

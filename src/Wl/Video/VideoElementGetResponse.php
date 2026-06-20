@@ -124,6 +124,7 @@ class VideoElementGetResponse
      * `null` if video is uploaded.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Video\VideoEmbedSourceSid
      */
     public ?int $id_embed_source = null;
 
@@ -132,6 +133,7 @@ class VideoElementGetResponse
      * {@link \WlSdk\Core\Sid\YesNoSid} if the video is available only in certain locations.
      *
      * @var int|null
+     * @see \WlSdk\Core\Sid\YesNoSid
      */
     public ?int $id_location_select = null;
 
@@ -141,6 +143,7 @@ class VideoElementGetResponse
      * One of {@link \WlSdk\Wl\Video\VideoSourceSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Video\VideoSourceSid
      */
     public ?int $id_source = null;
 

@@ -9,6 +9,7 @@ class MemberInfoGetResponseItems
      * One of {@link \WlSdk\Wl\Reception\Application\MemberInfoColorSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Reception\Application\MemberInfoColorSid
      */
     public ?int $id_color = null;
 
@@ -17,6 +18,7 @@ class MemberInfoGetResponseItems
      * One of {@link \WlSdk\Wl\Reception\Application\MemberInfoIconSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Reception\Application\MemberInfoIconSid
      */
     public ?int $id_icon = null;
 

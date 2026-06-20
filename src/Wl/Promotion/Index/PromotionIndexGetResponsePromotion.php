@@ -87,6 +87,7 @@ class PromotionIndexGetResponsePromotion
      * </ul>
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_limit_duration = null;
 
@@ -96,6 +97,7 @@ class PromotionIndexGetResponsePromotion
      * See all the possible options here: {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_duration = null;
 
@@ -104,6 +106,7 @@ class PromotionIndexGetResponsePromotion
      * See more information here: {@link \WlSdk\RsDurationTypeSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsDurationTypeSid
      */
     public ?int $id_duration_type = null;
 
@@ -113,6 +116,7 @@ class PromotionIndexGetResponsePromotion
      * See more information here: {@link \WlSdk\RsProgramSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramSid
      */
     public ?int $id_program = null;
 
@@ -122,6 +126,7 @@ class PromotionIndexGetResponsePromotion
      * See more information here: {@link \WlSdk\RsProgramCategorySid}.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramCategorySid
      */
     public ?int $id_program_category = null;
 
@@ -130,6 +135,7 @@ class PromotionIndexGetResponsePromotion
      * See more information here: {@link \WlSdk\RsProgramTypeSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
      */
     public ?int $id_program_type = null;
 

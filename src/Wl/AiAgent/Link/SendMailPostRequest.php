@@ -10,6 +10,7 @@ class SendMailPostRequest
      * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 
@@ -17,6 +18,7 @@ class SendMailPostRequest
      * Service ID. Required if `text_action` is 'booking'.
      *
      * @var int|null
+     * @see \WlSdk\RsServiceSid
      */
     public ?int $id_service = null;
 

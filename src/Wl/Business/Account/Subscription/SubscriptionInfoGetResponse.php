@@ -11,6 +11,7 @@ class SubscriptionInfoGetResponse
      * Locale ID of the business which subscription information is requested for.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\LocaleSid
      */
     public ?int $id_locale = null;
 

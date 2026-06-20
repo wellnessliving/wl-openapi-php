@@ -8,6 +8,7 @@ class EditPostRequest
      * ID of source mode. One of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -21,6 +22,7 @@ class EditPostRequest
      * used.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Profile\RegisterSourceSid
      */
     public ?int $id_register_source = null;
 

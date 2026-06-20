@@ -67,6 +67,7 @@ class InfoGetResponse
      * Status of appointment payment. One of {@link \WlSdk\RsAppointmentPaySid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsAppointmentPaySid
      */
     public ?int $id_appointment_pay = null;
 

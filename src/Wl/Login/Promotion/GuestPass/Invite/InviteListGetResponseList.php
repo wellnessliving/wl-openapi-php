@@ -102,6 +102,7 @@ class InviteListGetResponseList
      * values.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Login\Promotion\GuestPass\Invite\InviteStatusEnum
      */
     public ?int $id_status = null;
 

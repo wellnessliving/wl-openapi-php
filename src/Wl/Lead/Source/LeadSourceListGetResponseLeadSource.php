@@ -17,6 +17,7 @@ class LeadSourceListGetResponseLeadSource
      * `null` if it is a custom Lead Source.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_lead_source = null;
 

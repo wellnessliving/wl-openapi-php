@@ -9,6 +9,7 @@ class RelationPostRequest
      * One of {@link \WlSdk\Wl\User\Tracking\FlowSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\User\Tracking\FlowSid
      */
     public ?int $id_flow = null;
 
@@ -38,6 +39,7 @@ class RelationPostRequest
      * One of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 

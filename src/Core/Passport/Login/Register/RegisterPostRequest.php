@@ -18,6 +18,7 @@ class RegisterPostRequest
      * `null` if not initialized or the api is not called in the Wellnessliving project.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 

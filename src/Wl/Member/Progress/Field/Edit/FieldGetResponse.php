@@ -25,6 +25,7 @@ class FieldGetResponse
      * Field ID. One of the {@link \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid} constant.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid
      */
     public ?int $id_field = null;
 
@@ -34,6 +35,7 @@ class FieldGetResponse
      * One of the {@link \WlSdk\Wl\Member\Progress\Field\MeasurementSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Member\Progress\Field\MeasurementSid
      */
     public ?int $id_measurement_unit = null;
 
@@ -43,6 +45,7 @@ class FieldGetResponse
      * One of the {@link \WlSdk\Wl\Member\Progress\Field\TypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Member\Progress\Field\TypeSid
      */
     public ?int $id_type = null;
 

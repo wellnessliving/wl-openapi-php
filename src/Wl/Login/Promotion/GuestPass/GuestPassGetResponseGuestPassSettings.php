@@ -31,6 +31,7 @@ class GuestPassGetResponseGuestPassSettings
      * Type of the duration of `i_limit_duration`. One of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_limit_duration = null;
 

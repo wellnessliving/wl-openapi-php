@@ -37,6 +37,7 @@ class ProductGetRequest
      * payment method.
      *
      * @var int|null
+     * @see \WlSdk\RsPayMethodSid
      */
     public ?int $id_pay_method = null;
 

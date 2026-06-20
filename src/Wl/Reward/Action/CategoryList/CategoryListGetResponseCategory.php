@@ -9,6 +9,7 @@ class CategoryListGetResponseCategory
      * custom reward actions categories.
      *
      * @var int|null
+     * @see \WlSdk\RsRewardActionCategorySid
      */
     public ?int $id_reward_action_category = null;
 

@@ -42,6 +42,7 @@ class NextAvailableDayGetRequest
      * One of the {@link \WlSdk\AGenderSid} constants. `0` means no limitations on staff gender.
      *
      * @var int|null
+     * @see \WlSdk\AGenderSid
      */
     public ?int $id_gender_staff = null;
 

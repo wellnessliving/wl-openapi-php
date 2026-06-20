@@ -48,6 +48,7 @@ class RepeatParallelGetRequest
      * == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsRepeatEndSid
      */
     public ?int $i_count = null;
 
@@ -62,6 +63,7 @@ class RepeatParallelGetRequest
      * Recurring booking interval, one of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_duration = null;
 
@@ -69,6 +71,7 @@ class RepeatParallelGetRequest
      * WellnessLiving mode, one of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -76,6 +79,7 @@ class RepeatParallelGetRequest
      * Type of repeating, one of {@link \WlSdk\RsRepeatEndSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsRepeatEndSid
      */
     public ?int $id_repeat_end = null;
 
