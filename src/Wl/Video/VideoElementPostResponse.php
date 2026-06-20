@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video;
 
 /**
@@ -8,7 +9,7 @@ class VideoElementPostResponse
 {
     /**
      * The video key.
-     * 
+     *
      * *Be careful, when use this property in code, use `k_video_binary` instead.*
      * In this property can be key in next format:
      * * [Deprecated] String key in old format.

@@ -1,13 +1,14 @@
 <?php
+
 namespace WlSdk\Wl\Event\Book\EventList;
 
 class ListGetRequest
 {
     /**
      * Defines how the event availability flag filter should be applied.
-     * 
+     *
      * One of {@link \WlSdk\AFlagSid} constants.
-     * 
+     *
      * * {@link \WlSdk\AFlagSid} to show only available events.
      * * {@link \WlSdk\AFlagSid} to show only unavailable events.
      * * {@link \WlSdk\AFlagSid} to show all events (available and unavailable).
@@ -47,7 +48,7 @@ class ListGetRequest
             'k_class_tab' => $this->k_class_tab,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

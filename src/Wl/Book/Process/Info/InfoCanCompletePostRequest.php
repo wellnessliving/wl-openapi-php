@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Info;
 
 class InfoCanCompletePostRequest
@@ -41,7 +42,7 @@ class InfoCanCompletePostRequest
 
     /**
      * A list of sessions of an event that can be booked together.
-     * 
+     *
      * Every element has the next structure:
      *
      * @var array[]|null
@@ -59,7 +60,7 @@ class InfoCanCompletePostRequest
             'uid' => $this->uid,
             'a_session_select_post' => $this->a_session_select_post,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

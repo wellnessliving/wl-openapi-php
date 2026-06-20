@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Integration\Saml;
 
 /**
@@ -8,7 +9,7 @@ class SamlUserDeactivationPostResponse
 {
     /**
      * The key of the SAML identifier.
-     * 
+     *
      * This value is `true` if an active user is found in the business, `false` if otherwise.
      *
      * @var bool[]|null

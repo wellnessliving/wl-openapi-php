@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\Design;
 
 /**
  * Appointment display option.
- * 
+ *
  * Last used ID: 3
- * 
+ *
  * Values:
  * - 1 (`APPOINTMENT_NAME`): Appointment name in header.
  * - 3 (`CLIENT_NAME`): Client name in header.
@@ -14,9 +15,11 @@ namespace WlSdk\Wl\Schedule\Design;
 class OptionSid
 {
     /** Appointment name in header. */
-    const APPOINTMENT_NAME = 1;
+    public const APPOINTMENT_NAME = 1;
+
     /** Client name in header. */
-    const CLIENT_NAME = 3;
+    public const CLIENT_NAME = 3;
+
     /** Staff name in header. */
-    const STAFF_NAME = 2;
+    public const STAFF_NAME = 2;
 }

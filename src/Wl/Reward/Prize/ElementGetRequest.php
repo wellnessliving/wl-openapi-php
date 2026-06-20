@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Prize;
 
 class ElementGetRequest
@@ -32,7 +33,7 @@ class ElementGetRequest
             'k_reward_prize' => $this->k_reward_prize,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

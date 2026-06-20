@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\StaffApp\CatalogCart;
 
 class CatalogCartGetRequest
@@ -26,7 +27,7 @@ class CatalogCartGetRequest
 
     /**
      * The business key.
-     * 
+     *
      * This field isn't used directly, but described for correct JavaScript auto-generation.
      *
      * @var string|null
@@ -57,7 +58,7 @@ class CatalogCartGetRequest
 
     /**
      * The discount code.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null
@@ -93,7 +94,7 @@ class CatalogCartGetRequest
             'uid_current' => $this->uid_current,
             'uid_customer' => $this->uid_customer,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

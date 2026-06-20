@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Coupon\CouponList;
 
 class ListGetResponseCoupon

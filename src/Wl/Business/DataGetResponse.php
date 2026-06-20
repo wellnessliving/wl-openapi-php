@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business;
 
 /**
@@ -32,7 +33,7 @@ class DataGetResponse
 
     /**
      * Business status for managing claim request behavior.
-     * 
+     *
      * Constant from {@link \WlSdk\Wl\Business\Claim\BusinessClaimStatusSid}.
      *
      * @var int|null
@@ -55,9 +56,9 @@ class DataGetResponse
 
     /**
      * The rank type ID of the business.
-     * 
+     *
      * One of the {@link \WlSdk\RsRankTypeSid} constants.
-     * 
+     *
      * This will be `null` if the business doesn't have a rank type.
      *
      * @var int|null
@@ -67,7 +68,7 @@ class DataGetResponse
     /**
      * The region ID. This indicates the data center where the information about the business is stored.
      * One of the {@link \WlSdk\Core\Amazon\Region\AmazonRegionSid} constants.
-     * 
+     *
      * Requests made to different regions can lead to known issues such as responses indicating that the
      * business (or its elements) doesn't exist. This is because databases on different data centers are
      * independent. For example, performing a request to the US cluster for a list of classes for an AU
@@ -100,7 +101,7 @@ class DataGetResponse
 
     /**
      * `true` - clients of the business can select a custom time zone in their profile.
-     * 
+     *
      * `false` - the location or business time zone is used.
      *
      * @var bool|null

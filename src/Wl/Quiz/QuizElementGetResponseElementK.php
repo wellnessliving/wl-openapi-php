@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz;
 
 class QuizElementGetResponseElementK
@@ -13,7 +14,7 @@ class QuizElementGetResponseElementK
 
     /**
      * Markup images files.
-     * 
+     *
      * Only PNG images are supported.
      *
      * @var array|null
@@ -22,7 +23,7 @@ class QuizElementGetResponseElementK
 
     /**
      * Whether this element has a duplicate.
-     * 
+     *
      * `true` if this element has a duplicate, otherwise `false`.
      *
      * @var bool|null
@@ -45,7 +46,7 @@ class QuizElementGetResponseElementK
 
     /**
      * Element ID. One of {@link \WlSdk\Core\Quiz\Element\ElementSid} constants.
-     * 
+     *
      * Defined automatically according to the name of the class.
      *
      * @var int|null
@@ -89,7 +90,7 @@ class QuizElementGetResponseElementK
 
     /**
      * Quiz element key.
-     * 
+     *
      * `null` in a case if element is not saved in database.
      *
      * @var string|null
@@ -98,7 +99,7 @@ class QuizElementGetResponseElementK
 
     /**
      * Old quiz element key.
-     * 
+     *
      * `null` in a case if element is not has old version.
      *
      * @var string|null
@@ -135,7 +136,7 @@ class QuizElementGetResponseElementK
 
     /**
      * Additional note for response.
-     * 
+     *
      * `null` if no notes considered.
      *
      * @var string|null

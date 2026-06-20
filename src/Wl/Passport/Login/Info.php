@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Passport\Login;
 
 use WlSdk\WlSdkClient;

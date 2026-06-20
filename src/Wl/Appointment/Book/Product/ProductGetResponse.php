@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Product;
 
 /**
@@ -8,7 +9,7 @@ class ProductGetResponse
 {
     /**
      * A list service add-ons.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var ProductGetResponseProduct[]|null
@@ -17,6 +18,6 @@ class ProductGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_product = isset($data['a_product']) ? array_map(static fn($item) => new ProductGetResponseProduct((array)$item), (array)$data['a_product']) : null;
+        $this->a_product = isset($data['a_product']) ? array_map(static fn ($item) => new ProductGetResponseProduct((array)$item), (array)$data['a_product']) : null;
     }
 }

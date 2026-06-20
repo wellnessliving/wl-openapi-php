@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Category;
 
 class CategoryElementDeleteRequest
@@ -24,7 +25,7 @@ class CategoryElementDeleteRequest
             'k_business' => $this->k_business,
             'k_video_category' => $this->k_video_category,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

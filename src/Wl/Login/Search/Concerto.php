@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Search;
 
 use WlSdk\WlSdkClient;

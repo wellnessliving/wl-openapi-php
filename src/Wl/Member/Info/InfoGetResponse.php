@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Info;
 
 /**
@@ -62,7 +63,7 @@ class InfoGetResponse
 
     /**
      * The member ID.
-     * 
+     *
      * If `null`, the specified client isn't a member of the specified business.
      *
      * @var string|null

@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Purchase;
 
 class PurchaseElementGetRequest
 {
     /**
      * Date/time of session is booking.
-     * 
+     *
      * `null` until initialized.
      *
      * @var string|null
@@ -14,7 +15,7 @@ class PurchaseElementGetRequest
 
     /**
      * The number of sessions which are booked simultaneously.
-     * 
+     *
      * Required when `id_purchase_item` = {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
@@ -61,12 +62,12 @@ class PurchaseElementGetRequest
     /**
      * Installment template key.
      * This property is optional.
-     * 
+     *
      * * can only be set for the purchase option which supports installment plan.
-     * 
+     *
      * * `null` if installment plan doesn't exist for bought item;
      * * `0` if installment plan doesn't selected for bought item from the list of installment plans.
-     * 
+     *
      * NOTE:
      * * Calculations of discounts and taxes for installment plans are for demonstration purposes only!
      * * Installment is not an independent purchase item and has no discounts or taxes.
@@ -115,7 +116,7 @@ class PurchaseElementGetRequest
             'text_discount_code' => $this->text_discount_code,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

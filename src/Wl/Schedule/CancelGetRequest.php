@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule;
 
 class CancelGetRequest
@@ -68,7 +69,7 @@ class CancelGetRequest
             'k_class_period' => $this->k_class_period,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

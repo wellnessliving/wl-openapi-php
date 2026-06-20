@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Lead\Source;
 
 class LeadSourceListGetResponseLeadSource

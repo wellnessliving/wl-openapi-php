@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Staff;
 
 class ListGetRequest
@@ -12,7 +13,7 @@ class ListGetRequest
 
     /**
      * Custom appointment duration in minutes.
-     * 
+     *
      * `null` if not set.
      *
      * @var int|null
@@ -58,7 +59,7 @@ class ListGetRequest
 
     /**
      * User's timezone.
-     * 
+     *
      * `null` until initialized or to use location timezone.
      *
      * @var string|null
@@ -67,7 +68,7 @@ class ListGetRequest
 
     /**
      * The user key for whom the service is booking.
-     * 
+     *
      * `null` when not set.
      *
      * @var string|null
@@ -88,7 +89,7 @@ class ListGetRequest
             'k_timezone' => $this->k_timezone,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

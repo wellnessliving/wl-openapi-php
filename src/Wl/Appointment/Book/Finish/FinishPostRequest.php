@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Finish;
 
 class FinishPostRequest
@@ -44,7 +45,7 @@ class FinishPostRequest
     /**
      * The appointment key.
      * This should be set if you're rebooking an existing appointment.
-     * 
+     *
      * Otherwise, use `0` to book a new appointment.
      *
      * @var string|null
@@ -67,7 +68,7 @@ class FinishPostRequest
 
     /**
      * Key of timezone.
-     * 
+     *
      * `null` if not set then use default timezone client.
      *
      * @var string|null
@@ -76,12 +77,12 @@ class FinishPostRequest
 
     /**
      * The user key.
-     * 
+     *
      * This field is used if the client books for himself or for the relative.
-     * 
+     *
      * This field is incorrect to use for guest booking since in this case the client will be checked as a
      * relative.
-     * 
+     *
      * In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
      *
      * @var string|null
@@ -196,7 +197,7 @@ class FinishPostRequest
             'm_pay' => $this->m_pay,
             's_id' => $this->s_id,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Wl\Business\Account\Subscription;
 
 /**
  * Subscription manager.
- * 
+ *
  * Values:
  * - 1868 (`Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription`):
  * Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription
@@ -46,61 +47,86 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * - 2165 (`Wl\Business\Account\Subscription\Eml\MailchimpSubscription`): Eml marketing subscription for `Mailchimp`
  * integration.
  * - 2225 (`Wl\Business\Account\Subscription\BusinessCoach\BusinessCoachSubscription`): Business Success Coaching.
- * 
+ *
  *   Does not change or open any functional. Just financial subscription.
  */
 class SubscriptionAbstract
 {
     /** Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription */
-    const Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription = 1868;
+    public const AiAgentSubscription = 1868;
+
     /** Wl\Business\Account\Subscription\Achieve\AchieveSubscription */
-    const Wl\Business\Account\Subscription\Achieve\AchieveSubscription = 858;
+    public const AchieveSubscription = 858;
+
     /** Base subscription settings reader. */
-    const Wl\Business\Account\Subscription\Base\BaseSubscription = 861;
+    public const BaseSubscription = 861;
+
     /** Wl\Business\Account\Subscription\Sms\SmsSubscription */
-    const Wl\Business\Account\Subscription\Sms\SmsSubscription = 857;
+    public const SmsSubscription = 857;
+
     /** Subscription allows business to access virtual sessions features. */
-    const Wl\Business\Account\Subscription\Fitlive\FitliveSubscription = 986;
+    public const FitliveSubscription = 986;
+
     /** Zoom subscription. */
-    const Wl\Business\Account\Subscription\Zoom\ZoomSubscription = 864;
+    public const ZoomSubscription = 864;
+
     /** Wl\Business\Account\Subscription\Finance\FinanceSubscription */
-    const Wl\Business\Account\Subscription\Finance\FinanceSubscription = 1225;
+    public const FinanceSubscription = 1225;
+
     /** Wl\Business\Account\Subscription\Fitbuilder\FitbuilderSubscription */
-    const Wl\Business\Account\Subscription\Fitbuilder\FitbuilderSubscription = 883;
+    public const FitbuilderSubscription = 883;
+
     /** Wl\Business\Account\Subscription\Fitvid\FitvidSubscription */
-    const Wl\Business\Account\Subscription\Fitvid\FitvidSubscription = 875;
+    public const FitvidSubscription = 875;
+
     /** Wl\Business\Account\Subscription\Fitzone\FitzoneSubscription */
-    const Wl\Business\Account\Subscription\Fitzone\FitzoneSubscription = 884;
+    public const FitzoneSubscription = 884;
+
     /** Marketing Suite subscription. */
-    const Wl\Business\Account\Subscription\MarketingSuite\MarketingSuiteSubscription = 1838;
+    public const MarketingSuiteSubscription = 1838;
+
     /** Postcard subscription settings reader. */
-    const Wl\Business\Account\Subscription\Postcard\PostcardSubscription = 862;
+    public const PostcardSubscription = 862;
+
     /** Wl\Business\Account\Subscription\Quiz\QuizSubscription */
-    const Wl\Business\Account\Subscription\Quiz\QuizSubscription = 1133;
+    public const QuizSubscription = 1133;
+
     /** Wl\Business\Account\Subscription\Review\ReviewSubscription */
-    const Wl\Business\Account\Subscription\Review\ReviewSubscription = 885;
+    public const ReviewSubscription = 885;
+
     /** Rewards and loyalty subscription settings reader. */
-    const Wl\Business\Account\Subscription\Reward\RewardSubscription = 886;
+    public const RewardSubscription = 886;
+
     /** Website subscription. */
-    const Wl\Business\Account\Subscription\Website\WebsiteSubscription = 863;
+    public const WebsiteSubscription = 863;
+
     /** Asset subscription settings reader. */
-    const Wl\Business\Account\Subscription\Asset\AssetSubscription = 882;
+    public const AssetSubscription = 882;
+
     /** Subscription manager. */
-    const Wl\Business\Account\Subscription\Door\DoorSubscription = 1370;
+    public const DoorSubscription = 1370;
+
     /** Api subscription settings reader. */
-    const Wl\Business\Account\Subscription\Api\ApiSubscription = 1266;
+    public const ApiSubscription = 1266;
+
     /** Class for "Zapier" subscription. */
-    const Wl\Business\Account\Subscription\Zapier\ZapierSubscription = 1349;
+    public const ZapierSubscription = 1349;
+
     /** Class for "Collections" subscription. */
-    const Wl\Business\Account\Subscription\Collections\CollectionsSubscription = 1250;
+    public const CollectionsSubscription = 1250;
+
     /** Marketing Suite subscription. */
-    const Wl\Business\Account\Subscription\GoHighLevel\GoHighLevelSubscription = 1964;
+    public const GoHighLevelSubscription = 1964;
+
     /** Email marketing services. */
-    const Wl\Business\Account\Subscription\Email\EmailSubscription = 1965;
+    public const EmailSubscription = 1965;
+
     /** Eml marketing subscription for `ConstantContact` integration. */
-    const Wl\Business\Account\Subscription\Eml\ConstantContactSubscription = 2166;
+    public const ConstantContactSubscription = 2166;
+
     /** Eml marketing subscription for `Mailchimp` integration. */
-    const Wl\Business\Account\Subscription\Eml\MailchimpSubscription = 2165;
+    public const MailchimpSubscription = 2165;
+
     /** Business Success Coaching. */
-    const Wl\Business\Account\Subscription\BusinessCoach\BusinessCoachSubscription = 2225;
+    public const BusinessCoachSubscription = 2225;
 }

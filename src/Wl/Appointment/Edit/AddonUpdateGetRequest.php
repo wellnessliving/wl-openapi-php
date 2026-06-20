@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Edit;
 
 class AddonUpdateGetRequest
@@ -52,7 +53,7 @@ class AddonUpdateGetRequest
             'k_location' => $this->k_location,
             'k_service' => $this->k_service,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

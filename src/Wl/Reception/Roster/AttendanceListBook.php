@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Roster;
 
 use WlSdk\WlSdkClient;

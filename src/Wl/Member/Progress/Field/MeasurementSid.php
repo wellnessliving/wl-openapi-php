@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Field;
 
 /**
  * Possible measurement units of the progress fields values.
- * 
+ *
  * Values:
  * - 7 (`BEATS_PER_MINUTE`): Value in beats per minutes.
  * - 1 (`CENTIMETRES`): Value in centimeters.
@@ -21,27 +22,38 @@ namespace WlSdk\Wl\Member\Progress\Field;
 class MeasurementSid
 {
     /** Value in beats per minutes. */
-    const BEATS_PER_MINUTE = 7;
+    public const BEATS_PER_MINUTE = 7;
+
     /** Value in centimeters. */
-    const CENTIMETRES = 1;
+    public const CENTIMETRES = 1;
+
     /** Value in feet. */
-    const FEET = 3;
+    public const FEET = 3;
+
     /** Value in feet and inches. */
-    const FEET_AND_INCHES = 11;
+    public const FEET_AND_INCHES = 11;
+
     /** Value in grams. */
-    const GRAMS = 9;
+    public const GRAMS = 9;
+
     /** Value in inches. */
-    const INCHES = 4;
+    public const INCHES = 4;
+
     /** Value in kilograms. */
-    const KILOGRAMS = 5;
+    public const KILOGRAMS = 5;
+
     /** Value in metres. */
-    const METRES = 2;
+    public const METRES = 2;
+
     /** Value in metres and centimetres. */
-    const METRES_AND_CENTIMETRES = 12;
+    public const METRES_AND_CENTIMETRES = 12;
+
     /** Value in mmHG. */
-    const MMHG = 8;
+    public const MMHG = 8;
+
     /** Value in percentages. */
-    const PERCENTAGES = 10;
+    public const PERCENTAGES = 10;
+
     /** Value in pounds. */
-    const POUNDS = 6;
+    public const POUNDS = 6;
 }

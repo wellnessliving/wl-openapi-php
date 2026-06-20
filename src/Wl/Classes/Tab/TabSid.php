@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Classes\Tab;
 
 /**
  * List of class tab objects.
- * 
+ *
  * Last ID: 6.
- * 
+ *
  * Values:
  * - 2 (`ENROLLMENT`): Enrolments.
  * - 4 (`RESOURCE`): Bookable Assets.
@@ -15,11 +16,14 @@ namespace WlSdk\Wl\Classes\Tab;
 class TabSid
 {
     /** Enrolments. */
-    const ENROLLMENT = 2;
+    public const ENROLLMENT = 2;
+
     /** Bookable Assets. */
-    const RESOURCE = 4;
+    public const RESOURCE = 4;
+
     /** Appointments. */
-    const SERVICE = 3;
+    public const SERVICE = 3;
+
     /** Classes. */
-    const TRAINING = 1;
+    public const TRAINING = 1;
 }

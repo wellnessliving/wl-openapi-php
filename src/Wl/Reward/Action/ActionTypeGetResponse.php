@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Action;
 
 /**
@@ -15,6 +16,6 @@ class ActionTypeGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_reward_action = isset($data['a_reward_action']) ? array_map(static fn($item) => new ActionTypeGetResponseRewardAction((array)$item), (array)$data['a_reward_action']) : null;
+        $this->a_reward_action = isset($data['a_reward_action']) ? array_map(static fn ($item) => new ActionTypeGetResponseRewardAction((array)$item), (array)$data['a_reward_action']) : null;
     }
 }

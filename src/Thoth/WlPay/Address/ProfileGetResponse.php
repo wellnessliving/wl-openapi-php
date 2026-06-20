@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Address;
 
 /**
@@ -8,7 +9,7 @@ class ProfileGetResponse
 {
     /**
      * The country key.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null
@@ -17,7 +18,7 @@ class ProfileGetResponse
 
     /**
      * The region ID.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null
@@ -26,7 +27,7 @@ class ProfileGetResponse
 
     /**
      * The name of the city in the address.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null
@@ -35,7 +36,7 @@ class ProfileGetResponse
 
     /**
      * The client name as listed in their address.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null
@@ -44,7 +45,7 @@ class ProfileGetResponse
 
     /**
      * The client phone number.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null
@@ -53,7 +54,7 @@ class ProfileGetResponse
 
     /**
      * The client postal or zip code.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null
@@ -62,7 +63,7 @@ class ProfileGetResponse
 
     /**
      * The first line of the client address.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null
@@ -71,7 +72,7 @@ class ProfileGetResponse
 
     /**
      * The second line of the client address.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null

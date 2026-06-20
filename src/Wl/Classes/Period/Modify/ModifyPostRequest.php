@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Classes\Period\Modify;
 
 class ModifyPostRequest
@@ -47,11 +48,11 @@ class ModifyPostRequest
 
     /**
      * The step direction.
-     * 
+     *
      * `true` - step forward.
-     * 
+     *
      * `false` - step back.
-     * 
+     *
      * After each step, this variable sets to the default position.
      * By default, the step direction is forward.
      *
@@ -68,7 +69,7 @@ class ModifyPostRequest
 
     /**
      * The class period key.
-     * 
+     *
      * This will be empty if not set yet.
      *
      * @var string|null
@@ -84,7 +85,7 @@ class ModifyPostRequest
 
     /**
      * The list of data to save.
-     * 
+     *
      * Data depends on current `id_step`:
      *
      * @var array|null
@@ -107,7 +108,7 @@ class ModifyPostRequest
             's_id' => $this->s_id,
             'a_set' => $this->a_set,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

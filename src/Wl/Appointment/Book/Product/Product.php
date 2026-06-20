@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Product;
 
 use WlSdk\WlSdkClient;

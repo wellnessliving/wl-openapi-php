@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Category;
 
 class CategoryListGetRequest
@@ -40,7 +41,7 @@ class CategoryListGetRequest
             'k_business' => $this->k_business,
             'text_filter' => $this->text_filter,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

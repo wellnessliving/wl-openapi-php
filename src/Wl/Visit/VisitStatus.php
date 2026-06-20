@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Visit;
 
 use WlSdk\WlSdkClient;

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 class SubscribePostResponseMessageBroadcast26ValidAddress

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 /**
@@ -8,7 +9,7 @@ class SubscribePostResponse
 {
     /**
      * All messages in queue. Key is a message key. Value is message data.
-     * 
+     *
      * When a client is initially subscribed for a WebSocket channel, entire message queue is sent to the client.
      * This is needed to send message that were generated before a client has subscribed.
      *

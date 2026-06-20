@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ScheduleList\StaffApp;
 
 class ScheduleListGetRequest
@@ -6,7 +7,7 @@ class ScheduleListGetRequest
     /**
      * Configuration options for schedule.
      * Key is option name, value is boolean.
-     * 
+     *
      * May contain the following keys:
      *
      * @var array|null
@@ -15,7 +16,7 @@ class ScheduleListGetRequest
 
     /**
      * The end date of the range from which the list of schedule sessions should be retrieved.
-     * 
+     *
      * This will be `null` if the range has no end date. If this value is used,
      * `dt_date` should not be set.
      *
@@ -25,7 +26,7 @@ class ScheduleListGetRequest
 
     /**
      * The start date of the range from which the list of scheduled sessions should be retrieved.
-     * 
+     *
      * This will be `null` if the range has no start date. If this value is used,
      * `dt_date` should not be set.
      *
@@ -35,7 +36,7 @@ class ScheduleListGetRequest
 
     /**
      * The date of the sessions in Coordinated Universal Time (UTC) and MySQL format.
-     * 
+     *
      * If this value is used, then
      * `dl_end` and
      * `dl_start` should not be set.
@@ -69,7 +70,7 @@ class ScheduleListGetRequest
             'k_business' => $this->k_business,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

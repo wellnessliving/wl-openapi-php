@@ -1,10 +1,11 @@
 <?php
+
 namespace WlSdk\Wl\Business\Account\Subscription\Sms;
 
 /**
  * List of possible plans for
  * [SmsSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
- * 
+ *
  * Values:
  * - 5 (`CENTER_1000`): 1000 Messages
  * - 8 (`CENTER_10000`): 10000 Messages
@@ -20,23 +21,32 @@ namespace WlSdk\Wl\Business\Account\Subscription\Sms;
 class SmsSubscriptionSid
 {
     /** 1000 Messages */
-    const CENTER_1000 = 5;
+    public const CENTER_1000 = 5;
+
     /** 10000 Messages */
-    const CENTER_10000 = 8;
+    public const CENTER_10000 = 8;
+
     /** 2500 Messages */
-    const CENTER_2500 = 6;
+    public const CENTER_2500 = 6;
+
     /** 25000 Messages */
-    const CENTER_25000 = 9;
+    public const CENTER_25000 = 9;
+
     /** 500 Messages */
-    const CENTER_500 = 4;
+    public const CENTER_500 = 4;
+
     /** 5000 Messages */
-    const CENTER_5000 = 7;
+    public const CENTER_5000 = 7;
+
     /** Message Center Custom */
-    const CENTER_CUSTOM = 10;
+    public const CENTER_CUSTOM = 10;
+
     /** Enterprise */
-    const ENTERPRISE = 11;
+    public const ENTERPRISE = 11;
+
     /** None */
-    const FREE = 1;
+    public const FREE = 1;
+
     /** Message Center Professional */
-    const PREMIUM = 3;
+    public const PREMIUM = 3;
 }

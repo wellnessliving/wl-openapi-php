@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Classes\Promotion;
 
 class ClassPromotionGetRequest
@@ -14,7 +15,7 @@ class ClassPromotionGetRequest
      * `true` - the login type or group restrictions are ignored and all pricing options will be returned. This
      * will
      * require staff or admin access level.
-     * 
+     *
      * `false` - the API should return only pricing options, which are available for the current user.
      *
      * @var bool|null
@@ -23,7 +24,7 @@ class ClassPromotionGetRequest
 
     /**
      * `true` - promotions should only be returned if they're related to the given class or event.
-     * 
+     *
      * `false` - all promotions should be returned, even if they aren't related to the given class or event.
      *
      * @var bool|null
@@ -39,7 +40,7 @@ class ClassPromotionGetRequest
 
     /**
      * The class key.
-     * 
+     *
      * This refers to the class or event with which you want to connect the promotions. This will be `null` or `0`
      * if you
      * need to return a list of promotions for an uncreated class or event.
@@ -58,7 +59,7 @@ class ClassPromotionGetRequest
             'k_business' => $this->k_business,
             'k_class' => $this->k_class,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

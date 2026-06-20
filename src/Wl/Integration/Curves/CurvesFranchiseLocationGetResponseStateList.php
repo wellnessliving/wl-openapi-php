@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Integration\Curves;
 
 class CurvesFranchiseLocationGetResponseStateList

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Social\Microsoft;
 
 class LoginDeleteRequest
@@ -16,7 +17,7 @@ class LoginDeleteRequest
             [
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

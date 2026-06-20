@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Location\WorkTime;
 
 class LocationWorkTimePostRequest
 {
     /**
      * The list of the location's business hours. Each element has the next structure:
-     * 
+     *
      * Note that the days of the week that aren't represented in this list will be saved as non-working days.
      *
      * @var array[]|null
@@ -34,7 +35,7 @@ class LocationWorkTimePostRequest
             'k_business' => $this->k_business,
             'k_location' => $this->k_location,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

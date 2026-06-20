@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Event;
 
 class EventListGetResponseEventListSchedule
@@ -55,7 +56,7 @@ class EventListGetResponseEventListSchedule
     /**
      * Resource key, which has category ResourceCategoryEnum::LOCATION.
      * Only one such resource can be selected for a schedule.
-     * 
+     *
      * Empty string, if no off-site location is used.
      * `null` if field is not loaded.
      *

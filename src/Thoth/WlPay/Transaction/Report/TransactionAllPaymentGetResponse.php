@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Transaction\Report;
 
 /**
@@ -8,7 +9,7 @@ class TransactionAllPaymentGetResponse
 {
     /**
      * A list of fields in the report.
-     * 
+     *
      * This array is effectively a title row for the table returned in
      * [TransactionAllPaymentApi](/Thoth/WlPay/Transaction/Report/TransactionAllPayment.json).
      *
@@ -18,9 +19,9 @@ class TransactionAllPaymentGetResponse
 
     /**
      * The report data.
-     * 
+     *
      * This is an indexed array in which one row is also an indexed array.
-     * 
+     *
      * Indexes of the columns correspond to the columns in
      * [TransactionAllPaymentApi](/Thoth/WlPay/Transaction/Report/TransactionAllPayment.json).
      *
@@ -58,7 +59,7 @@ class TransactionAllPaymentGetResponse
 
     /**
      * The report status.
-     * 
+     *
      * One of {@link \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid} constants.
      *
      * @var int|null
@@ -67,7 +68,7 @@ class TransactionAllPaymentGetResponse
 
     /**
      * Determines whether to show more rows in the report.
-     * 
+     *
      * If `true`, there are more report rows to get. Otherwise, `false` to indicate that all rows in the report
      * have
      * already been retrieved.
@@ -78,11 +79,11 @@ class TransactionAllPaymentGetResponse
 
     /**
      * Determines whether the report is complete.
-     * 
+     *
      * If the report is accessed on the current day, or is returning a result that was cached on the current day,
      * it could
      * be incomplete as not all the transactions for the day are present.
-     * 
+     *
      * If `true`, the report has been completed. Otherwise, `false`.
      *
      * @var bool|null

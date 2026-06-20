@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Google\Captcha;
 
 /**
@@ -8,7 +9,7 @@ class CaptchaScoreGetResponse
 {
     /**
      * Overridden score value for V3 captcha.
-     * 
+     *
      * `null` to reset override.
      *
      * @var float|null

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Design;
 
 /**
@@ -9,10 +10,10 @@ class ReceptionDesignGetResponse
     /**
      * Array of image information for Self Check-In logo.
      * Empty if `k_location` is not provided.
-     * 
+     *
      * Will contain the following keys:
-     * 
-     * 
+     *
+     *
      * If image for self check in app is empty, will attempt to obtain business logo instead. If business logo is
      * empty,
      * will attempt to obtain location logo.
@@ -161,7 +162,7 @@ class ReceptionDesignGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_reception_logo = isset($data['a_reception_logo']) ? array_map(static fn($item) => new ReceptionDesignGetResponseReceptionLogo((array)$item), (array)$data['a_reception_logo']) : null;
+        $this->a_reception_logo = isset($data['a_reception_logo']) ? array_map(static fn ($item) => new ReceptionDesignGetResponseReceptionLogo((array)$item), (array)$data['a_reception_logo']) : null;
         $this->hide_profile_images = isset($data['hide_profile_images']) ? (bool)$data['hide_profile_images'] : null;
         $this->i_book_open = isset($data['i_book_open']) ? (int)$data['i_book_open'] : null;
         $this->i_confirm_delay = isset($data['i_confirm_delay']) ? (int)$data['i_confirm_delay'] : null;

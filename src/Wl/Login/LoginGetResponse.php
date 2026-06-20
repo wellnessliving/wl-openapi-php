@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login;
 
 /**
@@ -108,7 +109,7 @@ class LoginGetResponse
 
     /**
      * The key of the user.
-     * 
+     *
      * `null` on case when is walk-in client.
      *
      * @var string|null

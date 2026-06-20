@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Roster;
 
 class AttendanceSecretGetRequest
@@ -24,7 +25,7 @@ class AttendanceSecretGetRequest
             'k_business' => $this->k_business,
             'k_location' => $this->k_location,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

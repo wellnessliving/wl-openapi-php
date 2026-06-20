@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Shop\Category;
 
 class CategoryPostRequest
@@ -24,7 +25,7 @@ class CategoryPostRequest
             'k_business' => $this->k_business,
             'text_title' => $this->text_title,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

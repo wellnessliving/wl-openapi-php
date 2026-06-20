@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process;
 
 /**
@@ -9,7 +10,7 @@ class Process54GetResponse
     /**
      * Relationships who clients are allowed to book for.
      * One of the {@link \WlSdk\RsFamilyRelationSid} constants.
-     * 
+     *
      * This will be `null` if clients aren't allowed to book for their relationships.
      *
      * @var int[]|null
@@ -82,7 +83,7 @@ class Process54GetResponse
 
     /**
      * `true` - the client can select several sessions per booking.
-     * 
+     *
      * `false` - the client can't select several sessions.
      *
      * @var bool|null
@@ -113,7 +114,7 @@ class Process54GetResponse
     public function __construct(array $data)
     {
         $this->a_family_relation_login_allow = isset($data['a_family_relation_login_allow']) ? (array)$data['a_family_relation_login_allow'] : null;
-        $this->a_path = isset($data['a_path']) ? array_map(static fn($item) => new Process54GetResponsePath((array)$item), (array)$data['a_path']) : null;
+        $this->a_path = isset($data['a_path']) ? array_map(static fn ($item) => new Process54GetResponsePath((array)$item), (array)$data['a_path']) : null;
         $this->id_pay_require = isset($data['id_pay_require']) ? (int)$data['id_pay_require'] : null;
         $this->is_age_require = isset($data['is_age_require']) ? (bool)$data['is_age_require'] : null;
         $this->is_card_authorize = isset($data['is_card_authorize']) ? (bool)$data['is_card_authorize'] : null;

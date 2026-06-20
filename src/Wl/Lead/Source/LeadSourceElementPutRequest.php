@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Lead\Source;
 
 class LeadSourceElementPutRequest
@@ -24,7 +25,7 @@ class LeadSourceElementPutRequest
             'k_business' => $this->k_business,
             'text_lead_source' => $this->text_lead_source,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

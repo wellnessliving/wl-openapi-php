@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\Cart;
 
 class CartGetRequest
@@ -33,7 +34,7 @@ class CartGetRequest
 
     /**
      * The discount code.
-     * 
+     *
      * If `null`, the discount code has been reset.
      *
      * @var string|null
@@ -42,7 +43,7 @@ class CartGetRequest
 
     /**
      * The user key.
-     * 
+     *
      * This will be `0` for guests.
      *
      * @var string|null
@@ -60,7 +61,7 @@ class CartGetRequest
             'text_discount_code' => $this->text_discount_code,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

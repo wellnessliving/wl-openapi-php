@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Rank;
 
 class RankGetResponseRankList

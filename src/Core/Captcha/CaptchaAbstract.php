@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Core\Captcha;
 
 /**
  * Base class for captcha.
- * 
+ *
  * Values:
  * - 1064 (`Wl\Business\BusinessPaymentCaptcha`): Captcha for payment action.
  * - 1072 (`Wl\Lead\LeadCaptcha`): Captcha for "Lead Capture Widget".
@@ -16,17 +17,23 @@ namespace WlSdk\Core\Captcha;
 class CaptchaAbstract
 {
     /** Captcha for payment action. */
-    const Wl\Business\BusinessPaymentCaptcha = 1064;
+    public const BusinessPaymentCaptcha = 1064;
+
     /** Captcha for "Lead Capture Widget". */
-    const Wl\Lead\LeadCaptcha = 1072;
+    public const LeadCaptcha = 1072;
+
     /** Captcha for post review. */
-    const Wl\Review\ReviewCaptcha = 1066;
+    public const ReviewCaptcha = 1066;
+
     /** Captcha for user registration action. */
-    const Wl\Profile\Edit\RegisterCaptcha = 1139;
+    public const RegisterCaptcha = 1139;
+
     /** Captcha for user registration completion action. */
-    const Wl\Profile\Edit\RegisterCompleteCaptcha = 1914;
+    public const RegisterCompleteCaptcha = 1914;
+
     /** Captcha for business search action. */
-    const Wl\Business\Search\BusinessSearchCaptcha = 1508;
+    public const BusinessSearchCaptcha = 1508;
+
     /** Captcha for delete account. */
-    const Wl\Profile\Setting\Delete\DeleteCaptcha = 1220;
+    public const DeleteCaptcha = 1220;
 }

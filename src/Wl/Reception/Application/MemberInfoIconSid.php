@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Application;
 
 /**
  * Define types of icons for notice messages.
- * 
+ *
  * Last ID: 10.
- * 
+ *
  * Values:
  * - 1 (`AWARD`): Icon of an award ribbon. For celebration of an occasion (e.g. a client's first visit).
  * - 2 (`CAKE`): Icon of a birthday cake. For birthday messages.
@@ -21,23 +22,32 @@ namespace WlSdk\Wl\Reception\Application;
 class MemberInfoIconSid
 {
     /** Icon of an award ribbon. For celebration of an occasion (e.g. a client's first visit). */
-    const AWARD = 1;
+    public const AWARD = 1;
+
     /** Icon of a birthday cake. For birthday messages. */
-    const CAKE = 2;
+    public const CAKE = 2;
+
     /** Icon of a signed contract. */
-    const CONTRACT = 3;
+    public const CONTRACT = 3;
+
     /** Icon of a document with a slash. For the unsigned waiver message. */
-    const DOCUMENT_SLASH = 4;
+    public const DOCUMENT_SLASH = 4;
+
     /** Icon of dollar sign. For messages relating to personal balance and amounts due. */
-    const DOLLAR = 5;
+    public const DOLLAR = 5;
+
     /** Icon of a dumbbell. For messages relating to visits. */
-    const DUMBBELL = 6;
+    public const DUMBBELL = 6;
+
     /** Icon of a form. */
-    const FORM = 7;
+    public const FORM = 7;
+
     /** Icon of an "i". Used for general informative messages. */
-    const INFO = 8;
+    public const INFO = 8;
+
     /** Icon of an "x". For messages communicating some important or urgent issue for the user. */
-    const PROBLEM = 9;
+    public const PROBLEM = 9;
+
     /** Icon of an exclamation mark. For messages communicating a mild issue or cautioning the user. */
-    const WARNING = 10;
+    public const WARNING = 10;
 }

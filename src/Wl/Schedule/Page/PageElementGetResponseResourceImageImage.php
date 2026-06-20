@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\Page;
 
 class PageElementGetResponseResourceImageImage
@@ -44,14 +45,14 @@ class PageElementGetResponseResourceImageImage
      *
      * @var bool|null
      */
-    public ?bool $is-resize = null;
+    public ?bool $is_resize = null;
 
     /**
      * URL to original image in file storage.
      *
      * @var string|null
      */
-    public ?string $url-view = null;
+    public ?string $url_view = null;
 
     /**
      * URL to resized and rotated image in file storage. If the original is larger than
@@ -60,7 +61,7 @@ class PageElementGetResponseResourceImageImage
      *
      * @var string|null
      */
-    public ?string $url-thumbnail = null;
+    public ?string $url_thumbnail = null;
 
     public function __construct(array $data)
     {
@@ -69,8 +70,8 @@ class PageElementGetResponseResourceImageImage
         $this->i_rotate = isset($data['i_rotate']) ? (int)$data['i_rotate'] : null;
         $this->i_width = isset($data['i_width']) ? (int)$data['i_width'] : null;
         $this->i_width_src = isset($data['i_width_src']) ? (int)$data['i_width_src'] : null;
-        $this->is-resize = isset($data['is-resize']) ? (bool)$data['is-resize'] : null;
-        $this->url-view = isset($data['url-view']) ? (string)$data['url-view'] : null;
-        $this->url-thumbnail = isset($data['url-thumbnail']) ? (string)$data['url-thumbnail'] : null;
+        $this->is_resize = isset($data['is-resize']) ? (bool)$data['is-resize'] : null;
+        $this->url_view = isset($data['url-view']) ? (string)$data['url-view'] : null;
+        $this->url_thumbnail = isset($data['url-thumbnail']) ? (string)$data['url-thumbnail'] : null;
     }
 }

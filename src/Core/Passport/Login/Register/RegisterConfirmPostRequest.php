@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Passport\Login\Register;
 
 class RegisterConfirmPostRequest
@@ -32,7 +33,7 @@ class RegisterConfirmPostRequest
             'text_login' => $this->text_login,
             'text_mail' => $this->text_mail,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

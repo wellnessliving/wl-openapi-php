@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Drive\ImageUpload;
 
 /**
@@ -73,7 +74,7 @@ class ImageUploadPutResponse
 
     /**
      * If `true`, image deletion is permitted. Otherwise, this will be `false`.
-     * 
+     *
      * This will be `null` until it's loaded from the server.
      *
      * @var bool|null

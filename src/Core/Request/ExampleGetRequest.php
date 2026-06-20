@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Request;
 
 class ExampleGetRequest
@@ -16,7 +17,7 @@ class ExampleGetRequest
             [
             'i_argument' => $this->i_argument,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

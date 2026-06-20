@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Integration\DragonFly;
 
 class AccessGetRequest
@@ -35,7 +36,7 @@ class AccessGetRequest
             's_member' => $this->s_member,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

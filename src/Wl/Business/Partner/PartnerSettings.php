@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Partner;
 
 use WlSdk\WlSdkClient;

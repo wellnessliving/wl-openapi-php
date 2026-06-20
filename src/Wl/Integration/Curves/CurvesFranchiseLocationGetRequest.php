@@ -1,13 +1,14 @@
 <?php
+
 namespace WlSdk\Wl\Integration\Curves;
 
 class CurvesFranchiseLocationGetRequest
 {
     /**
      * Determines which locations should be returned.
-     * 
+     *
      * One of the {@link \WlSdk\Wl\Business\Franchise\Location\BusinessFranchiseLocationSid} constants.
-     * 
+     *
      * If `null`, {@link \WlSdk\Wl\Business\Franchise\Location\BusinessFranchiseLocationSid} is used.
      *
      * @var int|null
@@ -16,7 +17,7 @@ class CurvesFranchiseLocationGetRequest
 
     /**
      * Determines whether to include churned/removed locations.
-     * 
+     *
      * If `true`, all locations are listed (regardless of their status).
      *
      * @var bool|null
@@ -25,7 +26,7 @@ class CurvesFranchiseLocationGetRequest
 
     /**
      * Determines whether to include locations marked to not be displayed on franchisor website.
-     * 
+     *
      * If `true`, all locations are listed (regardless of this setting).
      *
      * @var bool|null
@@ -48,7 +49,7 @@ class CurvesFranchiseLocationGetRequest
             'is_include_non_api' => $this->is_include_non_api,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

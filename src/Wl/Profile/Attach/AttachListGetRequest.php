@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Attach;
 
 class AttachListGetRequest
@@ -40,7 +41,7 @@ class AttachListGetRequest
             'text_search' => $this->text_search,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

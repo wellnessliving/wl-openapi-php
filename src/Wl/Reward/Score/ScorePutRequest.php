@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Score;
 
 class ScorePutRequest
@@ -43,7 +44,7 @@ class ScorePutRequest
             'text_comment' => $this->text_comment,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

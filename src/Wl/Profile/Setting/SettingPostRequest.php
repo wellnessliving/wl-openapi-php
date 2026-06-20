@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Setting;
 
 class SettingPostRequest
@@ -76,7 +77,7 @@ class SettingPostRequest
             'is_schedule_and_reminders_email' => $this->is_schedule_and_reminders_email,
             'is_schedule_and_reminders_sms' => $this->is_schedule_and_reminders_sms,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

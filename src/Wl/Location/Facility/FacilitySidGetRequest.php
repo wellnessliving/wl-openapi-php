@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Location\Facility;
 
 class FacilitySidGetRequest
 {
     /**
      * Name of the Sid class to get list from.
-     * 
+     *
      * Should be a fully qualified class name.
      *
      * @var string|null
@@ -18,7 +19,7 @@ class FacilitySidGetRequest
             [
             's_class_name' => $this->s_class_name,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

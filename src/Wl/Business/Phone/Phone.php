@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Phone;
 
 use WlSdk\WlSdkClient;

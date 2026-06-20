@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Location;
 
 use WlSdk\WlSdkClient;
@@ -6,7 +7,7 @@ use WlSdk\WlSdkClient;
 /**
  * Retrieves a list of locations for the given business.
  */
-class List
+class ListEndpoint
 {
     /** @var WlSdkClient */
     private $client;
@@ -23,12 +24,12 @@ class List
      * returns location details including coordinates, address, timezone, directories, and logo URLs. For
      * franchisor businesses, automatically expands to include all franchisee locations.
      *
-     * @return ListGetResponse
+     * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(ListGetRequest $request): ListGetResponse
+    public function get(ListEndpointGetRequest $request): ListEndpointGetResponse
     {
-        return new ListGetResponse($this->client->request('/Wl/Location/List.json', $request->params(), 'GET'));
+        return new ListEndpointGetResponse($this->client->request('/Wl/Location/List.json', $request->params(), 'GET'));
     }
 }

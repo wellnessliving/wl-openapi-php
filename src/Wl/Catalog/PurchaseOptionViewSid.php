@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Catalog;
 
 /**
  * A list of Purchase Option view types.
- * 
+ *
  * Last ID: 9.
- * 
+ *
  * Values:
  * - 1 (`APPOINTMENT`): A single appointment reservation.
  * - 2 (`CLASS_PERIOD`): A single class reservation.
@@ -25,21 +26,29 @@ namespace WlSdk\Wl\Catalog;
 class PurchaseOptionViewSid
 {
     /** A single appointment reservation. */
-    const APPOINTMENT = 1;
+    public const APPOINTMENT = 1;
+
     /** A single class reservation. */
-    const CLASS_PERIOD = 2;
+    public const CLASS_PERIOD = 2;
+
     /** A gift card. */
-    const COUPON = 3;
+    public const COUPON = 3;
+
     /** Enrollments. Classes where flag event is `true`. */
-    const ENROLLMENT = 4;
+    public const ENROLLMENT = 4;
+
     /** Promotions with programs: */
-    const MEMBERSHIP = 8;
+    public const MEMBERSHIP = 8;
+
     /** Promotions with program [RsProgramSid::PACKAGE](#/components/schemas/RsProgramSid). */
-    const PACKAGE = 5;
+    public const PACKAGE = 5;
+
     /** Products (such as water, t-shirts, etc.). */
-    const PRODUCT = 6;
+    public const PRODUCT = 6;
+
     /** Session passes. */
-    const PROMOTION = 7;
+    public const PROMOTION = 7;
+
     /** Products available for quick buy. */
-    const QUICK_BUY = 9;
+    public const QUICK_BUY = 9;
 }

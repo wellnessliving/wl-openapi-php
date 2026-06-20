@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Alert;
 
 class AlertEditDeleteRequest
@@ -25,7 +26,7 @@ class AlertEditDeleteRequest
             'k_business' => $this->k_business,
             'k_login_note' => $this->k_login_note,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

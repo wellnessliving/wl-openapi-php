@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Level;
 
 class LevelListPutRequest
@@ -24,7 +25,7 @@ class LevelListPutRequest
             'k_business' => $this->k_business,
             'a_order' => $this->a_order,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

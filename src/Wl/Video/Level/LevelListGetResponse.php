@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Level;
 
 /**
@@ -15,6 +16,6 @@ class LevelListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_level_list = isset($data['a_level_list']) ? array_map(static fn($item) => new LevelListGetResponseLevelList((array)$item), (array)$data['a_level_list']) : null;
+        $this->a_level_list = isset($data['a_level_list']) ? array_map(static fn ($item) => new LevelListGetResponseLevelList((array)$item), (array)$data['a_level_list']) : null;
     }
 }

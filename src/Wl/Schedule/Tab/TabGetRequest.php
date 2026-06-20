@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\Tab;
 
 class TabGetRequest
@@ -30,7 +31,7 @@ class TabGetRequest
      * Therefore, the model must depend on the current user ID.
      * If changed to a relative (the current user is changed, but the application isn't restarted),
      * information about the booking tabs for this user's relative will be requested.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null
@@ -46,7 +47,7 @@ class TabGetRequest
             'k_location' => $this->k_location,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

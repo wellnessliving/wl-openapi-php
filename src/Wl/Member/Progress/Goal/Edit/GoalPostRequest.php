@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Goal\Edit;
 
 class GoalPostRequest
@@ -19,7 +20,7 @@ class GoalPostRequest
 
     /**
      * List of fields.
-     * 
+     *
      * Keys are field IDs ({@link \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid} constants).
      * Values are new field values.
      * Structure of value completely defined by individual fields.
@@ -36,7 +37,7 @@ class GoalPostRequest
             'uid' => $this->uid,
             'a_field_goal' => $this->a_field_goal,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

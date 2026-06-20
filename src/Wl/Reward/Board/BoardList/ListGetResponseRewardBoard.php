@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Board\BoardList;
 
 class ListGetResponseRewardBoard

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Location;
 
 class ListGetRequest
@@ -13,7 +14,7 @@ class ListGetRequest
 
     /**
      * The business key used internally by WellnessLiving.
-     * 
+     *
      * In case when passed regular or franchisee business returns only locations for requested business.
      * In case when passed franchisor business returns locations for all franchisees of this franchisor.
      *
@@ -24,7 +25,7 @@ class ListGetRequest
     /**
      * The primary keys of the selected businesses.
      * You can specify this instead of `k_business` to load data for many businesses in one call.
-     * 
+     *
      * This is the same as `$a_business`, but serialized with JSON (to make the URL shorter).
      *
      * @var string|null
@@ -47,7 +48,7 @@ class ListGetRequest
             's_business' => $this->s_business,
             'show_remove' => $this->show_remove,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

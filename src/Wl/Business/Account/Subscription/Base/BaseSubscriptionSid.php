@@ -1,14 +1,15 @@
 <?php
+
 namespace WlSdk\Wl\Business\Account\Subscription\Base;
 
 /**
  * List of possible plans for
  * [BaseSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
- * 
- * 
- * 
+ *
+ *
+ *
  * Last used ID: 15.
- * 
+ *
  * Values:
  * - 4 (`ADVANCED`): Advanced
  * - 3 (`BASIC`): Basic
@@ -29,33 +30,47 @@ namespace WlSdk\Wl\Business\Account\Subscription\Base;
 class BaseSubscriptionSid
 {
     /** Advanced */
-    const ADVANCED = 4;
+    public const ADVANCED = 4;
+
     /** Basic */
-    const BASIC = 3;
+    public const BASIC = 3;
+
     /** Business(Legacy) */
-    const BUSINESS = 7;
+    public const BUSINESS = 7;
+
     /** Business */
-    const BUSINESS_2405 = 11;
+    public const BUSINESS_2405 = 11;
+
     /** Business(Legacy) */
-    const BUSINESS_LIGHT = 8;
+    public const BUSINESS_LIGHT = 8;
+
     /** Business Max */
-    const BUSINESS_MAX = 9;
+    public const BUSINESS_MAX = 9;
+
     /** Business Pro */
-    const BUSINESS_PRO = 10;
+    public const BUSINESS_PRO = 10;
+
     /** Enterprise */
-    const ENTERPRISE = 6;
+    public const ENTERPRISE = 6;
+
     /** None */
-    const FREE = 1;
+    public const FREE = 1;
+
     /** Business Partner */
-    const PARTNER = 2;
+    public const PARTNER = 2;
+
     /** Platform Access */
-    const PLATFORM_ACCESS = 15;
+    public const PLATFORM_ACCESS = 15;
+
     /** Professional */
-    const PROFESSIONAL = 5;
+    public const PROFESSIONAL = 5;
+
     /** Starter */
-    const STARTER = 12;
+    public const STARTER = 12;
+
     /** Starter */
-    const STARTER_2502 = 13;
+    public const STARTER_2502 = 13;
+
     /** Trial */
-    const TRIAL = 14;
+    public const TRIAL = 14;
 }

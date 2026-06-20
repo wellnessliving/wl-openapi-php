@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Social\Share;
 
 use WlSdk\WlSdkClient;

@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * A style of logo.
- * 
+ *
  * Values:
  * - 1 (`HIDE`): Logo is invisible.
  * - 4 (`RECTANGLE`): Logo is a rectangle.
@@ -13,11 +14,14 @@ namespace WlSdk;
 class RsBusinessDesignLogoStyleSid
 {
     /** Logo is invisible. */
-    const HIDE = 1;
+    public const HIDE = 1;
+
     /** Logo is a rectangle. */
-    const RECTANGLE = 4;
+    public const RECTANGLE = 4;
+
     /** Logo is a round. */
-    const ROUND = 3;
+    public const ROUND = 3;
+
     /** Logo is a square. */
-    const SQUARE = 2;
+    public const SQUARE = 2;
 }

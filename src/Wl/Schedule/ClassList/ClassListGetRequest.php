@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ClassList;
 
 class ClassListGetRequest
@@ -6,7 +7,7 @@ class ClassListGetRequest
     /**
      * The list of classes keys to filter.
      * Return sessions with matching class IDs.
-     * 
+     *
      * If it's empty, all classes/events will be returned.
      *
      * @var string[]|null
@@ -18,7 +19,7 @@ class ClassListGetRequest
      * Array of number representing the days of the week.
      * Return sessions matching the given weekdays.
      * (7 = Sunday, 1 = Monday, ..., 6 = Saturday)
-     * 
+     *
      * Empty array means no filtering.
      *
      * @var int[]|null
@@ -38,10 +39,10 @@ class ClassListGetRequest
      * Class filter by time of day.
      * List of arrays with start and end time in "HH:MM" format (24h).
      * Include sessions that start between the specified time range.
-     * 
+     *
      * Each value is array with time parameters:
-     * 
-     * 
+     *
+     *
      * Empty array means no filtering.
      *
      * @var array[]|null
@@ -82,7 +83,7 @@ class ClassListGetRequest
     /**
      * Class filter by type.
      * The class is virtual.
-     * 
+     *
      * `true`: Only virtual classes.
      * `false`: Only in-person.
      * `null` or not set: No filtering.
@@ -100,7 +101,7 @@ class ClassListGetRequest
 
     /**
      * The category tab key.
-     * 
+     *
      * This will be `null` if not set yet.
      * This will be ignored if `is_tab_all` is `true`.
      *
@@ -174,7 +175,7 @@ class ClassListGetRequest
             'show_event' => $this->show_event,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

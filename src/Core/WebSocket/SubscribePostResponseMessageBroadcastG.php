@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 class SubscribePostResponseMessageBroadcastG
@@ -33,7 +34,7 @@ class SubscribePostResponseMessageBroadcastG
 
     /**
      * Key of the alert that was just sent.
-     * 
+     *
      * `null` means alert was read.
      *
      * @var string|null

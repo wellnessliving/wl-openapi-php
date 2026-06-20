@@ -1,10 +1,11 @@
 <?php
+
 namespace WlSdk\Wl\Login\Member\Intents;
 
 /**
  * List of intents of the user in the business.
  * This means, why was user interested in the business, when first time came or called.
- * 
+ *
  * Values:
  * - 1 (`BILLING_INQUIRY`): Customer asks about payment methods, financing, invoices, payment issues, or billing to
  * insurance.
@@ -31,35 +32,50 @@ namespace WlSdk\Wl\Login\Member\Intents;
 class MemberIntentsSid
 {
     /** Customer asks about payment methods, financing, invoices, payment issues, or billing to insurance. */
-    const BILLING_INQUIRY = 1;
+    public const BILLING_INQUIRY = 1;
+
     /** Customer clearly expresses intent to schedule a new class, appointment, event, or asset. */
-    const BOOKING = 2;
+    public const BOOKING = 2;
+
     /** Customer explicitly asks to cancel an existing booking with no intent to reschedule. */
-    const BOOKING_CANCELLATION = 3;
+    public const BOOKING_CANCELLATION = 3;
+
     /** Customer explicitly asks to change the date, time, or provider for an existing booking. */
-    const BOOKING_RESCHEDULE = 4;
+    public const BOOKING_RESCHEDULE = 4;
+
     /** Customer requests operational or logistical details about the business (address, hours, contacts). */
-    const BUSINESS_INFORMATION = 5;
+    public const BUSINESS_INFORMATION = 5;
+
     /** Customer asks whether a specific instructor, staff member, or service is available. */
-    const CHECK_AVAILABILITY = 6;
+    public const CHECK_AVAILABILITY = 6;
+
     /** Customer asks general wellness or fitness questions not tied to appointments, pricing, or availability. */
-    const GENERAL_INQUIRY = 7;
+    public const GENERAL_INQUIRY = 7;
+
     /** Customer wants to leave a voicemail, voice note, or message for staff. */
-    const LEAVE_MESSAGE = 8;
+    public const LEAVE_MESSAGE = 8;
+
     /** Customer requests cost or pricing details for services. */
-    const PRICING_INQUIRY = 9;
+    public const PRICING_INQUIRY = 9;
+
     /** Customer asks about packages, session passes, or membership options. */
-    const PURCHASE_OPTIONS_INQUIRY = 10;
+    public const PURCHASE_OPTIONS_INQUIRY = 10;
+
     /** Customer mentions they were referred by someone. */
-    const REFERRAL = 11;
+    public const REFERRAL = 11;
+
     /** Customer expresses interest in a service without asking about pricing or availability specifically. */
-    const SERVICE_INQUIRY = 12;
+    public const SERVICE_INQUIRY = 12;
+
     /** Customer requests to speak with a staff member, receive a callback, or staff follow-up is needed. */
-    const STAFF_ASSISTANCE_REQUEST = 13;
+    public const STAFF_ASSISTANCE_REQUEST = 13;
+
     /** Customer insists on immediate live transfer to a staff member. */
-    const TRANSFER_CALL_TO_STAFF = 14;
+    public const TRANSFER_CALL_TO_STAFF = 14;
+
     /** Customer asks about their already scheduled or upcoming appointments. */
-    const VIEW_BOOKINGS = 15;
+    public const VIEW_BOOKINGS = 15;
+
     /** Customer asks about their purchased memberships, session passes, or packages. */
-    const VIEW_CLIENT_PO_DETAILS = 16;
+    public const VIEW_CLIENT_PO_DETAILS = 16;
 }

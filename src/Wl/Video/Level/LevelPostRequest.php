@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Level;
 
 class LevelPostRequest
@@ -32,7 +33,7 @@ class LevelPostRequest
             'k_video_level' => $this->k_video_level,
             'text_title' => $this->text_title,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

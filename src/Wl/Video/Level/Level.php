@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Level;
 
 use WlSdk\WlSdkClient;

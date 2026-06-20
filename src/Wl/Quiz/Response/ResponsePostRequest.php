@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz\Response;
 
 class ResponsePostRequest
@@ -15,7 +16,7 @@ class ResponsePostRequest
 
     /**
      * Whether quiz response received by kiosk or direct mode link.
-     * 
+     *
      * `true` quiz response received by kiosk mode.
      * `false` quiz response received by direct or direct mode.
      *
@@ -39,7 +40,7 @@ class ResponsePostRequest
 
     /**
      * Quiz response key.
-     * 
+     *
      * `null` in a case of response creation or
      * removing set of responses in [QuizResponseApi](/Core/Quiz/QuizResponse.json).
      *
@@ -63,10 +64,10 @@ class ResponsePostRequest
 
     /**
      * List of purchase items for which this form is loaded.
-     * 
+     *
      * The list of purchase items.
      * Each element has the format `[id_purchase_item]::[k_id]`, where:
-     * 
+     *
      * Empty in case when purchase item not specified or form loaded from direct link.
      *
      * @var array[]|null
@@ -184,7 +185,7 @@ class ResponsePostRequest
             'text_class_wizard_id' => $this->text_class_wizard_id,
             'uid_response' => $this->uid_response,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

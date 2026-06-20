@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Board;
 
 class ListGetRequest
@@ -24,7 +25,7 @@ class ListGetRequest
             'k_business' => $this->k_business,
             'k_reward_board' => $this->k_reward_board,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,10 +1,11 @@
 <?php
+
 namespace WlSdk\Wl\Business\Account\Subscription\Website;
 
 /**
  * List of possible plans for
  * [WebsiteSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
- * 
+ *
  * Values:
  * - 2 (`BASIC`): Basic
  * - 6 (`BASIC_LARGE`): Basic
@@ -17,17 +18,23 @@ namespace WlSdk\Wl\Business\Account\Subscription\Website;
 class WebsiteSubscriptionSid
 {
     /** Basic */
-    const BASIC = 2;
+    public const BASIC = 2;
+
     /** Basic */
-    const BASIC_LARGE = 6;
+    public const BASIC_LARGE = 6;
+
     /** Enterprise */
-    const ENTERPRISE = 4;
+    public const ENTERPRISE = 4;
+
     /** None */
-    const FREE = 1;
+    public const FREE = 1;
+
     /** Premium */
-    const PREMIUM = 3;
+    public const PREMIUM = 3;
+
     /** Premium (Business Max) */
-    const PREMIUM_MAX = 7;
+    public const PREMIUM_MAX = 7;
+
     /** Professional */
-    const PROFESSIONAL = 5;
+    public const PROFESSIONAL = 5;
 }

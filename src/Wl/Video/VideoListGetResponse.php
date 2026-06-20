@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video;
 
 /**
@@ -26,7 +27,7 @@ class VideoListGetResponse
     /**
      * Embedded video source.
      * One of {@link \WlSdk\Wl\Video\VideoEmbedSourceSid} constants.
-     * 
+     *
      * `null` if video is uploaded.
      *
      * @var int|null
@@ -52,7 +53,7 @@ class VideoListGetResponse
 
     /**
      * Video.js media player initialization parameters in JSON format.
-     * 
+     *
      * Usage example:
      *      <script>
      *          videojs($('video'), {
@@ -69,7 +70,7 @@ class VideoListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_list = isset($data['a_list']) ? array_map(static fn($item) => new VideoListGetResponseList((array)$item), (array)$data['a_list']) : null;
+        $this->a_list = isset($data['a_list']) ? array_map(static fn ($item) => new VideoListGetResponseList((array)$item), (array)$data['a_list']) : null;
         $this->a_page = isset($data['a_page']) ? new VideoListGetResponsePage((array)$data['a_page']) : null;
         $this->id_embed_source = isset($data['id_embed_source']) ? (int)$data['id_embed_source'] : null;
         $this->id_order = isset($data['id_order']) ? (int)$data['id_order'] : null;

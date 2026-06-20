@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Resource\Layout;
 
 class LayoutGetResponseResource

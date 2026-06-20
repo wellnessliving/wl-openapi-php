@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Group\User;
 
 class UserGroupPostRequest
@@ -32,7 +33,7 @@ class UserGroupPostRequest
             'uid_user' => $this->uid_user,
             'k_member_group' => $this->k_member_group,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

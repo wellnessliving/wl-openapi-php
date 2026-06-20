@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz\Response;
 
 class Response65PutRequest
@@ -26,7 +27,7 @@ class Response65PutRequest
 
     /**
      * Quiz response key.
-     * 
+     *
      * `null` in a case of response creation or
      * removing set of responses in [QuizResponseApi](/Core/Quiz/QuizResponse.json).
      *
@@ -59,7 +60,7 @@ class Response65PutRequest
             'uid_link' => $this->uid_link,
             'json_quiz_response_key' => $this->json_quiz_response_key,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

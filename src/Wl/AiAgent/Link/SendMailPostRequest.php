@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\AiAgent\Link;
 
 class SendMailPostRequest
 {
     /**
      * Purchase item ID. Required if `text_action` is 'purchase'.
-     * 
+     *
      * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
@@ -58,7 +59,7 @@ class SendMailPostRequest
             'text_action' => $this->text_action,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

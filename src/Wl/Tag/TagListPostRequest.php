@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Tag;
 
 class TagListPostRequest
@@ -12,7 +13,7 @@ class TagListPostRequest
 
     /**
      * The tag list.
-     * 
+     *
      * Each element has the next structure:
      *
      * @var array[]|null
@@ -36,7 +37,7 @@ class TagListPostRequest
             'a_list' => $this->a_list,
             'json_list' => $this->json_list,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

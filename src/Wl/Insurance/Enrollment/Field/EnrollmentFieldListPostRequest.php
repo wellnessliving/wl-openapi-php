@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Insurance\Enrollment\Field;
 
 class EnrollmentFieldListPostRequest
@@ -19,7 +20,7 @@ class EnrollmentFieldListPostRequest
 
     /**
      * Reimbursement account information.
-     * 
+     *
      * Keys - field name.
      * Values - value entered by user.
      *
@@ -29,7 +30,7 @@ class EnrollmentFieldListPostRequest
 
     /**
      * List of fields that the user has filled in for enrollment.
-     * 
+     *
      * Keys refer specifically to field keys.
      * Values refer specifically to values entered by the user.
      *
@@ -46,7 +47,7 @@ class EnrollmentFieldListPostRequest
             'a_account' => $this->a_account,
             'a_field' => $this->a_field,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

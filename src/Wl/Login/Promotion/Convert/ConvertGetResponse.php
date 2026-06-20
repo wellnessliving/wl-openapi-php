@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\Convert;
 
 /**
@@ -53,7 +54,7 @@ class ConvertGetResponse
     /**
      * When conversion should be done. One of the {@link \WlSdk\Wl\Login\Promotion\Convert\ConvertWhenSid}
      * constants.
-     * 
+     *
      * `null` if it's not set yet.
      *
      * @var int|null
@@ -62,7 +63,7 @@ class ConvertGetResponse
 
     /**
      * Determines whether the conversion request is new or editing an existing conversion.
-     * 
+     *
      * If `true`, the conversion exists. Otherwise, this will be `false`.
      *
      * @var bool|null
@@ -121,7 +122,7 @@ class ConvertGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_promotion = isset($data['a_promotion']) ? array_map(static fn($item) => new ConvertGetResponsePromotion((array)$item), (array)$data['a_promotion']) : null;
+        $this->a_promotion = isset($data['a_promotion']) ? array_map(static fn ($item) => new ConvertGetResponsePromotion((array)$item), (array)$data['a_promotion']) : null;
         $this->dl_convert_max = isset($data['dl_convert_max']) ? (string)$data['dl_convert_max'] : null;
         $this->dl_convert_min = isset($data['dl_convert_min']) ? (string)$data['dl_convert_min'] : null;
         $this->dl_hold_end = isset($data['dl_hold_end']) ? (string)$data['dl_hold_end'] : null;

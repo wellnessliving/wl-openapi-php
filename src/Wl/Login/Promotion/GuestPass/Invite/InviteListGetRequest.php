@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
 
 class InviteListGetRequest
@@ -6,7 +7,7 @@ class InviteListGetRequest
     /**
      * End of the guest pass activity period.
      * Used to filter invitations whose activity moment is on or before this local date.
-     * 
+     *
      * `null` to not filter by period end.
      *
      * @var string|null
@@ -16,7 +17,7 @@ class InviteListGetRequest
     /**
      * Start of the guest pass activity period.
      * Used to filter invitations whose activity moment is on or after this local date.
-     * 
+     *
      * `null` to not filter by period start.
      *
      * @var string|null
@@ -39,7 +40,7 @@ class InviteListGetRequest
 
     /**
      * Key of the login promotion which provides the guest pass invitation.
-     * 
+     *
      * &gt; * Used for `GET` to get list of initial invitations for the specific login promotion.
      * &gt; * Used for `POST` to send invitation to the specific user for the specific login promotion.
      *
@@ -49,7 +50,7 @@ class InviteListGetRequest
 
     /**
      * Key of the invited user.
-     * 
+     *
      * &gt; * Used for `GET` to get list of incoming invitations for the specific user.
      * &gt; * Used for `POST` to send invitation to the specific user.
      *
@@ -59,7 +60,7 @@ class InviteListGetRequest
 
     /**
      * Key of the host user who sent the invitation.
-     * 
+     *
      * &gt; Used only for `GET` request to get list of outgoing invitations from the specific user.
      *
      * @var string|null
@@ -78,7 +79,7 @@ class InviteListGetRequest
             'uid_guest' => $this->uid_guest,
             'uid_host' => $this->uid_host,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

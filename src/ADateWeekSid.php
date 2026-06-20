@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * A class for the days of the week.
- * 
+ *
  * Values:
  * - 5 (`FRIDAY`): Friday.
  * - 1 (`MONDAY`): Monday.
@@ -16,17 +17,23 @@ namespace WlSdk;
 class ADateWeekSid
 {
     /** Friday. */
-    const FRIDAY = 5;
+    public const FRIDAY = 5;
+
     /** Monday. */
-    const MONDAY = 1;
+    public const MONDAY = 1;
+
     /** Saturday. */
-    const SATURDAY = 6;
+    public const SATURDAY = 6;
+
     /** Sunday. */
-    const SUNDAY = 7;
+    public const SUNDAY = 7;
+
     /** Thursday. */
-    const THURSDAY = 4;
+    public const THURSDAY = 4;
+
     /** Tuesday. */
-    const TUESDAY = 2;
+    public const TUESDAY = 2;
+
     /** Wednesday. */
-    const WEDNESDAY = 3;
+    public const WEDNESDAY = 3;
 }

@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion;
 
 class PromotionPayPauseDeleteRequest
 {
     /**
      * Key of business to which currently handled pause period or login promotion belongs.
-     * 
+     *
      * `null` if not initialized.
      *
      * @var string|null
@@ -16,9 +17,9 @@ class PromotionPayPauseDeleteRequest
      * The Purchase Option key. If this key is used, a new hold will be created. The endpoint will return a
      * `start-cross`
      * status code if a hold is already in place.
-     * 
+     *
      * Ignored if `k_promotion_pay_pause` is provided.
-     * 
+     *
      * `null` if not yet initialized.
      *
      * @var string|null
@@ -28,7 +29,7 @@ class PromotionPayPauseDeleteRequest
     /**
      * The promotion payment hold key. If this key is used, it will edit an existing hold.
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
-     * 
+     *
      * `null` if not yet initialized or if the request is based on `k_login_promotion`.
      *
      * @var string|null
@@ -43,7 +44,7 @@ class PromotionPayPauseDeleteRequest
             'k_login_promotion' => $this->k_login_promotion,
             'k_promotion_pay_pause' => $this->k_promotion_pay_pause,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

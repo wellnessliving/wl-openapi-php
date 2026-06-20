@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Service\ServiceList;
 
 use WlSdk\WlSdkClient;
@@ -6,7 +7,7 @@ use WlSdk\WlSdkClient;
 /**
  * Returns list of appointment type in the business.
  */
-class List
+class ListEndpoint
 {
     /** @var WlSdkClient */
     private $client;
@@ -21,12 +22,12 @@ class List
      *
      * Gets key of the business and returns all available appointment types with their names and categories.
      *
-     * @return ListGetResponse
+     * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(ListGetRequest $request): ListGetResponse
+    public function get(ListEndpointGetRequest $request): ListEndpointGetResponse
     {
-        return new ListGetResponse($this->client->request('/Wl/Service/ServiceList/List.json', $request->params(), 'GET'));
+        return new ListEndpointGetResponse($this->client->request('/Wl/Service/ServiceList/List.json', $request->params(), 'GET'));
     }
 }

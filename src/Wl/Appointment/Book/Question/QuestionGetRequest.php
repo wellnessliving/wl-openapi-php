@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Question;
 
 class QuestionGetRequest
@@ -16,7 +17,7 @@ class QuestionGetRequest
             [
             'k_service' => $this->k_service,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

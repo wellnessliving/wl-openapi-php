@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Thoth\PayProcessor;
 
 /**
  * A list of payment gateways or processors.
- * 
+ *
  * Values:
  * - 11 (`CYBER_SOURCE`): Payment gateway for `cybersource.com`.
  * - 9 (`DIRECT_CONNECT`): Payment gateway for Direct Connect.
@@ -17,19 +18,26 @@ namespace WlSdk\Thoth\PayProcessor;
 class PayProcessorSid
 {
     /** Payment gateway for `cybersource.com`. */
-    const CYBER_SOURCE = 11;
+    public const CYBER_SOURCE = 11;
+
     /** Payment gateway for Direct Connect. */
-    const DIRECT_CONNECT = 9;
+    public const DIRECT_CONNECT = 9;
+
     /** Payment gateway for Lucy. */
-    const LUCY = 2;
+    public const LUCY = 2;
+
     /** Payment gateway for Netbanx. */
-    const NETBANX = 1;
+    public const NETBANX = 1;
+
     /** Payment gateway for NMI. */
-    const NMI = 6;
+    public const NMI = 6;
+
     /** Payment gateway for Nuvei. */
-    const NUVEI = 12;
+    public const NUVEI = 12;
+
     /** Payment gateway for http://www.paychoice.com.au/ Paychoice. */
-    const PAYCHOICE = 7;
+    public const PAYCHOICE = 7;
+
     /** Payment gateway for `stripe.com`. */
-    const STRIPE_COM = 10;
+    public const STRIPE_COM = 10;
 }

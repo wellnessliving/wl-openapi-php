@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Payment;
 
 /**
@@ -8,7 +9,7 @@ class PaymentPostPostResponse
 {
     /**
      * The purchase item keys from the database.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string[]|null

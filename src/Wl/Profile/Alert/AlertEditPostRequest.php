@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Alert;
 
 class AlertEditPostRequest
@@ -81,7 +82,7 @@ class AlertEditPostRequest
             'is_purchase' => $this->is_purchase,
             'text_note' => $this->text_note,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

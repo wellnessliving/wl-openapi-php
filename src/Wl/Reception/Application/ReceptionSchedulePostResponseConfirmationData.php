@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Application;
 
 class ReceptionSchedulePostResponseConfirmationData

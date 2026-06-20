@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Reward\Config;
 
 class RewardConfigPostRequest
@@ -24,7 +25,7 @@ class RewardConfigPostRequest
             'k_business' => $this->k_business,
             'is_disabled_reward_program' => $this->is_disabled_reward_program,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

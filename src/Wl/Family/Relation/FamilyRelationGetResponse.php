@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Family\Relation;
 
 /**
@@ -8,7 +9,7 @@ class FamilyRelationGetResponse
 {
     /**
      * The relationship types in the business.
-     * 
+     *
      * Key is ID, value is SID.
      *
      * @var int[]|null

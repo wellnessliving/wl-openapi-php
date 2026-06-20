@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Search;
 
 class ConcertoGetRequest
@@ -32,7 +33,7 @@ class ConcertoGetRequest
             'text_mail' => $this->text_mail,
             'text_phone' => $this->text_phone,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

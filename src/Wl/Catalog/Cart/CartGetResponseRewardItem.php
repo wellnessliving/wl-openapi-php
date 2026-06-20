@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\Cart;
 
 class CartGetResponseRewardItem

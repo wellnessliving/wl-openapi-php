@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Microsoft\Login;
 
 class MicrosoftLoginDeleteRequest
@@ -16,7 +17,7 @@ class MicrosoftLoginDeleteRequest
             [
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

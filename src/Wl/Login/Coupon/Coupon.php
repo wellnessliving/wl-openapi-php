@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Coupon;
 
 use WlSdk\WlSdkClient;

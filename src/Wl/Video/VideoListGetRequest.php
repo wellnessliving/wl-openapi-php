@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video;
 
 class VideoListGetRequest
@@ -70,7 +71,7 @@ class VideoListGetRequest
     /**
      * Page to return.
      * Pagination are ignored when count of videos less than `VIDEO_COUNT_PAGINATION`.
-     * 
+     *
      * `null` if you need to return all the videos.
      *
      * @var int|null
@@ -117,9 +118,9 @@ class VideoListGetRequest
 
     /**
      * UID of the client who request list of videos.
-     * 
+     *
      * `null` if user is not signed in.
-     * 
+     *
      * NOTE: Not used directly in API, needed for `KEY` constant.
      *
      * @var string|null
@@ -147,7 +148,7 @@ class VideoListGetRequest
             'text_search' => $this->text_search,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

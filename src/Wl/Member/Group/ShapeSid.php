@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Member\Group;
 
 /**
  * Shapes of client group icons.
- * 
+ *
  * Last used ID: 7.
- * 
+ *
  * Values:
  * - 1 (`CIRCLE`): Circle.
  * - 2 (`HEXAGON`): Hexagon.
@@ -18,17 +19,23 @@ namespace WlSdk\Wl\Member\Group;
 class ShapeSid
 {
     /** Circle. */
-    const CIRCLE = 1;
+    public const CIRCLE = 1;
+
     /** Hexagon. */
-    const HEXAGON = 2;
+    public const HEXAGON = 2;
+
     /** Oval. */
-    const OVAL = 3;
+    public const OVAL = 3;
+
     /** Pentagon. */
-    const PENTAGON = 4;
+    public const PENTAGON = 4;
+
     /** Rectangle. */
-    const RECTANGLE = 5;
+    public const RECTANGLE = 5;
+
     /** Square. */
-    const SQUARE = 6;
+    public const SQUARE = 6;
+
     /** Star. */
-    const STAR = 7;
+    public const STAR = 7;
 }

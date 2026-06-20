@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Action\CategoryList;
 
 class CategoryListGetRequest
@@ -16,7 +17,7 @@ class CategoryListGetRequest
             [
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

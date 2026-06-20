@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\CatalogList;
 
 /**
@@ -8,7 +9,7 @@ class ElementGetResponse
 {
     /**
      * The age restriction configuration.
-     * 
+     *
      * Age restrictions for an item apply when they're configured for a specific item and the API is requested from
      * the backend
      * or when age restriction are public.
@@ -19,10 +20,10 @@ class ElementGetResponse
 
     /**
      * Additional information specific for the item.
-     * 
+     *
      * The structure may be different depending on the item category.
-     * 
-     * 
+     *
+     *
      * Consider the following examples:
      * * For a product, this contains inventory information.
      * * For a gift card, this contains possible amounts.
@@ -157,7 +158,7 @@ class ElementGetResponse
 
     /**
      * The product option key.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null
@@ -268,10 +269,10 @@ class ElementGetResponse
         $this->a_age_restriction = isset($data['a_age_restriction']) ? new ElementGetResponseAgeRestriction((array)$data['a_age_restriction']) : null;
         $this->a_data = isset($data['a_data']) ? new ElementGetResponseData((array)$data['a_data']) : null;
         $this->a_image = isset($data['a_image']) ? new ElementGetResponseImage((array)$data['a_image']) : null;
-        $this->a_image_list = isset($data['a_image_list']) ? array_map(static fn($item) => new ElementGetResponseImageList((array)$item), (array)$data['a_image_list']) : null;
-        $this->a_installment_template = isset($data['a_installment_template']) ? array_map(static fn($item) => new ElementGetResponseInstallmentTemplate((array)$item), (array)$data['a_installment_template']) : null;
-        $this->a_item = isset($data['a_item']) ? array_map(static fn($item) => new ElementGetResponseItem((array)$item), (array)$data['a_item']) : null;
-        $this->a_tax = isset($data['a_tax']) ? array_map(static fn($item) => new ElementGetResponseTax((array)$item), (array)$data['a_tax']) : null;
+        $this->a_image_list = isset($data['a_image_list']) ? array_map(static fn ($item) => new ElementGetResponseImageList((array)$item), (array)$data['a_image_list']) : null;
+        $this->a_installment_template = isset($data['a_installment_template']) ? array_map(static fn ($item) => new ElementGetResponseInstallmentTemplate((array)$item), (array)$data['a_installment_template']) : null;
+        $this->a_item = isset($data['a_item']) ? array_map(static fn ($item) => new ElementGetResponseItem((array)$item), (array)$data['a_item']) : null;
+        $this->a_tax = isset($data['a_tax']) ? array_map(static fn ($item) => new ElementGetResponseTax((array)$item), (array)$data['a_tax']) : null;
         $this->f_price = isset($data['f_price']) ? (string)$data['f_price'] : null;
         $this->f_price_include = isset($data['f_price_include']) ? (string)$data['f_price_include'] : null;
         $this->f_price_retail_product = isset($data['f_price_retail_product']) ? (string)$data['f_price_retail_product'] : null;

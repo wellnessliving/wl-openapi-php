@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Bank\Card;
 
 class ListGetRequest
@@ -13,7 +14,7 @@ class ListGetRequest
     /**
      * Location to show information for.
      * Primary key in RsLocationSql table.
-     * 
+     *
      * `0` to use user's home location.
      *
      * @var string|null
@@ -35,7 +36,7 @@ class ListGetRequest
             'k_location' => $this->k_location,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

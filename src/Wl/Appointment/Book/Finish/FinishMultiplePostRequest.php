@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Finish;
 
 class FinishMultiplePostRequest
 {
     /**
      * The payment type for the appointment. One of the {@link \WlSdk\RsAppointmentPaySid} constants.
-     * 
+     *
      * Keys refer to provider indexes.
      *
      * @var int[]|null
@@ -60,12 +61,12 @@ class FinishMultiplePostRequest
 
     /**
      * The user key.
-     * 
+     *
      * This field is used if the client books for himself or for the relative.
-     * 
+     *
      * This field is incorrect to use for guest booking since in this case the client will be checked as a
      * relative.
-     * 
+     *
      * In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
      *
      * @var string|null
@@ -74,7 +75,7 @@ class FinishMultiplePostRequest
 
     /**
      * A list of answers for the questions from [QuestionApi](/Wl/Appointment/Book/Question/Question.json).
-     * 
+     *
      * 1st dimension - provider index.
      * 2nd dimension - keys refer to hashes of the questions. Values refer to answers for the questions.
      *
@@ -98,7 +99,7 @@ class FinishMultiplePostRequest
 
     /**
      * The sum paid.
-     * 
+     *
      * Keys refer to provider indexes.
      *
      * @var string[]|null
@@ -107,7 +108,7 @@ class FinishMultiplePostRequest
 
     /**
      * A list of payment sources to pay with.
-     * 
+     *
      * Each source contains:
      *
      * @var array[]|null
@@ -124,7 +125,7 @@ class FinishMultiplePostRequest
     /**
      * The purchase items keys.
      * This will be empty if no purchases have been made for the appointment booking.
-     * 
+     *
      * Keys refer to provider indexes.
      * Value is array of item keys.
      *
@@ -158,7 +159,7 @@ class FinishMultiplePostRequest
     /**
      * This will be `true` when trying to make a test booking and rollback should be applied.
      * Otherwise, this will be `false`.
-     * 
+     *
      * If the flag is set to `true`, credit card requirement will be ignored during this check.
      *
      * @var bool|null
@@ -197,7 +198,7 @@ class FinishMultiplePostRequest
             'is_try' => $this->is_try,
             's_id' => $this->s_id,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * Describes charts types (bar, line, area) and chart modes.
- * 
+ *
  * Values:
  * - 2 (`AREA`): Area chart.
  * - 1 (`COLUMN`): Column chart.
@@ -14,13 +15,17 @@ namespace WlSdk;
 class RsReportChartViewSid
 {
     /** Area chart. */
-    const AREA = 2;
+    public const AREA = 2;
+
     /** Column chart. */
-    const COLUMN = 1;
+    public const COLUMN = 1;
+
     /** Donut chart. */
-    const DONUT = 5;
+    public const DONUT = 5;
+
     /** Line chart. */
-    const LINE = 3;
+    public const LINE = 3;
+
     /** Year-by-year comparisons in the column chart. */
-    const YEAR_COLUMN = 4;
+    public const YEAR_COLUMN = 4;
 }

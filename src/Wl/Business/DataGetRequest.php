@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business;
 
 class DataGetRequest
@@ -42,7 +43,7 @@ class DataGetRequest
             'k_business' => $this->k_business,
             'text_token' => $this->text_token,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

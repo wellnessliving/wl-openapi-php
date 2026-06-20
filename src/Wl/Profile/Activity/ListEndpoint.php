@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Activity;
 
 use WlSdk\WlSdkClient;
@@ -6,7 +7,7 @@ use WlSdk\WlSdkClient;
 /**
  * Retrieves a list of activity items to show in user profile.
  */
-class List
+class ListEndpoint
 {
     /** @var WlSdkClient */
     private $client;
@@ -23,12 +24,12 @@ class List
      *  date range. Requires profile-view access and respects activity-type visibility rules for the
      *  requesting user.
      *
-     * @return ListGetResponse
+     * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(ListGetRequest $request): ListGetResponse
+    public function get(ListEndpointGetRequest $request): ListEndpointGetResponse
     {
-        return new ListGetResponse($this->client->request('/Wl/Profile/Activity/List.json', $request->params(), 'GET'));
+        return new ListEndpointGetResponse($this->client->request('/Wl/Profile/Activity/List.json', $request->params(), 'GET'));
     }
 }

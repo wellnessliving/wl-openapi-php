@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Social\Share;
 
 /**
  * A list of types object for share post to social network.
- * 
+ *
  * Last used ID: 4.
- * 
+ *
  * Values:
  * - 4 (`BOOK`): Book.
  * - 3 (`LOCATION`): Location.
@@ -15,11 +16,14 @@ namespace WlSdk\Wl\Social\Share;
 class ShareObjectSid
 {
     /** Book. */
-    const BOOK = 4;
+    public const BOOK = 4;
+
     /** Location. */
-    const LOCATION = 3;
+    public const LOCATION = 3;
+
     /** Purchase. */
-    const PURCHASE = 1;
+    public const PURCHASE = 1;
+
     /** Review. */
-    const REVIEW = 2;
+    public const REVIEW = 2;
 }

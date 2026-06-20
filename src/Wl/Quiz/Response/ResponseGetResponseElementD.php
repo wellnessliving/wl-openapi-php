@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz\Response;
 
 class ResponseGetResponseElementD
@@ -13,7 +14,7 @@ class ResponseGetResponseElementD
 
     /**
      * Whether this element has a duplicate.
-     * 
+     *
      * `true` if this element has a duplicate, otherwise `false`.
      *
      * @var bool|null
@@ -43,7 +44,7 @@ class ResponseGetResponseElementD
 
     /**
      * Element ID. One of {@link \WlSdk\Core\Quiz\Element\ElementSid} constants.
-     * 
+     *
      * Defined automatically according to the name of the class.
      *
      * @var int|null
@@ -52,7 +53,7 @@ class ResponseGetResponseElementD
 
     /**
      * Whether element is required or not.
-     * 
+     *
      * `true` if element is required.
      * `false` if element is not required.
      *
@@ -69,7 +70,7 @@ class ResponseGetResponseElementD
 
     /**
      * Quiz element key.
-     * 
+     *
      * `null` in a case if element is not saved in database.
      *
      * @var string|null
@@ -78,7 +79,7 @@ class ResponseGetResponseElementD
 
     /**
      * Old quiz element key.
-     * 
+     *
      * `null` in a case if element is not has old version.
      *
      * @var string|null

@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Wl\Coupon;
 
 /**
  * List of possible types of Gift Cards.
- * 
+ *
  * Values:
  * - 2 (`AMOUNT`): Amount Gift Card.
  *   Only one card of this type can be created in one business.
@@ -16,9 +17,11 @@ namespace WlSdk\Wl\Coupon;
 class TypeSid
 {
     /** Amount Gift Card. */
-    const AMOUNT = 2;
+    public const AMOUNT = 2;
+
     /** Product Gift Card. */
-    const COMPONENT = 1;
+    public const COMPONENT = 1;
+
     /** Quick Gift Card. */
-    const QUICK = 3;
+    public const QUICK = 3;
 }

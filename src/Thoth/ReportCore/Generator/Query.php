@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\ReportCore\Generator;
 
 use WlSdk\WlSdkClient;

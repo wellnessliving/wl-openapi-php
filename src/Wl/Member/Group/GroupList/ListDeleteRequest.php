@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Group\GroupList;
 
 class ListDeleteRequest
@@ -24,7 +25,7 @@ class ListDeleteRequest
             'k_business' => $this->k_business,
             'a_member_group_delete' => $this->a_member_group_delete,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Social\Apple\Login;
 
 class AppleLoginDeleteRequest
@@ -16,7 +17,7 @@ class AppleLoginDeleteRequest
             [
             'text_application' => $this->text_application,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

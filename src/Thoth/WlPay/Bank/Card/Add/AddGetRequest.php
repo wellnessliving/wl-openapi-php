@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Bank\Card\Add;
 
 class AddGetRequest
@@ -33,7 +34,7 @@ class AddGetRequest
             'k_location' => $this->k_location,
             'k_pay_owner' => $this->k_pay_owner,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

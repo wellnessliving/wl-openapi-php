@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Member;
 
 class MemberGetRequest
@@ -16,7 +17,7 @@ class MemberGetRequest
             [
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

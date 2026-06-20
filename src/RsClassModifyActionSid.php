@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * The list of possible actions for class modify wizard.
- * 
+ *
  * Values:
  * - 2 (`CANCEL`): Cancel class schedule.
  * - 1 (`EDIT`): Change class schedule.
@@ -12,9 +13,11 @@ namespace WlSdk;
 class RsClassModifyActionSid
 {
     /** Cancel class schedule. */
-    const CANCEL = 2;
+    public const CANCEL = 2;
+
     /** Change class schedule. */
-    const EDIT = 1;
+    public const EDIT = 1;
+
     /** Restore cancelled schedule. */
-    const RESTORE = 3;
+    public const RESTORE = 3;
 }

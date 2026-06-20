@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\AmazonRegion;
 
 class AmazonRegionGetRequest
@@ -16,7 +17,7 @@ class AmazonRegionGetRequest
             [
             'a_business' => $this->a_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Core\Drive\ImageUpload;
 
 class ImageUploadTemporaryPostRequest
 {
     /**
      * The key of the image within `s_class`.
-     * 
+     *
      * For example, for a user's photo, specify the user's key here.
      *
      * @var string|null
@@ -14,7 +15,7 @@ class ImageUploadTemporaryPostRequest
 
     /**
      * The name of the class that manages this image.
-     * 
+     *
      * For example, for a user's photo, specify the string `PassportLoginImage` here.
      *
      * @var string|null
@@ -36,7 +37,7 @@ class ImageUploadTemporaryPostRequest
             's_class' => $this->s_class,
             'f_image' => $this->f_image,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

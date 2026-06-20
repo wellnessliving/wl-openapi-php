@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Promotion;
 
 /**
@@ -23,7 +24,7 @@ class PromotionGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_promotion = isset($data['a_promotion']) ? array_map(static fn($item) => new PromotionGetResponsePromotion((array)$item), (array)$data['a_promotion']) : null;
+        $this->a_promotion = isset($data['a_promotion']) ? array_map(static fn ($item) => new PromotionGetResponsePromotion((array)$item), (array)$data['a_promotion']) : null;
         $this->o_guest_settings = $data['o_guest_settings'] ?? null;
     }
 }

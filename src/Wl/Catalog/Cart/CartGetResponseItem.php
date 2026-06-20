@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\Cart;
 
 class CartGetResponseItem
@@ -27,7 +28,7 @@ class CartGetResponseItem
     /**
      * The sale item key.
      *   Note:
-     * 
+     *
      *      You need to specify the product option key in the `k_shop_product_option` field or the first available
      *          option will be used automatically.
      *

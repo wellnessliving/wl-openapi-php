@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * Types of reward actions.
- * 
+ *
  * Last used ID: 32
- * 
+ *
  * Values:
  * - 16 (`BIRTHDAY`): Customer Birthday earns X points.
  * - 14 (`BOOK`): Book a class online.
@@ -34,49 +35,71 @@ namespace WlSdk;
 class RsRewardScoreSid
 {
     /** Customer Birthday earns X points. */
-    const BIRTHDAY = 16;
+    public const BIRTHDAY = 16;
+
     /** Book a class online. */
-    const BOOK = 14;
+    public const BOOK = 14;
+
     /** Book a class and share on Facebook. */
-    const BOOK_FACEBOOK = 2;
+    public const BOOK_FACEBOOK = 2;
+
     /** Book a class and share on Twitter. */
-    const BOOK_TWITTER = 3;
+    public const BOOK_TWITTER = 3;
+
     /** Custom action. */
-    const CUSTOM = 26;
+    public const CUSTOM = 26;
+
     /** Connect profile to Facebook. */
-    const LOGIN_FACEBOOK = 7;
+    public const LOGIN_FACEBOOK = 7;
+
     /** Each Dollar spent earns customers X points. */
-    const PAY = 15;
+    public const PAY = 15;
+
     /** The reward for the purchase of some product. */
-    const PURCHASE_PRODUCT = 28;
+    public const PURCHASE_PRODUCT = 28;
+
     /** The reward for the purchase of some promotion. */
-    const PURCHASE_PROMOTION = 27;
+    public const PURCHASE_PROMOTION = 27;
+
     /** Share to facebook purchased item. */
-    const PURCHASE_SHARE_FACEBOOK = 22;
+    public const PURCHASE_SHARE_FACEBOOK = 22;
+
     /** Share to twitter purchased item. */
-    const PURCHASE_SHARE_TWITTER = 23;
+    public const PURCHASE_SHARE_TWITTER = 23;
+
     /** Referral purchase. */
-    const REFER_PURCHASE = 30;
+    public const REFER_PURCHASE = 30;
+
     /** Referral registration. */
-    const REFER_REGISTER = 31;
+    public const REFER_REGISTER = 31;
+
     /** User registration. */
-    const REGISTRATION = 20;
+    public const REGISTRATION = 20;
+
     /** Record to reset all-time earned user points. This points will be always negative. */
-    const RESET = 25;
+    public const RESET = 25;
+
     /** Record to reset current available user points. This points will be always negative. */
-    const RESET_AVAILABLE = 32;
+    public const RESET_AVAILABLE = 32;
+
     /** Write a review on microsite. */
-    const REVIEW = 11;
+    public const REVIEW = 11;
+
     /** Write a review on microsite and share on Facebook. */
-    const REVIEW_FACEBOOK = 9;
+    public const REVIEW_FACEBOOK = 9;
+
     /** Write a review on microsite and share on Twitter. */
-    const REVIEW_TWITTER = 10;
+    public const REVIEW_TWITTER = 10;
+
     /** Visit classes on the same location. */
-    const VISIT = 12;
+    public const VISIT = 12;
+
     /** Attending a specific appointment earns customers X points. */
-    const VISIT_APPOINTMENT = 29;
+    public const VISIT_APPOINTMENT = 29;
+
     /** Attending a specific class earns customers X points. */
-    const VISIT_CLASS = 18;
+    public const VISIT_CLASS = 18;
+
     /** Attending a specific Workshop/Enrollment/Event earns customers X points. */
-    const VISIT_ENROLLMENT = 19;
+    public const VISIT_ENROLLMENT = 19;
 }

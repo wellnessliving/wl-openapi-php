@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\User\Info;
 
 /**
@@ -9,7 +10,7 @@ class UserIntegrationGetResponse
     /**
      * Information about the integrations the user is connected to. The information returned has the following
      * structure:
-     * 
+     *
      * `null` if the user does not belong to any integration.
      *
      * @var UserIntegrationGetResponseIntegration|null

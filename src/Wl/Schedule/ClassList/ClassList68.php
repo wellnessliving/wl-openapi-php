@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ClassList;
 
 use WlSdk\WlSdkClient;
@@ -26,10 +27,10 @@ The difference is as follows:
      * GET
      * requests and the browser refuse to send the request (situations with long class ID, event ID or staff ID
      * lists).
-     * 
+     *
      *  - Added generation of a separate 'Quick filter'.
      * This generation is enabled using the flag `show_quick_filter`.
-     * 
+     *
      *  - Added a filter list of events `a_event`.
      *  - Added a filter ID of tab `id_class_tab`.
      *

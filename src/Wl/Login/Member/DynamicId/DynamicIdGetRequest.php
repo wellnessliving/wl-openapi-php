@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Member\DynamicId;
 
 class DynamicIdGetRequest
@@ -34,7 +35,7 @@ class DynamicIdGetRequest
             'k_business' => $this->k_business,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

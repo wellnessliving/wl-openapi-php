@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Transaction\Report;
 
 use WlSdk\WlSdkClient;

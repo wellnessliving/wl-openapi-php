@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Type;
 
 class LoginTypeGetRequest
@@ -24,7 +25,7 @@ class LoginTypeGetRequest
             'is_franchisor' => $this->is_franchisor,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Search\StaffApp;
 
 class ListGetRequest
@@ -32,7 +33,7 @@ class ListGetRequest
             'k_business' => $this->k_business,
             'text_search' => $this->text_search,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

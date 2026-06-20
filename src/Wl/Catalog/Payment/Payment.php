@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\Payment;
 
 use WlSdk\WlSdkClient;

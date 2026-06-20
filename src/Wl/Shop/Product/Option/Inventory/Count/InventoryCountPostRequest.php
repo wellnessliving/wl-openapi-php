@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Shop\Product\Option\Inventory\Count;
 
 class InventoryCountPostRequest
@@ -34,7 +35,7 @@ class InventoryCountPostRequest
             'a_quantity' => $this->a_quantity,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

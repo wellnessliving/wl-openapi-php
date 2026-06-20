@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Activity;
 
 class ElementGetRequest
@@ -16,7 +17,7 @@ class ElementGetRequest
             [
             'k_login_activity' => $this->k_login_activity,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

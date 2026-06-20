@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Application;
 
 /**
@@ -16,7 +17,7 @@ class MemberInfoGetResponse
 
     /**
      * The options presented in the web app.
-     * 
+     *
      * The items are generated this way due to JavaScript limitations around translated messages.
      *
      * @var MemberInfoGetResponseItems[]|null
@@ -71,7 +72,7 @@ class MemberInfoGetResponse
 
     /**
      * The member ID.
-     * 
+     *
      * If `null`, the specified client isn't a member of the specified business.
      *
      * @var string|null
@@ -109,7 +110,7 @@ class MemberInfoGetResponse
     public function __construct(array $data)
     {
         $this->a_info = isset($data['a_info']) ? new MemberInfoGetResponseInfo((array)$data['a_info']) : null;
-        $this->a_items = isset($data['a_items']) ? array_map(static fn($item) => new MemberInfoGetResponseItems((array)$item), (array)$data['a_items']) : null;
+        $this->a_items = isset($data['a_items']) ? array_map(static fn ($item) => new MemberInfoGetResponseItems((array)$item), (array)$data['a_items']) : null;
         $this->a_result_list = isset($data['a_result_list']) ? new MemberInfoGetResponseResultList((array)$data['a_result_list']) : null;
         $this->a_visit_last = isset($data['a_visit_last']) ? new MemberInfoGetResponseVisitLast((array)$data['a_visit_last']) : null;
         $this->a_visit_next = isset($data['a_visit_next']) ? new MemberInfoGetResponseVisitNext((array)$data['a_visit_next']) : null;

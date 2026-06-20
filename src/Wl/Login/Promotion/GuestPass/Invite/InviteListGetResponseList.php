@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
 
 class InviteListGetResponseList
@@ -121,7 +122,7 @@ class InviteListGetResponseList
 
     /**
      * Login promotion key granted to the guest upon acceptance.
-     * 
+     *
      * `null` if the invitation has not been accepted.
      *
      * @var string|null
@@ -144,7 +145,7 @@ class InviteListGetResponseList
 
     /**
      * Visit key redeemed with this guest pass.
-     * 
+     *
      * `null` if no visit is associated.
      *
      * @var string|null
@@ -197,7 +198,7 @@ class InviteListGetResponseList
 
     /**
      * User key of the host who sent the invitation.
-     * 
+     *
      * `null` if the host could not be resolved.
      *
      * @var string|null

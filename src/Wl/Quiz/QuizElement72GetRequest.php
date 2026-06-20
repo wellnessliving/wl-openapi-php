@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz;
 
 class QuizElement72GetRequest
@@ -22,7 +23,7 @@ class QuizElement72GetRequest
 
     /**
      * Whether quiz response received by kiosk or direct mode link.
-     * 
+     *
      * `true` quiz response received by kiosk mode.
      * `false` quiz response received by direct or direct mode.
      *
@@ -32,15 +33,15 @@ class QuizElement72GetRequest
 
     /**
      * List of purchase items for which this form is loaded in JSON format.
-     * 
+     *
      * This variable supports two structures:
-     * 
+     *
      * New structure:
      * Each element key has the format `[id_purchase_item]::[k_id]`, where:
-     * 
+     *
      * Old structure:
      * Each element is a string in the format `[id_purchase_item]::[k_id]`.
-     * 
+     *
      * Empty in case when purchase item not specified or form loaded from direct link.
      *
      * @var int|null
@@ -88,7 +89,7 @@ class QuizElement72GetRequest
             'k_quiz_login' => $this->k_quiz_login,
             'uid_client' => $this->uid_client,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

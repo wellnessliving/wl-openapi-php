@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\Payment;
 
 /**
@@ -8,7 +9,7 @@ class PaymentPostResponse
 {
     /**
      * The key of login activity.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var string|null

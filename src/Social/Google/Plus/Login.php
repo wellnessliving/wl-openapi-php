@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Social\Google\Plus;
 
 use WlSdk\WlSdkClient;

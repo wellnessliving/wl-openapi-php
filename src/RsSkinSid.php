@@ -1,13 +1,14 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * A list of skin types.
- * 
- * 
- * 
+ *
+ *
+ *
  * Last used ID: 21.
- * 
+ *
  * Values:
  * - 19 (`AI_AGENT`): Ai Agent web-chat.
  * - 13 (`APPLICATION`): Application skin.
@@ -24,7 +25,7 @@ namespace WlSdk;
  * - 18 (`SCHEDULE_FOREIGN`): Foreign schedule widget on react language.
  * - 1 (`SCHEDULE_LIST`): Schedule list widget.
  * - 14 (`SCHEDULE_STANDARD`): Standard version of schedule.
- * 
+ *
  *   This skin is the same as [RsSkinSid::SCHEDULE_LIST](#/components/schemas/RsSkinSid) except that design can not be
  * changed, only standard
  *   settings can be used.
@@ -34,37 +35,53 @@ namespace WlSdk;
 class RsSkinSid
 {
     /** Ai Agent web-chat. */
-    const AI_AGENT = 19;
+    public const AI_AGENT = 19;
+
     /** Application skin. */
-    const APPLICATION = 13;
+    public const APPLICATION = 13;
+
     /** Appointment booking wizard. */
-    const APPOINTMENT = 7;
+    public const APPOINTMENT = 7;
+
     /** Online store widget. */
-    const CATALOG_FOREIGN = 21;
+    public const CATALOG_FOREIGN = 21;
+
     /** Event enrollment wizard widget. */
-    const ENROLLMENT = 8;
+    public const ENROLLMENT = 8;
+
     /** Fitbuilder widget. */
-    const FITBUILDER = 17;
+    public const FITBUILDER = 17;
+
     /** Skin for lead tracking form. */
-    const LEAD = 9;
+    public const LEAD = 9;
+
     /** Skin for lead tracking form from microservice. */
-    const LEAD_FOREIGN = 20;
+    public const LEAD_FOREIGN = 20;
+
     /** Mobile schedule version. */
-    const MOBILE_SCHEDULE = 10;
+    public const MOBILE_SCHEDULE = 10;
+
     /** Asset booking wizard. */
-    const RESOURCE = 16;
+    public const RESOURCE = 16;
+
     /** Review list widget. */
-    const REVIEW_LIST = 4;
+    public const REVIEW_LIST = 4;
+
     /** General schedule design appearance. */
-    const SCHEDULE_DESIGN = 15;
+    public const SCHEDULE_DESIGN = 15;
+
     /** Foreign schedule widget on react language. */
-    const SCHEDULE_FOREIGN = 18;
+    public const SCHEDULE_FOREIGN = 18;
+
     /** Schedule list widget. */
-    const SCHEDULE_LIST = 1;
+    public const SCHEDULE_LIST = 1;
+
     /** Standard version of schedule. */
-    const SCHEDULE_STANDARD = 14;
+    public const SCHEDULE_STANDARD = 14;
+
     /** Staff widget. */
-    const STAFF = 12;
+    public const STAFF = 12;
+
     /** Online store widget. */
-    const STORE = 11;
+    public const STORE = 11;
 }

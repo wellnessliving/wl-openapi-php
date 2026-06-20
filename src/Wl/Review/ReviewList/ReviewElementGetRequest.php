@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Review\ReviewList;
 
 class ReviewElementGetRequest
@@ -19,7 +20,7 @@ class ReviewElementGetRequest
 
     /**
      * The user key.
-     * 
+     *
      * May be empty in the case of a guest.
      *
      * @var string|null
@@ -34,7 +35,7 @@ class ReviewElementGetRequest
             'k_review' => $this->k_review,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

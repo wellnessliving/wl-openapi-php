@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Staff\Privilege;
 
 use WlSdk\WlSdkClient;

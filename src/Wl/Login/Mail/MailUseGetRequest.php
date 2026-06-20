@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Mail;
 
 class MailUseGetRequest
@@ -24,7 +25,7 @@ class MailUseGetRequest
             'k_business' => $this->k_business,
             'text_mail' => $this->text_mail,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

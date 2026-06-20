@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Insurance\Catalog;
 
 class ProgramListGetResponseWellnessProgram

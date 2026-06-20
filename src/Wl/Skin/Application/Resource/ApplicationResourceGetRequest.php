@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Skin\Application\Resource;
 
 class ApplicationResourceGetRequest
@@ -17,7 +18,7 @@ class ApplicationResourceGetRequest
             [
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

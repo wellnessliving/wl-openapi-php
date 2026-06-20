@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Bank\Card\Add;
 
 class AddDeleteRequest
@@ -24,7 +25,7 @@ class AddDeleteRequest
             'k_business' => $this->k_business,
             'k_pay_bank' => $this->k_pay_bank,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

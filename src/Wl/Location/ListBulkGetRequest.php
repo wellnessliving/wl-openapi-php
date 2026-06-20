@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Location;
 
 class ListBulkGetRequest
 {
     /**
      * The ID of the directory if locations should be filtered by enabling directory integration.
-     * 
+     *
      * `0` if a directory filter isn't required.
      *
      * @var int|null
@@ -14,7 +15,7 @@ class ListBulkGetRequest
 
     /**
      * A list of businesses. Business primary keys are serialized with JSON.
-     * 
+     *
      * Empty string if you need all locations in the system.
      *
      * @var string|null
@@ -36,7 +37,7 @@ class ListBulkGetRequest
             's_business' => $this->s_business,
             's_location' => $this->s_location,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Request\Token;
 
 class TokenPinGetRequest
@@ -16,7 +17,7 @@ class TokenPinGetRequest
             [
             'text_push' => $this->text_push,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

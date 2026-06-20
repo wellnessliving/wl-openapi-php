@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\ExplorerSearch\ClassSession;
 
 use WlSdk\WlSdkClient;

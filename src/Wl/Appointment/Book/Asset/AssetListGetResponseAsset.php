@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Asset;
 
 class AssetListGetResponseAsset
 {
     /**
      * Information about age restrictions for this event.
-     * 
+     *
      * This will be an empty array if there aren't any age restrictions.
      *
      * @var AssetListGetResponseAssetAgeRestrictions|null

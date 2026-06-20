@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Tag;
 
 class TagPutRequest
@@ -32,7 +33,7 @@ class TagPutRequest
             'k_video_tag' => $this->k_video_tag,
             'text_title' => $this->text_title,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

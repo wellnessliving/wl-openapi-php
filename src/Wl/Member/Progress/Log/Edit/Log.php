@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Log\Edit;
 
 use WlSdk\WlSdkClient;

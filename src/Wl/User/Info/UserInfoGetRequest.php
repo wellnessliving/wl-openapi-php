@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\User\Info;
 
 class UserInfoGetRequest
@@ -42,7 +43,7 @@ class UserInfoGetRequest
             'not_cached' => $this->not_cached,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

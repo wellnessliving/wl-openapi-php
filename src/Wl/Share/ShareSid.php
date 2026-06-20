@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Wl\Share;
 
 /**
  * A list of share options.
- * 
+ *
  * Values:
  * - 2 (`EVERYONE`): Item is available for all staffs in a business.
  * - 1 (`ONLY_ME`): Item is available for current user.
@@ -12,9 +13,11 @@ namespace WlSdk\Wl\Share;
 class ShareSid
 {
     /** Item is available for all staffs in a business. */
-    const EVERYONE = 2;
+    public const EVERYONE = 2;
+
     /** Item is available for current user. */
-    const ONLY_ME = 1;
+    public const ONLY_ME = 1;
+
     /** Item is available for selected staff roles. */
-    const SELECTED_STAFF_ROLE = 3;
+    public const SELECTED_STAFF_ROLE = 3;
 }

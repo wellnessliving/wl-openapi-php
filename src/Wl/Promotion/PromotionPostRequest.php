@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Promotion;
 
 class PromotionPostRequest
@@ -41,7 +42,7 @@ class PromotionPostRequest
             'a_promotion' => $this->a_promotion,
             'o_guest_settings' => $this->o_guest_settings,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

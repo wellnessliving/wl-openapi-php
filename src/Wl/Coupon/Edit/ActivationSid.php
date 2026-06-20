@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Coupon\Edit;
 
 /**
  * Coupon date start rule.
  * sale - date start is a date of the sale
  * fixed - date start is fixed by coupon settings
- * 
+ *
  * Values:
  * - 7 (`DAY`): Number of a day of the month or of the week.
  * - 3 (`FIXED`): Custom date.
@@ -14,9 +15,11 @@ namespace WlSdk\Wl\Coupon\Edit;
 class ActivationSid
 {
     /** Number of a day of the month or of the week. */
-    const DAY = 7;
+    public const DAY = 7;
+
     /** Custom date. */
-    const FIXED = 3;
+    public const FIXED = 3;
+
     /** Date of the sale. */
-    const SALE = 1;
+    public const SALE = 1;
 }

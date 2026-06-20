@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Request\Api;
 
 use WlSdk\WlSdkClient;

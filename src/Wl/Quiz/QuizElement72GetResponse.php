@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz;
 
 /**
@@ -15,10 +16,10 @@ class QuizElement72GetResponse
 
     /**
      * List of quiz elements.
-     * 
+     *
      * Each element responsible for one quiz element and structure of each value depend
      * on type of element and contains public arguments of responsible class element.
-     * 
+     *
      * Order of the elements in array corresponds to order of elements on the form.
      *
      * @var QuizElement72GetResponseElementA[]|QuizElement72GetResponseElementB[]|QuizElement72GetResponseElementC[]|QuizElement72GetResponseElementD[]|QuizElement72GetResponseElementE[]|QuizElement72GetResponseElementF[]|QuizElement72GetResponseElementG[]|QuizElement72GetResponseElementH[]|QuizElement72GetResponseElementI[]|QuizElement72GetResponseElementJ[]|QuizElement72GetResponseElementK[]|QuizElement72GetResponseElementL[]|QuizElement72GetResponseElementM[]|QuizElement72GetResponseElementN[]|null
@@ -48,7 +49,7 @@ class QuizElement72GetResponse
 
     /**
      * Quiz active status.
-     * 
+     *
      * `true` if quiz is active.
      * `false` if quiz is not active.
      *
@@ -73,7 +74,7 @@ class QuizElement72GetResponse
 
     /**
      * Business type key. Used only for forms in the system business.
-     * 
+     *
      * `null` if not initialized.
      *
      * @var string|null
@@ -82,7 +83,7 @@ class QuizElement72GetResponse
 
     /**
      * Whether to show numbering of the form elements that supports numbering.
-     * 
+     *
      * `true` to show numbering on the form for elements that supports numbering.
      * `false` to not show numbering.
      *
@@ -113,7 +114,7 @@ class QuizElement72GetResponse
 
     public function __construct(array $data)
     {
-        $this->a_access_log = isset($data['a_access_log']) ? array_map(static fn($item) => new QuizElement72GetResponseAccessLog((array)$item), (array)$data['a_access_log']) : null;
+        $this->a_access_log = isset($data['a_access_log']) ? array_map(static fn ($item) => new QuizElement72GetResponseAccessLog((array)$item), (array)$data['a_access_log']) : null;
         $this->a_element = $data['a_element'] ?? null;
         $this->a_setting = isset($data['a_setting']) ? new QuizElement72GetResponseSetting((array)$data['a_setting']) : null;
         $this->can_amend = isset($data['can_amend']) ? (bool)$data['can_amend'] : null;

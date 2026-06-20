@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video;
 
 /**
@@ -51,7 +52,7 @@ class VideoElementGetResponse
 
     /**
      * The date and time when the video was published.
-     * 
+     *
      * This will be `null` if the published date is not set yet.
      *
      * @var string|null
@@ -60,7 +61,7 @@ class VideoElementGetResponse
 
     /**
      * The date and time when the video was unpublished.
-     * 
+     *
      * This will be `null` if the unpublished date is not set yet.
      *
      * @var string|null
@@ -119,7 +120,7 @@ class VideoElementGetResponse
     /**
      * Embedded video source.
      * One of {@link \WlSdk\Wl\Video\VideoEmbedSourceSid} constants.
-     * 
+     *
      * `null` if video is uploaded.
      *
      * @var int|null
@@ -136,7 +137,7 @@ class VideoElementGetResponse
 
     /**
      * Source of the video.
-     * 
+     *
      * One of {@link \WlSdk\Wl\Video\VideoSourceSid} constants.
      *
      * @var int|null
@@ -176,7 +177,7 @@ class VideoElementGetResponse
 
     /**
      * Video.js media player initialization parameters in JSON format.
-     * 
+     *
      * Usage example:
      *      <script>
      *          videojs($('video'), {
@@ -215,7 +216,7 @@ class VideoElementGetResponse
 
     /**
      * The string representation of the video's key.
-     * 
+     *
      * This will be `null` if the video doesn't have a thumbnail image.
      *
      * @var string|null
@@ -266,12 +267,12 @@ class VideoElementGetResponse
 
     /**
      * The URL of the video file.
-     * 
+     *
      * This URL return with domain which you use when you call this API.
      * In case when you make request to local domain and video is
      * `is_converted` links in file will have global domain and for correct
      * work you must replace global domain to local.
-     * 
+     *
      * Example for `videojs` player you can override method `beforeRequest`: <code>
      *  videojs.Vhs.xhr.beforeRequest = function(options)
      *  {

@@ -1,17 +1,18 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Purchase;
 
 class PurchaseGetRequest
 {
     /**
      * List of selected services without current `k_service`.
-     * 
+     *
      * The list of these services directly affects the list of selected promotions.
      * Depending on the number and order of services, there may be different results.
-     * 
+     *
      * The current `k_service` will be added to the end of this list.
      * It is worth considering this list as a list of previously selected services.
-     * 
+     *
      * Each element has the following structure:
      *
      * @var array[]|null
@@ -110,11 +111,11 @@ class PurchaseGetRequest
 
     /**
      * The timezone key for `dt_date`.
-     * 
+     *
      * Can be `null` if timezone is not selected.
      * If not selected, the default client timezone will be used.
-     * 
-     * 
+     *
+     *
      * In any case, the timezone will be used if the business allows client timezones.
      *
      * @var string|null
@@ -123,12 +124,12 @@ class PurchaseGetRequest
 
     /**
      * The user key.
-     * 
+     *
      * This field is used if the client books for himself or for the relative.
-     * 
+     *
      * This field is incorrect to use for guest booking since in this case the client will be checked as a
      * relative.
-     * 
+     *
      * In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
      *
      * @var string|null
@@ -155,7 +156,7 @@ class PurchaseGetRequest
             'k_timezone' => $this->k_timezone,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

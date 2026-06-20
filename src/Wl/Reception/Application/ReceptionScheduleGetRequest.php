@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Application;
 
 class ReceptionScheduleGetRequest
@@ -40,7 +41,7 @@ class ReceptionScheduleGetRequest
             's_secret' => $this->s_secret,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

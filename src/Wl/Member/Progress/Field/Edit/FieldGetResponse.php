@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Field\Edit;
 
 /**
@@ -29,7 +30,7 @@ class FieldGetResponse
 
     /**
      * Field measurement unit ID.
-     * 
+     *
      * One of the {@link \WlSdk\Wl\Member\Progress\Field\MeasurementSid} constants.
      *
      * @var int|null
@@ -38,7 +39,7 @@ class FieldGetResponse
 
     /**
      * Field type ID.
-     * 
+     *
      * One of the {@link \WlSdk\Wl\Member\Progress\Field\TypeSid} constants.
      *
      * @var int|null
@@ -76,7 +77,7 @@ class FieldGetResponse
     /**
      * Field title.
      * Only titles of the custom progress fields can be changed.
-     * 
+     *
      * `null` If default title should be used.
      *
      * @var string|null

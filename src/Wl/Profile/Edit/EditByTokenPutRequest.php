@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Edit;
 
 class EditByTokenPutRequest
@@ -6,7 +7,7 @@ class EditByTokenPutRequest
     /**
      * Registration source ID.
      * One of {@link \WlSdk\Wl\Profile\RegisterSourceSid} constants.
-     * 
+     *
      * Used only to register new clients.
      * * If the client is already authorized, the field value will not be used.
      * * If the client is not authorized and no value is set, {@link \WlSdk\Wl\Profile\RegisterSourceSid} will be
@@ -35,7 +36,7 @@ class EditByTokenPutRequest
 
     /**
      * The key of the business you're editing.
-     * 
+     *
      * An empty value will return the system-wide fields.
      *
      * @var string|null
@@ -44,9 +45,9 @@ class EditByTokenPutRequest
 
     /**
      * Key of the lead source.
-     * 
+     *
      * `null` if not defined.
-     * 
+     *
      * When creating or editing a user:
      * `LEAD_SOURCE_REPLACE_NONE` if Lead Source is to be unselected for the user.
      *
@@ -56,7 +57,7 @@ class EditByTokenPutRequest
 
     /**
      * The key of the user to edit.
-     * 
+     *
      * If empty, an empty form will be displayed to add a new user.
      *
      * @var string|null
@@ -86,7 +87,7 @@ class EditByTokenPutRequest
     /**
      * List of intent identifiers. Each element is one of {@link \WlSdk\Wl\Login\Member\Intents\MemberIntentsSid}
      * constants.
-     * 
+     *
      * Available only for leads added by CAASI agent.
      *
      * @var int[]|null
@@ -116,7 +117,7 @@ class EditByTokenPutRequest
             'a_intents' => $this->a_intents,
             'a_phone_inherit' => $this->a_phone_inherit,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

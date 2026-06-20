@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Finish;
 
 class Finish47GetResponseNotification

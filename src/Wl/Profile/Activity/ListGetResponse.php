@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Activity;
 
 /**
@@ -8,7 +9,7 @@ class ListGetResponse
 {
     /**
      * An array listing client activities, where each activity is provided as an ID number.
-     * 
+     *
      * The order of items in this array is the order in which the elements should be displayed.
      *
      * @var string[]|null

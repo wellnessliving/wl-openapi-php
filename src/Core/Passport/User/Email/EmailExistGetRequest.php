@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Passport\User\Email;
 
 class EmailExistGetRequest
@@ -16,7 +17,7 @@ class EmailExistGetRequest
             [
             'text_email' => $this->text_email,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

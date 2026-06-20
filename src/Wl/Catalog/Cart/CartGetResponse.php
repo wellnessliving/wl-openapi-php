@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\Cart;
 
 /**
@@ -8,7 +9,7 @@ class CartGetResponse
 {
     /**
      * The list of discounts for each item.
-     * 
+     *
      * Keys refer to unique item keys, and values refer to discount amounts for the item.
      *
      * @var string[]|null
@@ -45,7 +46,7 @@ class CartGetResponse
 
     /**
      * Values derived for individual tax rates.
-     * 
+     *
      * Keys refer to tax keys, values refer to the amount of tax in the cart.
      *
      * @var string[]|null
@@ -61,7 +62,7 @@ class CartGetResponse
 
     /**
      * The full discount of the cart.
-     * 
+     *
      * If `null`, the discount isn't calculated yet.
      *
      * @var string|null
@@ -77,7 +78,7 @@ class CartGetResponse
 
     /**
      * The total amount in the catalog cart without tax.
-     * 
+     *
      * If `null`, the total amount isn't set yet.
      *
      * @var string|null
@@ -86,7 +87,7 @@ class CartGetResponse
 
     /**
      * The tax amount.
-     * 
+     *
      * If `null`, the tax amount isn't set yet.
      *
      * @var string|null
@@ -102,7 +103,7 @@ class CartGetResponse
 
     /**
      * The total amount in the catalog cart.
-     * 
+     *
      * If `null`, the total amount isn't set yet.
      *
      * @var string|null
@@ -112,10 +113,10 @@ class CartGetResponse
     public function __construct(array $data)
     {
         $this->a_discount_item = isset($data['a_discount_item']) ? (array)$data['a_discount_item'] : null;
-        $this->a_item = isset($data['a_item']) ? array_map(static fn($item) => new CartGetResponseItem((array)$item), (array)$data['a_item']) : null;
-        $this->a_prize_propose = isset($data['a_prize_propose']) ? array_map(static fn($item) => new CartGetResponsePrizePropose((array)$item), (array)$data['a_prize_propose']) : null;
-        $this->a_reward_item = isset($data['a_reward_item']) ? array_map(static fn($item) => new CartGetResponseRewardItem((array)$item), (array)$data['a_reward_item']) : null;
-        $this->a_reward_propose = isset($data['a_reward_propose']) ? array_map(static fn($item) => new CartGetResponseRewardPropose((array)$item), (array)$data['a_reward_propose']) : null;
+        $this->a_item = isset($data['a_item']) ? array_map(static fn ($item) => new CartGetResponseItem((array)$item), (array)$data['a_item']) : null;
+        $this->a_prize_propose = isset($data['a_prize_propose']) ? array_map(static fn ($item) => new CartGetResponsePrizePropose((array)$item), (array)$data['a_prize_propose']) : null;
+        $this->a_reward_item = isset($data['a_reward_item']) ? array_map(static fn ($item) => new CartGetResponseRewardItem((array)$item), (array)$data['a_reward_item']) : null;
+        $this->a_reward_propose = isset($data['a_reward_propose']) ? array_map(static fn ($item) => new CartGetResponseRewardPropose((array)$item), (array)$data['a_reward_propose']) : null;
         $this->a_tax_list = isset($data['a_tax_list']) ? (array)$data['a_tax_list'] : null;
         $this->i_score = isset($data['i_score']) ? (int)$data['i_score'] : null;
         $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;

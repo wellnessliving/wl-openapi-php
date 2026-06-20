@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Frequency;
 
 use WlSdk\WlSdkClient;

@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * Describes reports grouping dates ranges.
- * 
+ *
  * Last identifier: 5.
- * 
+ *
  * Values:
  * - 1 (`DAY`): Step 1 day.
  * - 5 (`HOUR`): Step 1 hour.
@@ -16,13 +17,17 @@ namespace WlSdk;
 class RsReportGroupSid
 {
     /** Step 1 day. */
-    const DAY = 1;
+    public const DAY = 1;
+
     /** Step 1 hour. */
-    const HOUR = 5;
+    public const HOUR = 5;
+
     /** Step 1 month. */
-    const MONTH = 3;
+    public const MONTH = 3;
+
     /** Step 1 week. */
-    const WEEK = 2;
+    public const WEEK = 2;
+
     /** Step 1 year. */
-    const YEAR = 4;
+    public const YEAR = 4;
 }

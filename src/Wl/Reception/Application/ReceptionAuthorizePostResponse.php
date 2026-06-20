@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Application;
 
 /**
@@ -8,7 +9,7 @@ class ReceptionAuthorizePostResponse
 {
     /**
      * List of the users, which can be authorized.
-     * 
+     *
      * Can be set only this field or `uid`.
      * It depends, whether we found one user or multiple.
      *
@@ -18,7 +19,7 @@ class ReceptionAuthorizePostResponse
 
     /**
      * Key of the authorized user.
-     * 
+     *
      * Can be set only this field or `a_select`.
      * It depends, whether we found one user or multiple.
      *
@@ -28,7 +29,7 @@ class ReceptionAuthorizePostResponse
 
     public function __construct(array $data)
     {
-        $this->a_select = isset($data['a_select']) ? array_map(static fn($item) => new ReceptionAuthorizePostResponseSelect((array)$item), (array)$data['a_select']) : null;
+        $this->a_select = isset($data['a_select']) ? array_map(static fn ($item) => new ReceptionAuthorizePostResponseSelect((array)$item), (array)$data['a_select']) : null;
         $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
     }
 }

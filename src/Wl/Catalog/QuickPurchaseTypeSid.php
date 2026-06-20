@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Wl\Catalog;
 
 /**
  * List of quick purchase item types.
- * 
+ *
  * Values:
  * - 224 (`CLASSES`): Classes.
  * - 681 (`RESOURCE`): Resource.
@@ -12,9 +13,11 @@ namespace WlSdk\Wl\Catalog;
 class QuickPurchaseTypeSid
 {
     /** Classes. */
-    const CLASSES = 224;
+    public const CLASSES = 224;
+
     /** Resource. */
-    const RESOURCE = 681;
+    public const RESOURCE = 681;
+
     /** Service. */
-    const SERVICE = 690;
+    public const SERVICE = 690;
 }

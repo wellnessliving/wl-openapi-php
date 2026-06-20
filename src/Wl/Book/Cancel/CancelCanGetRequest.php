@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Cancel;
 
 class CancelCanGetRequest
@@ -24,7 +25,7 @@ class CancelCanGetRequest
             'k_business' => $this->k_business,
             'k_visit' => $this->k_visit,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

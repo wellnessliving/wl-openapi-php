@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Store;
 
 class StoreGroupPostRequest
@@ -19,7 +20,7 @@ class StoreGroupPostRequest
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
-     * 
+     *
      * If `true` is sent, access to the business and to the client will be checked.
      * If `false` is sent, user can book only for himself or for relatives if this is allowed in business settings.
      *
@@ -30,7 +31,7 @@ class StoreGroupPostRequest
     /**
      * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag
      * is set to `false`.
-     * 
+     *
      * Use this field with caution.
      * The final booking will not use this flag, and the check will still be performed.
      *
@@ -47,9 +48,9 @@ class StoreGroupPostRequest
 
     /**
      * A list of existing login promotions which are selected by a group of clients.
-     * 
+     *
      * This login promotions will be checked to determine if it can be applied to the current class or event.
-     * 
+     *
      * Keys are UIDs of clients, values are login promotion keys.
      *
      * @var string[]|null
@@ -58,11 +59,11 @@ class StoreGroupPostRequest
 
     /**
      * A list of new purchase items which are selected by a group of clients.
-     * 
+     *
      * This new purchase items will be checked to determine if it can be applied to the current class or event
      * before
      * being purchased.
-     * 
+     *
      * Keys are UIDs of clients, values are arrays with the following structure:
      *
      * @var array[]|null
@@ -71,10 +72,10 @@ class StoreGroupPostRequest
 
     /**
      * Information about the recurring booking for each client in the group.
-     * 
+     *
      * Keys are UIDs of clients, values are arrays with information about the recurring booking:
-     * 
-     * 
+     *
+     *
      * Should be `null` if the booking isn't recurring.
      *
      * @var array[]|null
@@ -83,7 +84,7 @@ class StoreGroupPostRequest
 
     /**
      * A list of assets which are selected by a group of clients.
-     * 
+     *
      * Keys are UIDs of clients, values are arrays with the following structure:
      *
      * @var array[]|null
@@ -92,9 +93,9 @@ class StoreGroupPostRequest
 
     /**
      * A list of existing session passes (drop-in, full-event) which are selected by a group of clients.
-     * 
+     *
      * This session passes will be checked to determine if it can be applied to the current class or event.
-     * 
+     *
      * Keys are UIDs of clients, values are session pass keys.
      *
      * @var string[]|null
@@ -103,7 +104,7 @@ class StoreGroupPostRequest
 
     /**
      * A list of sessions which are selected by a group of clients.
-     * 
+     *
      * Keys are UIDs of clients, values are arrays of class period keys mapped to index arrays of
      *  dates/times when the session occurred (MySQL format; UTC).
      *
@@ -113,7 +114,7 @@ class StoreGroupPostRequest
 
     /**
      * A list of wait list (unpaid) sessions which are selected by a group of clients.
-     * 
+     *
      * Keys are UIDs of clients, values are arrays of class period keys mapped to index arrays of
      *  dates/times when the session occurred (MySQL format; UTC).
      *
@@ -147,7 +148,7 @@ class StoreGroupPostRequest
             'a_session_wait_list_unpaid' => $this->a_session_wait_list_unpaid,
             'is_force_pay_later' => $this->is_force_pay_later,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

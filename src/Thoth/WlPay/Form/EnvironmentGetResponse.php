@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Form;
 
 /**
@@ -44,11 +45,11 @@ class EnvironmentGetResponse
 
     /**
      * Represents information about payment processors.
-     * 
+     *
      * Keys are payment methods IDs, one of {@link \WlSdk\RsPayMethodSid} constants.
-     * 
+     *
      * Value is the following array:
-     * 
+     *
      * `null` if no processors are set up.
      *
      * @var EnvironmentGetResponsePayProcessor[]|null
@@ -65,7 +66,7 @@ class EnvironmentGetResponse
 
     /**
      * Surcharge amount for payment with card represented as a percent of transaction amount.
-     * 
+     *
      * This will be `null` if the percentage surcharge amount shouldn't be withdrawn.
      *
      * @var string|null
@@ -74,7 +75,7 @@ class EnvironmentGetResponse
 
     /**
      * Surcharge amount for payment with ACH represented as a percent of transaction amount.
-     * 
+     *
      * This will be `null` if the percentage surcharge amount shouldn't be withdrawn.
      *
      * @var string|null
@@ -114,7 +115,7 @@ class EnvironmentGetResponse
 
     /**
      * Surcharge amount for payment with card represented as a fixed amount.
-     * 
+     *
      * This will be `null` if the fixed surcharge amount shouldn't be withdrawn.
      *
      * @var string|null
@@ -123,7 +124,7 @@ class EnvironmentGetResponse
 
     /**
      * Surcharge amount for payment with ACH represented as a fixed amount.
-     * 
+     *
      * This will be `null` if the fixed surcharge amount shouldn't be withdrawn.
      *
      * @var string|null
@@ -134,9 +135,9 @@ class EnvironmentGetResponse
     {
         $this->a_card_system = isset($data['a_card_system']) ? (array)$data['a_card_system'] : null;
         $this->a_method_staff = isset($data['a_method_staff']) ? (array)$data['a_method_staff'] : null;
-        $this->a_method_support = isset($data['a_method_support']) ? array_map(static fn($item) => new EnvironmentGetResponseMethodSupport((array)$item), (array)$data['a_method_support']) : null;
+        $this->a_method_support = isset($data['a_method_support']) ? array_map(static fn ($item) => new EnvironmentGetResponseMethodSupport((array)$item), (array)$data['a_method_support']) : null;
         $this->a_mobile_config = isset($data['a_mobile_config']) ? (array)$data['a_mobile_config'] : null;
-        $this->a_pay_processor = isset($data['a_pay_processor']) ? array_map(static fn($item) => new EnvironmentGetResponsePayProcessor((array)$item), (array)$data['a_pay_processor']) : null;
+        $this->a_pay_processor = isset($data['a_pay_processor']) ? array_map(static fn ($item) => new EnvironmentGetResponsePayProcessor((array)$item), (array)$data['a_pay_processor']) : null;
         $this->dl_now = isset($data['dl_now']) ? (string)$data['dl_now'] : null;
         $this->f_surcharge = isset($data['f_surcharge']) ? (string)$data['f_surcharge'] : null;
         $this->f_surcharge_ach = isset($data['f_surcharge_ach']) ? (string)$data['f_surcharge_ach'] : null;

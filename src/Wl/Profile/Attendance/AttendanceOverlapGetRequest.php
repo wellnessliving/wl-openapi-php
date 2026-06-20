@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Attendance;
 
 class AttendanceOverlapGetRequest
@@ -62,7 +63,7 @@ class AttendanceOverlapGetRequest
 
     /**
      * Key of timezone.
-     * 
+     *
      * `null` if not set then use default timezone client.
      *
      * @var string|null
@@ -91,7 +92,7 @@ class AttendanceOverlapGetRequest
             'k_timezone' => $this->k_timezone,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

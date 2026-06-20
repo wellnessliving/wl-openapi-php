@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * The list of possible modify mode for class modify wizard.
- * 
+ *
  * Values:
  * - 1 (`FULL`): Edit class schedule
  * - 2 (`INSTRUCTOR`): Edit instructor in class schedule
@@ -13,11 +14,14 @@ namespace WlSdk;
 class RsClassModifyModeSid
 {
     /** Edit class schedule */
-    const FULL = 1;
+    public const FULL = 1;
+
     /** Edit instructor in class schedule */
-    const INSTRUCTOR = 2;
+    public const INSTRUCTOR = 2;
+
     /** Asset working hours */
-    const RESOURCE_PERIOD = 4;
+    public const RESOURCE_PERIOD = 4;
+
     /** Staff working hours */
-    const STAFF_PERIOD = 3;
+    public const STAFF_PERIOD = 3;
 }

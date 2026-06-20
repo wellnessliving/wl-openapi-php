@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Design;
 
 /**
@@ -8,7 +9,7 @@ class BusinessDesignGetResponse
 {
     /**
      * Design data for a business.
-     * 
+     *
      * Contains the following keys:
      *
      * @var BusinessDesignGetResponseData|null

@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Review;
 
 class ReviewReplyPostRequest
 {
     /**
      * Status of the Review. One of {@link \WlSdk\RsReviewStatusSid} constants.
-     * 
+     *
      * `null` until passed to the api when admin replies to the review.
      *
      * @var int|null
@@ -14,9 +15,9 @@ class ReviewReplyPostRequest
 
     /**
      * Key of the business to which the review belongs.
-     * 
+     *
      * Empty string to defined business automatically, based on value of `k_review`.
-     * 
+     *
      * Although this value may be empty, this behavior is deprecated and will be removed in the future.
      * You MUST pass key of the business always.
      *
@@ -47,7 +48,7 @@ class ReviewReplyPostRequest
             'k_review' => $this->k_review,
             'text_reply' => $this->text_reply,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

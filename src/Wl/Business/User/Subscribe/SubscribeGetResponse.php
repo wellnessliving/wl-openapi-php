@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\User\Subscribe;
 
 /**
@@ -8,13 +9,13 @@ class SubscribeGetResponse
 {
     /**
      * Information about the user`s subscription.
-     * 
+     *
      * When getting information, `true` indicates the user has an email subscription in the business (`false`
      * otherwise).
-     * 
+     *
      * When changing a subscription, `true` subscribes the user in the business. `false` unsubscribes the user in
      * the business.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var bool|null
@@ -23,13 +24,13 @@ class SubscribeGetResponse
 
     /**
      * Information about the user`s subscription.
-     * 
+     *
      * When getting information, `true` indicates the user has an SMS subscription in the business (`false`
      * otherwise).
-     * 
+     *
      * When changing a subscription, `true` subscribes the user in the business. `false1 unsubscribes the user in
      * the business.
-     * 
+     *
      * This will be `null` if not set yet.
      *
      * @var bool|null

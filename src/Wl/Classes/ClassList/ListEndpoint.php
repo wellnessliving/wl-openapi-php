@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Classes\ClassList;
 
 use WlSdk\WlSdkClient;
@@ -6,7 +7,7 @@ use WlSdk\WlSdkClient;
 /**
  * Returns list of classes and events in the business.
  */
-class List
+class ListEndpoint
 {
     /** @var WlSdkClient */
     private $client;
@@ -23,12 +24,12 @@ class List
      * In franchise mode, classes from all franchisee locations are included. Results are sorted by title
      * and start date.
      *
-     * @return ListGetResponse
+     * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(ListGetRequest $request): ListGetResponse
+    public function get(ListEndpointGetRequest $request): ListEndpointGetResponse
     {
-        return new ListGetResponse($this->client->request('/Wl/Classes/ClassList/List.json', $request->params(), 'GET'));
+        return new ListEndpointGetResponse($this->client->request('/Wl/Classes/ClassList/List.json', $request->params(), 'GET'));
     }
 }

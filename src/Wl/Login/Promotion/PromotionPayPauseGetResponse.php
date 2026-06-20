@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion;
 
 /**
@@ -8,7 +9,7 @@ class PromotionPayPauseGetResponse
 {
     /**
      * List of all promotion payment pause periods. Each element has next structure:
-     * 
+     *
      * `null` if `is_list` is false.
      *
      * @var PromotionPayPauseGetResponsePayPauseList[]|null
@@ -18,7 +19,7 @@ class PromotionPayPauseGetResponse
     /**
      * The end date of the current hold, in the local time zone.
      * This can be set to a special value `0000-00-00` to make the period indefinite until further action.
-     * 
+     *
      * `null` if it shouldn't be updated.
      *
      * @var string|null
@@ -27,7 +28,7 @@ class PromotionPayPauseGetResponse
 
     /**
      * The start date of the current hold, in the local time zone.
-     * 
+     *
      * `null` if it shouldn't be updated.
      *
      * @var string|null
@@ -36,7 +37,7 @@ class PromotionPayPauseGetResponse
 
     /**
      * The date when the email notification was sent.
-     * 
+     *
      * `null` if it shouldn't be updated.
      *
      * @var string|null
@@ -45,7 +46,7 @@ class PromotionPayPauseGetResponse
 
     /**
      * Whether or not to send email notification.
-     * 
+     *
      * `false` if not initialized.
      *
      * @var bool|null
@@ -54,7 +55,7 @@ class PromotionPayPauseGetResponse
 
     /**
      * Whether or not to send push notification.
-     * 
+     *
      * `false` if not initialized.
      *
      * @var bool|null
@@ -63,7 +64,7 @@ class PromotionPayPauseGetResponse
 
     /**
      * Whether or not to send SMS notification.
-     * 
+     *
      * `false` if not initialized.
      *
      * @var bool|null
@@ -74,9 +75,9 @@ class PromotionPayPauseGetResponse
      * The Purchase Option key. If this key is used, a new hold will be created. The endpoint will return a
      * `start-cross`
      * status code if a hold is already in place.
-     * 
+     *
      * Ignored if `k_promotion_pay_pause` is provided.
-     * 
+     *
      * `null` if not yet initialized.
      *
      * @var string|null
@@ -93,7 +94,7 @@ class PromotionPayPauseGetResponse
     /**
      * The promotion payment hold key. If this key is used, it will edit an existing hold.
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
-     * 
+     *
      * `null` if not yet initialized or if the request is based on `k_login_promotion`.
      *
      * @var string|null
@@ -103,7 +104,7 @@ class PromotionPayPauseGetResponse
     /**
      * Additional notes for the promotion payment pause period.
      * Leave this field as `null` if the note shouldn't be updated.
-     * 
+     *
      * `null` if it shouldn't be updated.
      *
      * @var string|null
@@ -112,7 +113,7 @@ class PromotionPayPauseGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_pay_pause_list = isset($data['a_pay_pause_list']) ? array_map(static fn($item) => new PromotionPayPauseGetResponsePayPauseList((array)$item), (array)$data['a_pay_pause_list']) : null;
+        $this->a_pay_pause_list = isset($data['a_pay_pause_list']) ? array_map(static fn ($item) => new PromotionPayPauseGetResponsePayPauseList((array)$item), (array)$data['a_pay_pause_list']) : null;
         $this->dt_end = isset($data['dt_end']) ? (string)$data['dt_end'] : null;
         $this->dt_start = isset($data['dt_start']) ? (string)$data['dt_start'] : null;
         $this->dtu_date_notification = isset($data['dtu_date_notification']) ? (string)$data['dtu_date_notification'] : null;

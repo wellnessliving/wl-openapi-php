@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Info;
 
 /**
@@ -8,7 +9,7 @@ class Info54GetResponse
 {
     /**
      * Week days available for recurring booking. Constants of {@link \WlSdk\ADateWeekSid} class.
-     * 
+     *
      * `null` if recurring booking is not available.
      *
      * @var int[]|null
@@ -25,9 +26,9 @@ class Info54GetResponse
     /**
      * List of sessions that can be paid without new purchases.
      * Such as previously prepaid or free sessions.
-     * 
+     *
      * A result of the RsBookProcess::sessionFreeGet() method execution.
-     * 
+     *
      * Each its item has the key of following format: `dt_date::k_class_period` and
      * the value of following structure:
      *
@@ -97,7 +98,7 @@ class Info54GetResponse
 
     /**
      * Number of available spots.
-     * 
+     *
      * `null` if this information is not available.
      *
      * @var int|null
@@ -106,7 +107,7 @@ class Info54GetResponse
 
     /**
      * Number of booked spots.
-     * 
+     *
      * `null` if this information is not available.
      *
      * @var int|null
@@ -224,7 +225,7 @@ class Info54GetResponse
 
     /**
      * Event price at an early discount.
-     * 
+     *
      * An empty string if there is no discount.
      *
      * @var string|null
@@ -291,9 +292,9 @@ class Info54GetResponse
     public function __construct(array $data)
     {
         $this->a_day_available = isset($data['a_day_available']) ? (array)$data['a_day_available'] : null;
-        $this->a_session_all = isset($data['a_session_all']) ? array_map(static fn($item) => new Info54GetResponseSessionAll((array)$item), (array)$data['a_session_all']) : null;
-        $this->a_session_free = isset($data['a_session_free']) ? array_map(static fn($item) => new Info54GetResponseSessionFree((array)$item), (array)$data['a_session_free']) : null;
-        $this->a_staff = isset($data['a_staff']) ? array_map(static fn($item) => new Info54GetResponseStaff((array)$item), (array)$data['a_staff']) : null;
+        $this->a_session_all = isset($data['a_session_all']) ? array_map(static fn ($item) => new Info54GetResponseSessionAll((array)$item), (array)$data['a_session_all']) : null;
+        $this->a_session_free = isset($data['a_session_free']) ? array_map(static fn ($item) => new Info54GetResponseSessionFree((array)$item), (array)$data['a_session_free']) : null;
+        $this->a_staff = isset($data['a_staff']) ? array_map(static fn ($item) => new Info54GetResponseStaff((array)$item), (array)$data['a_staff']) : null;
         $this->dl_end = isset($data['dl_end']) ? (string)$data['dl_end'] : null;
         $this->dt_date_local = isset($data['dt_date_local']) ? (string)$data['dt_date_local'] : null;
         $this->hide_price = isset($data['hide_price']) ? (bool)$data['hide_price'] : null;

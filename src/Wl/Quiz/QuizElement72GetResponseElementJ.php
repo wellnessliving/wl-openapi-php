@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz;
 
 class QuizElement72GetResponseElementJ
@@ -34,7 +35,7 @@ class QuizElement72GetResponseElementJ
 
     /**
      * Rate scale.
-     * 
+     *
      * One of values from {@link \WlSdk\Core\Quiz\Element\ElementQuestionAbstract} array.
      *
      * @var int|null
@@ -43,7 +44,7 @@ class QuizElement72GetResponseElementJ
 
     /**
      * Element ID. One of {@link \WlSdk\Core\Quiz\Element\ElementSid} constants.
-     * 
+     *
      * Defined automatically according to the name of the class.
      *
      * @var int|null
@@ -59,7 +60,7 @@ class QuizElement72GetResponseElementJ
 
     /**
      * Quiz element key.
-     * 
+     *
      * `null` in a case if element is not saved in database.
      *
      * @var string|null
@@ -68,7 +69,7 @@ class QuizElement72GetResponseElementJ
 
     /**
      * Old quiz element key.
-     * 
+     *
      * `null` in a case if element is not has old version.
      *
      * @var string|null
@@ -84,7 +85,7 @@ class QuizElement72GetResponseElementJ
 
     /**
      * Additional note for response.
-     * 
+     *
      * `null` if no notes considered.
      *
      * @var string|null

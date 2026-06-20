@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Passport\Login\Register;
 
 class RegisterOtpGetRequest
@@ -32,7 +33,7 @@ class RegisterOtpGetRequest
             'text_mail' => $this->text_mail,
             'text_phone' => $this->text_phone,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

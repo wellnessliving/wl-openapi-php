@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Action;
 
 class ActionWritePostRequest
 {
     /**
      * Promotions' list.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var string[]|null
@@ -14,7 +15,7 @@ class ActionWritePostRequest
 
     /**
      * Maximum count of score.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var int|null
@@ -23,7 +24,7 @@ class ActionWritePostRequest
 
     /**
      * Count of the duration period.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var int|null
@@ -32,7 +33,7 @@ class ActionWritePostRequest
 
     /**
      * Score of the reward.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var int|null
@@ -41,7 +42,7 @@ class ActionWritePostRequest
 
     /**
      * Period to apply maximum count of score.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var int|null
@@ -50,7 +51,7 @@ class ActionWritePostRequest
 
     /**
      * Type of a period.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var int|null
@@ -77,7 +78,7 @@ class ActionWritePostRequest
 
     /**
      * Business key.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var string|null
@@ -86,7 +87,7 @@ class ActionWritePostRequest
 
     /**
      * Class ID.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var string|null
@@ -95,7 +96,7 @@ class ActionWritePostRequest
 
     /**
      * Promotion key.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var string|null
@@ -104,7 +105,7 @@ class ActionWritePostRequest
 
     /**
      * Reward action ID.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var string|null
@@ -113,7 +114,7 @@ class ActionWritePostRequest
 
     /**
      * Service key.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var string|null
@@ -122,7 +123,7 @@ class ActionWritePostRequest
 
     /**
      * Shop product ID.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var string|null
@@ -148,7 +149,7 @@ class ActionWritePostRequest
             'k_service' => $this->k_service,
             'k_shop_product' => $this->k_shop_product,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

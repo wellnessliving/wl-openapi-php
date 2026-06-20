@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Application;
 
 class ReceptionAuthorizePostRequest
@@ -26,7 +27,7 @@ class ReceptionAuthorizePostRequest
 
     /**
      * Authorization value - it's a value, which client entered on authorization form.
-     * 
+     *
      * It can be client ID, email or phone number. Depends on the business settings.
      *
      * @var string|null
@@ -42,7 +43,7 @@ class ReceptionAuthorizePostRequest
             's_secret' => $this->s_secret,
             'text_authorize' => $this->text_authorize,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

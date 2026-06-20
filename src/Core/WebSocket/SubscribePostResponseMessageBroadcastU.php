@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 class SubscribePostResponseMessageBroadcastU
 {
     /**
      * Card type ID.
-     * 
+     *
      * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
      * is equal {@link \WlSdk\Thoth\PayProcessor\Nuvei\Code\CSResponseSid}.
      *
@@ -15,7 +16,7 @@ class SubscribePostResponseMessageBroadcastU
 
     /**
      * Card type ID.
-     * 
+     *
      * `null` If were unable to determine the card type. See `id_card_type`.
      *
      * @var int|null
@@ -24,7 +25,7 @@ class SubscribePostResponseMessageBroadcastU
 
     /**
      * Transaction exception ID.
-     * 
+     *
      * `null` if no errors occurred.
      *
      * @var int|null
@@ -33,7 +34,7 @@ class SubscribePostResponseMessageBroadcastU
 
     /**
      * Payment status.
-     * 
+     *
      * `null` if not set yet.
      *
      * @var int|null
@@ -42,7 +43,7 @@ class SubscribePostResponseMessageBroadcastU
 
     /**
      * Tip amount entered by the customer at the terminal.
-     * 
+     *
      * `null` if not initialized yet.
      *
      * @var string|null
@@ -51,7 +52,7 @@ class SubscribePostResponseMessageBroadcastU
 
     /**
      * Last four digits of the card number.
-     * 
+     *
      * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
      * is equal {@link \WlSdk\Thoth\PayProcessor\Nuvei\Code\CSResponseSid}.
      *
@@ -61,7 +62,7 @@ class SubscribePostResponseMessageBroadcastU
 
     /**
      * Cardholder name.
-     * 
+     *
      * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
      * is equal {@link \WlSdk\Thoth\PayProcessor\Nuvei\Code\CSResponseSid}.
      *
@@ -71,7 +72,7 @@ class SubscribePostResponseMessageBroadcastU
 
     /**
      * Text message to notify the client.
-     * 
+     *
      * `null` until initialized.
      *
      * @var string|null

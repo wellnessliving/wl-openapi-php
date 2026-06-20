@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Notification\Send;
 
 class NotificationSendPostRequest
 {
     /**
      * Custom array with information which can be used to generate notification.
-     * 
+     *
      * Use [NotificationInfoApi](/Wl/Notification/Send/NotificationInfo.json) for more information about available
      * fields.
      *
@@ -15,7 +16,7 @@ class NotificationSendPostRequest
 
     /**
      * Date and time in UTC, when notification should be sent. Empty string means to send immediately.
-     * 
+     *
      * If date and time are set, it should be reasonable. If it's too far in the future, API returns an error.
      *
      * @var string|null
@@ -24,7 +25,7 @@ class NotificationSendPostRequest
 
     /**
      * ID of the notification. See {@link \WlSdk\RsMailSid}.
-     * 
+     *
      * Contact with WellnessLiving support to get the list of available notifications.
      *
      * @var int|null
@@ -66,7 +67,7 @@ class NotificationSendPostRequest
             'k_location' => $this->k_location,
             's_uid' => $this->s_uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

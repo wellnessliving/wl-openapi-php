@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video;
 
 class VideoElementPostRequest
@@ -27,7 +28,7 @@ class VideoElementPostRequest
 
     /**
      * The video key.
-     * 
+     *
      * *Be careful, when use this property in code, use `k_video_binary` instead.*
      * In this property can be key in next format:
      * * [Deprecated] String key in old format.
@@ -75,7 +76,7 @@ class VideoElementPostRequest
 
     /**
      * The date and time when the video was published.
-     * 
+     *
      * This will be `null` if the published date is not set yet.
      *
      * @var string|null
@@ -84,7 +85,7 @@ class VideoElementPostRequest
 
     /**
      * The date and time when the video was unpublished.
-     * 
+     *
      * This will be `null` if the unpublished date is not set yet.
      *
      * @var string|null
@@ -121,7 +122,7 @@ class VideoElementPostRequest
 
     /**
      * The size of the uploaded file.
-     * 
+     *
      * If the file will be uploaded in parts, its size will be set.
      *
      * @var int|null
@@ -138,7 +139,7 @@ class VideoElementPostRequest
 
     /**
      * Source of the video.
-     * 
+     *
      * One of {@link \WlSdk\Wl\Video\VideoSourceSid} constants.
      *
      * @var int|null
@@ -186,7 +187,7 @@ class VideoElementPostRequest
     /**
      * ID of the uploaded file.
      * If the file will be uploaded in parts, upload ID will be set.
-     * 
+     *
      * In this case, the file will not be uploaded to this API.
      *
      * @var string|null
@@ -195,9 +196,9 @@ class VideoElementPostRequest
 
     /**
      * The real name of the uploaded file.
-     * 
+     *
      * If the file will be uploaded in parts, its name will be set.
-     * 
+     *
      * In this case, the file won't be uploaded to this API and the POST method won't
      * return the result.
      *
@@ -259,7 +260,7 @@ class VideoElementPostRequest
             'text_title' => $this->text_title,
             'xml_description' => $this->xml_description,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

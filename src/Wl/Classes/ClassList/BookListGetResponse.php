@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Classes\ClassList;
 
 /**
@@ -15,6 +16,6 @@ class BookListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_class = isset($data['a_class']) ? array_map(static fn($item) => new BookListGetResponseClass((array)$item), (array)$data['a_class']) : null;
+        $this->a_class = isset($data['a_class']) ? array_map(static fn ($item) => new BookListGetResponseClass((array)$item), (array)$data['a_class']) : null;
     }
 }

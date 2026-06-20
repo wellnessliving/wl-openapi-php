@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Family\Relation;
 
 class Relation72DeleteRequest
@@ -50,7 +51,7 @@ class Relation72DeleteRequest
             'uid_delete' => $this->uid_delete,
             'id_mode' => $this->id_mode,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

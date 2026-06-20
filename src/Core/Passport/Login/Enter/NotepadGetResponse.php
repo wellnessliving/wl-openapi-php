@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Passport\Login\Enter;
 
 /**
@@ -9,14 +10,14 @@ class NotepadGetResponse
     /**
      * ID of the datacenter which is a preferred datacenter for the user specified in
      * `s_login`.
-     * 
+     *
      * One of {@link \WlSdk\Core\Amazon\Region\AmazonRegionSid} constants.
-     * 
+     *
      * If ID of the datacenter returned in this property differs from the current datacenter, this means that this
      * API request was forwarded to the datacenter returned here, and the notepad was created there.
      * So that [EnterApi](/Core/Passport/Login/Enter/Enter.json) must always go to the datacenter specified in this
      * property.
-     * 
+     *
      * `null` if datacenter preference was not evaluated, or it is not known.
      * In this case, the notepad is created in datacenter where the API request was initially sent.
      *

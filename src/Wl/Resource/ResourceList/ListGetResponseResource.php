@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Resource\ResourceList;
 
 class ListGetResponseResource

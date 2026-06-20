@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Core\Locale;
 
 /**
  * A list of locales.
- * 
+ *
  * Last used ID: 21
- * 
+ *
  * Values:
  * - 4 (`AUSTRALIA`): Australia.
  * - 20 (`BAHAMAS`): Bahamas.
@@ -31,43 +32,62 @@ namespace WlSdk\Core\Locale;
 class LocaleSid
 {
     /** Australia. */
-    const AUSTRALIA = 4;
+    public const AUSTRALIA = 4;
+
     /** Bahamas. */
-    const BAHAMAS = 20;
+    public const BAHAMAS = 20;
+
     /** Bermuda. */
-    const BERMUDA = 19;
+    public const BERMUDA = 19;
+
     /** Canada. */
-    const CANADA = 2;
+    public const CANADA = 2;
+
     /** Cayman Islands. */
-    const CAYMAN = 5;
+    public const CAYMAN = 5;
+
     /** Cyprus. */
-    const CYPRUS = 13;
+    public const CYPRUS = 13;
+
     /** Egypt. */
-    const EGYPT = 8;
+    public const EGYPT = 8;
+
     /** Republic of Ireland. */
-    const IRELAND = 18;
+    public const IRELAND = 18;
+
     /** Kuwait */
-    const KUWAIT = 14;
+    public const KUWAIT = 14;
+
     /** Republic of Mauritius. */
-    const MAURITIUS = 16;
+    public const MAURITIUS = 16;
+
     /** A special locale that can be used for testing or a business situated in an unknown region. */
-    const NEVERLAND = 9;
+    public const NEVERLAND = 9;
+
     /** New Zealand. */
-    const NEW_ZEALAND = 10;
+    public const NEW_ZEALAND = 10;
+
     /** Philippines. */
-    const PHILIPPINES = 12;
+    public const PHILIPPINES = 12;
+
     /** Saudi Arabia. */
-    const SAUDI_ARABIA = 15;
+    public const SAUDI_ARABIA = 15;
+
     /** Senegal */
-    const SENEGAL = 17;
+    public const SENEGAL = 17;
+
     /** Singapore. */
-    const SINGAPORE = 21;
+    public const SINGAPORE = 21;
+
     /** South Africa. */
-    const SOUTH_AFRICA = 6;
+    public const SOUTH_AFRICA = 6;
+
     /** United Arab Emirates. */
-    const UAE = 11;
+    public const UAE = 11;
+
     /** United Kingdom. */
-    const UK = 3;
+    public const UK = 3;
+
     /** United States of America. */
-    const USA = 1;
+    public const USA = 1;
 }

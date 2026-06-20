@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\CatalogList;
 
 /**
@@ -15,7 +16,7 @@ class ListGetResponse
 
     /**
      * The list of products to show with duplicates.
-     * 
+     *
      * Products have their own order within every shop category, and they can be related to several categories.
      * As a design decision, products are sorted in the backend using duplicates for every category.
      *
@@ -25,7 +26,7 @@ class ListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_product = isset($data['a_product']) ? array_map(static fn($item) => new ListGetResponseProduct((array)$item), (array)$data['a_product']) : null;
+        $this->a_product = isset($data['a_product']) ? array_map(static fn ($item) => new ListGetResponseProduct((array)$item), (array)$data['a_product']) : null;
         $this->a_product_duplicate = isset($data['a_product_duplicate']) ? new ListGetResponseProductDuplicate((array)$data['a_product_duplicate']) : null;
     }
 }

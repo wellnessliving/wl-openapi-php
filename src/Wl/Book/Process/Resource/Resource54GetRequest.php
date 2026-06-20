@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Resource;
 
 class Resource54GetRequest
@@ -7,7 +8,7 @@ class Resource54GetRequest
      * The selected sessions.
      * Only makes sense for session events.
      * Optional parameter for GET request: if not passed, all available sessions will be used.
-     * 
+     *
      * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
@@ -31,7 +32,7 @@ class Resource54GetRequest
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
-     * 
+     *
      * If `true` is sent, access to the business and to the client will be checked.
      * If `false` is sent, user can book only for himself or for relatives if this is allowed in business settings.
      *
@@ -42,7 +43,7 @@ class Resource54GetRequest
     /**
      * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag
      * is set to `false`.
-     * 
+     *
      * Use this field with caution.
      * The final booking will not use this flag, and the check will still be performed.
      *
@@ -54,10 +55,10 @@ class Resource54GetRequest
      * Selected sessions.
      * Only makes sense for session events.
      * Optional parameter for GET request: if not passed, all available sessions will be used.
-     * 
+     *
      * Fields - IDs of sessions in database.
      * Values - arrays of date/time when session is occurred. In MySQL format. In GMT.
-     * 
+     *
      * Serialized with JSON.
      *
      * @var string|null
@@ -99,7 +100,7 @@ class Resource54GetRequest
             'show_relation' => $this->show_relation,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

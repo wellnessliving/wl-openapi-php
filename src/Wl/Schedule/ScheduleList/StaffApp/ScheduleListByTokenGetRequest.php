@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ScheduleList\StaffApp;
 
 class ScheduleListByTokenGetRequest
@@ -6,7 +7,7 @@ class ScheduleListByTokenGetRequest
     /**
      * Configuration options for schedule.
      * Key is option name, value is boolean.
-     * 
+     *
      * May contain the following keys:
      *
      * @var array|null
@@ -15,7 +16,7 @@ class ScheduleListByTokenGetRequest
 
     /**
      * The end date of the range from which the list of schedule sessions should be retrieved.
-     * 
+     *
      * This will be `null` if the range has no end date. If this value is used,
      * [ScheduleListApi](/Wl/Schedule/ScheduleList/StaffApp/ScheduleList.json) should not be set.
      *
@@ -25,7 +26,7 @@ class ScheduleListByTokenGetRequest
 
     /**
      * The start date of the range from which the list of scheduled sessions should be retrieved.
-     * 
+     *
      * This will be `null` if the range has no start date. If this value is used,
      * [ScheduleListApi](/Wl/Schedule/ScheduleList/StaffApp/ScheduleList.json) should not be set.
      *
@@ -35,7 +36,7 @@ class ScheduleListByTokenGetRequest
 
     /**
      * The date of the sessions in Coordinated Universal Time (UTC) and MySQL format.
-     * 
+     *
      * If this value is used, then
      * [ScheduleListApi](/Wl/Schedule/ScheduleList/StaffApp/ScheduleList.json) and
      * [ScheduleListApi](/Wl/Schedule/ScheduleList/StaffApp/ScheduleList.json) should not be set.
@@ -77,7 +78,7 @@ class ScheduleListByTokenGetRequest
             'text_token' => $this->text_token,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

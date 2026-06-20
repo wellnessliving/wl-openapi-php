@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Geo;
 
 use WlSdk\WlSdkClient;

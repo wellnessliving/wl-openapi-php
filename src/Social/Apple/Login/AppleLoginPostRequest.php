@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Social\Apple\Login;
 
 class AppleLoginPostRequest
@@ -40,7 +41,7 @@ class AppleLoginPostRequest
             'text_name_first' => $this->text_name_first,
             'text_name_last' => $this->text_name_last,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

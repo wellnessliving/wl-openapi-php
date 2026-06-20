@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video;
 
 class VideoListPutRequest
@@ -32,7 +33,7 @@ class VideoListPutRequest
             'k_business' => $this->k_business,
             'a_order' => $this->a_order,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

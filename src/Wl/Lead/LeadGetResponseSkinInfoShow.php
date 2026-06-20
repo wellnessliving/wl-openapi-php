@@ -1,7 +1,8 @@
 <?php
+
 namespace WlSdk\Wl\Lead;
 
-class LeadGetResponseSkinInfo-show
+class LeadGetResponseSkinInfoShow
 {
     /**
      * Map of required element names. Keys are element names, values are `true`.

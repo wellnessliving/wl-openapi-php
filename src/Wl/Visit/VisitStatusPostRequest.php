@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Visit;
 
 class VisitStatusPostRequest
 {
     /**
      * The staff decision to charge (or not charge) a penalty when a client meets late cancel/no-show requirements.
-     * 
+     *
      * If `true`, a late cancel fee should be charged. Otherwise, this will be `false`.
      *
      * @var bool|null
@@ -61,10 +62,10 @@ class VisitStatusPostRequest
     /**
      * The status of the visit from which the transition is made. One of the {@link \WlSdk\Wl\Visit\VisitSid}
      * constants.
-     * 
+     *
      * If the visit status is passed, it will be used to check with the actual status in the database.
      * If `null`, the visit hasn't yet passed.
-     * 
+     *
      * If the status of this parameter is out of date, the API call will refresh it.
      *
      * @var int|null
@@ -73,7 +74,7 @@ class VisitStatusPostRequest
 
     /**
      * Whether to send email notification.
-     * 
+     *
      * `true` - email notification will be sent.
      * `false` - email notification will not be sent.
      *
@@ -83,7 +84,7 @@ class VisitStatusPostRequest
 
     /**
      * Whether to send push notification.
-     * 
+     *
      * `true` - push notification will be sent.
      * `false` - push notification will not be sent.
      *
@@ -93,7 +94,7 @@ class VisitStatusPostRequest
 
     /**
      * Whether to send sms notification.
-     * 
+     *
      * `true` - sms notification will be sent.
      * `false` - sms notification will not be sent.
      *
@@ -117,7 +118,7 @@ class VisitStatusPostRequest
             'is_push' => $this->is_push,
             'is_sms' => $this->is_sms,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

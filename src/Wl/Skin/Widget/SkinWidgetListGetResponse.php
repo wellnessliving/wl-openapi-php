@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Skin\Widget;
 
 /**
@@ -8,9 +9,9 @@ class SkinWidgetListGetResponse
 {
     /**
      * List of Widget skins grouped by widget type.
-     * 
+     *
      * Skin type, one of {@link \WlSdk\RsSkinSid} constants.
-     * 
+     *
      * The array structure:
      * Keys - Skin type, one of {@link \WlSdk\RsSkinSid} constants.
      * Values - arrays with next keys:
@@ -21,6 +22,6 @@ class SkinWidgetListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_widget_skin = isset($data['a_widget_skin']) ? array_map(static fn($item) => new SkinWidgetListGetResponseWidgetSkin((array)$item), (array)$data['a_widget_skin']) : null;
+        $this->a_widget_skin = isset($data['a_widget_skin']) ? array_map(static fn ($item) => new SkinWidgetListGetResponseWidgetSkin((array)$item), (array)$data['a_widget_skin']) : null;
     }
 }

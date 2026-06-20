@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
 
 /**
  * Lifecycle state of a guest pass invitation.
- * 
+ *
  * Last used: 7
- * 
+ *
  * Values:
  * - 9 (`ATTEND`): Guest attended the visit booked with the guest pass.
  * - 8 (`BOOK`): Guest booked the visit booked with the guest pass.
@@ -31,21 +32,29 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
 class InviteStatusEnum
 {
     /** Guest attended the visit booked with the guest pass. */
-    const ATTEND = 9;
+    public const ATTEND = 9;
+
     /** Guest booked the visit booked with the guest pass. */
-    const BOOK = 8;
+    public const BOOK = 8;
+
     /** Guest attended the visit booked with the guest pass. */
-    const CHECKED_IN = 3;
+    public const CHECKED_IN = 3;
+
     /** Guest accepted the invitation but did not attend within the pass expiration */
-    const GUEST_PASS_EXPIRED = 6;
+    public const GUEST_PASS_EXPIRED = 6;
+
     /** Guest claimed the invitation but the linked visit (if any) has not been */
-    const INVITE_ACCEPTED = 2;
+    public const INVITE_ACCEPTED = 2;
+
     /** Invitation expired before the guest claimed it. Pass returns to the host's */
-    const INVITE_EXPIRED = 7;
+    public const INVITE_EXPIRED = 7;
+
     /** Invitation has been sent but the guest has not claimed it yet. Pass is held */
-    const INVITE_SENT = 1;
+    public const INVITE_SENT = 1;
+
     /** Guest cancelled the visit too late and was penalised. Pass is consumed and */
-    const LATE_CANCELLED = 5;
+    public const LATE_CANCELLED = 5;
+
     /** Guest accepted the invitation but did not show up for the visit. Pass is */
-    const NO_SHOW = 4;
+    public const NO_SHOW = 4;
 }

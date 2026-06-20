@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process;
 
 class Process54GetRequest
@@ -19,7 +20,7 @@ class Process54GetRequest
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
-     * 
+     *
      * If `true` is sent, access to the business and to the client will be checked.
      * If `false` is sent, user can book only for himself or for relatives if this is allowed in business settings.
      *
@@ -30,7 +31,7 @@ class Process54GetRequest
     /**
      * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag
      * is set to `false`.
-     * 
+     *
      * Use this field with caution.
      * The final booking will not use this flag, and the check will still be performed.
      *
@@ -71,7 +72,7 @@ class Process54GetRequest
             'show_relation' => $this->show_relation,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

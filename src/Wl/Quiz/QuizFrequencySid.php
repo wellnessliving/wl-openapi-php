@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Wl\Quiz;
 
 /**
  * List of quiz frequency types.
- * 
+ *
  * Values:
  * - 1 (`EVERY`): Client will be asked to complete the quiz every time they book a service or purchase item.
  * - 2 (`FIRST`): Client will be asked to complete the quiz the first time they book a service or purchase item.
@@ -12,9 +13,11 @@ namespace WlSdk\Wl\Quiz;
 class QuizFrequencySid
 {
     /** Client will be asked to complete the quiz every time they book a service or purchase item. */
-    const EVERY = 1;
+    public const EVERY = 1;
+
     /** Client will be asked to complete the quiz the first time they book a service or purchase item. */
-    const FIRST = 2;
+    public const FIRST = 2;
+
     /** Client will be asked to complete the quiz only one time when they book a service or purchase item. */
-    const ONCE = 3;
+    public const ONCE = 3;
 }

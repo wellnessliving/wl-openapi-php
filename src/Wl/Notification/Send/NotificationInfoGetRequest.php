@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Notification\Send;
 
 class NotificationInfoGetRequest
@@ -24,7 +25,7 @@ class NotificationInfoGetRequest
             'id_notification' => $this->id_notification,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

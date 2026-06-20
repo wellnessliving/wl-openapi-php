@@ -1,12 +1,13 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Payment;
 
 class PaymentMultipleGetRequest
 {
     /**
      * The booking process information:
-     * 
-     * 
+     *
+     *
      * Set this field value for GET requests.
      *
      * @var array|null
@@ -58,12 +59,12 @@ class PaymentMultipleGetRequest
 
     /**
      * The user key.
-     * 
+     *
      * This field is used if the client books for himself or for the relative.
-     * 
+     *
      * This field is incorrect to use for guest booking since in this case the client will be checked as a
      * relative.
-     * 
+     *
      * In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
      *
      * @var string|null
@@ -83,7 +84,7 @@ class PaymentMultipleGetRequest
             'text_discount_code' => $this->text_discount_code,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

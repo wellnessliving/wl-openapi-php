@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Integration\Autymate;
 
 /**
@@ -8,7 +9,7 @@ class ReportGetResponse
 {
     /**
      * The list of fields in this report.
-     * 
+     *
      * This array is effectively a title row for table that is returned in `a_row`.
      *
      * @var string[]|null
@@ -17,9 +18,9 @@ class ReportGetResponse
 
     /**
      * The report data.
-     * 
+     *
      * This is an indexed array in which one row is an indexed array also.
-     * 
+     *
      * Indexes of the columns correspond to columns in `a_field`.
      *
      * @var string[][]|null
@@ -35,7 +36,7 @@ class ReportGetResponse
 
     /**
      * The date and time when this report has completed generation.
-     * 
+     *
      * `null` if generation of this report isn't completed.
      *
      * @var string|null
@@ -44,7 +45,7 @@ class ReportGetResponse
 
     /**
      * The date and time when this report was put in the generation queue.
-     * 
+     *
      * Effectively, this is the time when a user clicked to view this report or the report for this day was first
      * called.
      *
@@ -54,7 +55,7 @@ class ReportGetResponse
 
     /**
      * The date and time when generation of this report was started.
-     * 
+     *
      * `null` if generation of this report hasn't started.
      *
      * @var string|null
@@ -63,7 +64,7 @@ class ReportGetResponse
 
     /**
      * The status of the report.
-     * 
+     *
      * One of the {@link \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid} constants.
      *
      * @var int|null
@@ -81,9 +82,9 @@ class ReportGetResponse
      * Determines whether this report is complete. If this report is accessed on the current day, or is returning
      * a result that was cached on the current day it could be incomplete as not all the transactions for the day
      * are present.
-     * 
+     *
      * If `true` then this report will be complete.
-     * 
+     *
      * If `false` then this report could be incomplete.
      *
      * @var bool|null
