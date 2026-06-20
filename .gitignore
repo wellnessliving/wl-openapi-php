@@ -3,7 +3,7 @@ composer.lock
 .idea
 openapi-spec/
 
-# SDK files for stable/dev live in their channel branches, not in main
-stable/src/
-dev/src/
+# SDK files for production/stable/dev live in their channel branches, not in main
 production/
+stable/
+dev/
