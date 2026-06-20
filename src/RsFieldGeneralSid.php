@@ -34,22 +34,38 @@ namespace WlSdk;
  * - 16 (`VACCINATION_STATUS`): Vaccination status. See
  * [VaccinationStatusSid](#/components/schemas/Wl.Login.Member.VaccinationStatus.VaccinationStatusSid).
  */
-enum RsFieldGeneralSid: int
+class RsFieldGeneralSid
 {
-    case ADDRESS = 9;
-    case BIRTHDAY = 7;
-    case GENDER = 8;
-    case IMAGE = 13;
-    case LOCATION = 10;
-    case LOGIN = 3;
-    case MEMBER = 11;
-    case NAME_FIRST = 2;
-    case NAME_LAST = 1;
-    case PHONE_CELL = 4;
-    case PHONE_HOME = 5;
-    case PHONE_WORK = 6;
-    case REFERRER = 12;
-    case STATUS = 14;
-    case TIMEZONE = 15;
-    case VACCINATION_STATUS = 16;
+    /** Set of fields to choose address. */
+    const ADDRESS = 9;
+    /** Set of fields to choose birthday date. */
+    const BIRTHDAY = 7;
+    /** Gender field. */
+    const GENDER = 8;
+    /** Image. */
+    const IMAGE = 13;
+    /** Home location. */
+    const LOCATION = 10;
+    /** Block with login information (email and password). */
+    const LOGIN = 3;
+    /** Member ID. */
+    const MEMBER = 11;
+    /** First name. */
+    const NAME_FIRST = 2;
+    /** Last name. */
+    const NAME_LAST = 1;
+    /** Cell phone number. */
+    const PHONE_CELL = 4;
+    /** Home phone number. */
+    const PHONE_HOME = 5;
+    /** Work phone number + ext. */
+    const PHONE_WORK = 6;
+    /** Referred by. */
+    const REFERRER = 12;
+    /** Client status (client/member types). System default client/member types see [SystemSid](#/components/schemas/Wl.Login.Type.SystemSid). */
+    const STATUS = 14;
+    /** Timezone field. */
+    const TIMEZONE = 15;
+    /** Vaccination status. See [VaccinationStatusSid](#/components/schemas/Wl.Login.Member.VaccinationStatus.VaccinationStatusSid). */
+    const VACCINATION_STATUS = 16;
 }

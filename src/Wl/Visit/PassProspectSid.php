@@ -10,8 +10,10 @@ namespace WlSdk\Wl\Visit;
  * - 1 (`CLASSPASS`): Class Pass.
  * - 2 (`GYMPASS`): Gym Pass.
  */
-enum PassProspectSid: int
+class PassProspectSid
 {
-    case CLASSPASS = 1;
-    case GYMPASS = 2;
+    /** Class Pass. */
+    const CLASSPASS = 1;
+    /** Gym Pass. */
+    const GYMPASS = 2;
 }

@@ -18,9 +18,12 @@ namespace WlSdk;
  * 
  *   The payment is performed by the user.
  */
-enum RsPayActorSid: int
+class RsPayActorSid
 {
-    case BUSINESS = 3;
-    case STAFF = 1;
-    case USER = 2;
+    /** Business owner. */
+    const BUSINESS = 3;
+    /** Staff member. */
+    const STAFF = 1;
+    /** User. */
+    const USER = 2;
 }

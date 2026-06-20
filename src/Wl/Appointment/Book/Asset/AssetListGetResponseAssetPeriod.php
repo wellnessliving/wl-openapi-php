@@ -27,9 +27,9 @@ class AssetListGetResponseAssetPeriod
     /**
      * The asset period price type. One of {@link \WlSdk\RsServicePriceSid} constants.
      *
-     * @var \WlSdk\RsServicePriceSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsServicePriceSid $id_price = null;
+    public ?int $id_price = null;
 
     /**
      * The asset period price.
@@ -43,7 +43,7 @@ class AssetListGetResponseAssetPeriod
         $this->html_duration = isset($data['html_duration']) ? (string)$data['html_duration'] : null;
         $this->html_price = isset($data['html_price']) ? (string)$data['html_price'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
-        $this->id_price = isset($data['id_price']) ? \WlSdk\RsServicePriceSid::tryFrom((int)$data['id_price']) : null;
+        $this->id_price = isset($data['id_price']) ? (int)$data['id_price'] : null;
         $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;
     }
 }

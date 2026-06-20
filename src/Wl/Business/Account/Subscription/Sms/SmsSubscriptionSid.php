@@ -17,16 +17,26 @@ namespace WlSdk\Wl\Business\Account\Subscription\Sms;
  * - 1 (`FREE`): None
  * - 3 (`PREMIUM`): Message Center Professional
  */
-enum SmsSubscriptionSid: int
+class SmsSubscriptionSid
 {
-    case CENTER_1000 = 5;
-    case CENTER_10000 = 8;
-    case CENTER_2500 = 6;
-    case CENTER_25000 = 9;
-    case CENTER_500 = 4;
-    case CENTER_5000 = 7;
-    case CENTER_CUSTOM = 10;
-    case ENTERPRISE = 11;
-    case FREE = 1;
-    case PREMIUM = 3;
+    /** 1000 Messages */
+    const CENTER_1000 = 5;
+    /** 10000 Messages */
+    const CENTER_10000 = 8;
+    /** 2500 Messages */
+    const CENTER_2500 = 6;
+    /** 25000 Messages */
+    const CENTER_25000 = 9;
+    /** 500 Messages */
+    const CENTER_500 = 4;
+    /** 5000 Messages */
+    const CENTER_5000 = 7;
+    /** Message Center Custom */
+    const CENTER_CUSTOM = 10;
+    /** Enterprise */
+    const ENTERPRISE = 11;
+    /** None */
+    const FREE = 1;
+    /** Message Center Professional */
+    const PREMIUM = 3;
 }

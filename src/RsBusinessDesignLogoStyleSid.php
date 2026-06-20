@@ -10,10 +10,14 @@ namespace WlSdk;
  * - 3 (`ROUND`): Logo is a round.
  * - 2 (`SQUARE`): Logo is a square.
  */
-enum RsBusinessDesignLogoStyleSid: int
+class RsBusinessDesignLogoStyleSid
 {
-    case HIDE = 1;
-    case RECTANGLE = 4;
-    case ROUND = 3;
-    case SQUARE = 2;
+    /** Logo is invisible. */
+    const HIDE = 1;
+    /** Logo is a rectangle. */
+    const RECTANGLE = 4;
+    /** Logo is a round. */
+    const ROUND = 3;
+    /** Logo is a square. */
+    const SQUARE = 2;
 }

@@ -8,18 +8,18 @@ class AutymateActivateGetRequest
      * 
      * One of {@link \WlSdk\Wl\Integration\Autymate\AutymateAccessModeSid} constants.
      *
-     * @var \WlSdk\Wl\Integration\Autymate\AutymateAccessModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Integration\Autymate\AutymateAccessModeSid $id_mode = null;
+    public ?int $id_mode = null;
 
     /**
      * The new status of the enrollment. If `0`, the current status is returned.
      * 
      * One of {@link \WlSdk\Wl\Integration\Autymate\AutymateStatusSid} constants.
      *
-     * @var \WlSdk\Wl\Integration\Autymate\AutymateStatusSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Integration\Autymate\AutymateStatusSid $id_status = null;
+    public ?int $id_status = null;
 
     /**
      * The key of the business.
@@ -46,8 +46,8 @@ class AutymateActivateGetRequest
     {
         return array_filter(
             [
-            'id_mode' => $this->id_mode?->value,
-            'id_status' => $this->id_status?->value,
+            'id_mode' => $this->id_mode,
+            'id_status' => $this->id_status,
             'k_business' => $this->k_business,
             's_guid' => $this->s_guid,
             'uid' => $this->uid,

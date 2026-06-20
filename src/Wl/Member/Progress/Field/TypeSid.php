@@ -13,11 +13,16 @@ namespace WlSdk\Wl\Member\Progress\Field;
  * - 4 (`STRING`): Value is string.
  * - 1 (`WHOLE_NUMBER`): Value is whole number.
  */
-enum TypeSid: int
+class TypeSid
 {
-    case DECIMAL = 2;
-    case IMAGE = 5;
-    case PERCENTAGE = 3;
-    case STRING = 4;
-    case WHOLE_NUMBER = 1;
+    /** Value is decimal. */
+    const DECIMAL = 2;
+    /** Value is image. */
+    const IMAGE = 5;
+    /** Value is percentage. */
+    const PERCENTAGE = 3;
+    /** Value is string. */
+    const STRING = 4;
+    /** Value is whole number. */
+    const WHOLE_NUMBER = 1;
 }

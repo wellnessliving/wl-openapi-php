@@ -9,8 +9,10 @@ namespace WlSdk\Wl\Business\Account\Subscription\Fitbuilder;
  * - 1 (`FREE`): None
  * - 2 (`PROFESSIONAL`): Professional
  */
-enum FitbuilderSubscriptionSid: int
+class FitbuilderSubscriptionSid
 {
-    case FREE = 1;
-    case PROFESSIONAL = 2;
+    /** None */
+    const FREE = 1;
+    /** Professional */
+    const PROFESSIONAL = 2;
 }

@@ -12,10 +12,14 @@ namespace WlSdk\Wl\Login;
  * - 3 (`GUEST`): Guest role. User that is not logged in.
  * - 4 (`STAFF`): Staff member role.
  */
-enum LoginRoleSid: int
+class LoginRoleSid
 {
-    case ADMIN = 1;
-    case CLIENT = 2;
-    case GUEST = 3;
-    case STAFF = 4;
+    /** Admin role. */
+    const ADMIN = 1;
+    /** Client role. */
+    const CLIENT = 2;
+    /** Guest role. User that is not logged in. */
+    const GUEST = 3;
+    /** Staff member role. */
+    const STAFF = 4;
 }

@@ -18,9 +18,9 @@ class PaymentPostResponse
     /**
      * The payment type for the appointment. A constant of {@link \WlSdk\RsAppointmentPaySid}.
      *
-     * @var \WlSdk\RsAppointmentPaySid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsAppointmentPaySid $id_pay = null;
+    public ?int $id_pay = null;
 
     /**
      * The key of activity of the purchase made.
@@ -41,7 +41,7 @@ class PaymentPostResponse
     public function __construct(array $data)
     {
         $this->a_purchase_item = isset($data['a_purchase_item']) ? (array)$data['a_purchase_item'] : null;
-        $this->id_pay = isset($data['id_pay']) ? \WlSdk\RsAppointmentPaySid::tryFrom((int)$data['id_pay']) : null;
+        $this->id_pay = isset($data['id_pay']) ? (int)$data['id_pay'] : null;
         $this->k_login_activity_purchase = isset($data['k_login_activity_purchase']) ? (string)$data['k_login_activity_purchase'] : null;
         $this->k_login_prize = isset($data['k_login_prize']) ? (string)$data['k_login_prize'] : null;
     }

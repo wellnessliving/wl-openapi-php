@@ -7,9 +7,9 @@ class BusinessAccessGetResponseBusinessData
      * The business region. One of the {@link \WlSdk\Core\Amazon\Region\AmazonRegionSid} constants. This will be
      * `null` if no regions are currently set.
      *
-     * @var \WlSdk\Core\Amazon\Region\AmazonRegionSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Core\Amazon\Region\AmazonRegionSid $id_region = null;
+    public ?int $id_region = null;
 
     /**
      * The business key.
@@ -41,7 +41,7 @@ class BusinessAccessGetResponseBusinessData
 
     public function __construct(array $data)
     {
-        $this->id_region = isset($data['id_region']) ? \WlSdk\Core\Amazon\Region\AmazonRegionSid::tryFrom((int)$data['id_region']) : null;
+        $this->id_region = isset($data['id_region']) ? (int)$data['id_region'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;
         $this->text_office_address = isset($data['text_office_address']) ? (string)$data['text_office_address'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;

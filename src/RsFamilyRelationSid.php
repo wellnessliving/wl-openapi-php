@@ -24,22 +24,38 @@ namespace WlSdk;
  * - 13 (`TEACHER`): Teacher.
  * - 11 (`THERAPIST`): Therapist.
  */
-enum RsFamilyRelationSid: int
+class RsFamilyRelationSid
 {
-    case CARE_PARTICIPANT = 12;
-    case CARE_RECEIVER = 9;
-    case CAREGIVER = 8;
-    case CASE_LOAD = 16;
-    case CASE_MANAGER = 15;
-    case CHILD = 5;
-    case DEPENDENT = 10;
-    case FRIEND = 2;
-    case GUARDIAN = 7;
-    case OTHER = 6;
-    case PARENT = 3;
-    case SIBLING = 4;
-    case SPOUSE = 1;
-    case STUDENT = 14;
-    case TEACHER = 13;
-    case THERAPIST = 11;
+    /** Care participant. */
+    const CARE_PARTICIPANT = 12;
+    /** Care recipient. */
+    const CARE_RECEIVER = 9;
+    /** Care provider. */
+    const CAREGIVER = 8;
+    /** Case load. */
+    const CASE_LOAD = 16;
+    /** Case Manager. */
+    const CASE_MANAGER = 15;
+    /** Child of the parent. */
+    const CHILD = 5;
+    /** Dependent. */
+    const DEPENDENT = 10;
+    /** Friend. */
+    const FRIEND = 2;
+    /** Guardian. */
+    const GUARDIAN = 7;
+    /** Not specified custom relationship. */
+    const OTHER = 6;
+    /** Parent of the child. */
+    const PARENT = 3;
+    /** Sibling. A brother or sister. */
+    const SIBLING = 4;
+    /** Spouse. A husband or wife. */
+    const SPOUSE = 1;
+    /** Student. */
+    const STUDENT = 14;
+    /** Teacher. */
+    const TEACHER = 13;
+    /** Therapist. */
+    const THERAPIST = 11;
 }

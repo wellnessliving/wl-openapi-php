@@ -13,10 +13,14 @@ namespace WlSdk\Wl\Classes;
  * - 2 (`VISIT`): Clients can only pay when they visit. Online payment is not available.
  *   It has additional options [RequirePayVisitOptionSid](#/components/schemas/Wl.Classes.RequirePayVisitOptionSid).
  */
-enum RequirePaySid: int
+class RequirePaySid
 {
-    case ADVANCE = 3;
-    case DEPOSIT = 4;
-    case ONLINE = 1;
-    case VISIT = 2;
+    /** Clients can pay online or pay when they visit. */
+    const ADVANCE = 3;
+    /** Client should leave a deposit before booking an event. */
+    const DEPOSIT = 4;
+    /** Client must purchase online. */
+    const ONLINE = 1;
+    /** Clients can only pay when they visit. Online payment is not available. */
+    const VISIT = 2;
 }

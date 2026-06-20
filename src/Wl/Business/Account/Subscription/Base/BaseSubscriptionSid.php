@@ -26,21 +26,36 @@ namespace WlSdk\Wl\Business\Account\Subscription\Base;
  * - 13 (`STARTER_2502`): Starter
  * - 14 (`TRIAL`): Trial
  */
-enum BaseSubscriptionSid: int
+class BaseSubscriptionSid
 {
-    case ADVANCED = 4;
-    case BASIC = 3;
-    case BUSINESS = 7;
-    case BUSINESS_2405 = 11;
-    case BUSINESS_LIGHT = 8;
-    case BUSINESS_MAX = 9;
-    case BUSINESS_PRO = 10;
-    case ENTERPRISE = 6;
-    case FREE = 1;
-    case PARTNER = 2;
-    case PLATFORM_ACCESS = 15;
-    case PROFESSIONAL = 5;
-    case STARTER = 12;
-    case STARTER_2502 = 13;
-    case TRIAL = 14;
+    /** Advanced */
+    const ADVANCED = 4;
+    /** Basic */
+    const BASIC = 3;
+    /** Business(Legacy) */
+    const BUSINESS = 7;
+    /** Business */
+    const BUSINESS_2405 = 11;
+    /** Business(Legacy) */
+    const BUSINESS_LIGHT = 8;
+    /** Business Max */
+    const BUSINESS_MAX = 9;
+    /** Business Pro */
+    const BUSINESS_PRO = 10;
+    /** Enterprise */
+    const ENTERPRISE = 6;
+    /** None */
+    const FREE = 1;
+    /** Business Partner */
+    const PARTNER = 2;
+    /** Platform Access */
+    const PLATFORM_ACCESS = 15;
+    /** Professional */
+    const PROFESSIONAL = 5;
+    /** Starter */
+    const STARTER = 12;
+    /** Starter */
+    const STARTER_2502 = 13;
+    /** Trial */
+    const TRIAL = 14;
 }

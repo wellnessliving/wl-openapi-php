@@ -13,17 +13,17 @@ class BusinessTypeListGetResponseBusinessType
     /**
      * The business category. One of the {@link \WlSdk\RsBusinessCategorySid} constants.
      *
-     * @var \WlSdk\RsBusinessCategorySid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsBusinessCategorySid $id_business_category = null;
+    public ?int $id_business_category = null;
 
     /**
      * Type of the demo tour on the sales site connected to the business type. More about tours: {@link
      * \WlSdk\RsHomeTourSid}.
      *
-     * @var \WlSdk\RsHomeTourSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsHomeTourSid $id_tour = null;
+    public ?int $id_tour = null;
 
     /**
      * The key of business type.
@@ -70,8 +70,8 @@ class BusinessTypeListGetResponseBusinessType
     public function __construct(array $data)
     {
         $this->a_image_list = isset($data['a_image_list']) ? new BusinessTypeListGetResponseBusinessTypeImageList((array)$data['a_image_list']) : null;
-        $this->id_business_category = isset($data['id_business_category']) ? \WlSdk\RsBusinessCategorySid::tryFrom((int)$data['id_business_category']) : null;
-        $this->id_tour = isset($data['id_tour']) ? \WlSdk\RsHomeTourSid::tryFrom((int)$data['id_tour']) : null;
+        $this->id_business_category = isset($data['id_business_category']) ? (int)$data['id_business_category'] : null;
+        $this->id_tour = isset($data['id_tour']) ? (int)$data['id_tour'] : null;
         $this->k_business_type = isset($data['k_business_type']) ? (string)$data['k_business_type'] : null;
         $this->text_category = isset($data['text_category']) ? (string)$data['text_category'] : null;
         $this->text_category_description = isset($data['text_category_description']) ? (string)$data['text_category_description'] : null;

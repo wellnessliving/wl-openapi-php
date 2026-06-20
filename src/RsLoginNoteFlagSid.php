@@ -8,8 +8,10 @@ namespace WlSdk;
  * - 1 (`ADD`): Add flag record.
  * - 2 (`REMOVE`): Remove flag record.
  */
-enum RsLoginNoteFlagSid: int
+class RsLoginNoteFlagSid
 {
-    case ADD = 1;
-    case REMOVE = 2;
+    /** Add flag record. */
+    const ADD = 1;
+    /** Remove flag record. */
+    const REMOVE = 2;
 }

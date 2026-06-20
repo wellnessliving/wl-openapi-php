@@ -10,10 +10,14 @@ namespace WlSdk;
  * - 2 (`RIGHT`): Logo is in the right corner.
  * - 3 (`TOP`): Logo is above the main menu.
  */
-enum RsPageFrontendHeaderLayoutSid: int
+class RsPageFrontendHeaderLayoutSid
 {
-    case BOTTOM = 4;
-    case LEFT = 1;
-    case RIGHT = 2;
-    case TOP = 3;
+    /** Logo is under the main menu. */
+    const BOTTOM = 4;
+    /** Logo is in the left corner. */
+    const LEFT = 1;
+    /** Logo is in the right corner. */
+    const RIGHT = 2;
+    /** Logo is above the main menu. */
+    const TOP = 3;
 }

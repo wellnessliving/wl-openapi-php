@@ -9,8 +9,10 @@ namespace WlSdk\Wl\Business\Account\Subscription\Zapier;
  * - 1 (`FREE`): None
  * - 2 (`PROFESSIONAL`): Professional
  */
-enum ZapierSubscriptionSid: int
+class ZapierSubscriptionSid
 {
-    case FREE = 1;
-    case PROFESSIONAL = 2;
+    /** None */
+    const FREE = 1;
+    /** Professional */
+    const PROFESSIONAL = 2;
 }

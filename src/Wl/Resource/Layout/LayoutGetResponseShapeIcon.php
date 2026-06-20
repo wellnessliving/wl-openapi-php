@@ -34,9 +34,9 @@ class LayoutGetResponseShapeIcon
     /**
      * The icon ID. One of the {@link \WlSdk\Wl\Resource\Image\ImageIconSid} constants.
      *
-     * @var \WlSdk\Wl\Resource\Image\ImageIconSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Resource\Image\ImageIconSid $id_shape_icon = null;
+    public ?int $id_shape_icon = null;
 
     public function __construct(array $data)
     {
@@ -44,6 +44,6 @@ class LayoutGetResponseShapeIcon
         $this->i_cell_y = isset($data['i_cell_y']) ? (int)$data['i_cell_y'] : null;
         $this->i_left = isset($data['i_left']) ? (int)$data['i_left'] : null;
         $this->i_top = isset($data['i_top']) ? (int)$data['i_top'] : null;
-        $this->id_shape_icon = isset($data['id_shape_icon']) ? \WlSdk\Wl\Resource\Image\ImageIconSid::tryFrom((int)$data['id_shape_icon']) : null;
+        $this->id_shape_icon = isset($data['id_shape_icon']) ? (int)$data['id_shape_icon'] : null;
     }
 }

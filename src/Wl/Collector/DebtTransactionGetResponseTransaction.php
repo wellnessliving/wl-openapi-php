@@ -20,9 +20,9 @@ class DebtTransactionGetResponseTransaction
     /**
      * The payment method ID that was used for the payment. One of {@link \WlSdk\RsPayMethodSid} constants.
      *
-     * @var \WlSdk\RsPayMethodSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsPayMethodSid $id_pay_method = null;
+    public ?int $id_pay_method = null;
 
     /**
      * Defines whether the payment was performed via a third party service.
@@ -62,7 +62,7 @@ class DebtTransactionGetResponseTransaction
     {
         $this->dtu_pay = isset($data['dtu_pay']) ? (string)$data['dtu_pay'] : null;
         $this->m_pay_amount = isset($data['m_pay_amount']) ? (string)$data['m_pay_amount'] : null;
-        $this->id_pay_method = isset($data['id_pay_method']) ? \WlSdk\RsPayMethodSid::tryFrom((int)$data['id_pay_method']) : null;
+        $this->id_pay_method = isset($data['id_pay_method']) ? (int)$data['id_pay_method'] : null;
         $this->is_pay_collections = isset($data['is_pay_collections']) ? (bool)$data['is_pay_collections'] : null;
         $this->is_debt_paid = isset($data['is_debt_paid']) ? (bool)$data['is_debt_paid'] : null;
         $this->text_client_name = isset($data['text_client_name']) ? (string)$data['text_client_name'] : null;

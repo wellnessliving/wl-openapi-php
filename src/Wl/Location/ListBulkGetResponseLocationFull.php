@@ -110,9 +110,9 @@ class ListBulkGetResponseLocationFull
      * `null` in case when industry didn't set for chosen business type, or for business types
      * where set value which is absent.
      *
-     * @var \WlSdk\RsHomeTourSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsHomeTourSid $id_industry = null;
+    public ?int $id_industry = null;
 
     /**
      * `true` if to display phone number on location page. `false` otherwise.
@@ -342,7 +342,7 @@ class ListBulkGetResponseLocationFull
         $this->html_description_preview = isset($data['html_description_preview']) ? (string)$data['html_description_preview'] : null;
         $this->i_logo_height = isset($data['i_logo_height']) ? (int)$data['i_logo_height'] : null;
         $this->i_logo_width = isset($data['i_logo_width']) ? (int)$data['i_logo_width'] : null;
-        $this->id_industry = isset($data['id_industry']) ? \WlSdk\RsHomeTourSid::tryFrom((int)$data['id_industry']) : null;
+        $this->id_industry = isset($data['id_industry']) ? (int)$data['id_industry'] : null;
         $this->is_phone = isset($data['is_phone']) ? (bool)$data['is_phone'] : null;
         $this->is_top_choice = isset($data['is_top_choice']) ? (bool)$data['is_top_choice'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;

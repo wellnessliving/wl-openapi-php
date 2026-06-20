@@ -12,9 +12,9 @@ class EditByTokenPutRequest
      * * If the client is not authorized and no value is set, {@link \WlSdk\Wl\Profile\RegisterSourceSid} will be
      * used.
      *
-     * @var \WlSdk\Wl\Profile\RegisterSourceSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Profile\RegisterSourceSid $id_register_source = null;
+    public ?int $id_register_source = null;
 
     /**
      * Whether the address be inherited.
@@ -89,7 +89,7 @@ class EditByTokenPutRequest
      * 
      * Available only for leads added by CAASI agent.
      *
-     * @var \WlSdk\Wl\Login\Member\Intents\MemberIntentsSid[]|null
+     * @var int[]|null
      */
     public ?array $a_intents = null;
 
@@ -105,7 +105,7 @@ class EditByTokenPutRequest
     {
         return array_filter(
             [
-            'id_register_source' => $this->id_register_source?->value,
+            'id_register_source' => $this->id_register_source,
             'is_address_inherit' => $this->is_address_inherit,
             'is_staff' => $this->is_staff,
             'k_business' => $this->k_business,

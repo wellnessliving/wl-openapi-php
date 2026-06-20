@@ -22,15 +22,24 @@ namespace WlSdk\Wl\Catalog;
  * - 7 (`PROMOTION`): Session passes.
  * - 9 (`QUICK_BUY`): Products available for quick buy.
  */
-enum PurchaseOptionViewSid: int
+class PurchaseOptionViewSid
 {
-    case APPOINTMENT = 1;
-    case CLASS_PERIOD = 2;
-    case COUPON = 3;
-    case ENROLLMENT = 4;
-    case MEMBERSHIP = 8;
-    case PACKAGE = 5;
-    case PRODUCT = 6;
-    case PROMOTION = 7;
-    case QUICK_BUY = 9;
+    /** A single appointment reservation. */
+    const APPOINTMENT = 1;
+    /** A single class reservation. */
+    const CLASS_PERIOD = 2;
+    /** A gift card. */
+    const COUPON = 3;
+    /** Enrollments. Classes where flag event is `true`. */
+    const ENROLLMENT = 4;
+    /** Promotions with programs: */
+    const MEMBERSHIP = 8;
+    /** Promotions with program [RsProgramSid::PACKAGE](#/components/schemas/RsProgramSid). */
+    const PACKAGE = 5;
+    /** Products (such as water, t-shirts, etc.). */
+    const PRODUCT = 6;
+    /** Session passes. */
+    const PROMOTION = 7;
+    /** Products available for quick buy. */
+    const QUICK_BUY = 9;
 }

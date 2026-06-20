@@ -20,9 +20,9 @@ class CatalogProductGetResponseProduct
     /**
      * The sale category ID. One of the {@link \WlSdk\RsSaleSid} constants.
      *
-     * @var \WlSdk\RsSaleSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsSaleSid $id_sale = null;
+    public ?int $id_sale = null;
 
     /**
      * The product key.
@@ -56,7 +56,7 @@ class CatalogProductGetResponseProduct
     {
         $this->html_price = isset($data['html_price']) ? (string)$data['html_price'] : null;
         $this->html_price_early = isset($data['html_price_early']) ? (string)$data['html_price_early'] : null;
-        $this->id_sale = isset($data['id_sale']) ? \WlSdk\RsSaleSid::tryFrom((int)$data['id_sale']) : null;
+        $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->k_shop_category = isset($data['k_shop_category']) ? (string)$data['k_shop_category'] : null;
         $this->s_title = isset($data['s_title']) ? (string)$data['s_title'] : null;

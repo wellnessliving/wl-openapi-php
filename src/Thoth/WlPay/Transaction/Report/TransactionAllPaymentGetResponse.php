@@ -61,9 +61,9 @@ class TransactionAllPaymentGetResponse
      * 
      * One of {@link \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid} constants.
      *
-     * @var \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid $id_report_status = null;
+    public ?int $id_report_status = null;
 
     /**
      * Determines whether to show more rows in the report.
@@ -97,7 +97,7 @@ class TransactionAllPaymentGetResponse
         $this->dtu_complete = isset($data['dtu_complete']) ? (string)$data['dtu_complete'] : null;
         $this->dtu_queue = isset($data['dtu_queue']) ? (string)$data['dtu_queue'] : null;
         $this->dtu_start = isset($data['dtu_start']) ? (string)$data['dtu_start'] : null;
-        $this->id_report_status = isset($data['id_report_status']) ? \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid::tryFrom((int)$data['id_report_status']) : null;
+        $this->id_report_status = isset($data['id_report_status']) ? (int)$data['id_report_status'] : null;
         $this->is_more = isset($data['is_more']) ? (bool)$data['is_more'] : null;
         $this->is_report_complete = isset($data['is_report_complete']) ? (bool)$data['is_report_complete'] : null;
     }

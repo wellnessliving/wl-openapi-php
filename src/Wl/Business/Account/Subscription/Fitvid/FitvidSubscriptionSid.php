@@ -11,10 +11,14 @@ namespace WlSdk\Wl\Business\Account\Subscription\Fitvid;
  * - 1 (`FREE`): None
  * - 4 (`PREMIUM`): Premium
  */
-enum FitvidSubscriptionSid: int
+class FitvidSubscriptionSid
 {
-    case BASIC = 2;
-    case ENTERPRISE = 3;
-    case FREE = 1;
-    case PREMIUM = 4;
+    /** Basic */
+    const BASIC = 2;
+    /** Enterprise */
+    const ENTERPRISE = 3;
+    /** None */
+    const FREE = 1;
+    /** Premium */
+    const PREMIUM = 4;
 }

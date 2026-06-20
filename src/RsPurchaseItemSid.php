@@ -68,31 +68,56 @@ namespace WlSdk;
  * - 26 (`TUITION`): Tuition purchase item.
  *   Used when client purchases tuition for an event list.
  */
-enum RsPurchaseItemSid: int
+class RsPurchaseItemSid
 {
-    case ACCOUNT = 7;
-    case ACCOUNT_BUSINESS = 11;
-    case APPOINTMENT = 8;
-    case APPOINTMENT_DEPOSIT = 18;
-    case APPOINTMENT_TIP = 22;
-    case BUSINESS_EXPENSE = 16;
-    case BUSINESS_SKIP = 17;
-    case BUSINESS_SUBSCRIPTION = 23;
-    case CLASS_PERIOD = 2;
-    case COLLECTOR_DEBT = 24;
-    case COMMENT = 13;
-    case COUPON = 10;
-    case ENROLLMENT = 4;
-    case ENROLLMENT_DEPOSIT = 19;
-    case ENROLLMENT_DISCOUNT = 21;
-    case INSTALLMENT = 14;
-    case MEMBERSHIP = 3;
-    case PRODUCT = 9;
-    case PROMOTION = 1;
-    case PROMOTION_CANCEL_FEE = 25;
-    case PROMOTION_RENEW = 12;
-    case RESOURCE = 15;
-    case RESOURCE_DEPOSIT = 20;
-    case SERVICE = 6;
-    case TUITION = 26;
+    /** Personal user's account refill. */
+    const ACCOUNT = 7;
+    /** Business account payment. */
+    const ACCOUNT_BUSINESS = 11;
+    /** Single appointment reservation. */
+    const APPOINTMENT = 8;
+    /** Single appointment reservation with deposit. */
+    const APPOINTMENT_DEPOSIT = 18;
+    /** Tips for the appointment. */
+    const APPOINTMENT_TIP = 22;
+    /** Expense that comes along with the payment business. It contains information about additional services which are */
+    const BUSINESS_EXPENSE = 16;
+    /** A skipped purchase for the business account. */
+    const BUSINESS_SKIP = 17;
+    /** Business subscription payment. */
+    const BUSINESS_SUBSCRIPTION = 23;
+    /** Single classes. */
+    const CLASS_PERIOD = 2;
+    /** Collectors payments */
+    const COLLECTOR_DEBT = 24;
+    /** Arbitrary money withdrawal with comment. */
+    const COMMENT = 13;
+    /** Gift Cards. */
+    const COUPON = 10;
+    /** Events and enrollments. Client can not book only one class, he needs to book the whole enrollment. */
+    const ENROLLMENT = 4;
+    /** Enrollment reservation with a deposit. */
+    const ENROLLMENT_DEPOSIT = 19;
+    /** Enrollment reservation with a discount. */
+    const ENROLLMENT_DISCOUNT = 21;
+    /** Payment by an installment plan. */
+    const INSTALLMENT = 14;
+    /** Recurrent payments. */
+    const MEMBERSHIP = 3;
+    /** Products. */
+    const PRODUCT = 9;
+    /** Promotions. */
+    const PROMOTION = 1;
+    /** Early cancellation fee for a memberships. */
+    const PROMOTION_CANCEL_FEE = 25;
+    /** A purchase to renew a promotion. */
+    const PROMOTION_RENEW = 12;
+    /** A purchase to book an asset. */
+    const RESOURCE = 15;
+    /** A purchase to book a deposit asset. */
+    const RESOURCE_DEPOSIT = 20;
+    /** Purchase item for appointments. */
+    const SERVICE = 6;
+    /** Tuition purchase item. */
+    const TUITION = 26;
 }

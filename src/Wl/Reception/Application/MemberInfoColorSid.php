@@ -15,10 +15,14 @@ namespace WlSdk\Wl\Reception\Application;
  * - 3 (`ORANGE`): Mild negative messages to warn the user. Displayed in orange.
  * - 4 (`RED`): Negative messages with strong importance or urgency. Displayed in red.
  */
-enum MemberInfoColorSid: int
+class MemberInfoColorSid
 {
-    case BLUE = 1;
-    case GREEN = 2;
-    case ORANGE = 3;
-    case RED = 4;
+    /** Default for neutral, informative messages. Displayed in blue. */
+    const BLUE = 1;
+    /** Positive messages. Displayed in green. */
+    const GREEN = 2;
+    /** Mild negative messages to warn the user. Displayed in orange. */
+    const ORANGE = 3;
+    /** Negative messages with strong importance or urgency. Displayed in red. */
+    const RED = 4;
 }

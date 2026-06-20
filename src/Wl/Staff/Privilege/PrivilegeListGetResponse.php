@@ -19,7 +19,7 @@ class PrivilegeListGetResponse
     /**
      * List of privileges, if the given user is a staff member in the give business.
      *
-     * @var \WlSdk\Wl\Privilege\PrivilegeSid[]|null
+     * @var int[]|null
      */
     public ?array $a_privilege_staff = null;
 
@@ -38,7 +38,7 @@ class PrivilegeListGetResponse
     public function __construct(array $data)
     {
         $this->a_privilege_passport = isset($data['a_privilege_passport']) ? (array)$data['a_privilege_passport'] : null;
-        $this->a_privilege_staff = isset($data['a_privilege_staff']) ? array_map(static fn($v) => \WlSdk\Wl\Privilege\PrivilegeSid::tryFrom((int)$v), (array)$data['a_privilege_staff']) : null;
+        $this->a_privilege_staff = isset($data['a_privilege_staff']) ? (array)$data['a_privilege_staff'] : null;
         $this->is_admin = isset($data['is_admin']) ? (bool)$data['is_admin'] : null;
     }
 }

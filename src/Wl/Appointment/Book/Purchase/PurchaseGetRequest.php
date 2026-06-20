@@ -59,9 +59,9 @@ class PurchaseGetRequest
     /**
      * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var \WlSdk\Wl\Mode\ModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
+    public ?int $id_mode = null;
 
     /**
      * `true` - get all Purchase Options suitable for appointment.
@@ -145,7 +145,7 @@ class PurchaseGetRequest
             'i_duration' => $this->i_duration,
             'i_height' => $this->i_height,
             'i_width' => $this->i_width,
-            'id_mode' => $this->id_mode?->value,
+            'id_mode' => $this->id_mode,
             'is_backend' => $this->is_backend,
             'is_walk_in' => $this->is_walk_in,
             'k_location' => $this->k_location,

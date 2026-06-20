@@ -9,7 +9,8 @@ namespace WlSdk\Wl\Profile\Sensor;
  * Values:
  * - 1 (`HEART_RATE`): Heart rate sensor.
  */
-enum SensorTypesSid: int
+class SensorTypesSid
 {
-    case HEART_RATE = 1;
+    /** Heart rate sensor. */
+    const HEART_RATE = 1;
 }

@@ -90,9 +90,9 @@ class Response65PostRequest
     /**
      * Response source. One of {@link \WlSdk\Wl\Quiz\Response\SourceSid} constants.
      *
-     * @var \WlSdk\Wl\Quiz\Response\SourceSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Quiz\Response\SourceSid $id_source = null;
+    public ?int $id_source = null;
 
     /**
      * `true` if need to save response in draft mode, `false` otherwise.
@@ -173,7 +173,7 @@ class Response65PostRequest
             'a_element_file' => $this->a_element_file,
             'a_purchase_item' => $this->a_purchase_item,
             'a_quick_config' => $this->a_quick_config,
-            'id_source' => $this->id_source?->value,
+            'id_source' => $this->id_source,
             'is_draft' => $this->is_draft,
             'is_skip' => $this->is_skip,
             'is_validate_only' => $this->is_validate_only,

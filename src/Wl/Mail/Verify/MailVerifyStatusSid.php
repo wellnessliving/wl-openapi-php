@@ -13,10 +13,14 @@ namespace WlSdk\Wl\Mail\Verify;
  * - 3 (`VERIFY`): Email is verified.
  * - 2 (`WAIT_FOR_VERIFY`): Verification in progress.
  */
-enum MailVerifyStatusSid: int
+class MailVerifyStatusSid
 {
-    case FAIL = 4;
-    case NONE = 1;
-    case VERIFY = 3;
-    case WAIT_FOR_VERIFY = 2;
+    /** Email is not verified. */
+    const FAIL = 4;
+    /** Verification request is not running. */
+    const NONE = 1;
+    /** Email is verified. */
+    const VERIFY = 3;
+    /** Verification in progress. */
+    const WAIT_FOR_VERIFY = 2;
 }

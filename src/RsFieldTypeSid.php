@@ -17,11 +17,16 @@ namespace WlSdk;
  * - 3 (`SELECT`): Drop-down menu.
  * - 1 (`TEXT`): One line text field.
  */
-enum RsFieldTypeSid: int
+class RsFieldTypeSid
 {
-    case CHECKBOX = 2;
-    case GENERAL = 5;
-    case RADIO = 4;
-    case SELECT = 3;
-    case TEXT = 1;
+    /** Checkbox field. The `s_value` for this type of field can be 1 if checkbox is checked and 0 otherwise. */
+    const CHECKBOX = 2;
+    /** General field. Has its own format. */
+    const GENERAL = 5;
+    /** Radio buttons. */
+    const RADIO = 4;
+    /** Drop-down menu. */
+    const SELECT = 3;
+    /** One line text field. */
+    const TEXT = 1;
 }

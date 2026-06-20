@@ -74,23 +74,23 @@ class ElementGetResponseData
      * Type of a coupon activation date specification. One of {@link \WlSdk\Wl\Coupon\Edit\ActivationSid}
      * constants.
      *
-     * @var \WlSdk\Wl\Coupon\Edit\ActivationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Coupon\Edit\ActivationSid $id_activation = null;
+    public ?int $id_activation = null;
 
     /**
      * Duration of a period. A constant from {@link \WlSdk\ADurationSid}.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_duration = null;
+    public ?int $id_duration = null;
 
     /**
      * A way to specify a duration. One of {@link \WlSdk\Wl\Coupon\Edit\DurationTypeSid} constants.
      *
-     * @var \WlSdk\Wl\Coupon\Edit\DurationTypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Coupon\Edit\DurationTypeSid $id_duration_type = null;
+    public ?int $id_duration_type = null;
 
     public function __construct(array $data)
     {
@@ -102,8 +102,8 @@ class ElementGetResponseData
         $this->dl_now = isset($data['dl_now']) ? (string)$data['dl_now'] : null;
         $this->dl_start = isset($data['dl_start']) ? (string)$data['dl_start'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
-        $this->id_activation = isset($data['id_activation']) ? \WlSdk\Wl\Coupon\Edit\ActivationSid::tryFrom((int)$data['id_activation']) : null;
-        $this->id_duration = isset($data['id_duration']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_duration']) : null;
-        $this->id_duration_type = isset($data['id_duration_type']) ? \WlSdk\Wl\Coupon\Edit\DurationTypeSid::tryFrom((int)$data['id_duration_type']) : null;
+        $this->id_activation = isset($data['id_activation']) ? (int)$data['id_activation'] : null;
+        $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;
+        $this->id_duration_type = isset($data['id_duration_type']) ? (int)$data['id_duration_type'] : null;
     }
 }

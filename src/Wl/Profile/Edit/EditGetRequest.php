@@ -12,9 +12,9 @@ class EditGetRequest
      * * If the client is not authorized and no value is set, {@link \WlSdk\Wl\Profile\RegisterSourceSid} will be
      * used.
      *
-     * @var \WlSdk\Wl\Profile\RegisterSourceSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Profile\RegisterSourceSid $id_register_source = null;
+    public ?int $id_register_source = null;
 
     /**
      * Indicates whether to display the form as a user or as a staff member.
@@ -46,7 +46,7 @@ class EditGetRequest
     {
         return array_filter(
             [
-            'id_register_source' => $this->id_register_source?->value,
+            'id_register_source' => $this->id_register_source,
             'is_staff' => $this->is_staff,
             'k_business' => $this->k_business,
             'uid' => $this->uid,

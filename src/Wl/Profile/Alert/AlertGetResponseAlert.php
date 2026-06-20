@@ -21,9 +21,9 @@ class AlertGetResponseAlert
     /**
      * ID of alert type. One of {@link \WlSdk\RsProfileNoteSid} constants.
      *
-     * @var \WlSdk\RsProfileNoteSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsProfileNoteSid $id_profile_note = null;
+    public ?int $id_profile_note = null;
 
     /**
      * The key of the client's account.
@@ -50,7 +50,7 @@ class AlertGetResponseAlert
     {
         $this->dt_date = isset($data['dt_date']) ? (string)$data['dt_date'] : null;
         $this->is_today = isset($data['is_today']) ? (bool)$data['is_today'] : null;
-        $this->id_profile_note = isset($data['id_profile_note']) ? \WlSdk\RsProfileNoteSid::tryFrom((int)$data['id_profile_note']) : null;
+        $this->id_profile_note = isset($data['id_profile_note']) ? (int)$data['id_profile_note'] : null;
         $this->k_pay_account = isset($data['k_pay_account']) ? (string)$data['k_pay_account'] : null;
         $this->k_purchase_item = isset($data['k_purchase_item']) ? (string)$data['k_purchase_item'] : null;
         $this->s_text = isset($data['s_text']) ? (string)$data['s_text'] : null;

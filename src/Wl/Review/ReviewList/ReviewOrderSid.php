@@ -10,10 +10,14 @@ namespace WlSdk\Wl\Review\ReviewList;
  * - 4 (`OLDEST`): Descending sort review by date.
  * - 2 (`POSITIVE`): Descending sort review by date.
  */
-enum ReviewOrderSid: int
+class ReviewOrderSid
 {
-    case LATEST = 1;
-    case NEGATIVE = 3;
-    case OLDEST = 4;
-    case POSITIVE = 2;
+    /** Ascending sort review by date. */
+    const LATEST = 1;
+    /** Ascending sort review by date. */
+    const NEGATIVE = 3;
+    /** Descending sort review by date. */
+    const OLDEST = 4;
+    /** Descending sort review by date. */
+    const POSITIVE = 2;
 }

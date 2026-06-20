@@ -10,8 +10,10 @@ namespace WlSdk\Wl\Business\Account\Subscription\Eml;
  * - 1 (`FREE`): None
  * - 2 (`STANDARD`): Standard
  */
-enum ConstantContactSubscriptionSid: int
+class ConstantContactSubscriptionSid
 {
-    case FREE = 1;
-    case STANDARD = 2;
+    /** None */
+    const FREE = 1;
+    /** Standard */
+    const STANDARD = 2;
 }

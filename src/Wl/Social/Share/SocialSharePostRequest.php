@@ -11,23 +11,23 @@ class SocialSharePostRequest
      * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the purchase.
      * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the review.
      *
-     * @var \WlSdk\Wl\Social\Share\ShareObjectSid[]|null
+     * @var int[]|null
      */
     public ?array $a_key = null;
 
     /**
      * The id of the social network.
      *
-     * @var \WlSdk\ASocialSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ASocialSid $id_share_destination = null;
+    public ?int $id_share_destination = null;
 
     /**
      * The id of type object for share post to social network.
      *
-     * @var \WlSdk\Wl\Social\Share\ShareObjectSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Social\Share\ShareObjectSid $id_share_object = null;
+    public ?int $id_share_object = null;
 
     /**
      * Business key.
@@ -48,8 +48,8 @@ class SocialSharePostRequest
         return array_filter(
             [
             'a_key' => $this->a_key,
-            'id_share_destination' => $this->id_share_destination?->value,
-            'id_share_object' => $this->id_share_object?->value,
+            'id_share_destination' => $this->id_share_destination,
+            'id_share_object' => $this->id_share_object,
             'k_business' => $this->k_business,
             'uid' => $this->uid,
             ],

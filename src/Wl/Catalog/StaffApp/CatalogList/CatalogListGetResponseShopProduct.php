@@ -45,23 +45,23 @@ class CatalogListGetResponseShopProduct
      *    <li>[PaymentApi](/Wl/Catalog/Payment/Payment.json) for a program purchase.</li>
      *  </ul>
      *
-     * @var \WlSdk\RsProgramSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsProgramSid $id_program = null;
+    public ?int $id_program = null;
 
     /**
      * The restriction ID. One of the {@link \WlSdk\Wl\Shop\Product\PurchaseRestrictionSid} constants.
      *
-     * @var \WlSdk\Wl\Shop\Product\PurchaseRestrictionSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Shop\Product\PurchaseRestrictionSid $id_restriction = null;
+    public ?int $id_restriction = null;
 
     /**
      * The sale category ID. One of the {@link \WlSdk\RsSaleSid} constants.
      *
-     * @var \WlSdk\RsSaleSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsSaleSid $id_sale = null;
+    public ?int $id_sale = null;
 
     /**
      * Determines whether the sale item can be purchased by the client.
@@ -106,9 +106,9 @@ class CatalogListGetResponseShopProduct
         $this->a_login_type = isset($data['a_login_type']) ? (array)$data['a_login_type'] : null;
         $this->a_member_group = isset($data['a_member_group']) ? (array)$data['a_member_group'] : null;
         $this->a_shop_category = isset($data['a_shop_category']) ? (array)$data['a_shop_category'] : null;
-        $this->id_program = isset($data['id_program']) ? \WlSdk\RsProgramSid::tryFrom((int)$data['id_program']) : null;
-        $this->id_restriction = isset($data['id_restriction']) ? \WlSdk\Wl\Shop\Product\PurchaseRestrictionSid::tryFrom((int)$data['id_restriction']) : null;
-        $this->id_sale = isset($data['id_sale']) ? \WlSdk\RsSaleSid::tryFrom((int)$data['id_sale']) : null;
+        $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
+        $this->id_restriction = isset($data['id_restriction']) ? (int)$data['id_restriction'] : null;
+        $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->is_online_sell = isset($data['is_online_sell']) ? (bool)$data['is_online_sell'] : null;
         $this->is_visit = isset($data['is_visit']) ? (bool)$data['is_visit'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;

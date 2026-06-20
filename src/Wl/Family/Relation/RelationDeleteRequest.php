@@ -7,9 +7,9 @@ class RelationDeleteRequest
      * ID of the user behavior flow.
      * One of {@link \WlSdk\Wl\User\Tracking\FlowSid} constants.
      *
-     * @var \WlSdk\Wl\User\Tracking\FlowSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\User\Tracking\FlowSid $id_flow = null;
+    public ?int $id_flow = null;
 
     /**
      * The business key.
@@ -36,19 +36,19 @@ class RelationDeleteRequest
      * ID of source mode.
      * One of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var \WlSdk\Wl\Mode\ModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
+    public ?int $id_mode = null;
 
     public function params(): array
     {
         return array_filter(
             [
-            'id_flow' => $this->id_flow?->value,
+            'id_flow' => $this->id_flow,
             'k_business' => $this->k_business,
             'uid' => $this->uid,
             'uid_delete' => $this->uid_delete,
-            'id_mode' => $this->id_mode?->value,
+            'id_mode' => $this->id_mode,
             ],
             static fn($v) => $v !== null
         );

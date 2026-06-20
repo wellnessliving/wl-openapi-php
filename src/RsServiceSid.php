@@ -13,11 +13,16 @@ namespace WlSdk;
  * - 5 (`RESOURCE`): Resources.
  * - 4 (`VISIT`): Visits.
  */
-enum RsServiceSid: int
+class RsServiceSid
 {
-    case APPOINTMENT = 1;
-    case CLASSES = 2;
-    case ENROLLMENT = 3;
-    case RESOURCE = 5;
-    case VISIT = 4;
+    /** Appointments. */
+    const APPOINTMENT = 1;
+    /** Classes. */
+    const CLASSES = 2;
+    /** Enrolments. */
+    const ENROLLMENT = 3;
+    /** Resources. */
+    const RESOURCE = 5;
+    /** Visits. */
+    const VISIT = 4;
 }

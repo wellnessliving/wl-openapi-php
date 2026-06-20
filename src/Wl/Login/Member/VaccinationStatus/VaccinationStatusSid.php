@@ -12,10 +12,14 @@ namespace WlSdk\Wl\Login\Member\VaccinationStatus;
  * - 2 (`PARTIAL`): Partially Vaccinated.
  * - 4 (`UNKNOWN`): Unknown.
  */
-enum VaccinationStatusSid: int
+class VaccinationStatusSid
 {
-    case FULL = 3;
-    case NONE = 1;
-    case PARTIAL = 2;
-    case UNKNOWN = 4;
+    /** Fully Vaccinated. */
+    const FULL = 3;
+    /** Unvaccinated. */
+    const NONE = 1;
+    /** Partially Vaccinated. */
+    const PARTIAL = 2;
+    /** Unknown. */
+    const UNKNOWN = 4;
 }

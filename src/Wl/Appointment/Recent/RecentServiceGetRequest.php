@@ -13,9 +13,9 @@ class RecentServiceGetRequest
     /**
      * Type of service to return. One of {@link \WlSdk\Wl\Service\ServiceSid} constants.
      *
-     * @var \WlSdk\Wl\Service\ServiceSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Service\ServiceSid $id_service = null;
+    public ?int $id_service = null;
 
     /**
      * The key of the business.
@@ -36,7 +36,7 @@ class RecentServiceGetRequest
         return array_filter(
             [
             'i_visit' => $this->i_visit,
-            'id_service' => $this->id_service?->value,
+            'id_service' => $this->id_service,
             'k_business' => $this->k_business,
             'uid' => $this->uid,
             ],

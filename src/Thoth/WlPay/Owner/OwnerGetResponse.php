@@ -11,9 +11,9 @@ class OwnerGetResponse
      * 
      * This is one of the {@link \WlSdk\RsPayOwnerSid} constants.
      *
-     * @var \WlSdk\RsPayOwnerSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsPayOwnerSid $id_pay_owner = null;
+    public ?int $id_pay_owner = null;
 
     /**
      * The payment owner key. This is used for financial transactions.
@@ -33,7 +33,7 @@ class OwnerGetResponse
 
     public function __construct(array $data)
     {
-        $this->id_pay_owner = isset($data['id_pay_owner']) ? \WlSdk\RsPayOwnerSid::tryFrom((int)$data['id_pay_owner']) : null;
+        $this->id_pay_owner = isset($data['id_pay_owner']) ? (int)$data['id_pay_owner'] : null;
         $this->k_pay_owner = isset($data['k_pay_owner']) ? (string)$data['k_pay_owner'] : null;
         $this->k_pay_owner_money = isset($data['k_pay_owner_money']) ? (string)$data['k_pay_owner_money'] : null;
     }

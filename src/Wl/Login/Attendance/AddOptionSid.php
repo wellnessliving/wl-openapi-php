@@ -9,9 +9,12 @@ namespace WlSdk\Wl\Login\Attendance;
  * - 3 (`PAY`): Add client to attendance list and pay now.
  * - 1 (`UNPAID`): Add client to attendance list without payment.
  */
-enum AddOptionSid: int
+class AddOptionSid
 {
-    case DEBIT = 2;
-    case PAY = 3;
-    case UNPAID = 1;
+    /** Add client to attendance list and charge his account. */
+    const DEBIT = 2;
+    /** Add client to attendance list and pay now. */
+    const PAY = 3;
+    /** Add client to attendance list without payment. */
+    const UNPAID = 1;
 }

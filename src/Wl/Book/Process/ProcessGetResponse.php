@@ -12,7 +12,7 @@ class ProcessGetResponse
      * 
      * This will be `null` if clients aren't allowed to book for their relationships.
      *
-     * @var \WlSdk\RsFamilyRelationSid[]|null
+     * @var int[]|null
      */
     public ?array $a_family_relation_login_allow = null;
 
@@ -27,9 +27,9 @@ class ProcessGetResponse
      * The purchase rule ID.
      * One of the {@link \WlSdk\Wl\Classes\RequirePaySid} constants.
      *
-     * @var \WlSdk\Wl\Classes\RequirePaySid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Classes\RequirePaySid $id_pay_require = null;
+    public ?int $id_pay_require = null;
 
     /**
      * `true` if this class has age restriction and requires user to specify age. `false` otherwise.
@@ -112,9 +112,9 @@ class ProcessGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_family_relation_login_allow = isset($data['a_family_relation_login_allow']) ? array_map(static fn($v) => \WlSdk\RsFamilyRelationSid::tryFrom((int)$v), (array)$data['a_family_relation_login_allow']) : null;
+        $this->a_family_relation_login_allow = isset($data['a_family_relation_login_allow']) ? (array)$data['a_family_relation_login_allow'] : null;
         $this->a_path = isset($data['a_path']) ? array_map(static fn($item) => new ProcessGetResponsePath((array)$item), (array)$data['a_path']) : null;
-        $this->id_pay_require = isset($data['id_pay_require']) ? \WlSdk\Wl\Classes\RequirePaySid::tryFrom((int)$data['id_pay_require']) : null;
+        $this->id_pay_require = isset($data['id_pay_require']) ? (int)$data['id_pay_require'] : null;
         $this->is_age_require = isset($data['is_age_require']) ? (bool)$data['is_age_require'] : null;
         $this->is_card_authorize = isset($data['is_card_authorize']) ? (bool)$data['is_card_authorize'] : null;
         $this->is_event = isset($data['is_event']) ? (bool)$data['is_event'] : null;

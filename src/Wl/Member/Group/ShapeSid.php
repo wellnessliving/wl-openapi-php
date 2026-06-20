@@ -15,13 +15,20 @@ namespace WlSdk\Wl\Member\Group;
  * - 6 (`SQUARE`): Square.
  * - 7 (`STAR`): Star.
  */
-enum ShapeSid: int
+class ShapeSid
 {
-    case CIRCLE = 1;
-    case HEXAGON = 2;
-    case OVAL = 3;
-    case PENTAGON = 4;
-    case RECTANGLE = 5;
-    case SQUARE = 6;
-    case STAR = 7;
+    /** Circle. */
+    const CIRCLE = 1;
+    /** Hexagon. */
+    const HEXAGON = 2;
+    /** Oval. */
+    const OVAL = 3;
+    /** Pentagon. */
+    const PENTAGON = 4;
+    /** Rectangle. */
+    const RECTANGLE = 5;
+    /** Square. */
+    const SQUARE = 6;
+    /** Star. */
+    const STAR = 7;
 }

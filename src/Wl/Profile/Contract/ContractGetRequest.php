@@ -21,9 +21,9 @@ class ContractGetRequest
      * The type of purchase item. This is one of the {@link \WlSdk\RsPurchaseItemSid} constants.
      * Optional if `k_purchase_item` is not empty.
      *
-     * @var \WlSdk\RsPurchaseItemSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
+    public ?int $id_purchase_item = null;
 
     /**
      * The key of the business to show information for.
@@ -88,7 +88,7 @@ class ContractGetRequest
             [
             'dt_start' => $this->dt_start,
             'f_manual_discount' => $this->f_manual_discount,
-            'id_purchase_item' => $this->id_purchase_item?->value,
+            'id_purchase_item' => $this->id_purchase_item,
             'k_business' => $this->k_business,
             'k_id' => $this->k_id,
             'k_location' => $this->k_location,

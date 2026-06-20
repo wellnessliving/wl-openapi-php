@@ -14,21 +14,21 @@ class CatalogProductGetResponseCategorySort
     /**
      * The sort order. One of the {@link \WlSdk\Core\Sid\SortOrderSid} constants.
      *
-     * @var \WlSdk\Core\Sid\SortOrderSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Core\Sid\SortOrderSid $id_order = null;
+    public ?int $id_order = null;
 
     /**
      * The sort field ID. One of the {@link \WlSdk\Wl\Shop\Category\ShopCategorySortSid} constants.
      *
-     * @var \WlSdk\Wl\Shop\Category\ShopCategorySortSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Shop\Category\ShopCategorySortSid $id_sort = null;
+    public ?int $id_sort = null;
 
     public function __construct(array $data)
     {
         $this->a_order = isset($data['a_order']) ? (array)$data['a_order'] : null;
-        $this->id_order = isset($data['id_order']) ? \WlSdk\Core\Sid\SortOrderSid::tryFrom((int)$data['id_order']) : null;
-        $this->id_sort = isset($data['id_sort']) ? \WlSdk\Wl\Shop\Category\ShopCategorySortSid::tryFrom((int)$data['id_sort']) : null;
+        $this->id_order = isset($data['id_order']) ? (int)$data['id_order'] : null;
+        $this->id_sort = isset($data['id_sort']) ? (int)$data['id_sort'] : null;
     }
 }

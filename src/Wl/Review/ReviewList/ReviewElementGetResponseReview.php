@@ -20,9 +20,9 @@ class ReviewElementGetResponseReview
     /**
      * Status of the Review. One of {@link \WlSdk\RsReviewStatusSid} constants.
      *
-     * @var \WlSdk\RsReviewStatusSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsReviewStatusSid $id_review_status = null;
+    public ?int $id_review_status = null;
 
     /**
      * If `true`, the review is featured. Otherwise, this will be `false`.
@@ -98,7 +98,7 @@ class ReviewElementGetResponseReview
     {
         $this->dt_add = isset($data['dt_add']) ? (string)$data['dt_add'] : null;
         $this->f_rate = isset($data['f_rate']) ? (float)$data['f_rate'] : null;
-        $this->id_review_status = isset($data['id_review_status']) ? \WlSdk\RsReviewStatusSid::tryFrom((int)$data['id_review_status']) : null;
+        $this->id_review_status = isset($data['id_review_status']) ? (int)$data['id_review_status'] : null;
         $this->is_featured = isset($data['is_featured']) ? (bool)$data['is_featured'] : null;
         $this->is_verify = isset($data['is_verify']) ? (bool)$data['is_verify'] : null;
         $this->text_firstname = isset($data['text_firstname']) ? (string)$data['text_firstname'] : null;

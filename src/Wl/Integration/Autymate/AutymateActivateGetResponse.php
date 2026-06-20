@@ -11,12 +11,12 @@ class AutymateActivateGetResponse
      * 
      * One of {@link \WlSdk\Wl\Integration\Autymate\AutymateStatusSid} constants.
      *
-     * @var \WlSdk\Wl\Integration\Autymate\AutymateStatusSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Integration\Autymate\AutymateStatusSid $id_status = null;
+    public ?int $id_status = null;
 
     public function __construct(array $data)
     {
-        $this->id_status = isset($data['id_status']) ? \WlSdk\Wl\Integration\Autymate\AutymateStatusSid::tryFrom((int)$data['id_status']) : null;
+        $this->id_status = isset($data['id_status']) ? (int)$data['id_status'] : null;
     }
 }

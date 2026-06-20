@@ -27,9 +27,9 @@ class Purchase56GetResponseRewardPrize
     /**
      * The ID of Purchase Option type. One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
-     * @var \WlSdk\RsPurchaseItemSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
+    public ?int $id_purchase_item = null;
 
     /**
      * The key of the Purchase Option in the database. The table depends on `id_purchase_item`.
@@ -64,7 +64,7 @@ class Purchase56GetResponseRewardPrize
         $this->f_price = isset($data['f_price']) ? (string)$data['f_price'] : null;
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
         $this->i_score = isset($data['i_score']) ? (int)$data['i_score'] : null;
-        $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
+        $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->k_reward_prize = isset($data['k_reward_prize']) ? (string)$data['k_reward_prize'] : null;
         $this->s_value = isset($data['s_value']) ? (string)$data['s_value'] : null;

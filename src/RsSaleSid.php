@@ -28,20 +28,34 @@ namespace WlSdk;
  * - 10 (`QUICK_BUY`): Products: water, t-shirts, etc. That is available for quick buy.
  * - 14 (`TUITION`): Tuition.
  */
-enum RsSaleSid: int
+class RsSaleSid
 {
-    case APPOINTMENT = 8;
-    case APPOINTMENT_DEPOSIT = 11;
-    case APPOINTMENT_TIP = 12;
-    case CLASS_PERIOD = 6;
-    case COUPON = 7;
-    case ENROLLMENT = 3;
-    case PACKAGE = 5;
-    case PRODUCT = 4;
-    case PROMOTION_CLASS = 1;
-    case PROMOTION_RESOURCE = 9;
-    case PROMOTION_SERVICE = 2;
-    case PROMOTION_VIDEO = 13;
-    case QUICK_BUY = 10;
-    case TUITION = 14;
+    /** Single appointment reservation. */
+    const APPOINTMENT = 8;
+    /** Single appointment deposit reservation. */
+    const APPOINTMENT_DEPOSIT = 11;
+    /** Tips for the appointment. */
+    const APPOINTMENT_TIP = 12;
+    /** Single class visit. */
+    const CLASS_PERIOD = 6;
+    /** Gift card. */
+    const COUPON = 7;
+    /** Enrollments. Classes where flag event is `true`. */
+    const ENROLLMENT = 3;
+    /** Promotions with program [RsProgramSid::PACKAGE](#/components/schemas/RsProgramSid). */
+    const PACKAGE = 5;
+    /** Products: water, t-shirts, etc. */
+    const PRODUCT = 4;
+    /** Promotions with program category [RsProgramCategorySid::CLASSES](#/components/schemas/RsProgramCategorySid) and [RsProgramCategorySid::VISIT](#/components/schemas/RsProgramCategorySid). */
+    const PROMOTION_CLASS = 1;
+    /** Promotions with program category [RsProgramCategorySid::RESOURCE](#/components/schemas/RsProgramCategorySid). */
+    const PROMOTION_RESOURCE = 9;
+    /** Promotions with program category [RsProgramCategorySid::SERVICE](#/components/schemas/RsProgramCategorySid) and [RsProgramCategorySid::INSURANCE](#/components/schemas/RsProgramCategorySid). */
+    const PROMOTION_SERVICE = 2;
+    /** Promotions with program category [RsProgramCategorySid::VIDEO](#/components/schemas/RsProgramCategorySid). */
+    const PROMOTION_VIDEO = 13;
+    /** Products: water, t-shirts, etc. That is available for quick buy. */
+    const QUICK_BUY = 10;
+    /** Tuition. */
+    const TUITION = 14;
 }

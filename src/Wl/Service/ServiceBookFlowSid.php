@@ -9,9 +9,12 @@ namespace WlSdk\Wl\Service;
  * - 3 (`PREFER_ORDER`): Client selects their preferred booking order should be staff member / calendar.
  * - 1 (`STAFF_DATE_ORDER`): Client selects the staff member and then the date and time.
  */
-enum ServiceBookFlowSid: int
+class ServiceBookFlowSid
 {
-    case DATE_STAFF_ORDER = 2;
-    case PREFER_ORDER = 3;
-    case STAFF_DATE_ORDER = 1;
+    /** Client selects the date and time and then the staff member. */
+    const DATE_STAFF_ORDER = 2;
+    /** Client selects their preferred booking order should be staff member / calendar. */
+    const PREFER_ORDER = 3;
+    /** Client selects the staff member and then the date and time. */
+    const STAFF_DATE_ORDER = 1;
 }

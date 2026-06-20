@@ -8,8 +8,10 @@ namespace WlSdk\Core\Sid;
  * - 2 (`ASC`): Ascending order.
  * - 1 (`DESC`): Descending order.
  */
-enum SortOrderSid: int
+class SortOrderSid
 {
-    case ASC = 2;
-    case DESC = 1;
+    /** Ascending order. */
+    const ASC = 2;
+    /** Descending order. */
+    const DESC = 1;
 }

@@ -17,13 +17,20 @@ namespace WlSdk;
  * - 1 (`SALE`): Date of the sale.
  * - 2 (`VISIT`): Date of the first visit.
  */
-enum RsActivationSid: int
+class RsActivationSid
 {
-    case DAY = 7;
-    case FIXED = 3;
-    case MONTH_FIRST = 4;
-    case MONTH_HALF = 6;
-    case MONTH_LAST = 5;
-    case SALE = 1;
-    case VISIT = 2;
+    /** Number of a day of the month or of the week. */
+    const DAY = 7;
+    /** Custom date. */
+    const FIXED = 3;
+    /** The first day of month. */
+    const MONTH_FIRST = 4;
+    /** The 15th day of the month. */
+    const MONTH_HALF = 6;
+    /** The last day of the month. */
+    const MONTH_LAST = 5;
+    /** Date of the sale. */
+    const SALE = 1;
+    /** Date of the first visit. */
+    const VISIT = 2;
 }

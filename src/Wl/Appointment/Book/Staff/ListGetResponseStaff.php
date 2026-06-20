@@ -6,9 +6,9 @@ class ListGetResponseStaff
     /**
      * Staff member's gender. One of {@link \WlSdk\AGenderSid} constants.
      *
-     * @var \WlSdk\AGenderSid|null
+     * @var int|null
      */
-    public ?\WlSdk\AGenderSid $id_gender = null;
+    public ?int $id_gender = null;
 
     /**
      * Whether staff member is available for booking. Note, if staff member reached daily limits, this field
@@ -71,7 +71,7 @@ class ListGetResponseStaff
 
     public function __construct(array $data)
     {
-        $this->id_gender = isset($data['id_gender']) ? \WlSdk\AGenderSid::tryFrom((int)$data['id_gender']) : null;
+        $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
         $this->is_available = isset($data['is_available']) ? (bool)$data['is_available'] : null;
         $this->is_daily_limit = isset($data['is_daily_limit']) ? (bool)$data['is_daily_limit'] : null;
         $this->is_wait_list = isset($data['is_wait_list']) ? (bool)$data['is_wait_list'] : null;

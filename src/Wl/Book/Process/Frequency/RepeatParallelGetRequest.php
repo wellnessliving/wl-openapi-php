@@ -6,7 +6,7 @@ class RepeatParallelGetRequest
     /**
      * List of days of the week to create visits. Each value is a {@link \WlSdk\ADateWeekSid} constant.
      *
-     * @var \WlSdk\ADateWeekSid[]|null
+     * @var int[]|null
      */
     public ?array $a_day = null;
 
@@ -46,9 +46,9 @@ class RepeatParallelGetRequest
      * Count of the visits to be created. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json)
      * == {@link \WlSdk\RsRepeatEndSid}.
      *
-     * @var \WlSdk\RsRepeatEndSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsRepeatEndSid $i_count = null;
+    public ?int $i_count = null;
 
     /**
      * Count of days\weeks\months between recurring bookings.
@@ -60,23 +60,23 @@ class RepeatParallelGetRequest
     /**
      * Recurring booking interval, one of {@link \WlSdk\ADurationSid} constants.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_duration = null;
+    public ?int $id_duration = null;
 
     /**
      * WellnessLiving mode, one of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var \WlSdk\Wl\Mode\ModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
+    public ?int $id_mode = null;
 
     /**
      * Type of repeating, one of {@link \WlSdk\RsRepeatEndSid} constants.
      *
-     * @var \WlSdk\RsRepeatEndSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsRepeatEndSid $id_repeat_end = null;
+    public ?int $id_repeat_end = null;
 
     /**
      * `true` when cancelling booking, `false` otherwise.
@@ -148,11 +148,11 @@ class RepeatParallelGetRequest
             'dt_date' => $this->dt_date,
             'dt_from' => $this->dt_from,
             'dt_to' => $this->dt_to,
-            'i_count' => $this->i_count?->value,
+            'i_count' => $this->i_count,
             'i_duration' => $this->i_duration,
-            'id_duration' => $this->id_duration?->value,
-            'id_mode' => $this->id_mode?->value,
-            'id_repeat_end' => $this->id_repeat_end?->value,
+            'id_duration' => $this->id_duration,
+            'id_mode' => $this->id_mode,
+            'id_repeat_end' => $this->id_repeat_end,
             'is_cancel' => $this->is_cancel,
             'is_include_parallel' => $this->is_include_parallel,
             'is_new_user' => $this->is_new_user,

@@ -8,8 +8,10 @@ namespace WlSdk\Wl\Integration\Autymate;
  * - 1 (`ENROLL`): Access Autymate to create an initial enrollment.
  * - 2 (`VIEW`): Access Autymate to view the dashboard.
  */
-enum AutymateAccessModeSid: int
+class AutymateAccessModeSid
 {
-    case ENROLL = 1;
-    case VIEW = 2;
+    /** Access Autymate to create an initial enrollment. */
+    const ENROLL = 1;
+    /** Access Autymate to view the dashboard. */
+    const VIEW = 2;
 }

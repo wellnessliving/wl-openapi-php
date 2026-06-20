@@ -28,26 +28,46 @@ namespace WlSdk\Core\Locale;
  * - 3 (`UK`): United Kingdom.
  * - 1 (`USA`): United States of America.
  */
-enum LocaleSid: int
+class LocaleSid
 {
-    case AUSTRALIA = 4;
-    case BAHAMAS = 20;
-    case BERMUDA = 19;
-    case CANADA = 2;
-    case CAYMAN = 5;
-    case CYPRUS = 13;
-    case EGYPT = 8;
-    case IRELAND = 18;
-    case KUWAIT = 14;
-    case MAURITIUS = 16;
-    case NEVERLAND = 9;
-    case NEW_ZEALAND = 10;
-    case PHILIPPINES = 12;
-    case SAUDI_ARABIA = 15;
-    case SENEGAL = 17;
-    case SINGAPORE = 21;
-    case SOUTH_AFRICA = 6;
-    case UAE = 11;
-    case UK = 3;
-    case USA = 1;
+    /** Australia. */
+    const AUSTRALIA = 4;
+    /** Bahamas. */
+    const BAHAMAS = 20;
+    /** Bermuda. */
+    const BERMUDA = 19;
+    /** Canada. */
+    const CANADA = 2;
+    /** Cayman Islands. */
+    const CAYMAN = 5;
+    /** Cyprus. */
+    const CYPRUS = 13;
+    /** Egypt. */
+    const EGYPT = 8;
+    /** Republic of Ireland. */
+    const IRELAND = 18;
+    /** Kuwait */
+    const KUWAIT = 14;
+    /** Republic of Mauritius. */
+    const MAURITIUS = 16;
+    /** A special locale that can be used for testing or a business situated in an unknown region. */
+    const NEVERLAND = 9;
+    /** New Zealand. */
+    const NEW_ZEALAND = 10;
+    /** Philippines. */
+    const PHILIPPINES = 12;
+    /** Saudi Arabia. */
+    const SAUDI_ARABIA = 15;
+    /** Senegal */
+    const SENEGAL = 17;
+    /** Singapore. */
+    const SINGAPORE = 21;
+    /** South Africa. */
+    const SOUTH_AFRICA = 6;
+    /** United Arab Emirates. */
+    const UAE = 11;
+    /** United Kingdom. */
+    const UK = 3;
+    /** United States of America. */
+    const USA = 1;
 }

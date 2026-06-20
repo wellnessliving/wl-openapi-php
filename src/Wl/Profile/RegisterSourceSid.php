@@ -16,9 +16,12 @@ namespace WlSdk\Wl\Profile;
  *   <b>Don't use to edit existing user profile.</b>
  * - 3 (`UNSET_VALUE`): This is a service value, which means to not choose any specific source.
  */
-enum RegisterSourceSid: int
+class RegisterSourceSid
 {
-    case BOOKING_AND_PURCHASE = 1;
-    case SELF = 2;
-    case UNSET_VALUE = 3;
+    /** Source when a user registers during purchase or booking. */
+    const BOOKING_AND_PURCHASE = 1;
+    /** Source when a user registers on self-registration web app, self-registration web app URL, etc. */
+    const SELF = 2;
+    /** This is a service value, which means to not choose any specific source. */
+    const UNSET_VALUE = 3;
 }

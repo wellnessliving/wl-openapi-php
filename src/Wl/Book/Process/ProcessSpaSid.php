@@ -52,18 +52,30 @@ namespace WlSdk\Wl\Book\Process;
  *   Designed for Client Web View.
  * - 3 (`STORE`): A list of possible Purchase Options to be bought.
  */
-enum ProcessSpaSid: int
+class ProcessSpaSid
 {
-    case DETAIL = 10;
-    case DOCUMENT = 8;
-    case FREQUENCY = 9;
-    case INFO = 2;
-    case INSTALLMENT = 4;
-    case PASSPORT = 1;
-    case PAYMENT = 5;
-    case QUIZ = 7;
-    case RELATION = 12;
-    case RESOURCE = 6;
-    case SESSION = 11;
-    case STORE = 3;
+    /** Step "Class details". */
+    const DETAIL = 10;
+    /** Step "Documents". */
+    const DOCUMENT = 8;
+    /** Step "Frequency". */
+    const FREQUENCY = 9;
+    /** Information about the class. */
+    const INFO = 2;
+    /** Installment selection. */
+    const INSTALLMENT = 4;
+    /** Sign in, Sign up, fill in all necessary account data. */
+    const PASSPORT = 1;
+    /** Card data and the booking confirmation. */
+    const PAYMENT = 5;
+    /** Quizzes attached to the class. */
+    const QUIZ = 7;
+    /** Booking for. */
+    const RELATION = 12;
+    /** Selection of assets. */
+    const RESOURCE = 6;
+    /** Session selection step for a session event. */
+    const SESSION = 11;
+    /** A list of possible Purchase Options to be bought. */
+    const STORE = 3;
 }

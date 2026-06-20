@@ -6,9 +6,9 @@ class TabGetResponseTab
     /**
      * The tab type ID which is one of the {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
      *
-     * @var \WlSdk\Wl\Classes\Tab\TabSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Classes\Tab\TabSid $id_class_tab_object = null;
+    public ?int $id_class_tab_object = null;
 
     /**
      * If this tab has redefined a default system Class Tab then it references a constant defined in
@@ -16,9 +16,9 @@ class TabGetResponseTab
      * 
      * Otherwise, this will be `null`.
      *
-     * @var \WlSdk\Wl\Classes\Tab\TabSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Classes\Tab\TabSid $id_class_tab_system = null;
+    public ?int $id_class_tab_system = null;
 
     /**
      * The class tab key. This will be `null` if it's a system tab.
@@ -43,8 +43,8 @@ class TabGetResponseTab
 
     public function __construct(array $data)
     {
-        $this->id_class_tab_object = isset($data['id_class_tab_object']) ? \WlSdk\Wl\Classes\Tab\TabSid::tryFrom((int)$data['id_class_tab_object']) : null;
-        $this->id_class_tab_system = isset($data['id_class_tab_system']) ? \WlSdk\Wl\Classes\Tab\TabSid::tryFrom((int)$data['id_class_tab_system']) : null;
+        $this->id_class_tab_object = isset($data['id_class_tab_object']) ? (int)$data['id_class_tab_object'] : null;
+        $this->id_class_tab_system = isset($data['id_class_tab_system']) ? (int)$data['id_class_tab_system'] : null;
         $this->k_class_tab = isset($data['k_class_tab']) ? (string)$data['k_class_tab'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->s_title = isset($data['s_title']) ? (string)$data['s_title'] : null;

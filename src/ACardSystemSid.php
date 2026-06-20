@@ -22,20 +22,34 @@ namespace WlSdk;
  * - 14 (`UNION_PAY`): Union Pay.
  * - 12 (`VISA`): Visa.
  */
-enum ACardSystemSid: int
+class ACardSystemSid
 {
-    case AMERICAN_EXPRESS = 1;
-    case BMO = 2;
-    case CIBC = 3;
-    case DINNER_CLUB = 4;
-    case DISCOVER = 5;
-    case HSBC_CANADA = 6;
-    case JCB = 7;
-    case MASTERCARD = 8;
-    case ROYAL_BANK = 9;
-    case SCOTIBANK = 10;
-    case TD_CANADA = 11;
-    case UNDEFINED = 13;
-    case UNION_PAY = 14;
-    case VISA = 12;
+    /** American Express. */
+    const AMERICAN_EXPRESS = 1;
+    /** Bank of Montreal (BMO). */
+    const BMO = 2;
+    /** Canadian Imperial Bank of Commerce (CIBC). */
+    const CIBC = 3;
+    /** Diners Club International. */
+    const DINNER_CLUB = 4;
+    /** Discover. */
+    const DISCOVER = 5;
+    /** HSBC Bank Canada. */
+    const HSBC_CANADA = 6;
+    /** Japan Credit Bureau (JCB). */
+    const JCB = 7;
+    /** Mastercard. */
+    const MASTERCARD = 8;
+    /** Royal Bank of Canada. */
+    const ROYAL_BANK = 9;
+    /** Scotiabank. */
+    const SCOTIBANK = 10;
+    /** TD Canada Trust. */
+    const TD_CANADA = 11;
+    /** The card system can't be determined. */
+    const UNDEFINED = 13;
+    /** Union Pay. */
+    const UNION_PAY = 14;
+    /** Visa. */
+    const VISA = 12;
 }

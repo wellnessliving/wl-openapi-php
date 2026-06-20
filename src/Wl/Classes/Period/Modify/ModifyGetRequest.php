@@ -20,23 +20,23 @@ class ModifyGetRequest
     /**
      * The class modify step type. One of the {@link \WlSdk\RsClassModifyActionSid} constants.
      *
-     * @var \WlSdk\RsClassModifyActionSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsClassModifyActionSid $id_class_modify_action = null;
+    public ?int $id_class_modify_action = null;
 
     /**
      * The modify mode type. One of the {@link \WlSdk\RsClassModifyModeSid} constants.
      *
-     * @var \WlSdk\RsClassModifyModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsClassModifyModeSid $id_class_modify_mode = null;
+    public ?int $id_class_modify_mode = null;
 
     /**
      * The class modify action type. One of the {@link \WlSdk\RsClassModifyModeSid} constants.
      *
-     * @var \WlSdk\RsClassModifyModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsClassModifyModeSid $id_step = null;
+    public ?int $id_step = null;
 
     /**
      * The step direction.
@@ -81,9 +81,9 @@ class ModifyGetRequest
             [
             'dt_end' => $this->dt_end,
             'dt_start' => $this->dt_start,
-            'id_class_modify_action' => $this->id_class_modify_action?->value,
-            'id_class_modify_mode' => $this->id_class_modify_mode?->value,
-            'id_step' => $this->id_step?->value,
+            'id_class_modify_action' => $this->id_class_modify_action,
+            'id_class_modify_mode' => $this->id_class_modify_mode,
+            'id_step' => $this->id_step,
             'is_back' => $this->is_back,
             'k_business' => $this->k_business,
             'k_class_period' => $this->k_class_period,

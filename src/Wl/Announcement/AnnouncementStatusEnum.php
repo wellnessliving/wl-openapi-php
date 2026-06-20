@@ -10,10 +10,14 @@ namespace WlSdk\Wl\Announcement;
  * - 3 (`SCHEDULE`): Announcement scheduled for publishing.
  * - 4 (`UNPUBLISH`): Announcement previously will be published, but now not published.
  */
-enum AnnouncementStatusEnum: int
+class AnnouncementStatusEnum
 {
-    case DRAFT = 1;
-    case PUBLISH = 2;
-    case SCHEDULE = 3;
-    case UNPUBLISH = 4;
+    /** Announcement does not have publish/unpublish dates. */
+    const DRAFT = 1;
+    /** Announcement currently is published. */
+    const PUBLISH = 2;
+    /** Announcement scheduled for publishing. */
+    const SCHEDULE = 3;
+    /** Announcement previously will be published, but now not published. */
+    const UNPUBLISH = 4;
 }

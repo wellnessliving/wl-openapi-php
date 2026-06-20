@@ -43,25 +43,25 @@ class QuizElementGetResponseSetting
      * 
      * Considered only if `is_book` is `true`.
      *
-     * @var \WlSdk\Wl\Quiz\QuizFrequencySid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Quiz\QuizFrequencySid $id_book_request_type = null;
+    public ?int $id_book_request_type = null;
 
     /**
      * Time interval ID. One of {@link \WlSdk\ADurationSid} constants.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_notify_automated = null;
+    public ?int $id_notify_automated = null;
 
     /**
      * Whether response is required every time they purchase service.
      * 
      * Considered only if `is_purchase` is `true`.
      *
-     * @var \WlSdk\Wl\Quiz\QuizFrequencySid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Quiz\QuizFrequencySid $id_purchase_request_type = null;
+    public ?int $id_purchase_request_type = null;
 
     /**
      * Whether form support amending responses.
@@ -211,9 +211,9 @@ class QuizElementGetResponseSetting
         $this->a_service = isset($data['a_service']) ? (array)$data['a_service'] : null;
         $this->hide_frontend = isset($data['hide_frontend']) ? (bool)$data['hide_frontend'] : null;
         $this->i_notify_automated = $data['i_notify_automated'] ?? null;
-        $this->id_book_request_type = isset($data['id_book_request_type']) ? \WlSdk\Wl\Quiz\QuizFrequencySid::tryFrom((int)$data['id_book_request_type']) : null;
-        $this->id_notify_automated = isset($data['id_notify_automated']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_notify_automated']) : null;
-        $this->id_purchase_request_type = isset($data['id_purchase_request_type']) ? \WlSdk\Wl\Quiz\QuizFrequencySid::tryFrom((int)$data['id_purchase_request_type']) : null;
+        $this->id_book_request_type = isset($data['id_book_request_type']) ? (int)$data['id_book_request_type'] : null;
+        $this->id_notify_automated = isset($data['id_notify_automated']) ? (int)$data['id_notify_automated'] : null;
+        $this->id_purchase_request_type = isset($data['id_purchase_request_type']) ? (int)$data['id_purchase_request_type'] : null;
         $this->is_amend_support = isset($data['is_amend_support']) ? (bool)$data['is_amend_support'] : null;
         $this->is_book = isset($data['is_book']) ? (bool)$data['is_book'] : null;
         $this->is_book_before = isset($data['is_book_before']) ? (bool)$data['is_book_before'] : null;

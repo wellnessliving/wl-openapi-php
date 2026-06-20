@@ -9,9 +9,12 @@ namespace WlSdk;
  * - 3 (`CREDIT`): Manual account charge by admin.
  * - 2 (`DEBIT`): Manual account withdrawal by admin.
  */
-enum RsPayAccountChargeSid: int
+class RsPayAccountChargeSid
 {
-    case AUTO = 1;
-    case CREDIT = 3;
-    case DEBIT = 2;
+    /** Account charging using payment form. */
+    const AUTO = 1;
+    /** Manual account charge by admin. */
+    const CREDIT = 3;
+    /** Manual account withdrawal by admin. */
+    const DEBIT = 2;
 }

@@ -31,25 +31,44 @@ namespace WlSdk\Core\Locale;
  *   Is used in Senegal.
  * - 7 (`ZAR`): South African rand.
  */
-enum CurrencySid: int
+class CurrencySid
 {
-    case AED = 11;
-    case AUD = 6;
-    case BMD = 18;
-    case BSD = 19;
-    case CAD = 4;
-    case EGP = 8;
-    case EUR = 13;
-    case GBP = 3;
-    case KWD = 14;
-    case KYD = 5;
-    case MUR = 16;
-    case NZD = 10;
-    case PHP = 12;
-    case SAR = 15;
-    case SGD = 20;
-    case UNKNOWN = 2;
-    case USD = 1;
-    case XOF = 17;
-    case ZAR = 7;
+    /** United Arab Emirates dirham. */
+    const AED = 11;
+    /** Australian dollar. */
+    const AUD = 6;
+    /** Bermudian Dollar. */
+    const BMD = 18;
+    /** Bahamian dollar. */
+    const BSD = 19;
+    /** Canadian dollar. */
+    const CAD = 4;
+    /** Egypt Pound. */
+    const EGP = 8;
+    /** Euro. */
+    const EUR = 13;
+    /** British pound. */
+    const GBP = 3;
+    /** Kuwaiti dinar. */
+    const KWD = 14;
+    /** Cayman Islands dollar. */
+    const KYD = 5;
+    /** Mauritian Rupee. */
+    const MUR = 16;
+    /** New Zealand Dollar. */
+    const NZD = 10;
+    /** Philippines Pesco. */
+    const PHP = 12;
+    /** Saudi Riyal. */
+    const SAR = 15;
+    /** Singapore dollar. */
+    const SGD = 20;
+    /** Unknown code. */
+    const UNKNOWN = 2;
+    /** US dollars. */
+    const USD = 1;
+    /** West African CFA franc. */
+    const XOF = 17;
+    /** South African rand. */
+    const ZAR = 7;
 }

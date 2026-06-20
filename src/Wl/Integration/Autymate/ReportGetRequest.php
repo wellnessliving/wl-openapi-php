@@ -7,7 +7,7 @@ class ReportGetRequest
      * List of payment methods to filter out in the report.
      * Each element is one of the {@link \WlSdk\RsPayMethodSid} constants.
      *
-     * @var \WlSdk\RsPayMethodSid[]|null
+     * @var int[]|null
      */
     public ?array $a_pay_method_remove = null;
 

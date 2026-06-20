@@ -30,9 +30,9 @@ class RepeatGetResponse
     /**
      * Count of the visits to be created. Not empty only when `id_repeat_end` == {@link \WlSdk\RsRepeatEndSid}.
      *
-     * @var \WlSdk\RsRepeatEndSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsRepeatEndSid $i_count = null;
+    public ?int $i_count = null;
 
     /**
      * Start date of repeatable period in human-readable format.
@@ -53,7 +53,7 @@ class RepeatGetResponse
         $this->a_visit = isset($data['a_visit']) ? array_map(static fn($item) => new RepeatGetResponseVisit((array)$item), (array)$data['a_visit']) : null;
         $this->dt_from = isset($data['dt_from']) ? (string)$data['dt_from'] : null;
         $this->dt_to = isset($data['dt_to']) ? (string)$data['dt_to'] : null;
-        $this->i_count = isset($data['i_count']) ? \WlSdk\RsRepeatEndSid::tryFrom((int)$data['i_count']) : null;
+        $this->i_count = isset($data['i_count']) ? (int)$data['i_count'] : null;
         $this->text_date_from = isset($data['text_date_from']) ? (string)$data['text_date_from'] : null;
         $this->text_date_to = isset($data['text_date_to']) ? (string)$data['text_date_to'] : null;
     }

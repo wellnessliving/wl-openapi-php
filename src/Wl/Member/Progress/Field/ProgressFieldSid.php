@@ -22,20 +22,34 @@ namespace WlSdk\Wl\Member\Progress\Field;
  * - 5 (`WAIST`): Waist
  * - 10 (`WEIGHT`): Client weight.
  */
-enum ProgressFieldSid: int
+class ProgressFieldSid
 {
-    case ABDOMEN = 6;
-    case ARMS = 3;
-    case BLOOD_PRESSURE = 2;
-    case BODY_FAT = 11;
-    case BUST = 4;
-    case HEIGHT = 9;
-    case HIPS = 7;
-    case LONG_TERM_GOALS = 14;
-    case PRE_WORKOUT_HEART_RATE = 1;
-    case PROGRESS_PICTURE = 12;
-    case SHORT_TERM_GOALS = 13;
-    case THIGHS = 8;
-    case WAIST = 5;
-    case WEIGHT = 10;
+    /** Abdomen field. */
+    const ABDOMEN = 6;
+    /** Arms field. */
+    const ARMS = 3;
+    /** Blood pressure field. */
+    const BLOOD_PRESSURE = 2;
+    /** Body fat field. */
+    const BODY_FAT = 11;
+    /** Bust field. */
+    const BUST = 4;
+    /** Height of the client. */
+    const HEIGHT = 9;
+    /** Client hips size. */
+    const HIPS = 7;
+    /** Long term goals. */
+    const LONG_TERM_GOALS = 14;
+    /** Pre workout heart rate. */
+    const PRE_WORKOUT_HEART_RATE = 1;
+    /** Progress picture. */
+    const PROGRESS_PICTURE = 12;
+    /** Short term goals. */
+    const SHORT_TERM_GOALS = 13;
+    /** THIGHS */
+    const THIGHS = 8;
+    /** Waist */
+    const WAIST = 5;
+    /** Client weight. */
+    const WEIGHT = 10;
 }

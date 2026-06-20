@@ -13,23 +13,23 @@ class BusinessDesignGetResponseData
     /**
      * Layout ID. For more details, see {@link \WlSdk\RsPageFrontendHeaderLayoutSid}.
      *
-     * @var \WlSdk\RsPageFrontendHeaderLayoutSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsPageFrontendHeaderLayoutSid $id_layout = null;
+    public ?int $id_layout = null;
 
     /**
      * Logo position ID. For more details, see {@link \WlSdk\RsBusinessDesignLogoPositionSid}.
      *
-     * @var \WlSdk\RsBusinessDesignLogoPositionSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsBusinessDesignLogoPositionSid $id_logo_position = null;
+    public ?int $id_logo_position = null;
 
     /**
      * Logo style ID. For more details, see {@link \WlSdk\RsBusinessDesignLogoStyleSid}.
      *
-     * @var \WlSdk\RsBusinessDesignLogoStyleSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsBusinessDesignLogoStyleSid $id_logo_style = null;
+    public ?int $id_logo_style = null;
 
     /**
      * If `true` clients can check-in using the Client Web App and Achieve Web App.
@@ -182,9 +182,9 @@ class BusinessDesignGetResponseData
     public function __construct(array $data)
     {
         $this->hide_past_days = isset($data['hide_past_days']) ? (bool)$data['hide_past_days'] : null;
-        $this->id_layout = isset($data['id_layout']) ? \WlSdk\RsPageFrontendHeaderLayoutSid::tryFrom((int)$data['id_layout']) : null;
-        $this->id_logo_position = isset($data['id_logo_position']) ? \WlSdk\RsBusinessDesignLogoPositionSid::tryFrom((int)$data['id_logo_position']) : null;
-        $this->id_logo_style = isset($data['id_logo_style']) ? \WlSdk\RsBusinessDesignLogoStyleSid::tryFrom((int)$data['id_logo_style']) : null;
+        $this->id_layout = isset($data['id_layout']) ? (int)$data['id_layout'] : null;
+        $this->id_logo_position = isset($data['id_logo_position']) ? (int)$data['id_logo_position'] : null;
+        $this->id_logo_style = isset($data['id_logo_style']) ? (int)$data['id_logo_style'] : null;
         $this->is_attend_self = isset($data['is_attend_self']) ? (bool)$data['is_attend_self'] : null;
         $this->is_appointment_capacity = isset($data['is_appointment_capacity']) ? (bool)$data['is_appointment_capacity'] : null;
         $this->is_class_capacity = isset($data['is_class_capacity']) ? (bool)$data['is_class_capacity'] : null;

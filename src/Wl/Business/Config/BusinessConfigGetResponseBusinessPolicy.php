@@ -73,44 +73,44 @@ class BusinessConfigGetResponseBusinessPolicy
     /**
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_book_before = null;
+    public ?int $id_book_before = null;
 
     /**
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_book_future = null;
+    public ?int $id_book_future = null;
 
     /**
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_cancel = null;
+    public ?int $id_cancel = null;
 
     /**
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_promote = null;
+    public ?int $id_promote = null;
 
     /**
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_promote_fastest_response = null;
+    public ?int $id_promote_fastest_response = null;
 
     /**
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
-     * @var \WlSdk\ADurationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\ADurationSid $id_promote_require_confirm = null;
+    public ?int $id_promote_require_confirm = null;
 
     /**
      * if `true` - clients with purchase options are only allowed
@@ -226,12 +226,12 @@ class BusinessConfigGetResponseBusinessPolicy
         $this->i_promote_fastest_response = isset($data['i_promote_fastest_response']) ? (int)$data['i_promote_fastest_response'] : null;
         $this->i_promote_require_confirm = isset($data['i_promote_require_confirm']) ? (int)$data['i_promote_require_confirm'] : null;
         $this->i_reattempt_count = isset($data['i_reattempt_count']) ? (int)$data['i_reattempt_count'] : null;
-        $this->id_book_before = isset($data['id_book_before']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_book_before']) : null;
-        $this->id_book_future = isset($data['id_book_future']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_book_future']) : null;
-        $this->id_cancel = isset($data['id_cancel']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_cancel']) : null;
-        $this->id_promote = isset($data['id_promote']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_promote']) : null;
-        $this->id_promote_fastest_response = isset($data['id_promote_fastest_response']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_promote_fastest_response']) : null;
-        $this->id_promote_require_confirm = isset($data['id_promote_require_confirm']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_promote_require_confirm']) : null;
+        $this->id_book_before = isset($data['id_book_before']) ? (int)$data['id_book_before'] : null;
+        $this->id_book_future = isset($data['id_book_future']) ? (int)$data['id_book_future'] : null;
+        $this->id_cancel = isset($data['id_cancel']) ? (int)$data['id_cancel'] : null;
+        $this->id_promote = isset($data['id_promote']) ? (int)$data['id_promote'] : null;
+        $this->id_promote_fastest_response = isset($data['id_promote_fastest_response']) ? (int)$data['id_promote_fastest_response'] : null;
+        $this->id_promote_require_confirm = isset($data['id_promote_require_confirm']) ? (int)$data['id_promote_require_confirm'] : null;
         $this->is_book_inside_active_pay_period = isset($data['is_book_inside_active_pay_period']) ? (bool)$data['is_book_inside_active_pay_period'] : null;
         $this->is_disable_promotion = isset($data['is_disable_promotion']) ? (int)$data['is_disable_promotion'] : null;
         $this->is_enable_payment_penalty = isset($data['is_enable_payment_penalty']) ? (bool)$data['is_enable_payment_penalty'] : null;

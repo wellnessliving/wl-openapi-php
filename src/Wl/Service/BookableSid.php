@@ -9,9 +9,12 @@ namespace WlSdk\Wl\Service;
  * - 3 (`CUSTOM`): Only special client groups can book.
  * - 2 (`NONE`): Nobody can book.
  */
-enum BookableSid: int
+class BookableSid
 {
-    case ALL = 1;
-    case CUSTOM = 3;
-    case NONE = 2;
+    /** All users can book. */
+    const ALL = 1;
+    /** Only special client groups can book. */
+    const CUSTOM = 3;
+    /** Nobody can book. */
+    const NONE = 2;
 }

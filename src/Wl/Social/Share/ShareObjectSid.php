@@ -12,10 +12,14 @@ namespace WlSdk\Wl\Social\Share;
  * - 1 (`PURCHASE`): Purchase.
  * - 2 (`REVIEW`): Review.
  */
-enum ShareObjectSid: int
+class ShareObjectSid
 {
-    case BOOK = 4;
-    case LOCATION = 3;
-    case PURCHASE = 1;
-    case REVIEW = 2;
+    /** Book. */
+    const BOOK = 4;
+    /** Location. */
+    const LOCATION = 3;
+    /** Purchase. */
+    const PURCHASE = 1;
+    /** Review. */
+    const REVIEW = 2;
 }

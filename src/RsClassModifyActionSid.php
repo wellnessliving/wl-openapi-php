@@ -9,9 +9,12 @@ namespace WlSdk;
  * - 1 (`EDIT`): Change class schedule.
  * - 3 (`RESTORE`): Restore cancelled schedule.
  */
-enum RsClassModifyActionSid: int
+class RsClassModifyActionSid
 {
-    case CANCEL = 2;
-    case EDIT = 1;
-    case RESTORE = 3;
+    /** Cancel class schedule. */
+    const CANCEL = 2;
+    /** Change class schedule. */
+    const EDIT = 1;
+    /** Restore cancelled schedule. */
+    const RESTORE = 3;
 }

@@ -13,9 +13,12 @@ namespace WlSdk\Wl\Coupon;
  * - 3 (`QUICK`): Quick Gift Card.
  *   Only one card of this type can be created in one business.
  */
-enum TypeSid: int
+class TypeSid
 {
-    case AMOUNT = 2;
-    case COMPONENT = 1;
-    case QUICK = 3;
+    /** Amount Gift Card. */
+    const AMOUNT = 2;
+    /** Product Gift Card. */
+    const COMPONENT = 1;
+    /** Quick Gift Card. */
+    const QUICK = 3;
 }

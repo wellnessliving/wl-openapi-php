@@ -9,9 +9,12 @@ namespace WlSdk;
  * - 1 (`MALE`): Male gender.
  * - 3 (`UNDEFINED`): Gender is undefined in cases where the user preferred not to identify their gender.
  */
-enum AGenderSid: int
+class AGenderSid
 {
-    case FEMALE = 2;
-    case MALE = 1;
-    case UNDEFINED = 3;
+    /** Female gender. */
+    const FEMALE = 2;
+    /** Male gender. */
+    const MALE = 1;
+    /** Gender is undefined in cases where the user preferred not to identify their gender. */
+    const UNDEFINED = 3;
 }

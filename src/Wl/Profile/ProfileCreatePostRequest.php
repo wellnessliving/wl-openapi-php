@@ -9,7 +9,7 @@ class ProfileCreatePostRequest
      * 
      * Available only for leads added by CAASI agent.
      *
-     * @var \WlSdk\Wl\Login\Member\Intents\MemberIntentsSid[]|null
+     * @var int[]|null
      */
     public ?array $a_intents = null;
 
@@ -26,9 +26,9 @@ class ProfileCreatePostRequest
      * 
      * `0` if not specified.
      *
-     * @var \WlSdk\Wl\Gender\GenderSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Gender\GenderSid $id_gender = null;
+    public ?int $id_gender = null;
 
     /**
      * Lead source ID.
@@ -36,9 +36,9 @@ class ProfileCreatePostRequest
      * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * `0` if not specified.
      *
-     * @var \WlSdk\Wl\Mode\ModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Mode\ModeSid $id_lead_source = null;
+    public ?int $id_lead_source = null;
 
     /**
      * Vaccination status ID.
@@ -47,9 +47,9 @@ class ProfileCreatePostRequest
      * 
      * `0` if not specified.
      *
-     * @var \WlSdk\Wl\Login\Member\VaccinationStatus\VaccinationStatusSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Login\Member\VaccinationStatus\VaccinationStatusSid $id_vaccination_status = null;
+    public ?int $id_vaccination_status = null;
 
     /**
      * `true` means to add user to the legacy lead report.
@@ -151,9 +151,9 @@ class ProfileCreatePostRequest
             [
             'a_intents' => $this->a_intents,
             'dt_birthday' => $this->dt_birthday,
-            'id_gender' => $this->id_gender?->value,
-            'id_lead_source' => $this->id_lead_source?->value,
-            'id_vaccination_status' => $this->id_vaccination_status?->value,
+            'id_gender' => $this->id_gender,
+            'id_lead_source' => $this->id_lead_source,
+            'id_vaccination_status' => $this->id_vaccination_status,
             'is_lead' => $this->is_lead,
             'k_business' => $this->k_business,
             'k_lead_source' => $this->k_lead_source,

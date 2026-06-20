@@ -15,9 +15,12 @@ namespace WlSdk\Wl\Login\Type;
  *   See [SystemSid](#/components/schemas/Wl.Login.Type.SystemSid) for details.
  * - 2 (`PASSHOLDER`): Record contains type of client.
  */
-enum ClientTypeSid: int
+class ClientTypeSid
 {
-    case MEMBER = 3;
-    case NOTHING = 1;
-    case PASSHOLDER = 2;
+    /** Record contains type of member. */
+    const MEMBER = 3;
+    /** Record is [SystemSid::PROSPECT](#/components/schemas/Wl.Login.Type.SystemSid). */
+    const NOTHING = 1;
+    /** Record contains type of client. */
+    const PASSHOLDER = 2;
 }

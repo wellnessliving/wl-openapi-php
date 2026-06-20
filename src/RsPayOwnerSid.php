@@ -9,9 +9,12 @@ namespace WlSdk;
  * - 2 (`BUSINESS`): Business.
  * - 1 (`USER`): System user.
  */
-enum RsPayOwnerSid: int
+class RsPayOwnerSid
 {
-    case ANONYMOUS = 3;
-    case BUSINESS = 2;
-    case USER = 1;
+    /** Anonymous user (Walk-In). */
+    const ANONYMOUS = 3;
+    /** Business. */
+    const BUSINESS = 2;
+    /** System user. */
+    const USER = 1;
 }

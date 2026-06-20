@@ -9,9 +9,9 @@ class PartnerSettingsGetResponse
     /**
      * The homepage tour of the business, which depends on the type.
      *
-     * @var \WlSdk\RsHomeTourSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsHomeTourSid $id_business_tour = null;
+    public ?int $id_business_tour = null;
 
     /**
      * The business key.
@@ -59,7 +59,7 @@ class PartnerSettingsGetResponse
 
     public function __construct(array $data)
     {
-        $this->id_business_tour = isset($data['id_business_tour']) ? \WlSdk\RsHomeTourSid::tryFrom((int)$data['id_business_tour']) : null;
+        $this->id_business_tour = isset($data['id_business_tour']) ? (int)$data['id_business_tour'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;
         $this->text_name_first = isset($data['text_name_first']) ? (string)$data['text_name_first'] : null;
         $this->text_name_last = isset($data['text_name_last']) ? (string)$data['text_name_last'] : null;

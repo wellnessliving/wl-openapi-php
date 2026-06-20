@@ -8,8 +8,10 @@ namespace WlSdk\Wl\Reception\Roster;
  * - 1 (`RECENT`): Redirect user to recently viewed class.
  * - 2 (`SCHEDULE`): Redirect user to upcoming schedule.
  */
-enum DirectSid: int
+class DirectSid
 {
-    case RECENT = 1;
-    case SCHEDULE = 2;
+    /** Redirect user to recently viewed class. */
+    const RECENT = 1;
+    /** Redirect user to upcoming schedule. */
+    const SCHEDULE = 2;
 }

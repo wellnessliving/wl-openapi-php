@@ -65,9 +65,9 @@ class ElementGetRequest
      * The ID of item category.
      * One of the {@link \WlSdk\RsSaleSid} constants.
      *
-     * @var \WlSdk\RsSaleSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsSaleSid $id_sale = null;
+    public ?int $id_sale = null;
 
     /**
      * Determines whether the API is called in the backend mode.
@@ -141,7 +141,7 @@ class ElementGetRequest
             'i_image_width' => $this->i_image_width,
             'i_promotion_image_height' => $this->i_promotion_image_height,
             'i_promotion_image_width' => $this->i_promotion_image_width,
-            'id_sale' => $this->id_sale?->value,
+            'id_sale' => $this->id_sale,
             'is_backend' => $this->is_backend,
             'k_business' => $this->k_business,
             'k_id' => $this->k_id,

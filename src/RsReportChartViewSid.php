@@ -11,11 +11,16 @@ namespace WlSdk;
  * - 3 (`LINE`): Line chart.
  * - 4 (`YEAR_COLUMN`): Year-by-year comparisons in the column chart.
  */
-enum RsReportChartViewSid: int
+class RsReportChartViewSid
 {
-    case AREA = 2;
-    case COLUMN = 1;
-    case DONUT = 5;
-    case LINE = 3;
-    case YEAR_COLUMN = 4;
+    /** Area chart. */
+    const AREA = 2;
+    /** Column chart. */
+    const COLUMN = 1;
+    /** Donut chart. */
+    const DONUT = 5;
+    /** Line chart. */
+    const LINE = 3;
+    /** Year-by-year comparisons in the column chart. */
+    const YEAR_COLUMN = 4;
 }

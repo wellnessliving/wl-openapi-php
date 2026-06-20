@@ -11,9 +11,12 @@ namespace WlSdk\Wl\Schedule\Design;
  * - 3 (`CLIENT_NAME`): Client name in header.
  * - 2 (`STAFF_NAME`): Staff name in header.
  */
-enum OptionSid: int
+class OptionSid
 {
-    case APPOINTMENT_NAME = 1;
-    case CLIENT_NAME = 3;
-    case STAFF_NAME = 2;
+    /** Appointment name in header. */
+    const APPOINTMENT_NAME = 1;
+    /** Client name in header. */
+    const CLIENT_NAME = 3;
+    /** Staff name in header. */
+    const STAFF_NAME = 2;
 }

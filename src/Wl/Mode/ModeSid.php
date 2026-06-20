@@ -38,34 +38,62 @@ namespace WlSdk\Wl\Mode;
  * - 11 (`WIDGET`): Action made via widget (purchase, book etc).
  * - 25 (`ZAPIER`): Action from Zapier.
  */
-enum ModeSid: int
+class ModeSid
 {
-    case API = 28;
-    case AZURE = 21;
-    case CENTRED = 23;
-    case CLASSPASS_BOOKING = 8;
-    case COLLECTIONS = 22;
-    case COLLECTIONS_FUTURE = 26;
-    case CONCERTO = 27;
-    case EMAIL = 18;
-    case FACEBOOK = 20;
-    case GO_HIGH_LEVEL = 30;
-    case GOOGLE = 19;
-    case GOOGLE_BOOKING = 7;
-    case GYMPASS_BOOKING = 14;
-    case IMPORT = 5;
-    case MICROSITE = 12;
-    case MICROSOFT = 24;
-    case MY_PRESENCE_SITE = 13;
-    case SMS = 17;
-    case SPA_BACKEND = 4;
-    case SPA_FRONTEND = 3;
-    case SYSTEM = 10;
-    case UNDEFINED = 6;
-    case WEB_APP_ATTENDANCE = 16;
-    case WEB_APP_CHECK_IN = 15;
-    case WEB_BACKEND = 2;
-    case WEB_FRONTEND = 1;
-    case WIDGET = 11;
-    case ZAPIER = 25;
+    /** Action made via Api Endpoint. Default for leads created via API, unless overridden. */
+    const API = 28;
+    /** Registered through `Azure`. */
+    const AZURE = 21;
+    /** Visit has been created by `CENTRED`. */
+    const CENTRED = 23;
+    /** Visit has been created by `ClassPass`. */
+    const CLASSPASS_BOOKING = 8;
+    /** Debt paid via collections. */
+    const COLLECTIONS = 22;
+    /** Debt paid via collections. */
+    const COLLECTIONS_FUTURE = 26;
+    /** Action from Concerto. */
+    const CONCERTO = 27;
+    /** Action made via email. */
+    const EMAIL = 18;
+    /** Indicating that the source is Facebook. */
+    const FACEBOOK = 20;
+    /** Action from Go High Level. */
+    const GO_HIGH_LEVEL = 30;
+    /** Indicating that the source is Google. */
+    const GOOGLE = 19;
+    /** Visit has been created by Google Booking Service. */
+    const GOOGLE_BOOKING = 7;
+    /** Visit has been created by `GymPass`. */
+    const GYMPASS_BOOKING = 14;
+    /** Visit was created during import. */
+    const IMPORT = 5;
+    /** Action made via microsite. */
+    const MICROSITE = 12;
+    /** Indicating that the source is Microsoft. */
+    const MICROSOFT = 24;
+    /** Client booked session on My Presence Site. */
+    const MY_PRESENCE_SITE = 13;
+    /** Action made via SMS. */
+    const SMS = 17;
+    /** Staff booked session from spa backend. */
+    const SPA_BACKEND = 4;
+    /** Client booked session from spa frontend. */
+    const SPA_FRONTEND = 3;
+    /** Created by system. */
+    const SYSTEM = 10;
+    /** Means that we did not define mode. */
+    const UNDEFINED = 6;
+    /** Client booked session from Attendance Web App. */
+    const WEB_APP_ATTENDANCE = 16;
+    /** Client checked-in for the session through Check-In Web App. */
+    const WEB_APP_CHECK_IN = 15;
+    /** Staff booked session for client from website backend. */
+    const WEB_BACKEND = 2;
+    /** Client booked session from website frontend. */
+    const WEB_FRONTEND = 1;
+    /** Action made via widget (purchase, book etc). */
+    const WIDGET = 11;
+    /** Action from Zapier. */
+    const ZAPIER = 25;
 }

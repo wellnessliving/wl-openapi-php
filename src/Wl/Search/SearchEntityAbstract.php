@@ -16,9 +16,12 @@ namespace WlSdk\Wl\Search;
  * [SearchCriteriaAbstract](#/components/schemas/Wl.Search.Criteria.SearchCriteriaAbstract).
  * - 169 (`Wl\Search\SearchTestEntityNoInterface`): Search entity for testing without interface class.
  */
-enum SearchEntityAbstract: int
+class SearchEntityAbstract
 {
-    case Wl\Search\SearchTestEntity = 21;
-    case Wl\Login\Search\LoginSearchEntity = 66;
-    case Wl\Search\SearchTestEntityNoInterface = 169;
+    /** Search entity for an example and testing. */
+    const Wl\Search\SearchTestEntity = 21;
+    /** Client search entity. */
+    const Wl\Login\Search\LoginSearchEntity = 66;
+    /** Search entity for testing without interface class. */
+    const Wl\Search\SearchTestEntityNoInterface = 169;
 }

@@ -41,9 +41,9 @@ class ElementGetResponseItemImageImage
     /**
      * Type ID of the image. Constant from {@link \WlSdk\Core\Drive\DriveTypeSid}.
      *
-     * @var \WlSdk\Core\Drive\DriveTypeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Core\Drive\DriveTypeSid $id_type_src = null;
+    public ?int $id_type_src = null;
 
     /**
      * `true` if the variant differs from the original, `false` - otherwise.
@@ -73,7 +73,7 @@ class ElementGetResponseItemImageImage
         $this->i_rotate = isset($data['i_rotate']) ? (int)$data['i_rotate'] : null;
         $this->i_width = isset($data['i_width']) ? (int)$data['i_width'] : null;
         $this->i_width_src = isset($data['i_width_src']) ? (int)$data['i_width_src'] : null;
-        $this->id_type_src = isset($data['id_type_src']) ? \WlSdk\Core\Drive\DriveTypeSid::tryFrom((int)$data['id_type_src']) : null;
+        $this->id_type_src = isset($data['id_type_src']) ? (int)$data['id_type_src'] : null;
         $this->is-resize = isset($data['is-resize']) ? (bool)$data['is-resize'] : null;
         $this->url-thumbnail = isset($data['url-thumbnail']) ? (string)$data['url-thumbnail'] : null;
         $this->url-view = isset($data['url-view']) ? (string)$data['url-view'] : null;

@@ -7,7 +7,7 @@ class RelationGetRequest
      * List of check that must be skipped.
      * Each element must be a member of {@link \WlSdk\Wl\Book\Process\ProcessCheckSid}.
      *
-     * @var \WlSdk\Wl\Book\Process\ProcessCheckSid[]|null
+     * @var int[]|null
      */
     public ?array $a_check_ignore = null;
 

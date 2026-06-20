@@ -17,16 +17,16 @@ class PurchaseElementGetRequest
      * 
      * Required when `id_purchase_item` = {@link \WlSdk\RsPurchaseItemSid}.
      *
-     * @var \WlSdk\RsPurchaseItemSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsPurchaseItemSid $i_session = null;
+    public ?int $i_session = null;
 
     /**
      * The ID of the purchase item type. One of {@link \WlSdk\RsPurchaseItemSid}.
      *
-     * @var \WlSdk\RsPurchaseItemSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsPurchaseItemSid $id_purchase_item = null;
+    public ?int $id_purchase_item = null;
 
     /**
      * The key of the session to check for booking availability.
@@ -104,8 +104,8 @@ class PurchaseElementGetRequest
         return array_filter(
             [
             'dtu_date' => $this->dtu_date,
-            'i_session' => $this->i_session?->value,
-            'id_purchase_item' => $this->id_purchase_item?->value,
+            'i_session' => $this->i_session,
+            'id_purchase_item' => $this->id_purchase_item,
             'k_class_period' => $this->k_class_period,
             'k_id' => $this->k_id,
             'k_location' => $this->k_location,

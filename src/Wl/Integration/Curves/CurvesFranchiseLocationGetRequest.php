@@ -10,9 +10,9 @@ class CurvesFranchiseLocationGetRequest
      * 
      * If `null`, {@link \WlSdk\Wl\Business\Franchise\Location\BusinessFranchiseLocationSid} is used.
      *
-     * @var \WlSdk\Wl\Business\Franchise\Location\BusinessFranchiseLocationSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Business\Franchise\Location\BusinessFranchiseLocationSid $id_business_franchise_location = null;
+    public ?int $id_business_franchise_location = null;
 
     /**
      * Determines whether to include churned/removed locations.
@@ -43,7 +43,7 @@ class CurvesFranchiseLocationGetRequest
     {
         return array_filter(
             [
-            'id_business_franchise_location' => $this->id_business_franchise_location?->value,
+            'id_business_franchise_location' => $this->id_business_franchise_location,
             'is_include_churn' => $this->is_include_churn,
             'is_include_non_api' => $this->is_include_non_api,
             'k_business' => $this->k_business,

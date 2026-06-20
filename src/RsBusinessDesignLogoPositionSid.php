@@ -9,9 +9,12 @@ namespace WlSdk;
  * - 1 (`LEFT`): Logo located on the left side.
  * - 3 (`RIGHT`): Logo located on the right side.
  */
-enum RsBusinessDesignLogoPositionSid: int
+class RsBusinessDesignLogoPositionSid
 {
-    case CENTER = 2;
-    case LEFT = 1;
-    case RIGHT = 3;
+    /** Logo located in the center. */
+    const CENTER = 2;
+    /** Logo located on the left side. */
+    const LEFT = 1;
+    /** Logo located on the right side. */
+    const RIGHT = 3;
 }

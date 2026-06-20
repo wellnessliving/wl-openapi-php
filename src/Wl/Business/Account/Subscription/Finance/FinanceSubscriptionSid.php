@@ -9,8 +9,10 @@ namespace WlSdk\Wl\Business\Account\Subscription\Finance;
  * - 1 (`FREE`): None
  * - 2 (`PROFESSIONAL`): Professional
  */
-enum FinanceSubscriptionSid: int
+class FinanceSubscriptionSid
 {
-    case FREE = 1;
-    case PROFESSIONAL = 2;
+    /** None */
+    const FREE = 1;
+    /** Professional */
+    const PROFESSIONAL = 2;
 }

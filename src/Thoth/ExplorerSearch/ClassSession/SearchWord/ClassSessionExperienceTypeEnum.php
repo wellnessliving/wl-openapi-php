@@ -10,8 +10,10 @@ namespace WlSdk\Thoth\ExplorerSearch\ClassSession\SearchWord;
  * - 1 (`IN_PERSON`): In-person session at a physical location.
  * - 2 (`VIRTUAL`): Virtual session conducted through a virtual provider.
  */
-enum ClassSessionExperienceTypeEnum: int
+class ClassSessionExperienceTypeEnum
 {
-    case IN_PERSON = 1;
-    case VIRTUAL = 2;
+    /** In-person session at a physical location. */
+    const IN_PERSON = 1;
+    /** Virtual session conducted through a virtual provider. */
+    const VIRTUAL = 2;
 }

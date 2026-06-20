@@ -16,15 +16,24 @@ namespace WlSdk;
  * - 8 (`WEEK4`): Foursome of weeks (28 days).
  * - 6 (`YEAR`): Years.
  */
-enum ADurationSid: int
+class ADurationSid
 {
-    case DAY = 4;
-    case HOUR = 3;
-    case MINUTE = 2;
-    case MONTH = 5;
-    case SECOND = 1;
-    case WEEK = 7;
-    case WEEK2 = 9;
-    case WEEK4 = 8;
-    case YEAR = 6;
+    /** Days. */
+    const DAY = 4;
+    /** Hours. */
+    const HOUR = 3;
+    /** Minutes. */
+    const MINUTE = 2;
+    /** Months. */
+    const MONTH = 5;
+    /** Seconds. */
+    const SECOND = 1;
+    /** Weeks (7 days). */
+    const WEEK = 7;
+    /** Two weeks (14 days). */
+    const WEEK2 = 9;
+    /** Foursome of weeks (28 days). */
+    const WEEK4 = 8;
+    /** Years. */
+    const YEAR = 6;
 }

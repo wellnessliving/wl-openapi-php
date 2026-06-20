@@ -37,35 +37,64 @@ namespace WlSdk\Wl\Resource\Image;
  * - 28 (`TWINE`): Twines.
  * - 29 (`WEIGHT`): Weight.
  */
-enum ImageIconSid: int
+class ImageIconSid
 {
-    case BENCH = 1;
-    case BIKE_1 = 2;
-    case BIKE_2 = 3;
-    case BIKE_3 = 4;
-    case BIKE_4 = 5;
-    case BIKE_5 = 6;
-    case BIKE_6 = 7;
-    case BOOT = 8;
-    case DOOR = 9;
-    case FAN_1 = 10;
-    case FAN_2 = 11;
-    case MAN = 12;
-    case MAT = 13;
-    case MIRROR = 14;
-    case ORBITRACK_1 = 15;
-    case ORBITRACK_2 = 16;
-    case ORBITRACK_3 = 17;
-    case ORBITRACK_4 = 18;
-    case ORBITRACK_5 = 19;
-    case ORBITRACK_6 = 20;
-    case PUNCH_1 = 21;
-    case PUNCH_2 = 22;
-    case RECTANGLE = 23;
-    case SPEAKER = 24;
-    case TREADMILL_1 = 25;
-    case TREADMILL_2 = 26;
-    case TV = 27;
-    case TWINE = 28;
-    case WEIGHT = 29;
+    /** Training bench. */
+    const BENCH = 1;
+    /** Exercise bike. */
+    const BIKE_1 = 2;
+    /** Exercise bike. */
+    const BIKE_2 = 3;
+    /** Exercise bike. */
+    const BIKE_3 = 4;
+    /** Exercise bike. */
+    const BIKE_4 = 5;
+    /** Exercise bike. */
+    const BIKE_5 = 6;
+    /** Exercise bike. */
+    const BIKE_6 = 7;
+    /** Boot. */
+    const BOOT = 8;
+    /** Door. */
+    const DOOR = 9;
+    /** Fan. */
+    const FAN_1 = 10;
+    /** Fan. */
+    const FAN_2 = 11;
+    /** Man. */
+    const MAN = 12;
+    /** Mat. */
+    const MAT = 13;
+    /** Mirror. */
+    const MIRROR = 14;
+    /** Orbitrack. */
+    const ORBITRACK_1 = 15;
+    /** Orbitrack. */
+    const ORBITRACK_2 = 16;
+    /** Orbitrack. */
+    const ORBITRACK_3 = 17;
+    /** Orbitrack. */
+    const ORBITRACK_4 = 18;
+    /** Orbitrack. */
+    const ORBITRACK_5 = 19;
+    /** Orbitrack. */
+    const ORBITRACK_6 = 20;
+    /** Boxing punch. */
+    const PUNCH_1 = 21;
+    /** Boxing punch. */
+    const PUNCH_2 = 22;
+    /** Rectangle. */
+    const RECTANGLE = 23;
+    /** Loudspeaker. */
+    const SPEAKER = 24;
+    /** Treadmill. */
+    const TREADMILL_1 = 25;
+    /** Treadmill. */
+    const TREADMILL_2 = 26;
+    /** TV. */
+    const TV = 27;
+    /** Twines. */
+    const TWINE = 28;
+    /** Weight. */
+    const WEIGHT = 29;
 }

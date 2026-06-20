@@ -14,12 +14,18 @@ namespace WlSdk;
  * - 4 (`SOCIAL`): Social networks rewards.
  * - 5 (`USER`): Rewards for significant user events.
  */
-enum RsRewardActionCategorySid: int
+class RsRewardActionCategorySid
 {
-    case ATTENDANCE = 1;
-    case PURCHASE = 2;
-    case REFER = 7;
-    case REVIEW = 3;
-    case SOCIAL = 4;
-    case USER = 5;
+    /** Booking and visiting rewards */
+    const ATTENDANCE = 1;
+    /** Rewards for spending money. */
+    const PURCHASE = 2;
+    /** Rewards for referrals. */
+    const REFER = 7;
+    /** Rewards for reviewing a business. */
+    const REVIEW = 3;
+    /** Social networks rewards. */
+    const SOCIAL = 4;
+    /** Rewards for significant user events. */
+    const USER = 5;
 }

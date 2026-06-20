@@ -11,10 +11,14 @@ namespace WlSdk\Wl\Shop\Category;
  * - 1 (`NAME`): Sort by name/title.
  *   Each entity can be sorted by name/title.
  */
-enum ShopCategorySortSid: int
+class ShopCategorySortSid
 {
-    case CUSTOM = 2;
-    case DATE = 3;
-    case PRICE = 4;
-    case NAME = 1;
+    /** Custom sort. */
+    const CUSTOM = 2;
+    /** Sort by date. */
+    const DATE = 3;
+    /** Sort by price. */
+    const PRICE = 4;
+    /** Sort by name/title. */
+    const NAME = 1;
 }

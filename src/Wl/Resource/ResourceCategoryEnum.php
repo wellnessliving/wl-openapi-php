@@ -8,8 +8,10 @@ namespace WlSdk\Wl\Resource;
  * - 1 (`ASSET`): Asset resource category.
  * - 2 (`LOCATION`): Off-site location resource category.
  */
-enum ResourceCategoryEnum: int
+class ResourceCategoryEnum
 {
-    case ASSET = 1;
-    case LOCATION = 2;
+    /** Asset resource category. */
+    const ASSET = 1;
+    /** Off-site location resource category. */
+    const LOCATION = 2;
 }

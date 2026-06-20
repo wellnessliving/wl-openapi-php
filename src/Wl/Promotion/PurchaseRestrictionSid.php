@@ -11,9 +11,12 @@ namespace WlSdk\Wl\Promotion;
  * - 2 (`INTRODUCTORY`): Purchase option introductory offer, available for new clients only.
  * - 3 (`TYPE`): Purchase option available for clients with special login type or member group.
  */
-enum PurchaseRestrictionSid: int
+class PurchaseRestrictionSid
 {
-    case ALL = 1;
-    case INTRODUCTORY = 2;
-    case TYPE = 3;
+    /** Purchase option available for all clients. */
+    const ALL = 1;
+    /** Purchase option introductory offer, available for new clients only. */
+    const INTRODUCTORY = 2;
+    /** Purchase option available for clients with special login type or member group. */
+    const TYPE = 3;
 }

@@ -30,9 +30,9 @@ class AssetListGetRequest
     /**
      * Mode type, one of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var \WlSdk\Wl\Mode\ModeSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
+    public ?int $id_mode = null;
 
     /**
      * This is `true` if asset categories are loaded for back-end mode. Otherwise, this will be `false` for
@@ -115,7 +115,7 @@ class AssetListGetRequest
             'dtl_date' => $this->dtl_date,
             'i_image_height' => $this->i_image_height,
             'i_image_width' => $this->i_image_width,
-            'id_mode' => $this->id_mode?->value,
+            'id_mode' => $this->id_mode,
             'is_backend' => $this->is_backend,
             'is_tab_all' => $this->is_tab_all,
             'k_appointment' => $this->k_appointment,

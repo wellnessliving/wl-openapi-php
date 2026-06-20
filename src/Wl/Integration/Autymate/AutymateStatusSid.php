@@ -8,8 +8,10 @@ namespace WlSdk\Wl\Integration\Autymate;
  * - 1 (`ACTIVE`): Autymation enrollment is active.
  * - 2 (`INACTIVE`): Autymation enrollment is no longer active.
  */
-enum AutymateStatusSid: int
+class AutymateStatusSid
 {
-    case ACTIVE = 1;
-    case INACTIVE = 2;
+    /** Autymation enrollment is active. */
+    const ACTIVE = 1;
+    /** Autymation enrollment is no longer active. */
+    const INACTIVE = 2;
 }

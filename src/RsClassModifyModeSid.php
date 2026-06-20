@@ -10,10 +10,14 @@ namespace WlSdk;
  * - 4 (`RESOURCE_PERIOD`): Asset working hours
  * - 3 (`STAFF_PERIOD`): Staff working hours
  */
-enum RsClassModifyModeSid: int
+class RsClassModifyModeSid
 {
-    case FULL = 1;
-    case INSTRUCTOR = 2;
-    case RESOURCE_PERIOD = 4;
-    case STAFF_PERIOD = 3;
+    /** Edit class schedule */
+    const FULL = 1;
+    /** Edit instructor in class schedule */
+    const INSTRUCTOR = 2;
+    /** Asset working hours */
+    const RESOURCE_PERIOD = 4;
+    /** Staff working hours */
+    const STAFF_PERIOD = 3;
 }

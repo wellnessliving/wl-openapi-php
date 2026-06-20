@@ -14,12 +14,18 @@ namespace WlSdk\Thoth\PayProcessor\DirectConnect\Ticket;
  * - 6 (`OPEN`): Ticket is opened.
  * - 7 (`REVERSED`): Ticket was reversed.
  */
-enum DirectConnectTicketStatusSid: int
+class DirectConnectTicketStatusSid
 {
-    case CANCELLED = 1;
-    case COMPLETE = 2;
-    case ERROR = 3;
-    case INPROCESS = 4;
-    case OPEN = 6;
-    case REVERSED = 7;
+    /** Ticket was canceled. */
+    const CANCELLED = 1;
+    /** Ticket was completed. */
+    const COMPLETE = 2;
+    /** Ticket in error state. */
+    const ERROR = 3;
+    /** Ticket is processed. */
+    const INPROCESS = 4;
+    /** Ticket is opened. */
+    const OPEN = 6;
+    /** Ticket was reversed. */
+    const REVERSED = 7;
 }

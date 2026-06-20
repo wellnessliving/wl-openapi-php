@@ -6,9 +6,9 @@ class AttendanceListByTokenGetResponseListWaitWearable
     /**
      * Device type ID. One of {@link \WlSdk\Wl\Profile\Sensor\SensorTypesSid} constants.
      *
-     * @var \WlSdk\Wl\Profile\Sensor\SensorTypesSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Profile\Sensor\SensorTypesSid $id_type = null;
+    public ?int $id_type = null;
 
     /**
      * `true` if the device has been removed.
@@ -40,7 +40,7 @@ class AttendanceListByTokenGetResponseListWaitWearable
 
     public function __construct(array $data)
     {
-        $this->id_type = isset($data['id_type']) ? \WlSdk\Wl\Profile\Sensor\SensorTypesSid::tryFrom((int)$data['id_type']) : null;
+        $this->id_type = isset($data['id_type']) ? (int)$data['id_type'] : null;
         $this->is_remove = isset($data['is_remove']) ? (bool)$data['is_remove'] : null;
         $this->s_sensor = isset($data['s_sensor']) ? (string)$data['s_sensor'] : null;
         $this->text_name = isset($data['text_name']) ? (string)$data['text_name'] : null;

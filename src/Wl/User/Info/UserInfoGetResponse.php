@@ -72,9 +72,9 @@ class UserInfoGetResponse
      * 
      * This will be `null` if the gender isn't set yet.
      *
-     * @var \WlSdk\AGenderSid|null
+     * @var int|null
      */
-    public ?\WlSdk\AGenderSid $id_gender = null;
+    public ?int $id_gender = null;
 
     /**
      * This will be `true` if the user has Google Calendar linked to their account; otherwise, `false`.
@@ -232,7 +232,7 @@ class UserInfoGetResponse
         $this->dt_add = isset($data['dt_add']) ? (string)$data['dt_add'] : null;
         $this->dt_birth = isset($data['dt_birth']) ? (string)$data['dt_birth'] : null;
         $this->has_discount = isset($data['has_discount']) ? (bool)$data['has_discount'] : null;
-        $this->id_gender = isset($data['id_gender']) ? \WlSdk\AGenderSid::tryFrom((int)$data['id_gender']) : null;
+        $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
         $this->is_calendar_google = isset($data['is_calendar_google']) ? (bool)$data['is_calendar_google'] : null;
         $this->is_calendar_microsoft = isset($data['is_calendar_microsoft']) ? (bool)$data['is_calendar_microsoft'] : null;
         $this->is_customer_new = isset($data['is_customer_new']) ? (bool)$data['is_customer_new'] : null;

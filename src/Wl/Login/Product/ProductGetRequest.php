@@ -35,9 +35,9 @@ class ProductGetRequest
      * ID of the payment method. One of the {@link \WlSdk\RsPayMethodSid} constants. Zero means no filter by
      * payment method.
      *
-     * @var \WlSdk\RsPayMethodSid|null
+     * @var int|null
      */
-    public ?\WlSdk\RsPayMethodSid $id_pay_method = null;
+    public ?int $id_pay_method = null;
 
     /**
      * Business key.
@@ -89,7 +89,7 @@ class ProductGetRequest
             'dtu_start' => $this->dtu_start,
             'i_page' => $this->i_page,
             'i_page_size' => $this->i_page_size,
-            'id_pay_method' => $this->id_pay_method?->value,
+            'id_pay_method' => $this->id_pay_method,
             'k_business' => $this->k_business,
             'k_location' => $this->k_location,
             'k_shop_product_option' => $this->k_shop_product_option,

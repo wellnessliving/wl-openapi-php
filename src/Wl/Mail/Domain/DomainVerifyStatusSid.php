@@ -16,9 +16,12 @@ namespace WlSdk\Wl\Mail\Domain;
  * [DomainVerifyStatusSid::SUCCESS](#/components/schemas/Wl.Mail.Domain.DomainVerifyStatusSid).
  * - 3 (`SUCCESS`): Domain is verified.
  */
-enum DomainVerifyStatusSid: int
+class DomainVerifyStatusSid
 {
-    case FAIL = 2;
-    case PENDING = 1;
-    case SUCCESS = 3;
+    /** Domain is not verified. */
+    const FAIL = 2;
+    /** Domain verification is pending. */
+    const PENDING = 1;
+    /** Domain is verified. */
+    const SUCCESS = 3;
 }

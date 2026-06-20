@@ -10,8 +10,10 @@ namespace WlSdk\Wl\Profile\Attach;
  * - 1 (`IMAGE`): Image file.
  * - 2 (`PDF`): Pdf file.
  */
-enum AttachPreviewSid: int
+class AttachPreviewSid
 {
-    case IMAGE = 1;
-    case PDF = 2;
+    /** Image file. */
+    const IMAGE = 1;
+    /** Pdf file. */
+    const PDF = 2;
 }

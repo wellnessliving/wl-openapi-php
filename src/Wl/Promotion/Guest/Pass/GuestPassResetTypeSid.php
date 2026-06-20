@@ -12,8 +12,10 @@ namespace WlSdk\Wl\Promotion\Guest\Pass;
  * - 1 (`BILLING`): Limits reset on promotion billing day.
  * - 2 (`RENEWAL`): Limits reset on promotion renewal day.
  */
-enum GuestPassResetTypeSid: int
+class GuestPassResetTypeSid
 {
-    case BILLING = 1;
-    case RENEWAL = 2;
+    /** Limits reset on promotion billing day. */
+    const BILLING = 1;
+    /** Limits reset on promotion renewal day. */
+    const RENEWAL = 2;
 }

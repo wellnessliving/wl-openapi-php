@@ -12,9 +12,9 @@ class VideoElementPutResponse
      * 
      * `null` if video is uploaded.
      *
-     * @var \WlSdk\Wl\Video\VideoEmbedSourceSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Video\VideoEmbedSourceSid $id_embed_source = null;
+    public ?int $id_embed_source = null;
 
     /**
      * Video.js media player initialization parameters in JSON format.
@@ -35,7 +35,7 @@ class VideoElementPutResponse
 
     public function __construct(array $data)
     {
-        $this->id_embed_source = isset($data['id_embed_source']) ? \WlSdk\Wl\Video\VideoEmbedSourceSid::tryFrom((int)$data['id_embed_source']) : null;
+        $this->id_embed_source = isset($data['id_embed_source']) ? (int)$data['id_embed_source'] : null;
         $this->json_setup = isset($data['json_setup']) ? (string)$data['json_setup'] : null;
     }
 }

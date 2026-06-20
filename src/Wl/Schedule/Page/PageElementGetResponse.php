@@ -117,27 +117,27 @@ class PageElementGetResponse
      * 
      * This will be `null` if notes aren't allowed.
      *
-     * @var \WlSdk\Wl\Visit\Note\Sid\NoteSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Visit\Note\Sid\NoteSid $id_note = null;
+    public ?int $id_note = null;
 
     /**
      * The virtual provider ID. One of the {@link \WlSdk\Wl\Virtual\VirtualProviderSid} constants.
      * 
      * This will be `null` for non-virtual services.
      *
-     * @var \WlSdk\Wl\Virtual\VirtualProviderSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Virtual\VirtualProviderSid $id_virtual_provider = null;
+    public ?int $id_virtual_provider = null;
 
     /**
      * The visit type ID. One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      * 
      * This will be `null` if not loaded yet.
      *
-     * @var \WlSdk\Wl\Visit\VisitSid|null
+     * @var int|null
      */
-    public ?\WlSdk\Wl\Visit\VisitSid $id_visit = null;
+    public ?int $id_visit = null;
 
     /**
      * If `true`, then this visit is ready to be checked in. If `false`, then this visit can't be checked in.
@@ -288,9 +288,9 @@ class PageElementGetResponse
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_wait_spot = isset($data['i_wait_spot']) ? (int)$data['i_wait_spot'] : null;
-        $this->id_note = isset($data['id_note']) ? \WlSdk\Wl\Visit\Note\Sid\NoteSid::tryFrom((int)$data['id_note']) : null;
-        $this->id_virtual_provider = isset($data['id_virtual_provider']) ? \WlSdk\Wl\Virtual\VirtualProviderSid::tryFrom((int)$data['id_virtual_provider']) : null;
-        $this->id_visit = isset($data['id_visit']) ? \WlSdk\Wl\Visit\VisitSid::tryFrom((int)$data['id_visit']) : null;
+        $this->id_note = isset($data['id_note']) ? (int)$data['id_note'] : null;
+        $this->id_virtual_provider = isset($data['id_virtual_provider']) ? (int)$data['id_virtual_provider'] : null;
+        $this->id_visit = isset($data['id_visit']) ? (int)$data['id_visit'] : null;
         $this->is_checkin = isset($data['is_checkin']) ? (bool)$data['is_checkin'] : null;
         $this->is_enable_client_cancel = isset($data['is_enable_client_cancel']) ? (bool)$data['is_enable_client_cancel'] : null;
         $this->is_event = isset($data['is_event']) ? (bool)$data['is_event'] : null;
