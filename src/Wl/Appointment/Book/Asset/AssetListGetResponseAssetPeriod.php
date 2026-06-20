@@ -25,7 +25,7 @@ class AssetListGetResponseAssetPeriod
     public ?int $i_duration = null;
 
     /**
-     * The asset period price type. One of [RsServicePriceSid](#/components/schemas/RsServicePriceSid) constants.
+     * The asset period price type. One of {@link \WlSdk\RsServicePriceSid} constants.
      *
      * @var int|null
      */

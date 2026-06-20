@@ -5,7 +5,7 @@ class ElementGetResponseClassListConfig
 {
     /**
      * List of allowed relation types specific to a given business.
-     *  Key is ID. One of [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) constant.
+     *  Key is ID. One of {@link \WlSdk\RsFamilyRelationSid} constant.
      *  Value is SID.
      *
      * @var string[]|null
@@ -14,7 +14,7 @@ class ElementGetResponseClassListConfig
 
     /**
      * List of allowed relation types specific to a given business.
-     *  Each value constant from [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) class.
+     *  Each value constant from {@link \WlSdk\RsFamilyRelationSid} class.
      *
      * @var int[]|null
      */

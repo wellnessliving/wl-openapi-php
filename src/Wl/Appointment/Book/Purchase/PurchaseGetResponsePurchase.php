@@ -77,36 +77,35 @@ class PurchaseGetResponsePurchase
     public ?int $i_payment_period = null;
 
     /**
-     * Duration ID. Constant from [ADurationSid](#/components/schemas/ADurationSid).
+     * Duration ID. Constant from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
      */
     public ?int $id_duration = null;
 
     /**
-     * Program ID for promotions from [RsProgramSid](#/components/schemas/RsProgramSid).
+     * Program ID for promotions from {@link \WlSdk\RsProgramSid}.
      *
      * @var int|null
      */
     public ?int $id_program = null;
 
     /**
-     * Program type ID. Constant from [RsProgramTypeSid](#/components/schemas/RsProgramTypeSid).
+     * Program type ID. Constant from {@link \WlSdk\RsProgramTypeSid}.
      *
      * @var int|null
      */
     public ?int $id_program_type = null;
 
     /**
-     * How the Purchase Item price is specified. One of the
-     * [RsProgramTypeSid](#/components/schemas/RsProgramTypeSid) constants.
+     * How the Purchase Item price is specified. One of the {@link \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
      */
     public ?int $id_promotion_price = null;
 
     /**
-     * ID of the purchase item from [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid)
+     * ID of the purchase item from {@link \WlSdk\RsPurchaseItemSid}
      *
      * @var int|null
      */
@@ -213,8 +212,7 @@ class PurchaseGetResponsePurchase
     public ?string $s_payment_duration = null;
 
     /**
-     * Category of the program for promotions from
-     * [RsProgramCategorySid](#/components/schemas/RsProgramCategorySid).
+     * Category of the program for promotions from {@link \WlSdk\RsProgramCategorySid}.
      *
      * @var string|null
      */

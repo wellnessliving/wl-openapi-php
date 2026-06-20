@@ -20,8 +20,8 @@ class ResponseListGetResponseQuizLogin
     public ?string $dtl_date = null;
 
     /**
-     * The place where the request to fill out a quiz form occurred. One of the
-     * [SourceSid](#/components/schemas/Wl.Quiz.Response.SourceSid) constants.
+     * The place where the request to fill out a quiz form occurred. One of the {@link
+     * \WlSdk\Wl\Quiz\Response\SourceSid} constants.
      *
      * @var int|null
      */

@@ -70,8 +70,8 @@ class ElementGetResponse
     public ?int $i_spend = null;
 
     /**
-     * The ID of the icon that should be shown for this activity. One of
-     * [IconSid](#/components/schemas/Wl.Design.IconSid) constants.
+     * The ID of the icon that should be shown for this activity. One of {@link \WlSdk\Wl\Design\IconSid}
+     * constants.
      * 
      * This will be `null` is no special icon for this activity.
      *
@@ -80,8 +80,8 @@ class ElementGetResponse
     public ?int $id_icon = null;
 
     /**
-     * The ID of the activity item returned by this endpoint. One of
-     * [RsLoginActivityTypeSid](#/components/schemas/RsLoginActivityTypeSid) constants.
+     * The ID of the activity item returned by this endpoint. One of {@link \WlSdk\RsLoginActivityTypeSid}
+     * constants.
      *
      * @var int|null
      */

@@ -44,16 +44,15 @@ class ConvertGetResponse
     public ?string $dl_hold_start = null;
 
     /**
-     * The conversion ID. One of the
-     * [PromotionConvertSid](#/components/schemas/Wl.Promotion.Convert.PromotionConvertSid) constants.
+     * The conversion ID. One of the {@link \WlSdk\Wl\Promotion\Convert\PromotionConvertSid} constants.
      *
      * @var int|null
      */
     public ?int $id_convert = null;
 
     /**
-     * When conversion should be done. One of the
-     * [ConvertWhenSid](#/components/schemas/Wl.Login.Promotion.Convert.ConvertWhenSid) constants.
+     * When conversion should be done. One of the {@link \WlSdk\Wl\Login\Promotion\Convert\ConvertWhenSid}
+     * constants.
      * 
      * `null` if it's not set yet.
      *

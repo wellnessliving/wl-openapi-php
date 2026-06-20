@@ -7,8 +7,7 @@ namespace WlSdk\Wl\Book\Process\Info;
 class Info54GetResponse
 {
     /**
-     * Week days available for recurring booking. Constants of [ADateWeekSid](#/components/schemas/ADateWeekSid)
-     * class.
+     * Week days available for recurring booking. Constants of {@link \WlSdk\ADateWeekSid} class.
      * 
      * `null` if recurring booking is not available.
      *

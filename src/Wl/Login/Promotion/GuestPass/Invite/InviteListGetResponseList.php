@@ -97,8 +97,8 @@ class InviteListGetResponseList
     public ?string $dtu_reject = null;
 
     /**
-     * Invitation lifecycle status. One of
-     * [InviteStatusEnum](#/components/schemas/Wl.Login.Promotion.GuestPass.Invite.InviteStatusEnum) values.
+     * Invitation lifecycle status. One of {@link \WlSdk\Wl\Login\Promotion\GuestPass\Invite\InviteStatusEnum}
+     * values.
      *
      * @var int|null
      */

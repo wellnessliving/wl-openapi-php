@@ -28,8 +28,7 @@ class ElementGetResponseItem
     public ?ElementGetResponseItemTax $a_tax = null;
 
     /**
-     * The Purchase Option view type. One of the
-     * [PurchaseOptionViewSid](#/components/schemas/Wl.Catalog.PurchaseOptionViewSid) constants.
+     * The Purchase Option view type. One of the {@link \WlSdk\Wl\Catalog\PurchaseOptionViewSid} constants.
      *
      * @var int|null
      */

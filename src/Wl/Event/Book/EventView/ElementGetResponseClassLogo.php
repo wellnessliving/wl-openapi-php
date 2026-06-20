@@ -18,8 +18,8 @@ class ElementGetResponseClassLogo
     public ?int $i_width = null;
 
     /**
-     * Is returned only if staff does not have a photo. ID of staff gender. One of
-     * [AGenderSid](#/components/schemas/AGenderSid) constants.
+     * Is returned only if staff does not have a photo. ID of staff gender. One of {@link \WlSdk\AGenderSid}
+     * constants.
      *
      * @var int|null
      */

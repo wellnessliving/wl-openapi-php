@@ -11,7 +11,7 @@ class PurchaseElementListGetResponsePurchaseItemResult
     public ?array $a_tax = null;
 
     /**
-     * The ID of purchase item type. One of [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid) constants.
+     * The ID of purchase item type. One of {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
      */

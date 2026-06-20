@@ -11,7 +11,7 @@ class CartGetResponseRewardItem
     public ?int $i_quantity = null;
 
     /**
-     * The sale item type, one of the [RsSaleSid](#/components/schemas/RsSaleSid) constants.
+     * The sale item type, one of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
      */

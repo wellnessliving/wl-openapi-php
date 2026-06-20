@@ -39,7 +39,7 @@ class ListGetResponseProductDuplicate
     public ?bool $hide_application = null;
 
     /**
-     * The sale category ID. One of the [RsSaleSid](#/components/schemas/RsSaleSid) constants.
+     * The sale category ID. One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
      */

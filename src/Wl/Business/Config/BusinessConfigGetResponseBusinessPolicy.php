@@ -4,16 +4,16 @@ namespace WlSdk\Wl\Business\Config;
 class BusinessConfigGetResponseBusinessPolicy
 {
     /**
-     * List of not allowed decline reasons to payment reattempt. Each element is one of
-     * [PayExceptionSid](#/components/schemas/Thoth.WlPay.PayExceptionSid) constants.
+     * List of not allowed decline reasons to payment reattempt. Each element is one of {@link
+     * \WlSdk\Thoth\WlPay\PayExceptionSid} constants.
      *
      * @var int[]|null
      */
     public ?array $a_payment_reattempt_not_decline_reason = null;
 
     /**
-     * Keys are list of IDs from [ServiceSid](#/components/schemas/Wl.Service.ServiceSid), and values are flags
-     * whether wait list is allowed.
+     * Keys are list of IDs from {@link \WlSdk\Wl\Service\ServiceSid}, and values are flags whether wait list is
+     * allowed.
      *
      * @var int|null
      */
@@ -71,42 +71,42 @@ class BusinessConfigGetResponseBusinessPolicy
     public ?int $i_reattempt_count = null;
 
     /**
-     * Hours|days|months from [ADurationSid](#/components/schemas/ADurationSid).
+     * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
      */
     public ?int $id_book_before = null;
 
     /**
-     * Hours|days|months from [ADurationSid](#/components/schemas/ADurationSid).
+     * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
      */
     public ?int $id_book_future = null;
 
     /**
-     * Hours|days|months from [ADurationSid](#/components/schemas/ADurationSid).
+     * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
      */
     public ?int $id_cancel = null;
 
     /**
-     * Hours|days|months from [ADurationSid](#/components/schemas/ADurationSid).
+     * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
      */
     public ?int $id_promote = null;
 
     /**
-     * Hours|days|months from [ADurationSid](#/components/schemas/ADurationSid).
+     * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
      */
     public ?int $id_promote_fastest_response = null;
 
     /**
-     * Hours|days|months from [ADurationSid](#/components/schemas/ADurationSid).
+     * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
      */
@@ -200,7 +200,7 @@ class BusinessConfigGetResponseBusinessPolicy
 
     /**
      * List of allowed relation types specific to a given business.
-     *  Key is ID. One of [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) constant.
+     *  Key is ID. One of {@link \WlSdk\RsFamilyRelationSid} constant.
      *  Value is SID.
      *
      * @var string[]|null
@@ -209,7 +209,7 @@ class BusinessConfigGetResponseBusinessPolicy
 
     /**
      * List of allowed relation types specific to a given business.
-     *  Each value constant from [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) class.
+     *  Each value constant from {@link \WlSdk\RsFamilyRelationSid} class.
      *
      * @var int[]|null
      */

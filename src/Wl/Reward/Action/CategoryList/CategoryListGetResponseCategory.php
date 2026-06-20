@@ -4,9 +4,8 @@ namespace WlSdk\Wl\Reward\Action\CategoryList;
 class CategoryListGetResponseCategory
 {
     /**
-     * ID of reward actions category type. One of
-     * [RsRewardActionCategorySid](#/components/schemas/RsRewardActionCategorySid) constants. `null` for custom
-     * reward actions categories.
+     * ID of reward actions category type. One of {@link \WlSdk\RsRewardActionCategorySid} constants. `null` for
+     * custom reward actions categories.
      *
      * @var int|null
      */

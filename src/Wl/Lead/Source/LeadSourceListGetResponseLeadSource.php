@@ -12,7 +12,7 @@ class LeadSourceListGetResponseLeadSource
     public ?int $i_sort = null;
 
     /**
-     * System-defined Lead Source ID. One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * System-defined Lead Source ID. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * `null` if it is a custom Lead Source.
      *
      * @var int|null

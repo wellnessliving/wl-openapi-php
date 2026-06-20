@@ -4,8 +4,7 @@ namespace WlSdk\Wl\Schedule\ScheduleList\StaffApp;
 class ScheduleListGetResponseScheduleQuiz
 {
     /**
-     * Response status ID. One of [ResponseStatusSid](#/components/schemas/Core.Quiz.Response.ResponseStatusSid)
-     * constants.
+     * Response status ID. One of {@link \WlSdk\Core\Quiz\Response\ResponseStatusSid} constants.
      *
      * @var int|null
      */

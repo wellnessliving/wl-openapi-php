@@ -88,7 +88,7 @@ class VideoListGetResponseList
     public ?int $i_watch = null;
 
     /**
-     * Video source. One of [VideoSourceSid](#/components/schemas/Wl.Video.VideoSourceSid) constants.
+     * Video source. One of {@link \WlSdk\Wl\Video\VideoSourceSid} constants.
      *
      * @var int|null
      */

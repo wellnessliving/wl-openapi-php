@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Schedule\ScheduleList\StaffApp;
 class ScheduleListGetResponseScheduleAppointmentVisitInfo
 {
     /**
-     * Visit id. One of [VisitSid](#/components/schemas/Wl.Visit.VisitSid) constants.
+     * Visit id. One of {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
      * @var int|null
      */

@@ -25,7 +25,7 @@ class VideoListGetResponse
 
     /**
      * Embedded video source.
-     * One of [VideoEmbedSourceSid](#/components/schemas/Wl.Video.VideoEmbedSourceSid) constants.
+     * One of {@link \WlSdk\Wl\Video\VideoEmbedSourceSid} constants.
      * 
      * `null` if video is uploaded.
      *
@@ -34,8 +34,8 @@ class VideoListGetResponse
     public ?int $id_embed_source = null;
 
     /**
-     * Sort order ID. One of [SortOrderSid](#/components/schemas/Core.Sid.SortOrderSid) constants. `null` or 0 if
-     * order is undefined and depends on sort order.
+     * Sort order ID. One of {@link \WlSdk\Core\Sid\SortOrderSid} constants. `null` or 0 if order is undefined and
+     * depends on sort order.
      *
      * @var int|null
      */
@@ -43,8 +43,8 @@ class VideoListGetResponse
 
     /**
      * The sorting type.
-     * A constant from [FilterSortSid](#/components/schemas/Wl.Video.Catalog.Filter.Sort.FilterSortSid). `null` or
-     * 0 if sort is undefined and custom sort order is used.
+     * A constant from {@link \WlSdk\Wl\Video\Catalog\Filter\Sort\FilterSortSid}. `null` or 0 if sort is undefined
+     * and custom sort order is used.
      *
      * @var int|null
      */

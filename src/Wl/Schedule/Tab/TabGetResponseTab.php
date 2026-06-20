@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Schedule\Tab;
 class TabGetResponseTab
 {
     /**
-     * The tab type ID which is one of the [TabSid](#/components/schemas/Wl.Classes.Tab.TabSid) constants.
+     * The tab type ID which is one of the {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
      *
      * @var int|null
      */
@@ -12,7 +12,7 @@ class TabGetResponseTab
 
     /**
      * If this tab has redefined a default system Class Tab then it references a constant defined in
-     * [TabSid](#/components/schemas/Wl.Classes.Tab.TabSid).
+     * {@link \WlSdk\Wl\Classes\Tab\TabSid}.
      * 
      * Otherwise, this will be `null`.
      *

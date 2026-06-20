@@ -36,9 +36,8 @@ class CatalogListGetResponseShopProduct
     public ?array $a_shop_category = null;
 
     /**
-     * The program ID, set for promotions. One of the [RsProgramSid](#/components/schemas/RsProgramSid) constants.
-     *  <p>If `id_program` is [RsProgramSid::INSURANCE_MEMBERSHIP](#/components/schemas/RsProgramSid), then
-     * use:</p>
+     * The program ID, set for promotions. One of the {@link \WlSdk\RsProgramSid} constants.
+     *  <p>If `id_program` is {@link \WlSdk\RsProgramSid}, then use:</p>
      *  <ul>
      *    <li>[ProgramListApi](/Wl/Insurance/Catalog/ProgramList.json) to obtain a list of active programs.</li>
      *    <li>[EnrollmentFieldListApi](/Wl/Insurance/Enrollment/Field/EnrollmentFieldList.json) to get and validate
@@ -51,15 +50,14 @@ class CatalogListGetResponseShopProduct
     public ?int $id_program = null;
 
     /**
-     * The restriction ID. One of the
-     * [PurchaseRestrictionSid](#/components/schemas/Wl.Shop.Product.PurchaseRestrictionSid) constants.
+     * The restriction ID. One of the {@link \WlSdk\Wl\Shop\Product\PurchaseRestrictionSid} constants.
      *
      * @var int|null
      */
     public ?int $id_restriction = null;
 
     /**
-     * The sale category ID. One of the [RsSaleSid](#/components/schemas/RsSaleSid) constants.
+     * The sale category ID. One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
      */

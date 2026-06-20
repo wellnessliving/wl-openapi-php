@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Coupon\CouponList;
 class ListGetResponseCoupon
 {
     /**
-     * The type of coupon. One of [TypeSid](#/components/schemas/Wl.Coupon.TypeSid) constants.
+     * The type of coupon. One of {@link \WlSdk\Wl\Coupon\TypeSid} constants.
      *
      * @var int|null
      */

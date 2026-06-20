@@ -32,14 +32,14 @@ class ResourceGetResponseResourceAllResourceListImage
     public ?bool $is_empty = null;
 
     /**
-     * Image kind. One of [ImageSid](#/components/schemas/Wl.Resource.Image.ImageSid) string constants.
+     * Image kind. One of {@link \WlSdk\Wl\Resource\Image\ImageSid} string constants.
      *
      * @var string|null
      */
     public ?string $sid_image = null;
 
     /**
-     * Icon name. One of [ImageIconSid](#/components/schemas/Wl.Resource.Image.ImageIconSid) string constants.
+     * Icon name. One of {@link \WlSdk\Wl\Resource\Image\ImageIconSid} string constants.
      * Set only when `sid_image` equals 'icon'.
      *
      * @var string|null
@@ -47,7 +47,7 @@ class ResourceGetResponseResourceAllResourceListImage
     public ?string $sid_image_icon = null;
 
     /**
-     * Shape name. One of [ImageShapeSid](#/components/schemas/Wl.Resource.Image.ImageShapeSid) string constants.
+     * Shape name. One of {@link \WlSdk\Wl\Resource\Image\ImageShapeSid} string constants.
      * Set only when `sid_image` equals 'shape'.
      *
      * @var string|null

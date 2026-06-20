@@ -12,7 +12,7 @@ class SubscribePostResponseMessageBroadcastQ
 
     /**
      * ID of the report that was generated.
-     * One of the [RsReportSid](#/components/schemas/RsReportSid) constants.
+     * One of the {@link \WlSdk\RsReportSid} constants.
      *
      * @var int|null
      */

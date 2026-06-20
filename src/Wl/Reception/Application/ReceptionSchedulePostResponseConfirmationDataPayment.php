@@ -33,8 +33,7 @@ class ReceptionSchedulePostResponseConfirmationDataPayment
 
     /**
      * Number of minutes used for upcoming visits.
-     *   Has sense only for promotions of program type
-     * [RsProgramTypeSid::DURATION](#/components/schemas/RsProgramTypeSid).
+     *   Has sense only for promotions of program type {@link \WlSdk\RsProgramTypeSid}.
      *
      * @var int|null
      */
@@ -56,8 +55,7 @@ class ReceptionSchedulePostResponseConfirmationDataPayment
 
     /**
      * Number of minutes left in this promotion.
-     *   Has sense only for promotions of program type
-     * [RsProgramTypeSid::DURATION](#/components/schemas/RsProgramTypeSid).
+     *   Has sense only for promotions of program type {@link \WlSdk\RsProgramTypeSid}.
      *
      * @var int|null
      */
@@ -72,8 +70,7 @@ class ReceptionSchedulePostResponseConfirmationDataPayment
 
     /**
      * Number of minutes used for past visits by this promotion.
-     *   Has sense only for promotions of program type
-     * [RsProgramTypeSid::DURATION](#/components/schemas/RsProgramTypeSid).
+     *   Has sense only for promotions of program type {@link \WlSdk\RsProgramTypeSid}.
      *
      * @var int|null
      */
@@ -88,7 +85,7 @@ class ReceptionSchedulePostResponseConfirmationDataPayment
     public ?int $i_visit_past = null;
 
     /**
-     * The promotion's program type ID. One of [RsProgramTypeSid](#/components/schemas/RsProgramTypeSid) constants.
+     * The promotion's program type ID. One of {@link \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
      */

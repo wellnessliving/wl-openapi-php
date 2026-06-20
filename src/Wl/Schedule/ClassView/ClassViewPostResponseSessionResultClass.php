@@ -131,8 +131,7 @@ class ClassViewPostResponseSessionResultClass
     public ?int $i_wait_limit = null;
 
     /**
-     * ID of deny reason. One of [DenyReasonSid](#/components/schemas/Wl.Schedule.ClassView.DenyReasonSid)
-     * constants.
+     * ID of deny reason. One of {@link \WlSdk\Wl\Schedule\ClassView\DenyReasonSid} constants.
      *
      * @var int|null
      */

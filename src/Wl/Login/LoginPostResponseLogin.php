@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Login;
 class LoginPostResponseLogin
 {
     /**
-     * User's gender. One of [AGenderSid](#/components/schemas/AGenderSid) constants.
+     * User's gender. One of {@link \WlSdk\AGenderSid} constants.
      *
      * @var int|null
      */

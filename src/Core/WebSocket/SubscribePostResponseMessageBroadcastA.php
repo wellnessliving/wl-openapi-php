@@ -18,8 +18,7 @@ class SubscribePostResponseMessageBroadcastA
     /**
      * Status of this report.
      * 
-     * One of [ReportGeneratorStatusSid](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorStatusSid)
-     * constants.
+     * One of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid} constants.
      *
      * @var int|null
      */

@@ -46,16 +46,14 @@ class PageElementGetResponseResourceImage
     public ?string $k_resource = null;
 
     /**
-     * Image kind. String representation of one of [ImageSid](#/components/schemas/Wl.Resource.Image.ImageSid)
-     * constants.
+     * Image kind. String representation of one of {@link \WlSdk\Wl\Resource\Image\ImageSid} constants.
      *
      * @var string|null
      */
     public ?string $sid_image = null;
 
     /**
-     * Icon name.String representation of one of
-     * [ImageIconSid](#/components/schemas/Wl.Resource.Image.ImageIconSid) constants.
+     * Icon name.String representation of one of {@link \WlSdk\Wl\Resource\Image\ImageIconSid} constants.
      * Is set only if `sid_image` equals to `image`.
      *
      * @var string|null
@@ -63,8 +61,7 @@ class PageElementGetResponseResourceImage
     public ?string $sid_image_icon = null;
 
     /**
-     * Shape name. String representation of one of
-     * [ImageShapeSid](#/components/schemas/Wl.Resource.Image.ImageShapeSid) constants.
+     * Shape name. String representation of one of {@link \WlSdk\Wl\Resource\Image\ImageShapeSid} constants.
      * Is set only if `sid_image` equals to `shape`.
      *
      * @var string|null

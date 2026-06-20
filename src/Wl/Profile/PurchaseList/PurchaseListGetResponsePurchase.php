@@ -27,15 +27,14 @@ class PurchaseListGetResponsePurchase
     public ?string $dt_add = null;
 
     /**
-     * The ID of the purchase type. One of the constants
-     * [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid).
+     * The ID of the purchase type. One of the constants {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
      */
     public ?int $id_purchase_item = null;
 
     /**
-     * The ID of the sale category in the store. One of the constants [RsSaleSid](#/components/schemas/RsSaleSid).
+     * The ID of the sale category in the store. One of the constants {@link \WlSdk\RsSaleSid}.
      *
      * @var int|null
      */

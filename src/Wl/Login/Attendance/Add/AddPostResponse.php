@@ -8,7 +8,7 @@ class AddPostResponse
 {
     /**
      * The status of the visit.
-     * One of the [VisitSid](#/components/schemas/Wl.Visit.VisitSid) constants.
+     * One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
      * @var int|null
      */

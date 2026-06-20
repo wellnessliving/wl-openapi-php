@@ -5,8 +5,8 @@ class EnrollmentFieldListGetResponseFieldListAccount
 {
     /**
      * Additional configuration for the field.
-     * For the account type field, keys are account type titles and values are
-     * [RsPayBankAchTypeSid](#/components/schemas/RsPayBankAchTypeSid) constants.
+     * For the account type field, keys are account type titles and values are {@link \WlSdk\RsPayBankAchTypeSid}
+     * constants.
      * Empty array for other fields.
      *
      * @var string[]|null

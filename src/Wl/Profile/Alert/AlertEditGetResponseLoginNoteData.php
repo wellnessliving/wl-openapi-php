@@ -18,14 +18,14 @@ class AlertEditGetResponseLoginNoteData
     public ?bool $can_flag = null;
 
     /**
-     * Login note access type. One of [RsLoginNoteAccessSid](#/components/schemas/RsLoginNoteAccessSid) constants.
+     * Login note access type. One of {@link \WlSdk\RsLoginNoteAccessSid} constants.
      *
      * @var int|null
      */
     public ?int $id_login_note_access = null;
 
     /**
-     * Login note flag type. One of [RsLoginNoteFlagSid](#/components/schemas/RsLoginNoteFlagSid) constants.
+     * Login note flag type. One of {@link \WlSdk\RsLoginNoteFlagSid} constants.
      *
      * @var int|null
      */
@@ -33,7 +33,7 @@ class AlertEditGetResponseLoginNoteData
 
     /**
      * Flag source identifier.
-     * One of [FlagSourceEnum](#/components/schemas/Wl.Location.Flag.FlagSourceEnum) constant.
+     * One of {@link \WlSdk\Wl\Location\Flag\FlagSourceEnum} constant.
      * `null` if the flag was created manually.
      *
      * @var int|null

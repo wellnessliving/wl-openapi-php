@@ -5,9 +5,9 @@ class SubscribePostResponseMessageBroadcastS
 {
     /**
      * Status of mail verification.
-     * One of the [MailVerifyStatusSid](#/components/schemas/Wl.Mail.Verify.MailVerifyStatusSid) constants.
-     * Or [MailVerifyStatusOption::DEFAULT_VALUE](#/components/schemas/Wl.Business.Config.Option.OptionSidAbstract)
-     * if option "Enable Custom Reply To Emails" in Business -&gt; Feature is disabled.
+     * One of the {@link \WlSdk\Wl\Mail\Verify\MailVerifyStatusSid} constants.
+     * Or {@link \WlSdk\Wl\Business\Config\Option\OptionSidAbstract} if option "Enable Custom Reply To Emails" in
+     * Business -&gt; Feature is disabled.
      *
      * @var int|null
      */

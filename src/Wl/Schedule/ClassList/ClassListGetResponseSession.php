@@ -100,8 +100,7 @@ class ClassListGetResponseSession
     public ?int $i_capacity = null;
 
     /**
-     * The day of the week when session is occurred. Constant from
-     * [ADateWeekSid](#/components/schemas/ADateWeekSid).
+     * The day of the week when session is occurred. Constant from {@link \WlSdk\ADateWeekSid}.
      *
      * @var int|null
      */
