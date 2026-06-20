@@ -54,6 +54,17 @@ jobs:
       - name: Generate production SDK
         run: php scripts/generate.php production
 
+      - name: Check syntax
+        run: |
+          ERRORS=$(find scripts stable/src dev/src src -name '*.php' -print0 2>/dev/null \
+            | xargs -0 -P4 php -l 2>&1 \
+            | grep -v "No syntax errors" || true)
+          [ -z "$ERRORS" ] || { printf '%s\n' "$ERRORS"; exit 1; }
+          echo "All PHP files are syntactically valid."
+
+      - name: Format generated PHP
+        run: vendor/bin/php-cs-fixer fix
+
       - name: Detect production changes
         id: changes
         run: |

@@ -8,6 +8,7 @@
         "ext-json": "*"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
         "symfony/yaml": "^6.4|^7.0"
     },
     "autoload": {
@@ -16,9 +17,11 @@
         }
     },
     "scripts": {
+        "fix": "php-cs-fixer fix",
         "generate": "php scripts/generate.php",
         "generate:dev": "php scripts/generate.php dev",
         "generate:production": "php scripts/generate.php production",
-        "generate:stable": "php scripts/generate.php stable"
+        "generate:stable": "php scripts/generate.php stable",
+        "lint": "find scripts stable/src dev/src src -name '*.php' -print0 2>/dev/null | xargs -0 -P4 php -l"
     }
 }

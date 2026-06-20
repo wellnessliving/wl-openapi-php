@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -99,6 +100,44 @@ function wlResolveRef(array $spec, string $ref): array
     return is_array($node) ? $node : [];
 }
 
+// PHP reserved words that cannot be used as class names (case-insensitive check).
+const PHP_RESERVED_WORDS = [
+    'abstract', 'and', 'array', 'as', 'break', 'callable', 'case', 'catch', 'class', 'clone',
+    'const', 'continue', 'declare', 'default', 'die', 'do', 'echo', 'else', 'elseif', 'empty',
+    'enddeclare', 'endfor', 'endforeach', 'endif', 'endswitch', 'endwhile', 'enum', 'eval',
+    'exit', 'extends', 'final', 'finally', 'fn', 'for', 'foreach', 'function', 'global', 'goto',
+    'if', 'implements', 'include', 'include_once', 'instanceof', 'insteadof', 'interface',
+    'isset', 'list', 'match', 'namespace', 'new', 'or', 'print', 'private', 'protected',
+    'public', 'readonly', 'require', 'require_once', 'return', 'static', 'switch', 'throw',
+    'trait', 'try', 'unset', 'use', 'var', 'while', 'xor', 'yield',
+    'self', 'parent', 'null', 'true', 'false', 'void', 'never', 'mixed',
+];
+
+/**
+ * Returns a safe PHP class name, appending 'Endpoint' when the name is a reserved PHP keyword.
+ *
+ * @param string $name Candidate class name derived from an API path segment.
+ * @return string Safe class name usable as a PHP identifier.
+ */
+function wlSafeClassName(string $name): string
+{
+    return in_array(strtolower($name), PHP_RESERVED_WORDS, true) ? $name . 'Endpoint' : $name;
+}
+
+/**
+ * Converts an API field name to a valid PHP property name.
+ *
+ * Replaces hyphens and any other characters that are invalid in PHP identifiers with underscores.
+ * The original field name must still be used as the key when reading from or writing to data arrays.
+ *
+ * @param string $name Original field name from the OpenAPI spec.
+ * @return string PHP-safe property name.
+ */
+function wlSanitizePropertyName(string $name): string
+{
+    return preg_replace('/[^a-zA-Z0-9_]/', '_', $name);
+}
+
 /**
  * Converts an OpenAPI schema to a PHP type string suitable for a nullable property declaration.
  *
@@ -130,7 +169,7 @@ function wlSchemaToPhpType(array $spec, array $schema, int $depth = 0): ?string
     // OpenAPI 3.1 allows type to be an array: ['string', 'null'] instead of
     // type: string + nullable: true. Extract the first non-null type.
     if (is_array($type)) {
-        $nonNull = array_values(array_filter($type, fn($t) => $t !== 'null'));
+        $nonNull = array_values(array_filter($type, fn ($t) => $t !== 'null'));
         $type = $nonNull[0] ?? null;
     }
 
@@ -171,7 +210,7 @@ function wlSchemaToDocType(array $spec, array $schema, int $depth = 0): string
     if (isset($schema['oneOf']) || isset($schema['anyOf'])) {
         $variants = $schema['oneOf'] ?? $schema['anyOf'];
         $types = array_unique(array_map(
-            fn(array $s) => wlSchemaToDocType($spec, $s, $depth + 1),
+            fn (array $s) => wlSchemaToDocType($spec, $s, $depth + 1),
             $variants
         ));
         return implode('|', $types);
@@ -182,7 +221,7 @@ function wlSchemaToDocType(array $spec, array $schema, int $depth = 0): string
     // OpenAPI 3.1 allows type to be an array: ['string', 'null'] instead of
     // type: string + nullable: true. Extract the first non-null type.
     if (is_array($type)) {
-        $nonNull = array_values(array_filter($type, fn($t) => $t !== 'null'));
+        $nonNull = array_values(array_filter($type, fn ($t) => $t !== 'null'));
         $type = $nonNull[0] ?? null;
     }
 
@@ -227,14 +266,15 @@ function wlEnumSchemaToClassRef(string $schemaName): string
  */
 function wlConvertDescriptionLinks(string $text): string
 {
-    return preg_replace_callback(
+    $result = preg_replace_callback(
         '/\[[^\]]*\]\(#\/components\/schemas\/([^)]+)\)/',
-        static function(array $m): string
-        {
+        static function (array $m): string {
             return '{@link ' . wlEnumSchemaToClassRef($m[1]) . '}';
         },
         $text
     ) ?? $text;
+    // Escape comment-closing sequence so it cannot break a surrounding /** */ block.
+    return str_replace('*/', '* /', $result);
 }
 
 /**
@@ -276,7 +316,8 @@ function wlFieldNameToPascalCase(string $fieldName): string
             break;
         }
     }
-    return str_replace('_', '', ucwords($fieldName, '_'));
+    $normalized = str_replace('-', '_', $fieldName);
+    return str_replace('_', '', ucwords($normalized, '_'));
 }
 
 /**
@@ -361,6 +402,7 @@ function wlBuildResponseProperties(
     $extraFiles = [];
 
     foreach ($properties as $propName => $propSchema) {
+        $phpPropName = wlSanitizePropertyName($propName);
         // Preserve a caller-level description before resolving $ref (OpenAPI allows overriding).
         $originalSchema = $propSchema;
         $overrideDesc = $propSchema['description'] ?? null;
@@ -377,7 +419,7 @@ function wlBuildResponseProperties(
         $rawDesc = wlConvertDescriptionLinks(trim($propSchema['description'] ?? ''));
         $schemaType = $propSchema['type'] ?? null;
         if (is_array($schemaType)) {
-            $nonNull = array_values(array_filter($schemaType, fn($t) => $t !== 'null'));
+            $nonNull = array_values(array_filter($schemaType, fn ($t) => $t !== 'null'));
             $schemaType = $nonNull[0] ?? null;
         }
         $fieldPascal = wlFieldNameToPascalCase($propName);
@@ -386,14 +428,18 @@ function wlBuildResponseProperties(
         if ($schemaType === 'object' && !empty($propSchema['properties'])) {
             $subClassName = $parentClassName . $fieldPascal;
             [$subPropsCode, $subConstructorBody, $subExtra] = wlBuildResponseProperties(
-                $spec, $propSchema['properties'], $namespace, $relDir, $subClassName
+                $spec,
+                $propSchema['properties'],
+                $namespace,
+                $relDir,
+                $subClassName
             );
             $extraFiles[] = wlMakeResponseSubClass($namespace, $relDir, $subClassName, $subPropsCode, $subConstructorBody);
             array_push($extraFiles, ...$subExtra);
 
             $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $subClassName . '|null')
-                . "    public ?{$subClassName} \${$propName} = null;\n\n";
-            $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
+                . "    public ?{$subClassName} \${$phpPropName} = null;\n\n";
+            $constructorBody .= "        \$this->{$phpPropName} = isset(\$data['{$propName}'])"
                 . " ? new {$subClassName}((array)\$data['{$propName}']) : null;\n";
             continue;
         }
@@ -422,7 +468,11 @@ function wlBuildResponseProperties(
                         $objectIdx++;
                         $subClassName = $parentClassName . $fieldPascal . $suffix;
                         [$subPropsCode, $subConstructorBody, $subExtra] = wlBuildResponseProperties(
-                            $spec, $resolvedVariant['properties'], $namespace, $relDir, $subClassName
+                            $spec,
+                            $resolvedVariant['properties'],
+                            $namespace,
+                            $relDir,
+                            $subClassName
                         );
                         $extraFiles[] = wlMakeResponseSubClass($namespace, $relDir, $subClassName, $subPropsCode, $subConstructorBody);
                         array_push($extraFiles, ...$subExtra);
@@ -432,9 +482,9 @@ function wlBuildResponseProperties(
                     }
                 }
                 $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', implode('|', array_unique($docTypes)) . '|null')
-                    . "    public ?array \${$propName} = null;\n\n";
+                    . "    public ?array \${$phpPropName} = null;\n\n";
                 // Cannot auto-instantiate without a discriminator; keep as plain array.
-                $constructorBody .= "        \$this->{$propName} = \$data['{$propName}'] ?? null;\n";
+                $constructorBody .= "        \$this->{$phpPropName} = \$data['{$propName}'] ?? null;\n";
                 continue;
             }
 
@@ -444,14 +494,18 @@ function wlBuildResponseProperties(
             if ($itemType === 'object' && !empty($resolvedItems['properties'])) {
                 $subClassName = $parentClassName . $fieldPascal;
                 [$subPropsCode, $subConstructorBody, $subExtra] = wlBuildResponseProperties(
-                    $spec, $resolvedItems['properties'], $namespace, $relDir, $subClassName
+                    $spec,
+                    $resolvedItems['properties'],
+                    $namespace,
+                    $relDir,
+                    $subClassName
                 );
                 $extraFiles[] = wlMakeResponseSubClass($namespace, $relDir, $subClassName, $subPropsCode, $subConstructorBody);
                 array_push($extraFiles, ...$subExtra);
 
                 $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $subClassName . '[]|null')
-                    . "    public ?array \${$propName} = null;\n\n";
-                $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
+                    . "    public ?array \${$phpPropName} = null;\n\n";
+                $constructorBody .= "        \$this->{$phpPropName} = isset(\$data['{$propName}'])"
                     . " ? array_map(static fn(\$item) => new {$subClassName}((array)\$item), (array)\$data['{$propName}']) : null;\n";
                 continue;
             }
@@ -462,13 +516,13 @@ function wlBuildResponseProperties(
         $docType = wlSchemaToDocType($spec, $originalSchema);
         $propsCode .= wlBuildPropertyDoc($rawDesc ?: 'No description.', $docType . '|null');
         if ($phpType !== null) {
-            $propsCode .= "    public ?{$phpType} \${$propName} = null;\n\n";
+            $propsCode .= "    public ?{$phpType} \${$phpPropName} = null;\n\n";
             $cast = $castMap[$phpType] ?? '';
-            $constructorBody .= "        \$this->{$propName} = isset(\$data['{$propName}'])"
+            $constructorBody .= "        \$this->{$phpPropName} = isset(\$data['{$propName}'])"
                 . " ? {$cast}\$data['{$propName}'] : null;\n";
         } else {
-            $propsCode .= "    public \${$propName} = null;\n\n";
-            $constructorBody .= "        \$this->{$propName} = \$data['{$propName}'] ?? null;\n";
+            $propsCode .= "    public \${$phpPropName} = null;\n\n";
+            $constructorBody .= "        \$this->{$phpPropName} = \$data['{$propName}'] ?? null;\n";
         }
     }
 
@@ -542,6 +596,7 @@ function wlCollectParams(array $spec, array $operations): array
             }
             $schema = $param['schema'] ?? [];
             $params[$name] = [
+                'phpName' => wlSanitizePropertyName($name),
                 'phpType' => wlSchemaToPhpType($spec, $schema),
                 'docType' => wlSchemaToDocType($spec, $schema),
                 'description' => wlConvertDescriptionLinks(trim($param['description'] ?? '')),
@@ -570,6 +625,7 @@ function wlCollectParams(array $spec, array $operations): array
                 continue;
             }
             $params[$propName] = [
+                'phpName' => wlSanitizePropertyName($propName),
                 'phpType' => wlSchemaToPhpType($spec, $propSchema),
                 'docType' => wlSchemaToDocType($spec, $propSchema),
                 'description' => wlConvertDescriptionLinks(trim($propSchema['description'] ?? '')),
@@ -674,7 +730,11 @@ function wlGenerateResponseClass(
     $properties = ($successSchema !== null) ? ($successSchema['properties'] ?? []) : [];
 
     [$propsCode, $constructorBody, $extraFiles] = wlBuildResponseProperties(
-        $spec, $properties, $namespace, $relDir, $responseClassName
+        $spec,
+        $properties,
+        $namespace,
+        $relDir,
+        $responseClassName
     );
 
     $relFile = ($relDir ? $relDir . '/' : '') . $responseClassName . '.php';
@@ -713,6 +773,7 @@ function wlGenerateRequestClass(
 ): array {
     $propsCode = '';
     foreach ($params as $name => $info) {
+        $phpName = $info['phpName'];
         $docType = $info['docType'] . '|null';
         $rawDesc = $info['description'] ?: 'No description.';
         $propsCode .= "    /**\n";
@@ -723,15 +784,16 @@ function wlGenerateRequestClass(
         $propsCode .= "     * @var {$docType}\n";
         $propsCode .= "     */\n";
         if ($info['phpType'] !== null) {
-            $propsCode .= "    public ?{$info['phpType']} \${$name} = null;\n\n";
+            $propsCode .= "    public ?{$info['phpType']} \${$phpName} = null;\n\n";
         } else {
-            $propsCode .= "    public \${$name} = null;\n\n";
+            $propsCode .= "    public \${$phpName} = null;\n\n";
         }
     }
 
     $paramsEntries = '';
     foreach ($params as $name => $info) {
-        $paramsEntries .= "            '{$name}' => \$this->{$name},\n";
+        $phpName = $info['phpName'];
+        $paramsEntries .= "            '{$name}' => \$this->{$phpName},\n";
     }
     if ($paramsEntries !== '') {
         $paramsMethod = "    public function params(): array\n"
@@ -878,7 +940,7 @@ function wlGenerateApiClass(array $spec, string $path, array $pathItem): array
         array_push($files, ...wlGenerateResponseClass($spec, $verb, $operation, $namespace, $responseClass, $relDir));
     }
 
-    $files[] = wlGenerateEndpointClass($spec, $path, $namespace, $classBaseName, $operations, $relDir);
+    $files[] = wlGenerateEndpointClass($spec, $path, $namespace, wlSafeClassName($classBaseName), $operations, $relDir);
 
     return $files;
 }
@@ -910,7 +972,7 @@ function wlGenerateEnumClass(string $schemaName, array $schema): ?array
     $values = $schema['enum'];
     $varnames = $schema['x-enum-varnames'];
     $descriptions = $schema['x-enum-description'] ?? [];
-    $classDesc = trim($schema['description'] ?? '');
+    $classDesc = str_replace('*/', '* /', trim($schema['description'] ?? ''));
 
     $classDocLines = [];
     foreach (explode("\n", wordwrap($classDesc ?: $className . ' constants.', 116, "\n")) as $l) {
@@ -928,15 +990,44 @@ function wlGenerateEnumClass(string $schemaName, array $schema): ?array
         }
     }
 
+    // Resolve PHP constant names from varnames (which may be namespace paths like 'Wl\Foo\BarChannel').
+    // Start with 1 path segment and increase until all names within this class are unique.
+    $n = count($varnames);
+    $constNames = array_fill(0, $n, '');
+    $resolved = array_fill(0, $n, false);
+    for ($depth = 1; $depth <= 10 && in_array(false, $resolved, true); $depth++) {
+        $candidates = [];
+        for ($j = 0; $j < $n; $j++) {
+            if (!$resolved[$j]) {
+                $segs = explode('\\', $varnames[$j] ?? ('VALUE_' . $j));
+                $candidates[$j] = implode('_', array_slice($segs, -min($depth, count($segs))));
+            }
+        }
+        $nameCounts = array_count_values($candidates);
+        for ($j = 0; $j < $n; $j++) {
+            if (!$resolved[$j] && isset($candidates[$j]) && $nameCounts[$candidates[$j]] === 1) {
+                $constNames[$j] = $candidates[$j];
+                $resolved[$j] = true;
+            }
+        }
+    }
+    // Fallback for any still-duplicate entries (identical full paths - should never happen).
+    for ($j = 0; $j < $n; $j++) {
+        if (!$resolved[$j]) {
+            $constNames[$j] = implode('_', explode('\\', $varnames[$j] ?? ('VALUE_' . $j))) . '_' . $j;
+        }
+    }
+
     $casesCode = '';
     foreach ($values as $i => $value) {
-        $caseName = $varnames[$i] ?? ('VALUE_' . $i);
-        $caseDesc = trim((string)($descriptions[$i] ?? $varnameDescMap[$caseName] ?? ''));
+        $rawVarname = $varnames[$i] ?? ('VALUE_' . $i);
+        $caseName = $constNames[$i];
+        $caseDesc = trim((string)($descriptions[$i] ?? $varnameDescMap[$rawVarname] ?? ''));
         if ($caseDesc !== '') {
             $casesCode .= "    /** {$caseDesc} */\n";
         }
         $caseValue = ($phpType === 'string') ? "'" . addslashes((string)$value) . "'" : (string)(int)$value;
-        $casesCode .= "    const {$caseName} = {$caseValue};\n";
+        $casesCode .= "    public const {$caseName} = {$caseValue};\n";
     }
 
     $content = "<?php\n"
