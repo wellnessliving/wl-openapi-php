@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Schedule\ClassView;
 class ClassViewPostResponseSessionResultStaffLogo
 {
     /**
-     * ID of gender. One of [GenderSid](#/components/schemas/Wl.Gender.GenderSid) constants.
+     * ID of gender. One of {@link \WlSdk\Wl\Gender\GenderSid} constants.
      *
      * @var int|null
      */

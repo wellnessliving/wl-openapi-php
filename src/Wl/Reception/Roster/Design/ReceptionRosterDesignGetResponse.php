@@ -51,7 +51,7 @@ class ReceptionRosterDesignGetResponse
 
     /**
      * ID of the action to take when automatically redirecting.
-     * One of [DirectSid](#/components/schemas/Wl.Reception.Roster.DirectSid) constants.
+     * One of {@link \WlSdk\Wl\Reception\Roster\DirectSid} constants.
      *
      * @var int|null
      */

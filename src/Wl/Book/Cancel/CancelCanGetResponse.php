@@ -19,9 +19,8 @@ class CancelCanGetResponse
     /**
      * `true` if the booking can be canceled online by the specified user, `false` otherwise.
      * 
-     * Cancellation is possible only if the current visit status is
-     * [VisitSid::BOOK](#/components/schemas/Wl.Visit.VisitSid) or
-     * [VisitSid::WAIT](#/components/schemas/Wl.Visit.VisitSid).
+     * Cancellation is possible only if the current visit status is {@link \WlSdk\Wl\Visit\VisitSid} or {@link
+     * \WlSdk\Wl\Visit\VisitSid}.
      *
      * @var bool|null
      */
@@ -39,9 +38,8 @@ class CancelCanGetResponse
     /**
      * `true` if the cancellation would be considered a late cancel, `false` otherwise.
      * 
-     * Late cancel applies only to bookings with status [VisitSid::BOOK](#/components/schemas/Wl.Visit.VisitSid).
-     * Wait-list bookings ([VisitSid::WAIT](#/components/schemas/Wl.Visit.VisitSid)) are never subject to late
-     * cancellation rules.
+     * Late cancel applies only to bookings with status {@link \WlSdk\Wl\Visit\VisitSid}.
+     * Wait-list bookings ({@link \WlSdk\Wl\Visit\VisitSid}) are never subject to late cancellation rules.
      *
      * @var bool|null
      */

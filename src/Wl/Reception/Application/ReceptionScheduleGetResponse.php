@@ -15,8 +15,8 @@ class ReceptionScheduleGetResponse
 
     /**
      * All types of services that appear in the schedule.
-     * Keys are constants from [ServiceSid](#/components/schemas/Wl.Service.ServiceSid). Values are the HTML
-     * classes associated with that service.
+     * Keys are constants from {@link \WlSdk\Wl\Service\ServiceSid}. Values are the HTML classes associated with
+     * that service.
      *
      * @var int[]|null
      */

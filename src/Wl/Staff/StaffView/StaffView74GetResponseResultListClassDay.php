@@ -11,7 +11,7 @@ class StaffView74GetResponseResultListClassDay
     public ?StaffView74GetResponseResultListClassDayClassPeriod $a_class_period = null;
 
     /**
-     * The day of week. One of [ADateWeekSid](#/components/schemas/ADateWeekSid) constants.
+     * The day of week. One of {@link \WlSdk\ADateWeekSid} constants.
      *
      * @var int|null
      */

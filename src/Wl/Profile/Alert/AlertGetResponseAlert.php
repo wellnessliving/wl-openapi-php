@@ -19,7 +19,7 @@ class AlertGetResponseAlert
     public ?bool $is_today = null;
 
     /**
-     * ID of alert type. One of [RsProfileNoteSid](#/components/schemas/RsProfileNoteSid) constants.
+     * ID of alert type. One of {@link \WlSdk\RsProfileNoteSid} constants.
      *
      * @var int|null
      */

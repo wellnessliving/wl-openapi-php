@@ -77,24 +77,23 @@ class PurchaseGetResponsePurchase
     public ?int $i_session = null;
 
     /**
-     * This is only set for promotions. The ID of the promotion program category. One of the
-     * [RsProgramCategorySid](#/components/schemas/RsProgramCategorySid) constants.
+     * This is only set for promotions. The ID of the promotion program category. One of the {@link
+     * \WlSdk\RsProgramCategorySid} constants.
      *
      * @var int|null
      */
     public ?int $id_program_category = null;
 
     /**
-     * This is only set for promotions. The ID of the promotion program type. One of the
-     * [RsProgramTypeSid](#/components/schemas/RsProgramTypeSid) constants.
+     * This is only set for promotions. The ID of the promotion program type. One of the {@link
+     * \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
      */
     public ?int $id_program_type = null;
 
     /**
-     * The ID of Purchase Option type. One of the [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid)
-     * constants.
+     * The ID of Purchase Option type. One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
      */

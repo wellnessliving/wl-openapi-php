@@ -39,7 +39,7 @@ class DebtListGetResponseDebt
     public ?string $dtu_cease = null;
 
     /**
-     * The debt currency ID. One of [CurrencySid](#/components/schemas/Core.Locale.CurrencySid) constants.
+     * The debt currency ID. One of {@link \WlSdk\Core\Locale\CurrencySid} constants.
      *
      * @var int|null
      */

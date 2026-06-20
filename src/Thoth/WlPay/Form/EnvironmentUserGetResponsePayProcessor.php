@@ -29,8 +29,7 @@ class EnvironmentUserGetResponsePayProcessor
     public ?bool $hide_save_source = null;
 
     /**
-     * ID of the payment processor. One of
-     * [PayProcessorSid](#/components/schemas/Thoth.PayProcessor.PayProcessorSid) constants.
+     * ID of the payment processor. One of {@link \WlSdk\Thoth\PayProcessor\PayProcessorSid} constants.
      *
      * @var int|null
      */
@@ -39,7 +38,7 @@ class EnvironmentUserGetResponsePayProcessor
     /**
      * `true` if 3DS should be performed, `false` if 3DS should not be performed. `null` if this is not defined for
      * payment processor.
-     * Only for [PayProcessorSid::NUVEI](#/components/schemas/Thoth.PayProcessor.PayProcessorSid)
+     * Only for {@link \WlSdk\Thoth\PayProcessor\PayProcessorSid}
      *
      * @var bool|null
      */

@@ -18,7 +18,7 @@ class ReviewElementGetResponseReview
     public ?float $f_rate = null;
 
     /**
-     * Status of the Review. One of [RsReviewStatusSid](#/components/schemas/RsReviewStatusSid) constants.
+     * Status of the Review. One of {@link \WlSdk\RsReviewStatusSid} constants.
      *
      * @var int|null
      */

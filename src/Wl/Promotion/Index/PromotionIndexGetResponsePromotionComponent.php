@@ -5,11 +5,11 @@ class PromotionIndexGetResponsePromotionComponent
 {
     /**
      * The type of the component.
-     *  One of [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid) constants.
+     *  One of {@link \WlSdk\RsPurchaseItemSid} constants.
      *  This can only be: <ul>
-     *      <li>[RsPurchaseItemSid::ENROLLMENT](#/components/schemas/RsPurchaseItemSid)</li>
-     *      <li>[RsPurchaseItemSid::PROMOTION](#/components/schemas/RsPurchaseItemSid)</li>
-     *      <li>[RsPurchaseItemSid::PRODUCT](#/components/schemas/RsPurchaseItemSid)</li>
+     *      <li>{@link \WlSdk\RsPurchaseItemSid}</li>
+     *      <li>{@link \WlSdk\RsPurchaseItemSid}</li>
+     *      <li>{@link \WlSdk\RsPurchaseItemSid}</li>
      *  </ul>
      *
      * @var int|null
@@ -18,10 +18,8 @@ class PromotionIndexGetResponsePromotionComponent
 
     /**
      * The primary key of the component in the related table. This depends on the type of the component.
-     * The key of the event for [RsPurchaseItemSid::ENROLLMENT](#/components/schemas/RsPurchaseItemSid), the key of
-     * the Purchase Option for the
-     * [RsPurchaseItemSid::PROMOTION](#/components/schemas/RsPurchaseItemSid), the key of the product option for
-     * the [RsPurchaseItemSid::PRODUCT](#/components/schemas/RsPurchaseItemSid).
+     * The key of the event for {@link \WlSdk\RsPurchaseItemSid}, the key of the Purchase Option for the
+     * {@link \WlSdk\RsPurchaseItemSid}, the key of the product option for the {@link \WlSdk\RsPurchaseItemSid}.
      * Full information about events can be taken from the [EventListApi](/Wl/Event/EventList.json). Purchase
      * Options from the [PromotionIndexApi](/Wl/Promotion/Index/PromotionIndex.json).
      * Full information about products are not available at this moment though API.

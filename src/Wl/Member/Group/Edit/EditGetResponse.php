@@ -15,7 +15,7 @@ class EditGetResponse
     public ?int $id_conversion_type = null;
 
     /**
-     * Shape of icon. One of [ShapeSid](#/components/schemas/Wl.Member.Group.ShapeSid) constants.
+     * Shape of icon. One of {@link \WlSdk\Wl\Member\Group\ShapeSid} constants.
      *
      * @var int|null
      */

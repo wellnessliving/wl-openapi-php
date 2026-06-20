@@ -101,7 +101,7 @@ class GuestPassListGetResponseList
     public ?int $i_use = null;
 
     /**
-     * Unit of the reset period. One of [ADurationSid](#/components/schemas/ADurationSid) constants.
+     * Unit of the reset period. One of {@link \WlSdk\ADurationSid} constants.
      * `null` if the promotion has no reset period.
      *
      * @var int|null
@@ -110,15 +110,15 @@ class GuestPassListGetResponseList
 
     /**
      * Guest pass program ID.
-     * One of [RsProgramSid](#/components/schemas/RsProgramSid) constants.
+     * One of {@link \WlSdk\RsProgramSid} constants.
      *
      * @var int|null
      */
     public ?int $id_program_guest = null;
 
     /**
-     * Reset type of the host promotion. One of
-     * [GuestPassResetTypeSid](#/components/schemas/Wl.Promotion.Guest.Pass.GuestPassResetTypeSid) constants.
+     * Reset type of the host promotion. One of {@link \WlSdk\Wl\Promotion\Guest\Pass\GuestPassResetTypeSid}
+     * constants.
      *
      * @var int|null
      */

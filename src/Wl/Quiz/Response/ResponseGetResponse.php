@@ -43,7 +43,7 @@ class ResponseGetResponse
     public ?string $dtu_response = null;
 
     /**
-     * Response source. One of [SourceSid](#/components/schemas/Wl.Quiz.Response.SourceSid) constants.
+     * Response source. One of {@link \WlSdk\Wl\Quiz\Response\SourceSid} constants.
      *
      * @var int|null
      */

@@ -75,7 +75,7 @@ class AssetListGetResponseAsset
     public ?string $html_title = null;
 
     /**
-     * The purchase rule. One of the [RsServiceRequireSid](#/components/schemas/RsServiceRequireSid) constants.
+     * The purchase rule. One of the {@link \WlSdk\RsServiceRequireSid} constants.
      *
      * @var int|null
      */

@@ -4,15 +4,14 @@ namespace WlSdk\Wl\Family\Relation;
 class RelationGetResponseRelation
 {
     /**
-     * The relationship type. One of the [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) constants.
+     * The relationship type. One of the {@link \WlSdk\RsFamilyRelationSid} constants.
      *
      * @var int|null
      */
     public ?int $id_family_relation = null;
 
     /**
-     * The type of reciprocated relationship. One of the
-     * [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) constants.
+     * The type of reciprocated relationship. One of the {@link \WlSdk\RsFamilyRelationSid} constants.
      *
      * @var int|null
      */

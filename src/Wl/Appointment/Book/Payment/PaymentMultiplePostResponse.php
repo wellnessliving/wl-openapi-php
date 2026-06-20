@@ -14,8 +14,7 @@ class PaymentMultiplePostResponse
     public ?array $a_login_prize = null;
 
     /**
-     * The payment type for the appointment. One of the
-     * [RsAppointmentPaySid](#/components/schemas/RsAppointmentPaySid) constants.
+     * The payment type for the appointment. One of the {@link \WlSdk\RsAppointmentPaySid} constants.
      *
      * @var int[]|null
      */

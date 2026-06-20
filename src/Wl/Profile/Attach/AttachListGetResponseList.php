@@ -40,8 +40,7 @@ class AttachListGetResponseList
     public ?int $i_width = null;
 
     /**
-     * Preview type identifier. One of [AttachPreviewSid](#/components/schemas/Wl.Profile.Attach.AttachPreviewSid)
-     * constants.
+     * Preview type identifier. One of {@link \WlSdk\Wl\Profile\Attach\AttachPreviewSid} constants.
      *
      * @var int|null
      */

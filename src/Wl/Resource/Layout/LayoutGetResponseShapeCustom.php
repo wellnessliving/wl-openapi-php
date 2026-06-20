@@ -4,34 +4,29 @@ namespace WlSdk\Wl\Resource\Layout;
 class LayoutGetResponseShapeCustom
 {
     /**
-     * The height for the shape
-     * [LayoutShapeSid::RECTANGLE](#/components/schemas/Wl.Resource.Layout.Shape.LayoutShapeSid). Empty for other
-     * shapes.
+     * The height for the shape {@link \WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid}. Empty for other shapes.
      *
      * @var float|null
      */
     public ?float $f_height = null;
 
     /**
-     * The width for the shape
-     * [LayoutShapeSid::RECTANGLE](#/components/schemas/Wl.Resource.Layout.Shape.LayoutShapeSid). Empty for other
-     * shapes.
+     * The width for the shape {@link \WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid}. Empty for other shapes.
      *
      * @var float|null
      */
     public ?float $f_width = null;
 
     /**
-     * The start angle for the shape
-     * [LayoutShapeSid::PIE](#/components/schemas/Wl.Resource.Layout.Shape.LayoutShapeSid). Empty for other shapes.
+     * The start angle for the shape {@link \WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid}. Empty for other
+     * shapes.
      *
      * @var int|null
      */
     public ?int $i_degree_from = null;
 
     /**
-     * The start angle for shape
-     * [LayoutShapeSid::PIE](#/components/schemas/Wl.Resource.Layout.Shape.LayoutShapeSid). Empty for other shapes.
+     * The start angle for shape {@link \WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid}. Empty for other shapes.
      *
      * @var int|null
      */
@@ -45,10 +40,8 @@ class LayoutGetResponseShapeCustom
     public ?int $i_left = null;
 
     /**
-     * The radius for shapes [LayoutShapeSid::PIE](#/components/schemas/Wl.Resource.Layout.Shape.LayoutShapeSid)
-     * and
-     * [LayoutShapeSid::CIRCLE](#/components/schemas/Wl.Resource.Layout.Shape.LayoutShapeSid). Empty for other
-     * shapes.
+     * The radius for shapes {@link \WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid} and
+     * {@link \WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid}. Empty for other shapes.
      *
      * @var int|null
      */
@@ -62,8 +55,7 @@ class LayoutGetResponseShapeCustom
     public ?int $i_top = null;
 
     /**
-     * The shape type ID. One of the [LayoutShapeSid](#/components/schemas/Wl.Resource.Layout.Shape.LayoutShapeSid)
-     * constants.
+     * The shape type ID. One of the {@link \WlSdk\Wl\Resource\Layout\Shape\LayoutShapeSid} constants.
      *
      * @var int|null
      */

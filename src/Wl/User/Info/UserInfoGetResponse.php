@@ -68,7 +68,7 @@ class UserInfoGetResponse
     public ?bool $has_discount = null;
 
     /**
-     * The ID of the user's gender. One of the [AGenderSid](#/components/schemas/AGenderSid) constants.
+     * The ID of the user's gender. One of the {@link \WlSdk\AGenderSid} constants.
      * 
      * This will be `null` if the gender isn't set yet.
      *

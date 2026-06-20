@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Book\Process;
 class Process54GetResponsePath
 {
     /**
-     * The step ID. One of the [ProcessSpaSid](#/components/schemas/Wl.Book.Process.ProcessSpaSid) constants.
+     * The step ID. One of the {@link \WlSdk\Wl\Book\Process\ProcessSpaSid} constants.
      *
      * @var int|null
      */

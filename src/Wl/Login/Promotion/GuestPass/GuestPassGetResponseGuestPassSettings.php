@@ -27,8 +27,7 @@ class GuestPassGetResponseGuestPassSettings
     public ?int $i_limit_duration = null;
 
     /**
-     * Type of the duration of `i_limit_duration`. One of [ADurationSid](#/components/schemas/ADurationSid)
-     * constants.
+     * Type of the duration of `i_limit_duration`. One of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
      */

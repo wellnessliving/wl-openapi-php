@@ -82,7 +82,7 @@ class VisitStatusGetResponse
 
     /**
      * The source of the visit or the visit change.
-     * One of the [ModeSid](#/components/schemas/Wl.Mode.ModeSid) constants.
+     * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * If you're unsure about the value to use, keep the default value.
      *
      * @var int|null
@@ -91,7 +91,7 @@ class VisitStatusGetResponse
 
     /**
      * The status of the visit.
-     * One of the [VisitSid](#/components/schemas/Wl.Visit.VisitSid) constants.
+     * One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
      * @var int|null
      */

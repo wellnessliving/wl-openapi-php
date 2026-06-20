@@ -25,7 +25,7 @@ class PageListGetResponseVisit
     public ?string $k_visit = null;
 
     /**
-     * Visit status ID. One of [VisitSid](#/components/schemas/Wl.Visit.VisitSid) constants.
+     * Visit status ID. One of {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
      * @var int|null
      */

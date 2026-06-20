@@ -4,8 +4,7 @@ namespace WlSdk\Wl\Reception\Application;
 class MemberInfoGetResponseResultListInfoVaccinationStatus
 {
     /**
-     * Vaccination status sid. Result from
-     * [VaccinationStatusSid::idSid()](#/components/schemas/Wl.Login.Member.VaccinationStatus.VaccinationStatusSid)
+     * Vaccination status sid. Result from {@link \WlSdk\Wl\Login\Member\VaccinationStatus\VaccinationStatusSid}
      * method.
      *
      * @var string|null

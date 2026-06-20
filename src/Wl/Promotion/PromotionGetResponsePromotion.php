@@ -88,7 +88,7 @@ class PromotionGetResponsePromotion
      * The type of period for the 'Period' duration type.
      * For example, if the duration of the Purchase Option is 12 months, this field will display the ID of the
      * month.
-     * For all possible options, see [ADurationSid](#/components/schemas/ADurationSid).
+     * For all possible options, see {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
      */
@@ -96,7 +96,7 @@ class PromotionGetResponsePromotion
 
     /**
      * The duration type. Possible duration types can be 'Without End', 'Expires on a certain date', 'Period'.
-     * For more information, see [RsDurationTypeSid](#/components/schemas/RsDurationTypeSid).
+     * For more information, see {@link \WlSdk\RsDurationTypeSid}.
      *
      * @var int|null
      */
@@ -104,15 +104,14 @@ class PromotionGetResponsePromotion
 
     /**
      * The Purchase Option type.
-     * For more information, see [RsProgramSid](#/components/schemas/RsProgramSid).
+     * For more information, see {@link \WlSdk\RsProgramSid}.
      *
      * @var int|null
      */
     public ?int $id_program = null;
 
     /**
-     * Purchase restriction for this product, one of
-     * [PurchaseRestrictionSid](#/components/schemas/Wl.Promotion.PurchaseRestrictionSid) constants.
+     * Purchase restriction for this product, one of {@link \WlSdk\Wl\Promotion\PurchaseRestrictionSid} constants.
      *
      * @var int|null
      */

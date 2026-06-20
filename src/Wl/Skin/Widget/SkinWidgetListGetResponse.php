@@ -9,10 +9,10 @@ class SkinWidgetListGetResponse
     /**
      * List of Widget skins grouped by widget type.
      * 
-     * Skin type, one of [RsSkinSid](#/components/schemas/RsSkinSid) constants.
+     * Skin type, one of {@link \WlSdk\RsSkinSid} constants.
      * 
      * The array structure:
-     * Keys - Skin type, one of [RsSkinSid](#/components/schemas/RsSkinSid) constants.
+     * Keys - Skin type, one of {@link \WlSdk\RsSkinSid} constants.
      * Values - arrays with next keys:
      *
      * @var SkinWidgetListGetResponseWidgetSkin[]|null

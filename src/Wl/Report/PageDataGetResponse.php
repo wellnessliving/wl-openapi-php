@@ -7,8 +7,8 @@ namespace WlSdk\Wl\Report;
 class PageDataGetResponse
 {
     /**
-     * List of the reports contents. Key is the report id from [RsReportSid](#/components/schemas/RsReportSid),
-     * value is report contents.
+     * List of the reports contents. Key is the report id from {@link \WlSdk\RsReportSid}, value is report
+     * contents.
      * Contents can vary based on the report that's loaded.
      *
      * @var array[]|null

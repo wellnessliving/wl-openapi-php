@@ -63,8 +63,7 @@ class InfoGetResponse
     public ?int $i_index = null;
 
     /**
-     * Status of appointment payment. One of [RsAppointmentPaySid](#/components/schemas/RsAppointmentPaySid)
-     * constants.
+     * Status of appointment payment. One of {@link \WlSdk\RsAppointmentPaySid} constants.
      *
      * @var int|null
      */

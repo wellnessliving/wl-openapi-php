@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Login\Member;
 class MemberValidate63GetResponseEmptyFieldsRegistration
 {
     /**
-     * The general field ID. One of [RsFieldGeneralSid](#/components/schemas/RsFieldGeneralSid) constants.
+     * The general field ID. One of {@link \WlSdk\RsFieldGeneralSid} constants.
      *
      * @var int|null
      */

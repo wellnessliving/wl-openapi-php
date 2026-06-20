@@ -42,7 +42,7 @@ class QuizElementGetResponseElementD
     public ?string $html_subheading = null;
 
     /**
-     * Element ID. One of [ElementSid](#/components/schemas/Core.Quiz.Element.ElementSid) constants.
+     * Element ID. One of {@link \WlSdk\Core\Quiz\Element\ElementSid} constants.
      * 
      * Defined automatically according to the name of the class.
      *

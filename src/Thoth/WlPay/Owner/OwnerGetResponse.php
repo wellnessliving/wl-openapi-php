@@ -9,7 +9,7 @@ class OwnerGetResponse
     /**
      * The type of user for which transactions can be made (this property is optional).
      * 
-     * This is one of the [RsPayOwnerSid](#/components/schemas/RsPayOwnerSid) constants.
+     * This is one of the {@link \WlSdk\RsPayOwnerSid} constants.
      *
      * @var int|null
      */

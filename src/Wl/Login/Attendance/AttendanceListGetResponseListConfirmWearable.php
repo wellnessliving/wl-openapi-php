@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Login\Attendance;
 class AttendanceListGetResponseListConfirmWearable
 {
     /**
-     * Device type ID. One of [SensorTypesSid](#/components/schemas/Wl.Profile.Sensor.SensorTypesSid) constants.
+     * Device type ID. One of {@link \WlSdk\Wl\Profile\Sensor\SensorTypesSid} constants.
      *
      * @var int|null
      */
