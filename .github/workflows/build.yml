@@ -88,8 +88,10 @@ jobs:
             "${{ steps.changes.outputs.dev_ver }}" \
             "${{ steps.changes.outputs.prod_ver }}")
           git commit -m "$MSG"
+          git stash
           git pull --rebase origin main
           git push
+          git stash pop
 
       - name: Update channel branches
         id: channel_push
