@@ -377,7 +377,7 @@ function wlBuildResponseProperties(
             }
         }
 
-        $rawDesc = trim($propSchema['description'] ?? '');
+        $rawDesc = wlConvertDescriptionLinks(trim($propSchema['description'] ?? ''));
         $schemaType = $propSchema['type'] ?? null;
         if (is_array($schemaType)) {
             $nonNull = array_values(array_filter($schemaType, fn($t) => $t !== 'null'));
