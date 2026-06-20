@@ -1,0 +1,58 @@
+<?php
+namespace WlSdk\Wl\Appointment\Book\Payment;
+
+class PaymentMultipleGetResponsePurchase
+{
+    /**
+     * A list of taxes to apply containing information about taxes.
+     * The array keys are `k_tax` keys. Each element contains the following fields:
+     *
+     * @var PaymentMultipleGetResponsePurchaseTax|null
+     */
+    public ?PaymentMultipleGetResponsePurchaseTax $a_tax = null;
+
+    /**
+     * The purchase item ID. One of the [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid) constants.
+     *
+     * @var int|null
+     */
+    public ?int $id_purchase_item = null;
+
+    /**
+     * The value of the discount used for the purchase.
+     *
+     * @var string|null
+     */
+    public ?string $k_id = null;
+
+    /**
+     * The value of the discount used for the purchase.
+     *
+     * @var string|null
+     */
+    public ?string $m_discount = null;
+
+    /**
+     * The payment for the promotion (or single visit) without taxes.
+     *
+     * @var string|null
+     */
+    public ?string $m_pay = null;
+
+    /**
+     * The price of the promotion (or single visit).
+     *
+     * @var string|null
+     */
+    public ?string $m_price = null;
+
+    public function __construct(array $data)
+    {
+        $this->a_tax = isset($data['a_tax']) ? new PaymentMultipleGetResponsePurchaseTax((array)$data['a_tax']) : null;
+        $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
+        $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
+        $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;
+        $this->m_pay = isset($data['m_pay']) ? (string)$data['m_pay'] : null;
+        $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;
+    }
+}
