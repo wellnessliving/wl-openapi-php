@@ -1,0 +1,16 @@
+{
+    "name": "wellnessliving/wl-openapi-php-dev",
+    "description": "WellnessLiving PHP SDK - dev channel",
+    "version": "1.1.20260619183602",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.4",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "WlSdk\\": "src/"
+        }
+    }
+}
