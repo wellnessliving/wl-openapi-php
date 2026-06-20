@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\GuestPass\Apply;
 
 class ApplyPostRequest
@@ -33,7 +34,7 @@ class ApplyPostRequest
             'k_login_promotion' => $this->k_login_promotion,
             'k_visit' => $this->k_visit,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Visit;
 
 /**
@@ -16,11 +17,11 @@ class VisitStatusGetResponse
 
     /**
      * An array of service resources.
-     * 
-     * The key refers to the `k_resource_type`. 
+     *
+     * The key refers to the `k_resource_type`.
      * The value is an array with the following key: `k_resource`. .
      * The array element contains a nested array with `i_index` and `i_quantity`. .
-     * 
+     *
      * This will be empty if not set yet.
      *
      * @var string[]|null
@@ -29,9 +30,9 @@ class VisitStatusGetResponse
 
     /**
      * An array of service resources.
-     * 
+     *
      * Contains an extended data set, as well as a different format than `a_resource`.
-     * 
+     *
      * Each element contains the following set of data:
      *
      * @var VisitStatusGetResponseResourceAlias[]|null
@@ -106,7 +107,7 @@ class VisitStatusGetResponse
 
     /**
      * Whether this visit is requested and requires staff confirmation.
-     * 
+     *
      * * `true` - visit is requested.
      * * `false` - visit is confirmed or denied or this is a system request.
      *
@@ -231,7 +232,7 @@ class VisitStatusGetResponse
     {
         $this->a_cancel = isset($data['a_cancel']) ? new VisitStatusGetResponseCancel((array)$data['a_cancel']) : null;
         $this->a_resource = isset($data['a_resource']) ? (array)$data['a_resource'] : null;
-        $this->a_resource_alias = isset($data['a_resource_alias']) ? array_map(static fn($item) => new VisitStatusGetResponseResourceAlias((array)$item), (array)$data['a_resource_alias']) : null;
+        $this->a_resource_alias = isset($data['a_resource_alias']) ? array_map(static fn ($item) => new VisitStatusGetResponseResourceAlias((array)$item), (array)$data['a_resource_alias']) : null;
         $this->a_staff = isset($data['a_staff']) ? (array)$data['a_staff'] : null;
         $this->a_uid_staff = isset($data['a_uid_staff']) ? (array)$data['a_uid_staff'] : null;
         $this->dt_date = isset($data['dt_date']) ? (string)$data['dt_date'] : null;

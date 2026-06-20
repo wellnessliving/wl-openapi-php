@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Login\Member;
 
 class LoginMemberListAllGetRequest
 {
     /**
      * The maximum number of members to return in the list.
-     * 
+     *
      * Use with `uid_last` to get the next page of results.
      *
      * @var int|null
@@ -36,7 +37,7 @@ class LoginMemberListAllGetRequest
             'k_business' => $this->k_business,
             'uid_last' => $this->uid_last,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

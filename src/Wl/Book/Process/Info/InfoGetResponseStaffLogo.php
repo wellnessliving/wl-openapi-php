@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Info;
 
 class InfoGetResponseStaffLogo

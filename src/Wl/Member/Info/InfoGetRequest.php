@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Member\Info;
 
 class InfoGetRequest
 {
     /**
      * Primary keys of users whose information must be returned.
-     * 
+     *
      * `null` if data of a single user is requested.
      *
      * @var string[]|null
@@ -14,9 +15,9 @@ class InfoGetRequest
 
     /**
      * List of dates for load additional information about users.
-     * 
+     *
      * Key is UID of user. Value is date.
-     * 
+     *
      * `null` if data of a single user is requested.
      *
      * @var string[]|null
@@ -46,7 +47,7 @@ class InfoGetRequest
 
     /**
      * The business ID required to access client information.
-     * 
+     *
      * Specify this as `0` to retrieve the system-wide version of the information.
      *
      * @var string|null
@@ -90,7 +91,7 @@ class InfoGetRequest
             's_show' => $this->s_show,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

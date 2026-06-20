@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Lead\Source;
 
 class LeadSourceElementDeleteRequest
@@ -32,7 +33,7 @@ class LeadSourceElementDeleteRequest
             'k_business' => $this->k_business,
             'k_lead_source' => $this->k_lead_source,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

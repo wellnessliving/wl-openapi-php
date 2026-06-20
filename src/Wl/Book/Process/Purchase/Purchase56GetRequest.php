@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Purchase;
 
 class Purchase56GetRequest
 {
     /**
      * A list of existing purchase options that were selected for previous clients (group).
-     * 
+     *
      * Note:
      * * It makes sense if for all clients the list is loaded within
      *      the same pair [PurchaseApi](/Wl/Book/Process/Purchase/Purchase.json) and
@@ -19,7 +20,7 @@ class Purchase56GetRequest
      *      selected) in it do not allow it to be applied to the selected session, then such promotion will simply
      *      not be returned for the client.
      * * The order of clients across all APIs must be the same to guarantee their results.
-     * 
+     *
      * Each element has the following structure:
      *
      * @var array[]|null
@@ -28,8 +29,8 @@ class Purchase56GetRequest
 
     /**
      * The list of sessions being booked.
-     * 
-     * Keys are class period keys. 
+     *
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null
@@ -38,8 +39,8 @@ class Purchase56GetRequest
 
     /**
      * The selected sessions on the wait list that are unpaid.
-     * 
-     * Keys are class period keys. 
+     *
+     * Keys are class period keys.
      * Values are index arrays of date/time strings when the session occurred, in MySQL format and in GMT.
      *
      * @var string[]|null
@@ -78,7 +79,7 @@ class Purchase56GetRequest
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
-     * 
+     *
      * If `true` is sent, access to the business and to the client will be checked.
      * If `false` is sent, user can book only for himself or for relatives if this is allowed in business settings.
      *
@@ -96,7 +97,7 @@ class Purchase56GetRequest
     /**
      * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag
      * is set to `false`.
-     * 
+     *
      * Use this field with caution.
      * The final booking will not use this flag, and the check will still be performed.
      *
@@ -106,7 +107,7 @@ class Purchase56GetRequest
 
     /**
      * A list of existing purchase options that were selected for previous clients (group).
-     * 
+     *
      * Note:
      * * It makes sense if for all clients the list is loaded within
      *      the same pair `dt_date_gmt` and `k_class_period`.
@@ -119,9 +120,9 @@ class Purchase56GetRequest
      *      selected) in it do not allow it to be applied to the selected session, then such promotion will simply
      *      not be returned for the client.
      * * The order of clients across all APIs must be the same to guarantee their results.
-     * 
+     *
      * Serialized with JSON.
-     * 
+     *
      * Each element has the following structure:
      *
      * @var string|null
@@ -131,10 +132,10 @@ class Purchase56GetRequest
     /**
      * The selected sessions.
      * This won't be empty for session mode only.
-     * 
+     *
      * Fields refer to IDs of sessions in the database.
      * Values refer to arrays of dates/times when session occurred, returned in MySQL format and in UTC.
-     * 
+     *
      * Serialized with JSON.
      *
      * @var string|null
@@ -143,7 +144,7 @@ class Purchase56GetRequest
 
     /**
      * The business key.
-     * 
+     *
      * `null` if business key was not passed.
      *
      * @var string|null
@@ -192,7 +193,7 @@ class Purchase56GetRequest
             'show_relation' => $this->show_relation,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

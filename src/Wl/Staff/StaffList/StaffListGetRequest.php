@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Staff\StaffList;
 
 class StaffListGetRequest
 {
     /**
      * A list of privileges to filter staff members by.
-     * 
+     *
      * This property acts as a filter.
      * Only staff members possessing all the privileges specified in this list will be included in the result.
      * Each element in the array represents a privilege ID, and should be one of {@link
@@ -17,7 +18,7 @@ class StaffListGetRequest
 
     /**
      * Determines that only staff members which the current user has access to should be retrieved.
-     * 
+     *
      *  `true` if only staff members which the current user has access to should be retrieved.
      *  `false` otherwise.
      *
@@ -49,7 +50,7 @@ class StaffListGetRequest
             'is_staff_inactive' => $this->is_staff_inactive,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

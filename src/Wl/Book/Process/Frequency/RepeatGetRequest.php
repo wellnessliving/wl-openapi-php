@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Frequency;
 
 class RepeatGetRequest
@@ -146,7 +147,7 @@ class RepeatGetRequest
             'uid' => $this->uid,
             'uid_actor' => $this->uid_actor,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

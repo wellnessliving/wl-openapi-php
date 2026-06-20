@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Guest;
 
 class GuestProfileGetRequest
@@ -78,7 +79,7 @@ class GuestProfileGetRequest
             'text_last_name' => $this->text_last_name,
             'text_mail' => $this->text_mail,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

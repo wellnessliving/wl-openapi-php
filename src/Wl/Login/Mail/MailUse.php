@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Mail;
 
 use WlSdk\WlSdkClient;

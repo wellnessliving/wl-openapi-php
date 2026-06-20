@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz\Response;
 
 class ResponseGetResponseElementE
@@ -13,7 +14,7 @@ class ResponseGetResponseElementE
 
     /**
      * Markup images files.
-     * 
+     *
      * Only PNG images are supported.
      *
      * @var array|null
@@ -22,7 +23,7 @@ class ResponseGetResponseElementE
 
     /**
      * Can user upload custom image.
-     * 
+     *
      * User is allowed to upload custom images if they have the access to view the list of quizzes.
      *
      * @var bool|null
@@ -45,7 +46,7 @@ class ResponseGetResponseElementE
 
     /**
      * Element ID. One of {@link \WlSdk\Core\Quiz\Element\ElementSid} constants.
-     * 
+     *
      * Defined automatically according to the name of the class.
      *
      * @var int|null
@@ -68,7 +69,7 @@ class ResponseGetResponseElementE
 
     /**
      * Fake id used for image upload.
-     * 
+     *
      * A fake id is being used because we are not going to save the image directly from upload.
      * Element key will be appended to make it unique.
      *
@@ -85,7 +86,7 @@ class ResponseGetResponseElementE
 
     /**
      * Quiz element key.
-     * 
+     *
      * `null` in a case if element is not saved in database.
      *
      * @var string|null
@@ -94,7 +95,7 @@ class ResponseGetResponseElementE
 
     /**
      * Old quiz element key.
-     * 
+     *
      * `null` in a case if element is not has old version.
      *
      * @var string|null
@@ -124,7 +125,7 @@ class ResponseGetResponseElementE
 
     /**
      * Additional note for response.
-     * 
+     *
      * `null` if no notes considered.
      *
      * @var string|null

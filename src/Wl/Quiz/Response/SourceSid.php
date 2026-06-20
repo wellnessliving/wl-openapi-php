@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Quiz\Response;
 
 /**
  * List of sources where quiz response can be generated.
- * 
+ *
  * Last used ID: 6
- * 
+ *
  * Values:
  * - 2 (`BOOKING`): Quiz response received during booking process.
  * - 6 (`IMPORT`): Quiz response was imported.
@@ -18,17 +19,23 @@ namespace WlSdk\Wl\Quiz\Response;
 class SourceSid
 {
     /** Quiz response received during booking process. */
-    const BOOKING = 2;
+    public const BOOKING = 2;
+
     /** Quiz response was imported. */
-    const IMPORT = 6;
+    public const IMPORT = 6;
+
     /** Quiz response received by kiosk mode link. */
-    const KIOSK = 7;
+    public const KIOSK = 7;
+
     /** Quiz response received by direct link. */
-    const LINK = 1;
+    public const LINK = 1;
+
     /** Quiz response received by direct link. */
-    const MANUAL = 5;
+    public const MANUAL = 5;
+
     /** Quiz response received during purchase process. */
-    const PURCHASE = 4;
+    public const PURCHASE = 4;
+
     /** Quiz response received during registration process. */
-    const REGISTRATION = 3;
+    public const REGISTRATION = 3;
 }

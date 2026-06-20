@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Wl\Announcement;
 
 /**
  * List of fields by which you can sort.
- * 
+ *
  * Values:
  * - 1 (`CREATED_BY`): Created by field.
  * - 2 (`CREATED_DATE`): Created date field.
@@ -18,21 +19,29 @@ namespace WlSdk\Wl\Announcement;
 class SortFieldSid
 {
     /** Created by field. */
-    const CREATED_BY = 1;
+    public const CREATED_BY = 1;
+
     /** Created date field. */
-    const CREATED_DATE = 2;
+    public const CREATED_DATE = 2;
+
     /** Description field. */
-    const DESCRIPTION = 3;
+    public const DESCRIPTION = 3;
+
     /** Image field. */
-    const IMAGE = 4;
+    public const IMAGE = 4;
+
     /** Location field. */
-    const LOCATION = 5;
+    public const LOCATION = 5;
+
     /** Publish date field. */
-    const PUBLISH_DATE = 6;
+    public const PUBLISH_DATE = 6;
+
     /** Status field. */
-    const STATUS = 7;
+    public const STATUS = 7;
+
     /** Title field. */
-    const TITLE = 8;
+    public const TITLE = 8;
+
     /** Unpublish date field. */
-    const UNPUBLISH_DATE = 9;
+    public const UNPUBLISH_DATE = 9;
 }

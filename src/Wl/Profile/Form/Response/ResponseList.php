@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Form\Response;
 
 use WlSdk\WlSdkClient;

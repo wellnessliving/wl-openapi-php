@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Service\ServiceList;
 
 class ListGetRequest
@@ -25,7 +26,7 @@ class ListGetRequest
             'is_franchise' => $this->is_franchise,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

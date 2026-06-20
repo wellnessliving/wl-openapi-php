@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Purchase;
 
 class PurchaseElementGetRequest
@@ -74,7 +75,7 @@ class PurchaseElementGetRequest
             'k_purchase_item' => $this->k_purchase_item,
             'k_session_pass' => $this->k_session_pass,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

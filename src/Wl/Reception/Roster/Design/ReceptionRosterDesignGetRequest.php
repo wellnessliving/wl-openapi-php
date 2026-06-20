@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Roster\Design;
 
 class ReceptionRosterDesignGetRequest
@@ -16,7 +17,7 @@ class ReceptionRosterDesignGetRequest
             [
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

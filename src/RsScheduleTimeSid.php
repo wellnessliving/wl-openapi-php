@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * Day time periods.
- * 
+ *
  * Values:
  * - 2 (`AFTERNOON`): Afternoon.
  * - 3 (`EVENING`): Evening.
@@ -12,9 +13,11 @@ namespace WlSdk;
 class RsScheduleTimeSid
 {
     /** Afternoon. */
-    const AFTERNOON = 2;
+    public const AFTERNOON = 2;
+
     /** Evening. */
-    const EVENING = 3;
+    public const EVENING = 3;
+
     /** Morning. */
-    const MORNING = 1;
+    public const MORNING = 1;
 }

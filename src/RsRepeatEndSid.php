@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * Possible ways to stop repeatable events.
- * 
+ *
  * Values:
  * - 2 (`COUNT`): Stop after a certain number of repeats.
  * - 3 (`DATE`): Stop after a certain date. Including this date.
@@ -13,9 +14,11 @@ namespace WlSdk;
 class RsRepeatEndSid
 {
     /** Stop after a certain number of repeats. */
-    const COUNT = 2;
+    public const COUNT = 2;
+
     /** Stop after a certain date. Including this date. */
-    const DATE = 3;
+    public const DATE = 3;
+
     /** Eternal appointments. Such appointments are scheduled for one year */
-    const ETERNAL = 1;
+    public const ETERNAL = 1;
 }

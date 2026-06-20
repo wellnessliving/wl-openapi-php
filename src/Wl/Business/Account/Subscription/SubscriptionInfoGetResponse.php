@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Account\Subscription;
 
 /**
@@ -15,7 +16,7 @@ class SubscriptionInfoGetResponse
 
     /**
      * Currently active plan ID for requested subscription.
-     * 
+     *
      * Depending on subscription type constant from one of {@link \WlSdk\Wl\Business\Account\Subscription\PlanSid}
      * inheritors.
      *
@@ -25,7 +26,7 @@ class SubscriptionInfoGetResponse
 
     /**
      * Whether subscription is active.
-     * 
+     *
      * `true` if subscription is active, `false` otherwise.
      *
      * @var bool|null

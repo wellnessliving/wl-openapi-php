@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\ExplorerSearch\ClassSession;
 
 /**
@@ -8,7 +9,7 @@ class ClassSessionSearchGetResponse
 {
     /**
      * List of found class sessions.
-     * 
+     *
      * Each item is an associative array with the following structure:
      *
      * @var ClassSessionSearchGetResponseClassSession|null

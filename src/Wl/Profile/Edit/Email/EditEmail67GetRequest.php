@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Edit\Email;
 
 class EditEmail67GetRequest
@@ -41,7 +42,7 @@ class EditEmail67GetRequest
             'text_mail' => $this->text_mail,
             'uid_want' => $this->uid_want,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

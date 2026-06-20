@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Location\View;
 
 class ViewGetRequest
@@ -32,7 +33,7 @@ class ViewGetRequest
             'i_logo_width' => $this->i_logo_width,
             'k_location' => $this->k_location,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

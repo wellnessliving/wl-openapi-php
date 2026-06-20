@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Group\User;
 
 class UserGroupGetRequest
@@ -24,7 +25,7 @@ class UserGroupGetRequest
             'k_business' => $this->k_business,
             'uid_user' => $this->uid_user,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

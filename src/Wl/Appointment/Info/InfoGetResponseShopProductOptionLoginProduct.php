@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Info;
 
 class InfoGetResponseShopProductOptionLoginProduct

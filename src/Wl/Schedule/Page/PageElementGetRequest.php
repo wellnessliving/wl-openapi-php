@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\Page;
 
 class PageElementGetRequest
@@ -24,7 +25,7 @@ class PageElementGetRequest
             'k_business' => $this->k_business,
             'k_visit' => $this->k_visit,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Report;
 
 class DataGetRequest
@@ -81,7 +82,7 @@ class DataGetRequest
             's_filter' => $this->s_filter,
             's_sort' => $this->s_sort,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

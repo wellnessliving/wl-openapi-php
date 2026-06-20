@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business;
 
 /**
@@ -32,7 +33,7 @@ class BusinessAccessGetResponse
     public function __construct(array $data)
     {
         $this->a_business = isset($data['a_business']) ? (array)$data['a_business'] : null;
-        $this->a_business_data = isset($data['a_business_data']) ? array_map(static fn($item) => new BusinessAccessGetResponseBusinessData((array)$item), (array)$data['a_business_data']) : null;
+        $this->a_business_data = isset($data['a_business_data']) ? array_map(static fn ($item) => new BusinessAccessGetResponseBusinessData((array)$item), (array)$data['a_business_data']) : null;
         $this->uid_mail = isset($data['uid_mail']) ? (string)$data['uid_mail'] : null;
     }
 }

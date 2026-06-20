@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Attach;
 
 /**
@@ -29,7 +30,7 @@ class AttachElementGetResponse
 
     /**
      * Attachment description.
-     * 
+     *
      * `null` for not update description.
      *
      * @var string|null
@@ -38,7 +39,7 @@ class AttachElementGetResponse
 
     /**
      * Attachment file name.
-     * 
+     *
      * `null` for not update file name.
      *
      * @var string|null
@@ -68,7 +69,7 @@ class AttachElementGetResponse
 
     /**
      * URL to get preview attachment data.
-     * 
+     *
      * `null` in case when preview not available.
      *
      * @var string|null

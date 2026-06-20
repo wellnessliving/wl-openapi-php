@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * List of sale categories on the store page.
- * 
+ *
  * Last ID: 13.
- * 
+ *
  * Values:
  * - 8 (`APPOINTMENT`): Single appointment reservation.
  * - 11 (`APPOINTMENT_DEPOSIT`): Single appointment deposit reservation.
@@ -31,31 +32,44 @@ namespace WlSdk;
 class RsSaleSid
 {
     /** Single appointment reservation. */
-    const APPOINTMENT = 8;
+    public const APPOINTMENT = 8;
+
     /** Single appointment deposit reservation. */
-    const APPOINTMENT_DEPOSIT = 11;
+    public const APPOINTMENT_DEPOSIT = 11;
+
     /** Tips for the appointment. */
-    const APPOINTMENT_TIP = 12;
+    public const APPOINTMENT_TIP = 12;
+
     /** Single class visit. */
-    const CLASS_PERIOD = 6;
+    public const CLASS_PERIOD = 6;
+
     /** Gift card. */
-    const COUPON = 7;
+    public const COUPON = 7;
+
     /** Enrollments. Classes where flag event is `true`. */
-    const ENROLLMENT = 3;
+    public const ENROLLMENT = 3;
+
     /** Promotions with program [RsProgramSid::PACKAGE](#/components/schemas/RsProgramSid). */
-    const PACKAGE = 5;
+    public const PACKAGE = 5;
+
     /** Products: water, t-shirts, etc. */
-    const PRODUCT = 4;
+    public const PRODUCT = 4;
+
     /** Promotions with program category [RsProgramCategorySid::CLASSES](#/components/schemas/RsProgramCategorySid) and [RsProgramCategorySid::VISIT](#/components/schemas/RsProgramCategorySid). */
-    const PROMOTION_CLASS = 1;
+    public const PROMOTION_CLASS = 1;
+
     /** Promotions with program category [RsProgramCategorySid::RESOURCE](#/components/schemas/RsProgramCategorySid). */
-    const PROMOTION_RESOURCE = 9;
+    public const PROMOTION_RESOURCE = 9;
+
     /** Promotions with program category [RsProgramCategorySid::SERVICE](#/components/schemas/RsProgramCategorySid) and [RsProgramCategorySid::INSURANCE](#/components/schemas/RsProgramCategorySid). */
-    const PROMOTION_SERVICE = 2;
+    public const PROMOTION_SERVICE = 2;
+
     /** Promotions with program category [RsProgramCategorySid::VIDEO](#/components/schemas/RsProgramCategorySid). */
-    const PROMOTION_VIDEO = 13;
+    public const PROMOTION_VIDEO = 13;
+
     /** Products: water, t-shirts, etc. That is available for quick buy. */
-    const QUICK_BUY = 10;
+    public const QUICK_BUY = 10;
+
     /** Tuition. */
-    const TUITION = 14;
+    public const TUITION = 14;
 }

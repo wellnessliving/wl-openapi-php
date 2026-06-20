@@ -1,7 +1,8 @@
 <?php
+
 namespace WlSdk\Wl\Lead;
 
-class LeadGetResponseSkinHeader-text
+class LeadGetResponseSkinFieldFont
 {
     /**
      * CSS class names to apply to the element.
@@ -17,17 +18,9 @@ class LeadGetResponseSkinHeader-text
      */
     public ?string $css = null;
 
-    /**
-     * Header text content.
-     *
-     * @var string|null
-     */
-    public ?string $text = null;
-
     public function __construct(array $data)
     {
         $this->class = isset($data['class']) ? (string)$data['class'] : null;
         $this->css = isset($data['css']) ? (string)$data['css'] : null;
-        $this->text = isset($data['text']) ? (string)$data['text'] : null;
     }
 }

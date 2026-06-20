@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Purchase;
 
 use WlSdk\WlSdkClient;

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ScheduleList\StaffApp;
 
 class ScheduleListGetResponseScheduleStaffInfo
@@ -18,7 +19,7 @@ class ScheduleListGetResponseScheduleStaffInfo
     public ?bool $is_staff_change = null;
 
     /**
-     * Staff key. 
+     * Staff key.
      * Returned only for applications in the `APPS_USE_OLD_K_STAFF` allow-list.
      *
      * @var string|null

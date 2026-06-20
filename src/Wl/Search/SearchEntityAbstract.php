@@ -1,17 +1,18 @@
 <?php
+
 namespace WlSdk\Wl\Search;
 
 /**
  * Base class for search entity.
- * 
+ *
  * Values:
  * - 21 (`Wl\Search\SearchTestEntity`): Search entity for an example and testing.
- * 
+ *
  *   `#[\AllowDynamicProperties]` This class can be stored in the database as a serialized object and contain fields
  * that
  *    are no longer present in the current implementation.
  * - 66 (`Wl\Login\Search\LoginSearchEntity`): Client search entity.
- * 
+ *
  *   Use entity interface LoginSearchEntityInterface to extend search criteria
  * [SearchCriteriaAbstract](#/components/schemas/Wl.Search.Criteria.SearchCriteriaAbstract).
  * - 169 (`Wl\Search\SearchTestEntityNoInterface`): Search entity for testing without interface class.
@@ -19,9 +20,11 @@ namespace WlSdk\Wl\Search;
 class SearchEntityAbstract
 {
     /** Search entity for an example and testing. */
-    const Wl\Search\SearchTestEntity = 21;
+    public const SearchTestEntity = 21;
+
     /** Client search entity. */
-    const Wl\Login\Search\LoginSearchEntity = 66;
+    public const LoginSearchEntity = 66;
+
     /** Search entity for testing without interface class. */
-    const Wl\Search\SearchTestEntityNoInterface = 169;
+    public const SearchTestEntityNoInterface = 169;
 }

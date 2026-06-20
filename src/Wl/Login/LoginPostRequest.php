@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login;
 
 class LoginPostRequest
@@ -27,7 +28,7 @@ class LoginPostRequest
 
     /**
      * List of users to get information for serialized as JSON string.
-     * 
+     *
      * `null` for mode of single user.
      *
      * @var string|null
@@ -43,7 +44,7 @@ class LoginPostRequest
             'k_business' => $this->k_business,
             'text_uid' => $this->text_uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

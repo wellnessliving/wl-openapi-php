@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Review\ReviewList;
 
 class ReviewElementDeleteRequest
@@ -16,7 +17,7 @@ class ReviewElementDeleteRequest
             [
             'k_review' => $this->k_review,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

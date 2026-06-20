@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Holiday;
 
 /**
@@ -8,7 +9,7 @@ class HolidayGetResponse
 {
     /**
      * A list of the location's closed day titles by location keys on the date `dl_work`.
-     * 
+     *
      * Keys are location keys. Values are holiday title strings.
      *
      * @var string[]|null

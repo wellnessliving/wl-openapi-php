@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Action;
 
 class ElementPostRequest
@@ -32,7 +33,7 @@ class ElementPostRequest
             'k_reward_action' => $this->k_reward_action,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Classes\Period\Modify;
 
 class ModifyGetRequest
@@ -40,11 +41,11 @@ class ModifyGetRequest
 
     /**
      * The step direction.
-     * 
+     *
      * `true` - step forward.
-     * 
+     *
      * `false` - step back.
-     * 
+     *
      * After each step, this variable sets to the default position.
      * By default, the step direction is forward.
      *
@@ -61,7 +62,7 @@ class ModifyGetRequest
 
     /**
      * The class period key.
-     * 
+     *
      * This will be empty if not set yet.
      *
      * @var string|null
@@ -89,7 +90,7 @@ class ModifyGetRequest
             'k_class_period' => $this->k_class_period,
             's_id' => $this->s_id,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

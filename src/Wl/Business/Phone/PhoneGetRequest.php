@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Phone;
 
 class PhoneGetRequest
@@ -16,7 +17,7 @@ class PhoneGetRequest
             [
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

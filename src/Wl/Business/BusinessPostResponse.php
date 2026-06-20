@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business;
 
 /**
@@ -8,7 +9,7 @@ class BusinessPostResponse
 {
     /**
      * The key of the business.
-     * 
+     *
      * When using `post()` returned key of the created business.
      * When using `put()` used for update business.
      *
@@ -33,7 +34,7 @@ class BusinessPostResponse
 
     /**
      * Url for password change page.
-     * 
+     *
      * Filled only when creating staff member, otherwise `null`.
      *
      * @var string|null

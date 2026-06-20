@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Video;
 
 /**
  * List of video types.
- * 
+ *
  * Last used ID: 2
- * 
+ *
  * Values:
  * - 2 (`EMBED`): Embedded video.
  * - 1 (`UPLOAD`): Uploaded video.
@@ -13,7 +14,8 @@ namespace WlSdk\Wl\Video;
 class VideoSourceSid
 {
     /** Embedded video. */
-    const EMBED = 2;
+    public const EMBED = 2;
+
     /** Uploaded video. */
-    const UPLOAD = 1;
+    public const UPLOAD = 1;
 }

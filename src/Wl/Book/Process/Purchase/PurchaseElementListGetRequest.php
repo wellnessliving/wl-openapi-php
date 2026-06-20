@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Purchase;
 
 class PurchaseElementListGetRequest
@@ -20,7 +21,7 @@ class PurchaseElementListGetRequest
     /**
      * The key of the location in which the purchase is made.
      * This is also the booking process location.
-     * 
+     *
      * This will be `null` if not set yet or if the location can't be defined for some reason.
      *
      * @var string|null
@@ -51,7 +52,7 @@ class PurchaseElementListGetRequest
             'text_discount_code' => $this->text_discount_code,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

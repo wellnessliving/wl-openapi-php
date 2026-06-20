@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Skin\Application\Resource;
 
 /**
@@ -7,7 +8,7 @@ namespace WlSdk\Wl\Skin\Application\Resource;
 class ApplicationResourceGetResponse
 {
     /**
-     * The application data. Key is the business key. 
+     * The application data. Key is the business key.
      * Value is application resource data for that business.
      * Each element:
      *
@@ -17,6 +18,6 @@ class ApplicationResourceGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_application = isset($data['a_application']) ? array_map(static fn($item) => new ApplicationResourceGetResponseApplication((array)$item), (array)$data['a_application']) : null;
+        $this->a_application = isset($data['a_application']) ? array_map(static fn ($item) => new ApplicationResourceGetResponseApplication((array)$item), (array)$data['a_application']) : null;
     }
 }

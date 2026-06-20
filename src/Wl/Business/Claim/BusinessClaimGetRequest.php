@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Business\Claim;
 
 class BusinessClaimGetRequest
 {
     /**
      * The email address of the location.
-     * 
+     *
      * Urlencoded email address is expected.
      *
      * @var string|null
@@ -14,7 +15,7 @@ class BusinessClaimGetRequest
 
     /**
      * The phone number of the business, staff and location.
-     * 
+     *
      * Urlencoded phone number is expected.
      *
      * @var string|null
@@ -28,7 +29,7 @@ class BusinessClaimGetRequest
             'text_mail' => $this->text_mail,
             'text_phone' => $this->text_phone,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

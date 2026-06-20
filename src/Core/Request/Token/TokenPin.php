@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Request\Token;
 
 use WlSdk\WlSdkClient;

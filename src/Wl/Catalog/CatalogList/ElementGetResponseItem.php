@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\CatalogList;
 
 class ElementGetResponseItem
@@ -6,7 +7,7 @@ class ElementGetResponseItem
     /**
      * Contains additional data for the sale item.
      * For Package, it contains also the following key:
-     * 
+     *
      * The same structure as `a_data` has.
      *
      * @var ElementGetResponseItemData|null

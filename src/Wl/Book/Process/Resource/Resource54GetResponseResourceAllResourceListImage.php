@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Resource;
 
 class Resource54GetResponseResourceAllResourceListImage

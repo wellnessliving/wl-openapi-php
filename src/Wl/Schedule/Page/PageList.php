@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\Page;
 
 use WlSdk\WlSdkClient;

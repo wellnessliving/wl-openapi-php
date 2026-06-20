@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Gym\Visit;
 
 use WlSdk\WlSdkClient;

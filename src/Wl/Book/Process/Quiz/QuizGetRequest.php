@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Quiz;
 
 class QuizGetRequest
 {
     /**
-     * The list of purchase items. Each element has the format `[id_purchase_item]::[k_id]`, where: 
-     * 
+     * The list of purchase items. Each element has the format `[id_purchase_item]::[k_id]`, where:
+     *
      * This will be empty if no purchases are made for the booking.
      *
      * @var array[]|null
@@ -28,7 +29,7 @@ class QuizGetRequest
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
-     * 
+     *
      * If `true` is sent, access to the business and to the client will be checked.
      * If `false` is sent, user can book only for himself or for relatives if this is allowed in business settings.
      *
@@ -39,7 +40,7 @@ class QuizGetRequest
     /**
      * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag
      * is set to `false`.
-     * 
+     *
      * Use this field with caution.
      * The final booking will not use this flag, and the check will still be performed.
      *
@@ -81,7 +82,7 @@ class QuizGetRequest
             'show_relation' => $this->show_relation,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

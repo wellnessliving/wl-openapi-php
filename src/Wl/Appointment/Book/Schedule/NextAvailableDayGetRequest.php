@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Schedule;
 
 class NextAvailableDayGetRequest
@@ -62,7 +63,7 @@ class NextAvailableDayGetRequest
     /**
      * `true` - search in all tabs.
      * `false` - search only for the selected bookable tab.
-     * 
+     *
      * Cannot be set simultaneously with {DayTimeApi::$k_class_tab}.
      *
      * @var bool|null
@@ -80,7 +81,7 @@ class NextAvailableDayGetRequest
      * Current booking tab.
      * Only used for asset booking with "Allow clients to select a date and time, then the available asset" booking
      * policy enabled.
-     * 
+     *
      * Cannot be set simultaneously with {DayTimeApi::$is_tab_all}.
      *
      * @var string|null
@@ -112,7 +113,7 @@ class NextAvailableDayGetRequest
 
     /**
      * Key of timezone.
-     * 
+     *
      * `null` if not set then use default timezone client.
      *
      * @var string|null
@@ -121,7 +122,7 @@ class NextAvailableDayGetRequest
 
     /**
      * The staff key to show what days are available for booking.
-     * 
+     *
      * For back-to-back booking ([DayTimeApi](/Wl/Appointment/Book/Schedule/DayTime.json) == `true`): array of
      * appointments for back-to-back booking.
      * Converted to JSON string to be usable as model key. Each item is an array with next structure:
@@ -140,12 +141,12 @@ class NextAvailableDayGetRequest
 
     /**
      * The user key.
-     * 
+     *
      * This field is used if the client books for himself or for the relative.
-     * 
+     *
      * This field is incorrect to use for guest booking since in this case the client will be checked as a
      * relative.
-     * 
+     *
      * In case of a group booking or a guest booking, the key of the client who is making the booking is set here.
      *
      * @var string|null
@@ -184,7 +185,7 @@ class NextAvailableDayGetRequest
             'uid' => $this->uid,
             'uid_staff' => $this->uid_staff,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

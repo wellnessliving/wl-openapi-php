@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Wl\Announcement;
 
 /**
  * List of announcement statuses.
- * 
+ *
  * Values:
  * - 1 (`DRAFT`): Announcement does not have publish/unpublish dates.
  * - 2 (`PUBLISH`): Announcement currently is published.
@@ -13,11 +14,14 @@ namespace WlSdk\Wl\Announcement;
 class AnnouncementStatusEnum
 {
     /** Announcement does not have publish/unpublish dates. */
-    const DRAFT = 1;
+    public const DRAFT = 1;
+
     /** Announcement currently is published. */
-    const PUBLISH = 2;
+    public const PUBLISH = 2;
+
     /** Announcement scheduled for publishing. */
-    const SCHEDULE = 3;
+    public const SCHEDULE = 3;
+
     /** Announcement previously will be published, but now not published. */
-    const UNPUBLISH = 4;
+    public const UNPUBLISH = 4;
 }

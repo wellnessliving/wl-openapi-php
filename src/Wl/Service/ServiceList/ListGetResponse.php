@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Service\ServiceList;
 
 /**
@@ -15,6 +16,6 @@ class ListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_service = isset($data['a_service']) ? array_map(static fn($item) => new ListGetResponseService((array)$item), (array)$data['a_service']) : null;
+        $this->a_service = isset($data['a_service']) ? array_map(static fn ($item) => new ListGetResponseService((array)$item), (array)$data['a_service']) : null;
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\CatalogList;
 
 class CatalogProductGetRequest
@@ -26,7 +27,7 @@ class CatalogProductGetRequest
 
     /**
      * The selected shop category.
-     * 
+     *
      * This will be `0` for the system's Unassigned category or `null` if not set yet.
      *
      * @var string|null
@@ -50,7 +51,7 @@ class CatalogProductGetRequest
             'k_shop_category' => $this->k_shop_category,
             's_cache_key' => $this->s_cache_key,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

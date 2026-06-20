@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Staff\StaffView;
 
 class StaffView74GetResponseResultListStaffPhoto

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Lead\Source;
 
 class LeadSourceListGetResponseLeadSource
@@ -45,7 +46,7 @@ class LeadSourceListGetResponseLeadSource
     public ?string $k_lead_source = null;
 
     /**
-     * Key of the lead skin. 
+     * Key of the lead skin.
      * Not available if current user is not a staff member or admin.
      *
      * @var string|null

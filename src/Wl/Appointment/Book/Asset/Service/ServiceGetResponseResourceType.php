@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Asset\Service;
 
 class ServiceGetResponseResourceType

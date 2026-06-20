@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz;
 
 class QuizElementGetResponseElementC
@@ -41,7 +42,7 @@ class QuizElementGetResponseElementC
 
     /**
      * Element ID. One of {@link \WlSdk\Core\Quiz\Element\ElementSid} constants.
-     * 
+     *
      * Defined automatically according to the name of the class.
      *
      * @var int|null
@@ -64,7 +65,7 @@ class QuizElementGetResponseElementC
 
     /**
      * Quiz element key.
-     * 
+     *
      * `null` in a case if element is not saved in database.
      *
      * @var string|null
@@ -73,7 +74,7 @@ class QuizElementGetResponseElementC
 
     /**
      * Old quiz element key.
-     * 
+     *
      * `null` in a case if element is not has old version.
      *
      * @var string|null
@@ -89,7 +90,7 @@ class QuizElementGetResponseElementC
 
     /**
      * Additional note for response.
-     * 
+     *
      * `null` if no notes considered.
      *
      * @var string|null

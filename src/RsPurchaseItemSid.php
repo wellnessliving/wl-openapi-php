@@ -1,34 +1,35 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * A list of purchase types.
- * 
+ *
  * Last used ID: 25.
- * 
+ *
  * Values:
  * - 7 (`ACCOUNT`): Personal user's account refill.
  * - 11 (`ACCOUNT_BUSINESS`): Business account payment.
  * - 8 (`APPOINTMENT`): Single appointment reservation.
- * 
+ *
  *   This purchase is created when a worker has charged a client for an appointment.
- * 
+ *
  *   This purchase can only be created in POS.
- * 
+ *
  *   Key of appointment.
- * 
- * 
- * 
+ *
+ *
+ *
  *   A purchased item that is created during the online booking process
  * [RsPurchaseItemSid::SERVICE](#/components/schemas/RsPurchaseItemSid).
  * - 18 (`APPOINTMENT_DEPOSIT`): Single appointment reservation with deposit.
- * 
+ *
  *   This purchase created when client books a single appointment reservation with deposit amount,
  *   to do so appointment should be managed with deposit.
  * - 22 (`APPOINTMENT_TIP`): Tips for the appointment.
- * 
- * 
- * 
+ *
+ *
+ *
  *   A purchased item that is created during the online booking process
  * [RsPurchaseItemSid::SERVICE](#/components/schemas/RsPurchaseItemSid).
  * - 16 (`BUSINESS_EXPENSE`): Expense that comes along with the payment business. It contains information about
@@ -43,11 +44,11 @@ namespace WlSdk;
  * - 4 (`ENROLLMENT`): Events and enrollments. Client can not book only one class, he needs to book the whole
  * enrollment.
  * - 19 (`ENROLLMENT_DEPOSIT`): Enrollment reservation with a deposit.
- * 
+ *
  *   This purchase created when client books an enrollment reservation with deposit amount,
  *   to do so enrollment should be managed with deposit.
  * - 21 (`ENROLLMENT_DISCOUNT`): Enrollment reservation with a discount.
- * 
+ *
  *   This purchase created when client books an enrollment reservation with early bird price.
  * - 14 (`INSTALLMENT`): Payment by an installment plan.
  * - 3 (`MEMBERSHIP`): Recurrent payments.
@@ -58,11 +59,11 @@ namespace WlSdk;
  * - 15 (`RESOURCE`): A purchase to book an asset.
  * - 20 (`RESOURCE_DEPOSIT`): A purchase to book a deposit asset.
  * - 6 (`SERVICE`): Purchase item for appointments.
- * 
+ *
  *   This purchase item is created during the online booking process.
- * 
- * 
- * 
+ *
+ *
+ *
  *   Purchase that is created when a staff adds payment for an appointment at POS
  * [RsPurchaseItemSid::APPOINTMENT](#/components/schemas/RsPurchaseItemSid).
  * - 26 (`TUITION`): Tuition purchase item.
@@ -71,53 +72,77 @@ namespace WlSdk;
 class RsPurchaseItemSid
 {
     /** Personal user's account refill. */
-    const ACCOUNT = 7;
+    public const ACCOUNT = 7;
+
     /** Business account payment. */
-    const ACCOUNT_BUSINESS = 11;
+    public const ACCOUNT_BUSINESS = 11;
+
     /** Single appointment reservation. */
-    const APPOINTMENT = 8;
+    public const APPOINTMENT = 8;
+
     /** Single appointment reservation with deposit. */
-    const APPOINTMENT_DEPOSIT = 18;
+    public const APPOINTMENT_DEPOSIT = 18;
+
     /** Tips for the appointment. */
-    const APPOINTMENT_TIP = 22;
+    public const APPOINTMENT_TIP = 22;
+
     /** Expense that comes along with the payment business. It contains information about additional services which are */
-    const BUSINESS_EXPENSE = 16;
+    public const BUSINESS_EXPENSE = 16;
+
     /** A skipped purchase for the business account. */
-    const BUSINESS_SKIP = 17;
+    public const BUSINESS_SKIP = 17;
+
     /** Business subscription payment. */
-    const BUSINESS_SUBSCRIPTION = 23;
+    public const BUSINESS_SUBSCRIPTION = 23;
+
     /** Single classes. */
-    const CLASS_PERIOD = 2;
+    public const CLASS_PERIOD = 2;
+
     /** Collectors payments */
-    const COLLECTOR_DEBT = 24;
+    public const COLLECTOR_DEBT = 24;
+
     /** Arbitrary money withdrawal with comment. */
-    const COMMENT = 13;
+    public const COMMENT = 13;
+
     /** Gift Cards. */
-    const COUPON = 10;
+    public const COUPON = 10;
+
     /** Events and enrollments. Client can not book only one class, he needs to book the whole enrollment. */
-    const ENROLLMENT = 4;
+    public const ENROLLMENT = 4;
+
     /** Enrollment reservation with a deposit. */
-    const ENROLLMENT_DEPOSIT = 19;
+    public const ENROLLMENT_DEPOSIT = 19;
+
     /** Enrollment reservation with a discount. */
-    const ENROLLMENT_DISCOUNT = 21;
+    public const ENROLLMENT_DISCOUNT = 21;
+
     /** Payment by an installment plan. */
-    const INSTALLMENT = 14;
+    public const INSTALLMENT = 14;
+
     /** Recurrent payments. */
-    const MEMBERSHIP = 3;
+    public const MEMBERSHIP = 3;
+
     /** Products. */
-    const PRODUCT = 9;
+    public const PRODUCT = 9;
+
     /** Promotions. */
-    const PROMOTION = 1;
+    public const PROMOTION = 1;
+
     /** Early cancellation fee for a memberships. */
-    const PROMOTION_CANCEL_FEE = 25;
+    public const PROMOTION_CANCEL_FEE = 25;
+
     /** A purchase to renew a promotion. */
-    const PROMOTION_RENEW = 12;
+    public const PROMOTION_RENEW = 12;
+
     /** A purchase to book an asset. */
-    const RESOURCE = 15;
+    public const RESOURCE = 15;
+
     /** A purchase to book a deposit asset. */
-    const RESOURCE_DEPOSIT = 20;
+    public const RESOURCE_DEPOSIT = 20;
+
     /** Purchase item for appointments. */
-    const SERVICE = 6;
+    public const SERVICE = 6;
+
     /** Tuition purchase item. */
-    const TUITION = 26;
+    public const TUITION = 26;
 }

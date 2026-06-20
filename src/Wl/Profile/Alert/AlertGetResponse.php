@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Alert;
 
 /**
@@ -22,7 +23,7 @@ class AlertGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_alert = isset($data['a_alert']) ? array_map(static fn($item) => new AlertGetResponseAlert((array)$item), (array)$data['a_alert']) : null;
-        $this->a_warning = isset($data['a_warning']) ? array_map(static fn($item) => new AlertGetResponseWarning((array)$item), (array)$data['a_warning']) : null;
+        $this->a_alert = isset($data['a_alert']) ? array_map(static fn ($item) => new AlertGetResponseAlert((array)$item), (array)$data['a_alert']) : null;
+        $this->a_warning = isset($data['a_warning']) ? array_map(static fn ($item) => new AlertGetResponseWarning((array)$item), (array)$data['a_warning']) : null;
     }
 }

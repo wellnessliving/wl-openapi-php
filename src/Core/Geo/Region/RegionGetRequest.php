@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Geo\Region;
 
 class RegionGetRequest
@@ -12,7 +13,7 @@ class RegionGetRequest
 
     /**
      * Determines whether to get regions for all locales.
-     * 
+     *
      * If `true`, this will get regions for all locales. Otherwise, this will be `false`.
      *
      * @var bool|null
@@ -26,7 +27,7 @@ class RegionGetRequest
             'id_locale' => $this->id_locale,
             'is_locale_all' => $this->is_locale_all,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

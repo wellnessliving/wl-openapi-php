@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Contract;
 
 class ContractPostRequest
@@ -51,7 +52,7 @@ class ContractPostRequest
             'is_agree' => $this->is_agree,
             's_signature' => $this->s_signature,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

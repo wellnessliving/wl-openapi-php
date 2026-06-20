@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz;
 
 class QuizElementGetResponseElementH
@@ -13,7 +14,7 @@ class QuizElementGetResponseElementH
 
     /**
      * Element ID. One of {@link \WlSdk\Core\Quiz\Element\ElementSid} constants.
-     * 
+     *
      * Defined automatically according to the name of the class.
      *
      * @var int|null
@@ -22,7 +23,7 @@ class QuizElementGetResponseElementH
 
     /**
      * Whether element is required or not.
-     * 
+     *
      * `true` if element is required.
      * `false` if element is not required.
      *
@@ -32,7 +33,7 @@ class QuizElementGetResponseElementH
 
     /**
      * Quiz element key.
-     * 
+     *
      * `null` in a case if element is not saved in database.
      *
      * @var string|null
@@ -41,7 +42,7 @@ class QuizElementGetResponseElementH
 
     /**
      * Old quiz element key.
-     * 
+     *
      * `null` in a case if element is not has old version.
      *
      * @var string|null

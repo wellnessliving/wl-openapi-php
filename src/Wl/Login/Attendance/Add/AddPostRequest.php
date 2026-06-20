@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Attendance\Add;
 
 class AddPostRequest
@@ -12,7 +13,7 @@ class AddPostRequest
 
     /**
      * Defines whether only single session can be booked for block event.
-     * 
+     *
      * `true` Only current session of the block event will be booked in a case if staff event has appropriate
      * setting to do this action.
      *   In this case this session will be considered as session out of event block.
@@ -91,7 +92,7 @@ class AddPostRequest
             'k_login_promotion' => $this->k_login_promotion,
             'k_session_pass' => $this->k_session_pass,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

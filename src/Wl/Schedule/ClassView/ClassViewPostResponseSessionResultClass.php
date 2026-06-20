@@ -1,10 +1,11 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ClassView;
 
 class ClassViewPostResponseSessionResultClass
 {
     /**
-     * Keys are class key. 
+     * Keys are class key.
      *   Values are class tab key.
      *
      * @var string[]|null

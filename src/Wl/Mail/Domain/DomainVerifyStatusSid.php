@@ -1,12 +1,13 @@
 <?php
+
 namespace WlSdk\Wl\Mail\Domain;
 
 /**
  * Statuses of domain verification.
  * Based on the statuses that return Amazon SES API.
- * 
+ *
  * Last used ID: 3.
- * 
+ *
  * Values:
  * - 2 (`FAIL`): Domain is not verified.
  * - 1 (`PENDING`): Domain verification is pending.
@@ -19,9 +20,11 @@ namespace WlSdk\Wl\Mail\Domain;
 class DomainVerifyStatusSid
 {
     /** Domain is not verified. */
-    const FAIL = 2;
+    public const FAIL = 2;
+
     /** Domain verification is pending. */
-    const PENDING = 1;
+    public const PENDING = 1;
+
     /** Domain is verified. */
-    const SUCCESS = 3;
+    public const SUCCESS = 3;
 }

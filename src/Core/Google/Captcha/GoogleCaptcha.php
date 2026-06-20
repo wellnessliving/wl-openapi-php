@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Google\Captcha;
 
 use WlSdk\WlSdkClient;

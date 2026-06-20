@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\StaffApp\CatalogView;
 
 class CatalogViewGetRequest
 {
     /**
      * Configuration information about the item, which can specify prorated amounts.
-     * 
+     *
      * If set, these values will change the values returned by the endpoint call.
      *
      * @var array|null
@@ -14,9 +15,9 @@ class CatalogViewGetRequest
 
     /**
      * Contains information about edited taxes.
-     * 
+     *
      * This will be `null` if not set yet or default taxes are used.
-     * 
+     *
      * The key is the tax identifier, where the value is:
      *
      * @var array|null
@@ -90,7 +91,7 @@ class CatalogViewGetRequest
             'm_price' => $this->m_price,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

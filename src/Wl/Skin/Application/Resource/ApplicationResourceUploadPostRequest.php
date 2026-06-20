@@ -1,12 +1,13 @@
 <?php
+
 namespace WlSdk\Wl\Skin\Application\Resource;
 
 class ApplicationResourceUploadPostRequest
 {
     /**
      * Image assets keyed by image ID:
-     * 
-     * 
+     *
+     *
      * Each value contains array with keys that are the sanitized asset file paths (e.g.
      * `icon_ios_Icon_60_3x_png`).
      *
@@ -36,7 +37,7 @@ class ApplicationResourceUploadPostRequest
             'f_google_services_json' => $this->f_google_services_json,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

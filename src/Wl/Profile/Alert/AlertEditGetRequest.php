@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Alert;
 
 class AlertEditGetRequest
@@ -33,7 +34,7 @@ class AlertEditGetRequest
             'k_login_note' => $this->k_login_note,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

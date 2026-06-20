@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Attach;
 
 class AttachListGetResponseList
@@ -70,7 +71,7 @@ class AttachListGetResponseList
 
     /**
      * Quiz response key. `null` if the attachment is not from a quiz response.
-     * 
+     *
      * Only present in backend mode.
      *
      * @var string|null

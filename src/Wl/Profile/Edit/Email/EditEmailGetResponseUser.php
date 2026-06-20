@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Edit\Email;
 
 class EditEmailGetResponseUser

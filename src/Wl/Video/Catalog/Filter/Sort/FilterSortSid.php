@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Video\Catalog\Filter\Sort;
 
 /**
  * List of video catalog sorting types.
- * 
+ *
  * Any selected type should be sorted in descending order.
- * 
+ *
  * Values:
  * - 1 (`ALPHABET`): Sort alphabetically.
  * - 4 (`CUSTOM`): Sort by custom.
@@ -15,11 +16,14 @@ namespace WlSdk\Wl\Video\Catalog\Filter\Sort;
 class FilterSortSid
 {
     /** Sort alphabetically. */
-    const ALPHABET = 1;
+    public const ALPHABET = 1;
+
     /** Sort by custom. */
-    const CUSTOM = 4;
+    public const CUSTOM = 4;
+
     /** Sort by most recently added. */
-    const RECENT = 2;
+    public const RECENT = 2;
+
     /** Sorted by number of views. */
-    const VIEW = 3;
+    public const VIEW = 3;
 }

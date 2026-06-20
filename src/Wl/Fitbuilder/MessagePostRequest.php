@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Fitbuilder;
 
 class MessagePostRequest
@@ -24,7 +25,7 @@ class MessagePostRequest
             'k_channel' => $this->k_channel,
             'a_data' => $this->a_data,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

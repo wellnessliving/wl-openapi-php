@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion;
 
 class PromotionPayPausePutRequest
@@ -6,7 +7,7 @@ class PromotionPayPausePutRequest
     /**
      * The end date of the current hold, in the local time zone.
      * This can be set to a special value `0000-00-00` to make the period indefinite until further action.
-     * 
+     *
      * `null` if it shouldn't be updated.
      *
      * @var string|null
@@ -15,7 +16,7 @@ class PromotionPayPausePutRequest
 
     /**
      * The start date of the current hold, in the local time zone.
-     * 
+     *
      * `null` if it shouldn't be updated.
      *
      * @var string|null
@@ -24,7 +25,7 @@ class PromotionPayPausePutRequest
 
     /**
      * Key of business to which currently handled pause period or login promotion belongs.
-     * 
+     *
      * `null` if not initialized.
      *
      * @var string|null
@@ -34,7 +35,7 @@ class PromotionPayPausePutRequest
     /**
      * The promotion payment hold key. If this key is used, it will edit an existing hold.
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
-     * 
+     *
      * `null` if not yet initialized or if the request is based on `k_login_promotion`.
      *
      * @var string|null
@@ -43,7 +44,7 @@ class PromotionPayPausePutRequest
 
     /**
      * Whether or not to send email notification.
-     * 
+     *
      * `false` if not initialized.
      *
      * @var bool|null
@@ -52,7 +53,7 @@ class PromotionPayPausePutRequest
 
     /**
      * Whether or not to send push notification.
-     * 
+     *
      * `false` if not initialized.
      *
      * @var bool|null
@@ -61,7 +62,7 @@ class PromotionPayPausePutRequest
 
     /**
      * Whether or not to send SMS notification.
-     * 
+     *
      * `false` if not initialized.
      *
      * @var bool|null
@@ -71,7 +72,7 @@ class PromotionPayPausePutRequest
     /**
      * Additional notes for the promotion payment pause period.
      * Leave this field as `null` if the note shouldn't be updated.
-     * 
+     *
      * `null` if it shouldn't be updated.
      *
      * @var string|null
@@ -91,7 +92,7 @@ class PromotionPayPausePutRequest
             'is_sms' => $this->is_sms,
             'text_note' => $this->text_note,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

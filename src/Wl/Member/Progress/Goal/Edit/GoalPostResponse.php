@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Goal\Edit;
 
 /**
@@ -15,6 +16,6 @@ class GoalPostResponse
 
     public function __construct(array $data)
     {
-        $this->a_field_list = isset($data['a_field_list']) ? array_map(static fn($item) => new GoalPostResponseFieldList((array)$item), (array)$data['a_field_list']) : null;
+        $this->a_field_list = isset($data['a_field_list']) ? array_map(static fn ($item) => new GoalPostResponseFieldList((array)$item), (array)$data['a_field_list']) : null;
     }
 }

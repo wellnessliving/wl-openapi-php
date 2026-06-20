@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Shop\Product\Option\Inventory\Count;
 
 class InventoryCountGetRequest
@@ -42,7 +43,7 @@ class InventoryCountGetRequest
             'k_business' => $this->k_business,
             'text_barcode' => $this->text_barcode,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

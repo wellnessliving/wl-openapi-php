@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Phone;
 
 class PhoneDeleteRequest
@@ -25,7 +26,7 @@ class PhoneDeleteRequest
             'k_business' => $this->k_business,
             'text_phone' => $this->text_phone,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

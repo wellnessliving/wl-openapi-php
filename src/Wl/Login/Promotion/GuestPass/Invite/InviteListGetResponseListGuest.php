@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
 
 class InviteListGetResponseListGuest
@@ -32,7 +33,7 @@ class InviteListGetResponseListGuest
     public ?string $text_phone = null;
 
     /**
-     * Guest user key. 
+     * Guest user key.
      * `null` if the guest did not have an account when the invitation was sent.
      *
      * @var string|null

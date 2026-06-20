@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Skin;
 
 class SkinForeignPutRequest
@@ -27,9 +28,9 @@ class SkinForeignPutRequest
     /**
      * Data specific for the skin type.
      * It is passed to RsSkinData::data_set() method.
-     * 
+     *
      * All fields are optional and may be omitted if not needed.
-     * 
+     *
      * For Lead Capture widget it may contain:
      *
      * @var array|null
@@ -61,7 +62,7 @@ class SkinForeignPutRequest
             'a_fields' => $this->a_fields,
             'text_name' => $this->text_name,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

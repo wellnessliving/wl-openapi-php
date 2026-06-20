@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Member;
 
 /**
@@ -15,6 +16,6 @@ class MemberGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_business = isset($data['a_business']) ? array_map(static fn($item) => new MemberGetResponseBusiness((array)$item), (array)$data['a_business']) : null;
+        $this->a_business = isset($data['a_business']) ? array_map(static fn ($item) => new MemberGetResponseBusiness((array)$item), (array)$data['a_business']) : null;
     }
 }

@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * Program type categories.
- * 
+ *
  * Last used ID: 9.
- * 
+ *
  * Values:
  * - 7 (`ACCOUNT`): Purchase options to fill user's account:
  *   <ul>
@@ -21,7 +22,7 @@ namespace WlSdk;
  * - 8 (`INSURANCE`): Special "Wellness Program" purchase option.
  * - 5 (`OTHER`): Packages and daily deals.
  * - 6 (`RESOURCE`): Resource category.
- * 
+ *
  *   This is a category grouped next program sids:
  *   <ul>
  *     <li>[RsProgramSid::RESOURCE_DURATION](#/components/schemas/RsProgramSid)</li>
@@ -48,19 +49,26 @@ namespace WlSdk;
 class RsProgramCategorySid
 {
     /** Purchase options to fill user's account: */
-    const ACCOUNT = 7;
+    public const ACCOUNT = 7;
+
     /** Purchase options to pay for classes, events and enrollments: */
-    const CLASSES = 1;
+    public const CLASSES = 1;
+
     /** Special "Wellness Program" purchase option. */
-    const INSURANCE = 8;
+    public const INSURANCE = 8;
+
     /** Packages and daily deals. */
-    const OTHER = 5;
+    public const OTHER = 5;
+
     /** Resource category. */
-    const RESOURCE = 6;
+    public const RESOURCE = 6;
+
     /** Purchase options to pay for appointments: */
-    const SERVICE = 3;
+    public const SERVICE = 3;
+
     /** Purchase options to pay for videos:<ui> */
-    const VIDEO = 9;
+    public const VIDEO = 9;
+
     /** Purchase options to pay for gym visits: */
-    const VISIT = 2;
+    public const VISIT = 2;
 }

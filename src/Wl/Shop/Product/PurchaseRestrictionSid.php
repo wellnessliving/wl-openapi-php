@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Shop\Product;
 
 /**
  * Purchase restrictions.
- * 
+ *
  * Last used ID: 3.
- * 
+ *
  * Values:
  * - 1 (`ALL`): Purchase option available for all clients.
  * - 2 (`INTRODUCTORY`): Purchase option introductory offer, available for new clients only.
@@ -14,9 +15,11 @@ namespace WlSdk\Wl\Shop\Product;
 class PurchaseRestrictionSid
 {
     /** Purchase option available for all clients. */
-    const ALL = 1;
+    public const ALL = 1;
+
     /** Purchase option introductory offer, available for new clients only. */
-    const INTRODUCTORY = 2;
+    public const INTRODUCTORY = 2;
+
     /** Purchase option available for clients with special login type or member group. */
-    const TYPE = 3;
+    public const TYPE = 3;
 }

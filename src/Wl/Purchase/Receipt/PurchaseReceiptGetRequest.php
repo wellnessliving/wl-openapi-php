@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Purchase\Receipt;
 
 class PurchaseReceiptGetRequest
 {
     /**
      * Whether `url_print` and `url_print_receipt` require authentication.
-     * 
+     *
      * If `true`, the URL contains a token that allows temporary access to the page without logging in. If 'false',
      * the
      * page requires authentication.
@@ -28,7 +29,7 @@ class PurchaseReceiptGetRequest
             'is_url_public' => $this->is_url_public,
             'k_purchase' => $this->k_purchase,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

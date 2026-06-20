@@ -1,10 +1,11 @@
 <?php
+
 namespace WlSdk\Wl\Business\Account\Subscription\Api;
 
 /**
  * List of possible plans for
  * [ApiSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
- * 
+ *
  * Values:
  * - 1 (`FREE`): None
  * - 2 (`PREMIUM`): Premium
@@ -12,7 +13,8 @@ namespace WlSdk\Wl\Business\Account\Subscription\Api;
 class ApiSubscriptionSid
 {
     /** None */
-    const FREE = 1;
+    public const FREE = 1;
+
     /** Premium */
-    const PREMIUM = 2;
+    public const PREMIUM = 2;
 }

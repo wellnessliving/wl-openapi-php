@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Login\Promotion\GuestPass;
 
 class GuestPassListGetResponseListSettings
 {
     /**
      * Count of days for accept guest invite.
-     * 
+     *
      * If the invitation is not accepted within this time, it will be canceled.
      *
      * @var int|null

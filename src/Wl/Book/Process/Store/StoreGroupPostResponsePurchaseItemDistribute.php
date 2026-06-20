@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Store;
 
 class StoreGroupPostResponsePurchaseItemDistribute
@@ -22,7 +23,7 @@ class StoreGroupPostResponsePurchaseItemDistribute
     public ?int $i_session = null;
 
     /**
-     * Login promotion key. 
+     * Login promotion key.
      *   The same as in `a_login_promotion`.
      *   `null` if not applicable.
      *
@@ -31,7 +32,7 @@ class StoreGroupPostResponsePurchaseItemDistribute
     public ?string $k_login_promotion = null;
 
     /**
-     * Session pass key. 
+     * Session pass key.
      *   The same as in `a_session_pass`.
      *   `null` if not applicable.
      *

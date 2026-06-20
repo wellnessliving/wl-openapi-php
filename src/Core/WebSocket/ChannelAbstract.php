@@ -1,38 +1,39 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 /**
  * Base class for all channel controllers.
- * 
+ *
  * A channel allows clients to subscribe to events, and allows server to send events to all subscribers instantly.
- * 
+ *
  * A channel controller contains description of data and key fields, and a method that allows to check if key fields
  * are
  * valid and current user has access to subscribe to this channel
  * ([ChannelAbstract::checkAccess() checkAccess()](#/components/schemas/Core.WebSocket.ChannelAbstract)).
- * 
+ *
  * Key fields allow to clients to receive only events that correspond to these keys.
  * For example, if we have a channel "A message is added in a chat room", chat room would be a key.
  * Sender name and content of the message are data fields.
  * [ChannelAbstract::checkAccess() checkAccess()](#/components/schemas/Core.WebSocket.ChannelAbstract) should check if
  * this room exists and current
  * user has access to view messages of this room.
- * 
+ *
  * <b>How to create a new channel</b>
- * 
+ *
  * To create a channel, you should do the following:
  * * Create a channel controller (successor of [ChannelAbstract](#/components/schemas/Core.WebSocket.ChannelAbstract)).
  * * Register CID of the controller.
  * * Describe data and key fields in channel controller.
  * * Implement [ChannelAbstract::checkAccess() checkAccess()](#/components/schemas/Core.WebSocket.ChannelAbstract).
  *   Check if key fields are valid and that current user has access to subscribe this channel.
- * 
+ *
  * <b>How to send a new message to a channel</b>
- * 
+ *
  * * Create an object of a channel controller.
  * * Fill in all data and key fields.
  * * Issue [ChannelAbstract::notify() notify()](#/components/schemas/Core.WebSocket.ChannelAbstract) on it.
- * 
+ *
  * Values:
  * - 735 (`Thoth\ReportCore\Generator\UpdateChannel`): A message is sent through this channel every time a report gets
  * updated.
@@ -92,69 +93,101 @@ namespace WlSdk\Core\WebSocket;
 class ChannelAbstract
 {
     /** A message is sent through this channel every time a report gets updated. */
-    const Thoth\ReportCore\Generator\UpdateChannel = 735;
+    public const UpdateChannel = 735;
+
     /** A message is sent through this channel when the status of a visit is changed. */
-    const Wl\Visit\VisitStatusChannel = 1921;
+    public const VisitStatusChannel = 1921;
+
     /** Channel to inform Fitbuilder messenger about new information. */
-    const Wl\Fitbuilder\MessageChannel = 1583;
+    public const MessageChannel = 1583;
+
     /** Channel to pass over information about virtual account release. */
-    const Wl\Virtual\AccountUpdateChannel = 733;
+    public const AccountUpdateChannel = 733;
+
     /** Channel to pass over information about meeting creation. */
-    const Wl\Virtual\MeetingScheduleChannel = 688;
+    public const MeetingScheduleChannel = 688;
+
     /** A message is sent through this channel every time a task created or edited. */
-    const Wl\Task\TaskChangeChannel = 1869;
+    public const TaskChangeChannel = 1869;
+
     /** A message is sent through this channel every time an alert created or read. */
-    const Wl\Alert\AlertChannel = 1342;
+    public const AlertChannel = 1342;
+
     /** Channel to pass over information about ticket status. */
-    const Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusChannel = 1421;
+    public const DirectConnectTicketStatusChannel = 1421;
+
     /** Example channel to test how asynchronous function calls work. */
-    const Core\WebSocket\Example\ExampleFunctionChannel = 19;
+    public const ExampleFunctionChannel = 19;
+
     /** Channel to notify user that class schedule is changed. */
-    const Wl\Schedule\ClassList\ClassListChannel = 298;
+    public const ClassListChannel = 298;
+
     /** Channel to notify user that a session has been booked or book cancelled. */
-    const Wl\Schedule\ScheduleList\ScheduleListChannel = 305;
+    public const ScheduleList_ScheduleListChannel = 305;
+
     /** Channel to pass over information about booking. */
-    const Wl\Book\Multiple\MultipleTaskSessionChannel = 1163;
+    public const MultipleTaskSessionChannel = 1163;
+
     /** Channel to notify certain clients about changes of they schedule. */
-    const Wl\Profile\Schedule\ProfileScheduleChannel = 510;
+    public const ProfileScheduleChannel = 510;
+
     /** Channel to notify user about new unsigned documents. */
-    const Wl\Profile\Contract\ContractChannel = 1660;
+    public const ContractChannel = 1660;
+
     /** Channel to pass over information about business import progress. */
-    const Wl\Import\Progress\ProgressChannel = 1850;
+    public const ProgressChannel = 1850;
+
     /** Channel to pass over error message when failed sent SMS. */
-    const Wl\Business\Sms\SmsSendErrorChannel = 977;
+    public const SmsSendErrorChannel = 977;
+
     /** When title of a business is changed, new title is sent over this channel. */
-    const Wl\Business\Edit\TitleChangeChannel = 16;
+    public const TitleChangeChannel = 16;
+
     /** Channel to notify certain user about complete of report accumulation process. */
-    const Wl\Report\Background\ReportBackgroundProcessChannel = 842;
+    public const ReportBackgroundProcessChannel = 842;
+
     /** When the specified report is updated, auto-update request is sent over this channel. */
-    const Wl\Report\AutoUpdate\ReportAutoUpdateChannel = 1543;
+    public const ReportAutoUpdateChannel = 1543;
+
     /** Domain verification status verification channel. */
-    const Wl\Mail\Domain\DomainVerifyStatusChannel = 1834;
+    public const DomainVerifyStatusChannel = 1834;
+
     /** When mail verify status was changed new value is sent over this channel. */
-    const Wl\Mail\Verify\MailVerifyStatusChangeChannel = 677;
+    public const MailVerifyStatusChangeChannel = 677;
+
     /** Channel to pass over information about changing the Self Check-In settings. */
-    const Wl\Reception\Design\ReceptionDesignChannel = 1657;
+    public const ReceptionDesignChannel = 1657;
+
     /** A message is sent through this channel every time a client type is changed. */
-    const Wl\Member\Info\ClientTypeChangeChannel = 1820;
+    public const ClientTypeChangeChannel = 1820;
+
     /** Channel to pass over information about payment status. */
-    const Thoth\PayProcessor\Nuvei\Terminal\OMNIChannelApi\PaymentStatusChannel = 1736;
+    public const PaymentStatusChannel = 1736;
+
     /** Channel to notify certain staff members about changes of schedule. */
-    const Wl\Schedule\ScheduleList\StaffApp\ScheduleListChannel = 523;
+    public const StaffApp_ScheduleListChannel = 523;
+
     /** Channel to pass over information about unread SMS in the business. */
-    const Wl\Business\Sms\Unread\SmsUnreadCountChannel = 960;
+    public const SmsUnreadCountChannel = 960;
+
     /** Channel to listen requests to access from franchisee. */
-    const Wl\Business\AuthorizeSupport\Request\RequestChannel = 34;
+    public const RequestChannel = 34;
+
     /** Channel to response support employee who is requesting access to business. */
-    const Wl\Business\AuthorizeSupport\Response\ResponseChannel = 41;
+    public const ResponseChannel = 41;
+
     /** Channel to inform staff members that request from support employee has been processed. */
-    const Wl\Business\AuthorizeSupport\ResponseStaff\ResponseStaffChannel = 57;
+    public const ResponseStaffChannel = 57;
+
     /** Channel to pass over information about address verification. */
-    const Wl\Postcard\Campaign\CampaignEdit\AddressVerificationChannel = 828;
+    public const AddressVerificationChannel = 828;
+
     /** Channel to pass over information about changing the dialog with specific client. */
-    const Wl\Business\Sms\Chat\Dialog\DialogChannel = 963;
+    public const DialogChannel = 963;
+
     /** Channel to pass over information about new message in the chat. */
-    const Wl\Business\Sms\Chat\Dialog\MessageHistoryChannel = 952;
+    public const MessageHistoryChannel = 952;
+
     /** When accumulation progress was changed new value is sent over this channel. */
-    const Wl\Business\Franchise\Report\Curves\AccumulationProcessChannel = 549;
+    public const AccumulationProcessChannel = 549;
 }

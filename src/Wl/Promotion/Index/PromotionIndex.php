@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Promotion\Index;
 
 use WlSdk\WlSdkClient;

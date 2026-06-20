@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Lead;
 
 class LeadGetRequest
@@ -27,7 +28,7 @@ class LeadGetRequest
             'k_business' => $this->k_business,
             'k_skin' => $this->k_skin,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

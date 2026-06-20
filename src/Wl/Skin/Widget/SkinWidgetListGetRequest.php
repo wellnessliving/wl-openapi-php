@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Skin\Widget;
 
 class SkinWidgetListGetRequest
@@ -16,7 +17,7 @@ class SkinWidgetListGetRequest
             [
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

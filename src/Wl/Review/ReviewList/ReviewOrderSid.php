@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Wl\Review\ReviewList;
 
 /**
  * List of possible order for gets review.
- * 
+ *
  * Values:
  * - 1 (`LATEST`): Ascending sort review by date.
  * - 3 (`NEGATIVE`): Ascending sort review by date.
@@ -13,11 +14,14 @@ namespace WlSdk\Wl\Review\ReviewList;
 class ReviewOrderSid
 {
     /** Ascending sort review by date. */
-    const LATEST = 1;
+    public const LATEST = 1;
+
     /** Ascending sort review by date. */
-    const NEGATIVE = 3;
+    public const NEGATIVE = 3;
+
     /** Descending sort review by date. */
-    const OLDEST = 4;
+    public const OLDEST = 4;
+
     /** Descending sort review by date. */
-    const POSITIVE = 2;
+    public const POSITIVE = 2;
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Shop\Category;
 
 class CategoryGetRequest
@@ -16,7 +17,7 @@ class CategoryGetRequest
             [
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

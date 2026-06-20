@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Group\Edit;
 
 class EditGetRequest
@@ -20,7 +21,7 @@ class EditGetRequest
     /**
      * Key of existing template.
      * Primary key in the SearchTemplateSql table.
-     * 
+     *
      * Can be empty if template needs to be created.
      *
      * @var string|null
@@ -52,7 +53,7 @@ class EditGetRequest
             's_search_group' => $this->s_search_group,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

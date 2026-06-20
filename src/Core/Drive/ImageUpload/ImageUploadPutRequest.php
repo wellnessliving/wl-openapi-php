@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Drive\ImageUpload;
 
 class ImageUploadPutRequest
@@ -48,7 +49,7 @@ class ImageUploadPutRequest
             's_class' => $this->s_class,
             's_command' => $this->s_command,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

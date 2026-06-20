@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Edit;
 
 class EditPasswordPostRequest
@@ -57,7 +58,7 @@ class EditPasswordPostRequest
             's_password_old' => $this->s_password_old,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

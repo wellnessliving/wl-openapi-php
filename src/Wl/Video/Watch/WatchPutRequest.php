@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Watch;
 
 class WatchPutRequest
@@ -40,7 +41,7 @@ class WatchPutRequest
             'k_business' => $this->k_business,
             'k_video_watch' => $this->k_video_watch,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

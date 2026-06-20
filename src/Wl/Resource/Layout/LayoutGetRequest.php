@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Resource\Layout;
 
 class LayoutGetRequest
@@ -16,7 +17,7 @@ class LayoutGetRequest
             [
             'k_resource_layout' => $this->k_resource_layout,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

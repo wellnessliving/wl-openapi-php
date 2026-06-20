@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Catalog\StaffApp\CatalogCart;
 
 /**
@@ -79,7 +80,7 @@ class CatalogCartGetResponse
 
     /**
      * The discount code's error code.
-     * 
+     *
      * `null` if no error.
      *
      * @var string|null
@@ -88,7 +89,7 @@ class CatalogCartGetResponse
 
     /**
      * The discount code's error message.
-     * 
+     *
      * `null` if no error.
      *
      * @var string|null

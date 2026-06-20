@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Purchase\Receipt;
 
 class PurchaseReceiptGetResponsePurchaseItem

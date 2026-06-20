@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Log\Edit;
 
 class LogPostRequest
 {
     /**
      * Progress log local date.
-     * 
+     *
      * If `null` use the current date.
      *
      * @var string|null
@@ -28,7 +29,7 @@ class LogPostRequest
 
     /**
      * List of fields.
-     * 
+     *
      * Keys are field IDs ({@link \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid} constants).
      * Values are new field values.
      * Structure of value completely defined by individual fields.
@@ -54,7 +55,7 @@ class LogPostRequest
             'a_field_log' => $this->a_field_log,
             'is_weight_only' => $this->is_weight_only,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

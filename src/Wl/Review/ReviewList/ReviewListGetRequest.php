@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Review\ReviewList;
 
 class ReviewListGetRequest
@@ -7,7 +8,7 @@ class ReviewListGetRequest
      * If not specified, this request will return all review keys. If specified, this request will return detailed
      * reviews
      * (10 per page).
-     * 
+     *
      * This will be `null` if you only need to load the keys of the review.
      *
      * @var int|null
@@ -17,7 +18,7 @@ class ReviewListGetRequest
     /**
      * The order in which the review should be arranged. One of the {@link
      * \WlSdk\Wl\Review\ReviewList\ReviewOrderSid} constants.
-     * 
+     *
      * If not passed use default order {@link \WlSdk\Wl\Review\ReviewList\ReviewOrderSid}.
      *
      * @var int|null
@@ -57,7 +58,7 @@ class ReviewListGetRequest
             'k_location' => $this->k_location,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

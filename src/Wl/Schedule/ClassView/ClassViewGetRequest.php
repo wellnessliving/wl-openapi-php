@@ -1,12 +1,13 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ClassView;
 
 class ClassViewGetRequest
 {
     /**
      * A list of sessions to get information for. Every element has the following keys:
-     * 
-     * 
+     *
+     *
      * `null` if requesting a single session.
      *
      * @var array[]|null
@@ -22,9 +23,9 @@ class ClassViewGetRequest
 
     /**
      * Key of the business in which the action is performed.
-     * 
+     *
      * `null` if key of the business was not passed.
-     * 
+     *
      * Key of the business is required if [ClassViewApi](/Wl/Schedule/ClassView/ClassView.json) was passed.
      *
      * @var string|null
@@ -55,7 +56,7 @@ class ClassViewGetRequest
             'k_class_period' => $this->k_class_period,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

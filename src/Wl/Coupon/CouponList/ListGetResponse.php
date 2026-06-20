@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Coupon\CouponList;
 
 /**
@@ -15,6 +16,6 @@ class ListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_coupon = isset($data['a_coupon']) ? array_map(static fn($item) => new ListGetResponseCoupon((array)$item), (array)$data['a_coupon']) : null;
+        $this->a_coupon = isset($data['a_coupon']) ? array_map(static fn ($item) => new ListGetResponseCoupon((array)$item), (array)$data['a_coupon']) : null;
     }
 }

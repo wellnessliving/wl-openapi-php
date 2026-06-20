@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Collector;
 
 class DebtPayPostRequest
@@ -6,7 +7,7 @@ class DebtPayPostRequest
     /**
      * The currency of the payment.
      * One of {@link \WlSdk\Core\Locale\CurrencySid} constants.
-     * 
+     *
      * Important! The currency must coincide with currency of the debt that was sent to collections.
      *
      * @var int|null
@@ -30,7 +31,7 @@ class DebtPayPostRequest
     /**
      * The payment method ID.
      * One of {@link \WlSdk\RsPayMethodSid} constants.
-     * 
+     *
      * `null` if the payment method is unknown. In such cases, {@link \WlSdk\RsPayMethodSid} would be used.
      *
      * @var int|null
@@ -62,7 +63,7 @@ class DebtPayPostRequest
             'k_collector_debt' => $this->k_collector_debt,
             'm_amount' => $this->m_amount,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

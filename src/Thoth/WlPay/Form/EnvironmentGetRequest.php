@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Form;
 
 class EnvironmentGetRequest
 {
     /**
      * The key of the business to retrieve payment information for.
-     * 
+     *
      * This will be `0` if not set yet.
      * An empty string or `null` if payments are performed with the WellnessLiving system merchant.
      *
@@ -22,7 +23,7 @@ class EnvironmentGetRequest
 
     /**
      * The key of the location to retrieve payment information for.
-     * 
+     *
      * This will be `0` if not set yet.
      *
      * @var string|null
@@ -31,7 +32,7 @@ class EnvironmentGetRequest
 
     /**
      * The user ID to retrieve payment information for. Primary key in the PassportLoginSql table.
-     * 
+     *
      * `null` if not defined.
      *
      * @var string|null
@@ -47,7 +48,7 @@ class EnvironmentGetRequest
             'k_location' => $this->k_location,
             'uid_owner' => $this->uid_owner,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

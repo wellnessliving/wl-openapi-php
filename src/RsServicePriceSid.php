@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * A list of service price types.
- * 
+ *
  * Values:
  * - 1 (`FIXED`): Fixed price.
  * - 2 (`FREE`): No need to pay.
@@ -13,11 +14,14 @@ namespace WlSdk;
 class RsServicePriceSid
 {
     /** Fixed price. */
-    const FIXED = 1;
+    public const FIXED = 1;
+
     /** No need to pay. */
-    const FREE = 2;
+    public const FREE = 2;
+
     /** Hide price. */
-    const HIDE = 4;
+    public const HIDE = 4;
+
     /** Various price. */
-    const VARIES = 3;
+    public const VARIES = 3;
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Purchase\Share;
 
 use WlSdk\WlSdkClient;

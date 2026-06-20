@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Tag;
 
 class TagListGetRequest
@@ -16,7 +17,7 @@ class TagListGetRequest
             [
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

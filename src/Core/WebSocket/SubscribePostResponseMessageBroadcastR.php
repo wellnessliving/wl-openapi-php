@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Core\WebSocket;
 
 class SubscribePostResponseMessageBroadcastR
 {
     /**
-     * List of email domain tokens: 
-     * 
+     * List of email domain tokens:
+     *
      * Empty array if the business does not have a mail domain set up.
      *
      * @var SubscribePostResponseMessageBroadcastRDomainToken|null
@@ -14,7 +15,7 @@ class SubscribePostResponseMessageBroadcastR
 
     /**
      * Email domain status.
-     * 
+     *
      * `null` if the business does not have a mail domain set up.
      *
      * @var int|null
@@ -23,7 +24,7 @@ class SubscribePostResponseMessageBroadcastR
 
     /**
      * CSS class for the icon representing the email domain status.
-     * 
+     *
      * Empty string if the business does not have a mail domain set up.
      *
      * @var string|null

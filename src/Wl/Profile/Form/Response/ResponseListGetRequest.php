@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Form\Response;
 
 class ResponseListGetRequest
 {
     /**
      * Defines whether completed forms should not be included in result list of forms.
-     * 
+     *
      * `true` to exclude completed forms from result.
      * `false` to include completed forms to result.
      *
@@ -15,7 +16,7 @@ class ResponseListGetRequest
 
     /**
      * Defines whether optional uncompleted forms should not be included in result list of forms.
-     * 
+     *
      * `true` to exclude optional uncompleted forms from result.
      * `false` to include optional uncompleted forms to result.
      *
@@ -54,7 +55,7 @@ class ResponseListGetRequest
             'k_business' => $this->k_business,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Skin\Application\Resource;
 
 class ApplicationResourceMaterialPostRequest
@@ -156,7 +157,7 @@ class ApplicationResourceMaterialPostRequest
             'text_title' => $this->text_title,
             'text_website' => $this->text_website,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

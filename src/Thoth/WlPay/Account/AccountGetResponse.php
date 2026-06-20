@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Account;
 
 /**
@@ -8,7 +9,7 @@ class AccountGetResponse
 {
     /**
      * A list of the user's accounts.
-     * 
+     *
      * Keys are account keys. This could be `0` if the user has no accounts in the currency of the given business.
      * Values are account data:
      *

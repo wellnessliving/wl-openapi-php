@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Passport\Login\Register;
 
 class RegisterOtpPostRequest
@@ -24,7 +25,7 @@ class RegisterOtpPostRequest
             'k_business' => $this->k_business,
             's_otp_code' => $this->s_otp_code,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

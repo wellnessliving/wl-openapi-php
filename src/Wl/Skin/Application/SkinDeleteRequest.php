@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Skin\Application;
 
 class SkinDeleteRequest
 {
     /**
      * Whether customization billing is confirmed.
-     * 
+     *
      * `true` to finish delete process even if customization fee will be billed.
      * `false` if customization fee should be required for confirmation.
      *
@@ -27,7 +28,7 @@ class SkinDeleteRequest
             'is_billing_confirm' => $this->is_billing_confirm,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

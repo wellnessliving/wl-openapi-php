@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Report;
 
 /**
@@ -8,7 +9,7 @@ class DataGetResponse
 {
     /**
      * The report contents.
-     * 
+     *
      * Contents of this array can vary based on the report that's loaded.
      *
      * @var array|null
@@ -17,7 +18,7 @@ class DataGetResponse
 
     /**
      * The report total.
-     * 
+     *
      * Contents of this array can vary based on the report that's loaded.
      *
      * @var array|null

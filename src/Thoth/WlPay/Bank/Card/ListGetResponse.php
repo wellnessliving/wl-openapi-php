@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Bank\Card;
 
 /**
@@ -25,7 +26,7 @@ class ListGetResponse
 
     /**
      * Whether new card can be added.
-     * 
+     *
      * `true` if new cards can be added.
      * `false` if new cards can not be added.
      *

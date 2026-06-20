@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz\Response;
 
 /**
@@ -58,7 +59,7 @@ class Response65GetResponse
 
     /**
      * Whether to show numbering of the form elements that supports numbering.
-     * 
+     *
      * `true` to show numbering on the form for elements that supports numbering.
      * `false` to not show numbering.
      *
@@ -110,7 +111,7 @@ class Response65GetResponse
 
     /**
      * Title of the filled form.
-     * 
+     *
      * `null` in case when not filled yet.
      *
      * @var string|null
@@ -119,7 +120,7 @@ class Response65GetResponse
 
     public function __construct(array $data)
     {
-        $this->a_access_log = isset($data['a_access_log']) ? array_map(static fn($item) => new Response65GetResponseAccessLog((array)$item), (array)$data['a_access_log']) : null;
+        $this->a_access_log = isset($data['a_access_log']) ? array_map(static fn ($item) => new Response65GetResponseAccessLog((array)$item), (array)$data['a_access_log']) : null;
         $this->a_element = $data['a_element'] ?? null;
         $this->a_service_info = isset($data['a_service_info']) ? new Response65GetResponseServiceInfo((array)$data['a_service_info']) : null;
         $this->can_amend = isset($data['can_amend']) ? (bool)$data['can_amend'] : null;

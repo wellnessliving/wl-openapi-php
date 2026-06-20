@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Edit;
 
 /**
@@ -65,9 +66,9 @@ class EditGetResponse
 
     /**
      * Key of the lead source.
-     * 
+     *
      * `null` if not defined.
-     * 
+     *
      * When creating or editing a user:
      * `LEAD_SOURCE_REPLACE_NONE` if Lead Source is to be unselected for the user.
      *
@@ -110,9 +111,9 @@ class EditGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_error_list = isset($data['a_error_list']) ? array_map(static fn($item) => new EditGetResponseErrorList((array)$item), (array)$data['a_error_list']) : null;
+        $this->a_error_list = isset($data['a_error_list']) ? array_map(static fn ($item) => new EditGetResponseErrorList((array)$item), (array)$data['a_error_list']) : null;
         $this->a_phone_inherit = isset($data['a_phone_inherit']) ? new EditGetResponsePhoneInherit((array)$data['a_phone_inherit']) : null;
-        $this->a_structure = isset($data['a_structure']) ? array_map(static fn($item) => new EditGetResponseStructure((array)$item), (array)$data['a_structure']) : null;
+        $this->a_structure = isset($data['a_structure']) ? array_map(static fn ($item) => new EditGetResponseStructure((array)$item), (array)$data['a_structure']) : null;
         $this->can_password_change = isset($data['can_password_change']) ? (bool)$data['can_password_change'] : null;
         $this->is_a2p = isset($data['is_a2p']) ? (bool)$data['is_a2p'] : null;
         $this->is_address_inherit = isset($data['is_address_inherit']) ? (bool)$data['is_address_inherit'] : null;

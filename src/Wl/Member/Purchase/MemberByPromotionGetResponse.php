@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Purchase;
 
 /**
@@ -15,6 +16,6 @@ class MemberByPromotionGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_clients = isset($data['a_clients']) ? array_map(static fn($item) => new MemberByPromotionGetResponseClients((array)$item), (array)$data['a_clients']) : null;
+        $this->a_clients = isset($data['a_clients']) ? array_map(static fn ($item) => new MemberByPromotionGetResponseClients((array)$item), (array)$data['a_clients']) : null;
     }
 }

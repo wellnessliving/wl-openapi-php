@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz\Response;
 
 class Response65DeleteRequest
@@ -33,7 +34,7 @@ class Response65DeleteRequest
 
     /**
      * Quiz response key.
-     * 
+     *
      * `null` in a case of response creation or
      * removing set of responses in [QuizResponseApi](/Core/Quiz/QuizResponse.json).
      *
@@ -59,7 +60,7 @@ class Response65DeleteRequest
             'k_quiz_response' => $this->k_quiz_response,
             'json_quiz_response_key' => $this->json_quiz_response_key,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

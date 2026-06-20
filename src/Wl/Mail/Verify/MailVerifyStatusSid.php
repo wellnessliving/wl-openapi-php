@@ -1,12 +1,13 @@
 <?php
+
 namespace WlSdk\Wl\Mail\Verify;
 
 /**
  * Statuses of mail verification. Based on statuses that returns Amazon SES API.
  * It is necessary for sending email through Amazon SES. Amazon SES can send email only from verified email addresses.
- * 
+ *
  * Last used ID: 4.
- * 
+ *
  * Values:
  * - 4 (`FAIL`): Email is not verified.
  * - 1 (`NONE`): Verification request is not running.
@@ -16,11 +17,14 @@ namespace WlSdk\Wl\Mail\Verify;
 class MailVerifyStatusSid
 {
     /** Email is not verified. */
-    const FAIL = 4;
+    public const FAIL = 4;
+
     /** Verification request is not running. */
-    const NONE = 1;
+    public const NONE = 1;
+
     /** Email is verified. */
-    const VERIFY = 3;
+    public const VERIFY = 3;
+
     /** Verification in progress. */
-    const WAIT_FOR_VERIFY = 2;
+    public const WAIT_FOR_VERIFY = 2;
 }

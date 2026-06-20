@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Field;
 
 /**
  * Possible types of the progress fields values.
- * 
+ *
  * Lase used id: 5.
- * 
+ *
  * Values:
  * - 2 (`DECIMAL`): Value is decimal.
  * - 5 (`IMAGE`): Value is image.
@@ -16,13 +17,17 @@ namespace WlSdk\Wl\Member\Progress\Field;
 class TypeSid
 {
     /** Value is decimal. */
-    const DECIMAL = 2;
+    public const DECIMAL = 2;
+
     /** Value is image. */
-    const IMAGE = 5;
+    public const IMAGE = 5;
+
     /** Value is percentage. */
-    const PERCENTAGE = 3;
+    public const PERCENTAGE = 3;
+
     /** Value is string. */
-    const STRING = 4;
+    public const STRING = 4;
+
     /** Value is whole number. */
-    const WHOLE_NUMBER = 1;
+    public const WHOLE_NUMBER = 1;
 }

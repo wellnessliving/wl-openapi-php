@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Skin\Widget;
 
 use WlSdk\WlSdkClient;

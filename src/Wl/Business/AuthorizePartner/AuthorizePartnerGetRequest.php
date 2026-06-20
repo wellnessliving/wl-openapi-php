@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\AuthorizePartner;
 
 class AuthorizePartnerGetRequest
@@ -34,7 +35,7 @@ class AuthorizePartnerGetRequest
             'k_location' => $this->k_location,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

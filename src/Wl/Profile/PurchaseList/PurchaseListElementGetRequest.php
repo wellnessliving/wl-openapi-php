@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\PurchaseList;
 
 class PurchaseListElementGetRequest
@@ -72,7 +73,7 @@ class PurchaseListElementGetRequest
 
     /**
      * The ID of the makeup session used to attend an event.
-     * 
+     *
      * This must be specified if the purchase item is a component of a package and a whole event booking.
      * And only for items which aren't components of package.
      *
@@ -94,7 +95,7 @@ class PurchaseListElementGetRequest
             'k_purchase_item' => $this->k_purchase_item,
             'k_session_pass' => $this->k_session_pass,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

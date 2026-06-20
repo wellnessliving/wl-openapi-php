@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Import\Custom;
 
 /**
@@ -8,9 +9,9 @@ namespace WlSdk\Wl\Import\Custom;
  * which should extend [CustomPerformAbstract](#/components/schemas/Wl.Import.Custom.CustomPerformAbstract)
  * with appropriate name according to constant name, see
  * [CustomContact](#/components/schemas/Wl.Import.Custom.Contact.CustomContact).
- * 
+ *
  * Last used ID: 20.
- * 
+ *
  * Values:
  * - 8 (`APPOINTMENT_RECURRING`): Creates recurring appointments with no end date.
  * - 10 (`CLIENT_ACCOUNT_BALANCE`): Custom import which allows to import client account balance.
@@ -44,7 +45,7 @@ namespace WlSdk\Wl\Import\Custom;
  *   See [CustomPurchaseMember](#/components/schemas/Wl.Import.Custom.PurchaseMember.CustomPurchaseMember).
  * - 18 (`PURCHASE_REMOVE`): Allows to remove list of purchases from specific file.
  * - 19 (`QUIZ`): Custom import which allows to import forms.
- * 
+ *
  *   See [CustomQuiz](#/components/schemas/Wl.Import.Custom.Quiz.CustomQuiz).
  * - 2 (`REFUND`): Custom import which allows to import refund dates to update transactions.
  *   See [CustomRefund](#/components/schemas/Wl.Import.Custom.Refund.CustomRefund).
@@ -54,43 +55,62 @@ namespace WlSdk\Wl\Import\Custom;
 class CustomSid
 {
     /** Creates recurring appointments with no end date. */
-    const APPOINTMENT_RECURRING = 8;
+    public const APPOINTMENT_RECURRING = 8;
+
     /** Custom import which allows to import client account balance. */
-    const CLIENT_ACCOUNT_BALANCE = 10;
+    public const CLIENT_ACCOUNT_BALANCE = 10;
+
     /** Custom import which allows to import client note. */
-    const CLIENT_NOTE = 5;
+    public const CLIENT_NOTE = 5;
+
     /** Custom import which allows to import client purchase refund. */
-    const CLIENT_PURCHASE_REFUND = 11;
+    public const CLIENT_PURCHASE_REFUND = 11;
+
     /** Custom import which allows to import client relationship. */
-    const CLIENT_RELATIONSHIP = 12;
+    public const CLIENT_RELATIONSHIP = 12;
+
     /** Custom import which allows to import contact block information. */
-    const CLIENTS = 20;
+    public const CLIENTS = 20;
+
     /** Custom import which allows to import contact log information. */
-    const CONTACT = 1;
+    public const CONTACT = 1;
+
     /** Custom import which allows to import curves staff-manager custom fields. */
-    const CURVE_EXT_MANAGER = 15;
+    public const CURVE_EXT_MANAGER = 15;
+
     /** Custom import which allows to import curves franchisee custom fields. */
-    const CURVE_EXT_ORGANIZATION = 13;
+    public const CURVE_EXT_ORGANIZATION = 13;
+
     /** Custom import which allows to import curves staff-owner custom fields. */
-    const CURVE_EXT_OWNER = 14;
+    public const CURVE_EXT_OWNER = 14;
+
     /** Custom import which allows to import curves franchisee. */
-    const CURVE_FRANCHISE = 7;
+    public const CURVE_FRANCHISE = 7;
+
     /** Custom import which allows to import curves client historical visits. */
-    const CURVE_HISTORICAL_VISIT = 16;
+    public const CURVE_HISTORICAL_VISIT = 16;
+
     /** Custom import which allows to import curves members. */
-    const CURVE_MEMBER = 4;
+    public const CURVE_MEMBER = 4;
+
     /** Custom import which allows to start import for the list of franchisees. */
-    const CURVE_START = 9;
+    public const CURVE_START = 9;
+
     /** Creates sold gift cards for clients. */
-    const LOGIN_COUPON = 17;
+    public const LOGIN_COUPON = 17;
+
     /** Custom import which allows to import purchase members. */
-    const PURCHASE_MEMBER = 6;
+    public const PURCHASE_MEMBER = 6;
+
     /** Allows to remove list of purchases from specific file. */
-    const PURCHASE_REMOVE = 18;
+    public const PURCHASE_REMOVE = 18;
+
     /** Custom import which allows to import forms. */
-    const QUIZ = 19;
+    public const QUIZ = 19;
+
     /** Custom import which allows to import refund dates to update transactions. */
-    const REFUND = 2;
+    public const REFUND = 2;
+
     /** Custom import which allows to import client reward balance. */
-    const REWARD = 3;
+    public const REWARD = 3;
 }

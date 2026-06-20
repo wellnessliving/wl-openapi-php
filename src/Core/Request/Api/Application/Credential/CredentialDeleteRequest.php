@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Request\Api\Application\Credential;
 
 class CredentialDeleteRequest
@@ -16,7 +17,7 @@ class CredentialDeleteRequest
             [
             'cid_credential' => $this->cid_credential,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

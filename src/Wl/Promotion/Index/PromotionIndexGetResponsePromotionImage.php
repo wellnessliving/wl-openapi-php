@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Promotion\Index;
 
 class PromotionIndexGetResponsePromotionImage
@@ -22,12 +23,12 @@ class PromotionIndexGetResponsePromotionImage
      *
      * @var string|null
      */
-    public ?string $url-thumbnail = null;
+    public ?string $url_thumbnail = null;
 
     public function __construct(array $data)
     {
         $this->i_height = isset($data['i_height']) ? (string)$data['i_height'] : null;
         $this->i_width = isset($data['i_width']) ? (string)$data['i_width'] : null;
-        $this->url-thumbnail = isset($data['url-thumbnail']) ? (string)$data['url-thumbnail'] : null;
+        $this->url_thumbnail = isset($data['url-thumbnail']) ? (string)$data['url-thumbnail'] : null;
     }
 }

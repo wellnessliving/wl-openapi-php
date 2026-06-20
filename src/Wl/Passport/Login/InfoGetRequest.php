@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Passport\Login;
 
 class InfoGetRequest
@@ -16,7 +17,7 @@ class InfoGetRequest
             [
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

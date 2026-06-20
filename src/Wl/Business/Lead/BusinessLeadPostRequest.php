@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Lead;
 
 class BusinessLeadPostRequest
@@ -64,7 +65,7 @@ class BusinessLeadPostRequest
             'text_promo_code' => $this->text_promo_code,
             'url_website' => $this->url_website,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

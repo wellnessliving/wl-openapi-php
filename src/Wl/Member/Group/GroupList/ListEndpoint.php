@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Member\Group\GroupList;
 
 use WlSdk\WlSdkClient;
@@ -7,7 +8,7 @@ use WlSdk\WlSdkClient;
  * Returns all member groups list in the business if `$a_member_group_select` is empty,
  * otherwise filters result according to `$a_member_group_select`.
  */
-class List
+class ListEndpoint
 {
     /** @var WlSdkClient */
     private $client;
@@ -23,13 +24,13 @@ otherwise filters result according to `$a_member_group_select`.
      *
      * If `is_return_members` is `true` includes in the result list of members of each groups.
      *
-     * @return ListGetResponse
+     * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(ListGetRequest $request): ListGetResponse
+    public function get(ListEndpointGetRequest $request): ListEndpointGetResponse
     {
-        return new ListGetResponse($this->client->request('/Wl/Member/Group/GroupList/List.json', $request->params(), 'GET'));
+        return new ListEndpointGetResponse($this->client->request('/Wl/Member/Group/GroupList/List.json', $request->params(), 'GET'));
     }
 
     /**
@@ -38,13 +39,13 @@ otherwise filters result according to `$a_member_group_select`.
      * Saves the display order of member groups for the business using the positions supplied in
      * `$a_member_group_order`, verifying that all specified group keys belong to the business before writing.
      *
-     * @return ListPutResponse
+     * @return ListEndpointPutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function put(ListPutRequest $request): ListPutResponse
+    public function put(ListEndpointPutRequest $request): ListEndpointPutResponse
     {
-        return new ListPutResponse($this->client->request('/Wl/Member/Group/GroupList/List.json', $request->params(), 'PUT'));
+        return new ListEndpointPutResponse($this->client->request('/Wl/Member/Group/GroupList/List.json', $request->params(), 'PUT'));
     }
 
     /**
@@ -52,12 +53,12 @@ otherwise filters result according to `$a_member_group_select`.
      *
      * Deletes specified groups and associated search templates.
      *
-     * @return ListDeleteResponse
+     * @return ListEndpointDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function delete(ListDeleteRequest $request): ListDeleteResponse
+    public function delete(ListEndpointDeleteRequest $request): ListEndpointDeleteResponse
     {
-        return new ListDeleteResponse($this->client->request('/Wl/Member/Group/GroupList/List.json', $request->params(), 'DELETE'));
+        return new ListEndpointDeleteResponse($this->client->request('/Wl/Member/Group/GroupList/List.json', $request->params(), 'DELETE'));
     }
 }

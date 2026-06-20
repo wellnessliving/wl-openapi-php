@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Integration\Saml;
 
 class SamlUserDeactivationPostRequest
@@ -16,7 +17,7 @@ class SamlUserDeactivationPostRequest
             [
             'a_id' => $this->a_id,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

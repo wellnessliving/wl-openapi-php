@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * Identifiers for services types.
- * 
+ *
  * Last used ID: 5.
- * 
+ *
  * Values:
  * - 1 (`APPOINTMENT`): Appointments.
  * - 2 (`CLASSES`): Classes.
@@ -16,13 +17,17 @@ namespace WlSdk;
 class RsServiceSid
 {
     /** Appointments. */
-    const APPOINTMENT = 1;
+    public const APPOINTMENT = 1;
+
     /** Classes. */
-    const CLASSES = 2;
+    public const CLASSES = 2;
+
     /** Enrolments. */
-    const ENROLLMENT = 3;
+    public const ENROLLMENT = 3;
+
     /** Resources. */
-    const RESOURCE = 5;
+    public const RESOURCE = 5;
+
     /** Visits. */
-    const VISIT = 4;
+    public const VISIT = 4;
 }

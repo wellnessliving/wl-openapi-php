@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Attendance\Schedule\Frontend;
 
 use WlSdk\WlSdkClient;

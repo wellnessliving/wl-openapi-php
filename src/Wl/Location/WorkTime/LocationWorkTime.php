@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Location\WorkTime;
 
 use WlSdk\WlSdkClient;

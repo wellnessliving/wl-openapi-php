@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Service;
 
 class ServiceListGetResponseServiceDirectLink

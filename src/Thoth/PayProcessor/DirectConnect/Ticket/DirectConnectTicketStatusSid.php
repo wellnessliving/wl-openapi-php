@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Thoth\PayProcessor\DirectConnect\Ticket;
 
 /**
  * Paragon ticket status.
- * 
+ *
  * Last used id: 7.
- * 
+ *
  * Values:
  * - 1 (`CANCELLED`): Ticket was canceled.
  * - 2 (`COMPLETE`): Ticket was completed.
@@ -17,15 +18,20 @@ namespace WlSdk\Thoth\PayProcessor\DirectConnect\Ticket;
 class DirectConnectTicketStatusSid
 {
     /** Ticket was canceled. */
-    const CANCELLED = 1;
+    public const CANCELLED = 1;
+
     /** Ticket was completed. */
-    const COMPLETE = 2;
+    public const COMPLETE = 2;
+
     /** Ticket in error state. */
-    const ERROR = 3;
+    public const ERROR = 3;
+
     /** Ticket is processed. */
-    const INPROCESS = 4;
+    public const INPROCESS = 4;
+
     /** Ticket is opened. */
-    const OPEN = 6;
+    public const OPEN = 6;
+
     /** Ticket was reversed. */
-    const REVERSED = 7;
+    public const REVERSED = 7;
 }

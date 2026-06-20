@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Agree;
 
 class AgreePostRequest
@@ -42,7 +43,7 @@ class AgreePostRequest
             'is_agree' => $this->is_agree,
             's_signature' => $this->s_signature,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

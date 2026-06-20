@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Family\Relation;
 
 /**
@@ -15,6 +16,6 @@ class RelationDeleteResponse
 
     public function __construct(array $data)
     {
-        $this->a_relation = isset($data['a_relation']) ? array_map(static fn($item) => new RelationDeleteResponseRelation((array)$item), (array)$data['a_relation']) : null;
+        $this->a_relation = isset($data['a_relation']) ? array_map(static fn ($item) => new RelationDeleteResponseRelation((array)$item), (array)$data['a_relation']) : null;
     }
 }

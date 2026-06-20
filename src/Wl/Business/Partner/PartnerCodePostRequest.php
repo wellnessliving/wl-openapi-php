@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Partner;
 
 class PartnerCodePostRequest
@@ -24,7 +25,7 @@ class PartnerCodePostRequest
             'k_business' => $this->k_business,
             'text_code' => $this->text_code,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

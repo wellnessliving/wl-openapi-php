@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Relation;
 
 class RelationPostRequest
@@ -59,7 +60,7 @@ class RelationPostRequest
 
     /**
      * `true` - the new relative uses the email from `uid_from`.
-     * 
+     *
      * `false` - the new relative has their own email.
      *
      * @var bool|null
@@ -68,7 +69,7 @@ class RelationPostRequest
 
     /**
      * `true` - the new relative pays for themselves.
-     * 
+     *
      * `false` - `uid_from` pays for the new relative.
      *
      * @var bool|null
@@ -121,7 +122,7 @@ class RelationPostRequest
             'text_name_last' => $this->text_name_last,
             'uid_existed' => $this->uid_existed,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Member\Progress\Field;
 
 /**
  * List of progress log fields.
- * 
+ *
  * Last used ID: 14.
- * 
+ *
  * Values:
  * - 6 (`ABDOMEN`): Abdomen field.
  * - 3 (`ARMS`): Arms field.
@@ -25,31 +26,44 @@ namespace WlSdk\Wl\Member\Progress\Field;
 class ProgressFieldSid
 {
     /** Abdomen field. */
-    const ABDOMEN = 6;
+    public const ABDOMEN = 6;
+
     /** Arms field. */
-    const ARMS = 3;
+    public const ARMS = 3;
+
     /** Blood pressure field. */
-    const BLOOD_PRESSURE = 2;
+    public const BLOOD_PRESSURE = 2;
+
     /** Body fat field. */
-    const BODY_FAT = 11;
+    public const BODY_FAT = 11;
+
     /** Bust field. */
-    const BUST = 4;
+    public const BUST = 4;
+
     /** Height of the client. */
-    const HEIGHT = 9;
+    public const HEIGHT = 9;
+
     /** Client hips size. */
-    const HIPS = 7;
+    public const HIPS = 7;
+
     /** Long term goals. */
-    const LONG_TERM_GOALS = 14;
+    public const LONG_TERM_GOALS = 14;
+
     /** Pre workout heart rate. */
-    const PRE_WORKOUT_HEART_RATE = 1;
+    public const PRE_WORKOUT_HEART_RATE = 1;
+
     /** Progress picture. */
-    const PROGRESS_PICTURE = 12;
+    public const PROGRESS_PICTURE = 12;
+
     /** Short term goals. */
-    const SHORT_TERM_GOALS = 13;
+    public const SHORT_TERM_GOALS = 13;
+
     /** THIGHS */
-    const THIGHS = 8;
+    public const THIGHS = 8;
+
     /** Waist */
-    const WAIST = 5;
+    public const WAIST = 5;
+
     /** Client weight. */
-    const WEIGHT = 10;
+    public const WEIGHT = 10;
 }

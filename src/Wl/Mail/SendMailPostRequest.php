@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Mail;
 
 class SendMailPostRequest
@@ -80,7 +81,7 @@ class SendMailPostRequest
             's_subject' => $this->s_subject,
             'z_html' => $this->z_html,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

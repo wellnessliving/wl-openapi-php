@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\PurchaseList;
 
 class PurchaseListElementGetResponseTax

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile;
 
 class ProfileCreatePostRequest
@@ -6,7 +7,7 @@ class ProfileCreatePostRequest
     /**
      * List of intent identifiers. Each element is one of {@link \WlSdk\Wl\Login\Member\Intents\MemberIntentsSid}
      * constants.
-     * 
+     *
      * Available only for leads added by CAASI agent.
      *
      * @var int[]|null
@@ -23,7 +24,7 @@ class ProfileCreatePostRequest
     /**
      * Gender ID.
      * One of the {@link \WlSdk\Wl\Gender\GenderSid} constants.
-     * 
+     *
      * `0` if not specified.
      *
      * @var int|null
@@ -32,7 +33,7 @@ class ProfileCreatePostRequest
 
     /**
      * Lead source ID.
-     * 
+     *
      * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * `0` if not specified.
      *
@@ -42,9 +43,9 @@ class ProfileCreatePostRequest
 
     /**
      * Vaccination status ID.
-     * 
+     *
      * One of the {@link \WlSdk\Wl\Login\Member\VaccinationStatus\VaccinationStatusSid} constants.
-     * 
+     *
      * `0` if not specified.
      *
      * @var int|null
@@ -54,7 +55,7 @@ class ProfileCreatePostRequest
     /**
      * `true` means to add user to the legacy lead report.
      * `false` means to not add user to the legacy lead report.
-     * 
+     *
      * Note, that this setting does not impact new Lead Management report, which will always include new user.
      * Also lead capture marketing notification will never be triggered with this endpoint.
      *
@@ -71,7 +72,7 @@ class ProfileCreatePostRequest
 
     /**
      * The key of the lead source.
-     * 
+     *
      * Empty string if not specified.
      *
      * @var string|null
@@ -138,7 +139,7 @@ class ProfileCreatePostRequest
 
     /**
      * Referrer user key.
-     * 
+     *
      * Empty string if not specified.
      *
      * @var string|null
@@ -167,7 +168,7 @@ class ProfileCreatePostRequest
             'text_phone_work' => $this->text_phone_work,
             'uid_referrer' => $this->uid_referrer,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

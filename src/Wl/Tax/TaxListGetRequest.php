@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Tax;
 
 class TaxListGetRequest
@@ -16,7 +17,7 @@ class TaxListGetRequest
             [
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Reception\Roster;
 
 class AttendanceListNotAttendPostRequest
@@ -32,7 +33,7 @@ class AttendanceListNotAttendPostRequest
             'k_visit' => $this->k_visit,
             's_secret' => $this->s_secret,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

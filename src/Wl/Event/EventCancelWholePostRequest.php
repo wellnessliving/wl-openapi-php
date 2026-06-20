@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Event;
 
 class EventCancelWholePostRequest
@@ -32,7 +33,7 @@ class EventCancelWholePostRequest
             'k_class' => $this->k_class,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

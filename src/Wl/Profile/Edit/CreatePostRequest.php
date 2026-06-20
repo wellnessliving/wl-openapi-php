@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Edit;
 
 class CreatePostRequest
@@ -40,7 +41,7 @@ class CreatePostRequest
             'text_lastname' => $this->text_lastname,
             'text_mail' => $this->text_mail,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

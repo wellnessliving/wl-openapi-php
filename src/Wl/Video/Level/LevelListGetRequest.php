@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Level;
 
 class LevelListGetRequest
@@ -16,7 +17,7 @@ class LevelListGetRequest
             [
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

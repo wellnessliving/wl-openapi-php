@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Wl\Resource\Layout\Shape;
 
 /**
  * Types of the shapes.
- * 
+ *
  * Values:
  * - 2 (`CIRCLE`): Circles.
  * - 3 (`PIE`): Pies.
@@ -12,9 +13,11 @@ namespace WlSdk\Wl\Resource\Layout\Shape;
 class LayoutShapeSid
 {
     /** Circles. */
-    const CIRCLE = 2;
+    public const CIRCLE = 2;
+
     /** Pies. */
-    const PIE = 3;
+    public const PIE = 3;
+
     /** Rectangles and squares. */
-    const RECTANGLE = 1;
+    public const RECTANGLE = 1;
 }

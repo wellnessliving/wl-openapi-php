@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Staff\StaffList;
 
 class StaffListGetResponseStaff
@@ -54,7 +55,7 @@ class StaffListGetResponseStaff
     public ?bool $is_event = null;
 
     /**
-     * The staff key. 
+     * The staff key.
      * deprecated Use `uid_staff` instead. Returned only for backward-compatible applications.
      *
      * @var string|null

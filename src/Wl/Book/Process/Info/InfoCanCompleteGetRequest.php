@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Info;
 
 class InfoCanCompleteGetRequest
 {
     /**
      * A list of sessions of an event that can be booked together.
-     * 
+     *
      * This is the same as `a_session_select_post`, but limited by query string
      * length and might fail if the user is booking more than 50 sessions at once.
      * Therefore, using the POST method is preferable.
@@ -61,7 +62,7 @@ class InfoCanCompleteGetRequest
             's_id' => $this->s_id,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

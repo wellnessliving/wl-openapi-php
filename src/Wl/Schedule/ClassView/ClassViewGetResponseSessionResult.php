@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ClassView;
 
 class ClassViewGetResponseSessionResult

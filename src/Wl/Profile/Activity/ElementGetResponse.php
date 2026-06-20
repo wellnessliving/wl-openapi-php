@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Activity;
 
 /**
@@ -72,7 +73,7 @@ class ElementGetResponse
     /**
      * The ID of the icon that should be shown for this activity. One of {@link \WlSdk\Wl\Design\IconSid}
      * constants.
-     * 
+     *
      * This will be `null` is no special icon for this activity.
      *
      * @var int|null

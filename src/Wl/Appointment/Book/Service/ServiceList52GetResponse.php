@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Service;
 
 /**
@@ -8,7 +9,7 @@ class ServiceList52GetResponse
 {
     /**
      * A list of services with information about them.
-     * 
+     *
      * <b>Key</b> - the service key.
      * <b>Value</b> - an array, with every element consisting of the next keys:
      *

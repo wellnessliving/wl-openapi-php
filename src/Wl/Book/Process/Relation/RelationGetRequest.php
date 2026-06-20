@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Book\Process\Relation;
 
 class RelationGetRequest
@@ -21,7 +22,7 @@ class RelationGetRequest
     /**
      * Checking whether the client has a credit card (if configured in the business) will be skipped if this flag
      * is set to `false`.
-     * 
+     *
      * Use this field with caution.
      * The final booking will not use this flag and the check will still be performed.
      *
@@ -61,7 +62,7 @@ class RelationGetRequest
             'k_class_period' => $this->k_class_period,
             'uid_from' => $this->uid_from,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Location\Flag;
 
 class FlagGetRequest
@@ -34,7 +35,7 @@ class FlagGetRequest
             'k_location' => $this->k_location,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

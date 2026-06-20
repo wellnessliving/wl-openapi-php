@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Service;
 
 /**
  * A list of services.
- * 
+ *
  * Last used ID: 6.
- * 
+ *
  * Values:
  * - 1 (`APPOINTMENT`): Appointment.
  * - 6 (`BELT`): Belts.
@@ -17,15 +18,20 @@ namespace WlSdk\Wl\Service;
 class ServiceSid
 {
     /** Appointment. */
-    const APPOINTMENT = 1;
+    public const APPOINTMENT = 1;
+
     /** Belts. */
-    const BELT = 6;
+    public const BELT = 6;
+
     /** Bookable asset. */
-    const BOOKABLE_ASSET = 4;
+    public const BOOKABLE_ASSET = 4;
+
     /** Class. */
-    const CLASSES = 2;
+    public const CLASSES = 2;
+
     /** Event. */
-    const EVENT = 3;
+    public const EVENT = 3;
+
     /** Gym visits. */
-    const GYM = 5;
+    public const GYM = 5;
 }

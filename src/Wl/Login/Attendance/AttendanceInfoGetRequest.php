@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Attendance;
 
 class AttendanceInfoGetRequest
@@ -40,7 +41,7 @@ class AttendanceInfoGetRequest
             'k_business' => $this->k_business,
             'k_class_period' => $this->k_class_period,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

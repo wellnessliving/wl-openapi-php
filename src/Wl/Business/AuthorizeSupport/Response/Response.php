@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\AuthorizeSupport\Response;
 
 use WlSdk\WlSdkClient;

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Contract;
 
 class ContractGetRequest
@@ -98,7 +99,7 @@ class ContractGetRequest
             's_discount_code' => $this->s_discount_code,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

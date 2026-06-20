@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Thoth\WlPay\Transaction\Report;
 
 class TransactionAllPaymentGetRequest
@@ -27,11 +28,11 @@ class TransactionAllPaymentGetRequest
 
     /**
      * Determines whether the report should be refreshed.
-     * 
+     *
      * If `true`, this report should be refreshed. A report refresh can't be requested while the report is being
      * generated.
      * Otherwise, `false` to only return contents of the report.
-     * 
+     *
      * If the report hasn't yet been generated, it will automatically start generating in the background.
      *
      * @var bool|null
@@ -55,7 +56,7 @@ class TransactionAllPaymentGetRequest
             'is_refresh' => $this->is_refresh,
             'k_business' => $this->k_business,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Edit\Email;
 
 class EditEmail67PostRequest
@@ -25,7 +26,7 @@ class EditEmail67PostRequest
             'k_business' => $this->k_business,
             'uid_want' => $this->uid_want,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Request\Api;
 
 class KeySecretGetRequest
@@ -40,7 +41,7 @@ class KeySecretGetRequest
             'url_domain' => $this->url_domain,
             'url_origin' => $this->url_origin,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

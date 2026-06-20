@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Business\Account\Subscription\MarketingSuite;
 
 /**
  * List of possible plans for
  * [MarketingSuiteSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract)
  * subscription.
- * 
+ *
  * Values:
  * - 2 (`BASIC`): Pro
  * - 4 (`BASIC_BUSINESS`): Standard (Business)
@@ -16,13 +17,17 @@ namespace WlSdk\Wl\Business\Account\Subscription\MarketingSuite;
 class MarketingSuiteSubscriptionSid
 {
     /** Pro */
-    const BASIC = 2;
+    public const BASIC = 2;
+
     /** Standard (Business) */
-    const BASIC_BUSINESS = 4;
+    public const BASIC_BUSINESS = 4;
+
     /** Standard (Legacy) */
-    const BASIC_OLD = 3;
+    public const BASIC_OLD = 3;
+
     /** Base */
-    const FREE = 1;
+    public const FREE = 1;
+
     /** Ultimate */
-    const PRO = 5;
+    public const PRO = 5;
 }

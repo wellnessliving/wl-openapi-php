@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Schedule\ScheduleList\StaffApp;
 
 class ScheduleListGetResponseSchedule
@@ -13,8 +14,8 @@ class ScheduleListGetResponseSchedule
     /**
      * List of quizzes.
      * Has next structure:
-     * 
-     * 
+     *
+     *
      * `null` if no quizzes for schedule item.
      *
      * @var ScheduleListGetResponseScheduleQuiz|null
@@ -44,7 +45,7 @@ class ScheduleListGetResponseSchedule
 
     /**
      * A list of staff members who will conduct the session.
-     * 
+     *
      * Deprecated. Returned only for applications in the `APPS_USE_OLD_K_STAFF` allow-list.
      * New applications should use `a_uid_staff` instead.
      *
@@ -210,7 +211,7 @@ class ScheduleListGetResponseSchedule
     public ?bool $is_repeat = null;
 
     /**
-     * The appointment key. 
+     * The appointment key.
      * If the session isn't an appointment, this will be `0`.
      *
      * @var string|null
@@ -226,7 +227,7 @@ class ScheduleListGetResponseSchedule
     public ?string $dt_confirm = null;
 
     /**
-     * The class key. 
+     * The class key.
      * If the session isn't a class, this will be `0`.
      *
      * @var string|null
@@ -234,7 +235,7 @@ class ScheduleListGetResponseSchedule
     public ?string $k_class = null;
 
     /**
-     * The class period key. 
+     * The class period key.
      * If the session isn't a class, this will be `0`.
      *
      * @var string|null
@@ -250,7 +251,7 @@ class ScheduleListGetResponseSchedule
 
     /**
      * This is the key of the appointment type, while `k_appointment` is the specific instance.
-     * 
+     *
      * For other cases, this will be `0`.
      *
      * @var string|null

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Facebook\Login;
 
 class FacebookLoginPostRequest
@@ -12,13 +13,13 @@ class FacebookLoginPostRequest
 
     /**
      * The application id.
-     * 
+     *
      * When application not passed, credential loaded from the application, which makes the request,
      * used {@link \WlSdk\Core\Request\Api\Application\Credential\CredentialAbstract} for load the credential.
      * For set credential need used [CredentialApi](/Core/Request/Api/Application/Credential/Credential.json) and
      * set [CredentialApi](/Core/Request/Api/Application/Credential/Credential.json) to {@link
      * \WlSdk\Core\Request\Api\Application\Credential\CredentialAbstract}.
-     * 
+     *
      * When application passed, the credential loaded by application id.
      *
      * @var string|null
@@ -40,7 +41,7 @@ class FacebookLoginPostRequest
             's_application' => $this->s_application,
             's_token' => $this->s_token,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

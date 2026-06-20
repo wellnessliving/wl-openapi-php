@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Category;
 
 class CategoryElementPutRequest
@@ -75,7 +76,7 @@ class CategoryElementPutRequest
             'is_member_group' => $this->is_member_group,
             'text_title' => $this->text_title,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Schedule;
 
 /**
@@ -96,7 +97,7 @@ class CalendarGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_date = isset($data['a_date']) ? array_map(static fn($item) => new CalendarGetResponseDate((array)$item), (array)$data['a_date']) : null;
+        $this->a_date = isset($data['a_date']) ? array_map(static fn ($item) => new CalendarGetResponseDate((array)$item), (array)$data['a_date']) : null;
         $this->a_time = isset($data['a_time']) ? new CalendarGetResponseTime((array)$data['a_time']) : null;
         $this->a_timezone_data = isset($data['a_timezone_data']) ? new CalendarGetResponseTimezoneData((array)$data['a_timezone_data']) : null;
         $this->a_week_name = isset($data['a_week_name']) ? new CalendarGetResponseWeekName((array)$data['a_week_name']) : null;

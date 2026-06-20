@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Purchase;
 
 /**
@@ -81,8 +82,8 @@ class PurchaseGetResponse
     public function __construct(array $data)
     {
         $this->a_login_prize = isset($data['a_login_prize']) ? new PurchaseGetResponseLoginPrize((array)$data['a_login_prize']) : null;
-        $this->a_login_promotion = isset($data['a_login_promotion']) ? array_map(static fn($item) => new PurchaseGetResponseLoginPromotion((array)$item), (array)$data['a_login_promotion']) : null;
-        $this->a_purchase = isset($data['a_purchase']) ? array_map(static fn($item) => new PurchaseGetResponsePurchase((array)$item), (array)$data['a_purchase']) : null;
+        $this->a_login_promotion = isset($data['a_login_promotion']) ? array_map(static fn ($item) => new PurchaseGetResponseLoginPromotion((array)$item), (array)$data['a_login_promotion']) : null;
+        $this->a_purchase = isset($data['a_purchase']) ? array_map(static fn ($item) => new PurchaseGetResponsePurchase((array)$item), (array)$data['a_purchase']) : null;
         $this->a_reward_prize = isset($data['a_reward_prize']) ? new PurchaseGetResponseRewardPrize((array)$data['a_reward_prize']) : null;
         $this->a_session_pass = isset($data['a_session_pass']) ? new PurchaseGetResponseSessionPass((array)$data['a_session_pass']) : null;
         $this->is_single_default = isset($data['is_single_default']) ? (bool)$data['is_single_default'] : null;

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Insurance\Enrollment\Field;
 
 class EnrollmentFieldListGetRequest
@@ -24,7 +25,7 @@ class EnrollmentFieldListGetRequest
             'k_business' => $this->k_business,
             'k_wellness_program' => $this->k_wellness_program,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

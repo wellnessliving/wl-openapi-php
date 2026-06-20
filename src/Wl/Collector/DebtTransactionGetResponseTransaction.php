@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Collector;
 
 class DebtTransactionGetResponseTransaction

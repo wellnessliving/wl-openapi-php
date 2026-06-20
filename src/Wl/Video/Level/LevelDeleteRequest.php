@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Video\Level;
 
 class LevelDeleteRequest
@@ -32,7 +33,7 @@ class LevelDeleteRequest
             'k_business' => $this->k_business,
             'k_video_level' => $this->k_video_level,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

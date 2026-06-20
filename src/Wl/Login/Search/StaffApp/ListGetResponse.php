@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Search\StaffApp;
 
 /**
@@ -8,10 +9,10 @@ class ListGetResponse
 {
     /**
      * A list of users matching the search string.
-     * 
+     *
      * The list depends on the search query.
      * If the query is empty, recent users will be returned.
-     * 
+     *
      * Each element is an array with the following keys:
      *
      * @var ListGetResponseList[]|null
@@ -27,7 +28,7 @@ class ListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_list = isset($data['a_list']) ? array_map(static fn($item) => new ListGetResponseList((array)$item), (array)$data['a_list']) : null;
+        $this->a_list = isset($data['a_list']) ? array_map(static fn ($item) => new ListGetResponseList((array)$item), (array)$data['a_list']) : null;
         $this->can_add = isset($data['can_add']) ? (bool)$data['can_add'] : null;
     }
 }

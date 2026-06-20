@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Business\Config;
 
 /**
@@ -29,7 +30,7 @@ class BusinessConfigGetResponse
 
     /**
      * Determines whether staff members should select a location at checkout.
-     * 
+     *
      * If `true`, staff members should select a location at checkout. Otherwise, this will be `false`.
      *
      * @var bool|null
@@ -38,7 +39,7 @@ class BusinessConfigGetResponse
 
     /**
      * Determines whether the business has white label setting enabled in the admin settings.
-     * 
+     *
      * If `true`, admin settings are enabled. Otherwise, this will be `false`.
      *
      * @var bool|null

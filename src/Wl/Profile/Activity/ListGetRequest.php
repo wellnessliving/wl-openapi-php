@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Activity;
 
 class ListGetRequest
 {
     /**
      * Ending date of the date range. Optional.
-     * 
+     *
      * This is local business timezone date. This day is included in the result.
      *
      * @var string|null
@@ -14,7 +15,7 @@ class ListGetRequest
 
     /**
      * Starting date of the date range. Optional.
-     * 
+     *
      *  This is local business timezone date. This day is included in the result.
      *
      * @var string|null
@@ -44,7 +45,7 @@ class ListGetRequest
             'k_business' => $this->k_business,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

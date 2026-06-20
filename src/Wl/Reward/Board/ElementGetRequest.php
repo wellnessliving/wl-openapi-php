@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Reward\Board;
 
 class ElementGetRequest
 {
     /**
      * List of users to get information for.
-     * 
+     *
      * `null` for mode of single user.
      *
      * @var string[]|null
@@ -42,7 +43,7 @@ class ElementGetRequest
             'k_reward_board' => $this->k_reward_board,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

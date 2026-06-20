@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Passport\Login;
 
 /**
@@ -8,7 +9,7 @@ class InfoGetResponse
 {
     /**
      * The current user key.
-     * 
+     *
      * This will be `null` if the user isn't signed in.
      *
      * @var string|null

@@ -1,9 +1,10 @@
 <?php
+
 namespace WlSdk\Wl\User\Tracking;
 
 /**
  * Different user flows that can be tracked.
- * 
+ *
  * Values:
  * - 1 (`BOOK_APPOINTMENT`): Appointment booking flow.
  * - 2 (`BOOK_CLASS`): Class booking flow.
@@ -12,9 +13,11 @@ namespace WlSdk\Wl\User\Tracking;
 class FlowSid
 {
     /** Appointment booking flow. */
-    const BOOK_APPOINTMENT = 1;
+    public const BOOK_APPOINTMENT = 1;
+
     /** Class booking flow. */
-    const BOOK_CLASS = 2;
+    public const BOOK_CLASS = 2;
+
     /** Event booking flow. */
-    const BOOK_EVENT = 3;
+    public const BOOK_EVENT = 3;
 }

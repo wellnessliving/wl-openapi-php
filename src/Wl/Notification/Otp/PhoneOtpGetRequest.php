@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Notification\Otp;
 
 class PhoneOtpGetRequest
@@ -16,7 +17,7 @@ class PhoneOtpGetRequest
             [
             'text_phone' => $this->text_phone,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

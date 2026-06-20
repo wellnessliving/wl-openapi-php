@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Discount\Code\Edit;
 
 class DiscountCodeEditPutRequest
@@ -24,7 +25,7 @@ class DiscountCodeEditPutRequest
             'k_business' => $this->k_business,
             'k_discount_code' => $this->k_discount_code,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

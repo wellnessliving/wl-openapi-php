@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Login\Permission;
 
 class PermissionPostRequest
@@ -24,7 +25,7 @@ class PermissionPostRequest
             'k_login_promotion' => $this->k_login_promotion,
             'is_renew' => $this->is_renew,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

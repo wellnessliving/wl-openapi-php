@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Video;
 
 /**
  * List of embed video sources.
- * 
+ *
  * Last used ID: 4
- * 
+ *
  * Values:
  * - 4 (`LES_MILLS`): Les Mills.
  * - 2 (`VIMEO`): Vimeo.
@@ -15,11 +16,14 @@ namespace WlSdk\Wl\Video;
 class VideoEmbedSourceSid
 {
     /** Les Mills. */
-    const LES_MILLS = 4;
+    public const LES_MILLS = 4;
+
     /** Vimeo. */
-    const VIMEO = 2;
+    public const VIMEO = 2;
+
     /** Wistia. */
-    const WISTIA = 3;
+    public const WISTIA = 3;
+
     /** YouTube. */
-    const YOUTUBE = 1;
+    public const YOUTUBE = 1;
 }

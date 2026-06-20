@@ -1,10 +1,11 @@
 <?php
+
 namespace WlSdk;
 
 /**
  * A class for managing time intervals.
  * Last ID: 9.
- * 
+ *
  * Values:
  * - 4 (`DAY`): Days.
  * - 3 (`HOUR`): Hours.
@@ -19,21 +20,29 @@ namespace WlSdk;
 class ADurationSid
 {
     /** Days. */
-    const DAY = 4;
+    public const DAY = 4;
+
     /** Hours. */
-    const HOUR = 3;
+    public const HOUR = 3;
+
     /** Minutes. */
-    const MINUTE = 2;
+    public const MINUTE = 2;
+
     /** Months. */
-    const MONTH = 5;
+    public const MONTH = 5;
+
     /** Seconds. */
-    const SECOND = 1;
+    public const SECOND = 1;
+
     /** Weeks (7 days). */
-    const WEEK = 7;
+    public const WEEK = 7;
+
     /** Two weeks (14 days). */
-    const WEEK2 = 9;
+    public const WEEK2 = 9;
+
     /** Foursome of weeks (28 days). */
-    const WEEK4 = 8;
+    public const WEEK4 = 8;
+
     /** Years. */
-    const YEAR = 6;
+    public const YEAR = 6;
 }

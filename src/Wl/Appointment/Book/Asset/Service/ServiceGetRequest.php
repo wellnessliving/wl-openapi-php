@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Appointment\Book\Asset\Service;
 
 class ServiceGetRequest
@@ -20,7 +21,7 @@ class ServiceGetRequest
     /**
      * If `true`, back-end mode is selected.
      * In this mode, the list of asset categories must be returned even if asset selection is disabled for clients.
-     * 
+     *
      * If `false` for a case of front-end mode.
      * In this mode, the list of asset categories won't be returned if asset selection is disabled for clients.
      *
@@ -30,7 +31,7 @@ class ServiceGetRequest
 
     /**
      * Whether to show both grid layouts and custom layouts.
-     * 
+     *
      * `true` if custom layout should be included in the result.
      * `false` if only grid layout can be used.
      *
@@ -47,7 +48,7 @@ class ServiceGetRequest
 
     /**
      * The appointment booking key to ignore when `a_resource_busy` is derived.
-     * 
+     *
      * `null` if no appointment booking must be ignored.
      *
      * @var string|null
@@ -70,7 +71,7 @@ class ServiceGetRequest
 
     /**
      * Timezone of date and time of service start.
-     * 
+     *
      * Empty if client can't change in which timezone dates should be shown.
      *
      * @var string|null
@@ -99,7 +100,7 @@ class ServiceGetRequest
             'k_timezone' => $this->k_timezone,
             'uid' => $this->uid,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

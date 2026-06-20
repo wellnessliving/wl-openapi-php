@@ -1,10 +1,11 @@
 <?php
+
 namespace WlSdk\Wl\Business\Account\Subscription\Collections;
 
 /**
  * List of possible plans for
  * [CollectionsSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
- * 
+ *
  * Values:
  * - 1 (`FREE`): None
  * - 3 (`INTEGRATION_REQUESTED`): Integration Requested
@@ -13,9 +14,11 @@ namespace WlSdk\Wl\Business\Account\Subscription\Collections;
 class CollectionsSubscriptionSid
 {
     /** None */
-    const FREE = 1;
+    public const FREE = 1;
+
     /** Integration Requested */
-    const INTEGRATION_REQUESTED = 3;
+    public const INTEGRATION_REQUESTED = 3;
+
     /** Professional */
-    const PROFESSIONAL = 2;
+    public const PROFESSIONAL = 2;
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Quiz;
 
 class QuizElement72PutRequest
@@ -26,7 +27,7 @@ class QuizElement72PutRequest
 
     /**
      * Quiz active status.
-     * 
+     *
      * `true` if quiz is active.
      * `false` if quiz is not active.
      *
@@ -43,7 +44,7 @@ class QuizElement72PutRequest
             'k_quiz_login' => $this->k_quiz_login,
             'is_active' => $this->is_active,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

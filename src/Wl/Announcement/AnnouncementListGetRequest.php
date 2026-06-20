@@ -1,13 +1,14 @@
 <?php
+
 namespace WlSdk\Wl\Announcement;
 
 class AnnouncementListGetRequest
 {
     /**
      * Order ID for list of announcements.
-     * 
+     *
      * Used only when `is_backend` is `true`.
-     * 
+     *
      * `null` in case when use default order.
      *
      * @var int|null
@@ -16,9 +17,9 @@ class AnnouncementListGetRequest
 
     /**
      * Sort field ID for list of announcements.
-     * 
+     *
      * Used only when `is_backend` is `true`.
-     * 
+     *
      * `null` in case when use default field.
      *
      * @var int|null
@@ -41,7 +42,7 @@ class AnnouncementListGetRequest
 
     /**
      * Location key for which need show announcement.
-     * 
+     *
      * `null` in case when need show location for all locations in business.
      *
      * @var string|null
@@ -66,7 +67,7 @@ class AnnouncementListGetRequest
             'k_location' => $this->k_location,
             'text_search' => $this->text_search,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }

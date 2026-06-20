@@ -1,11 +1,12 @@
 <?php
+
 namespace WlSdk\Wl\Profile\Form\Response;
 
 class ResponseListGetResponseQuizResponse
 {
     /**
      * List of visit keys associated with uncompleted response.
-     *    Key is visit key. 
+     *    Key is visit key.
      *    Value is date of visit.
      *
      * @var string[]|null

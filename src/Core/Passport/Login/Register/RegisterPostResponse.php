@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Core\Passport\Login\Register;
 
 /**
@@ -15,7 +16,7 @@ class RegisterPostResponse
 
     /**
      * The URL to the confirmation page. This link is used in a confirmation email.
-     * 
+     *
      * If empty, URL to default page is used.
      *
      * @var string|null

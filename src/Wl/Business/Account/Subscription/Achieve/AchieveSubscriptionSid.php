@@ -1,10 +1,11 @@
 <?php
+
 namespace WlSdk\Wl\Business\Account\Subscription\Achieve;
 
 /**
  * List of possible plans for
  * [AchieveSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
- * 
+ *
  * Values:
  * - 1 (`FREE`): Basic
  * - 2 (`PREMIUM`): Premium
@@ -17,17 +18,23 @@ namespace WlSdk\Wl\Business\Account\Subscription\Achieve;
 class AchieveSubscriptionSid
 {
     /** Basic */
-    const FREE = 1;
+    public const FREE = 1;
+
     /** Premium */
-    const PREMIUM = 2;
+    public const PREMIUM = 2;
+
     /** White Label (Legacy) */
-    const WHITE = 3;
+    public const WHITE = 3;
+
     /** White Label */
-    const WHITE0125 = 7;
+    public const WHITE0125 = 7;
+
     /** White Label (Business Max) */
-    const WHITE_MAX = 4;
+    public const WHITE_MAX = 4;
+
     /** White Label (Legacy) */
-    const WHITE_PLUS = 6;
+    public const WHITE_PLUS = 6;
+
     /** White Label (Business Pro) */
-    const WHITE_PRO = 5;
+    public const WHITE_PRO = 5;
 }

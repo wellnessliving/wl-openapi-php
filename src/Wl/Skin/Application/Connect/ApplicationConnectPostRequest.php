@@ -1,4 +1,5 @@
 <?php
+
 namespace WlSdk\Wl\Skin\Application\Connect;
 
 class ApplicationConnectPostRequest
@@ -144,7 +145,7 @@ class ApplicationConnectPostRequest
             'text_team_id' => $this->text_team_id,
             'url_google_redirect' => $this->url_google_redirect,
             ],
-            static fn($v) => $v !== null
+            static fn ($v) => $v !== null
         );
     }
 }
