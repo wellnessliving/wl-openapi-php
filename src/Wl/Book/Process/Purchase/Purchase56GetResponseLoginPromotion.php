@@ -63,9 +63,9 @@ class Purchase56GetResponseLoginPromotion
     /**
      * The program ID for Purchase Options. One of the {@link \WlSdk\RsProgramSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramSid|null
      */
-    public ?int $id_program = null;
+    public ?\WlSdk\RsProgramSid $id_program = null;
 
     /**
      * If `true`, the promotion converts to another instance upon expiration. Otherwise, this will be `false`.
@@ -141,7 +141,7 @@ class Purchase56GetResponseLoginPromotion
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
         $this->i_limit_duration = isset($data['i_limit_duration']) ? (int)$data['i_limit_duration'] : null;
         $this->i_promotion_priority = isset($data['i_promotion_priority']) ? (int)$data['i_promotion_priority'] : null;
-        $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
+        $this->id_program = isset($data['id_program']) ? \WlSdk\RsProgramSid::tryFrom((int)$data['id_program']) : null;
         $this->is_convert = isset($data['is_convert']) ? (bool)$data['is_convert'] : null;
         $this->is_shared = isset($data['is_shared']) ? (bool)$data['is_shared'] : null;
         $this->k_login_promotion = isset($data['k_login_promotion']) ? (string)$data['k_login_promotion'] : null;

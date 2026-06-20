@@ -24,7 +24,7 @@ class GoalPostRequest
      * Values are new field values.
      * Structure of value completely defined by individual fields.
      *
-     * @var int[]|null
+     * @var \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid[]|null
      */
     public ?array $a_field_goal = null;
 

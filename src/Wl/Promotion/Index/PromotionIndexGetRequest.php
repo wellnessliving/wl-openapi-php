@@ -24,9 +24,9 @@ class PromotionIndexGetRequest
      * 
      * `0` to not filter Purchase Options with type of the Purchase Option.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramTypeSid|null
      */
-    public ?int $id_program_type = null;
+    public ?\WlSdk\RsProgramTypeSid $id_program_type = null;
 
     /**
      * The location key.
@@ -41,7 +41,7 @@ class PromotionIndexGetRequest
             [
             'i_image_height' => $this->i_image_height,
             'i_image_width' => $this->i_image_width,
-            'id_program_type' => $this->id_program_type,
+            'id_program_type' => $this->id_program_type?->value,
             'k_location' => $this->k_location,
             ],
             static fn($v) => $v !== null

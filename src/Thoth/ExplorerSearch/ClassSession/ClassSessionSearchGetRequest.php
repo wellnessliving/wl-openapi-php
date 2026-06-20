@@ -18,7 +18,7 @@ class ClassSessionSearchGetRequest
      * 
      * Empty array to not filter by experience type.
      *
-     * @var int[]|null
+     * @var \WlSdk\Thoth\ExplorerSearch\ClassSession\SearchWord\ClassSessionExperienceTypeEnum[]|null
      */
     public ?array $a_experience_type = null;
 
@@ -27,7 +27,7 @@ class ClassSessionSearchGetRequest
      * 
      * Empty array to not filter by home tour type.
      *
-     * @var int[]|null
+     * @var \WlSdk\RsHomeTourSid[]|null
      */
     public ?array $a_home_tour = null;
 

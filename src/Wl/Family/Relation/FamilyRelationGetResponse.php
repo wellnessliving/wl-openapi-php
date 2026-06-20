@@ -11,12 +11,12 @@ class FamilyRelationGetResponse
      * 
      * Key is ID, value is SID.
      *
-     * @var int[]|null
+     * @var \WlSdk\RsFamilyRelationSid[]|null
      */
     public ?array $a_business_relationships = null;
 
     public function __construct(array $data)
     {
-        $this->a_business_relationships = isset($data['a_business_relationships']) ? (array)$data['a_business_relationships'] : null;
+        $this->a_business_relationships = isset($data['a_business_relationships']) ? array_map(static fn($v) => \WlSdk\RsFamilyRelationSid::tryFrom((int)$v), (array)$data['a_business_relationships']) : null;
     }
 }

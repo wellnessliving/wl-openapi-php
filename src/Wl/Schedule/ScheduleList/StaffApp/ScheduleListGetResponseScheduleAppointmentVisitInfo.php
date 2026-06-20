@@ -6,9 +6,9 @@ class ScheduleListGetResponseScheduleAppointmentVisitInfo
     /**
      * Visit id. One of {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Visit\VisitSid|null
      */
-    public ?int $id_visit = null;
+    public ?\WlSdk\Wl\Visit\VisitSid $id_visit = null;
 
     /**
      * `true` means that appointment was requested and confirmed by the staff.
@@ -47,7 +47,7 @@ class ScheduleListGetResponseScheduleAppointmentVisitInfo
 
     public function __construct(array $data)
     {
-        $this->id_visit = isset($data['id_visit']) ? (int)$data['id_visit'] : null;
+        $this->id_visit = isset($data['id_visit']) ? \WlSdk\Wl\Visit\VisitSid::tryFrom((int)$data['id_visit']) : null;
         $this->is_confirmed = isset($data['is_confirmed']) ? (bool)$data['is_confirmed'] : null;
         $this->is_deny = isset($data['is_deny']) ? (bool)$data['is_deny'] : null;
         $this->is_notify_request_accept = isset($data['is_notify_request_accept']) ? (bool)$data['is_notify_request_accept'] : null;

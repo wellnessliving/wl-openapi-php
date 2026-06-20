@@ -7,9 +7,9 @@ class ActionGetResponseRewardAction
      * ID of reward actions category type. One of {@link \WlSdk\RsRewardActionCategorySid} constants. `false` for
      * custom reward actions categories.
      *
-     * @var int|null
+     * @var \WlSdk\RsRewardActionCategorySid|null
      */
-    public ?int $id_reward_action_category = null;
+    public ?\WlSdk\RsRewardActionCategorySid $id_reward_action_category = null;
 
     /**
      * ID of reward action.
@@ -27,7 +27,7 @@ class ActionGetResponseRewardAction
 
     public function __construct(array $data)
     {
-        $this->id_reward_action_category = isset($data['id_reward_action_category']) ? (int)$data['id_reward_action_category'] : null;
+        $this->id_reward_action_category = isset($data['id_reward_action_category']) ? \WlSdk\RsRewardActionCategorySid::tryFrom((int)$data['id_reward_action_category']) : null;
         $this->k_reward_action = isset($data['k_reward_action']) ? (string)$data['k_reward_action'] : null;
         $this->k_reward_action_category = isset($data['k_reward_action_category']) ? (string)$data['k_reward_action_category'] : null;
     }

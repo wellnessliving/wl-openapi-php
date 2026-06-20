@@ -45,16 +45,16 @@ class ResponseGetResponse
     /**
      * Response source. One of {@link \WlSdk\Wl\Quiz\Response\SourceSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Quiz\Response\SourceSid|null
      */
-    public ?int $id_source = null;
+    public ?\WlSdk\Wl\Quiz\Response\SourceSid $id_source = null;
 
     /**
      * Response status ID.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Quiz\Response\ResponseStatusSid|null
      */
-    public ?int $id_status = null;
+    public ?\WlSdk\Core\Quiz\Response\ResponseStatusSid $id_status = null;
 
     /**
      * Whether to show numbering of the form elements that supports numbering.
@@ -124,8 +124,8 @@ class ResponseGetResponse
         $this->a_service_info = isset($data['a_service_info']) ? new ResponseGetResponseServiceInfo((array)$data['a_service_info']) : null;
         $this->can_amend = isset($data['can_amend']) ? (bool)$data['can_amend'] : null;
         $this->dtu_response = isset($data['dtu_response']) ? (string)$data['dtu_response'] : null;
-        $this->id_source = isset($data['id_source']) ? (int)$data['id_source'] : null;
-        $this->id_status = isset($data['id_status']) ? (int)$data['id_status'] : null;
+        $this->id_source = isset($data['id_source']) ? \WlSdk\Wl\Quiz\Response\SourceSid::tryFrom((int)$data['id_source']) : null;
+        $this->id_status = isset($data['id_status']) ? \WlSdk\Core\Quiz\Response\ResponseStatusSid::tryFrom((int)$data['id_status']) : null;
         $this->show_numbering = isset($data['show_numbering']) ? (bool)$data['show_numbering'] : null;
         $this->text_add_date = isset($data['text_add_date']) ? (string)$data['text_add_date'] : null;
         $this->text_amend_date = isset($data['text_amend_date']) ? (string)$data['text_amend_date'] : null;

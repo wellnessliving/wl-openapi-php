@@ -27,9 +27,9 @@ class NotificationSendPostRequest
      * 
      * Contact with WellnessLiving support to get the list of available notifications.
      *
-     * @var int|null
+     * @var \WlSdk\RsMailSid|null
      */
-    public ?int $id_notification = null;
+    public ?\WlSdk\RsMailSid $id_notification = null;
 
     /**
      * Key of the business where notification should be sent.
@@ -61,7 +61,7 @@ class NotificationSendPostRequest
             [
             'a_data' => $this->a_data,
             'dtu_send' => $this->dtu_send,
-            'id_notification' => $this->id_notification,
+            'id_notification' => $this->id_notification?->value,
             'k_business' => $this->k_business,
             'k_location' => $this->k_location,
             's_uid' => $this->s_uid,

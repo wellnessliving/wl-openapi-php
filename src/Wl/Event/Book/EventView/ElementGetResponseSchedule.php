@@ -101,6 +101,13 @@ class ElementGetResponseSchedule
     public ?string $k_location = null;
 
     /**
+     * Structured off-site location data used by the calendar attachment.
+     *
+     * @var string|null
+     */
+    public ?string $k_resource_location = null;
+
+    /**
      * The location title.
      *
      * @var string|null
@@ -144,6 +151,7 @@ class ElementGetResponseSchedule
         $this->f_price = isset($data['f_price']) ? (string)$data['f_price'] : null;
         $this->k_class_period = isset($data['k_class_period']) ? (string)$data['k_class_period'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
+        $this->k_resource_location = isset($data['k_resource_location']) ? (string)$data['k_resource_location'] : null;
         $this->s_location = isset($data['s_location']) ? (string)$data['s_location'] : null;
         $this->s_time = isset($data['s_time']) ? (string)$data['s_time'] : null;
         $this->s_timezone = isset($data['s_timezone']) ? (string)$data['s_timezone'] : null;

@@ -46,17 +46,17 @@ class VisitStatusPostRequest
      * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * If you're unsure about the value to use, keep the default value.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * The status of the visit.
      * One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Visit\VisitSid|null
      */
-    public ?int $id_visit = null;
+    public ?\WlSdk\Wl\Visit\VisitSid $id_visit = null;
 
     /**
      * The status of the visit from which the transition is made. One of the {@link \WlSdk\Wl\Visit\VisitSid}
@@ -67,9 +67,9 @@ class VisitStatusPostRequest
      * 
      * If the status of this parameter is out of date, the API call will refresh it.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Visit\VisitSid|null
      */
-    public ?int $id_visit_from = null;
+    public ?\WlSdk\Wl\Visit\VisitSid $id_visit_from = null;
 
     /**
      * Whether to send email notification.
@@ -110,9 +110,9 @@ class VisitStatusPostRequest
             'k_mail_pattern_live' => $this->k_mail_pattern_live,
             'k_visit' => $this->k_visit,
             'text_reason' => $this->text_reason,
-            'id_mode' => $this->id_mode,
-            'id_visit' => $this->id_visit,
-            'id_visit_from' => $this->id_visit_from,
+            'id_mode' => $this->id_mode?->value,
+            'id_visit' => $this->id_visit?->value,
+            'id_visit_from' => $this->id_visit_from?->value,
             'is_mail' => $this->is_mail,
             'is_push' => $this->is_push,
             'is_sms' => $this->is_sms,

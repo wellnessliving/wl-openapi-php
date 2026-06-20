@@ -108,9 +108,9 @@ class QueryPostResponse
      * 
      * One of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid|null
      */
-    public ?int $id_report_status = null;
+    public ?\WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid $id_report_status = null;
 
     /**
      * Key of this report.
@@ -141,7 +141,7 @@ class QueryPostResponse
         $this->dtu_queue = isset($data['dtu_queue']) ? (string)$data['dtu_queue'] : null;
         $this->dtu_start = isset($data['dtu_start']) ? (string)$data['dtu_start'] : null;
         $this->i_cas_change = isset($data['i_cas_change']) ? (int)$data['i_cas_change'] : null;
-        $this->id_report_status = isset($data['id_report_status']) ? (int)$data['id_report_status'] : null;
+        $this->id_report_status = isset($data['id_report_status']) ? \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid::tryFrom((int)$data['id_report_status']) : null;
         $this->s_report = isset($data['s_report']) ? (string)$data['s_report'] : null;
         $this->text_error = isset($data['text_error']) ? (string)$data['text_error'] : null;
     }

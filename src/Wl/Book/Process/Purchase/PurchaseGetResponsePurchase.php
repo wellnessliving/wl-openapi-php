@@ -80,17 +80,17 @@ class PurchaseGetResponsePurchase
      * This is only set for promotions. The ID of the promotion program category. One of the {@link
      * \WlSdk\RsProgramCategorySid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramCategorySid|null
      */
-    public ?int $id_program_category = null;
+    public ?\WlSdk\RsProgramCategorySid $id_program_category = null;
 
     /**
      * This is only set for promotions. The ID of the promotion program type. One of the {@link
      * \WlSdk\RsProgramTypeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramTypeSid|null
      */
-    public ?int $id_program_type = null;
+    public ?\WlSdk\RsProgramTypeSid $id_program_type = null;
 
     /**
      * The ID of Purchase Option type. One of the {@link \WlSdk\RsPurchaseItemSid} constants.
@@ -206,8 +206,8 @@ class PurchaseGetResponsePurchase
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
         $this->i_payment_period = isset($data['i_payment_period']) ? (int)$data['i_payment_period'] : null;
         $this->i_session = isset($data['i_session']) ? (int)$data['i_session'] : null;
-        $this->id_program_category = isset($data['id_program_category']) ? (int)$data['id_program_category'] : null;
-        $this->id_program_type = isset($data['id_program_type']) ? (int)$data['id_program_type'] : null;
+        $this->id_program_category = isset($data['id_program_category']) ? \WlSdk\RsProgramCategorySid::tryFrom((int)$data['id_program_category']) : null;
+        $this->id_program_type = isset($data['id_program_type']) ? \WlSdk\RsProgramTypeSid::tryFrom((int)$data['id_program_type']) : null;
         $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
         $this->is_contract = isset($data['is_contract']) ? (bool)$data['is_contract'] : null;
         $this->is_convert = isset($data['is_convert']) ? (bool)$data['is_convert'] : null;

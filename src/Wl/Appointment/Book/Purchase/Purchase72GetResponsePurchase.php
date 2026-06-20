@@ -79,30 +79,30 @@ class Purchase72GetResponsePurchase
     /**
      * Duration ID. Constant from {@link \WlSdk\ADurationSid}.
      *
-     * @var int|null
+     * @var \WlSdk\ADurationSid|null
      */
-    public ?int $id_duration = null;
+    public ?\WlSdk\ADurationSid $id_duration = null;
 
     /**
      * Program ID for promotions from {@link \WlSdk\RsProgramSid}.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramSid|null
      */
-    public ?int $id_program = null;
+    public ?\WlSdk\RsProgramSid $id_program = null;
 
     /**
      * Program type ID. Constant from {@link \WlSdk\RsProgramTypeSid}.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramTypeSid|null
      */
-    public ?int $id_program_type = null;
+    public ?\WlSdk\RsProgramTypeSid $id_program_type = null;
 
     /**
      * How the Purchase Item price is specified. One of the {@link \WlSdk\RsProgramTypeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramTypeSid|null
      */
-    public ?int $id_promotion_price = null;
+    public ?\WlSdk\RsProgramTypeSid $id_promotion_price = null;
 
     /**
      * ID of the purchase item from {@link \WlSdk\RsPurchaseItemSid}
@@ -251,10 +251,10 @@ class Purchase72GetResponsePurchase
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
         $this->i_limit_duration = isset($data['i_limit_duration']) ? (int)$data['i_limit_duration'] : null;
         $this->i_payment_period = isset($data['i_payment_period']) ? (int)$data['i_payment_period'] : null;
-        $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;
-        $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
-        $this->id_program_type = isset($data['id_program_type']) ? (int)$data['id_program_type'] : null;
-        $this->id_promotion_price = isset($data['id_promotion_price']) ? (int)$data['id_promotion_price'] : null;
+        $this->id_duration = isset($data['id_duration']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_duration']) : null;
+        $this->id_program = isset($data['id_program']) ? \WlSdk\RsProgramSid::tryFrom((int)$data['id_program']) : null;
+        $this->id_program_type = isset($data['id_program_type']) ? \WlSdk\RsProgramTypeSid::tryFrom((int)$data['id_program_type']) : null;
+        $this->id_promotion_price = isset($data['id_promotion_price']) ? \WlSdk\RsProgramTypeSid::tryFrom((int)$data['id_promotion_price']) : null;
         $this->id_purchase_item = isset($data['id_purchase_item']) ? \WlSdk\RsPurchaseItemSid::tryFrom((int)$data['id_purchase_item']) : null;
         $this->is_contract = isset($data['is_contract']) ? (bool)$data['is_contract'] : null;
         $this->is_description = isset($data['is_description']) ? (bool)$data['is_description'] : null;

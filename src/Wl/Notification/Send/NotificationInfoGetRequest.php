@@ -6,9 +6,9 @@ class NotificationInfoGetRequest
     /**
      * ID of the notification. See {@link \WlSdk\RsMailSid}.
      *
-     * @var int|null
+     * @var \WlSdk\RsMailSid|null
      */
-    public ?int $id_notification = null;
+    public ?\WlSdk\RsMailSid $id_notification = null;
 
     /**
      * Key of the business where information about notification should be retrieved.
@@ -21,7 +21,7 @@ class NotificationInfoGetRequest
     {
         return array_filter(
             [
-            'id_notification' => $this->id_notification,
+            'id_notification' => $this->id_notification?->value,
             'k_business' => $this->k_business,
             ],
             static fn($v) => $v !== null

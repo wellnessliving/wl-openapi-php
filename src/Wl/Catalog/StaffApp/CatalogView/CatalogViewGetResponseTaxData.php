@@ -34,9 +34,9 @@ class CatalogViewGetResponseTaxData
     /**
      * The tax type. One of {@link \WlSdk\RsTaxSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsTaxSid|null
      */
-    public ?int $id_tax = null;
+    public ?\WlSdk\RsTaxSid $id_tax = null;
 
     /**
      * The tax key.
@@ -58,7 +58,7 @@ class CatalogViewGetResponseTaxData
         $this->f_tax_discount = isset($data['f_tax_discount']) ? (string)$data['f_tax_discount'] : null;
         $this->f_tax_discount_login = isset($data['f_tax_discount_login']) ? (string)$data['f_tax_discount_login'] : null;
         $this->f_value = isset($data['f_value']) ? (float)$data['f_value'] : null;
-        $this->id_tax = isset($data['id_tax']) ? (int)$data['id_tax'] : null;
+        $this->id_tax = isset($data['id_tax']) ? \WlSdk\RsTaxSid::tryFrom((int)$data['id_tax']) : null;
         $this->k_tax = isset($data['k_tax']) ? (string)$data['k_tax'] : null;
         $this->s_tax = isset($data['s_tax']) ? (string)$data['s_tax'] : null;
     }

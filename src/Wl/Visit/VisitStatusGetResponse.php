@@ -85,17 +85,17 @@ class VisitStatusGetResponse
      * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * If you're unsure about the value to use, keep the default value.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * The status of the visit.
      * One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Visit\VisitSid|null
      */
-    public ?int $id_visit = null;
+    public ?\WlSdk\Wl\Visit\VisitSid $id_visit = null;
 
     /**
      * Determines whether the visit is from an event.
@@ -238,8 +238,8 @@ class VisitStatusGetResponse
         $this->dtl_date = isset($data['dtl_date']) ? (string)$data['dtl_date'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_wait_spot = isset($data['i_wait_spot']) ? (int)$data['i_wait_spot'] : null;
-        $this->id_mode = isset($data['id_mode']) ? (int)$data['id_mode'] : null;
-        $this->id_visit = isset($data['id_visit']) ? (int)$data['id_visit'] : null;
+        $this->id_mode = isset($data['id_mode']) ? \WlSdk\Wl\Mode\ModeSid::tryFrom((int)$data['id_mode']) : null;
+        $this->id_visit = isset($data['id_visit']) ? \WlSdk\Wl\Visit\VisitSid::tryFrom((int)$data['id_visit']) : null;
         $this->is_event = isset($data['is_event']) ? (bool)$data['is_event'] : null;
         $this->is_request = isset($data['is_request']) ? (bool)$data['is_request'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;

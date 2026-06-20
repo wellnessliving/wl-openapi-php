@@ -9,9 +9,9 @@ class SubscribePostResponseMessageBroadcastH
      * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
      * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
      *
-     * @var int|null
+     * @var \WlSdk\ACardSystemSid|null
      */
-    public ?int $id_card_system = null;
+    public ?\WlSdk\ACardSystemSid $id_card_system = null;
 
     /**
      * Transaction exception ID.
@@ -27,9 +27,9 @@ class SubscribePostResponseMessageBroadcastH
      * 
      * `null` if not set yet.
      *
-     * @var int|null
+     * @var \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid|null
      */
-    public ?int $id_ticket_status = null;
+    public ?\WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid $id_ticket_status = null;
 
     /**
      * Amount of tips entered by customer on terminal.
@@ -79,9 +79,9 @@ class SubscribePostResponseMessageBroadcastH
 
     public function __construct(array $data)
     {
-        $this->id_card_system = isset($data['id_card_system']) ? (int)$data['id_card_system'] : null;
+        $this->id_card_system = isset($data['id_card_system']) ? \WlSdk\ACardSystemSid::tryFrom((int)$data['id_card_system']) : null;
         $this->id_pay_exception = isset($data['id_pay_exception']) ? (int)$data['id_pay_exception'] : null;
-        $this->id_ticket_status = isset($data['id_ticket_status']) ? (int)$data['id_ticket_status'] : null;
+        $this->id_ticket_status = isset($data['id_ticket_status']) ? \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid::tryFrom((int)$data['id_ticket_status']) : null;
         $this->m_tip = isset($data['m_tip']) ? (string)$data['m_tip'] : null;
         $this->s_card_holder = isset($data['s_card_holder']) ? (string)$data['s_card_holder'] : null;
         $this->s_expire = isset($data['s_expire']) ? (string)$data['s_expire'] : null;

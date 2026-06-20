@@ -62,7 +62,7 @@ class EditPutRequest
      * Search entity CID list.
      * Constants from {@link \WlSdk\Wl\Search\SearchEntityAbstract} subclasses.
      *
-     * @var int[]|null
+     * @var \WlSdk\Wl\Search\SearchEntityAbstract[]|null
      */
     public ?array $a_search_entity = null;
 
@@ -76,17 +76,17 @@ class EditPutRequest
     /**
      * Shape of icon. One of {@link \WlSdk\Wl\Member\Group\ShapeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Member\Group\ShapeSid|null
      */
-    public ?int $id_member_group_shape = null;
+    public ?\WlSdk\Wl\Member\Group\ShapeSid $id_member_group_shape = null;
 
     /**
      * Type of share option.
      * One of {@link \WlSdk\Wl\Share\ShareSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Share\ShareSid|null
      */
-    public ?int $id_share = null;
+    public ?\WlSdk\Wl\Share\ShareSid $id_share = null;
 
     /**
      * `true` to enable group icon. `false` to disable.
@@ -138,8 +138,8 @@ class EditPutRequest
             'a_logic' => $this->a_logic,
             'a_search_entity' => $this->a_search_entity,
             'a_staff_role_selected' => $this->a_staff_role_selected,
-            'id_member_group_shape' => $this->id_member_group_shape,
-            'id_share' => $this->id_share,
+            'id_member_group_shape' => $this->id_member_group_shape?->value,
+            'id_share' => $this->id_share?->value,
             'is_icon' => $this->is_icon,
             'json_criteria' => $this->json_criteria,
             's_color_background' => $this->s_color_background,

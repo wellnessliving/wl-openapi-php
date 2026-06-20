@@ -13,9 +13,9 @@ class GuestProfileGetRequest
     /**
      * Type of the service to book.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Service\ServiceSid|null
      */
-    public ?int $id_service = null;
+    public ?\WlSdk\Wl\Service\ServiceSid $id_service = null;
 
     /**
      * Business key.
@@ -70,7 +70,7 @@ class GuestProfileGetRequest
         return array_filter(
             [
             'dl_birthday' => $this->dl_birthday,
-            'id_service' => $this->id_service,
+            'id_service' => $this->id_service?->value,
             'k_business' => $this->k_business,
             'k_id' => $this->k_id,
             'k_location' => $this->k_location,

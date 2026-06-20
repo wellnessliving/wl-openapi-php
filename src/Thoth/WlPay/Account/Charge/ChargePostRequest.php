@@ -8,9 +8,9 @@ class ChargePostRequest
      * 
      * One of the {@link \WlSdk\RsPayAccountChargeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsPayAccountChargeSid|null
      */
-    public ?int $id_pay_account_charge = null;
+    public ?\WlSdk\RsPayAccountChargeSid $id_pay_account_charge = null;
 
     /**
      * If `true`, the account is filled by a staff member in the backend. Otherwise, this will be `false`.
@@ -69,9 +69,9 @@ class ChargePostRequest
     /**
      * The source mode key. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * The payment amount.
@@ -91,13 +91,13 @@ class ChargePostRequest
     {
         return array_filter(
             [
-            'id_pay_account_charge' => $this->id_pay_account_charge,
+            'id_pay_account_charge' => $this->id_pay_account_charge?->value,
             'is_staff' => $this->is_staff,
             'k_business' => $this->k_business,
             'k_pay_account' => $this->k_pay_account,
             'uid' => $this->uid,
             'a_pay_form' => $this->a_pay_form,
-            'id_mode' => $this->id_mode,
+            'id_mode' => $this->id_mode?->value,
             'm_amount' => $this->m_amount,
             's_comment' => $this->s_comment,
             ],

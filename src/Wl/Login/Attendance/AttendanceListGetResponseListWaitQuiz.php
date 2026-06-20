@@ -6,9 +6,9 @@ class AttendanceListGetResponseListWaitQuiz
     /**
      * Response status ID. One of {@link \WlSdk\Core\Quiz\Response\ResponseStatusSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Quiz\Response\ResponseStatusSid|null
      */
-    public ?int $id_status = null;
+    public ?\WlSdk\Core\Quiz\Response\ResponseStatusSid $id_status = null;
 
     /**
      * Whether it's hidden. `true` quiz is hidden, `false` otherwise.
@@ -54,7 +54,7 @@ class AttendanceListGetResponseListWaitQuiz
 
     public function __construct(array $data)
     {
-        $this->id_status = isset($data['id_status']) ? (int)$data['id_status'] : null;
+        $this->id_status = isset($data['id_status']) ? \WlSdk\Core\Quiz\Response\ResponseStatusSid::tryFrom((int)$data['id_status']) : null;
         $this->is_hide = isset($data['is_hide']) ? (bool)$data['is_hide'] : null;
         $this->is_require = isset($data['is_require']) ? (bool)$data['is_require'] : null;
         $this->k_quiz = isset($data['k_quiz']) ? (string)$data['k_quiz'] : null;

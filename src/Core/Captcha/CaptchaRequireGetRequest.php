@@ -13,16 +13,16 @@ class CaptchaRequireGetRequest
     /**
      * The CID of the CAPTCHA.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Captcha\CaptchaAbstract|null
      */
-    public ?int $cid_captcha = null;
+    public ?\WlSdk\Core\Captcha\CaptchaAbstract $cid_captcha = null;
 
     public function params(): array
     {
         return array_filter(
             [
             'a_arguments' => $this->a_arguments,
-            'cid_captcha' => $this->cid_captcha,
+            'cid_captcha' => $this->cid_captcha?->value,
             ],
             static fn($v) => $v !== null
         );

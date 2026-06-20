@@ -6,9 +6,9 @@ class SkinForeignDeleteRequest
     /**
      * Skin type, one of {@link \WlSdk\RsSkinSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsSkinSid|null
      */
-    public ?int $id_skin = null;
+    public ?\WlSdk\RsSkinSid $id_skin = null;
 
     /**
      * Key of the business.
@@ -28,7 +28,7 @@ class SkinForeignDeleteRequest
     {
         return array_filter(
             [
-            'id_skin' => $this->id_skin,
+            'id_skin' => $this->id_skin?->value,
             'k_business' => $this->k_business,
             's_foreign_id' => $this->s_foreign_id,
             ],

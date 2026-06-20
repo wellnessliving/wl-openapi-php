@@ -16,9 +16,9 @@ class ElementGetResponse
     /**
      * Reward score type ID.
      *
-     * @var int|null
+     * @var \WlSdk\RsRewardScoreSid|null
      */
-    public ?int $id_reward_score = null;
+    public ?\WlSdk\RsRewardScoreSid $id_reward_score = null;
 
     /**
      * `true` if user has requested points for action accomplishment, `false` otherwise.
@@ -37,7 +37,7 @@ class ElementGetResponse
     public function __construct(array $data)
     {
         $this->i_score = isset($data['i_score']) ? (int)$data['i_score'] : null;
-        $this->id_reward_score = isset($data['id_reward_score']) ? (int)$data['id_reward_score'] : null;
+        $this->id_reward_score = isset($data['id_reward_score']) ? \WlSdk\RsRewardScoreSid::tryFrom((int)$data['id_reward_score']) : null;
         $this->is_request = isset($data['is_request']) ? (bool)$data['is_request'] : null;
         $this->s_description = isset($data['s_description']) ? (string)$data['s_description'] : null;
     }

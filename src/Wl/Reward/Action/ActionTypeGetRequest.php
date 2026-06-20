@@ -6,9 +6,9 @@ class ActionTypeGetRequest
     /**
      * ID of type of reward action. One of {@link \WlSdk\RsRewardScoreSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsRewardScoreSid|null
      */
-    public ?int $id_reward_score = null;
+    public ?\WlSdk\RsRewardScoreSid $id_reward_score = null;
 
     /**
      * Key of a business to show information for.
@@ -21,7 +21,7 @@ class ActionTypeGetRequest
     {
         return array_filter(
             [
-            'id_reward_score' => $this->id_reward_score,
+            'id_reward_score' => $this->id_reward_score?->value,
             'k_business' => $this->k_business,
             ],
             static fn($v) => $v !== null

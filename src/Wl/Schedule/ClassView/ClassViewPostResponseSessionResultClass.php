@@ -133,9 +133,9 @@ class ClassViewPostResponseSessionResultClass
     /**
      * ID of deny reason. One of {@link \WlSdk\Wl\Schedule\ClassView\DenyReasonSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Schedule\ClassView\DenyReasonSid|null
      */
-    public ?int $id_deny_reason = null;
+    public ?\WlSdk\Wl\Schedule\ClassView\DenyReasonSid $id_deny_reason = null;
 
     /**
      * Whether current class was booked by current client.
@@ -250,7 +250,7 @@ class ClassViewPostResponseSessionResultClass
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_wait_limit = isset($data['i_wait_limit']) ? (int)$data['i_wait_limit'] : null;
-        $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
+        $this->id_deny_reason = isset($data['id_deny_reason']) ? \WlSdk\Wl\Schedule\ClassView\DenyReasonSid::tryFrom((int)$data['id_deny_reason']) : null;
         $this->is_book = isset($data['is_book']) ? (bool)$data['is_book'] : null;
         $this->is_book_for_guest = isset($data['is_book_for_guest']) ? (bool)$data['is_book_for_guest'] : null;
         $this->is_cancel = isset($data['is_cancel']) ? (bool)$data['is_cancel'] : null;

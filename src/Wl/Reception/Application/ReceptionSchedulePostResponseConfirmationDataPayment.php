@@ -87,9 +87,9 @@ class ReceptionSchedulePostResponseConfirmationDataPayment
     /**
      * The promotion's program type ID. One of {@link \WlSdk\RsProgramTypeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramTypeSid|null
      */
-    public ?int $id_program_type = null;
+    public ?\WlSdk\RsProgramTypeSid $id_program_type = null;
 
     /**
      * If `true`, the promotion has a usage limit and no remaining visits. Otherwise, this will be `false`.
@@ -153,7 +153,7 @@ class ReceptionSchedulePostResponseConfirmationDataPayment
         $this->i_use = isset($data['i_use']) ? (int)$data['i_use'] : null;
         $this->i_use_duration = isset($data['i_use_duration']) ? (int)$data['i_use_duration'] : null;
         $this->i_visit_past = isset($data['i_visit_past']) ? (int)$data['i_visit_past'] : null;
-        $this->id_program_type = isset($data['id_program_type']) ? (int)$data['id_program_type'] : null;
+        $this->id_program_type = isset($data['id_program_type']) ? \WlSdk\RsProgramTypeSid::tryFrom((int)$data['id_program_type']) : null;
         $this->is_last_use = isset($data['is_last_use']) ? (bool)$data['is_last_use'] : null;
         $this->is_package = isset($data['is_package']) ? (bool)$data['is_package'] : null;
         $this->is_restrict_multiply = isset($data['is_restrict_multiply']) ? (bool)$data['is_restrict_multiply'] : null;

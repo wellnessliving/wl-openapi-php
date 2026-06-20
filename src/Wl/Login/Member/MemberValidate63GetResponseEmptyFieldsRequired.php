@@ -6,9 +6,9 @@ class MemberValidate63GetResponseEmptyFieldsRequired
     /**
      * The general field ID. One of {@link \WlSdk\RsFieldGeneralSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsFieldGeneralSid|null
      */
-    public ?int $id_field_general = null;
+    public ?\WlSdk\RsFieldGeneralSid $id_field_general = null;
 
     /**
      * Profile field key.
@@ -26,7 +26,7 @@ class MemberValidate63GetResponseEmptyFieldsRequired
 
     public function __construct(array $data)
     {
-        $this->id_field_general = isset($data['id_field_general']) ? (int)$data['id_field_general'] : null;
+        $this->id_field_general = isset($data['id_field_general']) ? \WlSdk\RsFieldGeneralSid::tryFrom((int)$data['id_field_general']) : null;
         $this->k_field = isset($data['k_field']) ? (string)$data['k_field'] : null;
         $this->text_field_title = isset($data['text_field_title']) ? (string)$data['text_field_title'] : null;
     }

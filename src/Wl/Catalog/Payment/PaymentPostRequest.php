@@ -13,9 +13,9 @@ class PaymentPostRequest
     /**
      * The WellnessLiving mode type (required). One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * Determines if the payment owner is an anonymous user (optional).
@@ -146,7 +146,7 @@ class PaymentPostRequest
         return array_filter(
             [
             'a_commission' => $this->a_commission,
-            'id_mode' => $this->id_mode,
+            'id_mode' => $this->id_mode?->value,
             'is_guest' => $this->is_guest,
             'is_staff' => $this->is_staff,
             'k_business' => $this->k_business,

@@ -131,16 +131,16 @@ class ScheduleListByTokenGetResponseSchedule
      *  Set only for appointments, for others it will be equal to 0.
      *  Constants from {@link \WlSdk\Wl\Schedule\Design\OptionSid}.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Schedule\Design\OptionSid|null
      */
-    public ?int $id_option = null;
+    public ?\WlSdk\Wl\Schedule\Design\OptionSid $id_option = null;
 
     /**
      * The ID of the service type. One of {@link \WlSdk\RsServiceSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsServiceSid|null
      */
-    public ?int $id_service = null;
+    public ?\WlSdk\RsServiceSid $id_service = null;
 
     /**
      * For appointments: `true` if user has checked-in; `false` otherwise.
@@ -275,8 +275,8 @@ class ScheduleListByTokenGetResponseSchedule
         $this->i_padding_before = isset($data['i_padding_before']) ? (int)$data['i_padding_before'] : null;
         $this->i_start = isset($data['i_start']) ? (int)$data['i_start'] : null;
         $this->i_wait = isset($data['i_wait']) ? (int)$data['i_wait'] : null;
-        $this->id_option = isset($data['id_option']) ? (int)$data['id_option'] : null;
-        $this->id_service = isset($data['id_service']) ? (int)$data['id_service'] : null;
+        $this->id_option = isset($data['id_option']) ? \WlSdk\Wl\Schedule\Design\OptionSid::tryFrom((int)$data['id_option']) : null;
+        $this->id_service = isset($data['id_service']) ? \WlSdk\RsServiceSid::tryFrom((int)$data['id_service']) : null;
         $this->is_arrive = isset($data['is_arrive']) ? (bool)$data['is_arrive'] : null;
         $this->is_pay = isset($data['is_pay']) ? (bool)$data['is_pay'] : null;
         $this->is_repeat = isset($data['is_repeat']) ? (bool)$data['is_repeat'] : null;

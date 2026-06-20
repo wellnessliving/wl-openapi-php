@@ -6,9 +6,9 @@ class SubscribePostResponseMessageBroadcastRDomainToken
     /**
      * Status of the token. One of {@link \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid|null
      */
-    public ?int $id_status = null;
+    public ?\WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid $id_status = null;
 
     /**
      * Host part of the token, which should be added to the DNS records.
@@ -47,7 +47,7 @@ class SubscribePostResponseMessageBroadcastRDomainToken
 
     public function __construct(array $data)
     {
-        $this->id_status = isset($data['id_status']) ? (int)$data['id_status'] : null;
+        $this->id_status = isset($data['id_status']) ? \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid::tryFrom((int)$data['id_status']) : null;
         $this->text_host = isset($data['text_host']) ? (string)$data['text_host'] : null;
         $this->text_icon_class = isset($data['text_icon_class']) ? (string)$data['text_icon_class'] : null;
         $this->text_status = isset($data['text_status']) ? (string)$data['text_status'] : null;

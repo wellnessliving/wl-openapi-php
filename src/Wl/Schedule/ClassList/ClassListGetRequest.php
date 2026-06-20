@@ -21,7 +21,7 @@ class ClassListGetRequest
      * 
      * Empty array means no filtering.
      *
-     * @var int[]|null
+     * @var \WlSdk\ADateWeekSid[]|null
      */
     public ?array $a_day = null;
 

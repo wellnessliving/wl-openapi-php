@@ -14,13 +14,13 @@ class ElementGetResponseClassListScheduleRepeat
      * The measuring unit of `i_repeat`.
      * One of {@link \WlSdk\ADurationSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\ADurationSid|null
      */
-    public ?int $id_repeat = null;
+    public ?\WlSdk\ADurationSid $id_repeat = null;
 
     public function __construct(array $data)
     {
         $this->i_repeat = isset($data['i_repeat']) ? (int)$data['i_repeat'] : null;
-        $this->id_repeat = isset($data['id_repeat']) ? (int)$data['id_repeat'] : null;
+        $this->id_repeat = isset($data['id_repeat']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_repeat']) : null;
     }
 }

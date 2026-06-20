@@ -13,9 +13,9 @@ class Response65DeleteRequest
     /**
      * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * Business key within which quiz is managed.
@@ -53,7 +53,7 @@ class Response65DeleteRequest
         return array_filter(
             [
             'a_quiz_response_key' => $this->a_quiz_response_key,
-            'id_mode' => $this->id_mode,
+            'id_mode' => $this->id_mode?->value,
             'k_business' => $this->k_business,
             'k_quiz' => $this->k_quiz,
             'k_quiz_response' => $this->k_quiz_response,

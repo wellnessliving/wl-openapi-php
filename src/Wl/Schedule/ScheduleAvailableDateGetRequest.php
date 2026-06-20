@@ -17,7 +17,7 @@ class ScheduleAvailableDateGetRequest
      * 
      * Empty to search for all week days.
      *
-     * @var int[]|null
+     * @var \WlSdk\ADateWeekSid[]|null
      */
     public ?array $a_day = null;
 
@@ -68,9 +68,9 @@ class ScheduleAvailableDateGetRequest
     /**
      * "Book now" tab ID. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Classes\Tab\TabSid|null
      */
-    public ?int $id_class_tab = null;
+    public ?\WlSdk\Wl\Classes\Tab\TabSid $id_class_tab = null;
 
     /**
      * `true` to include classes; `false` to exclude.
@@ -120,7 +120,7 @@ class ScheduleAvailableDateGetRequest
             'a_staff' => $this->a_staff,
             'a_time' => $this->a_time,
             'dtu_start' => $this->dtu_start,
-            'id_class_tab' => $this->id_class_tab,
+            'id_class_tab' => $this->id_class_tab?->value,
             'is_class' => $this->is_class,
             'is_event' => $this->is_event,
             'is_virtual' => $this->is_virtual,

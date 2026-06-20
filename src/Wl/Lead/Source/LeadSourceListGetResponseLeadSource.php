@@ -15,9 +15,9 @@ class LeadSourceListGetResponseLeadSource
      * System-defined Lead Source ID. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      * `null` if it is a custom Lead Source.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_lead_source = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_lead_source = null;
 
     /**
      * `true` if this skin will be used for "Add Lead" form or `false` otherwise.
@@ -62,7 +62,7 @@ class LeadSourceListGetResponseLeadSource
     public function __construct(array $data)
     {
         $this->i_sort = isset($data['i_sort']) ? (int)$data['i_sort'] : null;
-        $this->id_lead_source = isset($data['id_lead_source']) ? (int)$data['id_lead_source'] : null;
+        $this->id_lead_source = isset($data['id_lead_source']) ? \WlSdk\Wl\Mode\ModeSid::tryFrom((int)$data['id_lead_source']) : null;
         $this->is_add_lead = isset($data['is_add_lead']) ? (bool)$data['is_add_lead'] : null;
         $this->is_use = isset($data['is_use']) ? (bool)$data['is_use'] : null;
         $this->k_lead_source = isset($data['k_lead_source']) ? (string)$data['k_lead_source'] : null;

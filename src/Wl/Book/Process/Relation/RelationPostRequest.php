@@ -45,17 +45,17 @@ class RelationPostRequest
      * The mode type.
      * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * The relation type.
      * One of the {@link \WlSdk\RsFamilyRelationSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsFamilyRelationSid|null
      */
-    public ?int $id_relation = null;
+    public ?\WlSdk\RsFamilyRelationSid $id_relation = null;
 
     /**
      * `true` - the new relative uses the email from `uid_from`.
@@ -112,8 +112,8 @@ class RelationPostRequest
             'i_day' => $this->i_day,
             'i_month' => $this->i_month,
             'i_year' => $this->i_year,
-            'id_mode' => $this->id_mode,
-            'id_relation' => $this->id_relation,
+            'id_mode' => $this->id_mode?->value,
+            'id_relation' => $this->id_relation?->value,
             'is_mail_inherit' => $this->is_mail_inherit,
             'is_pay_self' => $this->is_pay_self,
             'text_mail' => $this->text_mail,

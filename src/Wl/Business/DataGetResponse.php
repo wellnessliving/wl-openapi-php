@@ -12,7 +12,7 @@ class DataGetResponse
      * Boolean.
      * If `true`, at least one service is enabled in the business. Otherwise, this will be `false`.
      *
-     * @var int[]|null
+     * @var \WlSdk\Wl\Service\ServiceSid[]|null
      */
     public ?array $a_service_list = null;
 
@@ -26,32 +26,32 @@ class DataGetResponse
     /**
      * The business category ID of the business.
      *
-     * @var int|null
+     * @var \WlSdk\RsBusinessCategorySid|null
      */
-    public ?int $id_category = null;
+    public ?\WlSdk\RsBusinessCategorySid $id_category = null;
 
     /**
      * Business status for managing claim request behavior.
      * 
      * Constant from {@link \WlSdk\Wl\Business\Claim\BusinessClaimStatusSid}.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Business\Claim\BusinessClaimStatusSid|null
      */
-    public ?int $id_claim_status = null;
+    public ?\WlSdk\Wl\Business\Claim\BusinessClaimStatusSid $id_claim_status = null;
 
     /**
      * The currency ID of the given business (or the system currency ID if the business didn't pass).
      *
-     * @var int|null
+     * @var \WlSdk\Core\Locale\CurrencySid|null
      */
-    public ?int $id_currency = null;
+    public ?\WlSdk\Core\Locale\CurrencySid $id_currency = null;
 
     /**
      * The Locale ID, used to search geo items.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Locale\LocaleSid|null
      */
-    public ?int $id_locale = null;
+    public ?\WlSdk\Core\Locale\LocaleSid $id_locale = null;
 
     /**
      * The rank type ID of the business.
@@ -60,9 +60,9 @@ class DataGetResponse
      * 
      * This will be `null` if the business doesn't have a rank type.
      *
-     * @var int|null
+     * @var \WlSdk\RsRankTypeSid|null
      */
-    public ?int $id_rank_type = null;
+    public ?\WlSdk\RsRankTypeSid $id_rank_type = null;
 
     /**
      * The region ID. This indicates the data center where the information about the business is stored.
@@ -73,9 +73,9 @@ class DataGetResponse
      * independent. For example, performing a request to the US cluster for a list of classes for an AU
      * cluster business will return an empty list.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Amazon\Region\AmazonRegionSid|null
      */
-    public ?int $id_region = null;
+    public ?\WlSdk\Core\Amazon\Region\AmazonRegionSid $id_region = null;
 
     /**
      * Determines whether surcharges to client payments are enabled in the business.
@@ -328,14 +328,14 @@ class DataGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_service_list = isset($data['a_service_list']) ? (array)$data['a_service_list'] : null;
+        $this->a_service_list = isset($data['a_service_list']) ? array_map(static fn($v) => \WlSdk\Wl\Service\ServiceSid::tryFrom((int)$v), (array)$data['a_service_list']) : null;
         $this->a_tip_predefine = isset($data['a_tip_predefine']) ? (array)$data['a_tip_predefine'] : null;
-        $this->id_category = isset($data['id_category']) ? (int)$data['id_category'] : null;
-        $this->id_claim_status = isset($data['id_claim_status']) ? (int)$data['id_claim_status'] : null;
-        $this->id_currency = isset($data['id_currency']) ? (int)$data['id_currency'] : null;
-        $this->id_locale = isset($data['id_locale']) ? (int)$data['id_locale'] : null;
-        $this->id_rank_type = isset($data['id_rank_type']) ? (int)$data['id_rank_type'] : null;
-        $this->id_region = isset($data['id_region']) ? (int)$data['id_region'] : null;
+        $this->id_category = isset($data['id_category']) ? \WlSdk\RsBusinessCategorySid::tryFrom((int)$data['id_category']) : null;
+        $this->id_claim_status = isset($data['id_claim_status']) ? \WlSdk\Wl\Business\Claim\BusinessClaimStatusSid::tryFrom((int)$data['id_claim_status']) : null;
+        $this->id_currency = isset($data['id_currency']) ? \WlSdk\Core\Locale\CurrencySid::tryFrom((int)$data['id_currency']) : null;
+        $this->id_locale = isset($data['id_locale']) ? \WlSdk\Core\Locale\LocaleSid::tryFrom((int)$data['id_locale']) : null;
+        $this->id_rank_type = isset($data['id_rank_type']) ? \WlSdk\RsRankTypeSid::tryFrom((int)$data['id_rank_type']) : null;
+        $this->id_region = isset($data['id_region']) ? \WlSdk\Core\Amazon\Region\AmazonRegionSid::tryFrom((int)$data['id_region']) : null;
         $this->is_apply_surcharge = isset($data['is_apply_surcharge']) ? (bool)$data['is_apply_surcharge'] : null;
         $this->is_franchise = isset($data['is_franchise']) ? (bool)$data['is_franchise'] : null;
         $this->is_location_multiple = isset($data['is_location_multiple']) ? (bool)$data['is_location_multiple'] : null;

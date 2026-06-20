@@ -25,9 +25,9 @@ class ResourceGetRequest
     /**
      * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * `true` if action is performed as a staff member; `false` otherwise.
@@ -77,7 +77,7 @@ class ResourceGetRequest
             [
             'a_session' => $this->a_session,
             'dt_date_gmt' => $this->dt_date_gmt,
-            'id_mode' => $this->id_mode,
+            'id_mode' => $this->id_mode?->value,
             'is_backend' => $this->is_backend,
             'is_credit_card_check' => $this->is_credit_card_check,
             'k_class_period' => $this->k_class_period,

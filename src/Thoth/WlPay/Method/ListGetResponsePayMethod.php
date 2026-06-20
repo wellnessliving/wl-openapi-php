@@ -6,9 +6,9 @@ class ListGetResponsePayMethod
     /**
      * The payment method type ID. One of {@link \WlSdk\RsPayMethodSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsPayMethodSid|null
      */
-    public ?int $id_pay_method = null;
+    public ?\WlSdk\RsPayMethodSid $id_pay_method = null;
 
     /**
      * Payment method key. Primary key int the MethodSql table.
@@ -27,7 +27,7 @@ class ListGetResponsePayMethod
 
     public function __construct(array $data)
     {
-        $this->id_pay_method = isset($data['id_pay_method']) ? (int)$data['id_pay_method'] : null;
+        $this->id_pay_method = isset($data['id_pay_method']) ? \WlSdk\RsPayMethodSid::tryFrom((int)$data['id_pay_method']) : null;
         $this->k_pay_method = isset($data['k_pay_method']) ? (string)$data['k_pay_method'] : null;
         $this->s_title = isset($data['s_title']) ? (string)$data['s_title'] : null;
     }

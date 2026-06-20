@@ -13,9 +13,9 @@ class WatchPostRequest
     /**
      * The source ID.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Video\Watch\WatchSourceSid|null
      */
-    public ?int $id_source = null;
+    public ?\WlSdk\Wl\Video\Watch\WatchSourceSid $id_source = null;
 
     /**
      * The business key.
@@ -38,7 +38,7 @@ class WatchPostRequest
         return array_filter(
             [
             'i_current_time' => $this->i_current_time,
-            'id_source' => $this->id_source,
+            'id_source' => $this->id_source?->value,
             'k_business' => $this->k_business,
             'k_video' => $this->k_video,
             ],

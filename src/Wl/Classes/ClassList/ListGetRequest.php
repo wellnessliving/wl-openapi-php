@@ -21,9 +21,9 @@ class ListGetRequest
      * 
      * `null` if no filtering by Book Now Tab is required.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Classes\Tab\TabSid|null
      */
-    public ?int $id_class_tab = null;
+    public ?\WlSdk\Wl\Classes\Tab\TabSid $id_class_tab = null;
 
     /**
      * Whether all events should be returned from same enrollment block.
@@ -87,7 +87,7 @@ class ListGetRequest
         return array_filter(
             [
             'a_class_tab' => $this->a_class_tab,
-            'id_class_tab' => $this->id_class_tab,
+            'id_class_tab' => $this->id_class_tab?->value,
             'is_enrollment_block_all' => $this->is_enrollment_block_all,
             'is_enrollment_block_empty' => $this->is_enrollment_block_empty,
             'is_event_include' => $this->is_event_include,

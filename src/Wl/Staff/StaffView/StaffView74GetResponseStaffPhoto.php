@@ -27,9 +27,9 @@ class StaffView74GetResponseStaffPhoto
     /**
      * One of {@link \WlSdk\Wl\Gender\GenderSid}.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Gender\GenderSid|null
      */
-    public ?int $id_gender = null;
+    public ?\WlSdk\Wl\Gender\GenderSid $id_gender = null;
 
     /**
      * Whether is empty.
@@ -71,7 +71,7 @@ class StaffView74GetResponseStaffPhoto
         $this->a_image = isset($data['a_image']) ? new StaffView74GetResponseStaffPhotoImage((array)$data['a_image']) : null;
         $this->i_height = isset($data['i_height']) ? (int)$data['i_height'] : null;
         $this->i_width = isset($data['i_width']) ? (int)$data['i_width'] : null;
-        $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
+        $this->id_gender = isset($data['id_gender']) ? \WlSdk\Wl\Gender\GenderSid::tryFrom((int)$data['id_gender']) : null;
         $this->is_empty = isset($data['is_empty']) ? (bool)$data['is_empty'] : null;
         $this->k_staff = isset($data['k_staff']) ? (string)$data['k_staff'] : null;
         $this->s_url = isset($data['s_url']) ? (string)$data['s_url'] : null;

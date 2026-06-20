@@ -104,25 +104,25 @@ class GuestPassGetResponseGuestPass
      * Unit of the reset period. One of {@link \WlSdk\ADurationSid} constants.
      * `null` if the promotion has no reset period.
      *
-     * @var int|null
+     * @var \WlSdk\ADurationSid|null
      */
-    public ?int $id_period = null;
+    public ?\WlSdk\ADurationSid $id_period = null;
 
     /**
      * Guest pass program ID.
      * One of {@link \WlSdk\RsProgramSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramSid|null
      */
-    public ?int $id_program_guest = null;
+    public ?\WlSdk\RsProgramSid $id_program_guest = null;
 
     /**
      * Reset type of the host promotion. One of {@link \WlSdk\Wl\Promotion\Guest\Pass\GuestPassResetTypeSid}
      * constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Promotion\Guest\Pass\GuestPassResetTypeSid|null
      */
-    public ?int $id_reset_type_guest = null;
+    public ?\WlSdk\Wl\Promotion\Guest\Pass\GuestPassResetTypeSid $id_reset_type_guest = null;
 
     /**
      * `true` if the pass is close enough to its reset or expiry date that the UI should
@@ -228,9 +228,9 @@ class GuestPassGetResponseGuestPass
         $this->i_remain = isset($data['i_remain']) ? (int)$data['i_remain'] : null;
         $this->i_remain_day = isset($data['i_remain_day']) ? (int)$data['i_remain_day'] : null;
         $this->i_use = isset($data['i_use']) ? (int)$data['i_use'] : null;
-        $this->id_period = isset($data['id_period']) ? (int)$data['id_period'] : null;
-        $this->id_program_guest = isset($data['id_program_guest']) ? (int)$data['id_program_guest'] : null;
-        $this->id_reset_type_guest = isset($data['id_reset_type_guest']) ? (int)$data['id_reset_type_guest'] : null;
+        $this->id_period = isset($data['id_period']) ? \WlSdk\ADurationSid::tryFrom((int)$data['id_period']) : null;
+        $this->id_program_guest = isset($data['id_program_guest']) ? \WlSdk\RsProgramSid::tryFrom((int)$data['id_program_guest']) : null;
+        $this->id_reset_type_guest = isset($data['id_reset_type_guest']) ? \WlSdk\Wl\Promotion\Guest\Pass\GuestPassResetTypeSid::tryFrom((int)$data['id_reset_type_guest']) : null;
         $this->is_expire_note = isset($data['is_expire_note']) ? (bool)$data['is_expire_note'] : null;
         $this->is_reset = isset($data['is_reset']) ? (bool)$data['is_reset'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;

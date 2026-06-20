@@ -132,18 +132,18 @@ class VideoElementPostRequest
      * {@link \WlSdk\Core\Sid\YesNoSid} if the video is available in all locations.
      * {@link \WlSdk\Core\Sid\YesNoSid} if the video is available only in certain locations.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Sid\YesNoSid|null
      */
-    public ?int $id_location_select = null;
+    public ?\WlSdk\Core\Sid\YesNoSid $id_location_select = null;
 
     /**
      * Source of the video.
      * 
      * One of {@link \WlSdk\Wl\Video\VideoSourceSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Video\VideoSourceSid|null
      */
-    public ?int $id_source = null;
+    public ?\WlSdk\Wl\Video\VideoSourceSid $id_source = null;
 
     /**
      * If `true`, the calorie count will be displayed on the video.
@@ -246,8 +246,8 @@ class VideoElementPostRequest
             'i_calorie' => $this->i_calorie,
             'i_duration' => $this->i_duration,
             'i_file_upload_size' => $this->i_file_upload_size,
-            'id_location_select' => $this->id_location_select,
-            'id_source' => $this->id_source,
+            'id_location_select' => $this->id_location_select?->value,
+            'id_source' => $this->id_source?->value,
             'is_calorie' => $this->is_calorie,
             'is_video_level' => $this->is_video_level,
             'k_video_category_primary' => $this->k_video_category_primary,

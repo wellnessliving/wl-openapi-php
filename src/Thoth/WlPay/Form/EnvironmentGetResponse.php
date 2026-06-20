@@ -11,7 +11,7 @@ class EnvironmentGetResponse
      * Keys refer to card types based on card numbers (see {@link \WlSdk\ACardSystemSid}),
      * and values are IDs of card systems (one of {@link \WlSdk\ACardSystemSid} constants).
      *
-     * @var int[]|null
+     * @var \WlSdk\ACardSystemSid[]|null
      */
     public ?array $a_card_system = null;
 
@@ -20,7 +20,7 @@ class EnvironmentGetResponse
      * constants.
      * The value is always `true`.
      *
-     * @var int[]|null
+     * @var \WlSdk\RsPayMethodSid[]|null
      */
     public ?array $a_method_staff = null;
 
@@ -84,9 +84,9 @@ class EnvironmentGetResponse
     /**
      * The locale ID of the business.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Locale\LocaleSid|null
      */
-    public ?int $id_locale = null;
+    public ?\WlSdk\Core\Locale\LocaleSid $id_locale = null;
 
     /**
      * `true` if clients can choose whether their banking and credit card information is saved at checkout,
@@ -132,15 +132,15 @@ class EnvironmentGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_card_system = isset($data['a_card_system']) ? (array)$data['a_card_system'] : null;
-        $this->a_method_staff = isset($data['a_method_staff']) ? (array)$data['a_method_staff'] : null;
+        $this->a_card_system = isset($data['a_card_system']) ? array_map(static fn($v) => \WlSdk\ACardSystemSid::tryFrom((int)$v), (array)$data['a_card_system']) : null;
+        $this->a_method_staff = isset($data['a_method_staff']) ? array_map(static fn($v) => \WlSdk\RsPayMethodSid::tryFrom((int)$v), (array)$data['a_method_staff']) : null;
         $this->a_method_support = isset($data['a_method_support']) ? array_map(static fn($item) => new EnvironmentGetResponseMethodSupport((array)$item), (array)$data['a_method_support']) : null;
         $this->a_mobile_config = isset($data['a_mobile_config']) ? (array)$data['a_mobile_config'] : null;
         $this->a_pay_processor = isset($data['a_pay_processor']) ? array_map(static fn($item) => new EnvironmentGetResponsePayProcessor((array)$item), (array)$data['a_pay_processor']) : null;
         $this->dl_now = isset($data['dl_now']) ? (string)$data['dl_now'] : null;
         $this->f_surcharge = isset($data['f_surcharge']) ? (string)$data['f_surcharge'] : null;
         $this->f_surcharge_ach = isset($data['f_surcharge_ach']) ? (string)$data['f_surcharge_ach'] : null;
-        $this->id_locale = isset($data['id_locale']) ? (int)$data['id_locale'] : null;
+        $this->id_locale = isset($data['id_locale']) ? \WlSdk\Core\Locale\LocaleSid::tryFrom((int)$data['id_locale']) : null;
         $this->is_save_optional = isset($data['is_save_optional']) ? (bool)$data['is_save_optional'] : null;
         $this->is_save_source = isset($data['is_save_source']) ? (bool)$data['is_save_source'] : null;
         $this->is_tip = isset($data['is_tip']) ? (bool)$data['is_tip'] : null;

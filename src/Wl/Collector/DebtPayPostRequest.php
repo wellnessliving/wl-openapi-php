@@ -9,9 +9,9 @@ class DebtPayPostRequest
      * 
      * Important! The currency must coincide with currency of the debt that was sent to collections.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Locale\CurrencySid|null
      */
-    public ?int $id_currency = null;
+    public ?\WlSdk\Core\Locale\CurrencySid $id_currency = null;
 
     /**
      * The key of the business from which the debt originates.
@@ -33,9 +33,9 @@ class DebtPayPostRequest
      * 
      * `null` if the payment method is unknown. In such cases, {@link \WlSdk\RsPayMethodSid} would be used.
      *
-     * @var int|null
+     * @var \WlSdk\RsPayMethodSid|null
      */
-    public ?int $id_pay_method = null;
+    public ?\WlSdk\RsPayMethodSid $id_pay_method = null;
 
     /**
      * The debt key towards which the payment was performed.
@@ -55,10 +55,10 @@ class DebtPayPostRequest
     {
         return array_filter(
             [
-            'id_currency' => $this->id_currency,
+            'id_currency' => $this->id_currency?->value,
             'k_business' => $this->k_business,
             'uid' => $this->uid,
-            'id_pay_method' => $this->id_pay_method,
+            'id_pay_method' => $this->id_pay_method?->value,
             'k_collector_debt' => $this->k_collector_debt,
             'm_amount' => $this->m_amount,
             ],

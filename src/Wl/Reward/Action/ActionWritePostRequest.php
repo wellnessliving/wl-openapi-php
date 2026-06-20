@@ -44,18 +44,18 @@ class ActionWritePostRequest
      * 
      * `null` if not set yet.
      *
-     * @var int|null
+     * @var \WlSdk\ADurationSid|null
      */
-    public ?int $id_cap = null;
+    public ?\WlSdk\ADurationSid $id_cap = null;
 
     /**
      * Type of a period.
      * 
      * `null` if not set yet.
      *
-     * @var int|null
+     * @var \WlSdk\ADurationSid|null
      */
-    public ?int $id_duration = null;
+    public ?\WlSdk\ADurationSid $id_duration = null;
 
     /**
      * Flag to define points type (account credits or points) in the 'Refer-a-Friend' section on the 'Enable
@@ -137,8 +137,8 @@ class ActionWritePostRequest
             'i_cap' => $this->i_cap,
             'i_count' => $this->i_count,
             'i_score' => $this->i_score,
-            'id_cap' => $this->id_cap,
-            'id_duration' => $this->id_duration,
+            'id_cap' => $this->id_cap?->value,
+            'id_duration' => $this->id_duration?->value,
             'is_account_credit' => $this->is_account_credit,
             'is_auto_renewal' => $this->is_auto_renewal,
             'k_business' => $this->k_business,

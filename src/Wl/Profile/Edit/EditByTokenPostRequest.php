@@ -6,9 +6,9 @@ class EditByTokenPostRequest
     /**
      * ID of source mode. One of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Mode\ModeSid|null
      */
-    public ?int $id_mode = null;
+    public ?\WlSdk\Wl\Mode\ModeSid $id_mode = null;
 
     /**
      * Registration source ID.
@@ -19,9 +19,9 @@ class EditByTokenPostRequest
      * * If the client is not authorized and no value is set, {@link \WlSdk\Wl\Profile\RegisterSourceSid} will be
      * used.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Profile\RegisterSourceSid|null
      */
-    public ?int $id_register_source = null;
+    public ?\WlSdk\Wl\Profile\RegisterSourceSid $id_register_source = null;
 
     /**
      * Whether the address be inherited.
@@ -136,7 +136,7 @@ class EditByTokenPostRequest
      * 
      * Available only for leads added by CAASI agent.
      *
-     * @var int[]|null
+     * @var \WlSdk\Wl\Login\Member\Intents\MemberIntentsSid[]|null
      */
     public ?array $a_intents = null;
 
@@ -210,8 +210,8 @@ class EditByTokenPostRequest
     {
         return array_filter(
             [
-            'id_mode' => $this->id_mode,
-            'id_register_source' => $this->id_register_source,
+            'id_mode' => $this->id_mode?->value,
+            'id_register_source' => $this->id_register_source?->value,
             'is_address_inherit' => $this->is_address_inherit,
             'is_short' => $this->is_short,
             'is_staff' => $this->is_staff,

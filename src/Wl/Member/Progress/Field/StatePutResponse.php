@@ -9,9 +9,9 @@ class StatePutResponse
     /**
      * Field ID. One of the {@link \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid} constant.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid|null
      */
-    public ?int $id_field = null;
+    public ?\WlSdk\Wl\Member\Progress\Field\ProgressFieldSid $id_field = null;
 
     /**
      * Whether field is active and should be displayed on page.
@@ -50,7 +50,7 @@ class StatePutResponse
 
     public function __construct(array $data)
     {
-        $this->id_field = isset($data['id_field']) ? (int)$data['id_field'] : null;
+        $this->id_field = isset($data['id_field']) ? \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid::tryFrom((int)$data['id_field']) : null;
         $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
         $this->is_public = isset($data['is_public']) ? (bool)$data['is_public'] : null;
         $this->is_require = isset($data['is_require']) ? (bool)$data['is_require'] : null;

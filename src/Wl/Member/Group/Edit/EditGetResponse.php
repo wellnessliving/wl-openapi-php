@@ -10,16 +10,16 @@ class EditGetResponse
      * Lead conversion type.
      * `null` if this group is not used for to track lead conversion.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Lead\Conversion\LeadConversionTypeSid|null
      */
-    public ?int $id_conversion_type = null;
+    public ?\WlSdk\Wl\Lead\Conversion\LeadConversionTypeSid $id_conversion_type = null;
 
     /**
      * Shape of icon. One of {@link \WlSdk\Wl\Member\Group\ShapeSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Member\Group\ShapeSid|null
      */
-    public ?int $id_member_group_shape = null;
+    public ?\WlSdk\Wl\Member\Group\ShapeSid $id_member_group_shape = null;
 
     /**
      * Whether Facility Access enabled for group.
@@ -89,8 +89,8 @@ class EditGetResponse
 
     public function __construct(array $data)
     {
-        $this->id_conversion_type = isset($data['id_conversion_type']) ? (int)$data['id_conversion_type'] : null;
-        $this->id_member_group_shape = isset($data['id_member_group_shape']) ? (int)$data['id_member_group_shape'] : null;
+        $this->id_conversion_type = isset($data['id_conversion_type']) ? \WlSdk\Wl\Lead\Conversion\LeadConversionTypeSid::tryFrom((int)$data['id_conversion_type']) : null;
+        $this->id_member_group_shape = isset($data['id_member_group_shape']) ? \WlSdk\Wl\Member\Group\ShapeSid::tryFrom((int)$data['id_member_group_shape']) : null;
         $this->is_brivo_active = isset($data['is_brivo_active']) ? (bool)$data['is_brivo_active'] : null;
         $this->is_brivo_invitation_active = isset($data['is_brivo_invitation_active']) ? (bool)$data['is_brivo_invitation_active'] : null;
         $this->is_icon = isset($data['is_icon']) ? (bool)$data['is_icon'] : null;

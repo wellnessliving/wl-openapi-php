@@ -12,9 +12,9 @@ class ListGetRequest
      * * {@link \WlSdk\AFlagSid} to show only unavailable events.
      * * {@link \WlSdk\AFlagSid} to show all events (available and unavailable).
      *
-     * @var int|null
+     * @var \WlSdk\AFlagSid|null
      */
-    public ?int $id_status = null;
+    public ?\WlSdk\AFlagSid $id_status = null;
 
     /**
      * The key of the business to show information for.
@@ -42,7 +42,7 @@ class ListGetRequest
     {
         return array_filter(
             [
-            'id_status' => $this->id_status,
+            'id_status' => $this->id_status?->value,
             'k_business' => $this->k_business,
             'k_class_tab' => $this->k_class_tab,
             'uid' => $this->uid,

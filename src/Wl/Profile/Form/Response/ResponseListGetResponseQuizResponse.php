@@ -23,16 +23,16 @@ class ResponseListGetResponseQuizResponse
      * The place where the request to fill out the quiz form occurred. One of the {@link
      * \WlSdk\Wl\Quiz\Response\SourceSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Quiz\Response\SourceSid|null
      */
-    public ?int $id_source = null;
+    public ?\WlSdk\Wl\Quiz\Response\SourceSid $id_source = null;
 
     /**
      * Status of the response. One of {@link \WlSdk\Core\Quiz\Response\ResponseStatusSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Core\Quiz\Response\ResponseStatusSid|null
      */
-    public ?int $id_status = null;
+    public ?\WlSdk\Core\Quiz\Response\ResponseStatusSid $id_status = null;
 
     /**
      * Determines whether the form can be viewed by staff member only after confirmation.
@@ -91,8 +91,8 @@ class ResponseListGetResponseQuizResponse
     {
         $this->a_visit = isset($data['a_visit']) ? (array)$data['a_visit'] : null;
         $this->dtl_date = isset($data['dtl_date']) ? (string)$data['dtl_date'] : null;
-        $this->id_source = isset($data['id_source']) ? (int)$data['id_source'] : null;
-        $this->id_status = isset($data['id_status']) ? (int)$data['id_status'] : null;
+        $this->id_source = isset($data['id_source']) ? \WlSdk\Wl\Quiz\Response\SourceSid::tryFrom((int)$data['id_source']) : null;
+        $this->id_status = isset($data['id_status']) ? \WlSdk\Core\Quiz\Response\ResponseStatusSid::tryFrom((int)$data['id_status']) : null;
         $this->is_private = isset($data['is_private']) ? (bool)$data['is_private'] : null;
         $this->k_quiz = isset($data['k_quiz']) ? (string)$data['k_quiz'] : null;
         $this->k_quiz_login = isset($data['k_quiz_login']) ? (string)$data['k_quiz_login'] : null;

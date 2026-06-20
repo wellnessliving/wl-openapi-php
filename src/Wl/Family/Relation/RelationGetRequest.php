@@ -7,9 +7,9 @@ class RelationGetRequest
      * ID of the user behavior flow.
      * One of {@link \WlSdk\Wl\User\Tracking\FlowSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\User\Tracking\FlowSid|null
      */
-    public ?int $id_flow = null;
+    public ?\WlSdk\Wl\User\Tracking\FlowSid $id_flow = null;
 
     /**
      * The business key.
@@ -29,7 +29,7 @@ class RelationGetRequest
     {
         return array_filter(
             [
-            'id_flow' => $this->id_flow,
+            'id_flow' => $this->id_flow?->value,
             'k_business' => $this->k_business,
             'uid' => $this->uid,
             ],

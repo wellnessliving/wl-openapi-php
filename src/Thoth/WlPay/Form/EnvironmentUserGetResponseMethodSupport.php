@@ -6,9 +6,9 @@ class EnvironmentUserGetResponseMethodSupport
     /**
      * The ID of type of payment method. One of {@link \WlSdk\RsPayMethodSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsPayMethodSid|null
      */
-    public ?int $id_pay_method = null;
+    public ?\WlSdk\RsPayMethodSid $id_pay_method = null;
 
     /**
      * Determines whether this method is available for clients. This field is only returned for custom payment
@@ -36,7 +36,7 @@ class EnvironmentUserGetResponseMethodSupport
 
     public function __construct(array $data)
     {
-        $this->id_pay_method = isset($data['id_pay_method']) ? (int)$data['id_pay_method'] : null;
+        $this->id_pay_method = isset($data['id_pay_method']) ? \WlSdk\RsPayMethodSid::tryFrom((int)$data['id_pay_method']) : null;
         $this->is_client = isset($data['is_client']) ? (bool)$data['is_client'] : null;
         $this->k_pay_method = isset($data['k_pay_method']) ? (string)$data['k_pay_method'] : null;
         $this->s_method = isset($data['s_method']) ? (string)$data['s_method'] : null;

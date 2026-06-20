@@ -13,9 +13,9 @@ class CartGetResponseRewardItem
     /**
      * The sale item type, one of the {@link \WlSdk\RsSaleSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsSaleSid|null
      */
-    public ?int $id_sale = null;
+    public ?\WlSdk\RsSaleSid $id_sale = null;
 
     /**
      * Whether selected login prize discount applied to item.
@@ -41,7 +41,7 @@ class CartGetResponseRewardItem
     public function __construct(array $data)
     {
         $this->i_quantity = isset($data['i_quantity']) ? (int)$data['i_quantity'] : null;
-        $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
+        $this->id_sale = isset($data['id_sale']) ? \WlSdk\RsSaleSid::tryFrom((int)$data['id_sale']) : null;
         $this->is_login_prize_used = isset($data['is_login_prize_used']) ? (bool)$data['is_login_prize_used'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->k_shop_product_option = isset($data['k_shop_product_option']) ? (string)$data['k_shop_product_option'] : null;

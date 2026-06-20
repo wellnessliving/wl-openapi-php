@@ -6,9 +6,9 @@ class SubscriptionInfoGetRequest
     /**
      * CID of the subscription information of which is requested.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract|null
      */
-    public ?int $cid_subscription = null;
+    public ?\WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract $cid_subscription = null;
 
     /**
      * Business key for which subscription information is requested.
@@ -21,7 +21,7 @@ class SubscriptionInfoGetRequest
     {
         return array_filter(
             [
-            'cid_subscription' => $this->cid_subscription,
+            'cid_subscription' => $this->cid_subscription?->value,
             'k_business' => $this->k_business,
             ],
             static fn($v) => $v !== null

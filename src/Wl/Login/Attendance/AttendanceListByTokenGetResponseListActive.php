@@ -161,31 +161,31 @@ class AttendanceListByTokenGetResponseListActive
     /**
      * The gender ID of the client. One of the {@link \WlSdk\AGenderSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\AGenderSid|null
      */
-    public ?int $id_gender = null;
+    public ?\WlSdk\AGenderSid $id_gender = null;
 
     /**
      * If this visit was paid for by an external system, this ID will be set. Otherwise, it will be `0`. One of
      * {@link \WlSdk\Wl\Visit\PassProspectSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Visit\PassProspectSid|null
      */
-    public ?int $id_pass_prospect = null;
+    public ?\WlSdk\Wl\Visit\PassProspectSid $id_pass_prospect = null;
 
     /**
      * The program ID of the Purchase Option. One of the {@link \WlSdk\RsProgramSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\RsProgramSid|null
      */
-    public ?int $id_program = null;
+    public ?\WlSdk\RsProgramSid $id_program = null;
 
     /**
      * The status of the visit. One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
-     * @var int|null
+     * @var \WlSdk\Wl\Visit\VisitSid|null
      */
-    public ?int $id_visit = null;
+    public ?\WlSdk\Wl\Visit\VisitSid $id_visit = null;
 
     /**
      * This will be `true` if the client has attended the visit.
@@ -498,10 +498,10 @@ class AttendanceListByTokenGetResponseListActive
         $this->i_order = isset($data['i_order']) ? (int)$data['i_order'] : null;
         $this->i_total = isset($data['i_total']) ? (int)$data['i_total'] : null;
         $this->i_visit_return = isset($data['i_visit_return']) ? (int)$data['i_visit_return'] : null;
-        $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
-        $this->id_pass_prospect = isset($data['id_pass_prospect']) ? (int)$data['id_pass_prospect'] : null;
-        $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
-        $this->id_visit = isset($data['id_visit']) ? (int)$data['id_visit'] : null;
+        $this->id_gender = isset($data['id_gender']) ? \WlSdk\AGenderSid::tryFrom((int)$data['id_gender']) : null;
+        $this->id_pass_prospect = isset($data['id_pass_prospect']) ? \WlSdk\Wl\Visit\PassProspectSid::tryFrom((int)$data['id_pass_prospect']) : null;
+        $this->id_program = isset($data['id_program']) ? \WlSdk\RsProgramSid::tryFrom((int)$data['id_program']) : null;
+        $this->id_visit = isset($data['id_visit']) ? \WlSdk\Wl\Visit\VisitSid::tryFrom((int)$data['id_visit']) : null;
         $this->is_attend = isset($data['is_attend']) ? (bool)$data['is_attend'] : null;
         $this->is_duration_pass = isset($data['is_duration_pass']) ? (bool)$data['is_duration_pass'] : null;
         $this->is_deposit = isset($data['is_deposit']) ? (bool)$data['is_deposit'] : null;
