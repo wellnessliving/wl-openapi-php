@@ -4,8 +4,7 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastMDomainToken
 {
     /**
-     * Status of the token. One of
-     * [DomainVerifyStatusSid](#/components/schemas/Wl.Mail.Domain.DomainVerifyStatusSid) constants.
+     * Status of the token. One of {@link \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid} constants.
      *
      * @var int|null
      */
@@ -33,8 +32,7 @@ class SubscribePostResponseMessageBroadcastMDomainToken
     public ?string $text_status = null;
 
     /**
-     * Type of the token. One of [DomainTokenTypeSid](#/components/schemas/Wl.Mail.Domain.DomainTokenTypeSid)
-     * constants in text representation.
+     * Type of the token. One of {@link \WlSdk\Wl\Mail\Domain\DomainTokenTypeSid} constants in text representation.
      *
      * @var string|null
      */

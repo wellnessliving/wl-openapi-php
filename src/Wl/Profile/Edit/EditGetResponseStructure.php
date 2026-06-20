@@ -4,9 +4,8 @@ namespace WlSdk\Wl\Profile\Edit;
 class EditGetResponseStructure
 {
     /**
-     * The ID of a system field. One of the [RsFieldGeneralSid](#/components/schemas/RsFieldGeneralSid) constants.
-     * This value is only defined if
-     * `id_field_type`=[RsFieldTypeSid::GENERAL](#/components/schemas/RsFieldTypeSid).
+     * The ID of a system field. One of the {@link \WlSdk\RsFieldGeneralSid} constants.
+     * This value is only defined if `id_field_type`={@link \WlSdk\RsFieldTypeSid}.
      *
      * @var int|null
      */
@@ -21,7 +20,7 @@ class EditGetResponseStructure
     public ?bool $is_require = null;
 
     /**
-     * The type of field. One of the [RsFieldTypeSid](#/components/schemas/RsFieldTypeSid) constants.
+     * The type of field. One of the {@link \WlSdk\RsFieldTypeSid} constants.
      *
      * @var int|null
      */

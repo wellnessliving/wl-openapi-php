@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Schedule\Page;
 class PageElementGetResponseAppointmentVisitInfo
 {
     /**
-     * Visit status. One of [VisitSid](#/components/schemas/Wl.Visit.VisitSid) constants.
+     * Visit status. One of {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
      * @var int|null
      */

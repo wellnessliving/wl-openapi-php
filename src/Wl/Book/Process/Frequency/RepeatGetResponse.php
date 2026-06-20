@@ -14,24 +14,21 @@ class RepeatGetResponse
     public ?array $a_visit = null;
 
     /**
-     * Date to start recurring booking. Not empty only when `id_repeat_end` ==
-     * [RsRepeatEndSid::DATE](#/components/schemas/RsRepeatEndSid).
+     * Date to start recurring booking. Not empty only when `id_repeat_end` == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var string|null
      */
     public ?string $dt_from = null;
 
     /**
-     * Date to finish recurring booking. Not empty only when `id_repeat_end` ==
-     * [RsRepeatEndSid::DATE](#/components/schemas/RsRepeatEndSid).
+     * Date to finish recurring booking. Not empty only when `id_repeat_end` == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var string|null
      */
     public ?string $dt_to = null;
 
     /**
-     * Count of the visits to be created. Not empty only when `id_repeat_end` ==
-     * [RsRepeatEndSid::COUNT](#/components/schemas/RsRepeatEndSid).
+     * Count of the visits to be created. Not empty only when `id_repeat_end` == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var int|null
      */

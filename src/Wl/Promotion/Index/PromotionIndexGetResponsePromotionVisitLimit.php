@@ -33,12 +33,12 @@ class PromotionIndexGetResponsePromotionVisitLimit
 
     /**
      * The type of `i_roll_over_expire`.
-     * One of [ADurationSid](#/components/schemas/ADurationSid) contantant.
+     * One of {@link \WlSdk\ADurationSid} contantant.
      * This can only be: <ul>
-     *     <li>[ADurationSid::DAY](#/components/schemas/ADurationSid)</li>
-     *     <li>[ADurationSid::WEEK](#/components/schemas/ADurationSid)</li>
-     *     <li>[ADurationSid::MONTH](#/components/schemas/ADurationSid)</li>
-     *     <li>[ADurationSid::YEAR](#/components/schemas/ADurationSid)</li>
+     *     <li>{@link \WlSdk\ADurationSid}</li>
+     *     <li>{@link \WlSdk\ADurationSid}</li>
+     *     <li>{@link \WlSdk\ADurationSid}</li>
+     *     <li>{@link \WlSdk\ADurationSid}</li>
      * </ul>
      *
      * @var int|null
@@ -46,7 +46,7 @@ class PromotionIndexGetResponsePromotionVisitLimit
     public ?int $id_roll_over_expire = null;
 
     /**
-     * The type of the limit cycle [Sid](#/components/schemas/Wl.Promotion.Edit.Limit.Cycle.Sid).
+     * The type of the limit cycle {@link \WlSdk\Wl\Promotion\Edit\Limit\Cycle\Sid}.
      *
      * @var int|null
      */

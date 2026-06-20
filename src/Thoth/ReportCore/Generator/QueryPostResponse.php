@@ -9,8 +9,7 @@ class QueryPostResponse
     /**
      * A list of dynamic fields in this report.
      * 
-     * Copy of result of
-     * [ReportGeneratorReportAbstract::generatorDynamic()](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract).
+     * Copy of result of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
      *
      * @var QueryPostResponseDynamic[]|null
      */
@@ -99,8 +98,7 @@ class QueryPostResponse
     /**
      * Status of the report.
      * 
-     * One of [ReportGeneratorStatusSid](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorStatusSid)
-     * constants.
+     * One of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid} constants.
      *
      * @var int|null
      */
@@ -109,8 +107,7 @@ class QueryPostResponse
     /**
      * Key of this report.
      * 
-     * This key may be used to subscribe to report changes with
-     * [UpdateChannel](#/components/schemas/Core.WebSocket.ChannelBroadcast).
+     * This key may be used to subscribe to report changes with {@link \WlSdk\Core\WebSocket\ChannelBroadcast}.
      *
      * @var string|null
      */

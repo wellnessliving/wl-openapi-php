@@ -4,7 +4,7 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastCDataUserProfile
 {
     /**
-     * User gender. One of [GenderSid](#/components/schemas/Wl.Gender.GenderSid) constants.
+     * User gender. One of {@link \WlSdk\Wl\Gender\GenderSid} constants.
      *
      * @var int|null
      */

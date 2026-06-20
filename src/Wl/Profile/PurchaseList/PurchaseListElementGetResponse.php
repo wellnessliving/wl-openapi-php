@@ -235,16 +235,16 @@ class PurchaseListElementGetResponse
     public ?int $i_use_duration = null;
 
     /**
-     * The activation mode. One of the [RsActivationSid](#/components/schemas/RsActivationSid) constants. This
-     * field is only added for promotions.
+     * The activation mode. One of the {@link \WlSdk\RsActivationSid} constants. This field is only added for
+     * promotions.
      *
      * @var int|null
      */
     public ?int $id_activation = null;
 
     /**
-     * The type of discount given via a reward prize. One of the
-     * [RsCommissionTypeSid](#/components/schemas/RsCommissionTypeSid) constants. This will be empty
+     * The type of discount given via a reward prize. One of the {@link \WlSdk\RsCommissionTypeSid} constants. This
+     * will be empty
      * if this discount wasn't applied.
      *
      * @var int|null
@@ -255,8 +255,7 @@ class PurchaseListElementGetResponse
      * The type of duration for the promotion. This is used only for membership-type promotions. This determines
      * whether the promotion lasts indefinitely, has a fixed duration, or ends on a specific date. The measurement
      * unit
-     * for key `i_payment_period`. One of the [RsDurationTypeSid](#/components/schemas/RsDurationTypeSid)
-     * constants.
+     * for key `i_payment_period`. One of the {@link \WlSdk\RsDurationTypeSid} constants.
      *
      * @var int|null
      */
@@ -265,7 +264,7 @@ class PurchaseListElementGetResponse
     /**
      * The ID of the promotion program. This is used only for promotions.
      * The measurement unit for key `i_payment_period`. The ID of promotion program type.
-     * One of the [RsProgramTypeSid](#/components/schemas/RsProgramTypeSid) constants.
+     * One of the {@link \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
      */
@@ -273,15 +272,14 @@ class PurchaseListElementGetResponse
 
     /**
      * The ID of the purchase item type. The measurement unit for key `i_payment_period`.
-     * The ID of purchase item type. One of the [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid)
-     * constants.
+     * The ID of purchase item type. One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
      */
     public ?int $id_purchase_item = null;
 
     /**
-     * The ID of the sale category. One of the constants [RsSaleSid](#/components/schemas/RsSaleSid).
+     * The ID of the sale category. One of the constants {@link \WlSdk\RsSaleSid}.
      *
      * @var int|null
      */

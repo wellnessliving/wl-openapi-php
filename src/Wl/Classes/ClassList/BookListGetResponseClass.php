@@ -46,7 +46,7 @@ class BookListGetResponseClass
     public ?int $i_capacity = null;
 
     /**
-     * Bookable type ID. One of [BookableSid](#/components/schemas/Wl.Service.BookableSid) constants.
+     * Bookable type ID. One of {@link \WlSdk\Wl\Service\BookableSid} constants.
      *
      * @var int|null
      */

@@ -16,8 +16,7 @@ class PaymentPostPostResponse
     public ?array $a_purchase_item = null;
 
     /**
-     * The payment type for the appointment. A constant of
-     * [RsAppointmentPaySid](#/components/schemas/RsAppointmentPaySid).
+     * The payment type for the appointment. A constant of {@link \WlSdk\RsAppointmentPaySid}.
      *
      * @var int|null
      */

@@ -118,7 +118,7 @@ class VideoElementGetResponse
 
     /**
      * Embedded video source.
-     * One of [VideoEmbedSourceSid](#/components/schemas/Wl.Video.VideoEmbedSourceSid) constants.
+     * One of {@link \WlSdk\Wl\Video\VideoEmbedSourceSid} constants.
      * 
      * `null` if video is uploaded.
      *
@@ -127,8 +127,8 @@ class VideoElementGetResponse
     public ?int $id_embed_source = null;
 
     /**
-     * [YesNoSid::NO](#/components/schemas/Core.Sid.YesNoSid) if the video is available in all locations.
-     * [YesNoSid::YES](#/components/schemas/Core.Sid.YesNoSid) if the video is available only in certain locations.
+     * {@link \WlSdk\Core\Sid\YesNoSid} if the video is available in all locations.
+     * {@link \WlSdk\Core\Sid\YesNoSid} if the video is available only in certain locations.
      *
      * @var int|null
      */
@@ -137,7 +137,7 @@ class VideoElementGetResponse
     /**
      * Source of the video.
      * 
-     * One of [VideoSourceSid](#/components/schemas/Wl.Video.VideoSourceSid) constants.
+     * One of {@link \WlSdk\Wl\Video\VideoSourceSid} constants.
      *
      * @var int|null
      */

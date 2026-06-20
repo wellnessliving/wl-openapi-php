@@ -26,7 +26,7 @@ class EventListGetResponseEventListLogoB
 
     /**
      * Image type identifier.
-     * One of [DriveTypeSid](#/components/schemas/Core.Drive.DriveTypeSid) constants.
+     * One of {@link \WlSdk\Core\Drive\DriveTypeSid} constants.
      *
      * @var int|null
      */

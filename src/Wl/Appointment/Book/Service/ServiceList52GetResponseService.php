@@ -104,7 +104,7 @@ class ServiceList52GetResponseService
     public ?int $i_age_to = null;
 
     /**
-     * The price type ID. One of [RsServicePriceSid](#/components/schemas/RsServicePriceSid) constants.
+     * The price type ID. One of {@link \WlSdk\RsServicePriceSid} constants.
      *
      * @var int|null
      */
@@ -118,16 +118,14 @@ class ServiceList52GetResponseService
     public ?int $i_duration = null;
 
     /**
-     * The type of client booking flow. One of
-     * [ServiceBookFlowSid](#/components/schemas/Wl.Service.ServiceBookFlowSid) constants.
+     * The type of client booking flow. One of {@link \WlSdk\Wl\Service\ServiceBookFlowSid} constants.
      *
      * @var int|null
      */
     public ?int $id_book_flow = null;
 
     /**
-     * The required payment type ID. One of [RsServiceRequireSid](#/components/schemas/RsServiceRequireSid)
-     * constants.
+     * The required payment type ID. One of {@link \WlSdk\RsServiceRequireSid} constants.
      *
      * @var int|null
      */

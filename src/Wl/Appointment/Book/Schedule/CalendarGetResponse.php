@@ -65,14 +65,14 @@ class CalendarGetResponse
     public ?int $i_capacity_waitlist = null;
 
     /**
-     * Last day of the week. One of [ADateWeekSid](#/components/schemas/ADateWeekSid) constants.
+     * Last day of the week. One of {@link \WlSdk\ADateWeekSid} constants.
      *
      * @var int|null
      */
     public ?int $i_week_end = null;
 
     /**
-     * First day of the week. One of [ADateWeekSid](#/components/schemas/ADateWeekSid) constants.
+     * First day of the week. One of {@link \WlSdk\ADateWeekSid} constants.
      *
      * @var int|null
      */

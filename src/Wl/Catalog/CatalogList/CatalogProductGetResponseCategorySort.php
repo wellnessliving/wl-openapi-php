@@ -4,8 +4,7 @@ namespace WlSdk\Wl\Catalog\CatalogList;
 class CatalogProductGetResponseCategorySort
 {
     /**
-     * The order of the products by category if
-     * [ShopCategorySortSid::CUSTOM](#/components/schemas/Wl.Shop.Category.ShopCategorySortSid) is selected.
+     * The order of the products by category if {@link \WlSdk\Wl\Shop\Category\ShopCategorySortSid} is selected.
      * Each element is a product key string, ordered as desired.
      *
      * @var int[]|null
@@ -13,15 +12,14 @@ class CatalogProductGetResponseCategorySort
     public ?array $a_order = null;
 
     /**
-     * The sort order. One of the [SortOrderSid](#/components/schemas/Core.Sid.SortOrderSid) constants.
+     * The sort order. One of the {@link \WlSdk\Core\Sid\SortOrderSid} constants.
      *
      * @var int|null
      */
     public ?int $id_order = null;
 
     /**
-     * The sort field ID. One of the
-     * [ShopCategorySortSid](#/components/schemas/Wl.Shop.Category.ShopCategorySortSid) constants.
+     * The sort field ID. One of the {@link \WlSdk\Wl\Shop\Category\ShopCategorySortSid} constants.
      *
      * @var int|null
      */

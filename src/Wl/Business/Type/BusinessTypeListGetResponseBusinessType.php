@@ -11,16 +11,15 @@ class BusinessTypeListGetResponseBusinessType
     public ?BusinessTypeListGetResponseBusinessTypeImageList $a_image_list = null;
 
     /**
-     * The business category. One of the [RsBusinessCategorySid](#/components/schemas/RsBusinessCategorySid)
-     * constants.
+     * The business category. One of the {@link \WlSdk\RsBusinessCategorySid} constants.
      *
      * @var int|null
      */
     public ?int $id_business_category = null;
 
     /**
-     * Type of the demo tour on the sales site connected to the business type. More about tours:
-     * [RsHomeTourSid](#/components/schemas/RsHomeTourSid).
+     * Type of the demo tour on the sales site connected to the business type. More about tours: {@link
+     * \WlSdk\RsHomeTourSid}.
      *
      * @var int|null
      */

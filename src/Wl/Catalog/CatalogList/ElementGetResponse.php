@@ -106,15 +106,14 @@ class ElementGetResponse
 
     /**
      * The purchase item category ID.
-     * One of the [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid) constants.
+     * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
      */
     public ?int $id_purchase_item = null;
 
     /**
-     * The ID of the item view category. One of the
-     * [PurchaseOptionViewSid](#/components/schemas/Wl.Catalog.PurchaseOptionViewSid) constants.
+     * The ID of the item view category. One of the {@link \WlSdk\Wl\Catalog\PurchaseOptionViewSid} constants.
      *
      * @var int|null
      */
@@ -122,7 +121,7 @@ class ElementGetResponse
 
     /**
      * The ID of item category.
-     * One of the [RsSaleSid](#/components/schemas/RsSaleSid) constants.
+     * One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
      */

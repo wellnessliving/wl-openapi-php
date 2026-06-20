@@ -7,8 +7,7 @@ namespace WlSdk\Wl\Classes\Period\Modify;
 class ModifyPostResponse
 {
     /**
-     * The class modify action type. One of the [RsClassModifyModeSid](#/components/schemas/RsClassModifyModeSid)
-     * constants.
+     * The class modify action type. One of the {@link \WlSdk\RsClassModifyModeSid} constants.
      *
      * @var int|null
      */

@@ -54,16 +54,14 @@ class Purchase56GetResponseLoginPromotion
     public ?int $i_limit_duration = null;
 
     /**
-     * Priority of this promotion. Result of
-     * [PromotionPrioritySid::priorityGet()](#/components/schemas/Wl.Promotion.Priority.PromotionPrioritySid)
-     * method.
+     * Priority of this promotion. Result of {@link \WlSdk\Wl\Promotion\Priority\PromotionPrioritySid} method.
      *
      * @var int|null
      */
     public ?int $i_promotion_priority = null;
 
     /**
-     * The program ID for Purchase Options. One of the [RsProgramSid](#/components/schemas/RsProgramSid) constants.
+     * The program ID for Purchase Options. One of the {@link \WlSdk\RsProgramSid} constants.
      *
      * @var int|null
      */

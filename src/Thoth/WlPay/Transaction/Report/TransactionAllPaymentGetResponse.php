@@ -54,8 +54,7 @@ class TransactionAllPaymentGetResponse
     /**
      * The report status.
      * 
-     * One of [ReportGeneratorStatusSid](#/components/schemas/Wl.Report.Generator.ReportGeneratorStatusSid)
-     * constants.
+     * One of {@link \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid} constants.
      *
      * @var int|null
      */

@@ -8,8 +8,8 @@ class EnvironmentGetResponse
 {
     /**
      * A list of supported bank card systems.
-     * Keys refer to card types based on card numbers (see [ACardSystemSid](#/components/schemas/ACardSystemSid)),
-     * and values are IDs of card systems (one of [ACardSystemSid](#/components/schemas/ACardSystemSid) constants).
+     * Keys refer to card types based on card numbers (see {@link \WlSdk\ACardSystemSid}),
+     * and values are IDs of card systems (one of {@link \WlSdk\ACardSystemSid} constants).
      *
      * @var int[]|null
      */
@@ -17,7 +17,7 @@ class EnvironmentGetResponse
 
     /**
      * A list of payment methods enabled for staff members.
-     * The ID is one of [RsPayMethodSid](#/components/schemas/RsPayMethodSid) constants.
+     * The ID is one of {@link \WlSdk\RsPayMethodSid} constants.
      * The value is always `true`.
      *
      * @var int[]|null

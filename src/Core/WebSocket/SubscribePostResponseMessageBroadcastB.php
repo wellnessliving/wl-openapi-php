@@ -13,7 +13,7 @@ class SubscribePostResponseMessageBroadcastB
     /**
      * New task status of the changed task.
      * 
-     * One of [TaskStatusSid](#/components/schemas/Wl.Task.TaskStatusSid).
+     * One of {@link \WlSdk\Wl\Task\TaskStatusSid}.
      *
      * @var int|null
      */

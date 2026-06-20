@@ -18,8 +18,7 @@ class PurchaseGetResponseSessionPass
     public ?string $k_session_pass = null;
 
     /**
-     * Type of the session pass purchase. One of [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid)
-     * constants.
+     * Type of the session pass purchase. One of {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
      */

@@ -4,21 +4,21 @@ namespace WlSdk\Wl\Catalog\CatalogList;
 class ElementGetResponseDataComponent
 {
     /**
-     * Program ID. One of [RsProgramSid](#/components/schemas/RsProgramSid) ID's. Only applies to promotions.
+     * Program ID. One of {@link \WlSdk\RsProgramSid} ID's. Only applies to promotions.
      *
      * @var int|null
      */
     public ?int $id_program = null;
 
     /**
-     * Purchase item ID. One of [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid) ID's.
+     * Purchase item ID. One of {@link \WlSdk\RsPurchaseItemSid} ID's.
      *
      * @var int|null
      */
     public ?int $id_purchase_item = null;
 
     /**
-     * Sale ID. One of [RsSaleSid](#/components/schemas/RsSaleSid) ID's.
+     * Sale ID. One of {@link \WlSdk\RsSaleSid} ID's.
      *
      * @var int|null
      */

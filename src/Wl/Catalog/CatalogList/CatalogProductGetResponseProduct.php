@@ -18,7 +18,7 @@ class CatalogProductGetResponseProduct
     public ?string $html_price_early = null;
 
     /**
-     * The sale category ID. One of the [RsSaleSid](#/components/schemas/RsSaleSid) constants.
+     * The sale category ID. One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
      */

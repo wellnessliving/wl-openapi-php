@@ -63,15 +63,15 @@ class DiscountCodeEditGetResponse
     public ?int $i_limit = null;
 
     /**
-     * Calendar periods for discount code duration from [ADurationSid](#/components/schemas/ADurationSid). Zero if
-     * discount code is never expires.
+     * Calendar periods for discount code duration from {@link \WlSdk\ADurationSid}. Zero if discount code is never
+     * expires.
      *
      * @var int|null
      */
     public ?int $id_duration = null;
 
     /**
-     * Type of the discount code duration from [RsDurationTypeSid](#/components/schemas/RsDurationTypeSid).
+     * Type of the discount code duration from {@link \WlSdk\RsDurationTypeSid}.
      *
      * @var int|null
      */
@@ -146,7 +146,7 @@ class DiscountCodeEditGetResponse
     /**
      * List of product and purchase options that are effected with this discount code.
      * Each element has the next format: `id_purchase_item`:`k_id`, where `id_purchase_item` -
-     * one of [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid), `k_id` is key of certain purchase item.
+     * one of {@link \WlSdk\RsPurchaseItemSid}, `k_id` is key of certain purchase item.
      *
      * @var string|null
      */

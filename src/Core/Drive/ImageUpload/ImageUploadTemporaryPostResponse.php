@@ -50,7 +50,7 @@ class ImageUploadTemporaryPostResponse
     public ?int $i_width_src = null;
 
     /**
-     * The image type ID. One of the [DriveTypeSid](#/components/schemas/Core.Drive.DriveTypeSid) constants.
+     * The image type ID. One of the {@link \WlSdk\Core\Drive\DriveTypeSid} constants.
      *
      * @var int|null
      */

@@ -18,7 +18,7 @@ class ListGetResponseBankCard
     public ?int $i_year = null;
 
     /**
-     * The card system ID. This is one of the [ACardSystemSid](#/components/schemas/ACardSystemSid) constants.
+     * The card system ID. This is one of the {@link \WlSdk\ACardSystemSid} constants.
      *
      * @var int|null
      */

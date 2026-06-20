@@ -4,7 +4,7 @@ namespace WlSdk\Thoth\WlPay\Method;
 class ListGetResponsePayMethod
 {
     /**
-     * The payment method type ID. One of [RsPayMethodSid](#/components/schemas/RsPayMethodSid) constants.
+     * The payment method type ID. One of {@link \WlSdk\RsPayMethodSid} constants.
      *
      * @var int|null
      */

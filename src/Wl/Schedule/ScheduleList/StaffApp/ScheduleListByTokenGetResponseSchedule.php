@@ -129,14 +129,14 @@ class ScheduleListByTokenGetResponseSchedule
     /**
      * Appointment title display style.
      *  Set only for appointments, for others it will be equal to 0.
-     *  Constants from [OptionSid](#/components/schemas/Wl.Schedule.Design.OptionSid).
+     *  Constants from {@link \WlSdk\Wl\Schedule\Design\OptionSid}.
      *
      * @var int|null
      */
     public ?int $id_option = null;
 
     /**
-     * The ID of the service type. One of [RsServiceSid](#/components/schemas/RsServiceSid) constants.
+     * The ID of the service type. One of {@link \WlSdk\RsServiceSid} constants.
      *
      * @var int|null
      */

@@ -190,8 +190,7 @@ class PurchaseElementGetResponse
     public ?int $i_use = null;
 
     /**
-     * Activation mode. One on [RsActivationSid](#/components/schemas/RsActivationSid) constants. This field is
-     * only added for promotions.
+     * Activation mode. One on {@link \WlSdk\RsActivationSid} constants. This field is only added for promotions.
      *
      * @var int|null
      */
@@ -199,7 +198,7 @@ class PurchaseElementGetResponse
 
     /**
      * The type of discount given via a reward prize.
-     * One on the [RsCommissionTypeSid](#/components/schemas/RsCommissionTypeSid) constants.
+     * One on the {@link \WlSdk\RsCommissionTypeSid} constants.
      * This will be empty if this discount wasn't applied.
      *
      * @var int|null
@@ -209,7 +208,7 @@ class PurchaseElementGetResponse
     /**
      * The type of duration for the promotion. This is used only for “membership” type promotions.
      * This determines whether the promotion lasts indefinitely, has a fixed duration, or ends on a specific date.
-     * One of the [RsDurationTypeSid](#/components/schemas/RsDurationTypeSid) consta
+     * One of the {@link \WlSdk\RsDurationTypeSid} consta
      *
      * @var int|null
      */
@@ -217,7 +216,7 @@ class PurchaseElementGetResponse
 
     /**
      * The ID of the promotion program.
-     * One of the [RsProgramTypeSid](#/components/schemas/RsProgramTypeSid) constants.
+     * One of the {@link \WlSdk\RsProgramTypeSid} constants.
      * This is used only for promotions.
      *
      * @var int|null
@@ -226,7 +225,7 @@ class PurchaseElementGetResponse
 
     /**
      * The ID of the purchase item type.
-     * One of the [RsPurchaseItemSid](#/components/schemas/RsPurchaseItemSid) constants.
+     * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
      */
@@ -234,7 +233,7 @@ class PurchaseElementGetResponse
 
     /**
      * The ID of the sale category.
-     * One of the [RsSaleSid](#/components/schemas/RsSaleSid) constants.
+     * One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
      */

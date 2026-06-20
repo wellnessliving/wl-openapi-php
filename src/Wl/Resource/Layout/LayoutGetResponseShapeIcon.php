@@ -32,7 +32,7 @@ class LayoutGetResponseShapeIcon
     public ?int $i_top = null;
 
     /**
-     * The icon ID. One of the [ImageIconSid](#/components/schemas/Wl.Resource.Image.ImageIconSid) constants.
+     * The icon ID. One of the {@link \WlSdk\Wl\Resource\Image\ImageIconSid} constants.
      *
      * @var int|null
      */

@@ -4,7 +4,7 @@ namespace WlSdk\Thoth\WlPay\Form;
 class EnvironmentGetResponseMethodSupport
 {
     /**
-     * The ID of type of payment method. One of [RsPayMethodSid](#/components/schemas/RsPayMethodSid) constants.
+     * The ID of type of payment method. One of {@link \WlSdk\RsPayMethodSid} constants.
      *
      * @var int|null
      */

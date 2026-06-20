@@ -18,8 +18,7 @@ class DebtTransactionGetResponseTransaction
     public ?string $m_pay_amount = null;
 
     /**
-     * The payment method ID that was used for the payment. One of
-     * [RsPayMethodSid](#/components/schemas/RsPayMethodSid) constants.
+     * The payment method ID that was used for the payment. One of {@link \WlSdk\RsPayMethodSid} constants.
      *
      * @var int|null
      */

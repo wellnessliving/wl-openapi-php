@@ -11,7 +11,7 @@ class RegionGetResponseRegion
     public ?RegionGetResponseRegionRegion $a_region = null;
 
     /**
-     * The locale ID of the country. One of the [LocaleSid](#/components/schemas/Core.Locale.LocaleSid) constants.
+     * The locale ID of the country. One of the {@link \WlSdk\Core\Locale\LocaleSid} constants.
      *
      * @var int|null
      */

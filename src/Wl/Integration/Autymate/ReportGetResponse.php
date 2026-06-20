@@ -64,8 +64,7 @@ class ReportGetResponse
     /**
      * The status of the report.
      * 
-     * One of the [ReportGeneratorStatusSid](#/components/schemas/Wl.Report.Generator.ReportGeneratorStatusSid)
-     * constants.
+     * One of the {@link \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid} constants.
      *
      * @var int|null
      */

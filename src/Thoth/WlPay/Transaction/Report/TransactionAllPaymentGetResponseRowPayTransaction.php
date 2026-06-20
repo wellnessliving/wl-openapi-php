@@ -4,7 +4,7 @@ namespace WlSdk\Thoth\WlPay\Transaction\Report;
 class TransactionAllPaymentGetResponseRowPayTransaction
 {
     /**
-     * Payment method ID. One of [RsPayMethodSid](#/components/schemas/RsPayMethodSid) constants.
+     * Payment method ID. One of {@link \WlSdk\RsPayMethodSid} constants.
      *
      * @var int|null
      */

@@ -39,7 +39,7 @@ class UserInfoGetResponseResultList
     public ?string $dt_birth = null;
 
     /**
-     * The ID of the user's gender. One of the [AGenderSid](#/components/schemas/AGenderSid) constants.
+     * The ID of the user's gender. One of the {@link \WlSdk\AGenderSid} constants.
      *
      * @var int|null
      */

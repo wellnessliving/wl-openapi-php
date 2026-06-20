@@ -8,7 +8,7 @@ class Process59GetResponse
 {
     /**
      * Relationships who clients are allowed to book for.
-     * One of the [RsFamilyRelationSid](#/components/schemas/RsFamilyRelationSid) constants.
+     * One of the {@link \WlSdk\RsFamilyRelationSid} constants.
      * 
      * This will be `null` if clients aren't allowed to book for their relationships.
      *
@@ -25,7 +25,7 @@ class Process59GetResponse
 
     /**
      * The purchase rule ID.
-     * One of the [RequirePaySid](#/components/schemas/Wl.Classes.RequirePaySid) constants.
+     * One of the {@link \WlSdk\Wl\Classes\RequirePaySid} constants.
      *
      * @var int|null
      */

@@ -21,7 +21,7 @@ class LoginGetResponse
     public ?bool $can_send_message = null;
 
     /**
-     * The gender ID. It will be one of the [AGenderSid](#/components/schemas/AGenderSid) constants.
+     * The gender ID. It will be one of the {@link \WlSdk\AGenderSid} constants.
      *
      * @var int|null
      */

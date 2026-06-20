@@ -8,7 +8,7 @@ class VideoListPutResponse
 {
     /**
      * Embedded video source.
-     * One of [VideoEmbedSourceSid](#/components/schemas/Wl.Video.VideoEmbedSourceSid) constants.
+     * One of {@link \WlSdk\Wl\Video\VideoEmbedSourceSid} constants.
      * 
      * `null` if video is uploaded.
      *

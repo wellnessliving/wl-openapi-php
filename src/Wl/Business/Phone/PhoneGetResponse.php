@@ -7,8 +7,8 @@ namespace WlSdk\Wl\Business\Phone;
 class PhoneGetResponse
 {
     /**
-     * Locale corresponding to the business' address country. One of
-     * [LocaleSid](#/components/schemas/Core.Locale.LocaleSid) constants.
+     * Locale corresponding to the business' address country. One of {@link \WlSdk\Core\Locale\LocaleSid}
+     * constants.
      * Note that this may not be the same as the business' locale, if the business is misconfigured and has an
      * address
      * country that is outside its locale.

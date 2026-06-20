@@ -10,8 +10,7 @@ class AmazonRegionGetResponse
      * List of region IDs for `a_business`.
      * 
      * Key - is business key.
-     * Value - is region ID. One of [AmazonRegionSid](#/components/schemas/Core.Amazon.Region.AmazonRegionSid)
-     * constants.
+     * Value - is region ID. One of {@link \WlSdk\Core\Amazon\Region\AmazonRegionSid} constants.
      *   `0` if this business is from an unknown region.
      *
      * @var int[]|null

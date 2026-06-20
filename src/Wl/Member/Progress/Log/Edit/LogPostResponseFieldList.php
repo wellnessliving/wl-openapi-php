@@ -4,22 +4,21 @@ namespace WlSdk\Wl\Member\Progress\Log\Edit;
 class LogPostResponseFieldList
 {
     /**
-     * Field ID. One of the [ProgressFieldSid](#/components/schemas/Wl.Member.Progress.Field.ProgressFieldSid).
+     * Field ID. One of the {@link \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid}.
      *
      * @var int|null
      */
     public ?int $id_field = null;
 
     /**
-     * Field measurement unit ID. One of the
-     * [MeasurementSid](#/components/schemas/Wl.Member.Progress.Field.MeasurementSid) constants.
+     * Field measurement unit ID. One of the {@link \WlSdk\Wl\Member\Progress\Field\MeasurementSid} constants.
      *
      * @var int|null
      */
     public ?int $id_measurement_unit = null;
 
     /**
-     * Field type ID. One of the [TypeSid](#/components/schemas/Wl.Member.Progress.Field.TypeSid) constants.
+     * Field type ID. One of the {@link \WlSdk\Wl\Member\Progress\Field\TypeSid} constants.
      *
      * @var int|null
      */

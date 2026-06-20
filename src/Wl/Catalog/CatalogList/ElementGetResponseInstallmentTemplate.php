@@ -11,7 +11,7 @@ class ElementGetResponseInstallmentTemplate
     public ?int $i_count = null;
 
     /**
-     * The duration of a single period. One of the [ADurationSid](#/components/schemas/ADurationSid) constants.
+     * The duration of a single period. One of the {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
      */

@@ -99,15 +99,14 @@ class AttendanceInfoByTokenGetResponse
     public ?int $i_duration = null;
 
     /**
-     * Type of note. One of [NoteSid](#/components/schemas/Wl.Visit.Note.Sid.NoteSid) constants. `false` if notes
-     * not allowed.
+     * Type of note. One of {@link \WlSdk\Wl\Visit\Note\Sid\NoteSid} constants. `false` if notes not allowed.
      *
      * @var int|null
      */
     public ?int $id_note = null;
 
     /**
-     * Service type, one of [RsServiceSid](#/components/schemas/RsServiceSid).
+     * Service type, one of {@link \WlSdk\RsServiceSid}.
      *
      * @var int|null
      */

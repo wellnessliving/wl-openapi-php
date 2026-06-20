@@ -47,7 +47,7 @@ class StaffView74GetResponseResultListStaff
     public ?string $html_location_title = null;
 
     /**
-     * The staff member's gender. One of the [AGenderSid](#/components/schemas/AGenderSid) constants.
+     * The staff member's gender. One of the {@link \WlSdk\AGenderSid} constants.
      *
      * @var int|null
      */

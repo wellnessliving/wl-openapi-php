@@ -35,10 +35,8 @@ class PromotionIndexGetResponsePromotion
     /**
      * Attendance restrictions, if available. If unavailable, this will be an empty array. Every element has a key,
      * which is a type of
-     * the time period [ADurationSid::DAY](#/components/schemas/ADurationSid),
-     * [ADurationSid::WEEK](#/components/schemas/ADurationSid),
-     * [ADurationSid::MONTH](#/components/schemas/ADurationSid),
-     * [ADurationSid::YEAR](#/components/schemas/ADurationSid).
+     * the time period {@link \WlSdk\ADurationSid}, {@link \WlSdk\ADurationSid}, {@link \WlSdk\ADurationSid},
+     * {@link \WlSdk\ADurationSid}.
      * The values are:
      *
      * @var PromotionIndexGetResponsePromotionVisitLimit|null
@@ -79,12 +77,12 @@ class PromotionIndexGetResponsePromotion
 
     /**
      * The type of `i_limit_duration`.
-     * One of [ADurationSid](#/components/schemas/ADurationSid) contantant.
+     * One of {@link \WlSdk\ADurationSid} contantant.
      * This can only be: <ul>
-     *     <li>[ADurationSid::MINUTE](#/components/schemas/ADurationSid)</li>
-     *     <li>[ADurationSid::HOUR](#/components/schemas/ADurationSid)</li>
-     *     <li>[ADurationSid::MONTH](#/components/schemas/ADurationSid)</li>
-     *     <li>[ADurationSid::YEAR](#/components/schemas/ADurationSid)</li>
+     *     <li>{@link \WlSdk\ADurationSid}</li>
+     *     <li>{@link \WlSdk\ADurationSid}</li>
+     *     <li>{@link \WlSdk\ADurationSid}</li>
+     *     <li>{@link \WlSdk\ADurationSid}</li>
      * </ul>
      *
      * @var int|null
@@ -94,7 +92,7 @@ class PromotionIndexGetResponsePromotion
     /**
      * The type of periods for the duration type "Period".
      * For example, if the duration of the Purchase Option is 12 months, this field will be the ID of the month.
-     * See all the possible options here: [ADurationSid](#/components/schemas/ADurationSid).
+     * See all the possible options here: {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
      */
@@ -102,7 +100,7 @@ class PromotionIndexGetResponsePromotion
 
     /**
      * The type of the duration. This can be "Without End", "Expires on a certain date", "Period".
-     * See more information here: [RsDurationTypeSid](#/components/schemas/RsDurationTypeSid).
+     * See more information here: {@link \WlSdk\RsDurationTypeSid}.
      *
      * @var int|null
      */
@@ -111,7 +109,7 @@ class PromotionIndexGetResponsePromotion
     /**
      * The type of the Purchase Option. The `id_program` relates to only one `id_program_type` and one
      * `id_program_category`.
-     * See more information here: [RsProgramSid](#/components/schemas/RsProgramSid).
+     * See more information here: {@link \WlSdk\RsProgramSid}.
      *
      * @var int|null
      */
@@ -120,7 +118,7 @@ class PromotionIndexGetResponsePromotion
     /**
      * The category of the program for promotions. The `id_program_category` relates to more than one
      * `id_program`.
-     * See more information here: [RsProgramCategorySid](#/components/schemas/RsProgramCategorySid).
+     * See more information here: {@link \WlSdk\RsProgramCategorySid}.
      *
      * @var int|null
      */
@@ -128,7 +126,7 @@ class PromotionIndexGetResponsePromotion
 
     /**
      * The ID of the promotion program type. The `id_program_type` relates to more than one `id_program`.
-     * See more information here: [RsProgramTypeSid](#/components/schemas/RsProgramTypeSid).
+     * See more information here: {@link \WlSdk\RsProgramTypeSid}.
      *
      * @var int|null
      */

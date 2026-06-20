@@ -4,7 +4,7 @@ namespace WlSdk\Wl\Integration\Curves;
 class CurvesFranchiseLocationGetResponseLocationList
 {
     /**
-     * Currency ID. One of [CurrencySid](#/components/schemas/Core.Locale.CurrencySid) constants.
+     * Currency ID. One of {@link \WlSdk\Core\Locale\CurrencySid} constants.
      *
      * @var int|null
      */

@@ -5,7 +5,7 @@ class MemberInfoGetResponseItems
 {
     /**
      * ID of color the notice is displayed in.
-     * One of [MemberInfoColorSid](#/components/schemas/Wl.Reception.Application.MemberInfoColorSid) constants.
+     * One of {@link \WlSdk\Wl\Reception\Application\MemberInfoColorSid} constants.
      *
      * @var int|null
      */
@@ -13,7 +13,7 @@ class MemberInfoGetResponseItems
 
     /**
      * ID of icon that accompanies the message.
-     * One of [MemberInfoIconSid](#/components/schemas/Wl.Reception.Application.MemberInfoIconSid) constants.
+     * One of {@link \WlSdk\Wl\Reception\Application\MemberInfoIconSid} constants.
      *
      * @var int|null
      */
