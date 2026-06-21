@@ -54,7 +54,7 @@ class EventListGetResponseEventListSchedule
     public ?string $k_location = null;
 
     /**
-     * Resource key, which has category ResourceCategoryEnum::LOCATION.
+     * Resource key, which has category {@link \WlSdk\Wl\Resource\ResourceCategoryEnum}.
      * Only one such resource can be selected for a schedule.
      *
      * Empty string, if no off-site location is used.

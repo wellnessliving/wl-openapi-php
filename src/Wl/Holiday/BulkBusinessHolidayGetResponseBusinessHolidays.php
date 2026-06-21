@@ -47,23 +47,23 @@ class BulkBusinessHolidayGetResponseBusinessHolidays
     /**
      * `1` if all classes are selected to cancel, `0` - otherwise.
      *
-     * @var int|null
+     * @var bool|null
      */
-    public ?int $is_class_all = null;
+    public ?bool $is_class_all = null;
 
     /**
      * `1` if all events are selected to cancel, `0` - otherwise.
      *
-     * @var int|null
+     * @var bool|null
      */
-    public ?int $is_event_all = null;
+    public ?bool $is_event_all = null;
 
     /**
      * `1` if all services are selected to cancel, `0` - otherwise.
      *
-     * @var int|null
+     * @var bool|null
      */
-    public ?int $is_service_all = null;
+    public ?bool $is_service_all = null;
 
     /**
      * Business key.
@@ -107,9 +107,9 @@ class BulkBusinessHolidayGetResponseBusinessHolidays
         $this->a_event_only = isset($data['a_event_only']) ? (array)$data['a_event_only'] : null;
         $this->dt_end = isset($data['dt_end']) ? (string)$data['dt_end'] : null;
         $this->dt_start = isset($data['dt_start']) ? (string)$data['dt_start'] : null;
-        $this->is_class_all = isset($data['is_class_all']) ? (int)$data['is_class_all'] : null;
-        $this->is_event_all = isset($data['is_event_all']) ? (int)$data['is_event_all'] : null;
-        $this->is_service_all = isset($data['is_service_all']) ? (int)$data['is_service_all'] : null;
+        $this->is_class_all = isset($data['is_class_all']) ? (bool)$data['is_class_all'] : null;
+        $this->is_event_all = isset($data['is_event_all']) ? (bool)$data['is_event_all'] : null;
+        $this->is_service_all = isset($data['is_service_all']) ? (bool)$data['is_service_all'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;
         $this->k_holiday = isset($data['k_holiday']) ? (string)$data['k_holiday'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;

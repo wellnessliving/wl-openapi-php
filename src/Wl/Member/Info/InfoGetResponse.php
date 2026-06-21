@@ -17,7 +17,7 @@ class InfoGetResponse
 
     /**
      * List of users data.
-     * Keys - users primary keys. Values - users data `_get()` for details.
+     * Keys - users primary keys. Values - users data.
      * Keys refer to clients' primary keys, and values refer to clients' data.
      * If `null`, data for a single client is being requested.
      *

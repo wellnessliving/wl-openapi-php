@@ -58,7 +58,6 @@ class ElementGetResponse
      * Received only if `s_event` has been specified. In this case, other fields are not populated.
      *
      * Key is the event class key.
-     * Value has the same structure as the return value of `_get()`.
      *
      * @var ElementGetResponseEvent[]|null
      */

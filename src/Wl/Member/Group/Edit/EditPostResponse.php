@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Member\Group\Edit;
 class EditPostResponse
 {
     /**
-     * Member group primary key in Sql table.
+     * Member group key.
      *
      * @var string|null
      */
@@ -16,7 +16,6 @@ class EditPostResponse
 
     /**
      * Key of existing template.
-     * Primary key in the SearchTemplateSql table.
      *
      * Can be empty if template needs to be created.
      *

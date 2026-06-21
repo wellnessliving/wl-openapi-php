@@ -11,6 +11,7 @@ class ListGetRequest
      * 2 - if this is an off-site location with its own address.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Resource\ResourceCategoryEnum
      */
     public ?int $id_category = null;
 
@@ -23,7 +24,7 @@ class ListGetRequest
     public ?bool $is_franchise = null;
 
     /**
-     * Business key, primary key in RsBusinessSql.
+     * Business key.
      *
      * @var string|null
      */

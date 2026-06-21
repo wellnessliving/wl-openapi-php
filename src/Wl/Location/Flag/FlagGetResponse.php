@@ -21,7 +21,7 @@ class FlagGetResponse
      *
      * This field is set, if API gets `a_uid` and not `uid` properties.
      *
-     * Keys are user keys (primary keys in the PassportLoginSql table).
+     * Keys are user keys.
      * Values are flag restriction arrays:
      *
      * @var FlagGetResponseRestrictionsMultiple|null

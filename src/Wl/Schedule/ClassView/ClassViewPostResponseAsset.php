@@ -19,11 +19,13 @@ class ClassViewPostResponseAsset
     public ?int $i_index = null;
 
     /**
-     * Type of the asset: Asset or Off-Site Location.
+     * Type of the asset: Asset or Off-Site Location. One of {@link \WlSdk\Wl\Resource\ResourceCategoryEnum}
+     * constant.
      *
-     * @var string|null
+     * @var int|null
+     * @see \WlSdk\Wl\Resource\ResourceCategoryEnum
      */
-    public ?string $id_category = null;
+    public ?int $id_category = null;
 
     /**
      * City of the asset, if this is Off-Site Location.
@@ -79,7 +81,7 @@ class ClassViewPostResponseAsset
     {
         $this->i_count = isset($data['i_count']) ? (int)$data['i_count'] : null;
         $this->i_index = isset($data['i_index']) ? (int)$data['i_index'] : null;
-        $this->id_category = isset($data['id_category']) ? (string)$data['id_category'] : null;
+        $this->id_category = isset($data['id_category']) ? (int)$data['id_category'] : null;
         $this->k_city = isset($data['k_city']) ? (string)$data['k_city'] : null;
         $this->k_resource = isset($data['k_resource']) ? (string)$data['k_resource'] : null;
         $this->text_address = isset($data['text_address']) ? (string)$data['text_address'] : null;

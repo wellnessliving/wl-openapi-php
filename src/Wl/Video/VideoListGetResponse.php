@@ -16,9 +16,9 @@ class VideoListGetResponse
     public ?array $a_list = null;
 
     /**
-     * Pagination data. Empty array if pagination is not active (total video count is within
-     * `VIDEO_COUNT_PAGINATION`). Otherwise contains a list of page entries as
-     * returned by a_page_list(). Each element:
+     * Pagination data.
+     * Empty array if pagination is not active (total video count is within `VIDEO_COUNT_PAGINATION`).
+     * Otherwise contains a list of page entries as:
      *
      * @var VideoListGetResponsePage|null
      */

@@ -15,13 +15,13 @@ class PageElementGetResponseAsset
     /**
      * Number of sessions.
      *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $i_count = null;
+    public ?int $i_count = null;
 
     public function __construct(array $data)
     {
         $this->s_name = isset($data['s_name']) ? (string)$data['s_name'] : null;
-        $this->i_count = isset($data['i_count']) ? (string)$data['i_count'] : null;
+        $this->i_count = isset($data['i_count']) ? (int)$data['i_count'] : null;
     }
 }

@@ -28,7 +28,7 @@ class SkinForeignPostRequest
 
     /**
      * Data specific for the skin type.
-     * It is passed to RsSkinData::data_set() method.
+     *
      *
      * All fields are optional and may be omitted if not needed.
      *
