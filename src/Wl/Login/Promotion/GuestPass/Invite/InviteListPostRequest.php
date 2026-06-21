@@ -32,9 +32,13 @@ class InviteListPostRequest
     public ?string $uid_guest = null;
 
     /**
-     * No description.
+     * Guest information.
      *
-     * @var array[]|null
+     * &gt; Used only for `POST` request to send invitation to the guest without account.
+     *
+     * Required fields:
+     *
+     * @var array|null
      */
     public ?array $a_guest = null;
 

@@ -8,11 +8,11 @@ namespace WlSdk\Wl\Appointment\Book\Schedule;
 class DayTimeGetResponse
 {
     /**
-     * No description.
+     * An array with a schedule of available appointment booking times.
      *
-     * @var DayTimeGetResponseTime[]|null
+     * @var DayTimeGetResponseTime|null
      */
-    public ?array $a_time = null;
+    public ?DayTimeGetResponseTime $a_time = null;
 
     /**
      * The date to show the available appointment booking schedule.
@@ -53,7 +53,7 @@ class DayTimeGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_time = isset($data['a_time']) ? array_map(static fn ($item) => new DayTimeGetResponseTime((array)$item), (array)$data['a_time']) : null;
+        $this->a_time = isset($data['a_time']) ? new DayTimeGetResponseTime((array)$data['a_time']) : null;
         $this->dt_date = isset($data['dt_date']) ? (string)$data['dt_date'] : null;
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
         $this->i_capacity_waitlist = isset($data['i_capacity_waitlist']) ? (int)$data['i_capacity_waitlist'] : null;

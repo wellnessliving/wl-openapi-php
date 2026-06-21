@@ -23,6 +23,7 @@ class ContractGetRequest
      * Optional if `k_purchase_item` is not empty.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 

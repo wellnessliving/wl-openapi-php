@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Login\Type;
 class LoginTypeGetResponse
 {
     /**
-     * No description.
+     * A list of login types, keys, and information. Each element is an array with the following information:
      *
      * @var LoginTypeGetResponseLoginTypeList[]|null
      */

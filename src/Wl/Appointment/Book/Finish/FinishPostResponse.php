@@ -8,7 +8,8 @@ namespace WlSdk\Wl\Appointment\Book\Finish;
 class FinishPostResponse
 {
     /**
-     * No description.
+     * The keys of the booked appointments.
+     * Every element has key:
      *
      * @var FinishPostResponseAppointment[]|null
      */
@@ -29,7 +30,7 @@ class FinishPostResponse
     public ?array $a_visit = null;
 
     /**
-     * No description.
+     * Values are arrays with next keys:
      *
      * @var FinishPostResponseVisitPayment[]|null
      */

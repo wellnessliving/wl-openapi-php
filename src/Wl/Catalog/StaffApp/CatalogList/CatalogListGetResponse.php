@@ -8,7 +8,9 @@ namespace WlSdk\Wl\Catalog\StaffApp\CatalogList;
 class CatalogListGetResponse
 {
     /**
-     * No description.
+     * Products in the online store category.
+     *
+     * Every element has the following fields:
      *
      * @var CatalogListGetResponseShopProduct[]|null
      */

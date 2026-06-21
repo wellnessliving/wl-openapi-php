@@ -9,6 +9,7 @@ class BusinessAccessGetResponseBusinessData
      * `null` if no regions are currently set.
      *
      * @var int|null
+     * @see \WlSdk\Core\Amazon\Region\AmazonRegionSid
      */
     public ?int $id_region = null;
 

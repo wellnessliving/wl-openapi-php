@@ -11,6 +11,7 @@ class PartnerSettingsGetResponse
      * The homepage tour of the business, which depends on the type.
      *
      * @var int|null
+     * @see \WlSdk\RsHomeTourSid
      */
     public ?int $id_business_tour = null;
 

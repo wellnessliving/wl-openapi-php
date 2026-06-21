@@ -41,7 +41,7 @@ class PurchaseGetResponsePurchase
     public ?string $f_price_early = null;
 
     /**
-     * This is only set for Purchase Options with the 'membership' program type. The measurement unit of
+     * This is only set for Purchase Options with the 'membership' program type. The measurement unit int
      * `i_payment_period` in short form.
      *
      * @var string|null
@@ -82,6 +82,7 @@ class PurchaseGetResponsePurchase
      * \WlSdk\RsProgramCategorySid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramCategorySid
      */
     public ?int $id_program_category = null;
 
@@ -90,6 +91,7 @@ class PurchaseGetResponsePurchase
      * \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
      */
     public ?int $id_program_type = null;
 
@@ -97,6 +99,7 @@ class PurchaseGetResponsePurchase
      * The ID of Purchase Option type. One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 
@@ -166,7 +169,7 @@ class PurchaseGetResponsePurchase
     public ?string $s_contract = null;
 
     /**
-     * This is only set for Purchase Options with the 'membership' program type. The measurement unit of
+     * This is only set for Purchase Options with the 'membership' program type. The measurement unit int
      * `i_payment_period`.
      *
      * @var string|null

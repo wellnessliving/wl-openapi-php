@@ -17,7 +17,7 @@ class Finish47PostRequest
      * Specify this if `uid` is empty.
      * Must contain the following keys:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_user = null;
 
@@ -25,6 +25,7 @@ class Finish47PostRequest
      * The payment type ID for the appointment. One of the {@link \WlSdk\RsAppointmentPaySid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsAppointmentPaySid
      */
     public ?int $id_pay = null;
 
@@ -91,30 +92,30 @@ class Finish47PostRequest
     public ?array $a_answer = null;
 
     /**
-     * No description.
+     * The documentation is the same as in [FinishApi](/Wl/Appointment/Book/Finish/Finish.json).
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_book_data = null;
 
     /**
-     * No description.
+     * Information for sending an appointment notification.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_notification = null;
 
     /**
-     * No description.
+     * A list of payment sources to pay with.
      *
      * @var array[]|null
      */
     public ?array $a_pay_form = null;
 
     /**
-     * No description.
+     * Data required for payment. Has next structure:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_payment_data = null;
 
@@ -139,6 +140,7 @@ class Finish47PostRequest
      * The booking mode ID. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 

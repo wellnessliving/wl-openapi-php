@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Appointment\Book\Asset;
 class CategoryGetResponse
 {
     /**
-     * No description.
+     * A list of information about asset categories.
      *
      * @var CategoryGetResponseCategory[]|null
      */

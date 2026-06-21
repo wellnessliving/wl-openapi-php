@@ -8,6 +8,7 @@ class CredentialDeleteRequest
      * The CID of the credential.
      *
      * @var int|null
+     * @see \WlSdk\Core\Request\Api\Application\Credential\CredentialAbstract
      */
     public ?int $cid_credential = null;
 

@@ -8,7 +8,9 @@ namespace WlSdk\Wl\Book\Process\Store;
 class StoreGroupPostResponse
 {
     /**
-     * No description.
+     * A list of distributed new shared purchase items which are selected by a group of clients.
+     *
+     * Keys are UIDs of clients, values are arrays with the following structure:
      *
      * @var StoreGroupPostResponsePurchaseItemDistribute[]|null
      */

@@ -8,35 +8,35 @@ namespace WlSdk\Wl\Integration\Curves;
 class CurvesFranchiseLocationGetResponse
 {
     /**
-     * No description.
+     * The city list. Each element has next structure:
      *
      * @var CurvesFranchiseLocationGetResponseCityList[]|null
      */
     public ?array $a_city_list = null;
 
     /**
-     * No description.
+     * The country list. Each element has next structure:
      *
      * @var CurvesFranchiseLocationGetResponseCountryList[]|null
      */
     public ?array $a_country_list = null;
 
     /**
-     * No description.
+     * The location list. Each element has the next structure:
      *
      * @var CurvesFranchiseLocationGetResponseLocationList[]|null
      */
     public ?array $a_location_list = null;
 
     /**
-     * No description.
+     * The region list. Each element has the next structure:
      *
      * @var CurvesFranchiseLocationGetResponseRegionList[]|null
      */
     public ?array $a_region_list = null;
 
     /**
-     * No description.
+     * The state list. Each element has the next structure:
      *
      * @var CurvesFranchiseLocationGetResponseStateList[]|null
      */

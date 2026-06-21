@@ -163,6 +163,7 @@ class AttendanceListByTokenGetResponseListWait
      * The gender ID of the client. One of the {@link \WlSdk\AGenderSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\AGenderSid
      */
     public ?int $id_gender = null;
 
@@ -171,6 +172,7 @@ class AttendanceListByTokenGetResponseListWait
      * {@link \WlSdk\Wl\Visit\PassProspectSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Visit\PassProspectSid
      */
     public ?int $id_pass_prospect = null;
 
@@ -178,6 +180,7 @@ class AttendanceListByTokenGetResponseListWait
      * The program ID of the Purchase Option. One of the {@link \WlSdk\RsProgramSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramSid
      */
     public ?int $id_program = null;
 
@@ -185,6 +188,7 @@ class AttendanceListByTokenGetResponseListWait
      * The status of the visit. One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Visit\VisitSid
      */
     public ?int $id_visit = null;
 

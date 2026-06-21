@@ -16,7 +16,8 @@ class BusinessAccessGetResponse
     public ?array $a_business = null;
 
     /**
-     * No description.
+     * The list of accessible businesses with their corresponding data. Each value is an array with the next
+     * structure:
      *
      * @var BusinessAccessGetResponseBusinessData[]|null
      */

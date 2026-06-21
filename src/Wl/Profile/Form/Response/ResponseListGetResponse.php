@@ -8,14 +8,14 @@ namespace WlSdk\Wl\Profile\Form\Response;
 class ResponseListGetResponse
 {
     /**
-     * No description.
+     * The list of uncompleted quiz responses. Each element has the next structure:
      *
      * @var ResponseListGetResponseQuizLogin[]|null
      */
     public ?array $a_quiz_login = null;
 
     /**
-     * No description.
+     * The list of completed quiz responses. Each element has the next structure:
      *
      * @var ResponseListGetResponseQuizResponse[]|null
      */

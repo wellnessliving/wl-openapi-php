@@ -8,11 +8,11 @@ namespace WlSdk\Core\Drive\ImageUpload;
 class ImageUploadGetResponse
 {
     /**
-     * No description.
+     * Information about the text for an empty image upload.
      *
-     * @var ImageUploadGetResponseTextEmpty[]|null
+     * @var ImageUploadGetResponseTextEmpty|null
      */
-    public ?array $a_text_empty = null;
+    public ?ImageUploadGetResponseTextEmpty $a_text_empty = null;
 
     /**
      * An HTML string to use for the image recommendation.
@@ -127,7 +127,7 @@ class ImageUploadGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_text_empty = isset($data['a_text_empty']) ? array_map(static fn ($item) => new ImageUploadGetResponseTextEmpty((array)$item), (array)$data['a_text_empty']) : null;
+        $this->a_text_empty = isset($data['a_text_empty']) ? new ImageUploadGetResponseTextEmpty((array)$data['a_text_empty']) : null;
         $this->html_image_hint = isset($data['html_image_hint']) ? (string)$data['html_image_hint'] : null;
         $this->i_height_max = isset($data['i_height_max']) ? (int)$data['i_height_max'] : null;
         $this->i_height_min = isset($data['i_height_min']) ? (int)$data['i_height_min'] : null;

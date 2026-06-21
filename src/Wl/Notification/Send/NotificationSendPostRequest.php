@@ -29,6 +29,7 @@ class NotificationSendPostRequest
      * Contact with WellnessLiving support to get the list of available notifications.
      *
      * @var int|null
+     * @see \WlSdk\RsMailSid
      */
     public ?int $id_notification = null;
 

@@ -8,32 +8,42 @@ namespace WlSdk\Wl\Event\Book\EventView;
 class ElementGetResponse
 {
     /**
-     * No description.
+     * Displays information about age restrictions for this event.
      *
-     * @var ElementGetResponseAgeRestrictions[]|null
+     * An empty array if there are no age restrictions.
+     *
+     * @var ElementGetResponseAgeRestrictions|null
      */
-    public ?array $a_age_restrictions = null;
+    public ?ElementGetResponseAgeRestrictions $a_age_restrictions = null;
 
     /**
-     * No description.
+     * Retrieves information about an event item.
+     *
+     * Received only if `k_event` has been specified.
+     * In this case, other fields aren't receivers.
      *
      * @var ElementGetResponseBookAvailable[]|null
      */
     public ?array $a_book_available = null;
 
     /**
-     * No description.
+     * Business policies connected to clients and bookings.
      *
-     * @var ElementGetResponseBusinessPolicy[]|null
+     * Contains the same structure as [BusinessConfigApi](/Wl/Business/Config/BusinessConfig.json).
+     *
+     * If the event has custom overrides, those policies are used; otherwise, the default
+     *  business policies are returned.
+     *
+     * @var ElementGetResponseBusinessPolicy|null
      */
-    public ?array $a_business_policy = null;
+    public ?ElementGetResponseBusinessPolicy $a_business_policy = null;
 
     /**
-     * No description.
+     * The logo of event.
      *
-     * @var ElementGetResponseClassLogo[]|null
+     * @var ElementGetResponseClassLogo|null
      */
-    public ?array $a_class_logo = null;
+    public ?ElementGetResponseClassLogo $a_class_logo = null;
 
     /**
      * The list of keys from class tab.
@@ -43,21 +53,25 @@ class ElementGetResponse
     public ?array $a_class_tab = null;
 
     /**
-     * No description.
+     * Information for a large number of events.
+     *
+     * Received only if `s_event` has been specified. In this case, other fields are not populated.
+     *
+     * Key is the event class key.
      *
      * @var ElementGetResponseEvent[]|null
      */
     public ?array $a_event = null;
 
     /**
-     * No description.
+     * A list of installment plans. Each element has the following next keys:
      *
      * @var ElementGetResponseInstallmentTemplate[]|null
      */
     public ?array $a_installment_template = null;
 
     /**
-     * No description.
+     * A list of event sessions. Every element has the following next keys:
      *
      * @var ElementGetResponseSchedule[]|null
      */
@@ -71,21 +85,24 @@ class ElementGetResponse
     public ?array $a_shop_category = null;
 
     /**
-     * No description.
+     * Photos of staff members. Keys are the keys of staff members. The values are the following:
      *
-     * @var ElementGetResponseStaffLogo[]|null
+     * @var ElementGetResponseStaffLogo|null
      */
-    public ?array $a_staff_logo = null;
+    public ?ElementGetResponseStaffLogo $a_staff_logo = null;
 
     /**
-     * No description.
+     * Timezone information for all timezones used in the event schedule.
+     *
+     * Key is the timezone key. Primary key in the `a_geo_timezone` table.
+     * Value contains timezone information from the geo timezone registry:
      *
      * @var ElementGetResponseTimezoneInfo[]|null
      */
     public ?array $a_timezone_info = null;
 
     /**
-     * No description.
+     * A list of classes and events that clients should attend before this one.
      *
      * @var ElementGetResponseVisitsRequired[]|null
      */
@@ -169,6 +186,7 @@ class ElementGetResponse
      * One of the {@link \WlSdk\Wl\Classes\RequirePaySid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\RequirePaySid
      */
     public ?int $id_pay_require = null;
 
@@ -179,6 +197,7 @@ class ElementGetResponse
      * `null` means default value not selected.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\RequirePaySid
      */
     public ?int $id_pay_require_option = null;
 
@@ -188,6 +207,7 @@ class ElementGetResponse
      * `null` if an in-person event.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Virtual\VirtualProviderSid
      */
     public ?int $id_virtual_provider = null;
 
@@ -369,16 +389,16 @@ class ElementGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_age_restrictions = isset($data['a_age_restrictions']) ? array_map(static fn ($item) => new ElementGetResponseAgeRestrictions((array)$item), (array)$data['a_age_restrictions']) : null;
+        $this->a_age_restrictions = isset($data['a_age_restrictions']) ? new ElementGetResponseAgeRestrictions((array)$data['a_age_restrictions']) : null;
         $this->a_book_available = isset($data['a_book_available']) ? array_map(static fn ($item) => new ElementGetResponseBookAvailable((array)$item), (array)$data['a_book_available']) : null;
-        $this->a_business_policy = isset($data['a_business_policy']) ? array_map(static fn ($item) => new ElementGetResponseBusinessPolicy((array)$item), (array)$data['a_business_policy']) : null;
-        $this->a_class_logo = isset($data['a_class_logo']) ? array_map(static fn ($item) => new ElementGetResponseClassLogo((array)$item), (array)$data['a_class_logo']) : null;
+        $this->a_business_policy = isset($data['a_business_policy']) ? new ElementGetResponseBusinessPolicy((array)$data['a_business_policy']) : null;
+        $this->a_class_logo = isset($data['a_class_logo']) ? new ElementGetResponseClassLogo((array)$data['a_class_logo']) : null;
         $this->a_class_tab = isset($data['a_class_tab']) ? (array)$data['a_class_tab'] : null;
         $this->a_event = isset($data['a_event']) ? array_map(static fn ($item) => new ElementGetResponseEvent((array)$item), (array)$data['a_event']) : null;
         $this->a_installment_template = isset($data['a_installment_template']) ? array_map(static fn ($item) => new ElementGetResponseInstallmentTemplate((array)$item), (array)$data['a_installment_template']) : null;
         $this->a_schedule = isset($data['a_schedule']) ? array_map(static fn ($item) => new ElementGetResponseSchedule((array)$item), (array)$data['a_schedule']) : null;
         $this->a_shop_category = isset($data['a_shop_category']) ? (array)$data['a_shop_category'] : null;
-        $this->a_staff_logo = isset($data['a_staff_logo']) ? array_map(static fn ($item) => new ElementGetResponseStaffLogo((array)$item), (array)$data['a_staff_logo']) : null;
+        $this->a_staff_logo = isset($data['a_staff_logo']) ? new ElementGetResponseStaffLogo((array)$data['a_staff_logo']) : null;
         $this->a_timezone_info = isset($data['a_timezone_info']) ? array_map(static fn ($item) => new ElementGetResponseTimezoneInfo((array)$item), (array)$data['a_timezone_info']) : null;
         $this->a_visits_required = isset($data['a_visits_required']) ? array_map(static fn ($item) => new ElementGetResponseVisitsRequired((array)$item), (array)$data['a_visits_required']) : null;
         $this->dt_book_date = isset($data['dt_book_date']) ? (string)$data['dt_book_date'] : null;

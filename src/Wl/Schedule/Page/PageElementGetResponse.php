@@ -8,35 +8,40 @@ namespace WlSdk\Wl\Schedule\Page;
 class PageElementGetResponse
 {
     /**
-     * No description.
+     * Additional visit information about this appointment. Empty array if it's not an appointment.
      *
-     * @var PageElementGetResponseAppointmentVisitInfo[]|null
+     * @var PageElementGetResponseAppointmentVisitInfo|null
      */
-    public ?array $a_appointment_visit_info = null;
+    public ?PageElementGetResponseAppointmentVisitInfo $a_appointment_visit_info = null;
 
     /**
-     * No description.
+     * List of assets: .
      *
      * @var PageElementGetResponseAsset[]|null
      */
     public ?array $a_asset = null;
 
     /**
-     * No description.
+     * Class data:
      *
-     * @var PageElementGetResponseClassInfo[]|null
+     * `null` if it isn't class visit.
+     *
+     * @var PageElementGetResponseClassInfo|null
      */
-    public ?array $a_class_info = null;
+    public ?PageElementGetResponseClassInfo $a_class_info = null;
 
     /**
-     * No description.
+     * Resource image data.
      *
-     * @var PageElementGetResponseResourceImage[]|null
+     * `null` for all services except resources.
+     *
+     * @var PageElementGetResponseResourceImage|null
      */
-    public ?array $a_resource_image = null;
+    public ?PageElementGetResponseResourceImage $a_resource_image = null;
 
     /**
-     * No description.
+     * A list of staff members involved in the visit.
+     * Each element is an array with the following elements:
      *
      * @var PageElementGetResponseStaff[]|null
      */
@@ -114,6 +119,7 @@ class PageElementGetResponse
      * This will be `null` if notes aren't allowed.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Visit\Note\Sid\NoteSid
      */
     public ?int $id_note = null;
 
@@ -123,6 +129,7 @@ class PageElementGetResponse
      * This will be `null` for non-virtual services.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Virtual\VirtualProviderSid
      */
     public ?int $id_virtual_provider = null;
 
@@ -132,6 +139,7 @@ class PageElementGetResponse
      * This will be `null` if not loaded yet.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Visit\VisitSid
      */
     public ?int $id_visit = null;
 
@@ -270,10 +278,10 @@ class PageElementGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_appointment_visit_info = isset($data['a_appointment_visit_info']) ? array_map(static fn ($item) => new PageElementGetResponseAppointmentVisitInfo((array)$item), (array)$data['a_appointment_visit_info']) : null;
+        $this->a_appointment_visit_info = isset($data['a_appointment_visit_info']) ? new PageElementGetResponseAppointmentVisitInfo((array)$data['a_appointment_visit_info']) : null;
         $this->a_asset = isset($data['a_asset']) ? array_map(static fn ($item) => new PageElementGetResponseAsset((array)$item), (array)$data['a_asset']) : null;
-        $this->a_class_info = isset($data['a_class_info']) ? array_map(static fn ($item) => new PageElementGetResponseClassInfo((array)$item), (array)$data['a_class_info']) : null;
-        $this->a_resource_image = isset($data['a_resource_image']) ? array_map(static fn ($item) => new PageElementGetResponseResourceImage((array)$item), (array)$data['a_resource_image']) : null;
+        $this->a_class_info = isset($data['a_class_info']) ? new PageElementGetResponseClassInfo((array)$data['a_class_info']) : null;
+        $this->a_resource_image = isset($data['a_resource_image']) ? new PageElementGetResponseResourceImage((array)$data['a_resource_image']) : null;
         $this->a_staff = isset($data['a_staff']) ? array_map(static fn ($item) => new PageElementGetResponseStaff((array)$item), (array)$data['a_staff']) : null;
         $this->dt_cancel = isset($data['dt_cancel']) ? (string)$data['dt_cancel'] : null;
         $this->dt_date_global = isset($data['dt_date_global']) ? (string)$data['dt_date_global'] : null;

@@ -8,21 +8,24 @@ namespace WlSdk\Wl\Profile\Edit;
 class EditGetResponse
 {
     /**
-     * No description.
+     * List of validation errors. `null` if no error occurred.
+     * Each element:
      *
      * @var EditGetResponseErrorList[]|null
      */
     public ?array $a_error_list = null;
 
     /**
-     * No description.
+     * An array contained with information about phone inheritance.
+     * The array has the following structure:
      *
-     * @var EditGetResponsePhoneInherit[]|null
+     * @var EditGetResponsePhoneInherit|null
      */
-    public ?array $a_phone_inherit = null;
+    public ?EditGetResponsePhoneInherit $a_phone_inherit = null;
 
     /**
-     * No description.
+     * The values and structure of all fields. Array keys are field IDs (`k_field`).
+     * Array values are the field values. The array has the following structure:
      *
      * @var EditGetResponseStructure[]|null
      */
@@ -109,7 +112,7 @@ class EditGetResponse
     public function __construct(array $data)
     {
         $this->a_error_list = isset($data['a_error_list']) ? array_map(static fn ($item) => new EditGetResponseErrorList((array)$item), (array)$data['a_error_list']) : null;
-        $this->a_phone_inherit = isset($data['a_phone_inherit']) ? array_map(static fn ($item) => new EditGetResponsePhoneInherit((array)$item), (array)$data['a_phone_inherit']) : null;
+        $this->a_phone_inherit = isset($data['a_phone_inherit']) ? new EditGetResponsePhoneInherit((array)$data['a_phone_inherit']) : null;
         $this->a_structure = isset($data['a_structure']) ? array_map(static fn ($item) => new EditGetResponseStructure((array)$item), (array)$data['a_structure']) : null;
         $this->can_password_change = isset($data['can_password_change']) ? (bool)$data['can_password_change'] : null;
         $this->is_a2p = isset($data['is_a2p']) ? (bool)$data['is_a2p'] : null;

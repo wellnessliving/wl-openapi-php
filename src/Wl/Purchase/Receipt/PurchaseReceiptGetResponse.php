@@ -8,49 +8,50 @@ namespace WlSdk\Wl\Purchase\Receipt;
 class PurchaseReceiptGetResponse
 {
     /**
-     * No description.
+     * Information about the account balance for a user's account after payment for the purchase. Every element has
+     * the following keys:
      *
-     * @var PurchaseReceiptGetResponseAccountRest[]|null
+     * @var PurchaseReceiptGetResponseAccountRest|null
      */
-    public ?array $a_account_rest = null;
+    public ?PurchaseReceiptGetResponseAccountRest $a_account_rest = null;
 
     /**
-     * No description.
+     * Information about the business.
      *
-     * @var PurchaseReceiptGetResponseBusiness[]|null
+     * @var PurchaseReceiptGetResponseBusiness|null
      */
-    public ?array $a_business = null;
+    public ?PurchaseReceiptGetResponseBusiness $a_business = null;
 
     /**
-     * No description.
+     * Payment transaction information. Every element has the following keys:
      *
-     * @var PurchaseReceiptGetResponseCard[]|null
+     * @var PurchaseReceiptGetResponseCard|null
      */
-    public ?array $a_card = null;
+    public ?PurchaseReceiptGetResponseCard $a_card = null;
 
     /**
-     * No description.
+     * Information about the customer.
      *
-     * @var PurchaseReceiptGetResponseCustomer[]|null
+     * @var PurchaseReceiptGetResponseCustomer|null
      */
-    public ?array $a_customer = null;
+    public ?PurchaseReceiptGetResponseCustomer $a_customer = null;
 
     /**
-     * No description.
+     * A list of payment methods for the current purchase. Every element has the following keys:
      *
-     * @var PurchaseReceiptGetResponsePayMethod[]|null
+     * @var PurchaseReceiptGetResponsePayMethod|null
      */
-    public ?array $a_pay_method = null;
+    public ?PurchaseReceiptGetResponsePayMethod $a_pay_method = null;
 
     /**
-     * No description.
+     * Complete information about price information for the purchase.
      *
-     * @var PurchaseReceiptGetResponsePrice[]|null
+     * @var PurchaseReceiptGetResponsePrice|null
      */
-    public ?array $a_price = null;
+    public ?PurchaseReceiptGetResponsePrice $a_price = null;
 
     /**
-     * No description.
+     * A list of purchase items. Every element has the following keys:
      *
      * @var PurchaseReceiptGetResponsePurchaseItem[]|null
      */
@@ -107,12 +108,12 @@ class PurchaseReceiptGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_account_rest = isset($data['a_account_rest']) ? array_map(static fn ($item) => new PurchaseReceiptGetResponseAccountRest((array)$item), (array)$data['a_account_rest']) : null;
-        $this->a_business = isset($data['a_business']) ? array_map(static fn ($item) => new PurchaseReceiptGetResponseBusiness((array)$item), (array)$data['a_business']) : null;
-        $this->a_card = isset($data['a_card']) ? array_map(static fn ($item) => new PurchaseReceiptGetResponseCard((array)$item), (array)$data['a_card']) : null;
-        $this->a_customer = isset($data['a_customer']) ? array_map(static fn ($item) => new PurchaseReceiptGetResponseCustomer((array)$item), (array)$data['a_customer']) : null;
-        $this->a_pay_method = isset($data['a_pay_method']) ? array_map(static fn ($item) => new PurchaseReceiptGetResponsePayMethod((array)$item), (array)$data['a_pay_method']) : null;
-        $this->a_price = isset($data['a_price']) ? array_map(static fn ($item) => new PurchaseReceiptGetResponsePrice((array)$item), (array)$data['a_price']) : null;
+        $this->a_account_rest = isset($data['a_account_rest']) ? new PurchaseReceiptGetResponseAccountRest((array)$data['a_account_rest']) : null;
+        $this->a_business = isset($data['a_business']) ? new PurchaseReceiptGetResponseBusiness((array)$data['a_business']) : null;
+        $this->a_card = isset($data['a_card']) ? new PurchaseReceiptGetResponseCard((array)$data['a_card']) : null;
+        $this->a_customer = isset($data['a_customer']) ? new PurchaseReceiptGetResponseCustomer((array)$data['a_customer']) : null;
+        $this->a_pay_method = isset($data['a_pay_method']) ? new PurchaseReceiptGetResponsePayMethod((array)$data['a_pay_method']) : null;
+        $this->a_price = isset($data['a_price']) ? new PurchaseReceiptGetResponsePrice((array)$data['a_price']) : null;
         $this->a_purchase_item = isset($data['a_purchase_item']) ? array_map(static fn ($item) => new PurchaseReceiptGetResponsePurchaseItem((array)$item), (array)$data['a_purchase_item']) : null;
         $this->dtl_purchase = isset($data['dtl_purchase']) ? (string)$data['dtl_purchase'] : null;
         $this->has_signature = isset($data['has_signature']) ? (bool)$data['has_signature'] : null;

@@ -8,14 +8,15 @@ namespace WlSdk\Wl\Business\Select;
 class BusinessSelectGetResponse
 {
     /**
-     * No description.
+     * Business list with additional parameters for a business select HTML component.
+     * This array contains the following keys and values.
      *
-     * @var BusinessSelectGetResponseSelect[]|null
+     * @var BusinessSelectGetResponseSelect|null
      */
-    public ?array $a_select = null;
+    public ?BusinessSelectGetResponseSelect $a_select = null;
 
     public function __construct(array $data)
     {
-        $this->a_select = isset($data['a_select']) ? array_map(static fn ($item) => new BusinessSelectGetResponseSelect((array)$item), (array)$data['a_select']) : null;
+        $this->a_select = isset($data['a_select']) ? new BusinessSelectGetResponseSelect((array)$data['a_select']) : null;
     }
 }

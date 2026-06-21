@@ -8,7 +8,8 @@ namespace WlSdk\Wl\Book\Process\Purchase;
 class PurchaseElementListGetResponse
 {
     /**
-     * No description.
+     * Detailed information about the amounts for the purchase item list.
+     * Every element has the next keys:
      *
      * @var PurchaseElementListGetResponsePurchaseItemResult[]|null
      */

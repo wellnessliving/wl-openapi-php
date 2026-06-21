@@ -8,7 +8,8 @@ namespace WlSdk\Wl\Discount\Code\Edit;
 class DiscountCodeEditGetResponse
 {
     /**
-     * No description.
+     * List of components that are affected by this discount code.
+     * Each element is an array containing:
      *
      * @var DiscountCodeEditGetResponseComponent[]|null
      */
@@ -68,6 +69,7 @@ class DiscountCodeEditGetResponse
      * expires.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_duration = null;
 
@@ -75,6 +77,7 @@ class DiscountCodeEditGetResponse
      * Type of the discount code duration from {@link \WlSdk\RsDurationTypeSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsDurationTypeSid
      */
     public ?int $id_duration_type = null;
 

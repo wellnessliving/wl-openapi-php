@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
 class InviteListGetResponse
 {
     /**
-     * No description.
+     * List of guest pass invitations suitable for the specific request parameters.
      *
      * @var InviteListGetResponseList[]|null
      */

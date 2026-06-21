@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Lead\Source;
 class LeadSourceElementPostRequest
 {
     /**
-     * No description.
+     * List of Lead Sources.
      *
      * @var array[]|null
      */

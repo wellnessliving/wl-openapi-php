@@ -8,7 +8,8 @@ namespace WlSdk\Wl\Insurance\Catalog;
 class ProgramListGetResponse
 {
     /**
-     * No description.
+     * A List of active programs.
+     * Every element has next keys:
      *
      * @var ProgramListGetResponseWellnessProgram[]|null
      */

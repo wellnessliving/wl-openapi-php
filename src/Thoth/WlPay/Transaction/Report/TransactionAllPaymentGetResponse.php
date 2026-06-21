@@ -18,7 +18,14 @@ class TransactionAllPaymentGetResponse
     public ?array $a_field = null;
 
     /**
-     * No description.
+     * The report data.
+     *
+     * This is an indexed array where each element is also an indexed array representing one report row.
+     * Column positions in each row correspond to the field names in
+     * [TransactionAllPaymentApi](/Thoth/WlPay/Transaction/Report/TransactionAllPayment.json).
+     *
+     * Known columns (use [TransactionAllPaymentApi](/Thoth/WlPay/Transaction/Report/TransactionAllPayment.json) to
+     * resolve their positional indexes):
      *
      * @var TransactionAllPaymentGetResponseRow[]|null
      */
@@ -58,6 +65,7 @@ class TransactionAllPaymentGetResponse
      * One of {@link \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid
      */
     public ?int $id_report_status = null;
 

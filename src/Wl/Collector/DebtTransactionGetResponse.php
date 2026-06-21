@@ -8,7 +8,9 @@ namespace WlSdk\Wl\Collector;
 class DebtTransactionGetResponse
 {
     /**
-     * No description.
+     * A list of debt payments for a given business added within the previous day.
+     *
+     * Each value is an array with next structure:
      *
      * @var DebtTransactionGetResponseTransaction[]|null
      */

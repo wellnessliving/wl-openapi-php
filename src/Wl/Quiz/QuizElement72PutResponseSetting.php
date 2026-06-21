@@ -45,6 +45,7 @@ class QuizElement72PutResponseSetting
      * Considered only if `is_book` is `true`.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Quiz\QuizFrequencySid
      */
     public ?int $id_book_request_type = null;
 
@@ -52,6 +53,7 @@ class QuizElement72PutResponseSetting
      * Time interval ID. One of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_notify_automated = null;
 
@@ -61,6 +63,7 @@ class QuizElement72PutResponseSetting
      * Considered only if `is_purchase` is `true`.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Quiz\QuizFrequencySid
      */
     public ?int $id_purchase_request_type = null;
 

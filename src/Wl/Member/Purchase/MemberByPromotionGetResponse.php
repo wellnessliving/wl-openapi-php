@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Member\Purchase;
 class MemberByPromotionGetResponse
 {
     /**
-     * No description.
+     * The list of active clients with the given Purchase Options.
      *
      * @var MemberByPromotionGetResponseClients[]|null
      */

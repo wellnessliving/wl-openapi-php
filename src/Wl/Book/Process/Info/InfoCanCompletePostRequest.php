@@ -41,7 +41,9 @@ class InfoCanCompletePostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * A list of sessions of an event that can be booked together.
+     *
+     * Every element has the next structure:
      *
      * @var array[]|null
      */

@@ -8,6 +8,7 @@ class TransactionAllPaymentGetResponseRowPayTransaction
      * Payment method ID. One of {@link \WlSdk\RsPayMethodSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPayMethodSid
      */
     public ?int $id_pay_method = null;
 

@@ -7,14 +7,15 @@ class CaptchaRequireGetRequest
     /**
      * Arguments for creating CAPTCHA object.
      *
-     * @var array[]|null
+     * @var array|null
      */
-    public ?array $a_arguments = null;
+    public $a_arguments = null;
 
     /**
      * The CID of the CAPTCHA.
      *
      * @var int|null
+     * @see \WlSdk\Core\Captcha\CaptchaAbstract
      */
     public ?int $cid_captcha = null;
 

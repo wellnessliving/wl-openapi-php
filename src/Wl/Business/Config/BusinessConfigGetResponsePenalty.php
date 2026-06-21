@@ -59,6 +59,7 @@ class BusinessConfigGetResponsePenalty
      * One of {@link \WlSdk\Wl\Business\Policy\BlameSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Business\Policy\BlameSid
      */
     public ?int $id_blame = null;
 
@@ -66,6 +67,7 @@ class BusinessConfigGetResponsePenalty
      * Duration ID. One of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_cancel_period = null;
 
@@ -73,6 +75,7 @@ class BusinessConfigGetResponsePenalty
      * One of {@link \WlSdk\Wl\Business\Policy\ChargeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Business\Policy\ChargeSid
      */
     public ?int $id_charge = null;
 

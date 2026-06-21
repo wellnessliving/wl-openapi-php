@@ -55,7 +55,7 @@ class ScheduleAvailableDateGetRequest
      *
      * Empty to search for all time.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_time = null;
 
@@ -70,6 +70,7 @@ class ScheduleAvailableDateGetRequest
      * "Book now" tab ID. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\Tab\TabSid
      */
     public ?int $id_class_tab = null;
 

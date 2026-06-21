@@ -11,11 +11,15 @@ class SubscriptionInfoGetResponse
      * Locale ID of the business which subscription information is requested for.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\LocaleSid
      */
     public ?int $id_locale = null;
 
     /**
-     * No description.
+     * Currently active plan ID for requested subscription.
+     *
+     * Depending on subscription type constant from one of {@link \WlSdk\Wl\Business\Account\Subscription\PlanSid}
+     * inheritors.
      *
      * @var int|null
      */

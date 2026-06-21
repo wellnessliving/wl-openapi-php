@@ -19,6 +19,7 @@ class SubscribePostResponseMessageBroadcastM
      * `null` if the business does not have a mail domain set up.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid
      */
     public ?int $id_domain_status = null;
 

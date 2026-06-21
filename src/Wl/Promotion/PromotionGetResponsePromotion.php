@@ -92,6 +92,7 @@ class PromotionGetResponsePromotion
      * For all possible options, see {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_duration = null;
 
@@ -100,6 +101,7 @@ class PromotionGetResponsePromotion
      * For more information, see {@link \WlSdk\RsDurationTypeSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsDurationTypeSid
      */
     public ?int $id_duration_type = null;
 
@@ -108,6 +110,7 @@ class PromotionGetResponsePromotion
      * For more information, see {@link \WlSdk\RsProgramSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramSid
      */
     public ?int $id_program = null;
 
@@ -115,6 +118,7 @@ class PromotionGetResponsePromotion
      * Purchase restriction for this product, one of {@link \WlSdk\Wl\Promotion\PurchaseRestrictionSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Promotion\PurchaseRestrictionSid
      */
     public ?int $id_restriction = null;
 

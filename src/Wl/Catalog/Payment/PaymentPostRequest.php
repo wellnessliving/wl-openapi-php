@@ -7,7 +7,7 @@ class PaymentPostRequest
     /**
      * The staff commission earned for this purchase. If this isn't empty, it has the next fields:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_commission = null;
 
@@ -15,6 +15,7 @@ class PaymentPostRequest
      * The WellnessLiving mode type (required). One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -54,14 +55,20 @@ class PaymentPostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * The list of items in the cart.
+     *
+     * This parameter is required.
+     *
+     * Every element must have the following keys:
      *
      * @var array[]|null
      */
     public ?array $a_item = null;
 
     /**
-     * No description.
+     * A list of payment sources to pay with.
+     *
+     * Each element has next keys:
      *
      * @var array[]|null
      */

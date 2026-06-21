@@ -8,11 +8,12 @@ namespace WlSdk\Wl\Login\Add;
 class MailUseOkPostResponse
 {
     /**
-     * No description.
+     * The list of fields with missing information.
+     * Each element is an array containing the following data:
      *
-     * @var MailUseOkPostResponseErrorList[]|null
+     * @var MailUseOkPostResponseErrorList|null
      */
-    public ?array $a_error_list = null;
+    public ?MailUseOkPostResponseErrorList $a_error_list = null;
 
     /**
      * The result code of the request.
@@ -30,7 +31,7 @@ class MailUseOkPostResponse
 
     public function __construct(array $data)
     {
-        $this->a_error_list = isset($data['a_error_list']) ? array_map(static fn ($item) => new MailUseOkPostResponseErrorList((array)$item), (array)$data['a_error_list']) : null;
+        $this->a_error_list = isset($data['a_error_list']) ? new MailUseOkPostResponseErrorList((array)$data['a_error_list']) : null;
         $this->s_code = isset($data['s_code']) ? (string)$data['s_code'] : null;
         $this->text_message = isset($data['text_message']) ? (string)$data['text_message'] : null;
     }

@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Member\Group\GroupList;
 class ListGetResponse
 {
     /**
-     * No description.
+     * Member groups list:
      *
      * @var ListGetResponseMemberGroup[]|null
      */

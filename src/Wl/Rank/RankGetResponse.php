@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Rank;
 class RankGetResponse
 {
     /**
-     * No description.
+     * A list of belts, keys, and information. Each element is an array with the following information:
      *
      * @var RankGetResponseRankList[]|null
      */

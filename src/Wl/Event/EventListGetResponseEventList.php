@@ -7,9 +7,9 @@ class EventListGetResponseEventList
     /**
      * No description.
      *
-     * @var EventListGetResponseEventListAgeRestriction[]|null
+     * @var EventListGetResponseEventListAgeRestriction|null
      */
-    public ?array $a_age_restriction = null;
+    public ?EventListGetResponseEventListAgeRestriction $a_age_restriction = null;
 
     /**
      * No description.
@@ -21,9 +21,9 @@ class EventListGetResponseEventList
     /**
      * No description.
      *
-     * @var EventListGetResponseEventListLogoA[]|EventListGetResponseEventListLogoB[]|EventListGetResponseEventListLogoC[]|null
+     * @var array|null
      */
-    public ?array $a_logo = null;
+    public $a_logo = null;
 
     /**
      * No description.
@@ -328,7 +328,7 @@ class EventListGetResponseEventList
 
     public function __construct(array $data)
     {
-        $this->a_age_restriction = isset($data['a_age_restriction']) ? array_map(static fn ($item) => new EventListGetResponseEventListAgeRestriction((array)$item), (array)$data['a_age_restriction']) : null;
+        $this->a_age_restriction = isset($data['a_age_restriction']) ? new EventListGetResponseEventListAgeRestriction((array)$data['a_age_restriction']) : null;
         $this->a_class_tab = isset($data['a_class_tab']) ? (array)$data['a_class_tab'] : null;
         $this->a_logo = $data['a_logo'] ?? null;
         $this->a_schedule = isset($data['a_schedule']) ? array_map(static fn ($item) => new EventListGetResponseEventListSchedule((array)$item), (array)$data['a_schedule']) : null;

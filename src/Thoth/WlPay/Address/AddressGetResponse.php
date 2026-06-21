@@ -8,7 +8,11 @@ namespace WlSdk\Thoth\WlPay\Address;
 class AddressGetResponse
 {
     /**
-     * No description.
+     * The payee's address information.
+     *
+     * A list of payment addresses belonging to the owner. Each element:
+     *
+     * `null` if the current user has no access to the required information, or cannot edit the bank account.
      *
      * @var AddressGetResponsePayAddress[]|null
      */

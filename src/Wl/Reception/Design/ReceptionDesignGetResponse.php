@@ -8,7 +8,15 @@ namespace WlSdk\Wl\Reception\Design;
 class ReceptionDesignGetResponse
 {
     /**
-     * No description.
+     * Array of image information for Self Check-In logo.
+     * Empty if `k_location` is not provided.
+     *
+     * Will contain the following keys:
+     *
+     *
+     * If image for self check in app is empty, will attempt to obtain business logo instead. If business logo is
+     * empty,
+     * will attempt to obtain location logo.
      *
      * @var ReceptionDesignGetResponseReceptionLogo[]|null
      */
@@ -47,6 +55,7 @@ class ReceptionDesignGetResponse
      * ID of the sound for failed check in.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Reception\Design\CheckInSoundSid
      */
     public ?int $id_failed_sound = null;
 
@@ -54,6 +63,7 @@ class ReceptionDesignGetResponse
      * ID of the sound for successful check in.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Reception\Design\CheckInSoundSid
      */
     public ?int $id_success_sound = null;
 

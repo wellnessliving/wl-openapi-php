@@ -8,7 +8,8 @@ namespace WlSdk\Wl\Schedule\ScheduleList\StaffApp;
 class ScheduleListGetResponse
 {
     /**
-     * No description.
+     * The sessions present on the business schedule. These are sorted chronologically in ascending order.
+     * Every element has the following keys:
      *
      * @var ScheduleListGetResponseSchedule[]|null
      */

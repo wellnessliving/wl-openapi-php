@@ -135,6 +135,7 @@ class ClassViewPostResponseSessionResultClass
      * ID of deny reason. One of {@link \WlSdk\Wl\Schedule\ClassView\DenyReasonSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Schedule\ClassView\DenyReasonSid
      */
     public ?int $id_deny_reason = null;
 

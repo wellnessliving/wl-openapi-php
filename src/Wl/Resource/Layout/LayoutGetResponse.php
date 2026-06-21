@@ -8,21 +8,21 @@ namespace WlSdk\Wl\Resource\Layout;
 class LayoutGetResponse
 {
     /**
-     * No description.
+     * The list of assets. Every element contains the following keys:
      *
      * @var LayoutGetResponseResource[]|null
      */
     public ?array $a_resource = null;
 
     /**
-     * No description.
+     * A list of custom shapes. Every element is an array with the following keys:
      *
      * @var LayoutGetResponseShapeCustom[]|null
      */
     public ?array $a_shape_custom = null;
 
     /**
-     * No description.
+     * A list of shapes and icons. Every element is an array with the following keys:
      *
      * @var LayoutGetResponseShapeIcon[]|null
      */

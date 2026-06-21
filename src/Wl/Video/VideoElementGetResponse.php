@@ -22,11 +22,11 @@ class VideoElementGetResponse
     public ?array $a_staff = null;
 
     /**
-     * No description.
+     * A list of staff members associated with the video. Every item has the following structure:
      *
-     * @var VideoElementGetResponseStaffInfo[]|null
+     * @var VideoElementGetResponseStaffInfo|null
      */
-    public ?array $a_staff_info = null;
+    public ?VideoElementGetResponseStaffInfo $a_staff_info = null;
 
     /**
      * The user IDs of the staff members who are on the video (authoritative list for who is assigned to the
@@ -124,6 +124,7 @@ class VideoElementGetResponse
      * `null` if video is uploaded.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Video\VideoEmbedSourceSid
      */
     public ?int $id_embed_source = null;
 
@@ -132,6 +133,7 @@ class VideoElementGetResponse
      * {@link \WlSdk\Core\Sid\YesNoSid} if the video is available only in certain locations.
      *
      * @var int|null
+     * @see \WlSdk\Core\Sid\YesNoSid
      */
     public ?int $id_location_select = null;
 
@@ -141,6 +143,7 @@ class VideoElementGetResponse
      * One of {@link \WlSdk\Wl\Video\VideoSourceSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Video\VideoSourceSid
      */
     public ?int $id_source = null;
 
@@ -313,7 +316,7 @@ class VideoElementGetResponse
     {
         $this->a_location = isset($data['a_location']) ? (array)$data['a_location'] : null;
         $this->a_staff = isset($data['a_staff']) ? (array)$data['a_staff'] : null;
-        $this->a_staff_info = isset($data['a_staff_info']) ? array_map(static fn ($item) => new VideoElementGetResponseStaffInfo((array)$item), (array)$data['a_staff_info']) : null;
+        $this->a_staff_info = isset($data['a_staff_info']) ? new VideoElementGetResponseStaffInfo((array)$data['a_staff_info']) : null;
         $this->a_staff_uid = isset($data['a_staff_uid']) ? (array)$data['a_staff_uid'] : null;
         $this->a_video_category = isset($data['a_video_category']) ? (array)$data['a_video_category'] : null;
         $this->a_video_tag = isset($data['a_video_tag']) ? (array)$data['a_video_tag'] : null;

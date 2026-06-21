@@ -19,7 +19,7 @@ class PromotionPostRequest
     public ?string $k_promotion = null;
 
     /**
-     * No description.
+     * Promotion information.
      *
      * @var array[]|null
      */

@@ -15,6 +15,7 @@ class StoreGroupPostRequest
      * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -58,21 +59,34 @@ class StoreGroupPostRequest
     public ?array $a_login_promotion = null;
 
     /**
-     * No description.
+     * A list of new purchase items which are selected by a group of clients.
+     *
+     * This new purchase items will be checked to determine if it can be applied to the current class or event
+     * before
+     * being purchased.
+     *
+     * Keys are UIDs of clients, values are arrays with the following structure:
      *
      * @var array[]|null
      */
     public ?array $a_purchase_item_check = null;
 
     /**
-     * No description.
+     * Information about the recurring booking for each client in the group.
+     *
+     * Keys are UIDs of clients, values are arrays with information about the recurring booking:
+     *
+     *
+     * Should be `null` if the booking isn't recurring.
      *
      * @var array[]|null
      */
     public ?array $a_repeat = null;
 
     /**
-     * No description.
+     * A list of assets which are selected by a group of clients.
+     *
+     * Keys are UIDs of clients, values are arrays with the following structure:
      *
      * @var array[]|null
      */

@@ -20,6 +20,7 @@ class SubscribePostResponseMessageBroadcastG
      * One of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid
      */
     public ?int $id_report_status = null;
 

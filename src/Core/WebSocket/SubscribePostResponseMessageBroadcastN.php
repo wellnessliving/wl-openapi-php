@@ -11,6 +11,7 @@ class SubscribePostResponseMessageBroadcastN
      * Business -&gt; Feature is disabled.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mail\Verify\MailVerifyStatusSid
      */
     public ?int $id_mail_verify_status = null;
 

@@ -8,6 +8,7 @@ class NotificationInfoGetRequest
      * ID of the notification. See {@link \WlSdk\RsMailSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsMailSid
      */
     public ?int $id_notification = null;
 

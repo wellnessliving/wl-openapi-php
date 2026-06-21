@@ -8,14 +8,17 @@ namespace WlSdk\Wl\User\Info;
 class UserIntegrationGetResponse
 {
     /**
-     * No description.
+     * Information about the integrations the user is connected to. The information returned has the following
+     * structure:
      *
-     * @var UserIntegrationGetResponseIntegration[]|null
+     * `null` if the user does not belong to any integration.
+     *
+     * @var UserIntegrationGetResponseIntegration|null
      */
-    public ?array $a_integration = null;
+    public ?UserIntegrationGetResponseIntegration $a_integration = null;
 
     public function __construct(array $data)
     {
-        $this->a_integration = isset($data['a_integration']) ? array_map(static fn ($item) => new UserIntegrationGetResponseIntegration((array)$item), (array)$data['a_integration']) : null;
+        $this->a_integration = isset($data['a_integration']) ? new UserIntegrationGetResponseIntegration((array)$data['a_integration']) : null;
     }
 }

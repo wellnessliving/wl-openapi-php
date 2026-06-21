@@ -8,6 +8,7 @@ class ClassViewPostResponseSessionResultStaffLogo
      * ID of gender. One of {@link \WlSdk\Wl\Gender\GenderSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Gender\GenderSid
      */
     public ?int $id_gender = null;
 

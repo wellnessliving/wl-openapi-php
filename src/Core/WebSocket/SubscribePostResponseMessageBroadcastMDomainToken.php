@@ -8,6 +8,7 @@ class SubscribePostResponseMessageBroadcastMDomainToken
      * Status of the token. One of {@link \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid
      */
     public ?int $id_status = null;
 

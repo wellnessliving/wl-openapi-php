@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Book\Process\Frequency;
 class RepeatGetResponse
 {
     /**
-     * No description.
+     * List of visits to be created for the given settings:
      *
      * @var RepeatGetResponseVisit[]|null
      */
@@ -32,6 +32,7 @@ class RepeatGetResponse
      * Count of the visits to be created. Not empty only when `id_repeat_end` == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsRepeatEndSid
      */
     public ?int $i_count = null;
 

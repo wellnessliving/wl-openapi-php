@@ -81,6 +81,7 @@ class PurchaseGetResponsePurchase
      * Duration ID. Constant from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_duration = null;
 
@@ -88,6 +89,7 @@ class PurchaseGetResponsePurchase
      * Program ID for promotions from {@link \WlSdk\RsProgramSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramSid
      */
     public ?int $id_program = null;
 
@@ -95,6 +97,7 @@ class PurchaseGetResponsePurchase
      * Program type ID. Constant from {@link \WlSdk\RsProgramTypeSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
      */
     public ?int $id_program_type = null;
 
@@ -102,6 +105,7 @@ class PurchaseGetResponsePurchase
      * How the Purchase Item price is specified. One of the {@link \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
      */
     public ?int $id_promotion_price = null;
 
@@ -109,6 +113,7 @@ class PurchaseGetResponsePurchase
      * ID of the purchase item from {@link \WlSdk\RsPurchaseItemSid}
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 

@@ -22,7 +22,7 @@ class InfoPostResponse
     public ?array $a_visit = null;
 
     /**
-     * No description.
+     * Values are arrays with next keys:
      *
      * @var InfoPostResponseVisitPayment[]|null
      */

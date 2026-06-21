@@ -11,6 +11,7 @@ class SubscribePostResponseMessageBroadcast26
      * is equal {@link \WlSdk\Thoth\PayProcessor\Nuvei\Code\CSResponseSid}.
      *
      * @var int|null
+     * @see \WlSdk\ACardSystemSid
      */
     public ?int $id_card_system = null;
 
@@ -20,6 +21,7 @@ class SubscribePostResponseMessageBroadcast26
      * `null` If were unable to determine the card type. See `id_card_type`.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Pay\Bank\Card\CardTypeEnum
      */
     public ?int $id_card_type = null;
 
@@ -29,6 +31,7 @@ class SubscribePostResponseMessageBroadcast26
      * `null` if no errors occurred.
      *
      * @var int|null
+     * @see \WlSdk\RsPayException
      */
     public ?int $id_pay_exception = null;
 
@@ -38,6 +41,7 @@ class SubscribePostResponseMessageBroadcast26
      * `null` if not set yet.
      *
      * @var int|null
+     * @see \WlSdk\Thoth\PayProcessor\Nuvei\Code\CSResponseSid
      */
     public ?int $id_payment_status = null;
 

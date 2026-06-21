@@ -8,14 +8,14 @@ namespace WlSdk\Wl\Profile\Alert;
 class AlertEditGetResponse
 {
     /**
-     * No description.
+     * Login note information.
      *
-     * @var AlertEditGetResponseLoginNoteData[]|null
+     * @var AlertEditGetResponseLoginNoteData|null
      */
-    public ?array $a_login_note_data = null;
+    public ?AlertEditGetResponseLoginNoteData $a_login_note_data = null;
 
     public function __construct(array $data)
     {
-        $this->a_login_note_data = isset($data['a_login_note_data']) ? array_map(static fn ($item) => new AlertEditGetResponseLoginNoteData((array)$item), (array)$data['a_login_note_data']) : null;
+        $this->a_login_note_data = isset($data['a_login_note_data']) ? new AlertEditGetResponseLoginNoteData((array)$data['a_login_note_data']) : null;
     }
 }

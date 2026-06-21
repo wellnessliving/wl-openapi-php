@@ -8,32 +8,36 @@ namespace WlSdk\Wl\Member\Info;
 class InfoGetResponse
 {
     /**
-     * No description.
+     * Additional member data or `null` if any data can be shown.
+     * Will be filled if `is_full` flag is set.
      *
-     * @var InfoGetResponseInfo[]|null
+     * @var InfoGetResponseInfo|null
      */
-    public ?array $a_info = null;
+    public ?InfoGetResponseInfo $a_info = null;
 
     /**
-     * No description.
+     * List of users data.
+     * Keys - users primary keys. Values - users data.
+     * Keys refer to clients' primary keys, and values refer to clients' data.
+     * If `null`, data for a single client is being requested.
      *
-     * @var InfoGetResponseResultList[]|null
+     * @var InfoGetResponseResultList|null
      */
-    public ?array $a_result_list = null;
+    public ?InfoGetResponseResultList $a_result_list = null;
 
     /**
-     * No description.
+     * Information about last visit of the user.
      *
-     * @var InfoGetResponseVisitLast[]|null
+     * @var InfoGetResponseVisitLast|null
      */
-    public ?array $a_visit_last = null;
+    public ?InfoGetResponseVisitLast $a_visit_last = null;
 
     /**
-     * No description.
+     * Information about next visit of the user.
      *
-     * @var InfoGetResponseVisitNext[]|null
+     * @var InfoGetResponseVisitNext|null
      */
-    public ?array $a_visit_next = null;
+    public ?InfoGetResponseVisitNext $a_visit_next = null;
 
     /**
      * Count attend visits for one client.
@@ -96,10 +100,10 @@ class InfoGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_info = isset($data['a_info']) ? array_map(static fn ($item) => new InfoGetResponseInfo((array)$item), (array)$data['a_info']) : null;
-        $this->a_result_list = isset($data['a_result_list']) ? array_map(static fn ($item) => new InfoGetResponseResultList((array)$item), (array)$data['a_result_list']) : null;
-        $this->a_visit_last = isset($data['a_visit_last']) ? array_map(static fn ($item) => new InfoGetResponseVisitLast((array)$item), (array)$data['a_visit_last']) : null;
-        $this->a_visit_next = isset($data['a_visit_next']) ? array_map(static fn ($item) => new InfoGetResponseVisitNext((array)$item), (array)$data['a_visit_next']) : null;
+        $this->a_info = isset($data['a_info']) ? new InfoGetResponseInfo((array)$data['a_info']) : null;
+        $this->a_result_list = isset($data['a_result_list']) ? new InfoGetResponseResultList((array)$data['a_result_list']) : null;
+        $this->a_visit_last = isset($data['a_visit_last']) ? new InfoGetResponseVisitLast((array)$data['a_visit_last']) : null;
+        $this->a_visit_next = isset($data['a_visit_next']) ? new InfoGetResponseVisitNext((array)$data['a_visit_next']) : null;
         $this->i_lifetime_visit = isset($data['i_lifetime_visit']) ? (int)$data['i_lifetime_visit'] : null;
         $this->is_traveller = isset($data['is_traveller']) ? (bool)$data['is_traveller'] : null;
         $this->m_lifetime_value = isset($data['m_lifetime_value']) ? (string)$data['m_lifetime_value'] : null;

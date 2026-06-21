@@ -8,7 +8,9 @@ namespace WlSdk\Wl\Login\Promotion;
 class PromotionPayPauseGetResponse
 {
     /**
-     * No description.
+     * List of all promotion payment pause periods. Each element has next structure:
+     *
+     * `null` if `is_list` is false.
      *
      * @var PromotionPayPauseGetResponsePayPauseList[]|null
      */

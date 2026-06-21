@@ -8,14 +8,15 @@ namespace WlSdk\Wl\Shop\Category;
 class CategoryGetResponse
 {
     /**
-     * No description.
+     * An array containing information about all store categories.
+     * Each array element is an array containing the following fields:
      *
-     * @var CategoryGetResponseShopCategory[]|null
+     * @var CategoryGetResponseShopCategory|null
      */
-    public ?array $a_shop_category = null;
+    public ?CategoryGetResponseShopCategory $a_shop_category = null;
 
     public function __construct(array $data)
     {
-        $this->a_shop_category = isset($data['a_shop_category']) ? array_map(static fn ($item) => new CategoryGetResponseShopCategory((array)$item), (array)$data['a_shop_category']) : null;
+        $this->a_shop_category = isset($data['a_shop_category']) ? new CategoryGetResponseShopCategory((array)$data['a_shop_category']) : null;
     }
 }

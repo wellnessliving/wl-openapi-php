@@ -8,11 +8,14 @@ namespace WlSdk\Wl\Appointment\Book\Service;
 class ServiceList52GetResponse
 {
     /**
-     * No description.
+     * A list of services with information about them.
      *
-     * @var ServiceList52GetResponseService[]|null
+     * <b>Key</b> - the service key.
+     * <b>Value</b> - an array, with every element consisting of the next keys:
+     *
+     * @var ServiceList52GetResponseService|null
      */
-    public ?array $a_service = null;
+    public ?ServiceList52GetResponseService $a_service = null;
 
     /**
      * Whether services allow multiple appointment booking.
@@ -30,7 +33,7 @@ class ServiceList52GetResponse
 
     public function __construct(array $data)
     {
-        $this->a_service = isset($data['a_service']) ? array_map(static fn ($item) => new ServiceList52GetResponseService((array)$item), (array)$data['a_service']) : null;
+        $this->a_service = isset($data['a_service']) ? new ServiceList52GetResponseService((array)$data['a_service']) : null;
         $this->is_multiple_booking = isset($data['is_multiple_booking']) ? (bool)$data['is_multiple_booking'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
     }

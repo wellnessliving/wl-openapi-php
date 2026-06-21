@@ -9,6 +9,7 @@ class Relation72PostRequest
      * One of {@link \WlSdk\Wl\User\Tracking\FlowSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\User\Tracking\FlowSid
      */
     public ?int $id_flow = null;
 
@@ -27,9 +28,9 @@ class Relation72PostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * The new relationship to be added to user, specified with [RelationApi](/Wl/Family/Relation/Relation.json):
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_new = null;
 
@@ -38,6 +39,7 @@ class Relation72PostRequest
      * One of {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 

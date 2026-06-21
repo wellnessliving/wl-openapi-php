@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Profile\Attendance;
 class AttendanceOverlapGetResponse
 {
     /**
-     * No description.
+     * List of visits that overlap with the specified data.
      *
      * @var AttendanceOverlapGetResponseVisitList[]|null
      */

@@ -15,6 +15,7 @@ class RegionGetResponseRegion
      * The locale ID of the country. One of the {@link \WlSdk\Core\Locale\LocaleSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\LocaleSid
      */
     public ?int $id_locale = null;
 

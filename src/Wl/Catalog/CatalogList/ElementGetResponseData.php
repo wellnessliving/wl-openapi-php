@@ -76,6 +76,7 @@ class ElementGetResponseData
      * constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Coupon\Edit\ActivationSid
      */
     public ?int $id_activation = null;
 
@@ -83,6 +84,7 @@ class ElementGetResponseData
      * Duration of a period. A constant from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_duration = null;
 
@@ -90,6 +92,7 @@ class ElementGetResponseData
      * A way to specify a duration. One of {@link \WlSdk\Wl\Coupon\Edit\DurationTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Coupon\Edit\DurationTypeSid
      */
     public ?int $id_duration_type = null;
 

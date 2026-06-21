@@ -8,7 +8,8 @@ namespace WlSdk\Wl\Shop\Product\Option\Inventory\Count;
 class InventoryCountGetResponse
 {
     /**
-     * No description.
+     * Information about product options for review or search.
+     * Each element contains:
      *
      * @var InventoryCountGetResponseProductOption[]|null
      */

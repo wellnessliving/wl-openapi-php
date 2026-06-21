@@ -29,6 +29,7 @@ class StaffViewGetResponseStaffPhoto
      * One of {@link \WlSdk\Wl\Gender\GenderSid}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Gender\GenderSid
      */
     public ?int $id_gender = null;
 

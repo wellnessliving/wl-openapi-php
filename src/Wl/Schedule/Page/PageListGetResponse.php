@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Schedule\Page;
 class PageListGetResponse
 {
     /**
-     * No description.
+     * Elements of user's schedule. Every element has next keys:
      *
      * @var PageListGetResponseVisit[]|null
      */

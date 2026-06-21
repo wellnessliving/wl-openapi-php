@@ -11,6 +11,7 @@ class StatePutResponse
      * Field ID. One of the {@link \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid} constant.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Member\Progress\Field\ProgressFieldSid
      */
     public ?int $id_field = null;
 

@@ -8,18 +8,21 @@ namespace WlSdk\Wl\Video;
 class VideoListGetResponse
 {
     /**
-     * No description.
+     * A list of videos.
+     * Each element:
      *
      * @var VideoListGetResponseList[]|null
      */
     public ?array $a_list = null;
 
     /**
-     * No description.
+     * Pagination data.
+     * Empty array if pagination is not active (total video count is within `VIDEO_COUNT_PAGINATION`).
+     * Otherwise contains a list of page entries as:
      *
-     * @var VideoListGetResponsePage[]|null
+     * @var VideoListGetResponsePage|null
      */
-    public ?array $a_page = null;
+    public ?VideoListGetResponsePage $a_page = null;
 
     /**
      * Embedded video source.
@@ -28,6 +31,7 @@ class VideoListGetResponse
      * `null` if video is uploaded.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Video\VideoEmbedSourceSid
      */
     public ?int $id_embed_source = null;
 
@@ -36,6 +40,7 @@ class VideoListGetResponse
      * depends on sort order.
      *
      * @var int|null
+     * @see \WlSdk\Core\Sid\SortOrderSid
      */
     public ?int $id_order = null;
 
@@ -45,6 +50,7 @@ class VideoListGetResponse
      * and custom sort order is used.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Video\Catalog\Filter\Sort\FilterSortSid
      */
     public ?int $id_sort = null;
 
@@ -68,7 +74,7 @@ class VideoListGetResponse
     public function __construct(array $data)
     {
         $this->a_list = isset($data['a_list']) ? array_map(static fn ($item) => new VideoListGetResponseList((array)$item), (array)$data['a_list']) : null;
-        $this->a_page = isset($data['a_page']) ? array_map(static fn ($item) => new VideoListGetResponsePage((array)$item), (array)$data['a_page']) : null;
+        $this->a_page = isset($data['a_page']) ? new VideoListGetResponsePage((array)$data['a_page']) : null;
         $this->id_embed_source = isset($data['id_embed_source']) ? (int)$data['id_embed_source'] : null;
         $this->id_order = isset($data['id_order']) ? (int)$data['id_order'] : null;
         $this->id_sort = isset($data['id_sort']) ? (int)$data['id_sort'] : null;

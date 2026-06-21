@@ -22,6 +22,7 @@ class ModifyGetRequest
      * The class modify step type. One of the {@link \WlSdk\RsClassModifyActionSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsClassModifyActionSid
      */
     public ?int $id_class_modify_action = null;
 
@@ -29,6 +30,7 @@ class ModifyGetRequest
      * The modify mode type. One of the {@link \WlSdk\RsClassModifyModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsClassModifyModeSid
      */
     public ?int $id_class_modify_mode = null;
 
@@ -36,6 +38,7 @@ class ModifyGetRequest
      * The class modify action type. One of the {@link \WlSdk\RsClassModifyModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsClassModifyModeSid
      */
     public ?int $id_step = null;
 

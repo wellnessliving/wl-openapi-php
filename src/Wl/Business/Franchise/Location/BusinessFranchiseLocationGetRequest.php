@@ -12,6 +12,7 @@ class BusinessFranchiseLocationGetRequest
      * If `null`, {@link \WlSdk\Wl\Business\Franchise\Location\BusinessFranchiseLocationSid} is used.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Business\Franchise\Location\BusinessFranchiseLocationSid
      */
     public ?int $id_business_franchise_location = null;
 

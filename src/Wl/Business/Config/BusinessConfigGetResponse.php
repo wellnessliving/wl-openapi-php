@@ -8,18 +8,18 @@ namespace WlSdk\Wl\Business\Config;
 class BusinessConfigGetResponse
 {
     /**
-     * No description.
+     * All business policies connected to clients and bookings.
      *
-     * @var BusinessConfigGetResponseBusinessPolicy[]|null
+     * @var BusinessConfigGetResponseBusinessPolicy|null
      */
-    public ?array $a_business_policy = null;
+    public ?BusinessConfigGetResponseBusinessPolicy $a_business_policy = null;
 
     /**
-     * No description.
+     * A list of business penalties.
      *
-     * @var BusinessConfigGetResponsePenalty[]|null
+     * @var BusinessConfigGetResponsePenalty|null
      */
-    public ?array $a_penalty = null;
+    public ?BusinessConfigGetResponsePenalty $a_penalty = null;
 
     /**
      * Whether client must select a location at checkout.
@@ -48,8 +48,8 @@ class BusinessConfigGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_business_policy = isset($data['a_business_policy']) ? array_map(static fn ($item) => new BusinessConfigGetResponseBusinessPolicy((array)$item), (array)$data['a_business_policy']) : null;
-        $this->a_penalty = isset($data['a_penalty']) ? array_map(static fn ($item) => new BusinessConfigGetResponsePenalty((array)$item), (array)$data['a_penalty']) : null;
+        $this->a_business_policy = isset($data['a_business_policy']) ? new BusinessConfigGetResponseBusinessPolicy((array)$data['a_business_policy']) : null;
+        $this->a_penalty = isset($data['a_penalty']) ? new BusinessConfigGetResponsePenalty((array)$data['a_penalty']) : null;
         $this->is_location_client_select = isset($data['is_location_client_select']) ? (bool)$data['is_location_client_select'] : null;
         $this->is_location_select = isset($data['is_location_select']) ? (bool)$data['is_location_select'] : null;
         $this->is_white_label = isset($data['is_white_label']) ? (bool)$data['is_white_label'] : null;

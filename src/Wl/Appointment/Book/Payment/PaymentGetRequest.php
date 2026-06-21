@@ -7,7 +7,7 @@ class PaymentGetRequest
     /**
      * Information detailing an appointment booking:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_book_data = null;
 
@@ -23,6 +23,7 @@ class PaymentGetRequest
      * The key of source mode. A constant of {@link \WlSdk\Wl\Mode\ModeSid}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -30,6 +31,7 @@ class PaymentGetRequest
      * The purchase item ID. A constant of {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 

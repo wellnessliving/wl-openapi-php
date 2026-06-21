@@ -8,21 +8,21 @@ namespace WlSdk\Wl\Login\Member;
 class MemberValidate63GetResponse
 {
     /**
-     * No description.
+     * List of fields if the user has empty profile fields, which are required for booking.
      *
      * @var MemberValidate63GetResponseEmptyFieldsBooking[]|null
      */
     public ?array $a_empty_fields_booking = null;
 
     /**
-     * No description.
+     * List of fields if the user has empty profile fields, which are required for registration.
      *
      * @var MemberValidate63GetResponseEmptyFieldsRegistration[]|null
      */
     public ?array $a_empty_fields_registration = null;
 
     /**
-     * No description.
+     * List of profile fields that are required but empty for this user.
      *
      * @var MemberValidate63GetResponseEmptyFieldsRequired[]|null
      */

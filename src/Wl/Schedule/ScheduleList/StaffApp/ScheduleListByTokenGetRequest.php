@@ -10,7 +10,7 @@ class ScheduleListByTokenGetRequest
      *
      * May contain the following keys:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_config = null;
 

@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Family\Relation;
 class Relation72PostResponse
 {
     /**
-     * No description.
+     * Information about the user's relationships. Every element has the following fields:
      *
      * @var Relation72PostResponseRelation[]|null
      */

@@ -8,14 +8,16 @@ namespace WlSdk\Wl\Login\Attendance\Add;
 class AddGetResponse
 {
     /**
-     * No description.
+     * Any of the client memberships that can be used to pay for the session.
+     * Every element is an array with the following keys:
      *
      * @var AddGetResponseLoginPromotion[]|null
      */
     public ?array $a_login_promotion = null;
 
     /**
-     * No description.
+     * Any user's session passes that can be used to pay for the session.
+     * Every element is an array with the following keys:
      *
      * @var AddGetResponseSessionPass[]|null
      */

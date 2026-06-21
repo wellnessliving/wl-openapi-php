@@ -18,6 +18,7 @@ class LeadGetResponseFieldList
      * This value is only set if the field is one of the general fields.
      *
      * @var int|null
+     * @see \WlSdk\RsFieldGeneralSid
      */
     public ?int $id_field_general = null;
 
@@ -25,6 +26,7 @@ class LeadGetResponseFieldList
      * The field type. This is one of the {@link \WlSdk\RsFieldTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsFieldTypeSid
      */
     public ?int $id_field_type = null;
 

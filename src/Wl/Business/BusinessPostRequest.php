@@ -5,9 +5,10 @@ namespace WlSdk\Wl\Business;
 class BusinessPostRequest
 {
     /**
-     * No description.
+     * Empty array means to not create a staff member.
+     * Otherwise, information about staff member to be created in the business.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_staff_member = null;
 
@@ -15,6 +16,7 @@ class BusinessPostRequest
      * The business locale.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\LocaleSid
      */
     public ?int $id_locale = null;
 

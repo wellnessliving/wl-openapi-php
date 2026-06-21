@@ -5,7 +5,9 @@ namespace WlSdk\Wl\Location\WorkTime;
 class LocationWorkTimePostRequest
 {
     /**
-     * No description.
+     * The list of the location's business hours. Each element has the next structure:
+     *
+     * Note that the days of the week that aren't represented in this list will be saved as non-working days.
      *
      * @var array[]|null
      */

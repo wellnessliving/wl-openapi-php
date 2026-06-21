@@ -9,7 +9,7 @@ class CatalogViewGetRequest
      *
      * If set, these values will change the values returned by the endpoint call.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_config = null;
 
@@ -20,7 +20,7 @@ class CatalogViewGetRequest
      *
      * The key is the tax identifier, where the value is:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_tax = null;
 
@@ -35,6 +35,7 @@ class CatalogViewGetRequest
      * The ID of the sale category. One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 

@@ -18,6 +18,7 @@ class PageDataGetRequest
      * period (day, week, month, or year) for the report to cover.
      *
      * @var int|null
+     * @see \WlSdk\RsReportGroupSid
      */
     public ?int $id_report_group = null;
 
@@ -31,6 +32,7 @@ class PageDataGetRequest
      * passes, single sessions, events, gift cards and groupon.
      *
      * @var int|null
+     * @see \WlSdk\RsReportPageSid
      */
     public ?int $id_report_page = null;
 
@@ -38,6 +40,7 @@ class PageDataGetRequest
      * The report view ID. One of the {@link \WlSdk\RsReportChartViewSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsReportChartViewSid
      */
     public ?int $id_report_view = null;
 

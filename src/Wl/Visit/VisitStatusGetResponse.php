@@ -8,11 +8,12 @@ namespace WlSdk\Wl\Visit;
 class VisitStatusGetResponse
 {
     /**
-     * No description.
+     * Information about whether the given user can cancel an online booking and what
+     * consequences the cancellation would have:
      *
-     * @var VisitStatusGetResponseCancel[]|null
+     * @var VisitStatusGetResponseCancel|null
      */
-    public ?array $a_cancel = null;
+    public ?VisitStatusGetResponseCancel $a_cancel = null;
 
     /**
      * An array of service resources.
@@ -28,7 +29,11 @@ class VisitStatusGetResponse
     public ?array $a_resource = null;
 
     /**
-     * No description.
+     * An array of service resources.
+     *
+     * Contains an extended data set, as well as a different format than `a_resource`.
+     *
+     * Each element contains the following set of data:
      *
      * @var VisitStatusGetResponseResourceAlias[]|null
      */
@@ -82,6 +87,7 @@ class VisitStatusGetResponse
      * If you're unsure about the value to use, keep the default value.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -90,6 +96,7 @@ class VisitStatusGetResponse
      * One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Visit\VisitSid
      */
     public ?int $id_visit = null;
 
@@ -225,7 +232,7 @@ class VisitStatusGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_cancel = isset($data['a_cancel']) ? array_map(static fn ($item) => new VisitStatusGetResponseCancel((array)$item), (array)$data['a_cancel']) : null;
+        $this->a_cancel = isset($data['a_cancel']) ? new VisitStatusGetResponseCancel((array)$data['a_cancel']) : null;
         $this->a_resource = isset($data['a_resource']) ? (array)$data['a_resource'] : null;
         $this->a_resource_alias = isset($data['a_resource_alias']) ? array_map(static fn ($item) => new VisitStatusGetResponseResourceAlias((array)$item), (array)$data['a_resource_alias']) : null;
         $this->a_staff = isset($data['a_staff']) ? (array)$data['a_staff'] : null;

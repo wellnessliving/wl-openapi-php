@@ -10,12 +10,12 @@ class CategoryListGetResponse
     /**
      * No description.
      *
-     * @var CategoryListGetResponseCategory[]|null
+     * @var CategoryListGetResponseCategory|null
      */
-    public ?array $a_category = null;
+    public ?CategoryListGetResponseCategory $a_category = null;
 
     public function __construct(array $data)
     {
-        $this->a_category = isset($data['a_category']) ? array_map(static fn ($item) => new CategoryListGetResponseCategory((array)$item), (array)$data['a_category']) : null;
+        $this->a_category = isset($data['a_category']) ? new CategoryListGetResponseCategory((array)$data['a_category']) : null;
     }
 }

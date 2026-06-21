@@ -10,7 +10,7 @@ class PaymentMultipleGetRequest
      *
      * Set this field value for GET requests.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_book_data = null;
 
@@ -26,6 +26,7 @@ class PaymentMultipleGetRequest
      * The ID of the source mode. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 

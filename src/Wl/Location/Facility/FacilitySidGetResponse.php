@@ -8,14 +8,14 @@ namespace WlSdk\Wl\Location\Facility;
 class FacilitySidGetResponse
 {
     /**
-     * No description.
+     * List of items. Keys are IDs, values are arrays with additional information:
      *
-     * @var FacilitySidGetResponseList[]|null
+     * @var FacilitySidGetResponseList|null
      */
-    public ?array $a_list = null;
+    public ?FacilitySidGetResponseList $a_list = null;
 
     public function __construct(array $data)
     {
-        $this->a_list = isset($data['a_list']) ? array_map(static fn ($item) => new FacilitySidGetResponseList((array)$item), (array)$data['a_list']) : null;
+        $this->a_list = isset($data['a_list']) ? new FacilitySidGetResponseList((array)$data['a_list']) : null;
     }
 }

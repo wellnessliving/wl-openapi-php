@@ -7,7 +7,7 @@ class BusinessSelectGetRequest
     /**
      * Configuration data used to determine the list of businesses returned. This array has the following keys:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_config = null;
 

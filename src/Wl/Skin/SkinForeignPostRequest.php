@@ -8,6 +8,7 @@ class SkinForeignPostRequest
      * Skin type, one of {@link \WlSdk\RsSkinSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsSkinSid
      */
     public ?int $id_skin = null;
 
@@ -26,16 +27,21 @@ class SkinForeignPostRequest
     public ?string $s_foreign_id = null;
 
     /**
-     * No description.
+     * Data specific for the skin type.
      *
-     * @var array[]|null
+     *
+     * All fields are optional and may be omitted if not needed.
+     *
+     * For Lead Capture widget it may contain:
+     *
+     * @var array|null
      */
     public ?array $a_data_specific = null;
 
     /**
-     * No description.
+     * Profile fields, which should be shown on the widget and if they are required or optional.
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_fields = null;
 

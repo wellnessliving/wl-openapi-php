@@ -8,7 +8,7 @@ namespace WlSdk\Core\Drive\ImageUpload;
 class ImageUploadPostResponse
 {
     /**
-     * No description.
+     * Image information for every ID.
      *
      * @var ImageUploadPostResponseImage[]|null
      */

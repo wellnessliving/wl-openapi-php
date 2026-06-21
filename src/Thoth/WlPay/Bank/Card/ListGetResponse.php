@@ -8,14 +8,17 @@ namespace WlSdk\Thoth\WlPay\Bank\Card;
 class ListGetResponse
 {
     /**
-     * No description.
+     * A list of bank cards.
+     * The array keys are the card `k_pay_bank` IDs.
+     * Each element has the following keys:
      *
-     * @var ListGetResponseBankCard[]|null
+     * @var ListGetResponseBankCard|null
      */
-    public ?array $a_bank_card = null;
+    public ?ListGetResponseBankCard $a_bank_card = null;
 
     /**
-     * No description.
+     * List of bank cards.
+     * Duplicate of [ListApi](/Thoth/WlPay/Bank/Card/List.json) as a flat indexed array.
      *
      * @var ListGetResponseList[]|null
      */
@@ -33,7 +36,7 @@ class ListGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_bank_card = isset($data['a_bank_card']) ? array_map(static fn ($item) => new ListGetResponseBankCard((array)$item), (array)$data['a_bank_card']) : null;
+        $this->a_bank_card = isset($data['a_bank_card']) ? new ListGetResponseBankCard((array)$data['a_bank_card']) : null;
         $this->a_list = isset($data['a_list']) ? array_map(static fn ($item) => new ListGetResponseList((array)$item), (array)$data['a_list']) : null;
         $this->can_add = isset($data['can_add']) ? (bool)$data['can_add'] : null;
     }

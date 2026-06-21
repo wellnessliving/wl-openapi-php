@@ -43,6 +43,7 @@ class UserInfoGetResponseResultList
      * The ID of the user's gender. One of the {@link \WlSdk\AGenderSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\AGenderSid
      */
     public ?int $id_gender = null;
 

@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Announcement;
 class AnnouncementListGetResponse
 {
     /**
-     * No description.
+     * List of announcements. Each element has the following keys:
      *
      * @var AnnouncementListGetResponseList[]|null
      */
@@ -22,6 +22,7 @@ class AnnouncementListGetResponse
      * `null` in case when use default order.
      *
      * @var int|null
+     * @see \WlSdk\Core\Sid\SortOrderSid
      */
     public ?int $id_order = null;
 
@@ -33,6 +34,7 @@ class AnnouncementListGetResponse
      * `null` in case when use default field.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Announcement\SortFieldSid
      */
     public ?int $id_sort_field = null;
 

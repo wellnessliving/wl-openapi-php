@@ -37,12 +37,13 @@ class ReceptionRosterDesignGetResponseImage
      *  Will be present only for \Core\Drive\Drive images.
      *
      * @var int|null
+     * @see \WlSdk\Core\Drive\DriveTypeSid
      */
     public ?int $id_type_src = null;
 
     /**
      * Whether image was resized to satisfy specified
-     *  `i_width` and `i_height`.
+     *  `i_width` int `i_height`.
      *
      * @var bool|null
      */

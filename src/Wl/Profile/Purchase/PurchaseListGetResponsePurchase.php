@@ -31,6 +31,7 @@ class PurchaseListGetResponsePurchase
      * The ID of the purchase type. One of the constants {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 
@@ -38,6 +39,7 @@ class PurchaseListGetResponsePurchase
      * The ID of the sale category in the store. One of the constants {@link \WlSdk\RsSaleSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 

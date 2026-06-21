@@ -15,6 +15,7 @@ class QuizPostRequest
      * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -72,14 +73,19 @@ class QuizPostRequest
     public ?array $a_quiz_response = null;
 
     /**
-     * No description.
+     * Information about the recurring booking:
      *
-     * @var array[]|null
+     *
+     * This will be `null` if the booking isn't recurring.
+     *
+     * @var array|null
      */
     public ?array $a_repeat = null;
 
     /**
-     * No description.
+     * The selected assets.
+     *
+     * Every element has the next keys:
      *
      * @var array[]|null
      */

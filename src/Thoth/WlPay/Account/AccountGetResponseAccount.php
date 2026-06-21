@@ -8,6 +8,7 @@ class AccountGetResponseAccount
      * Currency ID. One of {@link \WlSdk\Core\Locale\CurrencySid} constant.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\CurrencySid
      */
     public ?int $id_currency = null;
 

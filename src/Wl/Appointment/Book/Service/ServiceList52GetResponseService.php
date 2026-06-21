@@ -122,6 +122,7 @@ class ServiceList52GetResponseService
      * The type of client booking flow. One of {@link \WlSdk\Wl\Service\ServiceBookFlowSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Service\ServiceBookFlowSid
      */
     public ?int $id_book_flow = null;
 
@@ -129,6 +130,7 @@ class ServiceList52GetResponseService
      * The required payment type ID. One of {@link \WlSdk\RsServiceRequireSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsServiceRequireSid
      */
     public ?int $id_service_require = null;
 

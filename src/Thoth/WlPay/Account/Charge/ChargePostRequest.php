@@ -10,6 +10,7 @@ class ChargePostRequest
      * One of the {@link \WlSdk\RsPayAccountChargeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPayAccountChargeSid
      */
     public ?int $id_pay_account_charge = null;
 
@@ -59,7 +60,9 @@ class ChargePostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * A list of payment sources to pay with.
+     *
+     * Each element has next keys:
      *
      * @var array[]|null
      */
@@ -69,6 +72,7 @@ class ChargePostRequest
      * The source mode key. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 

@@ -8,7 +8,8 @@ namespace WlSdk\Wl\Promotion\Index;
 class PromotionIndexGetResponse
 {
     /**
-     * No description.
+     * A list of introductory promotion offers available at the location.
+     * Every element is an array with the following keys:
      *
      * @var PromotionIndexGetResponsePromotion[]|null
      */

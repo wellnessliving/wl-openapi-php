@@ -15,6 +15,7 @@ class RecentServiceGetRequest
      * Type of service to return. One of {@link \WlSdk\Wl\Service\ServiceSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Service\ServiceSid
      */
     public ?int $id_service = null;
 

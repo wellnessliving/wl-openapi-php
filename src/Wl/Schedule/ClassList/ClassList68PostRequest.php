@@ -60,7 +60,14 @@ class ClassList68PostRequest
     public ?array $a_location = null;
 
     /**
-     * No description.
+     * Class filter by time of day.
+     * List of arrays with start and end time in "HH:MM" format (24h).
+     * Include sessions that start between the specified time range.
+     *
+     * Each value is array with time parameters:
+     *
+     *
+     * Empty array means no filtering.
      *
      * @var array[]|null
      */
@@ -87,6 +94,7 @@ class ClassList68PostRequest
      * `null` if no filtering by tab is required.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\Tab\TabSid
      */
     public ?int $id_class_tab = null;
 

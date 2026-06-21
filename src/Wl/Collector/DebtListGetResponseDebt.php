@@ -43,6 +43,7 @@ class DebtListGetResponseDebt
      * The debt currency ID. One of {@link \WlSdk\Core\Locale\CurrencySid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\CurrencySid
      */
     public ?int $id_currency = null;
 

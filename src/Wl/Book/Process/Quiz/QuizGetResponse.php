@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Book\Process\Quiz;
 class QuizGetResponse
 {
     /**
-     * No description.
+     * The list of quizzes. Each element has the next structure:
      *
      * @var QuizGetResponseQuiz[]|null
      */

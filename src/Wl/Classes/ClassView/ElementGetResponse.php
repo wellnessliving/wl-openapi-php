@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Classes\ClassView;
 class ElementGetResponse
 {
     /**
-     * No description.
+     * Displays information about the class schedule(s). Each element has the next structure:
      *
      * @var ElementGetResponseClassList[]|null
      */

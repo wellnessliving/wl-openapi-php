@@ -27,6 +27,7 @@ class ResourcePostRequest
      * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -73,16 +74,19 @@ class ResourcePostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * Information about the recurring booking:
      *
-     * @var array[]|null
+     *
+     * This will be `null` if the booking isn't recurring.
+     *
+     * @var array|null
      */
     public ?array $a_repeat = null;
 
     /**
-     * No description.
+     * The selected assets. Every element has the next keys:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_resource_select = null;
 

@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Family\Relation;
 class RelationGetResponse
 {
     /**
-     * No description.
+     * Information about the user's relationships. Every element has the following fields:
      *
      * @var RelationGetResponseRelation[]|null
      */

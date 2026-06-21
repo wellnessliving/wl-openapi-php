@@ -8,35 +8,41 @@ namespace WlSdk\Wl\Schedule\ClassView;
 class ClassViewGetResponse
 {
     /**
-     * No description.
+     * Asset list data.
      *
      * @var ClassViewGetResponseAsset[]|null
      */
     public ?array $a_asset = null;
 
     /**
-     * No description.
+     * Detailed information about the class.
      *
-     * @var ClassViewGetResponseClass[]|null
+     * This will be `null` if data isn't loaded yet.
+     *
+     * @var ClassViewGetResponseClass|null
      */
-    public ?array $a_class = null;
+    public ?ClassViewGetResponseClass $a_class = null;
 
     /**
-     * No description.
+     * Location data.
      *
-     * @var ClassViewGetResponseLocation[]|null
+     * This will be `null` if data isn't loaded yet.
+     *
+     * @var ClassViewGetResponseLocation|null
      */
-    public ?array $a_location = null;
+    public ?ClassViewGetResponseLocation $a_location = null;
 
     /**
-     * No description.
+     * A list of sessions with information, received in a multiple session mode.
      *
      * @var ClassViewGetResponseSessionResult[]|null
      */
     public ?array $a_session_result = null;
 
     /**
-     * No description.
+     * Staff member list data.
+     *
+     * This will be `null` if data isn't loaded yet.
      *
      * @var ClassViewGetResponseStaff[]|null
      */
@@ -51,7 +57,7 @@ class ClassViewGetResponse
     public ?array $a_virtual_location = null;
 
     /**
-     * No description.
+     * A list of classes and events that clients should visit before this one.
      *
      * @var ClassViewGetResponseVisitsRequired[]|null
      */
@@ -60,8 +66,8 @@ class ClassViewGetResponse
     public function __construct(array $data)
     {
         $this->a_asset = isset($data['a_asset']) ? array_map(static fn ($item) => new ClassViewGetResponseAsset((array)$item), (array)$data['a_asset']) : null;
-        $this->a_class = isset($data['a_class']) ? array_map(static fn ($item) => new ClassViewGetResponseClass((array)$item), (array)$data['a_class']) : null;
-        $this->a_location = isset($data['a_location']) ? array_map(static fn ($item) => new ClassViewGetResponseLocation((array)$item), (array)$data['a_location']) : null;
+        $this->a_class = isset($data['a_class']) ? new ClassViewGetResponseClass((array)$data['a_class']) : null;
+        $this->a_location = isset($data['a_location']) ? new ClassViewGetResponseLocation((array)$data['a_location']) : null;
         $this->a_session_result = isset($data['a_session_result']) ? array_map(static fn ($item) => new ClassViewGetResponseSessionResult((array)$item), (array)$data['a_session_result']) : null;
         $this->a_staff = isset($data['a_staff']) ? array_map(static fn ($item) => new ClassViewGetResponseStaff((array)$item), (array)$data['a_staff']) : null;
         $this->a_virtual_location = isset($data['a_virtual_location']) ? (array)$data['a_virtual_location'] : null;

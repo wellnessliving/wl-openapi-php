@@ -15,6 +15,7 @@ class ConvertPostRequest
      * The conversion ID. One of the {@link \WlSdk\Wl\Promotion\Convert\PromotionConvertSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Promotion\Convert\PromotionConvertSid
      */
     public ?int $id_convert = null;
 
@@ -25,6 +26,7 @@ class ConvertPostRequest
      * `null` if it's not set yet.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Login\Promotion\Convert\ConvertWhenSid
      */
     public ?int $id_convert_when = null;
 

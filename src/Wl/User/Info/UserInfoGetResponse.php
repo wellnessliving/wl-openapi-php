@@ -8,7 +8,7 @@ namespace WlSdk\Wl\User\Info;
 class UserInfoGetResponse
 {
     /**
-     * No description.
+     * List of the custom user fields. Each value is:
      *
      * @var UserInfoGetResponseCustomField[]|null
      */
@@ -22,14 +22,14 @@ class UserInfoGetResponse
     public ?array $a_member_group = null;
 
     /**
-     * No description.
+     * Information about the user's photo. The information returned has the following structure:
      *
-     * @var UserInfoGetResponsePhoto[]|null
+     * @var UserInfoGetResponsePhoto|null
      */
-    public ?array $a_photo = null;
+    public ?UserInfoGetResponsePhoto $a_photo = null;
 
     /**
-     * No description.
+     * List of user's data.
      *
      * @var UserInfoGetResponseResultList[]|null
      */
@@ -74,6 +74,7 @@ class UserInfoGetResponse
      * This will be `null` if the gender isn't set yet.
      *
      * @var int|null
+     * @see \WlSdk\AGenderSid
      */
     public ?int $id_gender = null;
 
@@ -227,7 +228,7 @@ class UserInfoGetResponse
     {
         $this->a_custom_field = isset($data['a_custom_field']) ? array_map(static fn ($item) => new UserInfoGetResponseCustomField((array)$item), (array)$data['a_custom_field']) : null;
         $this->a_member_group = isset($data['a_member_group']) ? (array)$data['a_member_group'] : null;
-        $this->a_photo = isset($data['a_photo']) ? array_map(static fn ($item) => new UserInfoGetResponsePhoto((array)$item), (array)$data['a_photo']) : null;
+        $this->a_photo = isset($data['a_photo']) ? new UserInfoGetResponsePhoto((array)$data['a_photo']) : null;
         $this->a_result_list = isset($data['a_result_list']) ? array_map(static fn ($item) => new UserInfoGetResponseResultList((array)$item), (array)$data['a_result_list']) : null;
         $this->can_introductory = isset($data['can_introductory']) ? (bool)$data['can_introductory'] : null;
         $this->dt_add = isset($data['dt_add']) ? (string)$data['dt_add'] : null;

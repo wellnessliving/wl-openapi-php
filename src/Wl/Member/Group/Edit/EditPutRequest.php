@@ -12,7 +12,7 @@ class EditPutRequest
     public ?string $k_business = null;
 
     /**
-     * Member group primary key in Sql table.
+     * Member group key.
      *
      * @var string|null
      */
@@ -20,7 +20,6 @@ class EditPutRequest
 
     /**
      * Key of existing template.
-     * Primary key in the SearchTemplateSql table.
      *
      * Can be empty if template needs to be created.
      *
@@ -37,7 +36,6 @@ class EditPutRequest
 
     /**
      * User key.
-     * Primary key in the PassportLoginSql table.
      *
      * @var string|null
      */
@@ -45,9 +43,8 @@ class EditPutRequest
 
     /**
      * Entity in array format.
-     * For more information about the format, see SearchCriteriaList::createArray() method.
      *
-     * @var array|null
+     * @var array[]|null
      */
     public ?array $a_criteria = null;
 
@@ -68,7 +65,7 @@ class EditPutRequest
     public ?array $a_search_entity = null;
 
     /**
-     * No description.
+     * Selected staff roles of the search template.
      *
      * @var array[]|null
      */
@@ -78,6 +75,7 @@ class EditPutRequest
      * Shape of icon. One of {@link \WlSdk\Wl\Member\Group\ShapeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Member\Group\ShapeSid
      */
     public ?int $id_member_group_shape = null;
 
@@ -86,6 +84,7 @@ class EditPutRequest
      * One of {@link \WlSdk\Wl\Share\ShareSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Share\ShareSid
      */
     public ?int $id_share = null;
 
@@ -98,12 +97,11 @@ class EditPutRequest
 
     /**
      * Entity in array format.
-     * For more information about the format, see SearchCriteriaList::createArray() method.
-     * Alternative of self::$a_criteria to transfer data via HTTP as one variable.
+     * Alternative of `a_criteria` to transfer data via HTTP as one variable.
      *
-     * @var array|null
+     * @var string|null
      */
-    public ?array $json_criteria = null;
+    public ?string $json_criteria = null;
 
     /**
      * Hexadecimal color of icon background.

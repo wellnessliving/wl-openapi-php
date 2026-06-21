@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Video\Level;
 class LevelListGetResponse
 {
     /**
-     * No description.
+     * A list of video levels with the following structure:
      *
      * @var LevelListGetResponseLevelList[]|null
      */

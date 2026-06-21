@@ -7,7 +7,7 @@ class PaymentPostRequest
     /**
      * Information detailing an appointment booking:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_book_data = null;
 
@@ -23,6 +23,7 @@ class PaymentPostRequest
      * The key of source mode. A constant of {@link \WlSdk\Wl\Mode\ModeSid}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -30,6 +31,7 @@ class PaymentPostRequest
      * The purchase item ID. A constant of {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 
@@ -83,7 +85,9 @@ class PaymentPostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * A list of payment sources to pay with.
+     *
+     * Each element has next keys:
      *
      * @var array[]|null
      */

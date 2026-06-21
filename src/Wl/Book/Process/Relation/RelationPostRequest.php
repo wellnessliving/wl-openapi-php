@@ -47,6 +47,7 @@ class RelationPostRequest
      * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -55,6 +56,7 @@ class RelationPostRequest
      * One of the {@link \WlSdk\RsFamilyRelationSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsFamilyRelationSid
      */
     public ?int $id_relation = null;
 

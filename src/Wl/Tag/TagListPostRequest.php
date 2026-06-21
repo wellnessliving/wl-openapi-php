@@ -12,7 +12,9 @@ class TagListPostRequest
     public ?string $k_business = null;
 
     /**
-     * No description.
+     * The tag list.
+     *
+     * Each element has the next structure:
      *
      * @var array[]|null
      */

@@ -5,16 +5,23 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostRequest
 {
     /**
-     * No description.
+     * Keys of the channel.
      *
-     * @var array[]|null
+     * Key is name of a key field in a channel controller.
+     * Value is its value.
+     *
+     * Subscriber will only receive notifications about events in which all these values equal values specified
+     * here.
+     *
+     * @var array|null
      */
-    public ?array $a_key = null;
+    public $a_key = null;
 
     /**
      * Channel controller CID.
      *
      * @var int|null
+     * @see \WlSdk\Core\WebSocket\ChannelAbstract
      */
     public ?int $cid_channel = null;
 

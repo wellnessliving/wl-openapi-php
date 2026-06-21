@@ -8,14 +8,19 @@ namespace WlSdk\Thoth\WlPay\Account;
 class AccountGetResponse
 {
     /**
-     * No description.
+     * A list of the user's accounts.
      *
-     * @var AccountGetResponseAccount[]|null
+     * Keys are account keys. This could be `0` if the user has no accounts in the currency of the given business.
+     * Values are account data:
+     *
+     * @var AccountGetResponseAccount|null
      */
-    public ?array $a_account = null;
+    public ?AccountGetResponseAccount $a_account = null;
 
     /**
-     * No description.
+     * A list of accounts that have not been created for this user yet.
+     *
+     * Keys are composed of `{k_pay_method}:{k_currency}`. Each element:
      *
      * @var AccountGetResponseAccountNx[]|null
      */
@@ -32,7 +37,7 @@ class AccountGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_account = isset($data['a_account']) ? array_map(static fn ($item) => new AccountGetResponseAccount((array)$item), (array)$data['a_account']) : null;
+        $this->a_account = isset($data['a_account']) ? new AccountGetResponseAccount((array)$data['a_account']) : null;
         $this->a_account_nx = isset($data['a_account_nx']) ? array_map(static fn ($item) => new AccountGetResponseAccountNx((array)$item), (array)$data['a_account_nx']) : null;
         $this->is_debtor = isset($data['is_debtor']) ? (bool)$data['is_debtor'] : null;
     }

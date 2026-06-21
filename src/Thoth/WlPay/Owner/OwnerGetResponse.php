@@ -13,6 +13,7 @@ class OwnerGetResponse
      * This is one of the {@link \WlSdk\RsPayOwnerSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPayOwnerSid
      */
     public ?int $id_pay_owner = null;
 

@@ -29,6 +29,7 @@ class AssetListGetResponseAssetPeriod
      * The asset period price type. One of {@link \WlSdk\RsServicePriceSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsServicePriceSid
      */
     public ?int $id_price = null;
 

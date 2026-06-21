@@ -8,7 +8,9 @@ namespace WlSdk\Wl\Tag;
 class TagListGetResponse
 {
     /**
-     * No description.
+     * The tag list.
+     *
+     * Each element has the next structure:
      *
      * @var TagListGetResponseList[]|null
      */

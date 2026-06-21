@@ -8,35 +8,40 @@ namespace WlSdk\Wl\Book\Process\Purchase;
 class PurchaseGetResponse
 {
     /**
-     * No description.
+     * Data about the login prize which can be used to pay for service.
      *
-     * @var PurchaseGetResponseLoginPrize[]|null
+     * @var PurchaseGetResponseLoginPrize|null
      */
-    public ?array $a_login_prize = null;
+    public ?PurchaseGetResponseLoginPrize $a_login_prize = null;
 
     /**
-     * No description.
+     * A list of the client's login promotions that can be applied to a given service.
+     * Each element has the following fields:
      *
      * @var PurchaseGetResponseLoginPromotion[]|null
      */
     public ?array $a_login_promotion = null;
 
     /**
-     * No description.
+     * A list of Purchase Options that are available for the session(s) being booked. Keys refer to unique string
+     * IDs,
+     * and values refer arrays with the next fields:
      *
      * @var PurchaseGetResponsePurchase[]|null
      */
     public ?array $a_purchase = null;
 
     /**
-     * No description.
+     * List of redeemable prizes which can be used to pay for service.
+     * Each element has the following fields:
      *
      * @var PurchaseGetResponseRewardPrize[]|null
      */
     public ?array $a_reward_prize = null;
 
     /**
-     * No description.
+     * The list of session passes that might be used in booking process.
+     * Each element has the following fields:
      *
      * @var PurchaseGetResponseSessionPass[]|null
      */
@@ -59,7 +64,7 @@ class PurchaseGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_login_prize = isset($data['a_login_prize']) ? array_map(static fn ($item) => new PurchaseGetResponseLoginPrize((array)$item), (array)$data['a_login_prize']) : null;
+        $this->a_login_prize = isset($data['a_login_prize']) ? new PurchaseGetResponseLoginPrize((array)$data['a_login_prize']) : null;
         $this->a_login_promotion = isset($data['a_login_promotion']) ? array_map(static fn ($item) => new PurchaseGetResponseLoginPromotion((array)$item), (array)$data['a_login_promotion']) : null;
         $this->a_purchase = isset($data['a_purchase']) ? array_map(static fn ($item) => new PurchaseGetResponsePurchase((array)$item), (array)$data['a_purchase']) : null;
         $this->a_reward_prize = isset($data['a_reward_prize']) ? array_map(static fn ($item) => new PurchaseGetResponseRewardPrize((array)$item), (array)$data['a_reward_prize']) : null;

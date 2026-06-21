@@ -8,7 +8,12 @@ namespace WlSdk\Wl\Login\Search\StaffApp;
 class ListGetResponse
 {
     /**
-     * No description.
+     * A list of users matching the search string.
+     *
+     * The list depends on the search query.
+     * If the query is empty, recent users will be returned.
+     *
+     * Each element is an array with the following keys:
      *
      * @var ListGetResponseList[]|null
      */

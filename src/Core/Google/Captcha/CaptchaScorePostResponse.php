@@ -11,6 +11,7 @@ class CaptchaScorePostResponse
      * Captcha response ID.
      *
      * @var int|null
+     * @see \WlSdk\Core\Google\Captcha\CaptchaResponseSid
      */
     public ?int $id_response = null;
 

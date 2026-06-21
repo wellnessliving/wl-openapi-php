@@ -8,32 +8,34 @@ namespace WlSdk\Wl\Appointment\Book\Schedule;
 class CalendarGetResponse
 {
     /**
-     * No description.
+     * A list with all calendar days in the specified month with
+     * available and unavailable appointment bookings in the schedule.
      *
      * @var CalendarGetResponseDate[]|null
      */
     public ?array $a_date = null;
 
     /**
-     * No description.
+     * An array with a schedule of available appointment booking times.
      *
-     * @var CalendarGetResponseTime[]|null
+     * @var CalendarGetResponseTime|null
      */
-    public ?array $a_time = null;
+    public ?CalendarGetResponseTime $a_time = null;
 
     /**
-     * No description.
+     * Information about timezone.
      *
-     * @var CalendarGetResponseTimezoneData[]|null
+     * @var CalendarGetResponseTimezoneData|null
      */
-    public ?array $a_timezone_data = null;
+    public ?CalendarGetResponseTimezoneData $a_timezone_data = null;
 
     /**
-     * No description.
+     * Array with short week day's names (2 letters, i.e. 'Fr') for calendar month view. Week days order according
+     * to business's settings.
      *
-     * @var CalendarGetResponseWeekName[]|null
+     * @var CalendarGetResponseWeekName|null
      */
-    public ?array $a_week_name = null;
+    public ?CalendarGetResponseWeekName $a_week_name = null;
 
     /**
      * Whether previous calendar period can be shown (start of shown period later than current date).
@@ -69,6 +71,7 @@ class CalendarGetResponse
      * Last day of the week. One of {@link \WlSdk\ADateWeekSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ADateWeekSid
      */
     public ?int $i_week_end = null;
 
@@ -76,6 +79,7 @@ class CalendarGetResponse
      * First day of the week. One of {@link \WlSdk\ADateWeekSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ADateWeekSid
      */
     public ?int $i_week_start = null;
 
@@ -96,9 +100,9 @@ class CalendarGetResponse
     public function __construct(array $data)
     {
         $this->a_date = isset($data['a_date']) ? array_map(static fn ($item) => new CalendarGetResponseDate((array)$item), (array)$data['a_date']) : null;
-        $this->a_time = isset($data['a_time']) ? array_map(static fn ($item) => new CalendarGetResponseTime((array)$item), (array)$data['a_time']) : null;
-        $this->a_timezone_data = isset($data['a_timezone_data']) ? array_map(static fn ($item) => new CalendarGetResponseTimezoneData((array)$item), (array)$data['a_timezone_data']) : null;
-        $this->a_week_name = isset($data['a_week_name']) ? array_map(static fn ($item) => new CalendarGetResponseWeekName((array)$item), (array)$data['a_week_name']) : null;
+        $this->a_time = isset($data['a_time']) ? new CalendarGetResponseTime((array)$data['a_time']) : null;
+        $this->a_timezone_data = isset($data['a_timezone_data']) ? new CalendarGetResponseTimezoneData((array)$data['a_timezone_data']) : null;
+        $this->a_week_name = isset($data['a_week_name']) ? new CalendarGetResponseWeekName((array)$data['a_week_name']) : null;
         $this->can_backwards = isset($data['can_backwards']) ? (bool)$data['can_backwards'] : null;
         $this->dt_date = isset($data['dt_date']) ? (string)$data['dt_date'] : null;
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;

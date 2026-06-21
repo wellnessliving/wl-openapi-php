@@ -36,6 +36,7 @@ class LayoutGetResponseShapeIcon
      * The icon ID. One of the {@link \WlSdk\Wl\Resource\Image\ImageIconSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Resource\Image\ImageIconSid
      */
     public ?int $id_shape_icon = null;
 

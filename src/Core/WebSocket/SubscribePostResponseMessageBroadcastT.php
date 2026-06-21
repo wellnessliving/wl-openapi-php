@@ -11,6 +11,7 @@ class SubscribePostResponseMessageBroadcastT
      * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
      *
      * @var int|null
+     * @see \WlSdk\ACardSystemSid
      */
     public ?int $id_card_system = null;
 
@@ -20,6 +21,7 @@ class SubscribePostResponseMessageBroadcastT
      * `null` if no errors occurred.
      *
      * @var int|null
+     * @see \WlSdk\RsPayException
      */
     public ?int $id_pay_exception = null;
 
@@ -29,6 +31,7 @@ class SubscribePostResponseMessageBroadcastT
      * `null` if not set yet.
      *
      * @var int|null
+     * @see \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid
      */
     public ?int $id_ticket_status = null;
 

@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Reward\Action;
 class ActionTypeGetResponse
 {
     /**
-     * No description.
+     * Information about reward actions. Every element has next keys:
      *
      * @var ActionTypeGetResponseRewardAction[]|null
      */

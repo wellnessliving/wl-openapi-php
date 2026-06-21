@@ -15,6 +15,7 @@ class PurchaseGetResponsePurchaseInstallmentTemplate
      * The duration of a single period. One of the {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_duration = null;
 

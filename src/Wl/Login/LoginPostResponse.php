@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Login;
 class LoginPostResponse
 {
     /**
-     * No description.
+     * List of information about users:
      *
      * @var LoginPostResponseLogin[]|null
      */

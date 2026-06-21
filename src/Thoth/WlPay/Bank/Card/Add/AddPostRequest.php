@@ -27,9 +27,9 @@ class AddPostRequest
     public ?string $k_pay_owner = null;
 
     /**
-     * No description.
+     * An array containing payment card information with the following fields:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_card_detail = null;
 

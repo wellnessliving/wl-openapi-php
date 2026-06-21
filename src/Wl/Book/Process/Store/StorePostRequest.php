@@ -15,6 +15,7 @@ class StorePostRequest
      * The mode type. One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -61,21 +62,28 @@ class StorePostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * The selected purchase item.
      *
-     * @var array[]|null
+     * This new purchase item should be checked to determine if it can be applied to the current class or event
+     * before
+     * being purchased.
+     *
+     * @var array|null
      */
     public ?array $a_purchase_item_check = null;
 
     /**
-     * No description.
+     * Information about the recurring booking:
      *
-     * @var array[]|null
+     *
+     * This will be `null` if the booking isn't recurring.
+     *
+     * @var array|null
      */
     public ?array $a_repeat = null;
 
     /**
-     * No description.
+     * A list of assets being booked. Each element has the following keys:
      *
      * @var array[]|null
      */

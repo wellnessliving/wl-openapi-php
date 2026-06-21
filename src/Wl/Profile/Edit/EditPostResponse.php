@@ -8,7 +8,8 @@ namespace WlSdk\Wl\Profile\Edit;
 class EditPostResponse
 {
     /**
-     * No description.
+     * List of validation errors. `null` if no error occurred.
+     * Each element:
      *
      * @var EditPostResponseErrorList[]|null
      */

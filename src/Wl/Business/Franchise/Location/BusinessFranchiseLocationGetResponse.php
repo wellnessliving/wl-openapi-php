@@ -8,35 +8,35 @@ namespace WlSdk\Wl\Business\Franchise\Location;
 class BusinessFranchiseLocationGetResponse
 {
     /**
-     * No description.
+     * The city list. Each element has next structure:
      *
      * @var BusinessFranchiseLocationGetResponseCityList[]|null
      */
     public ?array $a_city_list = null;
 
     /**
-     * No description.
+     * The country list. Each element has next structure:
      *
      * @var BusinessFranchiseLocationGetResponseCountryList[]|null
      */
     public ?array $a_country_list = null;
 
     /**
-     * No description.
+     * The location list. Each element has the next structure:
      *
      * @var BusinessFranchiseLocationGetResponseLocationList[]|null
      */
     public ?array $a_location_list = null;
 
     /**
-     * No description.
+     * The region list. Each element has the next structure:
      *
      * @var BusinessFranchiseLocationGetResponseRegionList[]|null
      */
     public ?array $a_region_list = null;
 
     /**
-     * No description.
+     * The state list. Each element has the next structure:
      *
      * @var BusinessFranchiseLocationGetResponseStateList[]|null
      */

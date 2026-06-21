@@ -26,6 +26,7 @@ class PromotionIndexGetRequest
      * `0` to not filter Purchase Options with type of the Purchase Option.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
      */
     public ?int $id_program_type = null;
 

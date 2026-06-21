@@ -26,9 +26,9 @@ class VisitAddPostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * The time of the visit, in the location's timezone. An array with the following fields:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_time = null;
 

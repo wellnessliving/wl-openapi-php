@@ -17,21 +17,27 @@ class InfoGetResponse
     public ?array $a_day_available = null;
 
     /**
-     * No description.
+     * A list of all class sessions that can be booked together. Every element has the next structure:
      *
      * @var InfoGetResponseSessionAll[]|null
      */
     public ?array $a_session_all = null;
 
     /**
-     * No description.
+     * List of sessions that can be paid without new purchases.
+     * Such as previously prepaid or free sessions.
+     *
+     *
+     *
+     * Each its item has the key of following format: `dt_date::k_class_period` and
+     * the value of following structure:
      *
      * @var InfoGetResponseSessionFree[]|null
      */
     public ?array $a_session_free = null;
 
     /**
-     * No description.
+     * The staff member conducting the session. Every element has the next structure:
      *
      * @var InfoGetResponseStaff[]|null
      */

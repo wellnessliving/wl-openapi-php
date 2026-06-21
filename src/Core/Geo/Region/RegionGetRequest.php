@@ -8,6 +8,7 @@ class RegionGetRequest
      * The locale ID to find regions for. One of the {@link \WlSdk\Core\Locale\LocaleSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\LocaleSid
      */
     public ?int $id_locale = null;
 

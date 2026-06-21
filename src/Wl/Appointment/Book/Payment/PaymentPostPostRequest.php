@@ -16,6 +16,7 @@ class PaymentPostPostRequest
      * The key of source mode. A constant of {@link \WlSdk\Wl\Mode\ModeSid}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
@@ -23,6 +24,7 @@ class PaymentPostPostRequest
      * The purchase item ID. A constant of {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 
@@ -76,14 +78,17 @@ class PaymentPostPostRequest
     public ?string $uid = null;
 
     /**
-     * No description.
+     * Information detailing an appointment booking.
+     * Has the same structure as [PaymentApi](/Wl/Appointment/Book/Payment/Payment.json).
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_book_data = null;
 
     /**
-     * No description.
+     * A list of payment sources to pay with.
+     *
+     * Each element has next keys:
      *
      * @var array[]|null
      */

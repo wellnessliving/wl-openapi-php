@@ -9,6 +9,7 @@ class AddressGetRequest
      * One of {@link \WlSdk\RsPayOwnerSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPayOwnerSid
      */
     public ?int $id_pay_owner = null;
 

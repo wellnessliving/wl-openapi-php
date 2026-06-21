@@ -22,6 +22,7 @@ class QuizElement72GetResponseAccessLog
      * One of {@link \WlSdk\Wl\Quiz\Activity\ActivitySid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Quiz\Activity\ActivitySid
      */
     public ?int $id_activity = null;
 

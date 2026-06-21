@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Coupon\CouponList;
 class ListGetResponse
 {
     /**
-     * No description.
+     * A list of gift cards. Every element has the following keys:
      *
      * @var ListGetResponseCoupon[]|null
      */

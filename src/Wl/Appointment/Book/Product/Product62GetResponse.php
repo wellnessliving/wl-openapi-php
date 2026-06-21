@@ -8,7 +8,9 @@ namespace WlSdk\Wl\Appointment\Book\Product;
 class Product62GetResponse
 {
     /**
-     * No description.
+     * A list service add-ons.
+     *
+     * This will be `null` if not set yet.
      *
      * @var Product62GetResponseProduct[]|null
      */

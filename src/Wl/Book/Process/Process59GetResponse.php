@@ -18,7 +18,7 @@ class Process59GetResponse
     public ?array $a_family_relation_login_allow = null;
 
     /**
-     * No description.
+     * All the steps to be performed to make a booking. Every element has the next keys:
      *
      * @var Process59GetResponsePath[]|null
      */
@@ -29,6 +29,7 @@ class Process59GetResponse
      * One of the {@link \WlSdk\Wl\Classes\RequirePaySid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Classes\RequirePaySid
      */
     public ?int $id_pay_require = null;
 

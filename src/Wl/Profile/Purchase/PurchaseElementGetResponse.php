@@ -8,28 +8,29 @@ namespace WlSdk\Wl\Profile\Purchase;
 class PurchaseElementGetResponse
 {
     /**
-     * No description.
+     * List of components (not empty if this purchase element is a package). Every element has keys:
      *
      * @var PurchaseElementGetResponseComponent[]|null
      */
     public ?array $a_component = null;
 
     /**
-     * No description.
+     * An array containing information about the image of the purchased item. Every element has the following keys:
      *
-     * @var PurchaseElementGetResponseLogo[]|null
+     * @var PurchaseElementGetResponseLogo|null
      */
-    public ?array $a_logo = null;
+    public ?PurchaseElementGetResponseLogo $a_logo = null;
 
     /**
-     * No description.
+     * This field is used only for promotions. It contains restrictions that will
+     * apply to bookings made with this promotion. Every element has the following keys:
      *
      * @var PurchaseElementGetResponseRestrict[]|null
      */
     public ?array $a_restrict = null;
 
     /**
-     * No description.
+     * The list of taxes paid for the purchased item. Every element has the following fields:
      *
      * @var PurchaseElementGetResponseTax[]|null
      */
@@ -155,7 +156,7 @@ class PurchaseElementGetResponse
     public ?int $i_limit = null;
 
     /**
-     * The duration of the regular payments interval. This is used only for “membership” type promoti
+     * The duration of the regular payments interval. This is used only for "membership" type promotions.
      *
      * @var int|null
      */
@@ -194,6 +195,7 @@ class PurchaseElementGetResponse
      * Activation mode. One on {@link \WlSdk\RsActivationSid} constants. This field is only added for promotions.
      *
      * @var int|null
+     * @see \WlSdk\RsActivationSid
      */
     public ?int $id_activation = null;
 
@@ -203,15 +205,17 @@ class PurchaseElementGetResponse
      * This will be empty if this discount wasn't applied.
      *
      * @var int|null
+     * @see \WlSdk\RsCommissionTypeSid
      */
     public ?int $id_discount_commission_type = null;
 
     /**
-     * The type of duration for the promotion. This is used only for “membership” type promotions.
+     * The type of duration for the promotion. This is used only for "membership" type promotions.
      * This determines whether the promotion lasts indefinitely, has a fixed duration, or ends on a specific date.
-     * One of the {@link \WlSdk\RsDurationTypeSid} consta
+     * One of the {@link \WlSdk\RsDurationTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsDurationTypeSid
      */
     public ?int $id_duration = null;
 
@@ -221,6 +225,7 @@ class PurchaseElementGetResponse
      * This is used only for promotions.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
      */
     public ?int $id_program_type = null;
 
@@ -229,6 +234,7 @@ class PurchaseElementGetResponse
      * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsPurchaseItemSid
      */
     public ?int $id_purchase_item = null;
 
@@ -237,6 +243,7 @@ class PurchaseElementGetResponse
      * One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 
@@ -544,7 +551,7 @@ class PurchaseElementGetResponse
     public function __construct(array $data)
     {
         $this->a_component = isset($data['a_component']) ? array_map(static fn ($item) => new PurchaseElementGetResponseComponent((array)$item), (array)$data['a_component']) : null;
-        $this->a_logo = isset($data['a_logo']) ? array_map(static fn ($item) => new PurchaseElementGetResponseLogo((array)$item), (array)$data['a_logo']) : null;
+        $this->a_logo = isset($data['a_logo']) ? new PurchaseElementGetResponseLogo((array)$data['a_logo']) : null;
         $this->a_restrict = isset($data['a_restrict']) ? array_map(static fn ($item) => new PurchaseElementGetResponseRestrict((array)$item), (array)$data['a_restrict']) : null;
         $this->a_tax = isset($data['a_tax']) ? array_map(static fn ($item) => new PurchaseElementGetResponseTax((array)$item), (array)$data['a_tax']) : null;
         $this->can_renew = isset($data['can_renew']) ? (bool)$data['can_renew'] : null;

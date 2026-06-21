@@ -7,7 +7,7 @@ class ElementGetRequest
     /**
      * Information about the discount code:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_discount_code = null;
 
@@ -67,6 +67,7 @@ class ElementGetRequest
      * One of the {@link \WlSdk\RsSaleSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsSaleSid
      */
     public ?int $id_sale = null;
 

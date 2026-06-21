@@ -14,6 +14,7 @@ class EditByTokenPutRequest
      * used.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Profile\RegisterSourceSid
      */
     public ?int $id_register_source = null;
 
@@ -95,9 +96,10 @@ class EditByTokenPutRequest
     public ?array $a_intents = null;
 
     /**
-     * No description.
+     * An array contained with information about phone inheritance.
+     * The array has the following structure:
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_phone_inherit = null;
 

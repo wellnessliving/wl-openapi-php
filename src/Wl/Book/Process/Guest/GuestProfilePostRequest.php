@@ -15,6 +15,7 @@ class GuestProfilePostRequest
      * Type of the service to book.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Service\ServiceSid
      */
     public ?int $id_service = null;
 
@@ -64,6 +65,7 @@ class GuestProfilePostRequest
      * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants. Default is {@link \WlSdk\Wl\Mode\ModeSid}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
     public ?int $id_mode = null;
 
