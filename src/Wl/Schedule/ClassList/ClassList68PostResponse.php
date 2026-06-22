@@ -25,10 +25,10 @@ class ClassList68PostResponse
      *
      *
      * For generating this filter, all filters are applied except:
-     * - `a_class`;
-     * - `a_event`;
-     * - `show_class`;
-     * - `show_event`.
+     * - [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json);
+     * - [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json);
+     * - [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json);
+     * - [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json).
      *
      * @var ClassList68PostResponseQuick|null
      */
@@ -53,7 +53,8 @@ class ClassList68PostResponse
 
     /**
      * If `true`, there exists at least one virtual service by a specified
-     * `k_business` and `k_class_tab`,
+     * [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) and
+     * [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json),
      * Otherwise, this will be `false`.
      *
      * @var bool|null

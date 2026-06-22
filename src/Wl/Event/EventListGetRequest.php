@@ -104,7 +104,7 @@ class EventListGetRequest
 
     /**
      * Determines whether you need to retrieve a list of event sessions regardless of the tab specified in
-     * `k_class_tab`.
+     * [EventListApi](/Wl/Event/EventList.json).
      *
      * * `true` - retrieves a list regardless of the specified tab.
      * * `false` - retrieves a list only for the specific tab.
@@ -116,7 +116,7 @@ class EventListGetRequest
     /**
      * The event business key to retrieve a list of all event sessions in business.
      *
-     * `null` to retrieve events from `k_location`.
+     * `null` to retrieve events from [EventListApi](/Wl/Event/EventList.json).
      *
      * @var string|null
      */
@@ -135,8 +135,8 @@ class EventListGetRequest
      * An empty value to retrieve a list of event sessions that don't belong to any tab.
      *
      * Will be ignored in next cases:
-     * * `k_skin` specified.
-     * * `is_tab_all` is `true`.
+     * * [EventListApi](/Wl/Event/EventList.json) specified.
+     * * [EventListApi](/Wl/Event/EventList.json) is `true`.
      *
      * @var string|null
      */
@@ -145,8 +145,9 @@ class EventListGetRequest
     /**
      * The event location key to retrieve a list of all event sessions in a specific location.
      *
-     * Required if `k_business` isn't specified.
-     * `null` if you need to retrieve a list of event sessions in all locations of `k_business`.
+     * Required if [EventListApi](/Wl/Event/EventList.json) isn't specified.
+     * `null` if you need to retrieve a list of event sessions in all locations of
+     * [EventListApi](/Wl/Event/EventList.json).
      *
      * @var string|null
      */
@@ -155,7 +156,7 @@ class EventListGetRequest
     /**
      * The skin key if an event list is used for widget mode.
      *
-     * `k_class_tab` will be ignored for widget mode.
+     * [EventListApi](/Wl/Event/EventList.json) will be ignored for widget mode.
      *
      * @var string|null
      */

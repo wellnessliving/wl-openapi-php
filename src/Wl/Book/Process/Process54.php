@@ -24,7 +24,7 @@ class Process54
      * requires it, adds the detail step for Client Web App flows, and re-sorts the path into the correct wizard
      * order.
      *
-     * @deprecated Use {@link Wl\Book\Process\Process59Api} instead.
+     * @deprecated Use {@link \Wl\Book\Process\Process59Api} instead.
      *
      * @return Process54GetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

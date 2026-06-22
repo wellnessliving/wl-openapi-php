@@ -14,13 +14,13 @@ class LifetimeTotalsGetResponseTotal
     /**
      * Total value.
      *
-     * @var int|null
+     * @var string|null
      */
-    public ?int $s_value = null;
+    public ?string $s_value = null;
 
     public function __construct(array $data)
     {
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
-        $this->s_value = isset($data['s_value']) ? (int)$data['s_value'] : null;
+        $this->s_value = isset($data['s_value']) ? (string)$data['s_value'] : null;
     }
 }

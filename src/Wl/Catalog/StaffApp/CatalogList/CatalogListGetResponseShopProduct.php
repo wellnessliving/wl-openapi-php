@@ -75,9 +75,11 @@ class CatalogListGetResponseShopProduct
     public ?bool $is_online_sell = null;
 
     /**
-     * This will be `true` if this Purchase Option is suitable to pay for the visit `k_visit`.
+     * This will be `true` if this Purchase Option is suitable to pay for the visit
+     * [CatalogListApi](/Wl/Catalog/StaffApp/CatalogList/CatalogList.json).
      * Otherwise, this will be `false`.
-     * If `k_visit` is empty, this will always be `false`.
+     * If [CatalogListApi](/Wl/Catalog/StaffApp/CatalogList/CatalogList.json) is empty, this will always be
+     * `false`.
      *
      * @var bool|null
      */

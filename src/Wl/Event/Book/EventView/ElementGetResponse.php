@@ -19,7 +19,7 @@ class ElementGetResponse
     /**
      * Retrieves information about an event item.
      *
-     * Received only if `k_event` has been specified.
+     * Received only if [ElementApi](/Wl/Event/Book/EventView/Element.json) has been specified.
      * In this case, other fields aren't receivers.
      *
      * @var ElementGetResponseBookAvailable[]|null
@@ -55,7 +55,8 @@ class ElementGetResponse
     /**
      * Information for a large number of events.
      *
-     * Received only if `s_event` has been specified. In this case, other fields are not populated.
+     * Received only if [ElementApi](/Wl/Event/Book/EventView/Element.json) has been specified. In this case, other
+     * fields are not populated.
      *
      * Key is the event class key.
      *
@@ -266,7 +267,8 @@ class ElementGetResponse
     public ?bool $is_past = null;
 
     /**
-     * `true` if the `a_business_policy` contains the custom policies from the event.
+     * `true` if the [ElementApi](/Wl/Event/Book/EventView/Element.json) contains the custom policies from the
+     * event.
      * `false` otherwise.
      *
      * @var bool|null
@@ -328,7 +330,8 @@ class ElementGetResponse
     public ?string $m_price_total = null;
 
     /**
-     * Price of the full event should be used as full price while `dt_early` is actual.
+     * Price of the full event should be used as full price while
+     * [ElementApi](/Wl/Event/Book/EventView/Element.json) is actual.
      *
      * @var string|null
      */
@@ -336,7 +339,7 @@ class ElementGetResponse
 
     /**
      * The reason why the event can't be booked.
-     * Empty if `k_book_class_period` isn't empty.
+     * Empty if [ElementApi](/Wl/Event/Book/EventView/Element.json) isn't empty.
      *
      * @var string|null
      */

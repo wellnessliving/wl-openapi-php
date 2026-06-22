@@ -8,7 +8,7 @@ class ElementGetResponseItem
      * Contains additional data for the sale item.
      * For Package, it contains also the following key:
      *
-     * The same structure as `a_data` has.
+     * The same structure as [ElementApi](/Wl/Catalog/CatalogList/Element.json) has.
      *
      * @var ElementGetResponseItemData|null
      */
