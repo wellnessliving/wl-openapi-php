@@ -22,8 +22,7 @@ class PurchaseListElementGetRequest
     public ?int $i_image_width = null;
 
     /**
-     * The business key. Used with [PurchaseListElementApi](/Wl/Profile/PurchaseList/PurchaseListElement.json)
-     * variable and
+     * The business key. Used with `k_session_pass` variable and
      * also with gift card components.
      *
      * @var string|null

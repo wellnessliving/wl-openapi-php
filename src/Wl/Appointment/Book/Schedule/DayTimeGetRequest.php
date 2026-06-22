@@ -140,8 +140,7 @@ class DayTimeGetRequest
     /**
      * The staff key to show what days are available for booking.
      *
-     * For back-to-back booking ([DayTimeApi](/Wl/Appointment/Book/Schedule/DayTime.json) == `true`): array of
-     * appointments for back-to-back booking.
+     * For back-to-back booking (`is_back_to_back` == `true`): array of appointments for back-to-back booking.
      * Converted to JSON string to be usable as model key. Each item is an array with next structure:
      *
      * @var string|null

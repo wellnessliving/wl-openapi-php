@@ -9,13 +9,12 @@ class PurchaseGetRequest
      *
      * Note:
      * * It makes sense if for all clients the list is loaded within
-     *      the same pair [PurchaseApi](/Wl/Book/Process/Purchase/Purchase.json) and
-     * [PurchaseApi](/Wl/Book/Process/Purchase/Purchase.json).
+     *      the same pair `dt_date_gmt` and `k_class_period`.
      * * If promotions are shared, the system will try to determine if there are enough sessions left for the next
      *      client who has the same promotion.
      * * A very simple check is carried out based on a comparison of the remaining sessions for the promotion
      *      with the number of times it was selected.
-     * * Can affect the list of available login promotions [PurchaseApi](/Wl/Book/Process/Purchase/Purchase.json).
+     * * Can affect the list of available login promotions `a_login_promotion`.
      *      If a given client is eligible for such a promotion, but the remaining sessions (minus those previously
      *      selected) in it do not allow it to be applied to the selected session, then such promotion will simply
      *      not be returned for the client.

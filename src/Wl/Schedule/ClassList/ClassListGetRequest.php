@@ -29,8 +29,7 @@ class ClassListGetRequest
     /**
      * The list of location keys to filter results.
      * If it's empty, schedule for all locations will be returned.
-     * All given locations should be from the same business, which is sent in
-     * [ClassListApi](/Wl/Schedule/ClassList/ClassList.json).
+     * All given locations should be from the same business, which is sent in `k_business`.
      *
      * @var string[]|null
      */
@@ -65,9 +64,9 @@ class ClassListGetRequest
     public ?string $dt_end = null;
 
     /**
-     * `true` means to not generate [ClassListApi](/Wl/Schedule/ClassList/ClassList.json) result.
-     * Can be used, if you do not need full information about existing classes and result in
-     * [ClassListApi](/Wl/Schedule/ClassList/ClassList.json) is enough.
+     * `true` means to not generate `a_session` result.
+     * Can be used, if you do not need full information about existing classes and result in `a_calendar` is
+     * enough.
      *
      * @var bool|null
      */
@@ -75,7 +74,7 @@ class ClassListGetRequest
 
     /**
      * If `true`, sessions from every class tab are returned. If `false`, use the
-     * [ClassListApi](/Wl/Schedule/ClassList/ClassList.json) value.
+     * `k_class_tab` value.
      *
      * @var bool|null
      */
@@ -104,7 +103,7 @@ class ClassListGetRequest
      * The category tab key.
      *
      * This will be `null` if not set yet.
-     * This will be ignored if [ClassListApi](/Wl/Schedule/ClassList/ClassList.json) is `true`.
+     * This will be ignored if `is_tab_all` is `true`.
      *
      * @var string|null
      */

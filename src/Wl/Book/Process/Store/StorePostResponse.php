@@ -22,6 +22,13 @@ class StorePostResponse
     public ?array $a_visit = null;
 
     /**
+     * Values are arrays with next keys:
+     *
+     * @var StorePostResponseVisitPayment[]|null
+     */
+    public ?array $a_visit_payment = null;
+
+    /**
      * If `true`, the next steps of the booking wizard are required to purchase an item or book the selected
      * session.
      *
@@ -35,6 +42,7 @@ class StorePostResponse
     {
         $this->a_login_activity = isset($data['a_login_activity']) ? (array)$data['a_login_activity'] : null;
         $this->a_visit = isset($data['a_visit']) ? (array)$data['a_visit'] : null;
+        $this->a_visit_payment = isset($data['a_visit_payment']) ? array_map(static fn ($item) => new StorePostResponseVisitPayment((array)$item), (array)$data['a_visit_payment']) : null;
         $this->is_next = isset($data['is_next']) ? (bool)$data['is_next'] : null;
     }
 }
