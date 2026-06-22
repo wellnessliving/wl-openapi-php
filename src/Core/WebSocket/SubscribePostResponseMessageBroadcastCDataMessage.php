@@ -7,9 +7,9 @@ class SubscribePostResponseMessageBroadcastCDataMessage
     /**
      * Message key.
      *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $id = null;
+    public ?int $id = null;
 
     /**
      * Message text.
@@ -27,7 +27,7 @@ class SubscribePostResponseMessageBroadcastCDataMessage
 
     public function __construct(array $data)
     {
-        $this->id = isset($data['id']) ? (string)$data['id'] : null;
+        $this->id = isset($data['id']) ? (int)$data['id'] : null;
         $this->message = isset($data['message']) ? (string)$data['message'] : null;
         $this->updated_at = isset($data['updated_at']) ? (string)$data['updated_at'] : null;
     }

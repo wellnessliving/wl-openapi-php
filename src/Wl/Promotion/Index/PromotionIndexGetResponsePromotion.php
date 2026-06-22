@@ -186,9 +186,9 @@ class PromotionIndexGetResponsePromotion
     /**
      * The localized promotion program name corresponding to the value of `id_program`.
      *
-     * @var int|null
+     * @var string|null
      */
-    public ?int $text_program = null;
+    public ?string $text_program = null;
 
     /**
      * The title.
@@ -226,7 +226,7 @@ class PromotionIndexGetResponsePromotion
         $this->k_promotion = isset($data['k_promotion']) ? (string)$data['k_promotion'] : null;
         $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;
         $this->text_description = isset($data['text_description']) ? (string)$data['text_description'] : null;
-        $this->text_program = isset($data['text_program']) ? (int)$data['text_program'] : null;
+        $this->text_program = isset($data['text_program']) ? (string)$data['text_program'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
         $this->url_buy = isset($data['url_buy']) ? (string)$data['url_buy'] : null;
     }

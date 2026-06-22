@@ -21,14 +21,14 @@ class ReceptionSchedulePostResponseConfirmationDataPaymentRestrict
     /**
      * The calendar period name.
      *
-     * @var bool|null
+     * @var string|null
      */
-    public ?bool $s_date = null;
+    public ?string $s_date = null;
 
     public function __construct(array $data)
     {
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
         $this->i_remain = isset($data['i_remain']) ? (int)$data['i_remain'] : null;
-        $this->s_date = isset($data['s_date']) ? (bool)$data['s_date'] : null;
+        $this->s_date = isset($data['s_date']) ? (string)$data['s_date'] : null;
     }
 }
