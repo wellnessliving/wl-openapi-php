@@ -10,7 +10,7 @@ class ReceptionAuthorizePostResponse
     /**
      * List of the users, which can be authorized.
      *
-     * Can be set only this field or `uid`.
+     * Can be set only this field or [ReceptionAuthorizeApi](/Wl/Reception/Application/ReceptionAuthorize.json).
      * It depends, whether we found one user or multiple.
      *
      * @var ReceptionAuthorizePostResponseSelect[]|null
@@ -20,7 +20,7 @@ class ReceptionAuthorizePostResponse
     /**
      * Key of the authorized user.
      *
-     * Can be set only this field or `a_select`.
+     * Can be set only this field or [ReceptionAuthorizeApi](/Wl/Reception/Application/ReceptionAuthorize.json).
      * It depends, whether we found one user or multiple.
      *
      * @var string|null

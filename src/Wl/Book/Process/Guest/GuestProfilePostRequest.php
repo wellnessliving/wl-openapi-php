@@ -28,7 +28,7 @@ class GuestProfilePostRequest
 
     /**
      * Key of service to book.
-     * Depending on `id_service` value:,
+     * Depending on [GuestProfileApi](/Wl/Book/Process/Guest/GuestProfile.json) value:,
      * <ul>
      *     <li>{@link \WlSdk\Wl\Service\ServiceSid} - class key. </li>
      *     <li>{@link \WlSdk\Wl\Service\ServiceSid} - service key.</li>

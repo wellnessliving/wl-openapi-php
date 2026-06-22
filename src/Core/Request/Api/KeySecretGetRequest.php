@@ -19,7 +19,7 @@ class KeySecretGetRequest
     public ?string $s_key_session = null;
 
     /**
-     * Alias of `url_origin`.
+     * Alias of [KeySecretApi](/Core/Request/Api/KeySecret.json).
      *
      * @var string|null
      */

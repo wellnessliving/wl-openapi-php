@@ -171,7 +171,7 @@ class DataGetResponse
     public ?string $k_business_franchisor = null;
 
     /**
-     * The business key obtained by the security token `text_token`.
+     * The business key obtained by the security token [DataApi](/Wl/Business/Data.json).
      * This can be used on the client side if authorization token should be used instead of the business key
      * (the business key isn't available).
      *

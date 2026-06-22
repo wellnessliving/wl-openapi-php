@@ -24,7 +24,7 @@ class ServiceList
      *  category, book now tab, and client. Each service entry includes title, description, image, pricing,
      *  duration, staff availability, and age restriction details. Supports both frontend and backend modes.
      *
-     * @deprecated New version {@link Wl\Appointment\Book\Service\ServiceList52Api} should be used instead.
+     * @deprecated New version {@link \Wl\Appointment\Book\Service\ServiceList52Api} should be used instead.
      *
      * @return ServiceListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

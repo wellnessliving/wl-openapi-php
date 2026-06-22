@@ -7,7 +7,7 @@ class AnnouncementListGetRequest
     /**
      * Order ID for list of announcements.
      *
-     * Used only when `is_backend` is `true`.
+     * Used only when [AnnouncementListApi](/Wl/Announcement/AnnouncementList.json) is `true`.
      *
      * `null` in case when use default order.
      *
@@ -19,7 +19,7 @@ class AnnouncementListGetRequest
     /**
      * Sort field ID for list of announcements.
      *
-     * Used only when `is_backend` is `true`.
+     * Used only when [AnnouncementListApi](/Wl/Announcement/AnnouncementList.json) is `true`.
      *
      * `null` in case when use default field.
      *

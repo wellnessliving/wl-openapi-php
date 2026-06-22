@@ -25,7 +25,7 @@ class Calendar
      *  service at the given location. Availability is determined by the business schedule, holidays,
      *  and staff availability for the selected date range.
      *
-     * @deprecated Use {@link Wl\Appointment\Book\Schedule\Calendar73Api}
+     * @deprecated Use {@link \Wl\Appointment\Book\Schedule\Calendar73Api}
      *
      * @return CalendarGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

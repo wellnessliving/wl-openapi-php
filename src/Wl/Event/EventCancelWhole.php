@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Event;
 use WlSdk\WlSdkClient;
 
 /**
- * Cancels book of event `k_class`.
+ * Cancels book of event [EventCancelWholeApi](/Wl/Event/EventCancelWhole.json).
  */
 class EventCancelWhole
 {
@@ -18,7 +18,7 @@ class EventCancelWhole
     }
 
     /**
-     * Cancels book of event `k_class`.
+     * Cancels book of event [EventCancelWholeApi](/Wl/Event/EventCancelWhole.json).
      *
      * Used when a client wants to drop out of a multi-session event entirely. Cancels all remaining
      * upcoming sessions at once, including any waitlisted spots, without requiring the client to cancel
