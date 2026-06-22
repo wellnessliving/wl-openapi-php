@@ -9,7 +9,7 @@ class NotepadGetResponse
 {
     /**
      * ID of the datacenter which is a preferred datacenter for the user specified in
-     * [NotepadApi](/Core/Passport/Login/Enter/Notepad.json).
+     * `s_login`.
      *
      * One of {@link \WlSdk\Core\Amazon\Region\AmazonRegionSid} constants.
      *

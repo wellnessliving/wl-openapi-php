@@ -16,11 +16,10 @@ class FlagGetResponse
     public ?FlagGetResponseFlag $a_flag = null;
 
     /**
-     * Array, where keys are UIDs to be checked and values are same as [FlagApi](/Wl/Location/Flag/Flag.json).
+     * Array, where keys are UIDs to be checked and values are same as `a_restrictions_single`.
      * `null` if user is not flagged in the location.
      *
-     * This field is set, if API gets [FlagApi](/Wl/Location/Flag/Flag.json) and not
-     * [FlagApi](/Wl/Location/Flag/Flag.json) properties.
+     * This field is set, if API gets `a_uid` and not `uid` properties.
      *
      * Keys are user keys.
      * Values are flag restriction arrays:
@@ -32,8 +31,7 @@ class FlagGetResponse
     /**
      * `null` if user is not flagged in the location.
      *
-     * This field is set, if API gets [FlagApi](/Wl/Location/Flag/Flag.json) and not
-     * [FlagApi](/Wl/Location/Flag/Flag.json) properties.
+     * This field is set, if API gets `uid` and not `a_uid` properties.
      *
      * @var FlagGetResponseRestrictionsSingle|null
      */
@@ -43,7 +41,7 @@ class FlagGetResponse
      * `true` if the user is flagged and can make purchases, but cannot make new reservations, `false` if
      * otherwise.
      *
-     * `null` until loaded or when [FlagApi](/Wl/Location/Flag/Flag.json) was not set.
+     * `null` until loaded or when `a_uid` was not set.
      *
      * @var bool|null
      */

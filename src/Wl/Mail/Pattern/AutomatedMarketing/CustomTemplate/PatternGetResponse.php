@@ -39,8 +39,7 @@ class PatternGetResponse
 
     /**
      * List of mail patterns data to load.
-     * Each element has the structure, described in
-     * [PatternApi](/Wl/Mail/Pattern/AutomatedMarketing/CustomTemplate/Pattern.json).
+     * Each element has the structure, described in `a_pattern_load`.
      *
      * @var string|null
      */

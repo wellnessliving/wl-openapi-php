@@ -11,8 +11,8 @@ class ListGetResponse
      * List of classes and events.
      *
      * The result may depend on the following flags:
-     * * [ListApi](/Wl/Classes/ClassList/List.json)
-     * * [ListApi](/Wl/Classes/ClassList/List.json)
+     * * `is_enrollment_block_all`
+     * * `is_enrollment_block_empty`
      *
      * Each element has the following structure:
      *

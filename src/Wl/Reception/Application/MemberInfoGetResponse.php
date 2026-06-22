@@ -57,8 +57,7 @@ class MemberInfoGetResponse
 
     /**
      * If `true`, the client is a traveler. Otherwise, this will be `false`.
-     * This will be `null` in cases when the client is a walk-in. Or when
-     * [MemberInfoApi](/Wl/Reception/Application/MemberInfo.json) is `false`.
+     * This will be `null` in cases when the client is a walk-in. Or when `is_full` is `false`.
      *
      * @var bool|null
      */

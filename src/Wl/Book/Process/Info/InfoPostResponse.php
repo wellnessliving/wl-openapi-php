@@ -40,7 +40,7 @@ class InfoPostResponse
      *
      * The verification is based on the search for client's promotions and other features of the class/event.
      * But it does not take into account the presence of other mandatory steps.
-     * Their presence will be indicated by the [InfoApi](/Wl/Book/Process/Info/Info.json) flag.
+     * Their presence will be indicated by the `is_next` flag.
      *
      * @var bool|null
      */

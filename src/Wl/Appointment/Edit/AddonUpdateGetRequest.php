@@ -6,8 +6,7 @@ class AddonUpdateGetRequest
 {
     /**
      * List of user keys to get add-ons for. Not empty only when getting add-ons for new appointment
-     * ([AddonUpdateApi](/Wl/Appointment/Edit/AddonUpdate.json) is null). User key '-1' means walk-in, user key '0'
-     * means new user
+     * (`k_appointment` is null). User key '-1' means walk-in, user key '0' means new user
      * (user will be created together with appointment).
      *
      * @var string[]|null
@@ -30,8 +29,7 @@ class AddonUpdateGetRequest
 
     /**
      * Location key.
-     * Not empty only when getting add-ons for new appointment
-     * ([AddonUpdateApi](/Wl/Appointment/Edit/AddonUpdate.json) is null).
+     * Not empty only when getting add-ons for new appointment (`k_appointment` is null).
      *
      * @var string|null
      */
@@ -39,8 +37,7 @@ class AddonUpdateGetRequest
 
     /**
      * Service key.
-     * Not empty only when getting add-ons for new appointment
-     * ([AddonUpdateApi](/Wl/Appointment/Edit/AddonUpdate.json) is null).
+     * Not empty only when getting add-ons for new appointment (`k_appointment` is null).
      *
      * @var string|null
      */

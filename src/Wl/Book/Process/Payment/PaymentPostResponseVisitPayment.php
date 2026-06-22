@@ -1,8 +1,8 @@
 <?php
 
-namespace WlSdk\Wl\Appointment\Book\Finish;
+namespace WlSdk\Wl\Book\Process\Payment;
 
-class Finish47PostResponseVisitPayment
+class PaymentPostResponseVisitPayment
 {
     /**
      * `true` if the visit is free; `false` otherwise.

@@ -13,7 +13,7 @@ class PurchaseGetResponseLoginPromotion
 
     /**
      * List of UIDs of users who share this promotion.
-     * List of those passed in the [PurchaseApi](/Wl/Book/Process/Purchase/Purchase.json) array.
+     * List of those passed in the `a_login_promotion_group` array.
      *
      * @var string[]|null
      */

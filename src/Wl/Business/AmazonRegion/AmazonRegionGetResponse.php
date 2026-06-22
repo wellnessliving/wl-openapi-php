@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Business\AmazonRegion;
 class AmazonRegionGetResponse
 {
     /**
-     * List of region IDs for [AmazonRegionApi](/Wl/Business/AmazonRegion/AmazonRegion.json).
+     * List of region IDs for `a_business`.
      *
      * Key - is business key.
      * Value - is region ID. One of {@link \WlSdk\Core\Amazon\Region\AmazonRegionSid} constants.

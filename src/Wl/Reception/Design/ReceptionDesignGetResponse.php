@@ -9,7 +9,7 @@ class ReceptionDesignGetResponse
 {
     /**
      * Array of image information for Self Check-In logo.
-     * Empty if [ReceptionDesignApi](/Wl/Reception/Design/ReceptionDesign.json) is not provided.
+     * Empty if `k_location` is not provided.
      *
      * Will contain the following keys:
      *
