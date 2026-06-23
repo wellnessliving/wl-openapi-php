@@ -12,7 +12,7 @@ class ElementGetResponseClassListScheduleRepeat
     public ?int $i_repeat = null;
 
     /**
-     * The measuring unit int `i_repeat`.
+     * The measuring unit of `i_repeat`.
      * One of {@link \WlSdk\ADurationSid} constants.
      *
      * @var int|null

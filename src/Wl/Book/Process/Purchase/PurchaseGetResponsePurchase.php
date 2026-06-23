@@ -41,7 +41,7 @@ class PurchaseGetResponsePurchase
     public ?string $f_price_early = null;
 
     /**
-     * This is only set for Purchase Options with the 'membership' program type. The measurement unit int
+     * This is only set for Purchase Options with the 'membership' program type. The measurement unit of
      * `i_payment_period` in short form.
      *
      * @var string|null
@@ -169,7 +169,7 @@ class PurchaseGetResponsePurchase
     public ?string $s_contract = null;
 
     /**
-     * This is only set for Purchase Options with the 'membership' program type. The measurement unit int
+     * This is only set for Purchase Options with the 'membership' program type. The measurement unit of
      * `i_payment_period`.
      *
      * @var string|null

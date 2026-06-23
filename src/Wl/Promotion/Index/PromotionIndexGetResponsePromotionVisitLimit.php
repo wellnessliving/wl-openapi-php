@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Promotion\Index;
 class PromotionIndexGetResponsePromotionVisitLimit
 {
     /**
-     * The quantity of sessions int `i_period`.
+     * The quantity of sessions every `i_period`.
      *
      * @var int|null
      */
@@ -33,7 +33,7 @@ class PromotionIndexGetResponsePromotionVisitLimit
     public ?int $i_roll_over_expire = null;
 
     /**
-     * The type int `i_roll_over_expire`.
+     * The type of `i_roll_over_expire`.
      * One of {@link \WlSdk\ADurationSid} contantant.
      * This can only be: <ul>
      *     <li>{@link \WlSdk\ADurationSid}</li>

@@ -43,7 +43,7 @@ class ReceptionRosterDesignGetResponseImage
 
     /**
      * Whether image was resized to satisfy specified
-     *  `i_width` int `i_height`.
+     *  `i_width` and `i_height`.
      *
      * @var bool|null
      */
