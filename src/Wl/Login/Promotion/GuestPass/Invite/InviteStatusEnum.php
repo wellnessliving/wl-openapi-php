@@ -5,11 +5,13 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
 /**
  * Lifecycle state of a guest pass invitation.
  *
- * Last used: 7
+ * Last used: 10
  *
  * Values:
  * - 9 (`ATTEND`): Guest attended the visit booked with the guest pass.
  * - 8 (`BOOK`): Guest booked the visit booked with the guest pass.
+ * - 10 (`EARLY_CANCELLED`): Guest cancelled the visit early (without penalty). Pass is returned to the host's
+ *    available quota and no longer counts toward 'Used'.
  * - 3 (`CHECKED_IN`): Guest attended the visit booked with the guest pass.
  * - 6 (`GUEST_PASS_EXPIRED`): Guest accepted the invitation but did not attend within the pass expiration
  *    window. Distinct from
@@ -36,6 +38,9 @@ class InviteStatusEnum
 
     /** Guest booked the visit booked with the guest pass. */
     public const BOOK = 8;
+
+    /** Guest cancelled the visit early (without penalty). Pass is returned to the host's */
+    public const EARLY_CANCELLED = 10;
 
     /** Guest attended the visit booked with the guest pass. */
     public const CHECKED_IN = 3;
