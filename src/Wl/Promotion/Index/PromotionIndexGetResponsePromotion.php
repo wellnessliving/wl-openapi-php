@@ -77,7 +77,7 @@ class PromotionIndexGetResponsePromotion
     public ?int $i_limit_duration = null;
 
     /**
-     * The type int `i_limit_duration`.
+     * The type of `i_limit_duration`.
      * One of {@link \WlSdk\ADurationSid} contantant.
      * This can only be: <ul>
      *     <li>{@link \WlSdk\ADurationSid}</li>

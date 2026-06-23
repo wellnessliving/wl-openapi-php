@@ -263,7 +263,7 @@ class PurchaseListElementGetResponse
      * The type of duration for the promotion. This is used only for membership-type promotions. This determines
      * whether the promotion lasts indefinitely, has a fixed duration, or ends on a specific date. The measurement
      * unit
-     * for int `i_payment_period`. One of the {@link \WlSdk\RsDurationTypeSid} constants.
+     * for key `i_payment_period`. One of the {@link \WlSdk\RsDurationTypeSid} constants.
      *
      * @var int|null
      * @see \WlSdk\RsDurationTypeSid
@@ -272,7 +272,7 @@ class PurchaseListElementGetResponse
 
     /**
      * The ID of the promotion program. This is used only for promotions.
-     * The measurement unit for int `i_payment_period`. The ID of promotion program type.
+     * The measurement unit for key `i_payment_period`. The ID of promotion program type.
      * One of the {@link \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
@@ -281,7 +281,7 @@ class PurchaseListElementGetResponse
     public ?int $id_program_type = null;
 
     /**
-     * The ID of the purchase item type. The measurement unit for int `i_payment_period`.
+     * The ID of the purchase item type. The measurement unit for key `i_payment_period`.
      * The ID of purchase item type. One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
      * @var int|null
