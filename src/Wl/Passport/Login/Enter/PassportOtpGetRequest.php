@@ -5,9 +5,10 @@ namespace WlSdk\Wl\Passport\Login\Enter;
 class PassportOtpGetRequest
 {
     /**
-     * Type of delivery strategy.
+     * Type of delivery strategy from {@link \WlSdk\Wl\Passport\Login\Enter\OtpDeliveryStrategyEnum}.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Passport\Login\Enter\OtpDeliveryStrategyEnum
      */
     public ?int $id_delivery_strategy = null;
 
