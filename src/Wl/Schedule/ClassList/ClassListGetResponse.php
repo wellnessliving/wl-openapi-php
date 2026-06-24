@@ -14,7 +14,7 @@ class ClassListGetResponse
      * Each key is a date string in `YYYY-MM-DD` format (local date in the business time zone).
      * Each value is an empty array reserved for future use.
      *
-     * @var string[]|null
+     * @var array[]|null
      */
     public ?array $a_calendar = null;
 
