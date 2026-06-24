@@ -69,11 +69,27 @@ class AssetListGetResponseAsset
     public ?string $html_age_restriction = null;
 
     /**
+     * Human-readable reason why the client cannot book this asset. Empty string if there is no deny reason.
+     *
+     * @var string|null
+     */
+    public ?string $html_deny_reason = null;
+
+    /**
      * The resource name.
      *
      * @var string|null
      */
     public ?string $html_title = null;
+
+    /**
+     * The ID of the reason why the client cannot book this asset.
+     * One of {@link \WlSdk\Wl\Schedule\ClassView\DenyReasonSid} constants. `null` if there is no deny reason.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Schedule\ClassView\DenyReasonSid
+     */
+    public ?int $id_deny_reason = null;
 
     /**
      * The purchase rule. One of the {@link \WlSdk\RsServiceRequireSid} constants.
@@ -111,6 +127,13 @@ class AssetListGetResponseAsset
      */
     public ?string $k_resource_category = null;
 
+    /**
+     * String representation of the deny reason. `null` if no deny reason.
+     *
+     * @var string|null
+     */
+    public ?string $sid_deny_reason = null;
+
     public function __construct(array $data)
     {
         $this->a_age_restrictions = isset($data['a_age_restrictions']) ? new AssetListGetResponseAssetAgeRestrictions((array)$data['a_age_restrictions']) : null;
@@ -121,11 +144,14 @@ class AssetListGetResponseAsset
         $this->a_search_tag = isset($data['a_search_tag']) ? (array)$data['a_search_tag'] : null;
         $this->hide_application = isset($data['hide_application']) ? (bool)$data['hide_application'] : null;
         $this->html_age_restriction = isset($data['html_age_restriction']) ? (string)$data['html_age_restriction'] : null;
+        $this->html_deny_reason = isset($data['html_deny_reason']) ? (string)$data['html_deny_reason'] : null;
         $this->html_title = isset($data['html_title']) ? (string)$data['html_title'] : null;
+        $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
         $this->id_service_require = isset($data['id_service_require']) ? (int)$data['id_service_require'] : null;
         $this->is_age_restricted = isset($data['is_age_restricted']) ? (bool)$data['is_age_restricted'] : null;
         $this->k_class_tab = isset($data['k_class_tab']) ? (string)$data['k_class_tab'] : null;
         $this->k_resource = isset($data['k_resource']) ? (string)$data['k_resource'] : null;
         $this->k_resource_category = isset($data['k_resource_category']) ? (string)$data['k_resource_category'] : null;
+        $this->sid_deny_reason = isset($data['sid_deny_reason']) ? (string)$data['sid_deny_reason'] : null;
     }
 }
