@@ -91,6 +91,13 @@ class ServiceListGetResponseService
     public ?bool $hide_application = null;
 
     /**
+     * Human-readable reason why the client cannot book this service. Empty string if there is no deny reason.
+     *
+     * @var string|null
+     */
+    public ?string $html_deny_reason = null;
+
+    /**
      * The required minimum client age to book an appointment.
      *
      * @var int|null
@@ -125,6 +132,16 @@ class ServiceListGetResponseService
      * @see \WlSdk\Wl\Service\ServiceBookFlowSid
      */
     public ?int $id_book_flow = null;
+
+    /**
+     * The ID of the reason why the client cannot book this service. One of {@link
+     * \WlSdk\Wl\Schedule\ClassView\DenyReasonSid} constants.
+     * `null` if there is no deny reason.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Schedule\ClassView\DenyReasonSid
+     */
+    public ?int $id_deny_reason = null;
 
     /**
      * The required payment type ID. One of {@link \WlSdk\RsServiceRequireSid} constants.
@@ -177,8 +194,7 @@ class ServiceListGetResponseService
     public ?bool $is_book_repeat_no_end_date_appointment = null;
 
     /**
-     * `true` if `f_deposit` is a percentage. Otherwise, this will be `false` if `f_deposit` is an amount of
-     * money.
+     * `true` if `f_deposit` is a percentage. `false` if `f_deposit` is an amount of money.
      *
      * @var bool|null
      */
@@ -192,8 +208,7 @@ class ServiceListGetResponseService
     public ?bool $is_gender_select = null;
 
     /**
-     * `true` if clients can buy this appointment. Otherwise, this will be `false` if only staff members can sell
-     * it.
+     * `true` if clients can buy this appointment. `false` if only staff members can sell it.
      *
      * @var bool|null
      */
@@ -207,25 +222,22 @@ class ServiceListGetResponseService
     public ?bool $is_resource_type = null;
 
     /**
-     * `true` if the appointment can be booked without a Purchase Option. Otherwise, this will be `false` if it's
-     * necessary to
-     * buy a Purchase Option.
+     * `true` if the appointment can be booked without a Purchase Option.
+     * `false` if it's necessary to buy a Purchase Option.
      *
      * @var bool|null
      */
     public ?bool $is_single_buy = null;
 
     /**
-     * `true` if the appointment must be confirmed by a staff member after booking. Otherwise, this will be
-     * `false`.
+     * `true` if the appointment must be confirmed by a staff member after booking. Otherwise, `false`.
      *
      * @var bool|null
      */
     public ?bool $is_staff_confirm = null;
 
     /**
-     * `true` if clients can select a staff member for the appointment. Otherwise, this will be `false` if
-     * otherwise.
+     * `true` if clients can select a staff member for the appointment. Otherwise, `false`.
      *
      * @var bool|null
      */
@@ -274,6 +286,13 @@ class ServiceListGetResponseService
     public ?string $s_service = null;
 
     /**
+     * String representation of the deny reason. `null` if no deny reason.
+     *
+     * @var string|null
+     */
+    public ?string $sid_deny_reason = null;
+
+    /**
      * Age restriction header.
      *
      * @var string|null
@@ -314,11 +333,13 @@ class ServiceListGetResponseService
         $this->f_offline_min = isset($data['f_offline_min']) ? (string)$data['f_offline_min'] : null;
         $this->f_online = isset($data['f_online']) ? (string)$data['f_online'] : null;
         $this->hide_application = isset($data['hide_application']) ? (bool)$data['hide_application'] : null;
+        $this->html_deny_reason = isset($data['html_deny_reason']) ? (string)$data['html_deny_reason'] : null;
         $this->i_age_from = isset($data['i_age_from']) ? (int)$data['i_age_from'] : null;
         $this->i_age_to = isset($data['i_age_to']) ? (int)$data['i_age_to'] : null;
         $this->i_price = isset($data['i_price']) ? (int)$data['i_price'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->id_book_flow = isset($data['id_book_flow']) ? (int)$data['id_book_flow'] : null;
+        $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
         $this->id_service_require = isset($data['id_service_require']) ? (int)$data['id_service_require'] : null;
         $this->is_age_public = isset($data['is_age_public']) ? (bool)$data['is_age_public'] : null;
         $this->is_age_restricted = isset($data['is_age_restricted']) ? (bool)$data['is_age_restricted'] : null;
@@ -339,6 +360,7 @@ class ServiceListGetResponseService
         $this->k_service_category = isset($data['k_service_category']) ? (string)$data['k_service_category'] : null;
         $this->s_duration = isset($data['s_duration']) ? (string)$data['s_duration'] : null;
         $this->s_service = isset($data['s_service']) ? (string)$data['s_service'] : null;
+        $this->sid_deny_reason = isset($data['sid_deny_reason']) ? (string)$data['sid_deny_reason'] : null;
         $this->text_age_restriction = isset($data['text_age_restriction']) ? (string)$data['text_age_restriction'] : null;
         $this->xml_description = isset($data['xml_description']) ? (string)$data['xml_description'] : null;
         $this->xml_description_short = isset($data['xml_description_short']) ? (string)$data['xml_description_short'] : null;
