@@ -63,8 +63,7 @@ class StoreGroupPostRequest
      *
      * These guest passes will be checked to determine if they can be applied to the current class or event.
      *
-     * Keys are UIDs of clients, primary keys in PassportLoginSql table.
-     * Values are host login promotion keys that grant the guest passes, primary keys in RsLoginPromotionSql table.
+     * Keys are UIDs of clients, values are host login promotion keys that grant the guest passes.
      *
      * @var string[]|null
      */

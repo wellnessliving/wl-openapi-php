@@ -32,7 +32,7 @@ class StoreGroupPostResponsePurchaseItemDistribute
     public ?string $k_login_promotion = null;
 
     /**
-     * Host login promotion key that grants the guest pass. Primary key in the RsLoginPromotionSql table.
+     * Host login promotion key that grants the guest pass.
      *   `null` if not applicable.
      *
      * @var string|null
