@@ -167,6 +167,14 @@ class PaymentPostRequest
     public ?string $k_login_promotion = null;
 
     /**
+     * Host login promotion key that grants the guest pass used to pay for the guest's visit.
+     * Empty string if the booking is not paid with a guest pass.
+     *
+     * @var string|null
+     */
+    public ?string $k_login_promotion_guest_pass = null;
+
+    /**
      * The installment template key.
      * This property is optional, and it will be `null` if an installment plan doesn't exist for the purchased
      * item.
@@ -214,6 +222,7 @@ class PaymentPostRequest
             'is_card_authorize' => $this->is_card_authorize,
             'is_force_pay_later' => $this->is_force_pay_later,
             'k_login_promotion' => $this->k_login_promotion,
+            'k_login_promotion_guest_pass' => $this->k_login_promotion_guest_pass,
             'k_pay_installment_template' => $this->k_pay_installment_template,
             'k_session_pass' => $this->k_session_pass,
             'text_discount_code' => $this->text_discount_code,
