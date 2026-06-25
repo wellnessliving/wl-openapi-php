@@ -36,9 +36,9 @@ class TransactionAllPaymentGetResponseRowPayTransaction
     /**
      * Batch number for this transaction.
      *
-     * @var string|int|null
+     * @var string|null
      */
-    public $s_batch_number = null;
+    public ?string $s_batch_number = null;
 
     public function __construct(array $data)
     {
@@ -46,6 +46,6 @@ class TransactionAllPaymentGetResponseRowPayTransaction
         $this->k_pay_transaction = isset($data['k_pay_transaction']) ? (string)$data['k_pay_transaction'] : null;
         $this->m_amount = isset($data['m_amount']) ? (string)$data['m_amount'] : null;
         $this->m_surcharge = isset($data['m_surcharge']) ? (string)$data['m_surcharge'] : null;
-        $this->s_batch_number = $data['s_batch_number'] ?? null;
+        $this->s_batch_number = isset($data['s_batch_number']) ? (string)$data['s_batch_number'] : null;
     }
 }

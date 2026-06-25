@@ -68,6 +68,8 @@ namespace WlSdk;
  * [RsPurchaseItemSid::APPOINTMENT](#/components/schemas/RsPurchaseItemSid).
  * - 26 (`TUITION`): Tuition purchase item.
  *   Used when client purchases tuition for an event list.
+ * - 27 (`TUITION_FEE`): Tuition fee purchase item.
+ *   Used when client purchases tuition for an event list.
  */
 class RsPurchaseItemSid
 {
@@ -145,4 +147,7 @@ class RsPurchaseItemSid
 
     /** Tuition purchase item. */
     public const TUITION = 26;
+
+    /** Tuition fee purchase item. */
+    public const TUITION_FEE = 27;
 }
