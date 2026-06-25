@@ -15,6 +15,13 @@ class CatalogCartGetResponse
     public ?CatalogCartGetResponseDiscountCode $a_discount_code = null;
 
     /**
+     * The list of cart items with the next structure:
+     *
+     * @var CatalogCartGetResponseItem[]|null
+     */
+    public ?array $a_item = null;
+
+    /**
      * Determines whether the business applied a commission at checkout.
      *
      * @var bool|null
@@ -106,6 +113,7 @@ class CatalogCartGetResponse
     public function __construct(array $data)
     {
         $this->a_discount_code = isset($data['a_discount_code']) ? new CatalogCartGetResponseDiscountCode((array)$data['a_discount_code']) : null;
+        $this->a_item = isset($data['a_item']) ? array_map(static fn ($item) => new CatalogCartGetResponseItem((array)$item), (array)$data['a_item']) : null;
         $this->is_commission = isset($data['is_commission']) ? (bool)$data['is_commission'] : null;
         $this->is_discount_code_mode_select = isset($data['is_discount_code_mode_select']) ? (bool)$data['is_discount_code_mode_select'] : null;
         $this->is_receipt_note = isset($data['is_receipt_note']) ? (bool)$data['is_receipt_note'] : null;

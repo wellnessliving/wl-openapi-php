@@ -40,15 +40,14 @@ class PassportOtp
      *
      * Set `$id_delivery_strategy` to {@link \WlSdk\Wl\Passport\Login\Enter\OtpDeliveryStrategyEnum}.
      * Provide `$text_delivery_priority` — a comma-separated list of `sms` and `email` values in the preferred
-     * order, e.g. `&quot;sms,email&quot;`.
+     * order, e.g. `"sms,email"`.
      * The system picks the first channel from the list for which the user has valid contact data and sends the OTP
      * only to that one channel. The selected channel is returned in `$text_delivery_selected`; when SMS is
      * selected, the last four digits of the phone are returned in `$text_phone_masked`.
      * If none of the listed channels can be used, an error is thrown.
      *
-     * Example: set `$text_delivery_priority = &quot;sms,email&quot;` to prefer SMS but fall back to email if the
-     * user
-     * has no phone n
+     * Example: set `$text_delivery_priority = "sms,email"` to prefer SMS but fall back to email if the user
+     * has no phone number.
      *
      * @return PassportOtpGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

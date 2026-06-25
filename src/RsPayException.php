@@ -225,7 +225,7 @@ namespace WlSdk;
  * - 47 (`CARD_NAME_LONG`): Payment card nickname is too long.
  * - 71 (`CARD_NOT_HONOR`): The customer’s bank has declined the transaction as the credit card number has failed a
  * security check, or the
- *   funds have been frozen or depleted. The customer should use an alternate credit car
+ *   funds have been frozen or depleted. The customer should use an alternate credit card.
  * - 72 (`CARD_NSF`): Insufficient funds available.
  * - 43 (`CARD_NX`): Chosen payment card does not exist.
  * - 44 (`CARD_SELECT`): User has chosen payment card but he had no such rights.
@@ -393,7 +393,7 @@ namespace WlSdk;
  * - 3 (`RETRY`): Temporary service error. Repeat request.
  * - 103 (`SECURITY_LARGE`): Payment is blocked due security reasons (because payment amount is too large).
  * - 188 (`SKIP_IN_TESTS`): Only for test, when there is an error in the test that we cannot influence, for example:
- * “server is not available
+ * “server is not available”.
  * - 31 (`STRIPE_EMPTY`): Stripe data is empty.
  * - 16 (`STRIPE_INVALID`): Invalid data on magnetic stripe. Maybe some part does not exist.
  * - 161 (`TOKEN_ACCOUNT`): This recurrent payment token belongs to a different account of this merchant.
@@ -1143,7 +1143,7 @@ class RsPayException
     /** Payment is blocked due security reasons (because payment amount is too large). */
     public const SECURITY_LARGE = 103;
 
-    /** Only for test, when there is an error in the test that we cannot influence, for example: “server is not available */
+    /** Only for test, when there is an error in the test that we cannot influence, for example: “server is not available”. */
     public const SKIP_IN_TESTS = 188;
 
     /** Stripe data is empty. */

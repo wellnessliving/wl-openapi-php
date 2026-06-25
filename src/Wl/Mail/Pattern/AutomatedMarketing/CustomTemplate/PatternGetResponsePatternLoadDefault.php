@@ -69,7 +69,7 @@ class PatternGetResponsePatternLoadDefault
     public ?string $text_json = null;
 
     /**
-     * &gt;Preview text of the email.
+     * >Preview text of the email.
      *
      * @var string|null
      */

@@ -33,32 +33,60 @@ class AttendanceListByTokenGetResponseListWaitInfo
     public ?string $html_credit = null;
 
     /**
-     * User`s login notes.&lt;/dd&gt;
-     *
-     *  &lt;dt&gt;int &lt;var&gt;i_visit_credit&lt;/var&gt;&lt;/dt&gt;
-     *  &lt;dd&gt;Count of unpaid visits if client has at least one.&lt;/dd&gt;
-     *
-     *  &lt;dt&gt;bool &lt;var&gt;is_account_positive&lt;/var&gt;&lt;/dt&gt;
-     *  &lt;dd&gt;If the user has a positive balance on his account.&lt;/dd&gt;
-     *
-     *  &lt;dt&gt;bool &lt;var&gt;is_birthday&lt;/var&gt;&lt;/dt&gt;
-     *  &lt;dd&gt;If a user has a birthday today.&lt;/dd&gt;
-     *
-     *  &lt;dt&gt;bool &lt;var&gt;is_contract&lt;/var&gt;&lt;/dt&gt;
-     *  &lt;dd&gt;&lt;tt&gt;true&lt;/tt&gt; if client has some contracts that he should agree.&lt;/dd&gt;
-     *
-     *  &lt;dt&gt;bool &lt;var&gt;is_family_payer&lt;/var&gt;&lt;/dt&gt;
-     *  &lt;dd&gt;`true` if the user makes payments for a family member, `false` otherwise.&lt;/dd&gt;
-     *
-     *  &lt;dt&gt;bool &lt;var&gt;is_first&lt;/var&gt;&lt;/dt&gt;
-     *  &lt;dd&gt;&lt;tt&gt;true&lt;/tt&gt; if this is a first visit of the client.&lt;/dd&gt;
-     *
-     *  &lt;dt&gt;bool &lt;var&gt;is_form&lt;/var&gt;&lt;/dt&gt;
-     *  &lt;dd&gt;`true` if the client has uncompleted one or more forms.
+     * User`s login notes.
      *
      * @var string|null
      */
     public ?string $html_note = null;
+
+    /**
+     * Count of unpaid visits if client has at least one.
+     *
+     * @var int|null
+     */
+    public ?int $i_visit_credit = null;
+
+    /**
+     * If the user has a positive balance on his account.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_account_positive = null;
+
+    /**
+     * If a user has a birthday today.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_birthday = null;
+
+    /**
+     * `true` if client has some contracts that he should agree.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_contract = null;
+
+    /**
+     * `true` if the user makes payments for a family member, `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_family_payer = null;
+
+    /**
+     * `true` if this is a first visit of the client.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_first = null;
+
+    /**
+     * `true` if the client has uncompleted one or more forms.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_form = null;
 
     /**
      * `true` if for user exists not completed tasks.
@@ -202,6 +230,13 @@ class AttendanceListByTokenGetResponseListWaitInfo
         $this->a_note = isset($data['a_note']) ? new AttendanceListByTokenGetResponseListWaitInfoNote((array)$data['a_note']) : null;
         $this->html_credit = isset($data['html_credit']) ? (string)$data['html_credit'] : null;
         $this->html_note = isset($data['html_note']) ? (string)$data['html_note'] : null;
+        $this->i_visit_credit = isset($data['i_visit_credit']) ? (int)$data['i_visit_credit'] : null;
+        $this->is_account_positive = isset($data['is_account_positive']) ? (bool)$data['is_account_positive'] : null;
+        $this->is_birthday = isset($data['is_birthday']) ? (bool)$data['is_birthday'] : null;
+        $this->is_contract = isset($data['is_contract']) ? (bool)$data['is_contract'] : null;
+        $this->is_family_payer = isset($data['is_family_payer']) ? (bool)$data['is_family_payer'] : null;
+        $this->is_first = isset($data['is_first']) ? (bool)$data['is_first'] : null;
+        $this->is_form = isset($data['is_form']) ? (bool)$data['is_form'] : null;
         $this->is_task_active = isset($data['is_task_active']) ? (bool)$data['is_task_active'] : null;
         $this->is_task_urgent = isset($data['is_task_urgent']) ? (bool)$data['is_task_urgent'] : null;
         $this->is_waiver = isset($data['is_waiver']) ? (bool)$data['is_waiver'] : null;

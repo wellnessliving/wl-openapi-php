@@ -60,8 +60,8 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *
  *   Lists account statements generated for a client.
  * - 1398 (`Thoth\Report\SalesReport\PayMethod\SummaryReport\SummaryReport`): "Sales Summary by Payment Method" report.
- * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -&gt;
- * Memberships Details by Location" report. Detailed list of all memberships in the franchise.
+ * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -> Memberships
+ * Details by Location" report. Detailed list of all memberships in the franchise.
  * - 1498 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReport`): Franchise "Memberships Summary by
  * Location" report.
  * - 1268 (`Thoth\Report\SalesReport\Tag\Summary\ListReport`): "Sales Summary by Revenue Category" report.
@@ -257,7 +257,7 @@ class ReportGeneratorReportAbstract
     /** "Sales Summary by Payment Method" report. */
     public const PayMethod_SummaryReport_SummaryReport = 1398;
 
-    /** "Enterprise Reports -&gt; Memberships Details by Location" report. Detailed list of all memberships in the franchise. */
+    /** "Enterprise Reports -> Memberships Details by Location" report. Detailed list of all memberships in the franchise. */
     public const MembershipDetailReport = 1448;
 
     /** Franchise "Memberships Summary by Location" report. */
