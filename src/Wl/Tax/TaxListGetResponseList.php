@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Tax;
 class TaxListGetResponseList
 {
     /**
-     * The locations where the tax is applicable.</i>
+     * The locations where the tax is applicable.
      *
      * @var string[]|null
      */
