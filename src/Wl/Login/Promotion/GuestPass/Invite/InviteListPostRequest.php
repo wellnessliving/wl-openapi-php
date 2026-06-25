@@ -14,8 +14,8 @@ class InviteListPostRequest
     /**
      * Key of the login promotion which provides the guest pass invitation.
      *
-     * &gt; * Used for `GET` to get list of initial invitations for the specific login promotion.
-     * &gt; * Used for `POST` to send invitation to the specific user for the specific login promotion.
+     * > * Used for `GET` to get list of initial invitations for the specific login promotion.
+     * > * Used for `POST` to send invitation to the specific user for the specific login promotion.
      *
      * @var string|null
      */
@@ -24,8 +24,8 @@ class InviteListPostRequest
     /**
      * Key of the invited user.
      *
-     * &gt; * Used for `GET` to get list of incoming invitations for the specific user.
-     * &gt; * Used for `POST` to send invitation to the specific user.
+     * > * Used for `GET` to get list of incoming invitations for the specific user.
+     * > * Used for `POST` to send invitation to the specific user.
      *
      * @var string|null
      */
@@ -34,7 +34,7 @@ class InviteListPostRequest
     /**
      * Guest information.
      *
-     * &gt; Used only for `POST` request to send invitation to the guest without account.
+     * > Used only for `POST` request to send invitation to the guest without account.
      *
      * Required fields:
      *

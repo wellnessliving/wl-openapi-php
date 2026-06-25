@@ -98,21 +98,21 @@ namespace WlSdk\Wl\Privilege;
  * service offerings.
  * - 176 (`FORM_MY_LOCATION`): Allow Staff members to view/complete forms for clients that belong to the location that
  * they are selected to work at.
- * - 199 (`FORM_RESPONSE_DELETE`): Allow staff members to delete forms from the client’s profil
+ * - 199 (`FORM_RESPONSE_DELETE`): Allow staff members to delete forms from the client’s profile.
  * - 161 (`FORM_VIEW_RESPONSE`): Allow staff members to view form responses.
  * - 7 (`HOLIDAY`): Add holidays.
  * - 215 (`IMPORT_CLIENT`): Allows to import clients from a CSV file.
  * - 163 (`INTEGRATION_AUTYMATE`): Set up and modify Autymate integration.
  * - 179 (`INTEGRATION_BRIVO`): Set up and modify Brivo integration.
  * - 87 (`INTERFACE_ACHIEVE_APP`): Enroll into and manage the WellnessLiving Achieve App. These settings are located
- * under Setup &gt; Achieve Client App.
+ * under Setup > Achieve Client App.
  * - 39 (`INTERFACE_WIDGET_EDIT`): Modify the look and functionality business’s widgets. These settings are located
- * within Setup &gt; Widget
+ * within Setup > Widgets.
  * - 110 (`INTERFACE_WIDGET_VIEW`): View the look and functionality business’s widgets. These settings are located
- * within Setup &gt; Widget
+ * within Setup > Widgets.
  * - 157 (`INVENTORY_UPDATE`): Permission to Receive or Adjust quantity from the Inventory On Hand Report.
  * - 9 (`LOCATION_EDIT`): Manage my locations except General information.
- * - 126 (`LOCATION_EDIT_GENERAL`): Manage tab Location -&gt; General.
+ * - 126 (`LOCATION_EDIT_GENERAL`): Manage tab Location -> General.
  * - 8 (`LOCATION_FOREIGN`): Manage all locations.
  * - 109 (`LOCATION_FRANCHISE`): Manage franchise locations.
  * - 101 (`LOG_VIEW`): Logs view.
@@ -132,7 +132,7 @@ namespace WlSdk\Wl\Privilege;
  * - 173 (`MESSAGES_CALLS`): Enabling this permission for a role will enable making and receiving calls in Message
  * Center.
  * - 174 (`MESSAGES_CONVERSATIONS`): Enabling this permission for a role will enable the role to use the ‘Assign
- * to’ field and assign a conversation to a staff mem
+ * to’ field and assign a conversation to a staff member.
  * - 170 (`MESSAGES_MANAGE`): Enabling this permission for a role will grant access to the inbox tab including viewing
  * and sending messages in the Message Center.
  * - 171 (`MESSAGES_SETTINGS`): Enabling this permission for a role will grant access to the Settings tab including
@@ -183,7 +183,7 @@ namespace WlSdk\Wl\Privilege;
  * - 191 (`PROFILE_GROUP_MEMBER_MANAGE`): Manage client group members (only members, not a group itself).
  * - 213 (`PROFILE_MERGE`): Merge client profiles.
  * - 86 (`PROFILE_MY_LOCATION`): Manage clients from my location.
- * - 205 (`PROFILE_SCHEDULE`): View client’s upcoming and past schedul
+ * - 205 (`PROFILE_SCHEDULE`): View client’s upcoming and past schedule.
  * - 68 (`PROFILE_TYPE_EDIT`): Manage profile client type.
  * - 13 (`PROFILE_VIEW`): Manage all clients.
  * - 102 (`PROGRESS_LOG_MANAGE`): Manage progress log.
@@ -229,7 +229,7 @@ namespace WlSdk\Wl\Privilege;
  * - 234 (`SCHEDULE_SUMMARY_REVENUE_SERVICE`): View a summary of projected and earned service revenue generated from
  * scheduled and completed sessions.
  * - 235 (`SCHEDULE_SUMMARY_REVENUE_STAFF`): View a summary of projected pay from upcoming sessions and earned pay from
- * completed sessions, based on the staff’s schedul
+ * completed sessions, based on the staff’s schedule.
  * - 133 (`SERVICE_AGREEMENT_SIGN`): Allows sign service agreement.
  * - 78 (`SHOP_CATEGORY`): View, modify and delete shop categories.
  * - 32 (`STAFF_CLOCK`): Modify the clock-in and clock-out times for staff members.
@@ -493,7 +493,7 @@ class PrivilegeSid
     /** Allow Staff members to view/complete forms for clients that belong to the location that they are selected to work at. */
     public const FORM_MY_LOCATION = 176;
 
-    /** Allow staff members to delete forms from the client’s profil */
+    /** Allow staff members to delete forms from the client’s profile. */
     public const FORM_RESPONSE_DELETE = 199;
 
     /** Allow staff members to view form responses. */
@@ -511,13 +511,13 @@ class PrivilegeSid
     /** Set up and modify Brivo integration. */
     public const INTEGRATION_BRIVO = 179;
 
-    /** Enroll into and manage the WellnessLiving Achieve App. These settings are located under Setup &gt; Achieve Client App. */
+    /** Enroll into and manage the WellnessLiving Achieve App. These settings are located under Setup > Achieve Client App. */
     public const INTERFACE_ACHIEVE_APP = 87;
 
-    /** Modify the look and functionality business’s widgets. These settings are located within Setup &gt; Widget */
+    /** Modify the look and functionality business’s widgets. These settings are located within Setup > Widgets. */
     public const INTERFACE_WIDGET_EDIT = 39;
 
-    /** View the look and functionality business’s widgets. These settings are located within Setup &gt; Widget */
+    /** View the look and functionality business’s widgets. These settings are located within Setup > Widgets. */
     public const INTERFACE_WIDGET_VIEW = 110;
 
     /** Permission to Receive or Adjust quantity from the Inventory On Hand Report. */
@@ -526,7 +526,7 @@ class PrivilegeSid
     /** Manage my locations except General information. */
     public const LOCATION_EDIT = 9;
 
-    /** Manage tab Location -&gt; General. */
+    /** Manage tab Location -> General. */
     public const LOCATION_EDIT_GENERAL = 126;
 
     /** Manage all locations. */
@@ -574,7 +574,7 @@ class PrivilegeSid
     /** Enabling this permission for a role will enable making and receiving calls in Message Center. */
     public const MESSAGES_CALLS = 173;
 
-    /** Enabling this permission for a role will enable the role to use the ‘Assign to’ field and assign a conversation to a staff mem */
+    /** Enabling this permission for a role will enable the role to use the ‘Assign to’ field and assign a conversation to a staff member. */
     public const MESSAGES_CONVERSATIONS = 174;
 
     /** Enabling this permission for a role will grant access to the inbox tab including viewing and sending messages in the Message Center. */
@@ -718,7 +718,7 @@ class PrivilegeSid
     /** Manage clients from my location. */
     public const PROFILE_MY_LOCATION = 86;
 
-    /** View client’s upcoming and past schedul */
+    /** View client’s upcoming and past schedule. */
     public const PROFILE_SCHEDULE = 205;
 
     /** Manage profile client type. */
@@ -844,7 +844,7 @@ class PrivilegeSid
     /** View a summary of projected and earned service revenue generated from scheduled and completed sessions. */
     public const SCHEDULE_SUMMARY_REVENUE_SERVICE = 234;
 
-    /** View a summary of projected pay from upcoming sessions and earned pay from completed sessions, based on the staff’s schedul */
+    /** View a summary of projected pay from upcoming sessions and earned pay from completed sessions, based on the staff’s schedule. */
     public const SCHEDULE_SUMMARY_REVENUE_STAFF = 235;
 
     /** Allows sign service agreement. */

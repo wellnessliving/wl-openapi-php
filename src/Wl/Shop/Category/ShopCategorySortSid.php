@@ -3,7 +3,7 @@
 namespace WlSdk\Wl\Shop\Category;
 
 /**
- * List of Setup -&gt; Store configuration -&gt; Categories and Layout sort options.
+ * List of Setup -> Store configuration -> Categories and Layout sort options.
  *
  * Values:
  * - 2 (`CUSTOM`): Custom sort.

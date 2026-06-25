@@ -16,7 +16,7 @@ namespace WlSdk\Wl\Business\Claim;
  * - 1 (`PROSPECT`): Business is not a WL client and never was, i.e. it is a true prospect business.
  * - 2 (`UNVERIFY`): Business claiming process started, the contact information was verified, the trial has started,
  * but company
- *   information wasn’t yet update
+ *   information wasn’t yet updated.
  */
 class BusinessClaimStatusSid
 {

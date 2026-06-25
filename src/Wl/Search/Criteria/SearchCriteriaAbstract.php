@@ -78,7 +78,7 @@ namespace WlSdk\Wl\Search\Criteria;
  *   if `s_diastolic` is set to '80' and `s_systolic` is `null`, ''(empty string), or absent -
  *   the criterion will match all users with diastolic pressure being 80, regardless of their systolic value.
  *
- *   `[&#039;s_diastolic&#039; =&amp;gt; &#039;123&#039;]`
+ *   `['s_diastolic' =&gt; '123']`
  * - 163 (`Wl\Login\Search\SearchCriteria\ProgressDecimalCriteria`): Client`s "Custom Field (Float)" search criteria.
  * - 251 (`Wl\Login\Search\SearchCriteria\ProgressImageCriteria`): Client's "Custom Field (Image)" search criteria.
  * - 164 (`Wl\Login\Search\SearchCriteria\ProgressIntegerCriteria`): Client`s "Custom Field (Integer)" search criteria.

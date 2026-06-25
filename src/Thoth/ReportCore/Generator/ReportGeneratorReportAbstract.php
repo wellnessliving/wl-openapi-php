@@ -76,8 +76,8 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *   Batching is a process when all transactions are sent to processing by merchant in a certain time of next day.
  * - 1572 (`Thoth\Report\SalesReport\Transaction\Cash\SummaryReport`): "Cash Reconciliation Summary" report.
  *   This report is only accessible as a part of "Sales and Attendance Summary" report.
- * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -&gt;
- * Memberships Details by Location" report. Detailed list of all memberships in the franchise.
+ * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -> Memberships
+ * Details by Location" report. Detailed list of all memberships in the franchise.
  * - 1498 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReport`): Franchise "Memberships Summary by
  * Location" report.
  * - 1295 (`Thoth\Report\SalesReport\Client\SummaryReport\SummaryReport`): "Sales Summary by Client" report.
@@ -302,7 +302,7 @@ class ReportGeneratorReportAbstract
     /** "Cash Reconciliation Summary" report. */
     public const Cash_SummaryReport = 1572;
 
-    /** "Enterprise Reports -&gt; Memberships Details by Location" report. Detailed list of all memberships in the franchise. */
+    /** "Enterprise Reports -> Memberships Details by Location" report. Detailed list of all memberships in the franchise. */
     public const MembershipDetailReport = 1448;
 
     /** Franchise "Memberships Summary by Location" report. */

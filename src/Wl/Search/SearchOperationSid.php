@@ -16,8 +16,8 @@ namespace WlSdk\Wl\Search;
  * - 5 (`DATE_RANGE`): In specific range
  * - 6 (`END_WITH`): Ends with
  * - 13 (`EQUAL`): =
- * - 17 (`GREATER_THAN`): &gt;
- * - 18 (`GREATER_THAN_OR_EQUAL`): &gt;=
+ * - 17 (`GREATER_THAN`): >
+ * - 18 (`GREATER_THAN_OR_EQUAL`): >=
  * - 23 (`IN_LAST`): In the last
  * - 24 (`IN_SPECIFIC_RANGE`): In a specific range
  * - 7 (`IS`): Is
@@ -27,8 +27,8 @@ namespace WlSdk\Wl\Search;
  * - 31 (`IS_UNCHECKED`): Is unchecked
  * - 29 (`LAST_MONTH`): Last month
  * - 28 (`LAST_WEEK`): Last week
- * - 15 (`LESS_THAN`): &lt;
- * - 16 (`LESS_THAN_OR_EQUAL`): &lt;=
+ * - 15 (`LESS_THAN`): <
+ * - 16 (`LESS_THAN_OR_EQUAL`): <=
  * - 19 (`NO`): No
  * - 9 (`NOT_CONTAIN`): Doesn`t contain
  * - 12 (`NOT_EMPTY`): Is not empty
@@ -66,10 +66,10 @@ class SearchOperationSid
     /** = */
     public const EQUAL = 13;
 
-    /** &gt; */
+    /** > */
     public const GREATER_THAN = 17;
 
-    /** &gt;= */
+    /** >= */
     public const GREATER_THAN_OR_EQUAL = 18;
 
     /** In the last */
@@ -99,10 +99,10 @@ class SearchOperationSid
     /** Last week */
     public const LAST_WEEK = 28;
 
-    /** &lt; */
+    /** < */
     public const LESS_THAN = 15;
 
-    /** &lt;= */
+    /** <= */
     public const LESS_THAN_OR_EQUAL = 16;
 
     /** No */

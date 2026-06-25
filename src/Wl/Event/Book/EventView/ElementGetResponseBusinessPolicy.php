@@ -16,9 +16,9 @@ class ElementGetResponseBusinessPolicy
      * Keys are list of IDs from {@link \WlSdk\Wl\Service\ServiceSid}, and values are flags whether wait list is
      * allowed.
      *
-     * @var int|null
+     * @var array|null
      */
-    public ?int $a_wait_service = null;
+    public ?array $a_wait_service = null;
 
     /**
      * Minimum hours|days|months before class should be booked.
@@ -208,7 +208,7 @@ class ElementGetResponseBusinessPolicy
     public function __construct(array $data)
     {
         $this->a_payment_reattempt_not_decline_reason = isset($data['a_payment_reattempt_not_decline_reason']) ? (array)$data['a_payment_reattempt_not_decline_reason'] : null;
-        $this->a_wait_service = isset($data['a_wait_service']) ? (int)$data['a_wait_service'] : null;
+        $this->a_wait_service = isset($data['a_wait_service']) ? (array)$data['a_wait_service'] : null;
         $this->i_book_before = isset($data['i_book_before']) ? (int)$data['i_book_before'] : null;
         $this->i_book_future = isset($data['i_book_future']) ? (int)$data['i_book_future'] : null;
         $this->i_cancel = isset($data['i_cancel']) ? (int)$data['i_cancel'] : null;

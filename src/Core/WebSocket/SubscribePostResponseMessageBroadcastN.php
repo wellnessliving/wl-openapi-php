@@ -8,7 +8,7 @@ class SubscribePostResponseMessageBroadcastN
      * Status of mail verification.
      * One of the {@link \WlSdk\Wl\Mail\Verify\MailVerifyStatusSid} constants.
      * Or {@link \WlSdk\Wl\Business\Config\Option\OptionSidAbstract} if option "Enable Custom Reply To Emails" in
-     * Business -&gt; Feature is disabled.
+     * Business -> Feature is disabled.
      *
      * @var int|null
      * @see \WlSdk\Wl\Mail\Verify\MailVerifyStatusSid

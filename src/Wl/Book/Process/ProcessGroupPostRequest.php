@@ -73,6 +73,14 @@ class ProcessGroupPostRequest
     public ?bool $is_force_pay_later = null;
 
     /**
+     * Host login promotion key that grants the guest pass used to pay for the guest's visit.
+     * Empty string if the booking is not paid with a guest pass.
+     *
+     * @var string|null
+     */
+    public ?string $k_login_promotion_guest_pass = null;
+
+    /**
      * The installment template primary key.
      * `null` to not use installment template.
      *
@@ -99,6 +107,7 @@ class ProcessGroupPostRequest
             'a_client' => $this->a_client,
             'a_pay_form' => $this->a_pay_form,
             'is_force_pay_later' => $this->is_force_pay_later,
+            'k_login_promotion_guest_pass' => $this->k_login_promotion_guest_pass,
             'k_pay_installment_template' => $this->k_pay_installment_template,
             'text_discount_code' => $this->text_discount_code,
             ],
