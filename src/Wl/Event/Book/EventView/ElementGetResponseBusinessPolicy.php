@@ -16,7 +16,7 @@ class ElementGetResponseBusinessPolicy
      * Keys are list of IDs from {@link \WlSdk\Wl\Service\ServiceSid}, and values are flags whether wait list is
      * allowed.
      *
-     * @var array|null
+     * @var bool[]|null
      */
     public ?array $a_wait_service = null;
 

@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Schedule\ClassView;
 /**
  * Reasons why the client can't book this class.
  *
- * Last used ID: 24
+ * Last used ID: 26
  *
  * Values:
  * - 1 (`ACCESS_DENIED`): User is trying to book on behalf of another client, but does not have permission to do so.
@@ -24,6 +24,7 @@ namespace WlSdk\Wl\Schedule\ClassView;
  * - 6 (`BOOKED_ALREADY`): Client is already booked for this session.
  * - 10 (`BUSINESS_INACTIVE`): Business is inactive.
  * - 11 (`CLASS_CANCELED`): Class is canceled.
+ * - 26 (`CLASS_FINISHED`): Class is finished.
  * - 14 (`CLASS_FULL`): Class is full.
  * - 15 (`CLASS_NOT_AVAILABLE_ANYMORE`): Class does not exist anymore.
  * - 12 (`CLIENT_FLAGGED`): Client is flagged at location.
@@ -77,6 +78,9 @@ class DenyReasonSid
 
     /** Class is canceled. */
     public const CLASS_CANCELED = 11;
+
+    /** Class is finished. */
+    public const CLASS_FINISHED = 26;
 
     /** Class is full. */
     public const CLASS_FULL = 14;
