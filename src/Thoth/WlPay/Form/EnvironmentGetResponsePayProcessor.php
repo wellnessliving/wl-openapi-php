@@ -6,7 +6,7 @@ class EnvironmentGetResponsePayProcessor
 {
     /**
      * Public keys configured for this payment processor.
-     * Copy of result of PayProcessorPublicKeysInterface::publicKeys().
+     *
      * `null` if this payment processor does not support public keys.
      *
      * @var array|null
@@ -15,7 +15,7 @@ class EnvironmentGetResponsePayProcessor
 
     /**
      * Public info configured for this payment processor.
-     * Copy of result of PayProcessorPublicInfoInterface::publicInfo().
+     *
      * `null` if this payment processor does not support public info.
      *
      * @var array|null
@@ -55,7 +55,7 @@ class EnvironmentGetResponsePayProcessor
     public ?bool $is_test = null;
 
     /**
-     * Key of the business merchant. Primary key in RsBusinessMerchantSql.
+     * Key of the business merchant.
      *
      * @var string|null
      */

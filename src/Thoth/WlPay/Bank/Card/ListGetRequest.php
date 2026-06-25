@@ -13,7 +13,6 @@ class ListGetRequest
 
     /**
      * Location to show information for.
-     * Primary key in RsLocationSql table.
      *
      * `0` to use user's home location.
      *

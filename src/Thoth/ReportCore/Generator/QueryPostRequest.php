@@ -81,8 +81,6 @@ class QueryPostRequest
      * Filters that should be applied to the report.
      *
      * In this array, key is name of a filter field.
-     * A filter field is a property of a ReportFilterAbstract subclass.
-     * Name of the property of that subclass corresponds key in this array.
      *
      * @var string|null
      */
@@ -90,8 +88,6 @@ class QueryPostRequest
 
     /**
      * Key of the business which report should be shown.
-     *
-     * Primary key in RsBusinessSql.
      *
      * `0` or an empty string for system-wide reports.
      *
@@ -114,9 +110,7 @@ class QueryPostRequest
      * To sort by a cell field, specify name of a report field and name of the cell field.
      * Separate with a dot. For example: `o_account.m_amount`.
      *
-     * You may specify a field which contains objects of ReportGeneratorCellAbstract without
-     * specification of a name of a cell field.
-     * In this case sorting specified by ReportGeneratorCellAbstract::SORT will be applied.
+     *
      *
      * Example value: `s_first,+s_last,-o_account.m_amount,o_address`.
      *
@@ -146,8 +140,6 @@ class QueryPostRequest
 
     /**
      * Actor user.
-     *
-     * Primary key in PassportLoginSql.
      *
      * `0` or an empty string for guests.
      *

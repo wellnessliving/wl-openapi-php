@@ -12,7 +12,7 @@ namespace WlSdk\Thoth\PayProcessor;
  * - 1 (`NETBANX`): Payment gateway for Netbanx.
  * - 6 (`NMI`): Payment gateway for NMI.
  * - 12 (`NUVEI`): Payment gateway for Nuvei.
- * - 7 (`PAYCHOICE`): Payment gateway for http://www.paychoice.com.au/ Paychoice.
+ * - 7 (`PAYCHOICE`): Payment gateway for Paychoice.
  * - 10 (`STRIPE_COM`): Payment gateway for `stripe.com`.
  */
 class PayProcessorSid
@@ -35,7 +35,7 @@ class PayProcessorSid
     /** Payment gateway for Nuvei. */
     public const NUVEI = 12;
 
-    /** Payment gateway for http://www.paychoice.com.au/ Paychoice. */
+    /** Payment gateway for Paychoice. */
     public const PAYCHOICE = 7;
 
     /** Payment gateway for `stripe.com`. */

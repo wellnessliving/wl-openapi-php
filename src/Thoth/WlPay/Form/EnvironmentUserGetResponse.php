@@ -17,8 +17,8 @@ class EnvironmentUserGetResponse
     public ?array $a_card_system = null;
 
     /**
-     * A list of payment methods enabled for staff members. The ID is one of {@link \WlSdk\RsPayMethodSid}
-     * constants.
+     * A list of payment methods enabled for staff members.
+     * The ID is one of {@link \WlSdk\RsPayMethodSid} constants.
      * The value is always `true`.
      *
      * @var int[]|null

@@ -7,7 +7,6 @@ class OwnerGetRequest
     /**
      * Business key.
      *
-     * Primary key in RsBusinessSql.
      * `null` if not passed.
      *
      * @var string|null

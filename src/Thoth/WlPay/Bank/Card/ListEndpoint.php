@@ -20,6 +20,9 @@ class ListEndpoint
     /**
      * Retrieves information about user's bank cards.
      *
+     * Returns the list of saved payment cards for the specified user and business, including card number fragment,
+     * expiry date, card system, holder name, and default status. Also returns whether new cards can be added.
+     *
      * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

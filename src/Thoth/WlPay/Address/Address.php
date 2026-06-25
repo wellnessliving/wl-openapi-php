@@ -20,6 +20,10 @@ class Address
     /**
      * Gets user's payment addresses information.
      *
+     * Returns the list of saved payment addresses for the specified owner type and key, including address fields,
+     * country and region details, and the currently selected address. Returns `null` if the current user cannot
+     * edit bank accounts for the owner.
+     *
      * @return AddressGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

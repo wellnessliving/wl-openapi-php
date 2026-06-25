@@ -13,9 +13,8 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *   The following transitions are possible:
  *
  *   * `ABORTED` =&gt; `DELETING` when a background task finds that this report is old and should be deleted.
- *     This transition is performed by CleanupCron::cronCleanup().
- *   * `ABORTED` =&gt; `QUEUED` if user clicks to regenerate this report
- *     (inside [ReportGeneratorMainAsync::schedule()](#/components/schemas/Core.Async.CoreAsyncDetachedAbstract)).
+ *
+ *   * `ABORTED` =&gt; `QUEUED` if user clicks to regenerate this report.
  * - 5 (`ABORTING`): Current operation is being aborted now.
  *
  *   The following transitions are possible:
@@ -28,7 +27,6 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *   The following transitions are possible:
  *
  *   * `DELETING` =&gt; (report does not exist anymore) when deletion of this report completes.
- *     This transition is performed by CleanupCron::cronCleanup().
  * - 2 (`GENERATING`): This report is being generated now.
  *
  *   This status is set when report is generated from zero point.
@@ -56,16 +54,13 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *      This transition also occurs if a report stayed in the queue more than the set duration and
  *      there is some data left from the previous generation of this report.
  *   * `QUEUED` =&gt; `GENERATING` when there is a free thread slot to start generation of this report immediately.
- *     This transition is made in
- * [ReportGeneratorMainAsync::queuePromote()](#/components/schemas/Core.Async.CoreAsyncDetachedAbstract).
  * - 3 (`READY`): Generation of this report is now completed.
  *
  *   The following transitions are possible:
  *
  *   * `READY` =&gt; `DELETING` when a background tasks identifies that this report is old and starts deleting it.
- *     This transition is performed by CleanupCron::cronCleanup().
+ *
  *   * `READY` =&gt; `QUEUED` when user clicks to regenerate this report
- *     (inside [ReportGeneratorMainAsync::schedule()](#/components/schemas/Core.Async.CoreAsyncDetachedAbstract)).
  */
 class ReportGeneratorStatusSid
 {

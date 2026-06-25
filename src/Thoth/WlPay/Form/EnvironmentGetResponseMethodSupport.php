@@ -23,7 +23,6 @@ class EnvironmentGetResponseMethodSupport
     /**
      * The key of the custom payment method.
      * This will be `null` if this payment method isn't customized.
-     * Primary key in MethodSql table.
      *
      * @var string|null
      */

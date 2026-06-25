@@ -5,7 +5,7 @@ namespace WlSdk\Thoth\WlPay\Account\Charge;
 use WlSdk\WlSdkClient;
 
 /**
- * Allows the user account to be filled with a specified payment, or to perform the reset change manually.
+ * Refills the user account balance by the specified payment amount or adjusts it manually.
  */
 class Charge
 {
@@ -18,7 +18,11 @@ class Charge
     }
 
     /**
-     * Allows the user account to be filled with a specified payment, or to perform the reset change manually.
+     * Refills the user account balance by the specified payment amount or adjusts it manually.
+     *
+     * Accepts the payment amount, account key or user-and-business identifiers, charge mode, and payment form
+     * data. Processes the payment through the configured payment environment and returns the purchase key
+     * when a new purchase is created (for the automatic charge mode).
      *
      * @return ChargePostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

@@ -12,9 +12,9 @@ class QueryPostResponse
      *
      * Copy of result of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
      *
-     * @var array[]|null
+     * @var QueryPostResponseDynamic[]|null
      */
-    public $a_dynamic = null;
+    public ?array $a_dynamic = null;
 
     /**
      * A list of fields in this report.
@@ -64,8 +64,6 @@ class QueryPostResponse
      *
      * `null` if generation of this report is not completed.
      *
-     * See ReportStorageListSql.`dtu_complete` for additional details.
-     *
      * @var string|null
      */
     public ?string $dtu_complete = null;
@@ -74,8 +72,6 @@ class QueryPostResponse
      * Date and time when this report was put on generation queue.
      *
      * Effectively, this is the time when a user clicked to view this report.
-     *
-     * See ReportStorageListSql.`dtu_queue` for additional details.
      *
      * @var string|null
      */
@@ -86,8 +82,6 @@ class QueryPostResponse
      *
      * `null` if generation of this report is not started.
      *
-     * See ReportStorageListSql.`dtu_start` for additional details.
-     *
      * @var string|null
      */
     public ?string $dtu_start = null;
@@ -97,8 +91,6 @@ class QueryPostResponse
      *
      * This number is changed every time content of the report gets updated.
      * If this number is not changed, the content is not updated.
-     *
-     * Copy of ReportStorageListSql.`i_cas_change`.
      *
      * @var int|null
      */
@@ -134,7 +126,7 @@ class QueryPostResponse
 
     public function __construct(array $data)
     {
-        $this->a_dynamic = $data['a_dynamic'] ?? null;
+        $this->a_dynamic = isset($data['a_dynamic']) ? array_map(static fn ($item) => new QueryPostResponseDynamic((array)$item), (array)$data['a_dynamic']) : null;
         $this->a_field = isset($data['a_field']) ? (array)$data['a_field'] : null;
         $this->a_row = isset($data['a_row']) ? (array)$data['a_row'] : null;
         $this->a_stale = isset($data['a_stale']) ? (array)$data['a_stale'] : null;

@@ -31,7 +31,7 @@ class EnvironmentGetRequest
     public ?string $k_location = null;
 
     /**
-     * The user ID to retrieve payment information for. Primary key in the PassportLoginSql table.
+     * The user ID to retrieve payment information for.
      *
      * `null` if not defined.
      *

@@ -20,12 +20,14 @@ class TransactionAllPaymentGetResponse
     /**
      * The report data.
      *
-     * This is an indexed array in which one row is also an indexed array.
-     *
-     * Indexes of the columns correspond to the columns in
+     * This is an indexed array where each element is also an indexed array representing one report row.
+     * Column positions in each row correspond to the field names in
      * [TransactionAllPaymentApi](/Thoth/WlPay/Transaction/Report/TransactionAllPayment.json).
      *
-     * @var array|null
+     * Known columns (use [TransactionAllPaymentApi](/Thoth/WlPay/Transaction/Report/TransactionAllPayment.json) to
+     * resolve their positional indexes):
+     *
+     * @var TransactionAllPaymentGetResponseRow[]|null
      */
     public ?array $a_row = null;
 
@@ -94,7 +96,7 @@ class TransactionAllPaymentGetResponse
     public function __construct(array $data)
     {
         $this->a_field = isset($data['a_field']) ? (array)$data['a_field'] : null;
-        $this->a_row = isset($data['a_row']) ? (array)$data['a_row'] : null;
+        $this->a_row = isset($data['a_row']) ? array_map(static fn ($item) => new TransactionAllPaymentGetResponseRow((array)$item), (array)$data['a_row']) : null;
         $this->a_warning = isset($data['a_warning']) ? (array)$data['a_warning'] : null;
         $this->dtu_complete = isset($data['dtu_complete']) ? (string)$data['dtu_complete'] : null;
         $this->dtu_queue = isset($data['dtu_queue']) ? (string)$data['dtu_queue'] : null;

@@ -2,10 +2,17 @@
 
 namespace WlSdk\Thoth\WlPay\Account;
 
-class AccountGetResponseAccount
+class AccountGetResponseAccountNx
 {
     /**
-     * Currency ID. One of {@link \WlSdk\Core\Locale\CurrencySid} constant.
+     * `true` if the account is allowed to have a negative balance, `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $can_negative = null;
+
+    /**
+     * Currency ID. One of {@link \WlSdk\Core\Locale\CurrencySid} constants.
      *
      * @var int|null
      * @see \WlSdk\Core\Locale\CurrencySid
@@ -13,35 +20,35 @@ class AccountGetResponseAccount
     public ?int $id_currency = null;
 
     /**
-     * Key of account currency.
+     * Currency key.
      *
      * @var string|null
      */
     public ?string $k_currency = null;
 
     /**
-     * ID of payment account.  `null` if this is a user account based on system payment method.
+     * Payment account key. `null` for accounts not yet created.
      *
      * @var string|null
      */
     public ?string $k_pay_account = null;
 
     /**
-     * ID of custom payment method. `null` if this is a user account based on system payment method.
+     * Custom payment method key. `null` for accounts based on the system payment method.
      *
      * @var string|null
      */
     public ?string $k_pay_method = null;
 
     /**
-     * Account balance.
+     * Account balance. Always `'0.00'` for accounts not yet created.
      *
      * @var string|null
      */
     public ?string $m_rest = null;
 
     /**
-     * Name of a custom payment method. `null` if this is a user account based on system payment method.
+     * Name of the custom payment method. `null` for accounts based on the system payment method.
      *
      * @var string|null
      */
@@ -49,6 +56,7 @@ class AccountGetResponseAccount
 
     public function __construct(array $data)
     {
+        $this->can_negative = isset($data['can_negative']) ? (bool)$data['can_negative'] : null;
         $this->id_currency = isset($data['id_currency']) ? (int)$data['id_currency'] : null;
         $this->k_currency = isset($data['k_currency']) ? (string)$data['k_currency'] : null;
         $this->k_pay_account = isset($data['k_pay_account']) ? (string)$data['k_pay_account'] : null;
