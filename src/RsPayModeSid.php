@@ -14,8 +14,6 @@ namespace WlSdk;
  * not be displayed.
  *   * There is no ability to add new credit card.
  *   * There is no ability to pay from couple payment sources at the same time.
- *
- *   https://dev.1024.info/ru-default/studio/task/wl-7741
  * - 1 (`WEB`): A form is shown in the web browser.
  *
  *   This is the default value.

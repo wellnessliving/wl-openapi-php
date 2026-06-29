@@ -20,6 +20,10 @@ class Currency
     /**
      * Retrieves information about currencies.
      *
+     * Queries all active (non-removed) currencies from the database and returns them as an associative array
+     *  keyed by currency key, with each entry containing the currency sign, its display position, and the
+     *  international currency code.
+     *
      * @return CurrencyGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
