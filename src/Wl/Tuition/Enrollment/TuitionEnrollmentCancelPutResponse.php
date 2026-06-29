@@ -1,11 +1,11 @@
 <?php
 
-namespace WlSdk\Wl\Schedule;
+namespace WlSdk\Wl\Tuition\Enrollment;
 
 /**
- * Response from GET
+ * Response from PUT
  */
-class SchedulePostBasedGetResponse
+class TuitionEnrollmentCancelPutResponse
 {
     public function __construct(array $data)
     {

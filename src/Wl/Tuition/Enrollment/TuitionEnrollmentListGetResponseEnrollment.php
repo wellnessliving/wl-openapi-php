@@ -5,49 +5,59 @@ namespace WlSdk\Wl\Tuition\Enrollment;
 class TuitionEnrollmentListGetResponseEnrollment
 {
     /**
-     * No description.
+     * Events for this enrollment.
      *
      * @var TuitionEnrollmentListGetResponseEnrollmentEvents[]|null
      */
     public ?array $a_events = null;
 
     /**
-     * No description.
+     * Date and time of the enrollment in local business timezone.
      *
      * @var string|null
      */
     public ?string $dtl_enrollment = null;
 
     /**
-     * No description.
+     * Number of payments left.
      *
      * @var int|null
      */
     public ?int $i_payments_left = null;
 
     /**
-     * No description.
+     * Key of the tuition purchase item. This is enrollment key, which can be used to modify and cancel the
+     * enrollment.
+     *
+     * @var string|null
+     */
+    public ?string $k_purchase_item_tuition = null;
+
+    /**
+     * One payment amount.
      *
      * @var string|null
      */
     public ?string $m_payment = null;
 
     /**
-     * No description.
+     * Rest amount to be paid.
      *
      * @var string|null
      */
     public ?string $m_rest = null;
 
     /**
-     * No description.
+     * Total initial amount to be paid.
      *
      * @var string|null
      */
     public ?string $m_total = null;
 
     /**
-     * No description.
+     * Payer for this enrollment.
+     *
+     * This user can be enrolled or not, but he pays for the entire enrollment.
      *
      * @var string|null
      */
@@ -58,6 +68,7 @@ class TuitionEnrollmentListGetResponseEnrollment
         $this->a_events = isset($data['a_events']) ? array_map(static fn ($item) => new TuitionEnrollmentListGetResponseEnrollmentEvents((array)$item), (array)$data['a_events']) : null;
         $this->dtl_enrollment = isset($data['dtl_enrollment']) ? (string)$data['dtl_enrollment'] : null;
         $this->i_payments_left = isset($data['i_payments_left']) ? (int)$data['i_payments_left'] : null;
+        $this->k_purchase_item_tuition = isset($data['k_purchase_item_tuition']) ? (string)$data['k_purchase_item_tuition'] : null;
         $this->m_payment = isset($data['m_payment']) ? (string)$data['m_payment'] : null;
         $this->m_rest = isset($data['m_rest']) ? (string)$data['m_rest'] : null;
         $this->m_total = isset($data['m_total']) ? (string)$data['m_total'] : null;
