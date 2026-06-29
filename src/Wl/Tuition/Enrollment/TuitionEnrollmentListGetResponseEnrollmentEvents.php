@@ -5,42 +5,42 @@ namespace WlSdk\Wl\Tuition\Enrollment;
 class TuitionEnrollmentListGetResponseEnrollmentEvents
 {
     /**
-     * No description.
+     * Whether this enrollment is cancelled or not.
      *
      * @var bool|null
      */
     public ?bool $is_cancelled = null;
 
     /**
-     * No description.
+     * Event ID.
      *
      * @var string|null
      */
     public ?string $k_class = null;
 
     /**
-     * No description.
+     * Login type and shopping cart discounts.
      *
      * @var string|null
      */
     public ?string $m_event_discount = null;
 
     /**
-     * No description.
+     * Price of the event before login type and shopping cart discounts.
      *
      * @var string|null
      */
     public ?string $m_event_subtotal = null;
 
     /**
-     * No description.
+     * Taxes amount.
      *
      * @var string|null
      */
     public ?string $m_event_tax = null;
 
     /**
-     * No description.
+     * Enrolled client.
      *
      * @var string|null
      */

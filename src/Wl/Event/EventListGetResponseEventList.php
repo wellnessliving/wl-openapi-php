@@ -21,23 +21,23 @@ class EventListGetResponseEventList
     /**
      * Data about logo of the event.
      *
-     * @var EventListGetResponseEventListLogo|null
+     * @var array|null
      */
-    public ?EventListGetResponseEventListLogo $a_logo = null;
+    public $a_logo = null;
 
     /**
      * List of scheduled sessions of the event.
      *
-     * @var EventListGetResponseEventListSchedule|null
+     * @var EventListGetResponseEventListSchedule[]|null
      */
-    public ?EventListGetResponseEventListSchedule $a_schedule = null;
+    public ?array $a_schedule = null;
 
     /**
      * List of search tags connected to this event.
      *
-     * @var EventListGetResponseEventListSearchTag|null
+     * @var EventListGetResponseEventListSearchTag[]|null
      */
-    public ?EventListGetResponseEventListSearchTag $a_search_tag = null;
+    public ?array $a_search_tag = null;
 
     /**
      * Whether event can be booked or not.
@@ -131,7 +131,6 @@ class EventListGetResponseEventList
      * ID of deny reason.
      *
      * @var int|null
-     * @see \WlSdk\Wl\Event\DenyReasonSid
      */
     public ?int $id_reason = null;
 
@@ -376,9 +375,9 @@ class EventListGetResponseEventList
     {
         $this->a_age_restriction = isset($data['a_age_restriction']) ? new EventListGetResponseEventListAgeRestriction((array)$data['a_age_restriction']) : null;
         $this->a_class_tab = isset($data['a_class_tab']) ? (array)$data['a_class_tab'] : null;
-        $this->a_logo = isset($data['a_logo']) ? new EventListGetResponseEventListLogo((array)$data['a_logo']) : null;
-        $this->a_schedule = isset($data['a_schedule']) ? new EventListGetResponseEventListSchedule((array)$data['a_schedule']) : null;
-        $this->a_search_tag = isset($data['a_search_tag']) ? new EventListGetResponseEventListSearchTag((array)$data['a_search_tag']) : null;
+        $this->a_logo = $data['a_logo'] ?? null;
+        $this->a_schedule = isset($data['a_schedule']) ? array_map(static fn ($item) => new EventListGetResponseEventListSchedule((array)$item), (array)$data['a_schedule']) : null;
+        $this->a_search_tag = isset($data['a_search_tag']) ? array_map(static fn ($item) => new EventListGetResponseEventListSearchTag((array)$item), (array)$data['a_search_tag']) : null;
         $this->can_book = isset($data['can_book']) ? (bool)$data['can_book'] : null;
         $this->can_cancel = isset($data['can_cancel']) ? (bool)$data['can_cancel'] : null;
         $this->dl_early = isset($data['dl_early']) ? (string)$data['dl_early'] : null;
