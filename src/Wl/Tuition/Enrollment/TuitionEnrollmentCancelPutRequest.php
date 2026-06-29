@@ -9,7 +9,7 @@ class TuitionEnrollmentCancelPutRequest
      *
      * Each element has two keys: `uid` and `k_class`.
      *
-     * @var array|null
+     * @var array[]|null
      */
     public ?array $a_event_cancel = null;
 
