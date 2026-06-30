@@ -5,9 +5,12 @@ namespace WlSdk\Wl\Appointment\Book\Finish;
 class FinishMultiplePostRequest
 {
     /**
-     * The payment type for the appointment. One of the {@link \WlSdk\RsAppointmentPaySid} constants.
+     * The payment type ID for each provider.
      *
-     * Keys refer to provider indexes.
+     * * Keys refer to provider indexes.
+     * * Values are one of the {@link \WlSdk\RsAppointmentPaySid} constants.
+     *
+     * This is a multi-provider equivalent of [FinishApi](/Wl/Appointment/Book/Finish/Finish.json).
      *
      * @var int[]|null
      */
@@ -98,11 +101,20 @@ class FinishMultiplePostRequest
     public ?array $a_notification = null;
 
     /**
-     * The sum paid.
+     * The sum paid without tax for each provider.
      *
-     * Keys refer to provider indexes.
+     * * Keys refer to provider indexes.
+     * * Values are the paid amounts without tax.
      *
-     * @var string[]|null
+     * Only used for the following types of purchases:
+     * * {@link \WlSdk\RsPurchaseItemSid}
+     * * {@link \WlSdk\RsPurchaseItemSid}
+     * * {@link \WlSdk\RsPurchaseItemSid}
+     * * {@link \WlSdk\RsPurchaseItemSid}
+     *
+     * This is a multi-provider equivalent of [FinishApi](/Wl/Appointment/Book/Finish/Finish.json).
+     *
+     * @var int[]|null
      */
     public ?array $a_paid = null;
 
@@ -116,7 +128,12 @@ class FinishMultiplePostRequest
     public ?array $a_pay_form = null;
 
     /**
-     * Data required for payment with the next structure:
+     * Payment is not processed by this API.
+     *
+     * Use the following APIs for payment:
+     * * [PaymentApi](/Wl/Appointment/Book/Payment/Payment.json)
+     * * [PaymentPostApi](/Wl/Appointment/Book/Payment/PaymentPost.json)
+     * * [PaymentMultipleApi](/Wl/Appointment/Book/Payment/PaymentMultiple.json)
      *
      * @var array|null
      */

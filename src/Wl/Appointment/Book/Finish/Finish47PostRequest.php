@@ -22,7 +22,9 @@ class Finish47PostRequest
     public ?array $a_user = null;
 
     /**
-     * The payment type ID for the appointment. One of the {@link \WlSdk\RsAppointmentPaySid} constants.
+     * The payment type ID for the service.
+     *
+     * One of the {@link \WlSdk\RsAppointmentPaySid} constants.
      *
      * @var int|null
      * @see \WlSdk\RsAppointmentPaySid
@@ -160,7 +162,13 @@ class Finish47PostRequest
     public ?bool $is_unpaid_force = null;
 
     /**
-     * The sum paid for a deposit.
+     * The sum paid without tax.
+     *
+     * Only used for the following types of purchases:
+     * * {@link \WlSdk\RsPurchaseItemSid}
+     * * {@link \WlSdk\RsPurchaseItemSid}
+     * * {@link \WlSdk\RsPurchaseItemSid}
+     * * {@link \WlSdk\RsPurchaseItemSid}
      *
      * @var string|null
      */

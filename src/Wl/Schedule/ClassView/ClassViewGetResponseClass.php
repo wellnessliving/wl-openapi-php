@@ -125,6 +125,13 @@ class ClassViewGetResponseClass
     public ?int $i_duration = null;
 
     /**
+     * Number of usages of promotion required to pay for a single class session.
+     *
+     * @var int|null
+     */
+    public ?int $i_visit = null;
+
+    /**
      * Limit of wait list. `null` if limit is not set.
      *
      * @var int|null
@@ -251,6 +258,7 @@ class ClassViewGetResponseClass
         $this->i_book_active = isset($data['i_book_active']) ? (int)$data['i_book_active'] : null;
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
+        $this->i_visit = isset($data['i_visit']) ? (int)$data['i_visit'] : null;
         $this->i_wait_limit = isset($data['i_wait_limit']) ? (int)$data['i_wait_limit'] : null;
         $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
         $this->is_book = isset($data['is_book']) ? (bool)$data['is_book'] : null;

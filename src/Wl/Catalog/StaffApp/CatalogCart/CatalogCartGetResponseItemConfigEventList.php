@@ -6,19 +6,21 @@ class CatalogCartGetResponseItemConfigEventList
 {
     /**
      * Calculated tax amounts for the event enrollment component.
-     *      Key is a primary key in RsTaxSql, value is the calculated tax amount (bcmath string).
+     *      Key is a tax key.
+     *      Value is the calculated tax amount (bcmath string).
      *      Populated in the response; not required in the request.
      *
-     * @var array|null
+     * @var string[]|null
      */
     public ?array $a_tax = null;
 
     /**
      * Calculated tax amounts for the fee component.
-     *      Key is a primary key in RsTaxSql, value is the calculated tax amount (bcmath string).
+     *      Key is a tax key.
+     *      Value is the calculated tax amount (bcmath string).
      *      Populated in the response; not required in the request.
      *
-     * @var array|null
+     * @var string[]|null
      */
     public ?array $a_tax_fee = null;
 
