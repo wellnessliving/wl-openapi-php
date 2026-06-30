@@ -64,6 +64,14 @@ class ListGetResponseResource
     public ?string $text_address = null;
 
     /**
+     * Name of the city with region and country for off-site locations.
+     * Empty string if the resource does not have an off-site address.
+     *
+     * @var string|null
+     */
+    public ?string $text_city = null;
+
+    /**
      * Additional directions or access tips for reaching an off-site location.
      * Empty string if not specified.
      *
@@ -96,6 +104,7 @@ class ListGetResponseResource
         $this->k_resource_layout = isset($data['k_resource_layout']) ? (string)$data['k_resource_layout'] : null;
         $this->k_resource_type = isset($data['k_resource_type']) ? (string)$data['k_resource_type'] : null;
         $this->text_address = isset($data['text_address']) ? (string)$data['text_address'] : null;
+        $this->text_city = isset($data['text_city']) ? (string)$data['text_city'] : null;
         $this->text_guide = isset($data['text_guide']) ? (string)$data['text_guide'] : null;
         $this->text_postal = isset($data['text_postal']) ? (string)$data['text_postal'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
