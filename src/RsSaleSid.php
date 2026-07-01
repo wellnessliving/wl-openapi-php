@@ -28,6 +28,7 @@ namespace WlSdk;
  * [RsProgramCategorySid::VIDEO](#/components/schemas/RsProgramCategorySid).
  * - 10 (`QUICK_BUY`): Products: water, t-shirts, etc. That is available for quick buy.
  * - 14 (`TUITION`): Tuition.
+ * - 15 (`TUITION_FEE`): Tuition fees.
  */
 class RsSaleSid
 {
@@ -72,4 +73,7 @@ class RsSaleSid
 
     /** Tuition. */
     public const TUITION = 14;
+
+    /** Tuition fees. */
+    public const TUITION_FEE = 15;
 }
