@@ -20,6 +20,9 @@ class ListEndpoint
     /**
      * Retrieves information about user's ACH accounts.
      *
+     * Validates the user, business, and location, then retrieves all saved ACH accounts for the resolved merchant.
+     *  Also reports whether the current owner is allowed to add a new ACH account.
+     *
      * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

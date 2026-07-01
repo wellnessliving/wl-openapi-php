@@ -5,7 +5,7 @@ namespace WlSdk\Thoth\WlPay\Address\Widget;
 class WidgetEditGetRequest
 {
     /**
-     * Business primary key in RsBusinessSql table.
+     * Business key.
      *
      * @var string|null
      */

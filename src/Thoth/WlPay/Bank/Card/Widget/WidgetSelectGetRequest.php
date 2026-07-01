@@ -31,7 +31,7 @@ class WidgetSelectGetRequest
     public ?int $id_pay_owner = null;
 
     /**
-     * Business key. Primary key in RsBusinessSql table.
+     * Business key.
      * `null` if use system business.
      *
      * @var string|null
@@ -39,7 +39,7 @@ class WidgetSelectGetRequest
     public ?string $k_business = null;
 
     /**
-     * Currency key. Primary key in RsCurrencySql table.
+     * Currency key.
      *
      * @var string|null
      */
@@ -54,7 +54,7 @@ class WidgetSelectGetRequest
     public ?string $k_id = null;
 
     /**
-     * Location key. Primary key in RsLocationSql table.
+     * Location key.
      * `null` to use system-wide merchant.
      *
      * @var string|null

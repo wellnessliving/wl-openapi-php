@@ -8,9 +8,9 @@ namespace WlSdk\Thoth\WlPay\Address\Widget;
 class WidgetEditGetResponse
 {
     /**
-     * List of possible regions.
+     * List of countries with their regions, keyed by country geo key. Each element:
      *
-     * @var array[]|null
+     * @var WidgetEditGetResponseGeo[]|null
      */
     public ?array $a_geo = null;
 
@@ -30,7 +30,7 @@ class WidgetEditGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_geo = isset($data['a_geo']) ? (array)$data['a_geo'] : null;
+        $this->a_geo = isset($data['a_geo']) ? array_map(static fn ($item) => new WidgetEditGetResponseGeo((array)$item), (array)$data['a_geo']) : null;
         $this->html_phone_mask = isset($data['html_phone_mask']) ? (string)$data['html_phone_mask'] : null;
         $this->text_phone_mask = isset($data['text_phone_mask']) ? (string)$data['text_phone_mask'] : null;
     }

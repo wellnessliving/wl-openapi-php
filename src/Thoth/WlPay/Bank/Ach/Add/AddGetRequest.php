@@ -23,14 +23,14 @@ class AddGetRequest
     public ?bool $is_new = null;
 
     /**
-     * Business key. Primary key in RsBusinessSql table.
+     * Business key.
      *
      * @var string|null
      */
     public ?string $k_business = null;
 
     /**
-     * Location key. Primary key in RsLocationSql table.
+     * Location key.
      *
      * If empty, user's home location will be used.
      *
@@ -40,8 +40,6 @@ class AddGetRequest
 
     /**
      * Pay owner key.
-     *
-     * Copy of result of PayOwner::ownerMoney().
      *
      * @var string|null
      */

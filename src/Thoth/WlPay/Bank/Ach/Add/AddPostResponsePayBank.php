@@ -45,21 +45,21 @@ class AddPostResponsePayBank
     public ?bool $is_default = null;
 
     /**
-     * Billing address. Primary key in RsPayAddressSql.
+     * Billing address.
      *
      * @var string|null
      */
     public ?string $k_pay_address = null;
 
     /**
-     * ID of bank account. Primary key in RsPayBankSql.
+     * ID of bank account.
      *
      * @var string|null
      */
     public ?string $k_pay_bank = null;
 
     /**
-     * Region ID. Primary key in AGeoSql table.
+     * Region ID.
      *
      * @var string|null
      */

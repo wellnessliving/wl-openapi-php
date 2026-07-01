@@ -8,14 +8,14 @@ namespace WlSdk\Thoth\WlPay\Bank\Card\Widget;
 class WidgetSelectGetResponse
 {
     /**
-     * List of saved bank cards. See RsPayBankCardSelectWidget::additional_data() for details.
+     * List of saved bank cards.
      *
-     * @var array|null
+     * @var WidgetSelectGetResponsePayCard|null
      */
-    public ?array $a_pay_card = null;
+    public ?WidgetSelectGetResponsePayCard $a_pay_card = null;
 
     public function __construct(array $data)
     {
-        $this->a_pay_card = isset($data['a_pay_card']) ? (array)$data['a_pay_card'] : null;
+        $this->a_pay_card = isset($data['a_pay_card']) ? new WidgetSelectGetResponsePayCard((array)$data['a_pay_card']) : null;
     }
 }

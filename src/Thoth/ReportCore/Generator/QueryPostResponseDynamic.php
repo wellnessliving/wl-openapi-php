@@ -7,8 +7,6 @@ class QueryPostResponseDynamic
     /**
      * Fields of the complex cell.
      *
-     * This field is filled by result of the ReportGeneratorCellAbstract::field() method.
-     *
      * @var array[]|null
      */
     public ?array $a_cell = null;
@@ -35,8 +33,7 @@ class QueryPostResponseDynamic
      * * `int`
      * * `float`
      * * `bool`
-     * * `array` (only allowed for values of ReportGeneratorCellAbstract, not for report
-     *    fields.)
+     * * `array` (only allowed for values cells, not for report fields)
      *
      * Empty array if scalar types are not acceptable.
      * In this case `s_class` is specified.
@@ -48,12 +45,10 @@ class QueryPostResponseDynamic
     /**
      * Whether this field is dynamic or static.
      *
-     * `true` if this field is generated dynamically by
-     * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
+     * `true` if this field is generated dynamically.
      *
-     * `false` if this field corresponds to a property of a subclass of
-     * ReportGeneratorRowAbstract or
-     * ReportGeneratorCellAbstract.
+     *
+     * `false` if this field corresponds to a regular property.
      *
      * @var bool|null
      */
@@ -65,11 +60,6 @@ class QueryPostResponseDynamic
      * `true` if this field is used for export.
      *
      * `false` if this field is only used for rendering of the report.
-     *
-     * Fields that should be exported are marked wih &#64;`export-yes` tag.
-     * Fields that should not be exported are marked with &#64;`export-no` tag.
-     *
-     * `null` until filled in by ReportGeneratorRowAbstract::field() or ReportGeneratorCellAbstract::field().
      *
      * @var bool|null
      */
@@ -115,7 +105,7 @@ class QueryPostResponseDynamic
      * Whether the ordering by this field is available.
      *
      * `null` means that value is not initialized.
-     * Initialized automatically in ReportGeneratorRowAbstract::field().
+     *
      * For dynamic fields should be set manually.
      *
      * @var bool|null
@@ -139,16 +129,6 @@ class QueryPostResponseDynamic
     /**
      * Whether this field is stored in the report storage.
      *
-     * `true` if this field is stored in the report storage.
-     * In this case its value should be loaded in {@link
-     * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
-     *
-     * `false` if this field should not be stored in the report storage.
-     * In this case its value is loaded in ReportGeneratorRowAbstract::load().
-     *
-     * By default, all fields are stored.
-     * To not to store a field, it should be marked with &#64;`store-no` tag.
-     *
      * @var bool|null
      */
     public ?bool $is_store = null;
@@ -168,8 +148,8 @@ class QueryPostResponseDynamic
     public ?string $s_cast = null;
 
     /**
-     * Name of a subclass of ReportGeneratorCellAbstract which objects can be used as a value
-     * for this report field.
+     * Name of a cell class.
+     *
      *
      * `null` if complex types are not acceptable (in this case
      * `a_type` is not empty).
@@ -203,9 +183,6 @@ class QueryPostResponseDynamic
     /**
      * Name of a public property in which value of this field is stored.
      *
-     * This value corresponds name of a public property in a subclass of
-     * ReportGeneratorRowAbstract.
-     *
      * @var string|null
      */
     public ?string $s_name = null;
@@ -215,10 +192,7 @@ class QueryPostResponseDynamic
      *
      * Sorting is only considered for report fields, but not for fields of a report cell.
      *
-     * It is a strong requirement that sorting values be unique among all static and all dynamic fields of a
-     * report.
-     * This is due to that this sorting influences indexes under which data is stored in
-     * ReportStorageContentSql.`json_row`.
+     *
      * Having different order leads to that all indexes are changed.
      *
      * @var string|null
@@ -239,28 +213,14 @@ class QueryPostResponseDynamic
     /**
      * Data to derive title of a column which values are represented by this report field.
      *
-     * Do not use this property to get title of the column.
-     * This column does not contain title of a column. It only contains data based on which title should be
-     * derived.
-     * Use ReportGeneratorFieldInfo::titleText() to get title of the column.
      *
-     * If `is_dynamic` is `true`, this property contains a string
-     * that should be directly shown to the user. Otherwise, this property contains a part of the source of a
-     * translated
-     * message.
      *
-     * Copy of &#64;`title` tag of the field.
+     *   For dynamic columns, it is required that this title be set.
+     *   In this case this is not a source for a translated message.
      *
-     * If &#64;`title` tag is not specified,
-     * ReportGeneratorCellAbstract::TITLE is used.
-     * If that constant is not set also, source for translated message is generated based on
-     * `s_name`.
-     *
-     * For dynamic columns, it is required that this title be set.
-     * In this case this is not a source for a translated message.
-     *
-     * `null` for cell properties, because cells properties are not shown as individual columns in the report.
-     * `null` is also set if this field has `is_show` set to `false`.
+     *   `null` for cell properties, because cells properties are not shown as individual columns in the report.
+     *   `null` is also set if this field should not be show.
+     * </i>
      *
      * @var string|null
      */

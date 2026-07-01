@@ -28,7 +28,7 @@ class ListGetResponseList
     public ?bool $is_default = null;
 
     /**
-     * ID of bank account. Primary key in RsPayBankSql.
+     * ID of bank account.
      *
      * @var string|null
      */

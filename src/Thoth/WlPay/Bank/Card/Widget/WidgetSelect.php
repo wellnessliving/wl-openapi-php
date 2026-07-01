@@ -20,6 +20,11 @@ class WidgetSelect
     /**
      * Gets a list of saved bank cards.
      *
+     * Validates the payment method, currency, business, location, and pay owner type, then loads the configured
+     *  merchant and returns the list of saved cards available to the given owner. For business owners, a
+     * system-wide
+     *  merchant must be configured; for users, a business-specific merchant is required.
+     *
      * @return WidgetSelectGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

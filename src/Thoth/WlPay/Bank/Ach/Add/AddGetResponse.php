@@ -9,7 +9,6 @@ class AddGetResponse
 {
     /**
      * The HTML form containing the fields required to add a card.
-     * Result of RsPayWidgetInterface::widget() method.
      *
      * @var string|null
      */

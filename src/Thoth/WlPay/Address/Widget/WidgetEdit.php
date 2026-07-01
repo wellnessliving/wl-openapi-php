@@ -20,6 +20,10 @@ class WidgetEdit
     /**
      * Gets data for "edit payment address" widget.
      *
+     * Returns the list of geographic regions and phone number format masks configured for the given business
+     * locale.
+     *  When no business key is provided, system-level defaults are returned.
+     *
      * @return WidgetEditGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

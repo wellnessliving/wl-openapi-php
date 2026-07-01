@@ -5,14 +5,14 @@ namespace WlSdk\Thoth\WlPay\Bank\Ach\Add;
 class AddDeleteRequest
 {
     /**
-     * Business key. Primary key in RsBusinessSql table.
+     * Business key.
      *
      * @var string|null
      */
     public ?string $k_business = null;
 
     /**
-     * Pay bank key to delete. Primary key in RsPayBankSql table.
+     * Pay bank key to delete.
      *
      * @var string|null
      */
