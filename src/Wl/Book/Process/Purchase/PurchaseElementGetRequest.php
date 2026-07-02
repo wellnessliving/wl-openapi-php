@@ -5,6 +5,16 @@ namespace WlSdk\Wl\Book\Process\Purchase;
 class PurchaseElementGetRequest
 {
     /**
+     * Additional configuration for the purchase item.
+     * Depending on purchase item type different configuration parameters can be passed.
+     *
+     * For purchase items with {@link \WlSdk\RsPurchaseItemSid} type next structure expected:
+     *
+     * @var array|null
+     */
+    public ?array $a_config = null;
+
+    /**
      * Date/time of session is booking.
      *
      * `null` until initialized.
@@ -106,6 +116,7 @@ class PurchaseElementGetRequest
     {
         return array_filter(
             [
+            'a_config' => $this->a_config,
             'dtu_date' => $this->dtu_date,
             'i_session' => $this->i_session,
             'id_purchase_item' => $this->id_purchase_item,
