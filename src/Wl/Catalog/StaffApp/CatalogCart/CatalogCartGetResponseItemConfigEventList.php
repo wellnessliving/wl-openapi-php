@@ -5,24 +5,21 @@ namespace WlSdk\Wl\Catalog\StaffApp\CatalogCart;
 class CatalogCartGetResponseItemConfigEventList
 {
     /**
-     * Calculated tax amounts for the event enrollment component.
-     *      Key is a tax key.
-     *      Value is the calculated tax amount (bcmath string).
-     *      Populated in the response; not required in the request.
+     * Discount applied to the event price:
      *
-     * @var string[]|null
+     * @var CatalogCartGetResponseItemConfigEventListDiscount|null
      */
-    public ?array $a_tax = null;
+    public ?CatalogCartGetResponseItemConfigEventListDiscount $a_discount = null;
 
     /**
-     * Calculated tax amounts for the fee component.
-     *      Key is a tax key.
-     *      Value is the calculated tax amount (bcmath string).
-     *      Populated in the response; not required in the request.
+     * List of taxes to be applied to the event price:
+     *      Keys are internal system tax keys.
+     *      Values are amount of taxes to be applied to the event price.
+     *      If not specified or `null`, taxes will be calculated based on the class setup.
      *
-     * @var string[]|null
+     * @var array|null
      */
-    public ?array $a_tax_fee = null;
+    public ?array $a_tax = null;
 
     /**
      * Key of the event class within the tuition which should be granted to the client.
@@ -32,23 +29,15 @@ class CatalogCartGetResponseItemConfigEventList
     public ?string $k_class = null;
 
     /**
-     * Additional fee amount for the component (bcmath string).
-     *      `'0.00'` if no additional fee.
-     *
-     * @var string|null
-     */
-    public ?string $m_fee = null;
-
-    /**
-     * Override price of the event component within the tuition.
-     *      `null` if price should be taken from the class setup.
+     * Price of the event for the tuition participant.
+     *      If not specified or `null`, price will be calculated based on the class setup.
      *
      * @var string|null
      */
     public ?string $m_price = null;
 
     /**
-     * Key of the client for which component should be granted.
+     * Key of the tuition participant.
      *
      * @var string|null
      */
@@ -56,10 +45,9 @@ class CatalogCartGetResponseItemConfigEventList
 
     public function __construct(array $data)
     {
+        $this->a_discount = isset($data['a_discount']) ? new CatalogCartGetResponseItemConfigEventListDiscount((array)$data['a_discount']) : null;
         $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
-        $this->a_tax_fee = isset($data['a_tax_fee']) ? (array)$data['a_tax_fee'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
-        $this->m_fee = isset($data['m_fee']) ? (string)$data['m_fee'] : null;
         $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;
         $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
     }
