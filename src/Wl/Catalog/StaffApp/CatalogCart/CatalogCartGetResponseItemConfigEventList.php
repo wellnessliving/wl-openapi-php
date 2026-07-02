@@ -5,6 +5,13 @@ namespace WlSdk\Wl\Catalog\StaffApp\CatalogCart;
 class CatalogCartGetResponseItemConfigEventList
 {
     /**
+     * Discount applied to the event price:
+     *
+     * @var CatalogCartGetResponseItemConfigEventListDiscount|null
+     */
+    public ?CatalogCartGetResponseItemConfigEventListDiscount $a_discount = null;
+
+    /**
      * List of taxes to be applied to the event price:
      *      Keys are internal system tax keys.
      *      Values are amount of taxes to be applied to the event price.
@@ -38,6 +45,7 @@ class CatalogCartGetResponseItemConfigEventList
 
     public function __construct(array $data)
     {
+        $this->a_discount = isset($data['a_discount']) ? new CatalogCartGetResponseItemConfigEventListDiscount((array)$data['a_discount']) : null;
         $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
         $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;

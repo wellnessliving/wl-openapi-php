@@ -55,16 +55,6 @@ class QueryPostRequest
     public ?bool $is_backend = null;
 
     /**
-     * Whether the timeout check should be enforced during cell loading.
-     *
-     * Set to `true` by the export controller to abort cell loading with a user-facing error
-     * when the remaining execution time drops below `TIME_LIMIT_BUFFER_SECOND`.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_export = null;
-
-    /**
      * Whether this report should be refreshed.
      *
      * `true` to refresh this report if it is already generated.
@@ -156,7 +146,6 @@ class QueryPostRequest
             'i_offset' => $this->i_offset,
             'is_actual' => $this->is_actual,
             'is_backend' => $this->is_backend,
-            'is_export' => $this->is_export,
             'is_refresh' => $this->is_refresh,
             'json_filter' => $this->json_filter,
             'k_business' => $this->k_business,
