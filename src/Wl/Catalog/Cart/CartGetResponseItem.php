@@ -38,6 +38,13 @@ class CartGetResponseItem
     public ?string $k_id = null;
 
     /**
+     * Additional configuration. Used only for `id_sale` = {@link \WlSdk\RsSaleSid}.
+     *
+     * @var CartGetResponseItemConfig|null
+     */
+    public ?CartGetResponseItemConfig $a_config = null;
+
+    /**
      * Key of login prize used on item.
      *
      * @var string|null
@@ -59,6 +66,7 @@ class CartGetResponseItem
         $this->i_quantity = isset($data['i_quantity']) ? (int)$data['i_quantity'] : null;
         $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
+        $this->a_config = isset($data['a_config']) ? new CartGetResponseItemConfig((array)$data['a_config']) : null;
         $this->k_login_prize = isset($data['k_login_prize']) ? (string)$data['k_login_prize'] : null;
         $this->k_shop_product_option = isset($data['k_shop_product_option']) ? (string)$data['k_shop_product_option'] : null;
     }

@@ -1,11 +1,11 @@
 <?php
 
-namespace WlSdk\Wl\Schedule;
+namespace WlSdk\Wl\DoorAccess\Brivo;
 
 /**
- * Response from GET
+ * Response from POST
  */
-class SchedulePostBasedGetResponse
+class WebhookPostResponse
 {
     public function __construct(array $data)
     {

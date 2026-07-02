@@ -1,8 +1,8 @@
 <?php
 
-namespace WlSdk\Wl\Schedule;
+namespace WlSdk\Wl\DoorAccess\Brivo;
 
-class SchedulePostBasedGetRequest
+class WebhookPostRequest
 {
     public function params(): array
     {

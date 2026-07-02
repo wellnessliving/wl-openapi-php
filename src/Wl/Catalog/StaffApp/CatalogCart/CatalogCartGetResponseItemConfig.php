@@ -5,11 +5,20 @@ namespace WlSdk\Wl\Catalog\StaffApp\CatalogCart;
 class CatalogCartGetResponseItemConfig
 {
     /**
-     * List of tuition components:
+     * List of tuition events for tuition participant. Each record has the next structure:
      *
      * @var CatalogCartGetResponseItemConfigEventList|null
      */
     public ?CatalogCartGetResponseItemConfigEventList $a_event_list = null;
+
+    /**
+     * Registration fees for tuition participants.
+     *   Keys are participant keys.
+     *   Each value has the next structure:
+     *
+     * @var CatalogCartGetResponseItemConfigRegistrationFeeList|null
+     */
+    public ?CatalogCartGetResponseItemConfigRegistrationFeeList $a_registration_fee_list = null;
 
     /**
      * The custom price.
@@ -126,6 +135,7 @@ class CatalogCartGetResponseItemConfig
     public function __construct(array $data)
     {
         $this->a_event_list = isset($data['a_event_list']) ? new CatalogCartGetResponseItemConfigEventList((array)$data['a_event_list']) : null;
+        $this->a_registration_fee_list = isset($data['a_registration_fee_list']) ? new CatalogCartGetResponseItemConfigRegistrationFeeList((array)$data['a_registration_fee_list']) : null;
         $this->f_price = isset($data['f_price']) ? (string)$data['f_price'] : null;
         $this->dt_prorate = isset($data['dt_prorate']) ? (string)$data['dt_prorate'] : null;
         $this->dt_start = isset($data['dt_start']) ? (string)$data['dt_start'] : null;
