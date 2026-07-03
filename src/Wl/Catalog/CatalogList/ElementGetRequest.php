@@ -114,9 +114,9 @@ class ElementGetRequest
      * Note that this must be serialized via JSON.
      *
      * If this field is specified, don't specify any of the following fields:
-     * * [ElementApi](/Wl/Catalog/CatalogList/Element.json)
-     * * [ElementApi](/Wl/Catalog/CatalogList/Element.json)
-     * * [ElementApi](/Wl/Catalog/CatalogList/Element.json)
+     * * {@link \WlSdk\Wl\Catalog\CatalogList\Element}
+     * * {@link \WlSdk\Wl\Catalog\CatalogList\Element}
+     * * {@link \WlSdk\Wl\Catalog\CatalogList\Element}
      *
      * This will be `null` to get information for only one item.
      *

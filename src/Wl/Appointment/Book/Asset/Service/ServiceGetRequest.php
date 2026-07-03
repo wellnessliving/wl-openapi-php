@@ -48,7 +48,7 @@ class ServiceGetRequest
     public ?bool $is_show_unavailable_assets = null;
 
     /**
-     * The appointment booking key to ignore when [ServiceApi](/Wl/Appointment/Book/Asset/Service/Service.json) is
+     * The appointment booking key to ignore when {@link \WlSdk\Wl\Appointment\Book\Asset\Service\Service} is
      * derived.
      *
      * `null` if no appointment booking must be ignored.

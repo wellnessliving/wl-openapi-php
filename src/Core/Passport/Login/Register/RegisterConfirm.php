@@ -20,8 +20,8 @@ class RegisterConfirm
     /**
      * Confirms email of a new user and completes registration.
      *
-     * Accepts the email, login, and verification code obtained from the confirmation link sent by
-     * [RegisterApi](/Core/Passport/Login/Register/Register.json),
+     * Accepts the email, login, and verification code obtained from the confirmation link sent by {@link
+     * \WlSdk\Core\Passport\Login\Register\Register},
      * validates them against the pending registration record, creates the user account, and returns the new user's
      * UID.
      *

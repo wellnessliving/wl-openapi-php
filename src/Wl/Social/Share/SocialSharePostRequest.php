@@ -5,8 +5,8 @@ namespace WlSdk\Wl\Social\Share;
 class SocialSharePostRequest
 {
     /**
-     * The primary keys of the shared objects. Depends on [SocialShareApi](/Wl/Social/Share/SocialShare.json).
-     * If [SocialShareApi](/Wl/Social/Share/SocialShare.json) is:
+     * The primary keys of the shared objects. Depends on {@link \WlSdk\Wl\Social\Share\SocialShare}.
+     * If {@link \WlSdk\Wl\Social\Share\SocialShare} is:
      * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the visit.
      * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the location.
      * * {@link \WlSdk\Wl\Social\Share\ShareObjectSid} - each value is key of the purchase.

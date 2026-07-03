@@ -14,8 +14,7 @@ class NuveiTransactionCancelPostRequest
     public ?string $k_business = null;
 
     /**
-     * Key of payment transaction that was created in
-     * [NuveiOpenOrderApi](/Thoth/PayProcessor/Nuvei/NuveiOpenOrder.json).
+     * Key of payment transaction that was created in {@link \WlSdk\Thoth\PayProcessor\Nuvei\NuveiOpenOrder}.
      *
      * This will be `null` if not loaded yet.
      *

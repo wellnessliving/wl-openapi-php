@@ -21,8 +21,8 @@ class Product
      * Retrieves list of available service add-ons.
      *
      * Returns all active add-on products available for the specified service, including title, image,
-     *  price, and quantity information. Results are not filtered by client type; use
-     * [Product62Api](/Wl/Appointment/Book/Product/Product62.json)
+     *  price, and quantity information. Results are not filtered by client type; use {@link
+     * \WlSdk\Wl\Appointment\Book\Product\Product62}
      *  when filtering by client login type is required.
      *
      * @return ProductGetResponse

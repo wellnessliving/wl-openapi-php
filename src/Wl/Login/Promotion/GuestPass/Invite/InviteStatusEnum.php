@@ -14,9 +14,7 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
  *    available quota and no longer counts toward 'Used'.
  * - 3 (`CHECKED_IN`): Guest attended the visit booked with the guest pass.
  * - 6 (`GUEST_PASS_EXPIRED`): Guest accepted the invitation but did not attend within the pass expiration
- *    window. Distinct from
- * [InviteStatusEnum::INVITE_EXPIRED](#/components/schemas/Wl.Login.Promotion.GuestPass.Invite.InviteStatusEnum): the
- * pass has
+ *    window. Distinct from {@link \WlSdk\Wl\Login\Promotion\GuestPass\Invite\InviteStatusEnum}: the pass has
  *    already been committed to the guest at acceptance, so it counts toward "Used"
  *    and is not refunded to the host's available quota.
  * - 2 (`INVITE_ACCEPTED`): Guest claimed the invitation but the linked visit (if any) has not been
@@ -32,9 +30,7 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
  *    consumed and counts toward "Used".
  * - 12 (`PENDING`): Guest has a visit linked to the guest pass, but its outcome (attended, no-show,
  *    or late-cancelled) has not been determined yet and must be resolved manually by
- *    staff. Distinct from
- * [InviteStatusEnum::INVITE_ACCEPTED](#/components/schemas/Wl.Login.Promotion.GuestPass.Invite.InviteStatusEnum): the
- * guest already
+ *    staff. Distinct from {@link \WlSdk\Wl\Login\Promotion\GuestPass\Invite\InviteStatusEnum}: the guest already
  *    has a linked visit here, rather than merely having accepted the invitation.
  * - 11 (`WAITLISTED`): Guest is on the waitlist for the class session booked with the guest pass.
  *    Pass is committed to the guest - it is no longer "Available" to the host,

@@ -104,8 +104,7 @@ class DiscountCodeEditPostRequest
      * `true` means discount code can reduce price of the gift cards.
      * `false` means discount code cannot reduce price of the gift cards.
      *
-     * If [DiscountCodeEditApi](/Wl/Discount/Code/Edit/DiscountCodeEdit.json) is `true` this fields does not
-     * matter.
+     * If {@link \WlSdk\Wl\Discount\Code\Edit\DiscountCodeEdit} is `true` this fields does not matter.
      *
      * @var bool|null
      */

@@ -31,8 +31,8 @@ class ListGetResponse
 
     /**
      * `true` if exist at least one virtual event
-     * by specific [ListApi](/Wl/Event/Book/EventList/List.json) and
-     * [ListApi](/Wl/Event/Book/EventList/List.json),
+     * by specific {@link \WlSdk\Wl\Event\Book\EventList\ListEndpoint} and
+     * {@link \WlSdk\Wl\Event\Book\EventList\ListEndpoint},
      * `false` otherwise.
      *
      * @var bool|null

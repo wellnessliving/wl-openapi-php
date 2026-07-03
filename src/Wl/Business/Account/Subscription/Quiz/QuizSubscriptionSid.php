@@ -3,8 +3,7 @@
 namespace WlSdk\Wl\Business\Account\Subscription\Quiz;
 
 /**
- * List of possible plans for
- * [QuizSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
+ * List of possible plans for {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} subscription.
  *
  * Values:
  * - 3 (`BUSINESS`): Business

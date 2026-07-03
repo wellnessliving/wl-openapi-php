@@ -7,8 +7,7 @@ class NotificationSendPostRequest
     /**
      * Custom array with information which can be used to generate notification.
      *
-     * Use [NotificationInfoApi](/Wl/Notification/Send/NotificationInfo.json) for more information about available
-     * fields.
+     * Use {@link \WlSdk\Wl\Notification\Send\NotificationInfo} for more information about available fields.
      *
      * @var array|null
      */

@@ -6,35 +6,35 @@ class ElementGetResponseEvent
 {
     /**
      * List of sessions available for booking.
-     * See [ElementApi](/Wl/Event/Book/EventView/Element.json).
+     * See {@link \WlSdk\Wl\Event\Book\EventView\Element}.
      *
      * @var ElementGetResponseEventBookAvailable|null
      */
     public ?ElementGetResponseEventBookAvailable $a_book_available = null;
 
     /**
-     * Image of event. See [ElementApi](/Wl/Event/Book/EventView/Element.json).
+     * Image of event. See {@link \WlSdk\Wl\Event\Book\EventView\Element}.
      *
      * @var ElementGetResponseEventClassLogo|null
      */
     public ?ElementGetResponseEventClassLogo $a_class_logo = null;
 
     /**
-     * Class tab keys. See [ElementApi](/Wl/Event/Book/EventView/Element.json).
+     * Class tab keys. See {@link \WlSdk\Wl\Event\Book\EventView\Element}.
      *
      * @var string[]|null
      */
     public ?array $a_class_tab = null;
 
     /**
-     * List of installment plans. See [ElementApi](/Wl/Event/Book/EventView/Element.json).
+     * List of installment plans. See {@link \WlSdk\Wl\Event\Book\EventView\Element}.
      *
      * @var ElementGetResponseEventInstallmentTemplate|null
      */
     public ?ElementGetResponseEventInstallmentTemplate $a_installment_template = null;
 
     /**
-     * Schedule of event sessions. See [ElementApi](/Wl/Event/Book/EventView/Element.json).
+     * Schedule of event sessions. See {@link \WlSdk\Wl\Event\Book\EventView\Element}.
      *
      * @var ElementGetResponseEventSchedule|null
      */
@@ -48,7 +48,7 @@ class ElementGetResponseEvent
     public ?array $a_shop_category = null;
 
     /**
-     * Photos of staff. See [ElementApi](/Wl/Event/Book/EventView/Element.json).
+     * Photos of staff. See {@link \WlSdk\Wl\Event\Book\EventView\Element}.
      *
      * @var ElementGetResponseEventStaffLogo|null
      */
@@ -160,8 +160,8 @@ class ElementGetResponseEvent
     public ?bool $is_past = null;
 
     /**
-     * `true` [ElementApi](/Wl/Event/Book/EventView/Element.json) contains the custom policies from the event;
-     * `false` otherwise.
+     * `true` {@link \WlSdk\Wl\Event\Book\EventView\Element} contains the custom policies from the event; `false`
+     * otherwise.
      *
      * @var bool|null
      */

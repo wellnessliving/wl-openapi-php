@@ -42,8 +42,7 @@ class AlertEditPostRequest
     public ?int $id_login_note_access = null;
 
     /**
-     * Whether flagged user can book. Does not matter if [AlertEditApi](/Wl/Profile/Alert/AlertEdit.json) is
-     * `false`.
+     * Whether flagged user can book. Does not matter if {@link \WlSdk\Wl\Profile\Alert\AlertEdit} is `false`.
      *
      * @var bool|null
      */
@@ -57,8 +56,8 @@ class AlertEditPostRequest
     public ?bool $is_flag = null;
 
     /**
-     * Whether flagged user can make purchases. Does not matter if [AlertEditApi](/Wl/Profile/Alert/AlertEdit.json)
-     * is `false`.
+     * Whether flagged user can make purchases. Does not matter if {@link \WlSdk\Wl\Profile\Alert\AlertEdit} is
+     * `false`.
      *
      * @var bool|null
      */

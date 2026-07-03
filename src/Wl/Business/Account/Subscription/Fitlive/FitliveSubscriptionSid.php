@@ -3,8 +3,7 @@
 namespace WlSdk\Wl\Business\Account\Subscription\Fitlive;
 
 /**
- * List of possible plans for
- * [FitliveSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
+ * List of possible plans for {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} subscription.
  *
  * Values:
  * - 5 (`ADVANCED`): Advanced

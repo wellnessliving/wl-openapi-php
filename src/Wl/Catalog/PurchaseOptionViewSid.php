@@ -13,12 +13,12 @@ namespace WlSdk\Wl\Catalog;
  * - 3 (`COUPON`): A gift card.
  * - 4 (`ENROLLMENT`): Enrollments. Classes where flag event is `true`.
  * - 8 (`MEMBERSHIP`): Promotions with programs:
- *   * [RsProgramSid::ACCOUNT_MEMBERSHIP](#/components/schemas/RsProgramSid);
- *   * [RsProgramSid::CLASS_MEMBERSHIP](#/components/schemas/RsProgramSid);
- *   * [RsProgramSid::RESOURCE_MEMBERSHIP](#/components/schemas/RsProgramSid);
- *   * [RsProgramSid::SERVICE_MEMBERSHIP](#/components/schemas/RsProgramSid);
- *   * [RsProgramSid::VISIT_MEMBERSHIP](#/components/schemas/RsProgramSid).
- * - 5 (`PACKAGE`): Promotions with program [RsProgramSid::PACKAGE](#/components/schemas/RsProgramSid).
+ *   * {@link \WlSdk\RsProgramSid};
+ *   * {@link \WlSdk\RsProgramSid};
+ *   * {@link \WlSdk\RsProgramSid};
+ *   * {@link \WlSdk\RsProgramSid};
+ *   * {@link \WlSdk\RsProgramSid}.
+ * - 5 (`PACKAGE`): Promotions with program {@link \WlSdk\RsProgramSid}.
  * - 6 (`PRODUCT`): Products (such as water, t-shirts, etc.).
  * - 7 (`PROMOTION`): Session passes.
  * - 9 (`QUICK_BUY`): Products available for quick buy.
@@ -40,7 +40,7 @@ class PurchaseOptionViewSid
     /** Promotions with programs: */
     public const MEMBERSHIP = 8;
 
-    /** Promotions with program [RsProgramSid::PACKAGE](#/components/schemas/RsProgramSid). */
+    /** Promotions with program {@link \WlSdk\RsProgramSid}. */
     public const PACKAGE = 5;
 
     /** Products (such as water, t-shirts, etc.). */

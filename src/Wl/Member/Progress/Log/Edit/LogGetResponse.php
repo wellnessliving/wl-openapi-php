@@ -16,7 +16,7 @@ class LogGetResponse
 
     /**
      * Last local date when the user entered progress values. `null` if the user had not entered progress data
-     * before the [LogApi](/Wl/Member/Progress/Log/Edit/Log.json) date.
+     * before the {@link \WlSdk\Wl\Member\Progress\Log\Edit\Log} date.
      *
      * @var string|null
      */

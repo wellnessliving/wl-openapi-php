@@ -383,8 +383,7 @@ namespace WlSdk;
  *
  *   Status of the transaction is stored in `rs_pay_transaction.id_pay_transaction_status`.
  *
- *   Statuses where refund is allowed are defined by
- * [RsPayTransactionStatusSid::refund()](#/components/schemas/RsPayTransactionStatusSid).
+ *   Statuses where refund is allowed are defined by {@link \WlSdk\RsPayTransactionStatusSid}.
  * - 37 (`REGION_INVALID`): Invalid region chosen.
  * - 38 (`REGION_NX`): Chosen region does not exist.
  * - 15 (`REPEAT_INVALID`): Can not repeat purchase transaction. Reference data is expired and invalid now.
@@ -432,11 +431,9 @@ namespace WlSdk;
  * - 13 (`TRANSACTION_NX`): Transaction does not exist. E.g. we want to make refund using nonexistent reference number.
  * - 187 (`UNEXPECTED_TRANSACTION_STATUS`): Transaction is in unexpected status. For example, authorization process
  * started but takes long time. While waiting
- *   staff decided to cancel transaction. Void is done, transaction is in
- * [RsPayTransactionStatusSid::VOID](#/components/schemas/RsPayTransactionStatusSid)
+ *   staff decided to cancel transaction. Void is done, transaction is in {@link \WlSdk\RsPayTransactionStatusSid}
  *   status. In the same time authorization process finishes, code expects transaction to be in
- *   [RsPayTransactionStatusSid::AUTHORIZE_ACTIVE](#/components/schemas/RsPayTransactionStatusSid) status, but it is
- * not. This can happen when transaction
+ *   {@link \WlSdk\RsPayTransactionStatusSid} status, but it is not. This can happen when transaction
  *   is processed in several processes. For example, card swipe is initiated, but staff presses Cancel Transaction
  *   button.
  * - 194 (`USER_DEBTOR`): If the user who pays through the account is a debtor.

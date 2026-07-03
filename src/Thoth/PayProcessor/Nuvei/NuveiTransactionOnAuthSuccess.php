@@ -21,8 +21,8 @@ class NuveiTransactionOnAuthSuccess
      * Finalizes the `Nuvei` transaction after successful payer authentication.
      *
      * Validates the payer authentication session and encrypted card token, then updates the payment
-     *  transaction created by [NuveiOpenOrderApi](/Thoth/PayProcessor/Nuvei/NuveiOpenOrder.json) with the gateway
-     * transaction ID and card data.
+     *  transaction created by {@link \WlSdk\Thoth\PayProcessor\Nuvei\NuveiOpenOrder} with the gateway transaction
+     * ID and card data.
      *
      * @return NuveiTransactionOnAuthSuccessPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

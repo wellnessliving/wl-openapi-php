@@ -10,7 +10,7 @@ class VideoElementPostResponse
     /**
      * The video key.
      *
-     * *Be careful, when use this property in code, use [VideoElementApi](/Wl/Video/VideoElement.json) instead.*
+     * *Be careful, when use this property in code, use {@link \WlSdk\Wl\Video\VideoElement} instead.*
      * In this property can be key in next format:
      * * [Deprecated] String key in old format.
      * * String key in new format.

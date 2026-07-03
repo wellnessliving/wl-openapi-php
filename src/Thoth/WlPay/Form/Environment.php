@@ -22,8 +22,7 @@ class Environment
      *
      * Called before rendering a payment form to determine which payment methods and card types are available
      * for a given business and location, what surcharges apply, and how the form should behave (tip prompt,
-     * optional card save). This endpoint is deprecated; use
-     * [EnvironmentUserApi](/Thoth/WlPay/Form/EnvironmentUser.json)
+     * optional card save). This endpoint is deprecated; use {@link \WlSdk\Thoth\WlPay\Form\EnvironmentUser}
      *  for new integrations.
      *
      * @deprecated Use {@link \Thoth\WlPay\Form\EnvironmentUserApi} instead.

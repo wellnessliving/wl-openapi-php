@@ -20,10 +20,10 @@ class Location
     /**
      * Creates new location or edits the existing location.
      *
-     * When [LocationApi](/Wl/Location/Location.json) is omitted, creates a new location requiring
-     * [LocationApi](/Wl/Location/Location.json),
-     *  [LocationApi](/Wl/Location/Location.json), and [LocationApi](/Wl/Location/Location.json).
-     * When [LocationApi](/Wl/Location/Location.json) is provided, updates only the supplied fields of the existing
+     * When {@link \WlSdk\Wl\Location\Location} is omitted, creates a new location requiring {@link
+     * \WlSdk\Wl\Location\Location},
+     *  {@link \WlSdk\Wl\Location\Location}, and {@link \WlSdk\Wl\Location\Location}.
+     * When {@link \WlSdk\Wl\Location\Location} is provided, updates only the supplied fields of the existing
      * location.
      *  Returns the key of the created or updated location.
      *

@@ -20,7 +20,7 @@ class AddPostRequest
 
     /**
      * The payment owner ID. This is different from the user ID. It can be found with
-     * the [OwnerApi](/Thoth/WlPay/Owner/Owner.json).
+     * the {@link \WlSdk\Thoth\WlPay\Owner\Owner}.
      *
      * @var string|null
      */

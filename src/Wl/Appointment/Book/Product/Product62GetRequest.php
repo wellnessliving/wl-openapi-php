@@ -26,8 +26,8 @@ class Product62GetRequest
      *
      * `null` if the client is not logged in.
      *
-     * If you don't need to filter products by client type/group, use
-     * [ProductApi](/Wl/Appointment/Book/Product/Product.json).
+     * If you don't need to filter products by client type/group, use {@link
+     * \WlSdk\Wl\Appointment\Book\Product\Product}.
      *
      * @var string|null
      */

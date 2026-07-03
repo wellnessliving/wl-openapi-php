@@ -37,7 +37,7 @@ class StaffView74GetRequest
     /**
      * The staff member user ID.
      * A staff member can work for more than one business.
-     * This key can be found using the [StaffListApi](/Wl/Staff/StaffList/StaffList.json) endpoint.
+     * This key can be found using the {@link \WlSdk\Wl\Staff\StaffList\StaffList} endpoint.
      *
      * @var string|null
      */

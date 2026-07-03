@@ -36,7 +36,7 @@ class PaymentPostPostRequest
     public ?bool $is_walk_in = null;
 
     /**
-     * The item key. Depends on [PaymentApi](/Wl/Appointment/Book/Payment/Payment.json) property.
+     * The item key. Depends on {@link \WlSdk\Wl\Appointment\Book\Payment\Payment} property.
      *
      * @var string|null
      */
@@ -79,7 +79,7 @@ class PaymentPostPostRequest
 
     /**
      * Information detailing an appointment booking.
-     * Has the same structure as [PaymentApi](/Wl/Appointment/Book/Payment/Payment.json).
+     * Has the same structure as {@link \WlSdk\Wl\Appointment\Book\Payment\Payment}.
      *
      * @var array|null
      */

@@ -3,9 +3,7 @@
 namespace WlSdk\Wl\Business\Account\Subscription\Eml;
 
 /**
- * List of possible plans for
- * [MailchimpSubscription](#/components/schemas/Wl.Business.Account.Subscription.Eml.EmlSubscriptionAbstract)
- * subscription.
+ * List of possible plans for {@link \WlSdk\Wl\Business\Account\Subscription\Eml\EmlSubscriptionAbstract} subscription.
  *
  * Values:
  * - 1 (`FREE`): None

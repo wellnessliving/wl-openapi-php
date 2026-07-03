@@ -6,8 +6,8 @@ class ElementGetRequest
 {
     /**
      * The last available date for booking.
-     * If this is set and [ElementApi](/Wl/Event/Book/EventView/Element.json) is a set list of
-     *   sessions available for booking, [ElementApi](/Wl/Event/Book/EventView/Element.json)
+     * If this is set and {@link \WlSdk\Wl\Event\Book\EventView\Element} is a set list of
+     *   sessions available for booking, {@link \WlSdk\Wl\Event\Book\EventView\Element}
      *   should match given date range.
      *
      * @var string|null
@@ -16,8 +16,8 @@ class ElementGetRequest
 
     /**
      * The first available date for booking.
-     * If this is set and [ElementApi](/Wl/Event/Book/EventView/Element.json) is a set list of
-     *   sessions available for booking [ElementApi](/Wl/Event/Book/EventView/Element.json)
+     * If this is set and {@link \WlSdk\Wl\Event\Book\EventView\Element} is a set list of
+     *   sessions available for booking {@link \WlSdk\Wl\Event\Book\EventView\Element}
      *   should match given date range.
      *
      * @var string|null
@@ -27,7 +27,7 @@ class ElementGetRequest
     /**
      * Datetime of the session.
      * Is not `null` only if we need to get information for an event with a specific class period and datetime.
-     * If this is `null`, then the [ElementApi](/Wl/Event/Book/EventView/Element.json) should be `null` too.
+     * If this is `null`, then the {@link \WlSdk\Wl\Event\Book\EventView\Element} should be `null` too.
      *
      * @var string|null
      */
@@ -84,7 +84,7 @@ class ElementGetRequest
      * Key of a class period to show information for.
      *
      * Is not `null` only if we need to get information for an event with a specific class period and datetime.
-     * If this is `null`, then the [ElementApi](/Wl/Event/Book/EventView/Element.json) should be `null` too.
+     * If this is `null`, then the {@link \WlSdk\Wl\Event\Book\EventView\Element} should be `null` too.
      *
      * @var string|null
      */
@@ -92,8 +92,8 @@ class ElementGetRequest
 
     /**
      * The event key.
-     * You can specify [ElementApi](/Wl/Event/Book/EventView/Element.json) instead to get information for a large
-     * number of events.
+     * You can specify {@link \WlSdk\Wl\Event\Book\EventView\Element} instead to get information for a large number
+     * of events.
      *
      * @var string|null
      */
@@ -101,8 +101,8 @@ class ElementGetRequest
 
     /**
      * A list of event keys serialized with JSON.
-     * Specify instead of [ElementApi](/Wl/Event/Book/EventView/Element.json) to get information for a large number
-     * of events.
+     * Specify instead of {@link \WlSdk\Wl\Event\Book\EventView\Element} to get information for a large number of
+     * events.
      *
      * @var string|null
      */

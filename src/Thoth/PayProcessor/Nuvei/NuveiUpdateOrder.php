@@ -21,8 +21,8 @@ class NuveiUpdateOrder
      * Updates the amount of a previously opened `Nuvei` order.
      *
      * Validates the payer authentication session, then requests `Nuvei` to update the amount of the order
-     *  opened by [NuveiOpenOrderApi](/Thoth/PayProcessor/Nuvei/NuveiOpenOrder.json) and adjusts the payment
-     * transaction accordingly.
+     *  opened by {@link \WlSdk\Thoth\PayProcessor\Nuvei\NuveiOpenOrder} and adjusts the payment transaction
+     * accordingly.
      *
      * @return NuveiUpdateOrderPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

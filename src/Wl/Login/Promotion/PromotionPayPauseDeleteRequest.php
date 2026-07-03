@@ -18,7 +18,7 @@ class PromotionPayPauseDeleteRequest
      * `start-cross`
      * status code if a hold is already in place.
      *
-     * Ignored if [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json) is provided.
+     * Ignored if {@link \WlSdk\Wl\Login\Promotion\PromotionPayPause} is provided.
      *
      * `null` if not yet initialized.
      *
@@ -30,8 +30,8 @@ class PromotionPayPauseDeleteRequest
      * The promotion payment hold key. If this key is used, it will edit an existing hold.
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
      *
-     * `null` if not yet initialized or if the request is based on
-     * [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json).
+     * `null` if not yet initialized or if the request is based on {@link
+     * \WlSdk\Wl\Login\Promotion\PromotionPayPause}.
      *
      * @var string|null
      */

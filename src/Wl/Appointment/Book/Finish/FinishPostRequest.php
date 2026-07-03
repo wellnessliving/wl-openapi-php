@@ -93,7 +93,7 @@ class FinishPostRequest
     public ?string $uid = null;
 
     /**
-     * A list of answers for the questions from [QuestionApi](/Wl/Appointment/Book/Question/Question.json).
+     * A list of answers for the questions from {@link \WlSdk\Wl\Appointment\Book\Question\Question}.
      * Keys refer to hashes of the questions. Values refer to answers for the questions.
      *
      * @var string[]|null

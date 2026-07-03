@@ -12,13 +12,11 @@ namespace WlSdk\Wl\Visit;
  * - 1 (`BOOK`): Active reservation means that user is going to attend the session.
  * - 6 (`CANCEL`): Client has cancelled the reservation in time and without penalty.
  * - 4 (`PENALTY`): Client has cancelled his reservation too late.
- * - 7 (`PENDING`): This state means that visit is registered, but it is unknown is it
- * [VisitSid::ATTEND](#/components/schemas/Wl.Visit.VisitSid)
- *   or [VisitSid::TRUANCY](#/components/schemas/Wl.Visit.VisitSid) or
- * [VisitSid::PENALTY](#/components/schemas/Wl.Visit.VisitSid) but definitely one of these states.
+ * - 7 (`PENDING`): This state means that visit is registered, but it is unknown is it {@link \WlSdk\Wl\Visit\VisitSid}
+ *   or {@link \WlSdk\Wl\Visit\VisitSid} or {@link \WlSdk\Wl\Visit\VisitSid} but definitely one of these states.
  *
  *   The real type of this visit must be set manually by staff.
- *   Status can be changed automatically to [VisitSid::ATTEND](#/components/schemas/Wl.Visit.VisitSid).
+ *   Status can be changed automatically to {@link \WlSdk\Wl\Visit\VisitSid}.
  * - 8 (`REMOVE`): Visit was removed.
  *   Visits with this status are not shown anywhere in system, but still are saved in database.
  * - 5 (`TRUANCY`): Client has missed the session without cancellation.
@@ -39,7 +37,7 @@ class VisitSid
     /** Client has cancelled his reservation too late. */
     public const PENALTY = 4;
 
-    /** This state means that visit is registered, but it is unknown is it [VisitSid::ATTEND](#/components/schemas/Wl.Visit.VisitSid) */
+    /** This state means that visit is registered, but it is unknown is it {@link \WlSdk\Wl\Visit\VisitSid} */
     public const PENDING = 7;
 
     /** Visit was removed. */

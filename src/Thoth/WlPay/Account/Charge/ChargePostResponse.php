@@ -10,7 +10,7 @@ class ChargePostResponse
     /**
      * The ID of the purchase that was created during payment.
      * This value is only returned in cases where a purchase was created.
-     * A new purchase is created when [ChargeApi](/Thoth/WlPay/Account/Charge/Charge.json) equals {@link
+     * A new purchase is created when {@link \WlSdk\Thoth\WlPay\Account\Charge\Charge} equals {@link
      * \WlSdk\RsPayAccountChargeSid}.
      *
      * @var string|null

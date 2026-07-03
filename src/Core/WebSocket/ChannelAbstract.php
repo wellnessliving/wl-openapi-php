@@ -10,29 +10,28 @@ namespace WlSdk\Core\WebSocket;
  * A channel controller contains description of data and key fields, and a method that allows to check if key fields
  * are
  * valid and current user has access to subscribe to this channel
- * ([ChannelAbstract::checkAccess() checkAccess()](#/components/schemas/Core.WebSocket.ChannelAbstract)).
+ * ({@link \WlSdk\Core\WebSocket\ChannelAbstract}).
  *
  * Key fields allow to clients to receive only events that correspond to these keys.
  * For example, if we have a channel "A message is added in a chat room", chat room would be a key.
  * Sender name and content of the message are data fields.
- * [ChannelAbstract::checkAccess() checkAccess()](#/components/schemas/Core.WebSocket.ChannelAbstract) should check if
- * this room exists and current
+ * {@link \WlSdk\Core\WebSocket\ChannelAbstract} should check if this room exists and current
  * user has access to view messages of this room.
  *
  * <b>How to create a new channel</b>
  *
  * To create a channel, you should do the following:
- * * Create a channel controller (successor of [ChannelAbstract](#/components/schemas/Core.WebSocket.ChannelAbstract)).
+ * * Create a channel controller (successor of {@link \WlSdk\Core\WebSocket\ChannelAbstract}).
  * * Register CID of the controller.
  * * Describe data and key fields in channel controller.
- * * Implement [ChannelAbstract::checkAccess() checkAccess()](#/components/schemas/Core.WebSocket.ChannelAbstract).
+ * * Implement {@link \WlSdk\Core\WebSocket\ChannelAbstract}.
  *   Check if key fields are valid and that current user has access to subscribe this channel.
  *
  * <b>How to send a new message to a channel</b>
  *
  * * Create an object of a channel controller.
  * * Fill in all data and key fields.
- * * Issue [ChannelAbstract::notify() notify()](#/components/schemas/Core.WebSocket.ChannelAbstract) on it.
+ * * Issue {@link \WlSdk\Core\WebSocket\ChannelAbstract} on it.
  *
  * Values:
  * - 1921 (`Wl\Visit\VisitStatusChannel`): A message is sent through this channel when the status of a visit is

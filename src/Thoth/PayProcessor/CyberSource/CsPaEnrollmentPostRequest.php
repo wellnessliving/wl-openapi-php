@@ -12,8 +12,8 @@ class CsPaEnrollmentPostRequest
     public ?array $a_device_info = null;
 
     /**
-     * Key of payment transaction that was previously created with
-     * [CsPaSetupApi](/Thoth/PayProcessor/CyberSource/CsPaSetup.json).
+     * Key of payment transaction that was previously created with {@link
+     * \WlSdk\Thoth\PayProcessor\CyberSource\CsPaSetup}.
      *
      * @var string|null
      */

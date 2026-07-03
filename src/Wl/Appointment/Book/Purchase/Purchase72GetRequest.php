@@ -5,13 +5,12 @@ namespace WlSdk\Wl\Appointment\Book\Purchase;
 class Purchase72GetRequest
 {
     /**
-     * List of selected services without current [PurchaseApi](/Wl/Appointment/Book/Purchase/Purchase.json).
+     * List of selected services without current {@link \WlSdk\Wl\Appointment\Book\Purchase\Purchase}.
      *
      * The list of these services directly affects the list of selected promotions.
      * Depending on the number and order of services, there may be different results.
      *
-     * The current [PurchaseApi](/Wl/Appointment/Book/Purchase/Purchase.json) will be added to the end of this
-     * list.
+     * The current {@link \WlSdk\Wl\Appointment\Book\Purchase\Purchase} will be added to the end of this list.
      * It is worth considering this list as a list of previously selected services.
      *
      * Each element has the following structure:
@@ -113,15 +112,15 @@ class Purchase72GetRequest
 
     /**
      * The service key used to select available Purchase Options.
-     * If multiple services are selected, they should be specified in
-     * [PurchaseApi](/Wl/Appointment/Book/Purchase/Purchase.json) array.
+     * If multiple services are selected, they should be specified in {@link
+     * \WlSdk\Wl\Appointment\Book\Purchase\Purchase} array.
      *
      * @var string|null
      */
     public ?string $k_service = null;
 
     /**
-     * The timezone key for [PurchaseApi](/Wl/Appointment/Book/Purchase/Purchase.json).
+     * The timezone key for {@link \WlSdk\Wl\Appointment\Book\Purchase\Purchase}.
      *
      * Can be `null` if timezone is not selected.
      * If not selected, the default client timezone will be used.

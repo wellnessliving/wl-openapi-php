@@ -22,8 +22,8 @@ class ImageUploadTemporary
      *
      * First step of the two-step image upload flow. Stores the uploaded file in temporary drive storage and
      * returns preview URLs and dimension metadata so the user can review or crop the image before it is
-     * permanently saved. Call [ImageUploadApi](/Core/Drive/ImageUpload/ImageUpload.json) to commit the temporary
-     * image to the entity.
+     * permanently saved. Call {@link \WlSdk\Core\Drive\ImageUpload\ImageUpload} to commit the temporary image to
+     * the entity.
      *
      * @return ImageUploadTemporaryPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

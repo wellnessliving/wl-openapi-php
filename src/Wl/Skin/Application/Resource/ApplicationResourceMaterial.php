@@ -22,9 +22,8 @@ class ApplicationResourceMaterial
      *
      * Persists all text fields of the Client App Materials form (store listing copy, contact details,
      * privacy policy URL, etc.) for the specified business. File assets such as icons and screenshots
-     * are submitted separately via
-     * [ApplicationResourceUploadApi](/Wl/Skin/Application/Resource/ApplicationResourceUpload.json). Requires the
-     * App Build
+     * are submitted separately via {@link \WlSdk\Wl\Skin\Application\Resource\ApplicationResourceUpload}. Requires
+     * the App Build
      * Automation edit privilege.
      *
      * @return ApplicationResourceMaterialPostResponse

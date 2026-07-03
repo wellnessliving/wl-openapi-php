@@ -16,8 +16,8 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * - 1349 (`Wl\Business\Account\Subscription\Zapier\ZapierSubscription`): Class for "Zapier" subscription.
  * - 986 (`Wl\Business\Account\Subscription\Fitlive\FitliveSubscription`): Subscription allows business to access
  * virtual sessions features.
- *   Unlikely [ZoomSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) virtual
- * sessions provided also by system Zoom account.
+ *   Unlikely {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} virtual sessions provided also by
+ * system Zoom account.
  * - 1868 (`Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription`):
  * Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription
  * - 1370 (`Wl\Business\Account\Subscription\Door\DoorSubscription`): Subscription manager.

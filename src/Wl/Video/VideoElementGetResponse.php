@@ -273,7 +273,7 @@ class VideoElementGetResponse
      *
      * This URL return with domain which you use when you call this API.
      * In case when you make request to local domain and video is
-     * [VideoElementApi](/Wl/Video/VideoElement.json) links in file will have global domain and for correct
+     * {@link \WlSdk\Wl\Video\VideoElement} links in file will have global domain and for correct
      * work you must replace global domain to local.
      *
      * Example for `videojs` player you can override method `beforeRequest`: <code>

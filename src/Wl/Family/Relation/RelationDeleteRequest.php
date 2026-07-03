@@ -28,7 +28,7 @@ class RelationDeleteRequest
     public ?string $uid = null;
 
     /**
-     * The key of the related user who [RelationApi](/Wl/Family/Relation/Relation.json) must be removed.
+     * The key of the related user who {@link \WlSdk\Wl\Family\Relation\Relation} must be removed.
      *
      * @var string|null
      */

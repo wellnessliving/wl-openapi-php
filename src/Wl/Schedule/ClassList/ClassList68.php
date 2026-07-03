@@ -29,10 +29,10 @@ The difference is as follows:
      * lists).
      *
      *  - Added generation of a separate 'Quick filter'.
-     * This generation is enabled using the flag [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json).
+     * This generation is enabled using the flag {@link \WlSdk\Wl\Schedule\ClassList\ClassList68}.
      *
-     *  - Added a filter list of events [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json).
-     *  - Added a filter ID of tab [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json).
+     *  - Added a filter list of events {@link \WlSdk\Wl\Schedule\ClassList\ClassList68}.
+     *  - Added a filter ID of tab {@link \WlSdk\Wl\Schedule\ClassList\ClassList68}.
      *
      * @return ClassList68PostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

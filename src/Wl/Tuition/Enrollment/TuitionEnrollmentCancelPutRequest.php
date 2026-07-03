@@ -28,8 +28,8 @@ class TuitionEnrollmentCancelPutRequest
     public ?bool $is_pass_deactivate = null;
 
     /**
-     * Key of the tuition purchase item. This is enrollment key, which can be got from
-     * [TuitionEnrollmentListApi](/Wl/Tuition/Enrollment/TuitionEnrollmentList.json).
+     * Key of the tuition purchase item. This is enrollment key, which can be got from {@link
+     * \WlSdk\Wl\Tuition\Enrollment\TuitionEnrollmentList}.
      *
      * @var string|null
      */

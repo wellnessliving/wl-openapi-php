@@ -15,7 +15,7 @@ class RepeatGetResponse
     public ?array $a_visit = null;
 
     /**
-     * Date to start recurring booking. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json) ==
+     * Date to start recurring booking. Not empty only when {@link \WlSdk\Wl\Book\Process\Frequency\Repeat} ==
      * {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var string|null
@@ -23,7 +23,7 @@ class RepeatGetResponse
     public ?string $dt_from = null;
 
     /**
-     * Date to finish recurring booking. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json) ==
+     * Date to finish recurring booking. Not empty only when {@link \WlSdk\Wl\Book\Process\Frequency\Repeat} ==
      * {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var string|null
@@ -31,8 +31,8 @@ class RepeatGetResponse
     public ?string $dt_to = null;
 
     /**
-     * Count of the visits to be created. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json)
-     * == {@link \WlSdk\RsRepeatEndSid}.
+     * Count of the visits to be created. Not empty only when {@link \WlSdk\Wl\Book\Process\Frequency\Repeat} ==
+     * {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var int|null
      * @see \WlSdk\RsRepeatEndSid

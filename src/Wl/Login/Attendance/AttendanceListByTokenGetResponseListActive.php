@@ -314,8 +314,8 @@ class AttendanceListByTokenGetResponseListActive
     public ?string $k_visit = null;
 
     /**
-     * The purchase used to pay for the session. Instance of
-     * [PurchaseListElementApi](/Wl/Profile/PurchaseList/PurchaseListElement.json).
+     * The purchase used to pay for the session. Instance of {@link
+     * \WlSdk\Wl\Profile\PurchaseList\PurchaseListElement}.
      * `null` if the visit has no associated purchase or access is denied. Only present when
      * `is_purchase_info_return` is `true`.
      *

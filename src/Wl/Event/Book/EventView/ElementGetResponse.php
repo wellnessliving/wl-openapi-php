@@ -19,7 +19,7 @@ class ElementGetResponse
     /**
      * Retrieves information about an event item.
      *
-     * Received only if [ElementApi](/Wl/Event/Book/EventView/Element.json) has been specified.
+     * Received only if {@link \WlSdk\Wl\Event\Book\EventView\Element} has been specified.
      * In this case, other fields aren't receivers.
      *
      * @var ElementGetResponseBookAvailable[]|null
@@ -29,7 +29,7 @@ class ElementGetResponse
     /**
      * Business policies connected to clients and bookings.
      *
-     * Contains the same structure as [BusinessConfigApi](/Wl/Business/Config/BusinessConfig.json).
+     * Contains the same structure as {@link \WlSdk\Wl\Business\Config\BusinessConfig}.
      *
      * If the event has custom overrides, those policies are used; otherwise, the default
      *  business policies are returned.
@@ -55,7 +55,7 @@ class ElementGetResponse
     /**
      * Information for a large number of events.
      *
-     * Received only if [ElementApi](/Wl/Event/Book/EventView/Element.json) has been specified. In this case, other
+     * Received only if {@link \WlSdk\Wl\Event\Book\EventView\Element} has been specified. In this case, other
      * fields are not populated.
      *
      * Key is the event class key.
@@ -267,8 +267,7 @@ class ElementGetResponse
     public ?bool $is_past = null;
 
     /**
-     * `true` if the [ElementApi](/Wl/Event/Book/EventView/Element.json) contains the custom policies from the
-     * event.
+     * `true` if the {@link \WlSdk\Wl\Event\Book\EventView\Element} contains the custom policies from the event.
      * `false` otherwise.
      *
      * @var bool|null
@@ -330,8 +329,8 @@ class ElementGetResponse
     public ?string $m_price_total = null;
 
     /**
-     * Price of the full event should be used as full price while
-     * [ElementApi](/Wl/Event/Book/EventView/Element.json) is actual.
+     * Price of the full event should be used as full price while {@link \WlSdk\Wl\Event\Book\EventView\Element} is
+     * actual.
      *
      * @var string|null
      */
@@ -339,7 +338,7 @@ class ElementGetResponse
 
     /**
      * The reason why the event can't be booked.
-     * Empty if [ElementApi](/Wl/Event/Book/EventView/Element.json) isn't empty.
+     * Empty if {@link \WlSdk\Wl\Event\Book\EventView\Element} isn't empty.
      *
      * @var string|null
      */

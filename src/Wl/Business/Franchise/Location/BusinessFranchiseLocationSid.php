@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Business\Franchise\Location;
 /**
  * Types of the location.
  *
- * Used in the [BusinessFranchiseLocationApi](/Wl/Business/Franchise/Location/BusinessFranchiseLocation.json).
+ * Used in the {@link \WlSdk\Wl\Business\Franchise\Location\BusinessFranchiseLocation}.
  *
  * Values:
  * - 1 (`ALL`): All locations.

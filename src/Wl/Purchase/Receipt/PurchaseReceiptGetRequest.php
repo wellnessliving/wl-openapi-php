@@ -5,8 +5,8 @@ namespace WlSdk\Wl\Purchase\Receipt;
 class PurchaseReceiptGetRequest
 {
     /**
-     * Whether [PurchaseReceiptApi](/Wl/Purchase/Receipt/PurchaseReceipt.json) and
-     * [PurchaseReceiptApi](/Wl/Purchase/Receipt/PurchaseReceipt.json) require authentication.
+     * Whether {@link \WlSdk\Wl\Purchase\Receipt\PurchaseReceipt} and {@link
+     * \WlSdk\Wl\Purchase\Receipt\PurchaseReceipt} require authentication.
      *
      * If `true`, the URL contains a token that allows temporary access to the page without logging in. If 'false',
      * the

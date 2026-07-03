@@ -3,8 +3,7 @@
 namespace WlSdk\Wl\Business\Account\Subscription\AiAgent;
 
 /**
- * List of possible plans for
- * [AiAgentSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
+ * List of possible plans for {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} subscription.
  *
  * Last used ID: 5.
  *

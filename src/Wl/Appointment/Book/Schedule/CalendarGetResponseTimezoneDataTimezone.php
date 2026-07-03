@@ -19,8 +19,8 @@ class CalendarGetResponseTimezoneDataTimezone
     public ?int $i_shift = null;
 
     /**
-     * `true` for selected timezone - from [CalendarApi](/Wl/Appointment/Book/Schedule/Calendar.json) param or
-     * client's default timezone when param not set.
+     * `true` for selected timezone - from {@link \WlSdk\Wl\Appointment\Book\Schedule\Calendar} param or client's
+     * default timezone when param not set.
      *
      * @var bool|null
      */

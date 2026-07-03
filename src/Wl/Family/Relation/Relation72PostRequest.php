@@ -28,7 +28,7 @@ class Relation72PostRequest
     public ?string $uid = null;
 
     /**
-     * The new relationship to be added to user, specified with [RelationApi](/Wl/Family/Relation/Relation.json):
+     * The new relationship to be added to user, specified with {@link \WlSdk\Wl\Family\Relation\Relation}:
      *
      * @var array|null
      */

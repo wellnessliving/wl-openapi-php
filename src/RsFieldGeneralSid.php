@@ -29,11 +29,11 @@ namespace WlSdk;
  * - 5 (`PHONE_HOME`): Home phone number.
  * - 6 (`PHONE_WORK`): Work phone number + ext.
  * - 12 (`REFERRER`): Referred by.
- * - 14 (`STATUS`): Client status (client/member types). System default client/member types see
- * [SystemSid](#/components/schemas/Wl.Login.Type.SystemSid).
+ * - 14 (`STATUS`): Client status (client/member types). System default client/member types see {@link
+ * \WlSdk\Wl\Login\Type\SystemSid}.
  * - 15 (`TIMEZONE`): Timezone field.
- * - 16 (`VACCINATION_STATUS`): Vaccination status. See
- * [VaccinationStatusSid](#/components/schemas/Wl.Login.Member.VaccinationStatus.VaccinationStatusSid).
+ * - 16 (`VACCINATION_STATUS`): Vaccination status. See {@link
+ * \WlSdk\Wl\Login\Member\VaccinationStatus\VaccinationStatusSid}.
  */
 class RsFieldGeneralSid
 {
@@ -76,12 +76,12 @@ class RsFieldGeneralSid
     /** Referred by. */
     public const REFERRER = 12;
 
-    /** Client status (client/member types). System default client/member types see [SystemSid](#/components/schemas/Wl.Login.Type.SystemSid). */
+    /** Client status (client/member types). System default client/member types see {@link \WlSdk\Wl\Login\Type\SystemSid}. */
     public const STATUS = 14;
 
     /** Timezone field. */
     public const TIMEZONE = 15;
 
-    /** Vaccination status. See [VaccinationStatusSid](#/components/schemas/Wl.Login.Member.VaccinationStatus.VaccinationStatusSid). */
+    /** Vaccination status. See {@link \WlSdk\Wl\Login\Member\VaccinationStatus\VaccinationStatusSid}. */
     public const VACCINATION_STATUS = 16;
 }

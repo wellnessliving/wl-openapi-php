@@ -10,7 +10,7 @@ class FinishMultiplePostRequest
      * * Keys refer to provider indexes.
      * * Values are one of the {@link \WlSdk\RsAppointmentPaySid} constants.
      *
-     * This is a multi-provider equivalent of [FinishApi](/Wl/Appointment/Book/Finish/Finish.json).
+     * This is a multi-provider equivalent of {@link \WlSdk\Wl\Appointment\Book\Finish\Finish}.
      *
      * @var int[]|null
      */
@@ -77,7 +77,7 @@ class FinishMultiplePostRequest
     public ?string $uid = null;
 
     /**
-     * A list of answers for the questions from [QuestionApi](/Wl/Appointment/Book/Question/Question.json).
+     * A list of answers for the questions from {@link \WlSdk\Wl\Appointment\Book\Question\Question}.
      *
      * 1st dimension - provider index.
      * 2nd dimension - keys refer to hashes of the questions. Values refer to answers for the questions.
@@ -112,7 +112,7 @@ class FinishMultiplePostRequest
      * * {@link \WlSdk\RsPurchaseItemSid}
      * * {@link \WlSdk\RsPurchaseItemSid}
      *
-     * This is a multi-provider equivalent of [FinishApi](/Wl/Appointment/Book/Finish/Finish.json).
+     * This is a multi-provider equivalent of {@link \WlSdk\Wl\Appointment\Book\Finish\Finish}.
      *
      * @var int[]|null
      */
@@ -131,9 +131,9 @@ class FinishMultiplePostRequest
      * Payment is not processed by this API.
      *
      * Use the following APIs for payment:
-     * * [PaymentApi](/Wl/Appointment/Book/Payment/Payment.json)
-     * * [PaymentPostApi](/Wl/Appointment/Book/Payment/PaymentPost.json)
-     * * [PaymentMultipleApi](/Wl/Appointment/Book/Payment/PaymentMultiple.json)
+     * * {@link \WlSdk\Wl\Appointment\Book\Payment\Payment}
+     * * {@link \WlSdk\Wl\Appointment\Book\Payment\PaymentPost}
+     * * {@link \WlSdk\Wl\Appointment\Book\Payment\PaymentMultiple}
      *
      * @var array|null
      */

@@ -22,8 +22,7 @@ class ChangePasswordBegin
      *
      * Accepts the user's email address and an optional custom reset-page URL, validates the input,
      * optionally checks a CAPTCHA, and sends a password reset email containing a link the user can follow
-     * to set a new password using
-     * [ChangePasswordApplyApi](/Core/Passport/ChangePassword/ChangePasswordApply.json).
+     * to set a new password using {@link \WlSdk\Core\Passport\ChangePassword\ChangePasswordApply}.
      *
      * @return ChangePasswordBeginPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

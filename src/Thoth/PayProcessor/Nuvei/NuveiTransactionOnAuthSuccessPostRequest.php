@@ -52,8 +52,8 @@ class NuveiTransactionOnAuthSuccessPostRequest
     public ?string $k_pay_method = null;
 
     /**
-     * Key of payment transaction that was previously created with
-     * [NuveiOpenOrderApi](/Thoth/PayProcessor/Nuvei/NuveiOpenOrder.json).
+     * Key of payment transaction that was previously created with {@link
+     * \WlSdk\Thoth\PayProcessor\Nuvei\NuveiOpenOrder}.
      *
      * `null` in case when not initialized yet.
      *

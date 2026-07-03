@@ -20,8 +20,8 @@ class NuveiTransactionCancel
     /**
      * Cancels the `Nuvei` transaction.
      *
-     * Voids the payer authentication session opened by
-     * [NuveiOpenOrderApi](/Thoth/PayProcessor/Nuvei/NuveiOpenOrder.json) and schedules the
+     * Voids the payer authentication session opened by {@link \WlSdk\Thoth\PayProcessor\Nuvei\NuveiOpenOrder} and
+     * schedules the
      *  underlying payment transaction to be voided.
      *
      * @return NuveiTransactionCancelPostResponse

@@ -26,7 +26,7 @@ class ClassViewGetRequest
      *
      * `null` if key of the business was not passed.
      *
-     * Key of the business is required if [ClassViewApi](/Wl/Schedule/ClassView/ClassView.json) was passed.
+     * Key of the business is required if {@link \WlSdk\Wl\Schedule\ClassView\ClassView} was passed.
      *
      * @var string|null
      */

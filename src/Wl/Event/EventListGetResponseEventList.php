@@ -135,7 +135,7 @@ class EventListGetResponseEventList
     public ?int $id_reason = null;
 
     /**
-     * Whether booking of this event restricted because of age rules for [EventListApi](/Wl/Event/EventList.json).
+     * Whether booking of this event restricted because of age rules for {@link \WlSdk\Wl\Event\EventList}.
      *
      * @var bool|null
      */

@@ -31,8 +31,7 @@ class VisitStatusGetResponse
     /**
      * An array of service resources.
      *
-     * Contains an extended data set, as well as a different format than
-     * [VisitStatusApi](/Wl/Visit/VisitStatus.json).
+     * Contains an extended data set, as well as a different format than {@link \WlSdk\Wl\Visit\VisitStatus}.
      *
      * Each element contains the following set of data:
      *

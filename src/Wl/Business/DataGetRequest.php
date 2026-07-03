@@ -27,7 +27,7 @@ class DataGetRequest
 
     /**
      * The authorization token.
-     * This may be used instead of [DataApi](/Wl/Business/Data.json) to
+     * This may be used instead of {@link \WlSdk\Wl\Business\Data} to
      * identify a business.
      *
      * @var string|null

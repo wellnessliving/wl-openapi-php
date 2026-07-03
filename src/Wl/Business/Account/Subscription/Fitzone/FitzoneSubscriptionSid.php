@@ -3,8 +3,7 @@
 namespace WlSdk\Wl\Business\Account\Subscription\Fitzone;
 
 /**
- * List of possible plans for
- * [FitzoneSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
+ * List of possible plans for {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} subscription.
  *
  * Values:
  * - 1 (`FREE`): None

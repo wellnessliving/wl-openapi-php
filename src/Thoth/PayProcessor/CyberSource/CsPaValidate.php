@@ -20,8 +20,8 @@ class CsPaValidate
     /**
      * Validates the `CyberSource` Payer Authentication result.
      *
-     * Retrieves the authentication result for the transaction validated by
-     * [CsPaEnrollmentApi](/Thoth/PayProcessor/CyberSource/CsPaEnrollment.json)
+     * Retrieves the authentication result for the transaction validated by {@link
+     * \WlSdk\Thoth\PayProcessor\CyberSource\CsPaEnrollment}
      *  and confirms whether the payer authentication succeeded, allowing the merchant to proceed with
      *  processing the payment.
      *

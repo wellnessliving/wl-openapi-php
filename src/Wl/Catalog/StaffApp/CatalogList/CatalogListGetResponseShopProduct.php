@@ -40,10 +40,10 @@ class CatalogListGetResponseShopProduct
      * The program ID, set for promotions. One of the {@link \WlSdk\RsProgramSid} constants.
      *  <p>If `id_program` is {@link \WlSdk\RsProgramSid}, then use:</p>
      *  <ul>
-     *    <li>[ProgramListApi](/Wl/Insurance/Catalog/ProgramList.json) to obtain a list of active programs.</li>
-     *    <li>[EnrollmentFieldListApi](/Wl/Insurance/Enrollment/Field/EnrollmentFieldList.json) to get and validate
-     * fields for a given program.</li>
-     *    <li>[PaymentApi](/Wl/Catalog/Payment/Payment.json) for a program purchase.</li>
+     *    <li>{@link \WlSdk\Wl\Insurance\Catalog\ProgramList} to obtain a list of active programs.</li>
+     *    <li>{@link \WlSdk\Wl\Insurance\Enrollment\Field\EnrollmentFieldList} to get and validate fields for a
+     * given program.</li>
+     *    <li>{@link \WlSdk\Wl\Catalog\Payment\Payment} for a program purchase.</li>
      *  </ul>
      *
      * @var int|null
@@ -75,11 +75,10 @@ class CatalogListGetResponseShopProduct
     public ?bool $is_online_sell = null;
 
     /**
-     * This will be `true` if this Purchase Option is suitable to pay for the visit
-     * [CatalogListApi](/Wl/Catalog/StaffApp/CatalogList/CatalogList.json).
+     * This will be `true` if this Purchase Option is suitable to pay for the visit {@link
+     * \WlSdk\Wl\Catalog\StaffApp\CatalogList\CatalogList}.
      * Otherwise, this will be `false`.
-     * If [CatalogListApi](/Wl/Catalog/StaffApp/CatalogList/CatalogList.json) is empty, this will always be
-     * `false`.
+     * If {@link \WlSdk\Wl\Catalog\StaffApp\CatalogList\CatalogList} is empty, this will always be `false`.
      *
      * @var bool|null
      */

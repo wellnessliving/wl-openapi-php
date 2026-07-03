@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Search\Criteria;
  * The criterion is actually a search condition, has a visual part and does not belong to any search entity.
  * To associate the criteria with any search entity, you should use an entity interface.
  *
- * Example: [LoginSearchEntity](#/components/schemas/Wl.Search.SearchEntityAbstract).
+ * Example: {@link \WlSdk\Wl\Search\SearchEntityAbstract}.
  *
  * Values:
  * - 42 (`Wl\Search\SearchTestACriteria`): Test criteria A.
@@ -64,16 +64,14 @@ namespace WlSdk\Wl\Search\Criteria;
  *
  *   Search data consists of two values that are compared independently and glued with "and" operator
  *   with the same comparison operation. So if, for example,
- *   [SearchOperationSid::GREATER_THAN
- * SearchOperationSid::GREATER_THAN](#/components/schemas/Wl.Search.SearchOperationSid) is chosen then
+ *   {@link \WlSdk\Wl\Search\SearchOperationSid} is chosen then
  *   both numbers must be greater for the record to match.
  *   E.g. 120/80 is greater than 110/70, but is neither less, greater or equal to 130/70.
  *
  *   It is also possible to search by only one part of blood pressure.
- *   [BloodPressureSearchData](#/components/schemas/Wl.Search.Data.SearchDataAbstract)
+ *   {@link \WlSdk\Wl\Search\Data\SearchDataAbstract}
  *   can be initialized from array (see
- *   [BloodPressureSearchData::fromArray()
- * BloodPressureSearchData::fromArray()](#/components/schemas/Wl.Search.Data.SearchDataAbstract)
+ *   {@link \WlSdk\Wl\Search\Data\SearchDataAbstract}
  *   ) with either only one of the array keys provided or one of the values being an empty string. For example,
  *   if `s_diastolic` is set to '80' and `s_systolic` is `null`, ''(empty string), or absent -
  *   the criterion will match all users with diastolic pressure being 80, regardless of their systolic value.

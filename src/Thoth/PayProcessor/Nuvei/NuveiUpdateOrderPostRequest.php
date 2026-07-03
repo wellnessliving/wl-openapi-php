@@ -79,8 +79,7 @@ class NuveiUpdateOrderPostRequest
     public ?string $k_pay_method = null;
 
     /**
-     * Key of payment transaction that was created in
-     * [NuveiOpenOrderApi](/Thoth/PayProcessor/Nuvei/NuveiOpenOrder.json).
+     * Key of payment transaction that was created in {@link \WlSdk\Thoth\PayProcessor\Nuvei\NuveiOpenOrder}.
      *
      * This will be `null` if not loaded yet.
      *
@@ -107,7 +106,7 @@ class NuveiUpdateOrderPostRequest
     public ?string $m_surcharge = null;
 
     /**
-     * The order ID that was created in [NuveiOpenOrderApi](/Thoth/PayProcessor/Nuvei/NuveiOpenOrder.json).
+     * The order ID that was created in {@link \WlSdk\Thoth\PayProcessor\Nuvei\NuveiOpenOrder}.
      *
      * This will be `null` if not loaded yet.
      *

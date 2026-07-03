@@ -5,8 +5,8 @@ namespace WlSdk\Thoth\PayProcessor\CyberSource;
 class CsPaValidatePostRequest
 {
     /**
-     * Key of payment transaction that was previously created with
-     * [CsPaSetupApi](/Thoth/PayProcessor/CyberSource/CsPaSetup.json).
+     * Key of payment transaction that was previously created with {@link
+     * \WlSdk\Thoth\PayProcessor\CyberSource\CsPaSetup}.
      *
      * @var string|null
      */

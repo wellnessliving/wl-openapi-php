@@ -5,9 +5,8 @@ namespace WlSdk\Wl\Location\Flag;
 use WlSdk\WlSdkClient;
 
 /**
- * Checks if user [FlagApi](/Wl/Location/Flag/Flag.json) is flagged in location [FlagApi](/Wl/Location/Flag/Flag.json)
- * or
- * each of users [FlagApi](/Wl/Location/Flag/Flag.json) is flagged in location [FlagApi](/Wl/Location/Flag/Flag.json).
+ * Checks if user {@link \WlSdk\Wl\Location\Flag\Flag} is flagged in location {@link \WlSdk\Wl\Location\Flag\Flag} or
+ * each of users {@link \WlSdk\Wl\Location\Flag\Flag} is flagged in location {@link \WlSdk\Wl\Location\Flag\Flag}.
  */
 class Flag
 {
@@ -20,8 +19,8 @@ class Flag
     }
 
     /**
-     * Checks if user [FlagApi](/Wl/Location/Flag/Flag.json) is flagged in location [FlagApi](/Wl/Location/Flag/Flag.json) or
-each of users [FlagApi](/Wl/Location/Flag/Flag.json) is flagged in location [FlagApi](/Wl/Location/Flag/Flag.json).
+     * Checks if user {@link \WlSdk\Wl\Location\Flag\Flag} is flagged in location {@link \WlSdk\Wl\Location\Flag\Flag} or
+each of users {@link \WlSdk\Wl\Location\Flag\Flag} is flagged in location {@link \WlSdk\Wl\Location\Flag\Flag}.
      *
      * Accepts either a single user key (`uid`) or an array of user keys (`a_uid`) and returns the flag status
      * for each, including whether the flagged user is restricted from booking or purchasing at the location.
