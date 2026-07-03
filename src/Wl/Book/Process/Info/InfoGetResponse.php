@@ -276,7 +276,7 @@ class InfoGetResponse
 
     /**
      * Text representation of the list of staffs.
-     * List of staff see `a_staff`.
+     * List of staff see [InfoApi](/Wl/Book/Process/Info/Info.json).
      *
      * @var string|null
      */

@@ -25,10 +25,13 @@ class PromotionPayPauseGetRequest
 
     /**
      * Whether need to get all pause periods for the login promotion.
-     * If `true` then `a_pay_pause_list` will be returned.
-     * If `false` then information about specified `k_promotion_pay_pause` or
-     * currently active pause period will be returned (`dt_start`,
-     * `dt_end` and `text_note`).
+     * If `true` then [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json) will be returned.
+     * If `false` then information about specified
+     * [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json) or
+     * currently active pause period will be returned
+     * ([PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json),
+     * [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json) and
+     * [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json)).
      *
      * @var bool|null
      */
@@ -48,7 +51,7 @@ class PromotionPayPauseGetRequest
      * `start-cross`
      * status code if a hold is already in place.
      *
-     * Ignored if `k_promotion_pay_pause` is provided.
+     * Ignored if [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json) is provided.
      *
      * `null` if not yet initialized.
      *
@@ -60,7 +63,8 @@ class PromotionPayPauseGetRequest
      * The promotion payment hold key. If this key is used, it will edit an existing hold.
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
      *
-     * `null` if not yet initialized or if the request is based on `k_login_promotion`.
+     * `null` if not yet initialized or if the request is based on
+     * [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json).
      *
      * @var string|null
      */

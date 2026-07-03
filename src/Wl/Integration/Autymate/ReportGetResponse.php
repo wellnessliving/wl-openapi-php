@@ -10,7 +10,8 @@ class ReportGetResponse
     /**
      * The list of fields in this report.
      *
-     * This array is effectively a title row for table that is returned in `a_row`.
+     * This array is effectively a title row for table that is returned in
+     * [ReportApi](/Wl/Integration/Autymate/Report.json).
      *
      * @var string[]|null
      */
@@ -21,7 +22,7 @@ class ReportGetResponse
      *
      * This is an indexed array in which one row is an indexed array also.
      *
-     * Indexes of the columns correspond to columns in `a_field`.
+     * Indexes of the columns correspond to columns in [ReportApi](/Wl/Integration/Autymate/Report.json).
      *
      * @var string[][]|null
      */

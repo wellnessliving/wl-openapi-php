@@ -112,7 +112,7 @@ class ProfileCreatePostRequest
 
     /**
      * Email of the user.
-     * Required if `text_phone` not provided.
+     * Required if [ProfileCreateApi](/Wl/Profile/ProfileCreate.json) not provided.
      *
      * @var string|null
      */
@@ -120,7 +120,7 @@ class ProfileCreatePostRequest
 
     /**
      * Phone of the user.
-     * Required if `text_mail` not provided.
+     * Required if [ProfileCreateApi](/Wl/Profile/ProfileCreate.json) not provided.
      *
      * @var string|null
      */

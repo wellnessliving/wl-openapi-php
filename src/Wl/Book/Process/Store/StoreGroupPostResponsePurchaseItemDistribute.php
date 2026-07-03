@@ -15,7 +15,7 @@ class StoreGroupPostResponsePurchaseItemDistribute
 
     /**
      * The number of sessions that this item can cover.
-     *   The same as in `a_purchase_item_check`.
+     *   The same as in [StoreGroupApi](/Wl/Book/Process/Store/StoreGroup.json).
      *   `0` if not applicable.
      *
      * @var int|null
@@ -24,7 +24,7 @@ class StoreGroupPostResponsePurchaseItemDistribute
 
     /**
      * Login promotion key.
-     *   The same as in `a_login_promotion`.
+     *   The same as in [StoreGroupApi](/Wl/Book/Process/Store/StoreGroup.json).
      *   `null` if not applicable.
      *
      * @var string|null
@@ -41,7 +41,7 @@ class StoreGroupPostResponsePurchaseItemDistribute
 
     /**
      * Session pass key.
-     *   The same as in `a_session_pass`.
+     *   The same as in [StoreGroupApi](/Wl/Book/Process/Store/StoreGroup.json).
      *   `null` if not applicable.
      *
      * @var string|null
@@ -50,7 +50,7 @@ class StoreGroupPostResponsePurchaseItemDistribute
 
     /**
      * The unique identifier of the purchase item.
-     *   The same as in `a_purchase_item_check`.
+     *   The same as in [StoreGroupApi](/Wl/Book/Process/Store/StoreGroup.json).
      *   `null` if not applicable.
      *
      * @var string|null

@@ -33,8 +33,8 @@ class Relation
     }
 
     /**
-     * Adds to user `uid`
-relative `a_new`.
+     * Adds to user [RelationApi](/Wl/Family/Relation/Relation.json)
+relative [RelationApi](/Wl/Family/Relation/Relation.json).
      *
      * Creates a bidirectional family relationship between the user identified by `uid` and the user specified in
      * `a_new`, then returns the updated list of relationships for `uid`.
