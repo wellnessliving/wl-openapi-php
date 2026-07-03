@@ -10,7 +10,8 @@ class VideoElementPostResponse
     /**
      * The video key.
      *
-     * *Be careful, when use this property in code, use {@link \WlSdk\Wl\Video\VideoElement} instead.*
+     * *Be careful, when use this property in code, use {@link
+     * \WlSdk\Wl\Video\VideoElementGetResponse::$k_video_binary} instead.*
      * In this property can be key in next format:
      * * [Deprecated] String key in old format.
      * * String key in new format.

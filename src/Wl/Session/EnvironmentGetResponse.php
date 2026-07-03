@@ -54,7 +54,7 @@ class EnvironmentGetResponse
     public ?EnvironmentGetResponseSplashScreen $a_splash_screen = null;
 
     /**
-     * Local date with time now in current location {@link \WlSdk\Wl\Session\Environment}.
+     * Local date with time now in current location {@link \WlSdk\Wl\Session\EnvironmentGetResponse::$k_location}.
      *
      * @var string|null
      */
@@ -69,7 +69,7 @@ class EnvironmentGetResponse
 
     /**
      * Whether the merchant is configured for the client's home location or for business {@link
-     * \WlSdk\Wl\Session\Environment}.
+     * \WlSdk\Wl\Session\EnvironmentGetResponse::$k_business}.
      *
      * @var bool|null
      */

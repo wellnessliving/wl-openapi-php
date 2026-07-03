@@ -10,7 +10,7 @@ class ReceptionAuthorizePostResponse
     /**
      * List of the users, which can be authorized.
      *
-     * Can be set only this field or {@link \WlSdk\Wl\Reception\Application\ReceptionAuthorize}.
+     * Can be set only this field or {@link \WlSdk\Wl\Reception\Application\ReceptionAuthorizePostResponse::$uid}.
      * It depends, whether we found one user or multiple.
      *
      * @var ReceptionAuthorizePostResponseSelect[]|null
@@ -20,7 +20,8 @@ class ReceptionAuthorizePostResponse
     /**
      * Key of the authorized user.
      *
-     * Can be set only this field or {@link \WlSdk\Wl\Reception\Application\ReceptionAuthorize}.
+     * Can be set only this field or {@link
+     * \WlSdk\Wl\Reception\Application\ReceptionAuthorizePostResponse::$a_select}.
      * It depends, whether we found one user or multiple.
      *
      * @var string|null

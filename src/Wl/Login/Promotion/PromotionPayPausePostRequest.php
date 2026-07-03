@@ -37,7 +37,8 @@ class PromotionPayPausePostRequest
      * `start-cross`
      * status code if a hold is already in place.
      *
-     * Ignored if {@link \WlSdk\Wl\Login\Promotion\PromotionPayPause} is provided.
+     * Ignored if {@link \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$k_promotion_pay_pause} is
+     * provided.
      *
      * `null` if not yet initialized.
      *
@@ -50,7 +51,7 @@ class PromotionPayPausePostRequest
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
      *
      * `null` if not yet initialized or if the request is based on {@link
-     * \WlSdk\Wl\Login\Promotion\PromotionPayPause}.
+     * \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$k_login_promotion}.
      *
      * @var string|null
      */

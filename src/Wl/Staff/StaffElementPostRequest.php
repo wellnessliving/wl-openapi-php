@@ -248,7 +248,7 @@ class StaffElementPostRequest
      * User key of a staff member.
      *
      * This is the supported request identifier for staff update operations.
-     * Value is normalized into {@link \WlSdk\Wl\Staff\StaffElement} in `post()`.
+     * Value is normalized into {@link \WlSdk\Wl\Staff\StaffElementPostResponse::$k_staff} in `post()`.
      *
      * @var string|null
      */

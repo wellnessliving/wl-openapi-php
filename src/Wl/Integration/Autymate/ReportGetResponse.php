@@ -11,7 +11,7 @@ class ReportGetResponse
      * The list of fields in this report.
      *
      * This array is effectively a title row for table that is returned in {@link
-     * \WlSdk\Wl\Integration\Autymate\Report}.
+     * \WlSdk\Wl\Integration\Autymate\ReportGetResponse::$a_row}.
      *
      * @var string[]|null
      */
@@ -22,7 +22,8 @@ class ReportGetResponse
      *
      * This is an indexed array in which one row is an indexed array also.
      *
-     * Indexes of the columns correspond to columns in {@link \WlSdk\Wl\Integration\Autymate\Report}.
+     * Indexes of the columns correspond to columns in {@link
+     * \WlSdk\Wl\Integration\Autymate\ReportGetResponse::$a_field}.
      *
      * @var string[][]|null
      */

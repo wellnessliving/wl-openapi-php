@@ -99,9 +99,10 @@ class ClassList68PostRequest
     public ?int $id_class_tab = null;
 
     /**
-     * `true` means to not generate {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} result.
+     * `true` means to not generate {@link \WlSdk\Wl\Schedule\ClassList\ClassList68PostResponse::$a_session}
+     * result.
      * Can be used, if you do not need full information about existing classes and result in {@link
-     * \WlSdk\Wl\Schedule\ClassList\ClassList68} is enough.
+     * \WlSdk\Wl\Schedule\ClassList\ClassList68PostResponse::$a_calendar} is enough.
      *
      * @var bool|null
      */
@@ -190,7 +191,7 @@ class ClassList68PostRequest
     public ?bool $show_event = null;
 
     /**
-     * Whether to generate {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} a quick filter.
+     * Whether to generate {@link \WlSdk\Wl\Schedule\ClassList\ClassList68PostResponse::$a_quick} a quick filter.
      * If `true`, a quick filter will be generated. `false` otherwise.
      *
      * @var bool|null

@@ -18,7 +18,8 @@ class ListGetResponse
 
     /**
      * List of bank cards.
-     * Duplicate of {@link \WlSdk\Thoth\WlPay\Bank\Card\ListEndpoint} as a flat indexed array.
+     * Duplicate of {@link \WlSdk\Thoth\WlPay\Bank\Card\ListEndpointGetResponse::$a_bank_card} as a flat indexed
+     * array.
      *
      * @var ListGetResponseList[]|null
      */

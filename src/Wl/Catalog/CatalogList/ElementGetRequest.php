@@ -114,9 +114,9 @@ class ElementGetRequest
      * Note that this must be serialized via JSON.
      *
      * If this field is specified, don't specify any of the following fields:
-     * * {@link \WlSdk\Wl\Catalog\CatalogList\Element}
-     * * {@link \WlSdk\Wl\Catalog\CatalogList\Element}
-     * * {@link \WlSdk\Wl\Catalog\CatalogList\Element}
+     * * {@link \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$id_sale}
+     * * {@link \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$k_id}
+     * * {@link \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$k_shop_product_option}
      *
      * This will be `null` to get information for only one item.
      *

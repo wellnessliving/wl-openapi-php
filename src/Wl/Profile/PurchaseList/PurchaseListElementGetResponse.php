@@ -447,7 +447,7 @@ class PurchaseListElementGetResponse
 
     /**
      * The key of the item. This can correspond to one of many values depending on {@link
-     * \WlSdk\Wl\Profile\PurchaseList\PurchaseListElement}.
+     * \WlSdk\Wl\Profile\PurchaseList\PurchaseListElementGetResponse::$id_sale}.
      *
      * @var string|null
      */

@@ -16,7 +16,8 @@ class FlagGetResponse
     public ?FlagGetResponseFlag $a_flag = null;
 
     /**
-     * Array, where keys are UIDs to be checked and values are same as {@link \WlSdk\Wl\Location\Flag\Flag}.
+     * Array, where keys are UIDs to be checked and values are same as {@link
+     * \WlSdk\Wl\Location\Flag\FlagGetResponse::$a_restrictions_single}.
      * `null` if user is not flagged in the location.
      *
      * This field is set, if API gets {@link \WlSdk\Wl\Location\Flag\Flag} and not {@link

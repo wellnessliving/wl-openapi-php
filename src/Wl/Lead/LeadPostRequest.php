@@ -57,7 +57,8 @@ class LeadPostRequest
      * - email is used already for another existing user;
      * - different user is signed in already (can be changed with {@link \WlSdk\Wl\Lead\Lead}).
      *
-     * If lead is not signed in, then {@link \WlSdk\Wl\Lead\Lead} will contain an error message.
+     * If lead is not signed in, then {@link \WlSdk\Wl\Lead\LeadPostResponse::$text_sign_in_error} will contain an
+     * error message.
      *
      * @var bool|null
      */
@@ -66,7 +67,8 @@ class LeadPostRequest
     /**
      * `true` if newly created lead should be automatically signed in instead of the currently signed-in user,
      * `false` if currently singed-in user should not be signed out.
-     * If lead is not signed in, then {@link \WlSdk\Wl\Lead\Lead} will contain an error message.
+     * If lead is not signed in, then {@link \WlSdk\Wl\Lead\LeadPostResponse::$text_sign_in_error} will contain an
+     * error message.
      *
      * @var bool|null
      */
@@ -86,8 +88,10 @@ class LeadPostRequest
 
     /**
      * The characters entered by the lead for the captcha test.
-     * This isn't necessary if the GET method returned an empty {@link \WlSdk\Wl\Lead\Lead}.
-     * This field isn't necessary if the GET method returned an empty {@link \WlSdk\Wl\Lead\Lead}.
+     * This isn't necessary if the GET method returned an empty {@link
+     * \WlSdk\Wl\Lead\LeadGetResponse::$url_captcha}.
+     * This field isn't necessary if the GET method returned an empty {@link
+     * \WlSdk\Wl\Lead\LeadGetResponse::$url_captcha}.
      *
      * @var string|null
      */

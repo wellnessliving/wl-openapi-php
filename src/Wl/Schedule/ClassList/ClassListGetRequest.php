@@ -65,9 +65,9 @@ class ClassListGetRequest
     public ?string $dt_end = null;
 
     /**
-     * `true` means to not generate {@link \WlSdk\Wl\Schedule\ClassList\ClassList} result.
+     * `true` means to not generate {@link \WlSdk\Wl\Schedule\ClassList\ClassListGetResponse::$a_session} result.
      * Can be used, if you do not need full information about existing classes and result in {@link
-     * \WlSdk\Wl\Schedule\ClassList\ClassList} is enough.
+     * \WlSdk\Wl\Schedule\ClassList\ClassListGetResponse::$a_calendar} is enough.
      *
      * @var bool|null
      */

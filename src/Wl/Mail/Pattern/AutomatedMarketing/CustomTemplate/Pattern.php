@@ -39,7 +39,7 @@ class Pattern
      * Validates and stores the submitted notification template (email, push or SMS) for the given
      *  business. A system template edited under a business is copied into that business instead of
      *  modifying the original. The saved mail pattern key is returned in
-     *  {@link \WlSdk\Wl\Mail\Pattern\AutomatedMarketing\CustomTemplate\Pattern}.
+     *  {@link \WlSdk\Wl\Mail\Pattern\AutomatedMarketing\CustomTemplate\PatternPostResponse::$k_mail_pattern}.
      *
      * @return PatternPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

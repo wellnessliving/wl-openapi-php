@@ -13,7 +13,7 @@ class ElementGetResponseClassList
 
     /**
      * Class-specific business policies overriding the business defaults.
-     * Has the same structure as {@link \WlSdk\Wl\Business\Config\BusinessConfig}.
+     * Has the same structure as {@link \WlSdk\Wl\Business\Config\BusinessConfigGetResponse::$a_business_policy}.
      * `null` when the class uses the default business policy without overrides.
      *
      * @var ElementGetResponseClassListConfig|null

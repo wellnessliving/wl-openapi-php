@@ -5,8 +5,8 @@ namespace WlSdk\Wl\Purchase\Receipt;
 class PurchaseReceiptGetRequest
 {
     /**
-     * Whether {@link \WlSdk\Wl\Purchase\Receipt\PurchaseReceipt} and {@link
-     * \WlSdk\Wl\Purchase\Receipt\PurchaseReceipt} require authentication.
+     * Whether {@link \WlSdk\Wl\Purchase\Receipt\PurchaseReceiptGetResponse::$url_print} and {@link
+     * \WlSdk\Wl\Purchase\Receipt\PurchaseReceiptGetResponse::$url_print_receipt} require authentication.
      *
      * If `true`, the URL contains a token that allows temporary access to the page without logging in. If 'false',
      * the

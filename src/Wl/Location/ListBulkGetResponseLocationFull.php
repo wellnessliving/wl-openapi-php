@@ -86,7 +86,8 @@ class ListBulkGetResponseLocationFull
     public ?string $html_description_full = null;
 
     /**
-     * A shorter description of the location. A preview of {@link \WlSdk\Wl\Location\View\View}.
+     * A shorter description of the location. A preview of {@link
+     * \WlSdk\Wl\Location\View\ViewGetResponse::$html_description_full}.
      *
      * @var string|null
      */

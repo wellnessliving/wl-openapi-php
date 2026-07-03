@@ -29,7 +29,8 @@ class ElementGetResponse
     /**
      * Business policies connected to clients and bookings.
      *
-     * Contains the same structure as {@link \WlSdk\Wl\Business\Config\BusinessConfig}.
+     * Contains the same structure as {@link
+     * \WlSdk\Wl\Business\Config\BusinessConfigGetResponse::$a_business_policy}.
      *
      * If the event has custom overrides, those policies are used; otherwise, the default
      *  business policies are returned.
@@ -267,7 +268,8 @@ class ElementGetResponse
     public ?bool $is_past = null;
 
     /**
-     * `true` if the {@link \WlSdk\Wl\Event\Book\EventView\Element} contains the custom policies from the event.
+     * `true` if the {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_business_policy} contains the
+     * custom policies from the event.
      * `false` otherwise.
      *
      * @var bool|null
@@ -329,8 +331,8 @@ class ElementGetResponse
     public ?string $m_price_total = null;
 
     /**
-     * Price of the full event should be used as full price while {@link \WlSdk\Wl\Event\Book\EventView\Element} is
-     * actual.
+     * Price of the full event should be used as full price while {@link
+     * \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$dt_early} is actual.
      *
      * @var string|null
      */
@@ -338,7 +340,7 @@ class ElementGetResponse
 
     /**
      * The reason why the event can't be booked.
-     * Empty if {@link \WlSdk\Wl\Event\Book\EventView\Element} isn't empty.
+     * Empty if {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$k_book_class_period} isn't empty.
      *
      * @var string|null
      */

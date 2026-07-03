@@ -63,7 +63,8 @@ class AddGetResponse
     public ?string $m_price = null;
 
     /**
-     * The user's account balance if they were charged the {@link \WlSdk\Wl\Login\Attendance\Add\Add} amount.
+     * The user's account balance if they were charged the {@link
+     * \WlSdk\Wl\Login\Attendance\Add\AddGetResponse::$m_price} amount.
      *
      * @var string|null
      */

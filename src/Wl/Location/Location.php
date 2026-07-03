@@ -20,11 +20,11 @@ class Location
     /**
      * Creates new location or edits the existing location.
      *
-     * When {@link \WlSdk\Wl\Location\Location} is omitted, creates a new location requiring {@link
-     * \WlSdk\Wl\Location\Location},
+     * When {@link \WlSdk\Wl\Location\LocationPostResponse::$k_location} is omitted, creates a new location
+     * requiring {@link \WlSdk\Wl\Location\Location},
      *  {@link \WlSdk\Wl\Location\Location}, and {@link \WlSdk\Wl\Location\Location}.
-     * When {@link \WlSdk\Wl\Location\Location} is provided, updates only the supplied fields of the existing
-     * location.
+     * When {@link \WlSdk\Wl\Location\LocationPostResponse::$k_location} is provided, updates only the supplied
+     * fields of the existing location.
      *  Returns the key of the created or updated location.
      *
      * @return LocationPostResponse

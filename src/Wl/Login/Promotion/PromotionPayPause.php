@@ -7,7 +7,8 @@ use WlSdk\WlSdkClient;
 /**
  * Returns promotion payment pause data: all hold periods when {@link \WlSdk\Wl\Login\Promotion\PromotionPayPause} is
  * `true`,
- *  the specified hold period when {@link \WlSdk\Wl\Login\Promotion\PromotionPayPause} is provided, or the currently
+ *  the specified hold period when {@link
+ * \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$k_promotion_pay_pause} is provided, or the currently
  *  active hold period otherwise.
  */
 class PromotionPayPause
@@ -22,7 +23,7 @@ class PromotionPayPause
 
     /**
      * Returns promotion payment pause data: all hold periods when {@link \WlSdk\Wl\Login\Promotion\PromotionPayPause} is `true`,
- the specified hold period when {@link \WlSdk\Wl\Login\Promotion\PromotionPayPause} is provided, or the currently
+ the specified hold period when {@link \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$k_promotion_pay_pause} is provided, or the currently
  active hold period otherwise.
      *
      * Also returns notification settings (email, push, SMS flags and email pattern key) and the date the last

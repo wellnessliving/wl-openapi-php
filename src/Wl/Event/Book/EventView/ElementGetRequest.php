@@ -7,7 +7,8 @@ class ElementGetRequest
     /**
      * The last available date for booking.
      * If this is set and {@link \WlSdk\Wl\Event\Book\EventView\Element} is a set list of
-     *   sessions available for booking, {@link \WlSdk\Wl\Event\Book\EventView\Element}
+     *   sessions available for booking, {@link
+     * \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_book_available}
      *   should match given date range.
      *
      * @var string|null
@@ -17,7 +18,8 @@ class ElementGetRequest
     /**
      * The first available date for booking.
      * If this is set and {@link \WlSdk\Wl\Event\Book\EventView\Element} is a set list of
-     *   sessions available for booking {@link \WlSdk\Wl\Event\Book\EventView\Element}
+     *   sessions available for booking {@link
+     * \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_book_available}
      *   should match given date range.
      *
      * @var string|null

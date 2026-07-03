@@ -6,7 +6,8 @@ class StaffViewGetResponseResultList
 {
     /**
      * Contains a schedule of classes per day.
-     * Each element has a structure like in {@link \WlSdk\Wl\Staff\StaffView\StaffView} property.
+     * Each element has a structure like in {@link \WlSdk\Wl\Staff\StaffView\StaffViewGetResponse::$a_class_day}
+     * property.
      *
      * @var StaffViewGetResponseResultListClassDay|null
      */
@@ -14,7 +15,8 @@ class StaffViewGetResponseResultList
 
     /**
      * Staff information.
-     * Each element has a structure like in {@link \WlSdk\Wl\Staff\StaffView\StaffView} property.
+     * Each element has a structure like in {@link \WlSdk\Wl\Staff\StaffView\StaffViewGetResponse::$a_staff}
+     * property.
      *
      * @var StaffViewGetResponseResultListStaff|null
      */

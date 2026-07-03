@@ -31,7 +31,8 @@ class VisitStatusGetResponse
     /**
      * An array of service resources.
      *
-     * Contains an extended data set, as well as a different format than {@link \WlSdk\Wl\Visit\VisitStatus}.
+     * Contains an extended data set, as well as a different format than {@link
+     * \WlSdk\Wl\Visit\VisitStatusGetResponse::$a_resource}.
      *
      * Each element contains the following set of data:
      *

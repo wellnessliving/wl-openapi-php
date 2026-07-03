@@ -276,7 +276,7 @@ class Info54GetResponse
 
     /**
      * Text representation of the list of staffs.
-     * List of staff see {@link \WlSdk\Wl\Book\Process\Info\Info}.
+     * List of staff see {@link \WlSdk\Wl\Book\Process\Info\InfoGetResponse::$a_staff}.
      *
      * @var string|null
      */

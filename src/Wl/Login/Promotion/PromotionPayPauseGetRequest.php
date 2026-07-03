@@ -25,11 +25,14 @@ class PromotionPayPauseGetRequest
 
     /**
      * Whether need to get all pause periods for the login promotion.
-     * If `true` then {@link \WlSdk\Wl\Login\Promotion\PromotionPayPause} will be returned.
-     * If `false` then information about specified {@link \WlSdk\Wl\Login\Promotion\PromotionPayPause} or
-     * currently active pause period will be returned ({@link \WlSdk\Wl\Login\Promotion\PromotionPayPause},
-     * {@link \WlSdk\Wl\Login\Promotion\PromotionPayPause} and {@link
-     * \WlSdk\Wl\Login\Promotion\PromotionPayPause}).
+     * If `true` then {@link \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$a_pay_pause_list} will be
+     * returned.
+     * If `false` then information about specified {@link
+     * \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$k_promotion_pay_pause} or
+     * currently active pause period will be returned ({@link
+     * \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$dt_start},
+     * {@link \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$dt_end} and {@link
+     * \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$text_note}).
      *
      * @var bool|null
      */
@@ -49,7 +52,8 @@ class PromotionPayPauseGetRequest
      * `start-cross`
      * status code if a hold is already in place.
      *
-     * Ignored if {@link \WlSdk\Wl\Login\Promotion\PromotionPayPause} is provided.
+     * Ignored if {@link \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$k_promotion_pay_pause} is
+     * provided.
      *
      * `null` if not yet initialized.
      *
@@ -62,7 +66,7 @@ class PromotionPayPauseGetRequest
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
      *
      * `null` if not yet initialized or if the request is based on {@link
-     * \WlSdk\Wl\Login\Promotion\PromotionPayPause}.
+     * \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$k_login_promotion}.
      *
      * @var string|null
      */
