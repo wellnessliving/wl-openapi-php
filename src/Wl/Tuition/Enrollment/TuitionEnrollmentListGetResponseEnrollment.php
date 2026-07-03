@@ -33,6 +33,13 @@ class TuitionEnrollmentListGetResponseEnrollment
     public ?int $i_payments_left = null;
 
     /**
+     * Number of payments total at the moment of enrollment.
+     *
+     * @var int|null
+     */
+    public ?int $i_payments_total = null;
+
+    /**
      * Installment plan status.
      *
      * @var int|null
@@ -83,6 +90,7 @@ class TuitionEnrollmentListGetResponseEnrollment
         $this->dl_next = isset($data['dl_next']) ? (string)$data['dl_next'] : null;
         $this->dtl_enrollment = isset($data['dtl_enrollment']) ? (string)$data['dtl_enrollment'] : null;
         $this->i_payments_left = isset($data['i_payments_left']) ? (int)$data['i_payments_left'] : null;
+        $this->i_payments_total = isset($data['i_payments_total']) ? (int)$data['i_payments_total'] : null;
         $this->id_installment_status = isset($data['id_installment_status']) ? (int)$data['id_installment_status'] : null;
         $this->k_purchase_item_tuition = isset($data['k_purchase_item_tuition']) ? (string)$data['k_purchase_item_tuition'] : null;
         $this->m_payment = isset($data['m_payment']) ? (string)$data['m_payment'] : null;

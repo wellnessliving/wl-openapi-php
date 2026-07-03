@@ -123,7 +123,7 @@ class ClassListGetResponseSession
 
     /**
      * Allow clients to book on behalf of a guest.
-     *      `true` if clients can book on behalf of a guest.
+     *  `true` if clients can book on behalf of a guest.
      *  `false` otherwise.
      *
      * @var bool|null
