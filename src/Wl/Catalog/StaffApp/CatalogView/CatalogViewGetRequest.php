@@ -49,8 +49,7 @@ class CatalogViewGetRequest
 
     /**
      * The key of the sale item.
-     * This can be retrieved with the [CatalogListApi](/Wl/Catalog/StaffApp/CatalogList/CatalogList.json) endpoint
-     * (see the
+     * This can be retrieved with the {@link \WlSdk\Wl\Catalog\StaffApp\CatalogList\CatalogList} endpoint (see the
      * `a_shop_product` parameter).
      *
      * @var string|null

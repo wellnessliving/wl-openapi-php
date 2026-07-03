@@ -5,8 +5,7 @@ namespace WlSdk\Core\Drive\ImageUpload;
 class ImageUploadTemporaryPostRequest
 {
     /**
-     * The key of the image within
-     * [ImageUploadTemporaryApi::$s_class](/Core/Drive/ImageUpload/ImageUploadTemporary.json).
+     * The key of the image within {@link \WlSdk\Core\Drive\ImageUpload\ImageUploadTemporary}.
      *
      * For example, for a user's photo, specify the user's key here.
      *

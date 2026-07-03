@@ -8,7 +8,7 @@ class AccessGetRequest
      * Report CID.
      *
      * It's used mostly for second generation reports.
-     * For first generation reports use [AccessApi::$id_report](/Wl/Report/Access.json) instead.
+     * For first generation reports use {@link \WlSdk\Wl\Report\Access} instead.
      *
      * Only one of these two fields should be sent, but not both.
      *
@@ -21,7 +21,7 @@ class AccessGetRequest
      * Report ID.
      *
      * It's used mostly for first generation reports.
-     * For second generation reports use [AccessApi::$cid_report](/Wl/Report/Access.json) instead.
+     * For second generation reports use {@link \WlSdk\Wl\Report\Access} instead.
      *
      * Only one of these two fields should be sent, but not both.
      *

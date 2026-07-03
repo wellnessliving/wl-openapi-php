@@ -9,14 +9,14 @@ class Purchase56GetRequest
      *
      * Note:
      * * It makes sense if for all clients the list is loaded within
-     *      the same pair [PurchaseApi::$dt_date_gmt](/Wl/Book/Process/Purchase/Purchase.json) and
-     * [PurchaseApi::$k_class_period](/Wl/Book/Process/Purchase/Purchase.json).
+     *      the same pair {@link \WlSdk\Wl\Book\Process\Purchase\Purchase} and {@link
+     * \WlSdk\Wl\Book\Process\Purchase\Purchase}.
      * * If promotions are shared, the system will try to determine if there are enough sessions left for the next
      *      client who has the same promotion.
      * * A very simple check is carried out based on a comparison of the remaining sessions for the promotion
      *      with the number of times it was selected.
-     * * Can affect the list of available login promotions
-     * [PurchaseApi::$a_login_promotion](/Wl/Book/Process/Purchase/Purchase.json).
+     * * Can affect the list of available login promotions {@link
+     * \WlSdk\Wl\Book\Process\Purchase\PurchaseGetResponse::$a_login_promotion}.
      *      If a given client is eligible for such a promotion, but the remaining sessions (minus those previously
      *      selected) in it do not allow it to be applied to the selected session, then such promotion will simply
      *      not be returned for the client.
@@ -112,14 +112,14 @@ class Purchase56GetRequest
      *
      * Note:
      * * It makes sense if for all clients the list is loaded within
-     *      the same pair [Purchase56Api::$dt_date_gmt](/Wl/Book/Process/Purchase/Purchase56.json) and
-     * [Purchase56Api::$k_class_period](/Wl/Book/Process/Purchase/Purchase56.json).
+     *      the same pair {@link \WlSdk\Wl\Book\Process\Purchase\Purchase56} and {@link
+     * \WlSdk\Wl\Book\Process\Purchase\Purchase56}.
      * * If promotions are shared, the system will try to determine if there are enough sessions left for the next
      *      client who has the same promotion.
      * * A very simple check is made based on a comparison of the remaining sessions for the promotion
      *      with the number of times it was selected.
-     * * Can affect the list of available login promotions
-     * [Purchase56Api::$a_login_promotion](/Wl/Book/Process/Purchase/Purchase56.json).
+     * * Can affect the list of available login promotions {@link
+     * \WlSdk\Wl\Book\Process\Purchase\Purchase56GetResponse::$a_login_promotion}.
      *      If a given client is eligible for such a promotion, but the remaining sessions (minus those previously
      *      selected) in it do not allow it to be applied to the selected session, then such promotion will simply
      *      not be returned for the client.

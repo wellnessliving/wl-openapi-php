@@ -14,8 +14,8 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * - 857 (`Wl\Business\Account\Subscription\Sms\SmsSubscription`): Wl\Business\Account\Subscription\Sms\SmsSubscription
  * - 986 (`Wl\Business\Account\Subscription\Fitlive\FitliveSubscription`): Subscription allows business to access
  * virtual sessions features.
- *   Unlikely [ZoomSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) virtual
- * sessions provided also by system Zoom account.
+ *   Unlikely {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} virtual sessions provided also by
+ * system Zoom account.
  * - 864 (`Wl\Business\Account\Subscription\Zoom\ZoomSubscription`): Zoom subscription.
  * - 1225 (`Wl\Business\Account\Subscription\Finance\FinanceSubscription`):
  * Wl\Business\Account\Subscription\Finance\FinanceSubscription

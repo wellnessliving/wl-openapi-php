@@ -22,7 +22,7 @@ class AssetList
      *
      * Returns the list of bookable assets at the given location, optionally filtered by category and book now tab.
      *  When a date and time are provided, only assets available at that time are included and busy asset slots
-     *  are returned in [AssetListApi::$a_asset_busy](/Wl/Appointment/Book/Asset/AssetList.json). Supports both
+     *  are returned in {@link \WlSdk\Wl\Appointment\Book\Asset\AssetListGetResponse::$a_asset_busy}. Supports both
      * frontend and backend modes.
      *
      * @return AssetListGetResponse

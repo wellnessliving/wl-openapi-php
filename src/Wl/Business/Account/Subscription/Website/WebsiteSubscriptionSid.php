@@ -3,8 +3,7 @@
 namespace WlSdk\Wl\Business\Account\Subscription\Website;
 
 /**
- * List of possible plans for
- * [WebsiteSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
+ * List of possible plans for {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} subscription.
  *
  * Values:
  * - 2 (`BASIC`): Basic

@@ -19,8 +19,8 @@ class DynamicIdGetResponse
      * Barcode of the member.
      *
      * Dynamic, if business uses barcode as dynamic ID.
-     * Or static, if business uses static ID. In this case
-     * [DynamicIdApi::$i_expire](/Wl/Login/Member/DynamicId/DynamicId.json) will be zero.
+     * Or static, if business uses static ID. In this case {@link
+     * \WlSdk\Wl\Login\Member\DynamicId\DynamicIdGetResponse::$i_expire} will be zero.
      *
      * @var string|null
      */

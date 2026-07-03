@@ -26,8 +26,7 @@ namespace WlSdk;
  * - 1 (`SCHEDULE_LIST`): Schedule list widget.
  * - 14 (`SCHEDULE_STANDARD`): Standard version of schedule.
  *
- *   This skin is the same as [RsSkinSid::SCHEDULE_LIST](#/components/schemas/RsSkinSid) except that design can not be
- * changed, only standard
+ *   This skin is the same as {@link \WlSdk\RsSkinSid} except that design can not be changed, only standard
  *   settings can be used.
  * - 12 (`STAFF`): Staff widget.
  * - 11 (`STORE`): Online store widget.

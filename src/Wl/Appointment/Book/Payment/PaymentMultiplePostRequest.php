@@ -63,8 +63,7 @@ class PaymentMultiplePostRequest
     public ?string $uid = null;
 
     /**
-     * A copy of [PaymentMultipleApi::$a_book_data](/Wl/Appointment/Book/Payment/PaymentMultiple.json). Has the
-     * same structure.
+     * A copy of {@link \WlSdk\Wl\Appointment\Book\Payment\PaymentMultiple}. Has the same structure.
      * Set this field value for POST requests.
      *
      * @var array|null

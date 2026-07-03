@@ -90,7 +90,7 @@ class ModifyPostRequest
     /**
      * The list of data to save.
      *
-     * Data depends on current [ModifyApi::$id_step](/Wl/Classes/Period/Modify/Modify.json):
+     * Data depends on current {@link \WlSdk\Wl\Classes\Period\Modify\ModifyPostResponse::$id_step}:
      *
      * @var array|null
      */

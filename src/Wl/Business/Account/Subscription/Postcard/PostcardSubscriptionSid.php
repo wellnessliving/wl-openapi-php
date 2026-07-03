@@ -3,8 +3,7 @@
 namespace WlSdk\Wl\Business\Account\Subscription\Postcard;
 
 /**
- * List of possible plans for
- * [PostcardSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
+ * List of possible plans for {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} subscription.
  *
  * Values:
  * - 3 (`BASIC`): Basic

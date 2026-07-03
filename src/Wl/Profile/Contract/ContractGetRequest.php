@@ -20,7 +20,7 @@ class ContractGetRequest
 
     /**
      * The type of purchase item. This is one of the {@link \WlSdk\RsPurchaseItemSid} constants.
-     * Optional if [ContractApi::$k_purchase_item](/Wl/Profile/Contract/Contract.json) is not empty.
+     * Optional if {@link \WlSdk\Wl\Profile\Contract\Contract} is not empty.
      *
      * @var int|null
      * @see \WlSdk\RsPurchaseItemSid
@@ -36,7 +36,7 @@ class ContractGetRequest
 
     /**
      * The key of the purchase item in the database.
-     * The item key. Depends on [ContractApi::$id_purchase_item](/Wl/Profile/Contract/Contract.json) property.
+     * The item key. Depends on {@link \WlSdk\Wl\Profile\Contract\Contract} property.
      *
      * @var string|null
      */

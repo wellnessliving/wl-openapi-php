@@ -5,7 +5,7 @@ namespace WlSdk\Wl\AiAgent\Link;
 class SendMailPostRequest
 {
     /**
-     * Purchase item ID. Required if [SendMailApi::$text_action](/Wl/AiAgent/Link/SendMail.json) is 'purchase'.
+     * Purchase item ID. Required if {@link \WlSdk\Wl\AiAgent\Link\SendMail} is 'purchase'.
      *
      * One of the {@link \WlSdk\RsPurchaseItemSid} constants.
      *
@@ -15,7 +15,7 @@ class SendMailPostRequest
     public ?int $id_purchase_item = null;
 
     /**
-     * Service ID. Required if [SendMailApi::$text_action](/Wl/AiAgent/Link/SendMail.json) is 'booking'.
+     * Service ID. Required if {@link \WlSdk\Wl\AiAgent\Link\SendMail} is 'booking'.
      *
      * @var int|null
      * @see \WlSdk\RsServiceSid

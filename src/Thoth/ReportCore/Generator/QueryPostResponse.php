@@ -19,8 +19,8 @@ class QueryPostResponse
     /**
      * A list of fields in this report.
      *
-     * This array is effectively a title row for table that is returned in
-     * [QueryApi::$a_row](/Thoth/ReportCore/Generator/Query.json).
+     * This array is effectively a title row for table that is returned in {@link
+     * \WlSdk\Thoth\ReportCore\Generator\QueryPostResponse::$a_row}.
      *
      * @var string[]|null
      */
@@ -31,7 +31,8 @@ class QueryPostResponse
      *
      * This is an indexed array in which one row is an indexed array also.
      *
-     * Indexes of the columns correspond columns in [QueryApi::$a_field](/Thoth/ReportCore/Generator/Query.json).
+     * Indexes of the columns correspond columns in {@link
+     * \WlSdk\Thoth\ReportCore\Generator\QueryPostResponse::$a_field}.
      *
      * @var string[][]|null
      */
@@ -44,7 +45,7 @@ class QueryPostResponse
      * version
      * data (some data from the latest generation, and other from one of previous generations).
      *
-     * Value is index in [QueryApi::$a_row](/Thoth/ReportCore/Generator/Query.json).
+     * Value is index in {@link \WlSdk\Thoth\ReportCore\Generator\QueryPostResponse::$a_row}.
      *
      * If a row is not listed here, it is of the latest version.
      *

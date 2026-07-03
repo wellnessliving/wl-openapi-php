@@ -33,8 +33,8 @@ class Relation
     }
 
     /**
-     * Adds to user [RelationApi::$uid](/Wl/Family/Relation/Relation.json)
-relative [RelationApi::$a_new](/Wl/Family/Relation/Relation.json).
+     * Adds to user {@link \WlSdk\Wl\Family\Relation\Relation}
+relative {@link \WlSdk\Wl\Family\Relation\Relation}.
      *
      * Creates a bidirectional family relationship between the user identified by `uid` and the user specified in
      * `a_new`, then returns the updated list of relationships for `uid`.

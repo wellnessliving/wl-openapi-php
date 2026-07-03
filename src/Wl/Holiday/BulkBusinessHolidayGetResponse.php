@@ -8,8 +8,8 @@ namespace WlSdk\Wl\Holiday;
 class BulkBusinessHolidayGetResponse
 {
     /**
-     * An array consisting of the business's closed day data for all locations by holiday keys
-     * [HolidayApi::$dl_work](/Wl/Holiday/Holiday.json).
+     * An array consisting of the business's closed day data for all locations by holiday keys {@link
+     * \WlSdk\Wl\Holiday\Holiday}.
      *
      * List of holidays.
      *

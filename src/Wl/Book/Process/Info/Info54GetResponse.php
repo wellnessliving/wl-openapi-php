@@ -276,7 +276,7 @@ class Info54GetResponse
 
     /**
      * Text representation of the list of staffs.
-     * List of staff see [InfoApi::$a_staff](/Wl/Book/Process/Info/Info.json).
+     * List of staff see {@link \WlSdk\Wl\Book\Process\Info\InfoGetResponse::$a_staff}.
      *
      * @var string|null
      */

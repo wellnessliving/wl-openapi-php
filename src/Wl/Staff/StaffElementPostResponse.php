@@ -10,7 +10,7 @@ class StaffElementPostResponse
     /**
      * The key of the staff member resolved and used internally by this API.
      *
-     * This property is populated from [StaffElementApi::$uid_staff](/Wl/Staff/StaffElement.json) in `post()` and
+     * This property is populated from {@link \WlSdk\Wl\Staff\StaffElement} in `post()` and
      * returned in API result for compatibility.
      *
      * Passing `k_staff` in request payload is not supported and causes an error.

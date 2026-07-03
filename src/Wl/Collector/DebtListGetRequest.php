@@ -9,10 +9,10 @@ class DebtListGetRequest
      *
      * If set, this is the end of the date window. Only debts added before or on this date will be shown.
      *
-     * If left `null` and [DebtListApi::$dl_start](/Wl/Collector/DebtList.json) has been specified, only debts
-     * added after the start date will be returned.
-     * If left `null` and [DebtListApi::$dl_start](/Wl/Collector/DebtList.json) is also `null`, this will return
-     * debts from the previous month.
+     * If left `null` and {@link \WlSdk\Wl\Collector\DebtList} has been specified, only debts added after the start
+     * date will be returned.
+     * If left `null` and {@link \WlSdk\Wl\Collector\DebtList} is also `null`, this will return debts from the
+     * previous month.
      *
      * @var string|null
      */
@@ -23,10 +23,10 @@ class DebtListGetRequest
      *
      * If set, this is the start of the date window. Only debts added on or after this date will be shown.
      *
-     * If left `null` and [DebtListApi::$dl_end](/Wl/Collector/DebtList.json) has been specified will return debts
-     * added since the beginning of time.
-     * If left `null` and [DebtListApi::$dl_end](/Wl/Collector/DebtList.json) is also `null`, this will return
-     * debts from the previous month.
+     * If left `null` and {@link \WlSdk\Wl\Collector\DebtList} has been specified will return debts added since the
+     * beginning of time.
+     * If left `null` and {@link \WlSdk\Wl\Collector\DebtList} is also `null`, this will return debts from the
+     * previous month.
      *
      * @var string|null
      */

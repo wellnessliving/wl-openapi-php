@@ -43,16 +43,14 @@ class PaymentGetRequest
     public ?bool $is_walk_in = null;
 
     /**
-     * The business key. Currently used only with
-     * [PaymentApi::$k_session_pass](/Wl/Appointment/Book/Payment/Payment.json) variable.
+     * The business key. Currently used only with {@link \WlSdk\Wl\Appointment\Book\Payment\Payment} variable.
      *
      * @var string|null
      */
     public ?string $k_business = null;
 
     /**
-     * The item key. Depends on [PaymentApi::$id_purchase_item](/Wl/Appointment/Book/Payment/Payment.json)
-     * property.
+     * The item key. Depends on {@link \WlSdk\Wl\Appointment\Book\Payment\Payment} property.
      *
      * @var string|null
      */

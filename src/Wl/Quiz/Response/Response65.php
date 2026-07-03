@@ -37,10 +37,8 @@ class Response65
      * Saves a quiz response with the given element answers.
      *
      * Validates the submitted answers and persists the response record in a transaction. If
-     * [QuizResponseApi::$is_validate_only](/Core/Quiz/QuizResponse.json) is set, only validation runs and no
-     * record is created.
-     * Pass [QuizResponseApi::$is_skip](/Core/Quiz/QuizResponse.json) to bypass validation for pre-confirmed
-     * responses.
+     * QuizResponseApi::$is_validate_only is set, only validation runs and no record is created.
+     * Pass QuizResponseApi::$is_skip to bypass validation for pre-confirmed responses.
      *
      * @return Response65PostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

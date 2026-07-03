@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Reward\Board\BoardList;
 use WlSdk\WlSdkClient;
 
 /**
- * Retrieves all reward boards for business specified in [ListApi::$k_business](/Wl/Reward/Board/BoardList/List.json).
+ * Retrieves all reward boards for business specified in {@link \WlSdk\Wl\Reward\Board\BoardList\ListEndpoint}.
  */
 class ListEndpoint
 {
@@ -18,7 +18,7 @@ class ListEndpoint
     }
 
     /**
-     * Retrieves all reward boards for business specified in [ListApi::$k_business](/Wl/Reward/Board/BoardList/List.json).
+     * Retrieves all reward boards for business specified in {@link \WlSdk\Wl\Reward\Board\BoardList\ListEndpoint}.
      *
      * Returns the list of reward boards available to the given user in the business, including board key and
      * title,

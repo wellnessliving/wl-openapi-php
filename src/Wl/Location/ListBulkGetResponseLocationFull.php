@@ -51,7 +51,7 @@ class ListBulkGetResponseLocationFull
 
     /**
      * The date when the location actuality was last checked. `null` if the location has never been checked.
-     * Set only in [ListBulkApi](/Wl/Location/ListBulk.json), otherwise always `null`.
+     * Set only in {@link \WlSdk\Wl\Location\ListBulk}, otherwise always `null`.
      *
      * @var string|null
      */
@@ -86,8 +86,8 @@ class ListBulkGetResponseLocationFull
     public ?string $html_description_full = null;
 
     /**
-     * A shorter description of the location. A preview of
-     * [ViewApi::$html_description_full](/Wl/Location/View/View.json).
+     * A shorter description of the location. A preview of {@link
+     * \WlSdk\Wl\Location\View\ViewGetResponse::$html_description_full}.
      *
      * @var string|null
      */

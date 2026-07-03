@@ -6,35 +6,36 @@ class ElementGetResponseEvent
 {
     /**
      * List of sessions available for booking.
-     * See [ElementApi::$a_book_available](/Wl/Event/Book/EventView/Element.json).
+     * See {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_book_available}.
      *
      * @var ElementGetResponseEventBookAvailable|null
      */
     public ?ElementGetResponseEventBookAvailable $a_book_available = null;
 
     /**
-     * Image of event. See [ElementApi::$a_class_logo](/Wl/Event/Book/EventView/Element.json).
+     * Image of event. See {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_class_logo}.
      *
      * @var ElementGetResponseEventClassLogo|null
      */
     public ?ElementGetResponseEventClassLogo $a_class_logo = null;
 
     /**
-     * Class tab keys. See [ElementApi::$a_class_tab](/Wl/Event/Book/EventView/Element.json).
+     * Class tab keys. See {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_class_tab}.
      *
      * @var string[]|null
      */
     public ?array $a_class_tab = null;
 
     /**
-     * List of installment plans. See [ElementApi::$a_installment_template](/Wl/Event/Book/EventView/Element.json).
+     * List of installment plans. See {@link
+     * \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_installment_template}.
      *
      * @var ElementGetResponseEventInstallmentTemplate|null
      */
     public ?ElementGetResponseEventInstallmentTemplate $a_installment_template = null;
 
     /**
-     * Schedule of event sessions. See [ElementApi::$a_schedule](/Wl/Event/Book/EventView/Element.json).
+     * Schedule of event sessions. See {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_schedule}.
      *
      * @var ElementGetResponseEventSchedule|null
      */
@@ -48,7 +49,7 @@ class ElementGetResponseEvent
     public ?array $a_shop_category = null;
 
     /**
-     * Photos of staff. See [ElementApi::$a_staff_logo](/Wl/Event/Book/EventView/Element.json).
+     * Photos of staff. See {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_staff_logo}.
      *
      * @var ElementGetResponseEventStaffLogo|null
      */
@@ -160,8 +161,8 @@ class ElementGetResponseEvent
     public ?bool $is_past = null;
 
     /**
-     * `true` [ElementApi::$a_business_policy](/Wl/Event/Book/EventView/Element.json) contains the custom policies
-     * from the event; `false` otherwise.
+     * `true` {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_business_policy} contains the custom
+     * policies from the event; `false` otherwise.
      *
      * @var bool|null
      */

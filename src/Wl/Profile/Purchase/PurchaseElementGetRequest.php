@@ -5,8 +5,7 @@ namespace WlSdk\Wl\Profile\Purchase;
 class PurchaseElementGetRequest
 {
     /**
-     * The business key. Currently used only with
-     * [PurchaseElementApi::$k_session_pass](/Wl/Profile/Purchase/PurchaseElement.json) variable.
+     * The business key. Currently used only with {@link \WlSdk\Wl\Profile\Purchase\PurchaseElement} variable.
      *
      * @var string|null
      */

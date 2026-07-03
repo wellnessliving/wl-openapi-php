@@ -25,14 +25,14 @@ class PromotionPayPauseGetRequest
 
     /**
      * Whether need to get all pause periods for the login promotion.
-     * If `true` then [PromotionPayPauseApi::$a_pay_pause_list](/Wl/Login/Promotion/PromotionPayPause.json) will be
+     * If `true` then {@link \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$a_pay_pause_list} will be
      * returned.
-     * If `false` then information about specified
-     * [PromotionPayPauseApi::$k_promotion_pay_pause](/Wl/Login/Promotion/PromotionPayPause.json) or
-     * currently active pause period will be returned
-     * ([PromotionPayPauseApi::$dt_start](/Wl/Login/Promotion/PromotionPayPause.json),
-     * [PromotionPayPauseApi::$dt_end](/Wl/Login/Promotion/PromotionPayPause.json) and
-     * [PromotionPayPauseApi::$text_note](/Wl/Login/Promotion/PromotionPayPause.json)).
+     * If `false` then information about specified {@link
+     * \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$k_promotion_pay_pause} or
+     * currently active pause period will be returned ({@link
+     * \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$dt_start},
+     * {@link \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$dt_end} and {@link
+     * \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$text_note}).
      *
      * @var bool|null
      */
@@ -52,7 +52,7 @@ class PromotionPayPauseGetRequest
      * `start-cross`
      * status code if a hold is already in place.
      *
-     * Ignored if [PromotionPayPauseApi::$k_promotion_pay_pause](/Wl/Login/Promotion/PromotionPayPause.json) is
+     * Ignored if {@link \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$k_promotion_pay_pause} is
      * provided.
      *
      * `null` if not yet initialized.
@@ -65,8 +65,8 @@ class PromotionPayPauseGetRequest
      * The promotion payment hold key. If this key is used, it will edit an existing hold.
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
      *
-     * `null` if not yet initialized or if the request is based on
-     * [PromotionPayPauseApi::$k_login_promotion](/Wl/Login/Promotion/PromotionPayPause.json).
+     * `null` if not yet initialized or if the request is based on {@link
+     * \WlSdk\Wl\Login\Promotion\PromotionPayPauseGetResponse::$k_login_promotion}.
      *
      * @var string|null
      */

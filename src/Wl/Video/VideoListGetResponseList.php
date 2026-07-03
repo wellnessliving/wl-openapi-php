@@ -196,7 +196,7 @@ class VideoListGetResponseList
 
     /**
      * URL of the video file (HLS stream). `null` if not available.
-     * See [VideoElementApi::$url_video](/Wl/Video/VideoElement.json) for details about the video URL.
+     * See {@link \WlSdk\Wl\Video\VideoElementGetResponse::$url_video} for details about the video URL.
      *
      * @var string|null
      */

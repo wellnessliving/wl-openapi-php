@@ -21,8 +21,8 @@ class VideoElementDeleteRequest
     /**
      * The video key.
      *
-     * *Be careful, when use this property in code, use
-     * [VideoElementApi::$k_video_binary](/Wl/Video/VideoElement.json) instead.*
+     * *Be careful, when use this property in code, use {@link
+     * \WlSdk\Wl\Video\VideoElementGetResponse::$k_video_binary} instead.*
      * In this property can be key in next format:
      * * [Deprecated] String key in old format.
      * * String key in new format.

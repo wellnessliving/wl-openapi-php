@@ -16,8 +16,7 @@ namespace WlSdk\Wl\Book\Process;
  *
  *   Adding a step to the queue is done on the client side (in JS).
  *
- *   The list of steps that can be displayed on
- * [ProcessSpaSid::DETAIL_COLLECTION](#/components/schemas/Wl.Book.Process.ProcessSpaSid).
+ *   The list of steps that can be displayed on {@link \WlSdk\Wl\Book\Process\ProcessSpaSid}.
  *
  *   Designed for Client Web View.
  * - 8 (`DOCUMENT`): Step "Documents".
@@ -29,7 +28,7 @@ namespace WlSdk\Wl\Book\Process;
  *   Adding a step to the queue is done on the client side (in JS).
  *
  *   The list of steps that can be displayed on:
- *    * [ProcessSpaSid::QUIZ](#/components/schemas/Wl.Book.Process.ProcessSpaSid)
+ *    * {@link \WlSdk\Wl\Book\Process\ProcessSpaSid}
  *    * Purchase options contract
  *
  *   Designed for Client Web View.
@@ -40,8 +39,8 @@ namespace WlSdk\Wl\Book\Process;
  * - 2 (`INFO`): Information about the class.
  *
  *   In the SPA app, this step combines the following steps:
- *   * [ProcessSpaSid::FREQUENCY](#/components/schemas/Wl.Book.Process.ProcessSpaSid)
- *   * [ProcessSpaSid::SESSION](#/components/schemas/Wl.Book.Process.ProcessSpaSid)
+ *   * {@link \WlSdk\Wl\Book\Process\ProcessSpaSid}
+ *   * {@link \WlSdk\Wl\Book\Process\ProcessSpaSid}
  * - 4 (`INSTALLMENT`): Installment selection.
  * - 1 (`PASSPORT`): Sign in, Sign up, fill in all necessary account data.
  * - 5 (`PAYMENT`): Card data and the booking confirmation.

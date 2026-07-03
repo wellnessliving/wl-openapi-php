@@ -3,8 +3,7 @@
 namespace WlSdk\Wl\Business\Account\Subscription\Sms;
 
 /**
- * List of possible plans for
- * [SmsSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
+ * List of possible plans for {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} subscription.
  *
  * Values:
  * - 5 (`CENTER_1000`): 1000 Messages

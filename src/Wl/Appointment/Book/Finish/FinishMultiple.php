@@ -20,12 +20,11 @@ class FinishMultiple
     /**
      * Completes the appointment booking for one or more providers, optionally creating a new client.
      *
-     * Accepts booking details for one or more providers in
-     * [FinishMultipleApi::$a_book_data](/Wl/Appointment/Book/Finish/FinishMultiple.json),
+     * Accepts booking details for one or more providers in {@link
+     * \WlSdk\Wl\Appointment\Book\Finish\FinishMultiple},
      *  processes payment using the selected Purchase Option, creates appointment records, and sends
      *  booking confirmation notifications. A new client account can be created by supplying user
-     *  details in [FinishMultipleApi::$a_user](/Wl/Appointment/Book/Finish/FinishMultiple.json) when no UID is
-     * provided.
+     *  details in {@link \WlSdk\Wl\Appointment\Book\Finish\FinishMultiple} when no UID is provided.
      *
      * @return FinishMultiplePostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

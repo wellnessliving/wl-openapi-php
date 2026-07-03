@@ -74,8 +74,8 @@ class ViewGetResponse
     public ?string $html_description_full = null;
 
     /**
-     * A shorter description of the location. A preview of
-     * [ViewApi::$html_description_full](/Wl/Location/View/View.json).
+     * A shorter description of the location. A preview of {@link
+     * \WlSdk\Wl\Location\View\ViewGetResponse::$html_description_full}.
      *
      * @var string|null
      */

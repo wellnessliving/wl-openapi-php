@@ -22,8 +22,8 @@ class PromotionIndexGetResponsePromotionComponent
      * The primary key of the component in the related table. This depends on the type of the component.
      * The key of the event for {@link \WlSdk\RsPurchaseItemSid}, the key of the Purchase Option for the
      * {@link \WlSdk\RsPurchaseItemSid}, the key of the product option for the {@link \WlSdk\RsPurchaseItemSid}.
-     * Full information about events can be taken from the [EventListApi](/Wl/Event/EventList.json). Purchase
-     * Options from the [PromotionIndexApi](/Wl/Promotion/Index/PromotionIndex.json).
+     * Full information about events can be taken from the {@link \WlSdk\Wl\Event\EventList}. Purchase Options from
+     * the {@link \WlSdk\Wl\Promotion\Index\PromotionIndex}.
      * Full information about products are not available at this moment though API.
      *
      * @var string|null

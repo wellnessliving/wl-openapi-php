@@ -95,8 +95,8 @@ class AssetListGetRequest
     /**
      * Timezone of date and time of asset booking.
      *
-     * Empty if [AssetListApi::$dtl_date](/Wl/Appointment/Book/Asset/AssetList.json) not set or client can't change
-     * in which timezone dates should be shown.
+     * Empty if {@link \WlSdk\Wl\Appointment\Book\Asset\AssetList} not set or client can't change in which timezone
+     * dates should be shown.
      *
      * @var string|null
      */

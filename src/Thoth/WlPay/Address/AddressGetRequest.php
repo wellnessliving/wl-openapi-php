@@ -23,8 +23,7 @@ class AddressGetRequest
 
     /**
      * The primary key of a payment owner.
-     * This could be the business of the user depending on a
-     * [AddressApi::$id_pay_owner](/Thoth/WlPay/Address/Address.json) value.
+     * This could be the business of the user depending on a {@link \WlSdk\Thoth\WlPay\Address\Address} value.
      *
      * @var string|null
      */
