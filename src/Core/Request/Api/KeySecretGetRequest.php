@@ -19,7 +19,7 @@ class KeySecretGetRequest
     public ?string $s_key_session = null;
 
     /**
-     * Alias of `url_origin`.
+     * Alias of {@link \WlSdk\Core\Request\Api\KeySecret}.
      *
      * @var string|null
      */

@@ -28,7 +28,7 @@ class GuestProfileGetRequest
 
     /**
      * Key of service to book.
-     * Depending on `id_service` value:,
+     * Depending on {@link \WlSdk\Wl\Book\Process\Guest\GuestProfile} value:,
      * <ul>
      *     <li>{@link \WlSdk\Wl\Service\ServiceSid} - class key. </li>
      *     <li>{@link \WlSdk\Wl\Service\ServiceSid} - service key.</li>

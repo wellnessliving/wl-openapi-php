@@ -15,7 +15,7 @@ class StoreGroupPostResponsePurchaseItemDistribute
 
     /**
      * The number of sessions that this item can cover.
-     *   The same as in `a_purchase_item_check`.
+     *   The same as in {@link \WlSdk\Wl\Book\Process\Store\StoreGroup}.
      *   `0` if not applicable.
      *
      * @var int|null
@@ -24,7 +24,7 @@ class StoreGroupPostResponsePurchaseItemDistribute
 
     /**
      * Login promotion key.
-     *   The same as in `a_login_promotion`.
+     *   The same as in {@link \WlSdk\Wl\Book\Process\Store\StoreGroup}.
      *   `null` if not applicable.
      *
      * @var string|null
@@ -32,8 +32,16 @@ class StoreGroupPostResponsePurchaseItemDistribute
     public ?string $k_login_promotion = null;
 
     /**
+     * Host login promotion key that grants the guest pass.
+     *   `null` if not applicable.
+     *
+     * @var string|null
+     */
+    public ?string $k_login_promotion_guest_pass = null;
+
+    /**
      * Session pass key.
-     *   The same as in `a_session_pass`.
+     *   The same as in {@link \WlSdk\Wl\Book\Process\Store\StoreGroup}.
      *   `null` if not applicable.
      *
      * @var string|null
@@ -42,7 +50,7 @@ class StoreGroupPostResponsePurchaseItemDistribute
 
     /**
      * The unique identifier of the purchase item.
-     *   The same as in `a_purchase_item_check`.
+     *   The same as in {@link \WlSdk\Wl\Book\Process\Store\StoreGroup}.
      *   `null` if not applicable.
      *
      * @var string|null
@@ -68,6 +76,7 @@ class StoreGroupPostResponsePurchaseItemDistribute
         $this->a_owner = isset($data['a_owner']) ? (array)$data['a_owner'] : null;
         $this->i_session = isset($data['i_session']) ? (int)$data['i_session'] : null;
         $this->k_login_promotion = isset($data['k_login_promotion']) ? (string)$data['k_login_promotion'] : null;
+        $this->k_login_promotion_guest_pass = isset($data['k_login_promotion_guest_pass']) ? (string)$data['k_login_promotion_guest_pass'] : null;
         $this->k_session_pass = isset($data['k_session_pass']) ? (string)$data['k_session_pass'] : null;
         $this->s_value = isset($data['s_value']) ? (string)$data['s_value'] : null;
         $this->text_error = isset($data['text_error']) ? (string)$data['text_error'] : null;

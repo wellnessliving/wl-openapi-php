@@ -23,9 +23,9 @@ class AssetListGetResponse
      * class or event.
      *
      * For example, if you want to check if the 10th asset with the key of '15' is reserved,
-     * you can check if `a_resource_busy[&#039;15&#039;][&#039;10&#039;]` is free.
+     * you can check if `a_resource_busy['15']['10']` is free.
      *
-     * If you're rebooking an appointment, check the value of `a_resource_busy[&#039;15&#039;][&#039;10&#039;]`.
+     * If you're rebooking an appointment, check the value of `a_resource_busy['15']['10']`.
      * If it's equal to the key of your current appointment booking, you can assume the asset is available.
      *
      * @var string|bool[][]|null

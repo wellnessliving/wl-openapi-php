@@ -105,7 +105,7 @@ class ClassSessionSearchGetRequest
     public ?float $f_radius = null;
 
     /**
-     * Maximum price to search by (inclusive). Decimal string in dollars (e.g. `&quot;100.00&quot;`).
+     * Maximum price to search by (inclusive). Decimal string in dollars (e.g. `"100.00"`).
      *
      * `null` to not limit by maximum price.
      *
@@ -114,7 +114,7 @@ class ClassSessionSearchGetRequest
     public ?string $m_price_max = null;
 
     /**
-     * Minimum price to search by (inclusive). Decimal string in dollars (e.g. `&quot;0.00&quot;`).
+     * Minimum price to search by (inclusive). Decimal string in dollars (e.g. `"0.00"`).
      *
      * `null` to not limit by minimum price.
      *

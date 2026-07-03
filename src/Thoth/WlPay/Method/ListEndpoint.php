@@ -20,6 +20,10 @@ class ListEndpoint
     /**
      * Returns list of active payment methods data.
      *
+     * Returns the system-level payment methods enabled for the business combined with any custom payment methods
+     * configured for the business and accessible to the given user based on their role. When `$is_active` is
+     * `false`, inactive custom methods are included as well.
+     *
      * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

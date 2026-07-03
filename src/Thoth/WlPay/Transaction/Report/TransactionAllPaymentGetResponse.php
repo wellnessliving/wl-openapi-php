@@ -11,7 +11,7 @@ class TransactionAllPaymentGetResponse
      * A list of fields in the report.
      *
      * This array is effectively a title row for the table returned in {@link
-     * \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPayment}.
+     * \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPaymentGetResponse::$a_row}.
      *
      * @var string[]|null
      */
@@ -20,12 +20,14 @@ class TransactionAllPaymentGetResponse
     /**
      * The report data.
      *
-     * This is an indexed array in which one row is also an indexed array.
+     * This is an indexed array where each element is also an indexed array representing one report row.
+     * Column positions in each row correspond to the field names in {@link
+     * \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPaymentGetResponse::$a_field}.
      *
-     * Indexes of the columns correspond to the columns in {@link
-     * \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPayment}.
+     * Known columns (use {@link \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPaymentGetResponse::$a_field}
+     * to resolve their positional indexes):
      *
-     * @var array|null
+     * @var TransactionAllPaymentGetResponseRow[]|null
      */
     public ?array $a_row = null;
 
@@ -94,7 +96,7 @@ class TransactionAllPaymentGetResponse
     public function __construct(array $data)
     {
         $this->a_field = isset($data['a_field']) ? (array)$data['a_field'] : null;
-        $this->a_row = isset($data['a_row']) ? (array)$data['a_row'] : null;
+        $this->a_row = isset($data['a_row']) ? array_map(static fn ($item) => new TransactionAllPaymentGetResponseRow((array)$item), (array)$data['a_row']) : null;
         $this->a_warning = isset($data['a_warning']) ? (array)$data['a_warning'] : null;
         $this->dtu_complete = isset($data['dtu_complete']) ? (string)$data['dtu_complete'] : null;
         $this->dtu_queue = isset($data['dtu_queue']) ? (string)$data['dtu_queue'] : null;

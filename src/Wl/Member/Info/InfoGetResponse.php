@@ -9,7 +9,7 @@ class InfoGetResponse
 {
     /**
      * Additional member data or `null` if any data can be shown.
-     * Will be filled if `is_full` flag is set.
+     * Will be filled if {@link \WlSdk\Wl\Member\Info\Info} flag is set.
      *
      * @var InfoGetResponseInfo|null
      */
@@ -17,7 +17,7 @@ class InfoGetResponse
 
     /**
      * List of users data.
-     * Keys - users primary keys. Values - users data `_get()` for details.
+     * Keys - users primary keys. Values - users data.
      * Keys refer to clients' primary keys, and values refer to clients' data.
      * If `null`, data for a single client is being requested.
      *
@@ -48,7 +48,8 @@ class InfoGetResponse
 
     /**
      * If `true`, the client is a traveler. Otherwise, this will be `false`.
-     * This will be `null` in cases when the client is a walk-in. Or when `is_full` is `false`.
+     * This will be `null` in cases when the client is a walk-in. Or when {@link \WlSdk\Wl\Member\Info\Info} is
+     * `false`.
      *
      * @var bool|null
      */

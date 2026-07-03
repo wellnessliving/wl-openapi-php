@@ -50,7 +50,7 @@ class ElementGetResponse
     public ?string $html_message = null;
 
     /**
-     * Total amount of account credits user got for `k_login_activity`.
+     * Total amount of account credits user got for {@link \WlSdk\Wl\Profile\Activity\Element}.
      *
      * @var int|null
      */

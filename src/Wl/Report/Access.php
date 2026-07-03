@@ -20,8 +20,8 @@ class Access
     /**
      * Checks access to given report.
      *
-     * Accepts either `id_report` (first-generation reports) or `cid_report` (second-generation reports), but not
-     * both,
+     * Accepts either {@link \WlSdk\Wl\Report\Access} (first-generation reports) or {@link \WlSdk\Wl\Report\Access}
+     * (second-generation reports), but not both,
      * and returns `has_access` indicating whether the current user may view the report in the given business.
      *
      * @return AccessGetResponse

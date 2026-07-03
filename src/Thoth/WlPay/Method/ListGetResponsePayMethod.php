@@ -13,7 +13,7 @@ class ListGetResponsePayMethod
     public ?int $id_pay_method = null;
 
     /**
-     * Payment method key. Primary key int the MethodSql table.
+     * Payment method key.
      * May be `null` if it is a system payment method.
      *
      * @var string|null

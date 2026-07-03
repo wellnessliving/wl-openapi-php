@@ -23,7 +23,7 @@ class QuizElement
      * Loads the quiz configuration, element list, and access log for the specified business and user context,
      * applying franchise and privilege checks before returning the result.
      *
-     * @deprecated Use {@link Wl\Quiz\QuizElement72Api} instead.
+     * @deprecated Use {@link \Wl\Quiz\QuizElement72Api} instead.
      *
      * @return QuizElementGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -40,7 +40,7 @@ class QuizElement
      * When no quiz key is provided, a new quiz is created; when a key is given, the existing quiz
      * is updated in place. Element list and configuration are saved in a single transaction.
      *
-     * @deprecated Use {@link Wl\Quiz\QuizElement72Api} instead.
+     * @deprecated Use {@link \Wl\Quiz\QuizElement72Api} instead.
      *
      * @return QuizElementPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -57,7 +57,7 @@ class QuizElement
      * Toggles whether the quiz is available for respondents to fill out. Inactive quizzes are hidden
      * from the booking and profile flows but their existing responses are preserved.
      *
-     * @deprecated Use {@link Wl\Quiz\QuizElement72Api} instead.
+     * @deprecated Use {@link \Wl\Quiz\QuizElement72Api} instead.
      *
      * @return QuizElementPutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -73,7 +73,7 @@ class QuizElement
      *
      * Permanently removes the quiz and all associated elements.
      *
-     * @deprecated Use {@link Wl\Quiz\QuizElement72Api} instead.
+     * @deprecated Use {@link \Wl\Quiz\QuizElement72Api} instead.
      *
      * @return QuizElementDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

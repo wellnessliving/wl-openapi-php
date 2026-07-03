@@ -35,17 +35,17 @@ class LoginPostResponseLogin
 
     /**
      * Client`s mail.
-     *   &lt;/dd&gt;
-     *
-     *   &lt;dt&gt;
-     * string &lt;var&gt;text_mail_staff&lt;/var&gt;
-     *   &lt;/dt&gt;
-     *   &lt;dd&gt;
-     * Staff`s mail.
      *
      * @var string|null
      */
     public ?string $text_mail_client = null;
+
+    /**
+     * Staff`s mail.
+     *
+     * @var string|null
+     */
+    public ?string $text_mail_staff = null;
 
     /**
      * Staff's first name.
@@ -98,6 +98,7 @@ class LoginPostResponseLogin
         $this->s_first_name = isset($data['s_first_name']) ? (string)$data['s_first_name'] : null;
         $this->s_last_name = isset($data['s_last_name']) ? (string)$data['s_last_name'] : null;
         $this->text_mail_client = isset($data['text_mail_client']) ? (string)$data['text_mail_client'] : null;
+        $this->text_mail_staff = isset($data['text_mail_staff']) ? (string)$data['text_mail_staff'] : null;
         $this->text_name_first_staff = isset($data['text_name_first_staff']) ? (string)$data['text_name_first_staff'] : null;
         $this->text_name_full_client = isset($data['text_name_full_client']) ? (string)$data['text_name_full_client'] : null;
         $this->text_name_full_staff = isset($data['text_name_full_staff']) ? (string)$data['text_name_full_staff'] : null;

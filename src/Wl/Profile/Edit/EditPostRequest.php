@@ -144,7 +144,7 @@ class EditPostRequest
     public ?array $a_intents = null;
 
     /**
-     * A copy of the `a_change`.
+     * A copy of the {@link \WlSdk\Wl\Profile\Edit\Edit}.
      * This is used for POST requests when creating a new user.
      *
      * @var array|null
@@ -177,7 +177,7 @@ class EditPostRequest
      * `true` - user agreed to receive marketing SMS;
      * `false` - otherwise.
      *
-     * Only matters if `is_sms_subscription_presented` is `true`.
+     * Only matters if {@link \WlSdk\Wl\Profile\Edit\Edit} is `true`.
      *
      * @var bool|null
      */
@@ -196,7 +196,7 @@ class EditPostRequest
      * `true` - user agreed to receive transactional SMS;
      * `false` - otherwise.
      *
-     * Only matters if `is_sms_subscription_presented` is `true`.
+     * Only matters if {@link \WlSdk\Wl\Profile\Edit\Edit} is `true`.
      *
      * @var bool|null
      */

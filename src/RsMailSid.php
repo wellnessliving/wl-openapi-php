@@ -66,8 +66,8 @@ namespace WlSdk;
  *   <ol>
  *     <li>Enter a business backend.</li>
  *     <li>Go to calendar ("Schedule" button in the main toolbar).</li>
- *     <li>Find a class in the future.&lt;br /&gt;
- *       Click a number in the "Clients" column in the calendar.&lt;br /&gt;
+ *     <li>Find a class in the future.<br />
+ *       Click a number in the "Clients" column in the calendar.<br />
  *       Attendance list form will appear.</li>
  *     <li>Click "Add client into class" button in the toolbar of the form.</li>
  *     <li>Type in a login name of a client you want to send this e-mail to. Click "Search", then click "Add".</li>
@@ -103,12 +103,12 @@ namespace WlSdk;
  *     <li>Process tasks.</li>
  *     <li>Process cron.</li>
  *     <li>The message should now be sent to the user you selected.</li>
- *   &lt;/o
+ *   </ol>
  * - 58 (`BOOK_CANCEL_FREE_ENROLLMENT`): Enrollment Cancelled by Client - Early.
  * - 4 (`BOOK_CANCEL_PENALTY_CLASS`): Class Cancelled By Client - Late.
  *
  *   Sent after a class reservation is cancelled by a client late. Cancellations are considered to be late if they are
- *   made after the late cancel window that you’ve set in your Business Policy setting
+ *   made after the late cancel window that you’ve set in your Business Policy settings.
  * - 59 (`BOOK_CANCEL_PENALTY_ENROLLMENT`): Enrollment Cancelled By Client - Late.
  * - 48 (`BOOK_CANCEL_STAFF`): Class Booking Cancellation Notification - Staff.
  *

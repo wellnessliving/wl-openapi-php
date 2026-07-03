@@ -26,7 +26,7 @@ class MemberInfoGetResponse
 
     /**
      * List of users data.
-     * Keys - users primary keys. Values - users data `_get()` for details.
+     * Keys - users primary keys. Values - users data.
      * Keys refer to clients' primary keys, and values refer to clients' data.
      * If `null`, data for a single client is being requested.
      *
@@ -57,7 +57,8 @@ class MemberInfoGetResponse
 
     /**
      * If `true`, the client is a traveler. Otherwise, this will be `false`.
-     * This will be `null` in cases when the client is a walk-in. Or when `is_full` is `false`.
+     * This will be `null` in cases when the client is a walk-in. Or when {@link
+     * \WlSdk\Wl\Reception\Application\MemberInfo} is `false`.
      *
      * @var bool|null
      */

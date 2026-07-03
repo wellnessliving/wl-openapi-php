@@ -48,7 +48,7 @@ class ClassViewPostRequest
 
     /**
      * A list of sessions to get information for.
-     * A serialized array. See `a_session_request` for the array structure.
+     * A serialized array. See {@link \WlSdk\Wl\Schedule\ClassView\ClassView} for the array structure.
      * Serialization and sending by POST is necessary to send big lists.
      *
      * @var string|null

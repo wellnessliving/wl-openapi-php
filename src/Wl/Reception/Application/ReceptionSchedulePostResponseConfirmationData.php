@@ -56,9 +56,9 @@ class ReceptionSchedulePostResponseConfirmationData
     /**
      * Determines whether to show the client's total workouts attended on the confirmation screen.
      *
-     * @var string|null
+     * @var bool|null
      */
-    public ?string $show_visits = null;
+    public ?bool $show_visits = null;
 
     public function __construct(array $data)
     {
@@ -69,6 +69,6 @@ class ReceptionSchedulePostResponseConfirmationData
         $this->s_expire = isset($data['s_expire']) ? (string)$data['s_expire'] : null;
         $this->s_payment = isset($data['s_payment']) ? (string)$data['s_payment'] : null;
         $this->s_renew = isset($data['s_renew']) ? (string)$data['s_renew'] : null;
-        $this->show_visits = isset($data['show_visits']) ? (string)$data['show_visits'] : null;
+        $this->show_visits = isset($data['show_visits']) ? (bool)$data['show_visits'] : null;
     }
 }

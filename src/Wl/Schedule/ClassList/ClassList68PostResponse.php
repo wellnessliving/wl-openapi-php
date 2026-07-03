@@ -14,7 +14,7 @@ class ClassList68PostResponse
      * Each key is a date string in `YYYY-MM-DD` format (local date in the business time zone).
      * Each value is an empty array reserved for future use.
      *
-     * @var string[]|null
+     * @var array[]|null
      */
     public ?array $a_calendar = null;
 
@@ -25,10 +25,10 @@ class ClassList68PostResponse
      *
      *
      * For generating this filter, all filters are applied except:
-     * - `a_class`;
-     * - `a_event`;
-     * - `show_class`;
-     * - `show_event`.
+     * - {@link \WlSdk\Wl\Schedule\ClassList\ClassList68};
+     * - {@link \WlSdk\Wl\Schedule\ClassList\ClassList68};
+     * - {@link \WlSdk\Wl\Schedule\ClassList\ClassList68};
+     * - {@link \WlSdk\Wl\Schedule\ClassList\ClassList68}.
      *
      * @var ClassList68PostResponseQuick|null
      */
@@ -53,7 +53,7 @@ class ClassList68PostResponse
 
     /**
      * If `true`, there exists at least one virtual service by a specified
-     * `k_business` and `k_class_tab`,
+     * {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} and {@link \WlSdk\Wl\Schedule\ClassList\ClassList68},
      * Otherwise, this will be `false`.
      *
      * @var bool|null

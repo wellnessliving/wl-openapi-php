@@ -13,7 +13,7 @@ class PurchaseGetResponseLoginPromotion
 
     /**
      * List of UIDs of users who share this promotion.
-     * List of those passed in the `a_login_promotion_group` array.
+     * List of those passed in the {@link \WlSdk\Wl\Book\Process\Purchase\Purchase} array.
      *
      * @var string[]|null
      */

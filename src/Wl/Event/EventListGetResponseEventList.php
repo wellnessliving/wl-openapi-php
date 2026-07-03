@@ -5,322 +5,367 @@ namespace WlSdk\Wl\Event;
 class EventListGetResponseEventList
 {
     /**
-     * No description.
+     * Information about age restrictions for this event, has the following structure:
      *
      * @var EventListGetResponseEventListAgeRestriction|null
      */
     public ?EventListGetResponseEventListAgeRestriction $a_age_restriction = null;
 
     /**
-     * No description.
+     * List of book now tags connected to this event.
      *
      * @var string[]|null
      */
     public ?array $a_class_tab = null;
 
     /**
-     * No description.
+     * Data about logo of the event.
      *
      * @var array|null
      */
     public $a_logo = null;
 
     /**
-     * No description.
+     * List of scheduled sessions of the event.
      *
      * @var EventListGetResponseEventListSchedule[]|null
      */
     public ?array $a_schedule = null;
 
     /**
-     * No description.
+     * List of search tags connected to this event.
      *
      * @var EventListGetResponseEventListSearchTag[]|null
      */
     public ?array $a_search_tag = null;
 
     /**
-     * No description.
+     * Whether event can be booked or not.
+     * * `true` - there are no restrictions to book this event in general.
+     * * `false` - for some reason event cannot be booked.
+     *
+     * The reason can be found in the following fields:
+     * * `html_reason`
+     * * `id_reason`
+     * * `sid_reason`
+     *
+     * This field can be used instead of `is_bookable`
+     *  and covers a significant number of checks under its value.
      *
      * @var bool|null
      */
     public ?bool $can_book = null;
 
     /**
-     * No description.
+     * Whether current user can cancel already booked event.
      *
      * @var bool|null
      */
     public ?bool $can_cancel = null;
 
     /**
-     * No description.
+     * End date, when early bird price ends in `MySql` format.
      *
      * @var string|null
      */
     public ?string $dl_early = null;
 
     /**
-     * No description.
+     * End date of the scheduled session in `MySql` format.
      *
      * @var string|null
      */
     public ?string $dl_end = null;
 
     /**
-     * No description.
+     * Local date of the closest session of the event.
      *
      * @var string|null
      */
     public ?string $dl_session = null;
 
     /**
-     * No description.
+     * Start date of the scheduled sessions in `MySql` format.
      *
      * @var string|null
      */
     public ?string $dl_start = null;
 
     /**
-     * No description.
+     * Date of the closest session of the event.
      *
      * @var string|null
      */
     public ?string $dtu_session = null;
 
     /**
-     * No description.
+     * Reason why session can not be booked.
+     * Not empty only if `is_bookable` is `false`.
      *
      * @var string|null
      */
     public ?string $html_reason = null;
 
     /**
-     * No description.
+     * Number of all sessions in the event.
      *
      * @var int|null
      */
     public ?int $i_session_all = null;
 
     /**
-     * No description.
+     * Number of future sessions in the event.
      *
      * @var int|null
      */
     public ?int $i_session_future = null;
 
     /**
-     * No description.
+     * Number of past sessions in the event.
      *
      * @var int|null
      */
     public ?int $i_session_past = null;
 
     /**
-     * No description.
+     * ID of deny reason.
      *
      * @var int|null
      */
     public ?int $id_reason = null;
 
     /**
-     * No description.
+     * Whether booking of this event restricted because of age rules for {@link \WlSdk\Wl\Event\EventList}.
      *
      * @var bool|null
      */
     public ?bool $is_age_restrict = null;
 
     /**
-     * No description.
+     * `true` if this event booking is restricted and restricted because of client's age only.
+     * `false` otherwise.
      *
      * @var bool|null
      */
     public ?bool $is_age_restrict_only = null;
 
     /**
-     * No description.
+     * Whether the event is available for booking or not.
+     * The flag refers to the Available/Unavailable filter.
+     *
+     * `null` if the field is not initialized.
      *
      * @var bool|null
      */
     public ?bool $is_available = null;
 
     /**
-     * No description.
+     * Whether single sessions of the event can be booked.
+     *
+     * Depending on current backend/fronted status.
+     *
+     *
+     * `true` - booking single sessions are not allowed.
+     * `false` - booking single sessions are allowed.
      *
      * @var bool|null
      */
     public ?bool $is_block = null;
 
     /**
-     * No description.
+     * Allow clients to book on behalf of a guest.
+     *
+     * `true` if clients can book on behalf of a guest.
+     * `false` otherwise.
      *
      * @var bool|null
      */
     public ?bool $is_book_for_guest = null;
 
     /**
-     * No description.
+     * Whether event is bookable.
+     *
+     * * `true` - there are no restrictions to book this event in general.
+     * * `false` - for some reason event cannot be booked.
+     *
+     * <b>Attention!!!</b>
+     *
+     * Historically, the value of this field may not cover all expected checks,
+     *  and may be confusing to someone.
+     *
+     * It is properly used in combination with a number of other flags.
+     *
+     * If you need a flag that covers most of the checks please
+     *  use `can_book` field.
      *
      * @var bool|null
      */
     public ?bool $is_bookable = null;
 
     /**
-     * No description.
+     * Whether event is already booked.
      *
      * @var bool|null
      */
     public ?bool $is_booked = null;
 
     /**
-     * No description.
+     * Whether booking of the event is closed already.
+     * Means that in general it is bookable but currently booking is closed.
      *
      * @var bool|null
      */
     public ?bool $is_closed = null;
 
     /**
-     * No description.
+     * Whether event is full already.
      *
      * @var bool|null
      */
     public ?bool $is_full = null;
 
     /**
-     * No description.
+     * `true` if this class can be booked by any client; `false` otherwise.
      *
      * @var bool|null
      */
     public ?bool $is_online = null;
 
     /**
-     * No description.
+     * `true` means to show class only for clients who can book online,
+     * `false` means to show class for all clients.
      *
      * @var bool|null
      */
     public ?bool $is_online_private = null;
 
     /**
-     * No description.
+     * Whether event sessions can be booked after event has started.
      *
      * @var bool|null
      */
     public ?bool $is_open = null;
 
     /**
-     * No description.
+     * Whether clients of the business can pay for the event with purchase option only.
+     *
+     * `true` if event can be paid with purchase option only.
+     * `false` if full event purchase or single session purchase are allowed.
      *
      * @var bool|null
      */
     public ?bool $is_promotion_only = null;
 
     /**
-     * No description.
+     * Whether event sessions can be booked partially.
      *
      * @var bool|null
      */
     public ?bool $is_prorate = null;
 
     /**
-     * No description.
+     * Whether class/event can be paid with single session.
      *
      * @var bool|null
      */
     public ?bool $is_single_buy = null;
 
     /**
-     * No description.
+     * Whether event is virtual.
      *
      * @var bool|null
      */
     public ?bool $is_virtual = null;
 
     /**
-     * No description.
+     * Class key.
      *
      * @var string|null
      */
     public ?string $k_class = null;
 
     /**
-     * No description.
+     * Class period key of the closest session of the event.
      *
      * @var string|null
      */
     public ?string $k_class_period = null;
 
     /**
-     * No description.
+     * Key of enrollment block that corresponds to current row.
      *
      * @var string|null
      */
     public ?string $k_enrollment_block = null;
 
     /**
-     * No description.
+     * Location key of the closest session of the event.
      *
      * @var string|null
      */
     public ?string $k_location = null;
 
     /**
-     * No description.
+     * Maximum price per session in the event.
      *
      * @var string|null
      */
     public ?string $m_price_max = null;
 
     /**
-     * No description.
+     * Minimum price per session in the event.
      *
      * @var string|null
      */
     public ?string $m_price_min = null;
 
     /**
-     * No description.
+     * Price of the entire event.
      *
      * @var string|null
      */
     public ?string $m_price_total = null;
 
     /**
-     * No description.
+     * Early bird price of the entire event.
      *
      * @var string|null
      */
     public ?string $m_price_total_early = null;
 
     /**
-     * No description.
+     * Code of `html_reason`. Is used for testing purposes.
+     * Not empty only if `is_bookable` is `false`.
      *
      * @var string|null
      */
     public ?string $sid_reason = null;
 
     /**
-     * No description.
+     * Text message of the restriction based on age rules.
      *
      * @var bool|null
      */
     public ?bool $text_age_restrict = null;
 
     /**
-     * No description.
+     * Title of the event.
      *
      * @var string|null
      */
     public ?string $text_title = null;
 
     /**
-     * No description.
+     * Link to the start of the booking wizard to book the closed session from this event or the entire event.
+     *
+     * Can be `null` if there is no available for booking sessions.
      *
      * @var string|null
      */
     public ?string $url_book = null;
 
     /**
-     * No description.
+     * Description of the event.
      *
      * @var string|null
      */

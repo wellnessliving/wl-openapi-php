@@ -5,8 +5,8 @@ namespace WlSdk\Wl\Schedule\ScheduleList\StaffApp;
 use WlSdk\WlSdkClient;
 
 /**
- * Gets schedule of business `k_business` for day
- * `dt_date`.
+ * Gets schedule of business {@link \WlSdk\Wl\Schedule\ScheduleList\StaffApp\ScheduleList} for day
+ * {@link \WlSdk\Wl\Schedule\ScheduleList\StaffApp\ScheduleList}.
  */
 class ScheduleList
 {
@@ -19,8 +19,8 @@ class ScheduleList
     }
 
     /**
-     * Gets schedule of business `k_business` for day
-`dt_date`.
+     * Gets schedule of business {@link \WlSdk\Wl\Schedule\ScheduleList\StaffApp\ScheduleList} for day
+{@link \WlSdk\Wl\Schedule\ScheduleList\StaffApp\ScheduleList}.
      *
      * Returns all classes and appointments scheduled for the given business on the specified date,
      * sorted chronologically. Supports both single-day and date-range modes, and includes full

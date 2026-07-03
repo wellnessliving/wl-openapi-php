@@ -18,8 +18,9 @@ class LoginPostRequest
      * * All possible links must be registered in the Microsoft application used for authorization.
      * * WARNING: Do not use this link for a direct redirect. This will present a vulnerability.
      *
-     * * A `url_login` link will be generated along with this redirect URI.
-     * * When checking the received `s_code` from Microsoft.
+     * * A {@link \WlSdk\Social\Microsoft\LoginGetResponse::$url_login} link will be generated along with this
+     * redirect URI.
+     * * When checking the received {@link \WlSdk\Social\Microsoft\Login} from Microsoft.
      * The link must be sent along with it to the `post()` method.
      *
      * @var string|null

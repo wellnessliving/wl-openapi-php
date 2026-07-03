@@ -14,37 +14,37 @@ class AttendanceOverlapGetResponseVisitList
     /**
      * Duration of a service.
      *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $i_duration = null;
+    public ?int $i_duration = null;
 
     /**
      * End datetime of the visit in unix format.
      *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $i_end = null;
+    public ?int $i_end = null;
 
     /**
      * Local end datetime of the visit in unix format.
      *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $i_end_local = null;
+    public ?int $i_end_local = null;
 
     /**
      * Start datetime of the visit in unix format.
      *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $i_start = null;
+    public ?int $i_start = null;
 
     /**
      * Local start datetime of the visit in unix format.
      *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $i_start_local = null;
+    public ?int $i_start_local = null;
 
     /**
      * Appointment key.
@@ -91,11 +91,11 @@ class AttendanceOverlapGetResponseVisitList
     public function __construct(array $data)
     {
         $this->dtu_date = isset($data['dtu_date']) ? (string)$data['dtu_date'] : null;
-        $this->i_duration = isset($data['i_duration']) ? (string)$data['i_duration'] : null;
-        $this->i_end = isset($data['i_end']) ? (string)$data['i_end'] : null;
-        $this->i_end_local = isset($data['i_end_local']) ? (string)$data['i_end_local'] : null;
-        $this->i_start = isset($data['i_start']) ? (string)$data['i_start'] : null;
-        $this->i_start_local = isset($data['i_start_local']) ? (string)$data['i_start_local'] : null;
+        $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
+        $this->i_end = isset($data['i_end']) ? (int)$data['i_end'] : null;
+        $this->i_end_local = isset($data['i_end_local']) ? (int)$data['i_end_local'] : null;
+        $this->i_start = isset($data['i_start']) ? (int)$data['i_start'] : null;
+        $this->i_start_local = isset($data['i_start_local']) ? (int)$data['i_start_local'] : null;
         $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;
         $this->k_class_period = isset($data['k_class_period']) ? (string)$data['k_class_period'] : null;

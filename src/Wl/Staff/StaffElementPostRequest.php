@@ -7,7 +7,7 @@ class StaffElementPostRequest
     /**
      * The key of the staff member resolved and used internally by this API.
      *
-     * This property is populated from `uid_staff` in `post()` and
+     * This property is populated from {@link \WlSdk\Wl\Staff\StaffElement} in `post()` and
      * returned in API result for compatibility.
      *
      * Passing `k_staff` in request payload is not supported and causes an error.
@@ -248,7 +248,7 @@ class StaffElementPostRequest
      * User key of a staff member.
      *
      * This is the supported request identifier for staff update operations.
-     * Value is normalized into `k_staff` in `post()`.
+     * Value is normalized into {@link \WlSdk\Wl\Staff\StaffElementPostResponse::$k_staff} in `post()`.
      *
      * @var string|null
      */

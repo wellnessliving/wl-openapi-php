@@ -7,7 +7,7 @@ class EventListPutRequest
     /**
      * The event business key to retrieve a list of all event sessions in business.
      *
-     * `null` to retrieve events from `k_location`.
+     * `null` to retrieve events from {@link \WlSdk\Wl\Event\EventList}.
      *
      * @var string|null
      */

@@ -6,35 +6,36 @@ class ElementGetResponseEvent
 {
     /**
      * List of sessions available for booking.
-     * See `a_book_available`.
+     * See {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_book_available}.
      *
      * @var ElementGetResponseEventBookAvailable|null
      */
     public ?ElementGetResponseEventBookAvailable $a_book_available = null;
 
     /**
-     * Image of event. See `a_class_logo`.
+     * Image of event. See {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_class_logo}.
      *
      * @var ElementGetResponseEventClassLogo|null
      */
     public ?ElementGetResponseEventClassLogo $a_class_logo = null;
 
     /**
-     * Class tab keys. See `a_class_tab`.
+     * Class tab keys. See {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_class_tab}.
      *
      * @var string[]|null
      */
     public ?array $a_class_tab = null;
 
     /**
-     * List of installment plans. See `a_installment_template`.
+     * List of installment plans. See {@link
+     * \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_installment_template}.
      *
      * @var ElementGetResponseEventInstallmentTemplate|null
      */
     public ?ElementGetResponseEventInstallmentTemplate $a_installment_template = null;
 
     /**
-     * Schedule of event sessions. See `a_schedule`.
+     * Schedule of event sessions. See {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_schedule}.
      *
      * @var ElementGetResponseEventSchedule|null
      */
@@ -48,7 +49,7 @@ class ElementGetResponseEvent
     public ?array $a_shop_category = null;
 
     /**
-     * Photos of staff. See `a_staff_logo`.
+     * Photos of staff. See {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_staff_logo}.
      *
      * @var ElementGetResponseEventStaffLogo|null
      */
@@ -160,7 +161,8 @@ class ElementGetResponseEvent
     public ?bool $is_past = null;
 
     /**
-     * `true` `a_business_policy` contains the custom policies from the event; `false` otherwise.
+     * `true` {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_business_policy} contains the custom
+     * policies from the event; `false` otherwise.
      *
      * @var bool|null
      */

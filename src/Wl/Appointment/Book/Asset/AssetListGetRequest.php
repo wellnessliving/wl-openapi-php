@@ -95,7 +95,8 @@ class AssetListGetRequest
     /**
      * Timezone of date and time of asset booking.
      *
-     * Empty if `dtl_date` not set or client can't change in which timezone dates should be shown.
+     * Empty if {@link \WlSdk\Wl\Appointment\Book\Asset\AssetList} not set or client can't change in which timezone
+     * dates should be shown.
      *
      * @var string|null
      */

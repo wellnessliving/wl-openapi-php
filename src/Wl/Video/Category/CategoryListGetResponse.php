@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Video\Category;
 class CategoryListGetResponse
 {
     /**
-     * The business video library categories as found in `k_business`.
+     * The business video library categories as found in {@link \WlSdk\Wl\Video\Category\CategoryList}.
      *
      * Each element has the following structure:
      *

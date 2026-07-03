@@ -12,23 +12,21 @@ namespace WlSdk\Wl\Report\Generator;
  *
  *   The following transitions are possible:
  *
- *   * `ABORTED` =&gt; `DELETING` when a background task finds that this report is old and should be deleted.
- *     This transition is performed by CleanupCron::cronCleanup().
- *   * `ABORTED` =&gt; `QUEUED` if user clicks to regenerate this report
- *     (inside {@link \WlSdk\Core\Async\CoreAsyncDetachedAbstract}).
+ *   * `ABORTED` => `DELETING` when a background task finds that this report is old and should be deleted.
+ *
+ *   * `ABORTED` => `QUEUED` if user clicks to regenerate this report.
  * - 5 (`ABORTING`): Current operation is being aborted now.
  *
  *   The following transitions are possible:
  *
- *   * `ABORTING` =&gt; `ABORTED` when current operation completes.
+ *   * `ABORTING` => `ABORTED` when current operation completes.
  *     This transition is performed in two places: before the beginning of the actual generation,
  *     and after completion of the generation.
  * - 4 (`DELETING`): This report is being deleted now.
  *
  *   The following transitions are possible:
  *
- *   * `DELETING` =&gt; (report does not exist anymore) when deletion of this report completes.
- *     This transition is performed by CleanupCron::cronCleanup().
+ *   * `DELETING` => (report does not exist anymore) when deletion of this report completes.
  * - 2 (`GENERATING`): This report is being generated now.
  *
  *   This status is set when report is generated from zero point.
@@ -39,32 +37,29 @@ namespace WlSdk\Wl\Report\Generator;
  *
  *   The following transitions are possible:
  *
- *   * `GENERATING` =&gt; `ABORTING` when generation of this report aborted by user.
- *   * `GENERATING` =&gt; `READY` when generation of this report completes.
+ *   * `GENERATING` => `ABORTING` when generation of this report aborted by user.
+ *   * `GENERATING` => `READY` when generation of this report completes.
  *     This transition is performed when generation completes successfully.
  * - 1 (`QUEUED`): Generation of this report is queued.
  *   It will start automatically when generation of other reports completes.
  *
  *   The following transitions are possible:
  *
- *   * `QUEUED` =&gt; (report does not exist anymore) If generation of this report was aborted while no data was
+ *   * `QUEUED` => (report does not exist anymore) If generation of this report was aborted while no data was
  * generated.
- *   * `QUEUED` =&gt; `ABORTED` If generation of this report was aborted while there is data from previous generation
- * of
+ *   * `QUEUED` => `ABORTED` If generation of this report was aborted while there is data from previous generation of
  *      this report.
  *
  *      This transition also occurs if a report stayed in the queue more than the set duration and
  *      there is some data left from the previous generation of this report.
- *   * `QUEUED` =&gt; `GENERATING` when there is a free thread slot to start generation of this report immediately.
- *     This transition is made in {@link \WlSdk\Core\Async\CoreAsyncDetachedAbstract}.
+ *   * `QUEUED` => `GENERATING` when there is a free thread slot to start generation of this report immediately.
  * - 3 (`READY`): Generation of this report is now completed.
  *
  *   The following transitions are possible:
  *
- *   * `READY` =&gt; `DELETING` when a background tasks identifies that this report is old and starts deleting it.
- *     This transition is performed by CleanupCron::cronCleanup().
- *   * `READY` =&gt; `QUEUED` when user clicks to regenerate this report
- *     (inside {@link \WlSdk\Core\Async\CoreAsyncDetachedAbstract}).
+ *   * `READY` => `DELETING` when a background tasks identifies that this report is old and starts deleting it.
+ *
+ *   * `READY` => `QUEUED` when user clicks to regenerate this report
  */
 class ReportGeneratorStatusSid
 {

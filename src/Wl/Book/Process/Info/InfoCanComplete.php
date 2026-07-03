@@ -23,7 +23,7 @@ class InfoCanComplete
      * Copies the GET session selection into the POST field and delegates to `post()`.
      * Prefer the POST variant when the session list may be large, as the query string has length limitations.
      *
-     * @deprecated Use {@link Wl\Book\Process\Info\post()} instead. GET method fails if user is booking more than 50 sessions due to
+     * @deprecated Use {@link post()} instead. GET method fails if user is booking more than 50 sessions due to
  query string length limitation.
      *
      * @return InfoCanCompleteGetResponse

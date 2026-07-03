@@ -6,7 +6,7 @@ use WlSdk\WlSdkClient;
 
 /**
  * Retrieves all reward action categories for business specified in
- * `k_business`.
+ * {@link \WlSdk\Wl\Reward\Action\CategoryList\CategoryList}.
  */
 class CategoryList
 {
@@ -20,7 +20,7 @@ class CategoryList
 
     /**
      * Retrieves all reward action categories for business specified in
-`k_business`.
+{@link \WlSdk\Wl\Reward\Action\CategoryList\CategoryList}.
      *
      * Returns the list of reward action categories including category type ID, database key, and title for the
      * given business.

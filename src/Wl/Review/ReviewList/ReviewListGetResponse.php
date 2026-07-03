@@ -8,8 +8,8 @@ namespace WlSdk\Wl\Review\ReviewList;
 class ReviewListGetResponse
 {
     /**
-     * List of reviews. If passed `i_page` then the result will be full, otherwise in result will be keys:
-     * `k_review`, `uid`.
+     * List of reviews. If passed {@link \WlSdk\Wl\Review\ReviewList\ReviewList} then the result will be full,
+     * otherwise in result will be keys: `k_review`, `uid`.
      *
      * @var ReviewListGetResponseReview[]|null
      */

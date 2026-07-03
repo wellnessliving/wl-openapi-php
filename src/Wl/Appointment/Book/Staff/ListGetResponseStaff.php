@@ -53,9 +53,9 @@ class ListGetResponseStaff
     /**
      * Name of the staff member.
      *
-     * @var int|null
+     * @var string|null
      */
-    public ?int $s_staff = null;
+    public ?string $s_staff = null;
 
     /**
      * UID of the staff member.
@@ -79,7 +79,7 @@ class ListGetResponseStaff
         $this->is_wait_list = isset($data['is_wait_list']) ? (bool)$data['is_wait_list'] : null;
         $this->k_staff = isset($data['k_staff']) ? (string)$data['k_staff'] : null;
         $this->s_position = isset($data['s_position']) ? (string)$data['s_position'] : null;
-        $this->s_staff = isset($data['s_staff']) ? (int)$data['s_staff'] : null;
+        $this->s_staff = isset($data['s_staff']) ? (string)$data['s_staff'] : null;
         $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
         $this->xml_biography = isset($data['xml_biography']) ? (string)$data['xml_biography'] : null;
     }

@@ -14,13 +14,13 @@ class ClassListGetResponse
      * Each key is a date string in `YYYY-MM-DD` format (local date in the business time zone).
      * Each value is an empty array reserved for future use.
      *
-     * @var string[]|null
+     * @var array[]|null
      */
     public ?array $a_calendar = null;
 
     /**
-     * A list of classes sessions starting with the date `dt_date`
-     * and in the 62 days ahead (or up to `dt_end`).
+     * A list of classes sessions starting with the date {@link \WlSdk\Wl\Schedule\ClassList\ClassList}
+     * and in the 62 days ahead (or up to {@link \WlSdk\Wl\Schedule\ClassList\ClassList}).
      * Every element has the following keys:
      *
      * @var ClassListGetResponseSession[]|null
@@ -37,7 +37,7 @@ class ClassListGetResponse
 
     /**
      * If `true`, there exists at least one virtual service by a specified
-     * `k_business` and `k_class_tab`,
+     * {@link \WlSdk\Wl\Schedule\ClassList\ClassList} and {@link \WlSdk\Wl\Schedule\ClassList\ClassList},
      * Otherwise, this will be `false`.
      *
      * @var bool|null

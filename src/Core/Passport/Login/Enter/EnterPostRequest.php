@@ -28,7 +28,7 @@ class EnterPostRequest
     /**
      * A copy of the notepad that was used to hash the user password.
      *
-     * See `s_password` for details.
+     * See {@link \WlSdk\Core\Passport\Login\Enter\Enter} for details.
      *
      * @var string|null
      */
@@ -48,9 +48,9 @@ class EnterPostRequest
      *
      * The accepted values are:
      * <ul>
-     *   <li>`&#039;&#039;` Empty line (default value) if you do not want to remember anything.</li>
-     *   <li>`&#039;login&#039;` Remember only user login.</li>
-     *   <li>`&#039;password&#039;` Remember user login and password.</li>
+     *   <li>`''` Empty line (default value) if you do not want to remember anything.</li>
+     *   <li>`'login'` Remember only user login.</li>
+     *   <li>`'password'` Remember user login and password.</li>
      * </ul>
      *
      * @var string|null

@@ -59,6 +59,17 @@ class StoreGroupPostRequest
     public ?array $a_login_promotion = null;
 
     /**
+     * A list of host guest passes which are selected by a group of clients to pay for the guests visits.
+     *
+     * These guest passes will be checked to determine if they can be applied to the current class or event.
+     *
+     * Keys are UIDs of clients, values are host login promotion keys that grant the guest passes.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_login_promotion_guest_pass = null;
+
+    /**
      * A list of new purchase items which are selected by a group of clients.
      *
      * This new purchase items will be checked to determine if it can be applied to the current class or event
@@ -131,6 +142,14 @@ class StoreGroupPostRequest
      */
     public ?bool $is_force_pay_later = null;
 
+    /**
+     * Host login promotion key that grants the guest pass used to pay for the guest's visit.
+     * Empty string if the booking is not paid with a guest pass.
+     *
+     * @var string|null
+     */
+    public ?string $k_login_promotion_guest_pass = null;
+
     public function params(): array
     {
         return array_filter(
@@ -141,6 +160,7 @@ class StoreGroupPostRequest
             'is_credit_card_check' => $this->is_credit_card_check,
             'k_class_period' => $this->k_class_period,
             'a_login_promotion' => $this->a_login_promotion,
+            'a_login_promotion_guest_pass' => $this->a_login_promotion_guest_pass,
             'a_purchase_item_check' => $this->a_purchase_item_check,
             'a_repeat' => $this->a_repeat,
             'a_resource' => $this->a_resource,
@@ -148,6 +168,7 @@ class StoreGroupPostRequest
             'a_session_select' => $this->a_session_select,
             'a_session_wait_list_unpaid' => $this->a_session_wait_list_unpaid,
             'is_force_pay_later' => $this->is_force_pay_later,
+            'k_login_promotion_guest_pass' => $this->k_login_promotion_guest_pass,
             ],
             static fn ($v) => $v !== null
         );

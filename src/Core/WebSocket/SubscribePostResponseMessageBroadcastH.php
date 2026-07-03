@@ -21,6 +21,7 @@ class SubscribePostResponseMessageBroadcastH
      * `null` if no errors occurred.
      *
      * @var int|null
+     * @see \WlSdk\RsPayException
      */
     public ?int $id_pay_exception = null;
 

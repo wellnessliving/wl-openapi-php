@@ -74,7 +74,8 @@ class FinishMultiplePostRequest
     public ?string $uid = null;
 
     /**
-     * A list of answers for the questions from {@link \WlSdk\Wl\Appointment\Book\Question\Question}.
+     * A list of answers for the questions from {@link
+     * \WlSdk\Wl\Appointment\Book\Question\QuestionGetResponse::$a_question}.
      *
      * 1st dimension - provider index.
      * 2nd dimension - keys refer to hashes of the questions. Values refer to answers for the questions.

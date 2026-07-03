@@ -8,7 +8,7 @@ class AccessGetRequest
      * Report CID.
      *
      * It's used mostly for second generation reports.
-     * For first generation reports use `id_report` instead.
+     * For first generation reports use {@link \WlSdk\Wl\Report\Access} instead.
      *
      * Only one of these two fields should be sent, but not both.
      *
@@ -21,7 +21,7 @@ class AccessGetRequest
      * Report ID.
      *
      * It's used mostly for first generation reports.
-     * For second generation reports use `cid_report` instead.
+     * For second generation reports use {@link \WlSdk\Wl\Report\Access} instead.
      *
      * Only one of these two fields should be sent, but not both.
      *

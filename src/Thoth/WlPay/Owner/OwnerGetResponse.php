@@ -18,6 +18,14 @@ class OwnerGetResponse
     public ?int $id_pay_owner = null;
 
     /**
+     * Is client pay only for self. If parent pays for child this flag will be `false` for both.
+     * `true` if client pay only for self, `false` - otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_pay_self_only = null;
+
+    /**
      * The payment owner key. This is used for financial transactions.
      *
      * @var string|null
@@ -27,8 +35,6 @@ class OwnerGetResponse
     /**
      * Key of the money owner.
      *
-     * Copy of result of PayOwner::ownerMoney().
-     *
      * @var string|null
      */
     public ?string $k_pay_owner_money = null;
@@ -36,6 +42,7 @@ class OwnerGetResponse
     public function __construct(array $data)
     {
         $this->id_pay_owner = isset($data['id_pay_owner']) ? (int)$data['id_pay_owner'] : null;
+        $this->is_pay_self_only = isset($data['is_pay_self_only']) ? (bool)$data['is_pay_self_only'] : null;
         $this->k_pay_owner = isset($data['k_pay_owner']) ? (string)$data['k_pay_owner'] : null;
         $this->k_pay_owner_money = isset($data['k_pay_owner_money']) ? (string)$data['k_pay_owner_money'] : null;
     }

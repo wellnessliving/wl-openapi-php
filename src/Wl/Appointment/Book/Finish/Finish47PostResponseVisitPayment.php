@@ -12,6 +12,13 @@ class Finish47PostResponseVisitPayment
     public ?bool $is_free = null;
 
     /**
+     * `true` whether the booked slot was waitlisted; `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_waitlist = null;
+
+    /**
      * Applied user's purchase option.
      *
      * @var string|null
@@ -42,6 +49,7 @@ class Finish47PostResponseVisitPayment
     public function __construct(array $data)
     {
         $this->is_free = isset($data['is_free']) ? (bool)$data['is_free'] : null;
+        $this->is_waitlist = isset($data['is_waitlist']) ? (bool)$data['is_waitlist'] : null;
         $this->k_login_promotion = isset($data['k_login_promotion']) ? (string)$data['k_login_promotion'] : null;
         $this->k_promotion = isset($data['k_promotion']) ? (string)$data['k_promotion'] : null;
         $this->k_session_pass = isset($data['k_session_pass']) ? (string)$data['k_session_pass'] : null;

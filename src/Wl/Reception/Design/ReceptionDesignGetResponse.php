@@ -9,7 +9,7 @@ class ReceptionDesignGetResponse
 {
     /**
      * Array of image information for Self Check-In logo.
-     * Empty if `k_location` is not provided.
+     * Empty if {@link \WlSdk\Wl\Reception\Design\ReceptionDesign} is not provided.
      *
      * Will contain the following keys:
      *

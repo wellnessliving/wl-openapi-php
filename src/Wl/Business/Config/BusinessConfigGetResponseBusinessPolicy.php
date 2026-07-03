@@ -16,9 +16,9 @@ class BusinessConfigGetResponseBusinessPolicy
      * Keys are list of IDs from {@link \WlSdk\Wl\Service\ServiceSid}, and values are flags whether wait list is
      * allowed.
      *
-     * @var int|null
+     * @var bool[]|null
      */
-    public ?int $a_wait_service = null;
+    public ?array $a_wait_service = null;
 
     /**
      * Minimum hours|days|months before class should be booked.
@@ -131,9 +131,9 @@ class BusinessConfigGetResponseBusinessPolicy
      * 1 if a client's automatic payment fails, their account should not be
      * debited and their purchase option becomes inactive, 0 - otherwise. Default 0.
      *
-     * @var int|null
+     * @var bool|null
      */
-    public ?int $is_disable_promotion = null;
+    public ?bool $is_disable_promotion = null;
 
     /**
      * Whether to charge penalty after final auto-payment attempt.
@@ -159,9 +159,9 @@ class BusinessConfigGetResponseBusinessPolicy
     /**
      * 1 if booking for a client with negative balance is disabled, 0 - otherwise. Default 0.
      *
-     * @var int|null
+     * @var bool|null
      */
-    public ?int $is_prevent_booking = null;
+    public ?bool $is_prevent_booking = null;
 
     /**
      * If true, client can not choose provider while appointment wizard.
@@ -225,7 +225,7 @@ class BusinessConfigGetResponseBusinessPolicy
     public function __construct(array $data)
     {
         $this->a_payment_reattempt_not_decline_reason = isset($data['a_payment_reattempt_not_decline_reason']) ? (array)$data['a_payment_reattempt_not_decline_reason'] : null;
-        $this->a_wait_service = isset($data['a_wait_service']) ? (int)$data['a_wait_service'] : null;
+        $this->a_wait_service = isset($data['a_wait_service']) ? (array)$data['a_wait_service'] : null;
         $this->i_book_before = isset($data['i_book_before']) ? (int)$data['i_book_before'] : null;
         $this->i_book_future = isset($data['i_book_future']) ? (int)$data['i_book_future'] : null;
         $this->i_cancel = isset($data['i_cancel']) ? (int)$data['i_cancel'] : null;
@@ -240,11 +240,11 @@ class BusinessConfigGetResponseBusinessPolicy
         $this->id_promote_fastest_response = isset($data['id_promote_fastest_response']) ? (int)$data['id_promote_fastest_response'] : null;
         $this->id_promote_require_confirm = isset($data['id_promote_require_confirm']) ? (int)$data['id_promote_require_confirm'] : null;
         $this->is_book_inside_active_pay_period = isset($data['is_book_inside_active_pay_period']) ? (bool)$data['is_book_inside_active_pay_period'] : null;
-        $this->is_disable_promotion = isset($data['is_disable_promotion']) ? (int)$data['is_disable_promotion'] : null;
+        $this->is_disable_promotion = isset($data['is_disable_promotion']) ? (bool)$data['is_disable_promotion'] : null;
         $this->is_enable_payment_penalty = isset($data['is_enable_payment_penalty']) ? (bool)$data['is_enable_payment_penalty'] : null;
         $this->is_enable_payment_reattempt = isset($data['is_enable_payment_reattempt']) ? (bool)$data['is_enable_payment_reattempt'] : null;
         $this->is_enable_staff_ip_restriction = isset($data['is_enable_staff_ip_restriction']) ? (bool)$data['is_enable_staff_ip_restriction'] : null;
-        $this->is_prevent_booking = isset($data['is_prevent_booking']) ? (int)$data['is_prevent_booking'] : null;
+        $this->is_prevent_booking = isset($data['is_prevent_booking']) ? (bool)$data['is_prevent_booking'] : null;
         $this->is_staff_restrict = isset($data['is_staff_restrict']) ? (bool)$data['is_staff_restrict'] : null;
         $this->is_wait = isset($data['is_wait']) ? (bool)$data['is_wait'] : null;
         $this->k_currency = isset($data['k_currency']) ? (string)$data['k_currency'] : null;

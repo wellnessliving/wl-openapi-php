@@ -16,7 +16,7 @@ class ListGetRequest
     /**
      * Starting date of the date range. Optional.
      *
-     *  This is local business timezone date. This day is included in the result.
+     * This is local business timezone date. This day is included in the result.
      *
      * @var string|null
      */

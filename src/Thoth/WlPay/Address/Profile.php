@@ -20,6 +20,9 @@ class Profile
     /**
      * Returns default payment address data that is retrieved from user profile.
      *
+     * Loads the user's profile for the given business and returns address fields (name, phone, street, city,
+     * postal code, country, region) to pre-populate a payment address form.
+     *
      * @return ProfileGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

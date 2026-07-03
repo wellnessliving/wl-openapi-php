@@ -9,9 +9,10 @@ class ScoreGetResponse
 {
     /**
      * Depending on arguments specified during API request might be:
-     * * Total number of points which were earned for each activity in a list provided in `a_login_activity`
+     * * Total number of points which were earned for each activity in a list provided in {@link
+     * \WlSdk\Wl\Reward\Score\Score}
      *   in a case if it was provided.
-     * * Total number of points user currently own in a cast if `uid` specified.
+     * * Total number of points user currently own in a cast if {@link \WlSdk\Wl\Reward\Score\Score} specified.
      *
      * @var int|null
      */

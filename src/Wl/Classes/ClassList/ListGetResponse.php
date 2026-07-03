@@ -11,8 +11,8 @@ class ListGetResponse
      * List of classes and events.
      *
      * The result may depend on the following flags:
-     * * `is_enrollment_block_all`
-     * * `is_enrollment_block_empty`
+     * * {@link \WlSdk\Wl\Classes\ClassList\ListEndpoint}
+     * * {@link \WlSdk\Wl\Classes\ClassList\ListEndpoint}
      *
      * Each element has the following structure:
      *

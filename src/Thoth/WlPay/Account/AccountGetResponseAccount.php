@@ -13,23 +13,21 @@ class AccountGetResponseAccount
     public ?int $id_currency = null;
 
     /**
-     * Key of account currency. Primary key in RsCurrencySql table.
+     * Key of account currency.
      *
      * @var string|null
      */
     public ?string $k_currency = null;
 
     /**
-     * ID of payment account. Primary key in RsPayAccountSql table. `null` if this is a user account based on
-     * system payment method.
+     * ID of payment account.  `null` if this is a user account based on system payment method.
      *
      * @var string|null
      */
     public ?string $k_pay_account = null;
 
     /**
-     * ID of custom payment method. `null` if this is a user account based on system payment method. Primary key in
-     * MethodSql.
+     * ID of custom payment method. `null` if this is a user account based on system payment method.
      *
      * @var string|null
      */

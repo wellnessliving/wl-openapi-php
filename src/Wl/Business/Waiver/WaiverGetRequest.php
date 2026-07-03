@@ -23,7 +23,8 @@ class WaiverGetRequest
     /**
      * User key for which the waiver is shown.
      * Used to fill the variables in the contract
-     * Not necessarily if the user does not already exist. In this case, you need to set `text_fullname`.
+     * Not necessarily if the user does not already exist. In this case, you need to set {@link
+     * \WlSdk\Wl\Business\Waiver\Waiver}.
      *
      * @var string|null
      */

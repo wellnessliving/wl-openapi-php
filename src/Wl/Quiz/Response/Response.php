@@ -24,7 +24,7 @@ class Response
      * such as
      * amendment availability and PDF generation support.
      *
-     * @deprecated Use {@link Wl\Quiz\Response\Response65Api} instead.
+     * @deprecated Use {@link \Wl\Quiz\Response\Response65Api} instead.
      *
      * @return ResponseGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -39,10 +39,10 @@ class Response
      * Saves a quiz response with the given element answers.
      *
      * Validates the submitted answers and persists the response record in a transaction. If
-     * QuizResponseApi is set, only validation runs and no record is created.
-     * Pass QuizResponseApi to bypass validation for pre-confirmed responses.
+     * QuizResponseApi::$is_validate_only is set, only validation runs and no record is created.
+     * Pass QuizResponseApi::$is_skip to bypass validation for pre-confirmed responses.
      *
-     * @deprecated Use {@link Wl\Quiz\Response\Response65Api} instead.
+     * @deprecated Use {@link \Wl\Quiz\Response\Response65Api} instead.
      *
      * @return ResponsePostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -60,7 +60,7 @@ class Response
      * edit their quiz answers after submission. Re-links the response to its owner and triggers
      * downstream reindexing so search and reporting stay consistent.
      *
-     * @deprecated Use {@link Wl\Quiz\Response\Response65Api} instead.
+     * @deprecated Use {@link \Wl\Quiz\Response\Response65Api} instead.
      *
      * @return ResponsePutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -77,7 +77,7 @@ class Response
      * Validates access privileges and removes the specified response records, updating any related search indexes
      * and activity logs.
      *
-     * @deprecated Use {@link Wl\Quiz\Response\Response65Api} instead.
+     * @deprecated Use {@link \Wl\Quiz\Response\Response65Api} instead.
      *
      * @return ResponseDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

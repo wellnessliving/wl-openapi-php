@@ -14,9 +14,9 @@ class CategoryGetResponseCategory
     /**
      * Sort key for category. Used to sort categories on category list page.
      *
-     * @var bool|null
+     * @var int|null
      */
-    public ?bool $i_sort = null;
+    public ?int $i_sort = null;
 
     /**
      * Service category key.
@@ -35,7 +35,7 @@ class CategoryGetResponseCategory
     public function __construct(array $data)
     {
         $this->hide_application = isset($data['hide_application']) ? (bool)$data['hide_application'] : null;
-        $this->i_sort = isset($data['i_sort']) ? (bool)$data['i_sort'] : null;
+        $this->i_sort = isset($data['i_sort']) ? (int)$data['i_sort'] : null;
         $this->k_service_category = isset($data['k_service_category']) ? (string)$data['k_service_category'] : null;
         $this->s_title = isset($data['s_title']) ? (string)$data['s_title'] : null;
     }

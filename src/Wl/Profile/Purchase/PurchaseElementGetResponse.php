@@ -156,7 +156,7 @@ class PurchaseElementGetResponse
     public ?int $i_limit = null;
 
     /**
-     * The duration of the regular payments interval. This is used only for “membership” type promoti
+     * The duration of the regular payments interval. This is used only for "membership" type promotions.
      *
      * @var int|null
      */
@@ -210,9 +210,9 @@ class PurchaseElementGetResponse
     public ?int $id_discount_commission_type = null;
 
     /**
-     * The type of duration for the promotion. This is used only for “membership” type promotions.
+     * The type of duration for the promotion. This is used only for "membership" type promotions.
      * This determines whether the promotion lasts indefinitely, has a fixed duration, or ends on a specific date.
-     * One of the {@link \WlSdk\RsDurationTypeSid} consta
+     * One of the {@link \WlSdk\RsDurationTypeSid} constants.
      *
      * @var int|null
      * @see \WlSdk\RsDurationTypeSid

@@ -31,8 +31,8 @@ class ListGetResponse
 
     /**
      * `true` if exist at least one virtual event
-     * by specific `k_business` and
-     * `k_class_tab`,
+     * by specific {@link \WlSdk\Wl\Event\Book\EventList\ListEndpoint} and
+     * {@link \WlSdk\Wl\Event\Book\EventList\ListEndpoint},
      * `false` otherwise.
      *
      * @var bool|null

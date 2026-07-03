@@ -8,7 +8,7 @@ class ClassList68PostRequest
      * The list of classes keys to filter.
      * Return sessions with matching class IDs.
      *
-     * If it's empty and `show_class` is `true`, all classes will be returned.
+     * If it's empty and {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} is `true`, all classes will be returned.
      *
      * @var string[]|null
      */
@@ -17,9 +17,9 @@ class ClassList68PostRequest
     /**
      * List of tabs keys.
      *
-     * This will be ignored if `is_tab_all` is `true`.
+     * This will be ignored if {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} is `true`.
      *
-     * If list of tab keys is not empty, `id_class_tab` is mandatory.
+     * If list of tab keys is not empty, {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} is mandatory.
      *
      * `null` if no filtering by Book Now Tab is required.
      *
@@ -43,7 +43,7 @@ class ClassList68PostRequest
      * The list of event keys to filter.
      * Return sessions with matching event keys.
      *
-     * If it's empty and `show_event` is `true`, all events will be returned.
+     * If it's empty and {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} is `true`, all events will be returned.
      *
      * @var string[]|null
      */
@@ -89,7 +89,7 @@ class ClassList68PostRequest
 
     /**
      * ID of tab. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
-     * This will be ignored if `is_tab_all` is `true`.
+     * This will be ignored if {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} is `true`.
      *
      * `null` if no filtering by tab is required.
      *
@@ -99,9 +99,10 @@ class ClassList68PostRequest
     public ?int $id_class_tab = null;
 
     /**
-     * `true` means to not generate `a_session` result.
-     * Can be used, if you do not need full information about existing classes and result in `a_calendar` is
-     * enough.
+     * `true` means to not generate {@link \WlSdk\Wl\Schedule\ClassList\ClassList68PostResponse::$a_session}
+     * result.
+     * Can be used, if you do not need full information about existing classes and result in {@link
+     * \WlSdk\Wl\Schedule\ClassList\ClassList68PostResponse::$a_calendar} is enough.
      *
      * @var bool|null
      */
@@ -109,7 +110,8 @@ class ClassList68PostRequest
 
     /**
      * If `true`, sessions from every class tab are returned. If `false`, use the
-     * `k_class_tab` or `id_class_tab` to filter sessions by class tab.
+     * {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} or {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} to
+     * filter sessions by class tab.
      *
      * @var bool|null
      */
@@ -136,7 +138,7 @@ class ClassList68PostRequest
 
     /**
      * The tab key.
-     * This will be ignored if `is_tab_all` is `true`.
+     * This will be ignored if {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} is `true`.
      *
      * @var string|null
      */
@@ -180,7 +182,7 @@ class ClassList68PostRequest
     public ?bool $show_event = null;
 
     /**
-     * Whether to generate `a_quick` a quick filter.
+     * Whether to generate {@link \WlSdk\Wl\Schedule\ClassList\ClassList68PostResponse::$a_quick} a quick filter.
      * If `true`, a quick filter will be generated. `false` otherwise.
      *
      * @var bool|null

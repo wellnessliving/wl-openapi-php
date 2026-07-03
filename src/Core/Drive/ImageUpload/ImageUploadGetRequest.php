@@ -19,7 +19,7 @@ class ImageUploadGetRequest
     public ?bool $is_temporary = null;
 
     /**
-     * The image ID set in `s_class`.
+     * The image ID set in {@link \WlSdk\Core\Drive\ImageUpload\ImageUpload}.
      *
      * @var string|null
      */

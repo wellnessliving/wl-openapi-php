@@ -142,6 +142,14 @@ class InfoPostRequest
     public ?string $k_login_promotion = null;
 
     /**
+     * Host login promotion key that grants the guest pass used to pay for the guest's visit.
+     * Empty string if the booking is not paid with a guest pass.
+     *
+     * @var string|null
+     */
+    public ?string $k_login_promotion_guest_pass = null;
+
+    /**
      * Session pass to be used to book a class.
      *
      * @var string|null
@@ -175,6 +183,7 @@ class InfoPostRequest
             'is_book_unpaid' => $this->is_book_unpaid,
             'is_force_pay_later' => $this->is_force_pay_later,
             'k_login_promotion' => $this->k_login_promotion,
+            'k_login_promotion_guest_pass' => $this->k_login_promotion_guest_pass,
             'k_session_pass' => $this->k_session_pass,
             's_signature' => $this->s_signature,
             ],

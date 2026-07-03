@@ -16,12 +16,14 @@ class FlagGetResponse
     public ?FlagGetResponseFlag $a_flag = null;
 
     /**
-     * Array, where keys are UIDs to be checked and values are same as `a_restrictions_single`.
+     * Array, where keys are UIDs to be checked and values are same as {@link
+     * \WlSdk\Wl\Location\Flag\FlagGetResponse::$a_restrictions_single}.
      * `null` if user is not flagged in the location.
      *
-     * This field is set, if API gets `a_uid` and not `uid` properties.
+     * This field is set, if API gets {@link \WlSdk\Wl\Location\Flag\Flag} and not {@link
+     * \WlSdk\Wl\Location\Flag\Flag} properties.
      *
-     * Keys are user keys (primary keys in the PassportLoginSql table).
+     * Keys are user keys.
      * Values are flag restriction arrays:
      *
      * @var FlagGetResponseRestrictionsMultiple|null
@@ -31,7 +33,8 @@ class FlagGetResponse
     /**
      * `null` if user is not flagged in the location.
      *
-     * This field is set, if API gets `uid` and not `a_uid` properties.
+     * This field is set, if API gets {@link \WlSdk\Wl\Location\Flag\Flag} and not {@link
+     * \WlSdk\Wl\Location\Flag\Flag} properties.
      *
      * @var FlagGetResponseRestrictionsSingle|null
      */
@@ -41,7 +44,7 @@ class FlagGetResponse
      * `true` if the user is flagged and can make purchases, but cannot make new reservations, `false` if
      * otherwise.
      *
-     * `null` until loaded or when `a_uid` was not set.
+     * `null` until loaded or when {@link \WlSdk\Wl\Location\Flag\Flag} was not set.
      *
      * @var bool|null
      */

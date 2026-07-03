@@ -27,7 +27,7 @@ class InfoGetResponse
      * List of sessions that can be paid without new purchases.
      * Such as previously prepaid or free sessions.
      *
-     * A result of the RsBookProcess::sessionFreeGet() method execution.
+     *
      *
      * Each its item has the key of following format: `dt_date::k_class_period` and
      * the value of following structure:
@@ -276,7 +276,7 @@ class InfoGetResponse
 
     /**
      * Text representation of the list of staffs.
-     * List of staff see `a_staff`.
+     * List of staff see {@link \WlSdk\Wl\Book\Process\Info\InfoGetResponse::$a_staff}.
      *
      * @var string|null
      */
