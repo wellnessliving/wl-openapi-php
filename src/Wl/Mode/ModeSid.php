@@ -5,11 +5,12 @@ namespace WlSdk\Wl\Mode;
 /**
  * The source of a visit.
  *
- * Last used ID: 30.
+ * Last used ID: 31.
  *
  * Values:
  * - 28 (`API`): Action made via Api Endpoint. Default for leads created via API, unless overridden.
  * - 21 (`AZURE`): Registered through `Azure`.
+ * - 31 (`BRIVO_DOOR_ACCESS`): Visit has been checked-in by Brivo Door Access.
  * - 23 (`CENTRED`): Visit has been created by `CENTRED`.
  * - 8 (`CLASSPASS_BOOKING`): Visit has been created by `ClassPass`.
  * - 22 (`COLLECTIONS`): Debt paid via collections.
@@ -46,6 +47,9 @@ class ModeSid
 
     /** Registered through `Azure`. */
     public const AZURE = 21;
+
+    /** Visit has been checked-in by Brivo Door Access. */
+    public const BRIVO_DOOR_ACCESS = 31;
 
     /** Visit has been created by `CENTRED`. */
     public const CENTRED = 23;
