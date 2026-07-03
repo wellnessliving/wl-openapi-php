@@ -256,13 +256,122 @@ function wlEnumSchemaToClassRef(string $schemaName): string
 }
 
 /**
- * Replaces OpenAPI markdown schema links with PHPDoc {@link} references.
+ * Gets or sets the OpenAPI spec of the current generation run.
+ *
+ * Lets wlConvertDescriptionLinks() resolve markdown links to other API paths without
+ * threading $spec through every caller between it and wlGenerateSdk().
+ *
+ * @param array|null $spec When non-null, stores this as the current spec.
+ * @return array|null Currently stored spec, or null if none has been set yet.
+ */
+function wlCurrentSpec(?array $spec = null): ?array
+{
+    static $current = null;
+    if ($spec !== null) {
+        $current = $spec;
+    }
+    return $current;
+}
+
+/**
+ * Splits an API path into its PHP namespace and safe base class name.
+ *
+ * Mirrors the derivation in {@link wlGenerateApiClass()} - keep both in sync.
+ *
+ * @param string $apiPath API path (e.g., '/Core/Drive/ImageUpload/ImageUpload.json').
+ * @return array{namespace: string, classBaseName: string} Namespace (without leading
+ *   backslash) and safe base class name.
+ */
+function wlApiPathToNamespaceAndClass(string $apiPath): array
+{
+    $stripped = (string)preg_replace('/\.json$/i', '', ltrim($apiPath, '/'));
+    $segments = explode('/', $stripped);
+    $classBaseName = wlSafeClassName((string)array_pop($segments));
+    $relNs = implode('\\', $segments);
+    $namespace = NS_ROOT . ($relNs ? '\\' . $relNs : '');
+
+    return ['namespace' => $namespace, 'classBaseName' => $classBaseName];
+}
+
+/**
+ * Returns the response schema properties for one HTTP verb operation.
+ *
+ * Mirrors the resolution in {@link wlGenerateResponseClass()} - keep both in sync.
+ *
+ * @param array $spec Full OpenAPI spec.
+ * @param array $operation OpenAPI operation object.
+ * @return array Response schema properties, or an empty array if there is no success response.
+ */
+function wlResolveOperationResponseProperties(array $spec, array $operation): array
+{
+    $responses = $operation['responses'] ?? [];
+    $successSchema = null;
+    foreach (['200', '201'] as $code) {
+        if (!isset($responses[$code])) {
+            continue;
+        }
+        $content = $responses[$code]['content'] ?? [];
+        $successSchema = $content['application/json']['schema'] ?? null;
+        if ($successSchema !== null) {
+            break;
+        }
+    }
+
+    if ($successSchema !== null && isset($successSchema['$ref'])) {
+        $successSchema = wlResolveRef($spec, $successSchema['$ref']);
+    }
+
+    return ($successSchema !== null) ? ($successSchema['properties'] ?? []) : [];
+}
+
+/**
+ * Resolves a markdown API-path link to a PHPDoc {@link} target.
+ *
+ * A bare label resolves to the endpoint class. A label ending with `::$prop` additionally
+ * resolves to the response class property of the first HTTP_VERBS-priority verb that
+ * declares it, since the description text does not say which verb it refers to; otherwise
+ * it falls back to the endpoint class link.
+ *
+ * @param string $label Markdown link label, e.g. 'ImageUploadApi' or 'ImageUploadApi::$k_id'.
+ * @param string $apiPath API path, e.g. '/Core/Drive/ImageUpload/ImageUpload.json'.
+ * @return string|null PHPDoc {@link} target text, or null if the path is not in the spec.
+ */
+function wlResolveApiPathLink(string $label, string $apiPath): ?string
+{
+    $spec = wlCurrentSpec();
+    $pathItem = ($spec !== null) ? ($spec['paths'][$apiPath] ?? null) : null;
+    if (!is_array($pathItem)) {
+        return null;
+    }
+
+    ['namespace' => $namespace, 'classBaseName' => $classBaseName] = wlApiPathToNamespaceAndClass($apiPath);
+
+    if (preg_match('/::\$(\w+)$/', $label, $m)) {
+        $propName = $m[1];
+        foreach (HTTP_VERBS as $verb) {
+            if (!isset($pathItem[$verb]) || !is_array($pathItem[$verb])) {
+                continue;
+            }
+            $properties = wlResolveOperationResponseProperties($spec, $pathItem[$verb]);
+            if (array_key_exists($propName, $properties)) {
+                $responseClass = $classBaseName . ucfirst($verb) . 'Response';
+                return '\\' . $namespace . '\\' . $responseClass . '::$' . $propName;
+            }
+        }
+    }
+
+    return '\\' . $namespace . '\\' . $classBaseName;
+}
+
+/**
+ * Replaces OpenAPI markdown schema and API-path links with PHPDoc {@link} references.
  *
  * Converts '[Name](#/components/schemas/Wl.Mode.ModeSid)' to
- * '{@link \WlSdk\Wl\Mode\ModeSid}'.
+ * '{@link \WlSdk\Wl\Mode\ModeSid}', and '[Name](/A/B/CApi.json)' to
+ * '{@link \WlSdk\A\B\C}' (see {@link wlResolveApiPathLink()} for the `::$prop` case).
  *
  * @param string $text Description text from the OpenAPI spec.
- * @return string Text with markdown schema links replaced by PHPDoc links.
+ * @return string Text with markdown links replaced by PHPDoc links.
  */
 function wlConvertDescriptionLinks(string $text): string
 {
@@ -273,6 +382,16 @@ function wlConvertDescriptionLinks(string $text): string
         },
         $text
     ) ?? $text;
+
+    $result = preg_replace_callback(
+        '/\[([^\]]+)\]\((\/[^)]+\.json)\)/',
+        static function (array $m): string {
+            $target = wlResolveApiPathLink($m[1], $m[2]);
+            return ($target !== null) ? '{@link ' . $target . '}' : $m[1];
+        },
+        $result
+    ) ?? $result;
+
     // Escape comment-closing sequence so it cannot break a surrounding /** */ block.
     return str_replace('*/', '* /', $result);
 }
@@ -862,7 +981,7 @@ function wlGenerateEndpointClass(
         : '';
 
     $firstOp = reset($operations);
-    $classSummary = trim($firstOp['summary'] ?? $firstOp['description'] ?? '');
+    $classSummary = wlConvertDescriptionLinks(trim($firstOp['summary'] ?? $firstOp['description'] ?? ''));
     if ($classSummary === '') {
         $classSummary = 'API endpoint: ' . $path;
     }
@@ -982,7 +1101,7 @@ function wlGenerateEnumClass(string $schemaName, array $schema): ?array
     $values = $schema['enum'];
     $varnames = $schema['x-enum-varnames'];
     $descriptions = $schema['x-enum-description'] ?? [];
-    $classDesc = str_replace('*/', '* /', trim($schema['description'] ?? ''));
+    $classDesc = wlConvertDescriptionLinks(trim($schema['description'] ?? ''));
 
     $classDocLines = [];
     foreach (explode("\n", wordwrap($classDesc ?: $className . ' constants.', 116, "\n")) as $l) {
@@ -1082,6 +1201,7 @@ function wlGenerateSdk(string $channel, bool $optional = false): void
     echo "  Cleared {$outputDir}/\n";
 
     $spec = Yaml::parse($yaml);
+    wlCurrentSpec($spec);
 
     $version = $spec['info']['version'] ?? 'unknown';
     echo "  Spec version: {$version}\n";
