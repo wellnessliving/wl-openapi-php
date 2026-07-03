@@ -29,7 +29,7 @@ class ResponsePutRequest
      * Quiz response key.
      *
      * `null` in a case of response creation or
-     * removing set of responses in [QuizResponseApi](/Core/Quiz/QuizResponse.json).
+     * removing set of responses in QuizResponseApi.
      *
      * @var string|null
      */

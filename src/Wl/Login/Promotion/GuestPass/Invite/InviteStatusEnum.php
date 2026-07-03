@@ -12,9 +12,7 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
  * - 8 (`BOOK`): Guest booked the visit booked with the guest pass.
  * - 3 (`CHECKED_IN`): Guest attended the visit booked with the guest pass.
  * - 6 (`GUEST_PASS_EXPIRED`): Guest accepted the invitation but did not attend within the pass expiration
- *    window. Distinct from
- * [InviteStatusEnum::INVITE_EXPIRED](#/components/schemas/Wl.Login.Promotion.GuestPass.Invite.InviteStatusEnum): the
- * pass has
+ *    window. Distinct from {@link \WlSdk\Wl\Login\Promotion\GuestPass\Invite\InviteStatusEnum}: the pass has
  *    already been committed to the guest at acceptance, so it counts toward "Used"
  *    and is not refunded to the host's available quota.
  * - 2 (`INVITE_ACCEPTED`): Guest claimed the invitation but the linked visit (if any) has not been

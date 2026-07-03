@@ -246,7 +246,7 @@ namespace WlSdk;
  * - 212 (`SOCIAL_SHARE_DETAILS_LIST`): Social sharing details.
  * - 197 (`SOCIAL_SHARE_METRIC_CHART`): All social sharing.
  * - 214 (`SOCIAL_SHARE_SUMMARY_LIST`): Social sharing summary by user.
- * - 24 (`STAFF_PAY_COUNT`): Chart version of [RsReportSid::STAFF_PAY_LIST](#/components/schemas/RsReportSid) report.
+ * - 24 (`STAFF_PAY_COUNT`): Chart version of {@link \WlSdk\RsReportSid} report.
  * - 25 (`STAFF_PAY_DETAIL`): Report that contains detail information about staff payments for each option.
  * - 23 (`STAFF_PAY_LIST`): Report that contains general information about payments for each staff.
  * - 137 (`STAFF_RETENTION`): Staff retention report collection.
@@ -284,8 +284,7 @@ namespace WlSdk;
  * - 61 (`VISIT_CLASS_BUY_DETAIL`): Controls list report for attendance. With information about usage purchase option.
  * - 16 (`VISIT_CLASS_COUNT`): Controls visit class report in chart format.
  * - 59 (`VISIT_CLASS_DETAIL`): Class analysis report.
- * - 14 (`VISIT_CLASS_LIST`): Simplified variation of report
- * [RsReportSid::VISIT_CLASS_DETAIL](#/components/schemas/RsReportSid).
+ * - 14 (`VISIT_CLASS_LIST`): Simplified variation of report {@link \WlSdk\RsReportSid}.
  * - 131 (`VISIT_DUPLICATE`): Report with list of duplicated visits.
  * - 69 (`VISIT_EVENT_COUNT`): Controls visit event report in chart format.
  * - 68 (`VISIT_EVENT_DETAIL`): Event details analysis report
@@ -313,8 +312,7 @@ namespace WlSdk;
  * - 12 (`VISIT_LOGIN_LIST`): Visit login list.
  * - 63 (`VISIT_REMAIN_LIST`): Visits Remaining.
  * - 144 (`VISIT_REMAIN_LIST_TEMP`): Visits Remaining.
- *   Temporary copy of the report [RsReportSid::VISIT_REMAIN_LIST](#/components/schemas/RsReportSid) should be removed
- * after Sprint 33 release.
+ *   Temporary copy of the report {@link \WlSdk\RsReportSid} should be removed after Sprint 33 release.
  * - 58 (`VISIT_REVENUE_DETAIL`): Detailed revenue by service.
  * - 57 (`VISIT_REVENUE_LIST`): Service revenue analysis.
  * - 41 (`VISIT_RISK`): Risky clients.
@@ -880,7 +878,7 @@ class RsReportSid
     /** Social sharing summary by user. */
     public const SOCIAL_SHARE_SUMMARY_LIST = 214;
 
-    /** Chart version of [RsReportSid::STAFF_PAY_LIST](#/components/schemas/RsReportSid) report. */
+    /** Chart version of {@link \WlSdk\RsReportSid} report. */
     public const STAFF_PAY_COUNT = 24;
 
     /** Report that contains detail information about staff payments for each option. */
@@ -973,7 +971,7 @@ class RsReportSid
     /** Class analysis report. */
     public const VISIT_CLASS_DETAIL = 59;
 
-    /** Simplified variation of report [RsReportSid::VISIT_CLASS_DETAIL](#/components/schemas/RsReportSid). */
+    /** Simplified variation of report {@link \WlSdk\RsReportSid}. */
     public const VISIT_CLASS_LIST = 14;
 
     /** Report with list of duplicated visits. */

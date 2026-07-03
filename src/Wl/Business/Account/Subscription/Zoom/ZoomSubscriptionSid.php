@@ -3,8 +3,7 @@
 namespace WlSdk\Wl\Business\Account\Subscription\Zoom;
 
 /**
- * List of possible plans for
- * [ZoomSubscription](#/components/schemas/Wl.Business.Account.Subscription.SubscriptionAbstract) subscription.
+ * List of possible plans for {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} subscription.
  *
  * Values:
  * - 2 (`BASIC`): Basic

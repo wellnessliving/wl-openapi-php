@@ -13,8 +13,8 @@ namespace WlSdk\Wl\Search;
  *    are no longer present in the current implementation.
  * - 66 (`Wl\Login\Search\LoginSearchEntity`): Client search entity.
  *
- *   Use entity interface LoginSearchEntityInterface to extend search criteria
- * [SearchCriteriaAbstract](#/components/schemas/Wl.Search.Criteria.SearchCriteriaAbstract).
+ *   Use entity interface LoginSearchEntityInterface to extend search criteria {@link
+ * \WlSdk\Wl\Search\Criteria\SearchCriteriaAbstract}.
  * - 169 (`Wl\Search\SearchTestEntityNoInterface`): Search entity for testing without interface class.
  */
 class SearchEntityAbstract

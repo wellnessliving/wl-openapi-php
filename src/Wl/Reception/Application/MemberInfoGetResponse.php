@@ -9,7 +9,7 @@ class MemberInfoGetResponse
 {
     /**
      * Additional member data or `null` if any data can be shown.
-     * Will be filled if [InfoApi](/Wl/Member/Info/Info.json) flag is set.
+     * Will be filled if {@link \WlSdk\Wl\Member\Info\Info} flag is set.
      *
      * @var MemberInfoGetResponseInfo|null
      */

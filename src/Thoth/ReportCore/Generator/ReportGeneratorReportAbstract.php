@@ -7,40 +7,31 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * The main purpose of subclasses is to generate contents of the report.
  *
  * This is an abstract class with two methods which should obligatorily be overridden in all subclasses:
- * [ReportGeneratorReportAbstract::generatorPartitions()
- * `generatorPartitions()`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  * and
- * [ReportGeneratorReportAbstract::generatorRun()
- * `generatorRun()`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract).
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
  *
- * [ReportGeneratorReportAbstract::generatorPartitions()
- * `generatorPartitions()`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  * returns array of strings. The string is ID of a report partition.
  * Partitions are entirely independent parts of the report which may be generated
  * concurrently. For this, for each partition,
- * [ReportGeneratorReportAbstract::generatorRun()
- * `generatorRun()`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  * is executed.
  *
  * Purpose of
- * [ReportGeneratorReportAbstract::generatorRun()
- * `generatorRun()`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  * is to generate array of rows of a single partition of the report.
  * A row is represented by an object of a subclass of
  * ReportGeneratorRowAbstract `ReportGeneratorRowAbstract`.
  * Override
- * [ReportGeneratorReportAbstract::ROW_CLASS
- * `ROW_CLASS`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  * to set class of the row that is used by this report. All rows returned by
- * [ReportGeneratorReportAbstract::generatorRun()
- * `generatorRun()`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  * must be of class specified by
- * [ReportGeneratorReportAbstract::ROW_CLASS
- * `ROW_CLASS`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract).
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
  *
  * If your report contains dynamic columns or dynamic filters, you may want to override
- * [ReportGeneratorReportAbstract::generatorDynamic()
- * `generatorDynamic()`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract).
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
  *
  * New Report generation has pretty wide range of tools to control access.
  * The following three are the sources for checking the access:
@@ -50,8 +41,7 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *   Review all the constants to understand their purpose and get familiar with what can be configured.
  *   Override these constants in subclasses as needed.
  * * You may want to override
- *   [ReportGeneratorReportAbstract::can()
- * can()](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  *   method if your report has some additional complex access checks.
  * * ReportFilterFieldAbstract::load() `ReportFilterFieldAbstract::load()`
  *   checks all the data that arrives in filters. Note that
@@ -61,38 +51,33 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *   is called to make access checks.
  *
  * You may want to review implementation of
- * [ReportGeneratorReportAbstract::canAll()
- * `canAll()`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  * to get familiar with how all access checks are performed.
  *
  * When you create a report, you must define report filter.
  * Report filters are controlled by subclasses of
  * ReportFilterAbstract `ReportFilterAbstract`.
  * Override
- * [ReportGeneratorReportAbstract::FILTER_CLASS
- * `FILTER_CLASS`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  * constant to set class of the filter that is used by this report.
  *
  * Override
- * [ReportGeneratorReportAbstract::TITLE](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  * to set title of the report.
  * You may also override
- * [ReportGeneratorReportAbstract::TITLE_CONTEXT](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ * {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  * to specify additional context of the title.
  *
  * All reports depend on the following:
  *
  * * Business which information should be represented by the report is retrieved with
- *   [ReportGeneratorReportAbstract::businessGet()
- * `businessGet()`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract).
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
  * * UID of the user that views the report should be retrieved with
- *   [ReportGeneratorReportAbstract::actorGet()
- * `actorGet()`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract) method.
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} method.
  *
  *   Actor is a user that has requested the report.
  * * If your report contains date/time, use
- *   [ReportGeneratorReportAbstract::timezone()
- * `timezone()`](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  *   to get timezone in which the report should be built.
  *
  *   In general, timezone of a report is defined by filter fields that implement
@@ -148,21 +133,17 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *    executed by ReportQueryExecutor.
  *
  *   Column structure is mapped onto a fixed grid of slot properties (`s_col_1`..`s_col_50`) declared in
- *    ReportQueryReportRow. At runtime
- * [ReportQueryReport::fieldPrepare()](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ *    ReportQueryReportRow. At runtime {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  * overrides
  *    each used slot's title, type and visibility based on the SELECT aliases; unused slots stay
- *    hidden.
- * [ReportQueryReport::generatorRun()](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
- * assigns SELECT result values to slot
+ *    hidden. {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} assigns SELECT result values to
+ * slot
  *    properties by SELECT order. See `doc/reference/slot-architecture.md` for the rationale.
  *
  *   Partitions are delegated to the first table class in the FROM clause via
+ *    {@link \WlSdk\Thoth\ReportCore\QueryEngine\ReportQueryTableAbstract}.
  *
- * [ReportQueryTableAbstract::partitions()](#/components/schemas/Thoth.ReportCore.QueryEngine.ReportQueryTableAbstract).
- *
- *   Set the query key before generation via
- * [ReportQueryReport::queryKeySet()](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract).
+ *   Set the query key before generation via {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
  * - 1050 (`Wl\Appointment\Report\BookingFlowReport`): Client Appointment Booking Flow report.
  * - 1740 (`Wl\Visit\Report\VisitLifetimeReport`): Controls list for "Lifetime Value & Visit Milestones" report.
  * - 1556 (`Wl\Visit\Report\VisitBuySummaryReport`): Controls list report for attendance.
@@ -248,9 +229,7 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * for "Sales Details By Location" corporate report.
  * - 1041 (`Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryPaymentReport`):
  * Generates data for "Sales Summary By Location" corporate report - version of
- *
- * [PurchaseFranchiseLocationPaymentReport](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
- * with sales summed up by location.
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} with sales summed up by location.
  *
  *   While intuitively summary should be same regardless of whether it was calculated from rows grouped by purchase
  * items
@@ -260,8 +239,8 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * methods
  *   filter.
  * - 1025 (`Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryReport`): Generates
- * data for "Sales Summary By Location" corporate report - version of
- * [PurchaseFranchiseLocationReport](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract)
+ * data for "Sales Summary By Location" corporate report - version of {@link
+ * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  *   with sales summed up by location.
  * - 1274 (`Thoth\Report\SalesReport\Franchise\Sale\Compare\CompareListReport`): "YOY Sales Comparison" report.
  * - 1456 (`Wl\Visit\Location\Cross\Detail\VisitLocationCrossDetailReport`): "Cross-Location Visit Details" report.
@@ -498,7 +477,7 @@ class ReportGeneratorReportAbstract
     /** Generates data for "Sales Summary By Location" corporate report - version of */
     public const PurchaseFranchiseLocationSummaryPaymentReport = 1041;
 
-    /** Generates data for "Sales Summary By Location" corporate report - version of [PurchaseFranchiseLocationReport](#/components/schemas/Thoth.ReportCore.Generator.ReportGeneratorReportAbstract) */
+    /** Generates data for "Sales Summary By Location" corporate report - version of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} */
     public const PurchaseFranchiseLocationSummaryReport = 1025;
 
     /** "YOY Sales Comparison" report. */

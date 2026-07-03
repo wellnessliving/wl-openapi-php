@@ -52,8 +52,8 @@ class ClassList68PostRequest
     /**
      * The list of location keys to filter results.
      * If it's empty, schedule for all locations will be returned.
-     * All given locations should be from the same business, which is sent in
-     * [ClassListApi](/Wl/Schedule/ClassList/ClassList.json).
+     * All given locations should be from the same business, which is sent in {@link
+     * \WlSdk\Wl\Schedule\ClassList\ClassList}.
      *
      * @var string[]|null
      */

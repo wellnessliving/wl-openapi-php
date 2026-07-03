@@ -84,7 +84,7 @@ class Finish47PostRequest
     public ?string $uid = null;
 
     /**
-     * A list of answers for the questions from [QuestionApi](/Wl/Appointment/Book/Question/Question.json).
+     * A list of answers for the questions from {@link \WlSdk\Wl\Appointment\Book\Question\Question}.
      * Keys refer to hashes of the questions. Values refer to answers for the questions.
      *
      * @var string[]|null
@@ -92,7 +92,7 @@ class Finish47PostRequest
     public ?array $a_answer = null;
 
     /**
-     * The documentation is the same as in [FinishApi](/Wl/Appointment/Book/Finish/Finish.json).
+     * The documentation is the same as in {@link \WlSdk\Wl\Appointment\Book\Finish\Finish}.
      *
      * @var array|null
      */

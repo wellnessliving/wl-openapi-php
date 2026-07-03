@@ -10,8 +10,8 @@ class TransactionAllPaymentGetResponse
     /**
      * A list of fields in the report.
      *
-     * This array is effectively a title row for the table returned in
-     * [TransactionAllPaymentApi](/Thoth/WlPay/Transaction/Report/TransactionAllPayment.json).
+     * This array is effectively a title row for the table returned in {@link
+     * \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPayment}.
      *
      * @var string[]|null
      */
@@ -22,8 +22,8 @@ class TransactionAllPaymentGetResponse
      *
      * This is an indexed array in which one row is also an indexed array.
      *
-     * Indexes of the columns correspond to the columns in
-     * [TransactionAllPaymentApi](/Thoth/WlPay/Transaction/Report/TransactionAllPayment.json).
+     * Indexes of the columns correspond to the columns in {@link
+     * \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPayment}.
      *
      * @var array|null
      */

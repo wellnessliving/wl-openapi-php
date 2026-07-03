@@ -124,7 +124,7 @@ class NextAvailableDayGetRequest
     /**
      * The staff key to show what days are available for booking.
      *
-     * For back-to-back booking ([DayTimeApi](/Wl/Appointment/Book/Schedule/DayTime.json) == `true`): array of
+     * For back-to-back booking ({@link \WlSdk\Wl\Appointment\Book\Schedule\DayTime} == `true`): array of
      * appointments for back-to-back booking.
      * Converted to JSON string to be usable as model key. Each item is an array with next structure:
      *

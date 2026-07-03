@@ -7,7 +7,7 @@ class SearchTagListGetResponseSearchTag
     /**
      * The business category that can use this search tag.
      * One of the {@link \WlSdk\RsBusinessCategorySid} constants.
-     * This can be found in the business information found in [DataApi](/Wl/Business/Data.json).
+     * This can be found in the business information found in {@link \WlSdk\Wl\Business\Data}.
      *
      * @var int|null
      * @see \WlSdk\RsBusinessCategorySid

@@ -45,8 +45,7 @@ class AttendanceListGetResponse
 
     /**
      * The maximum number of clients on wait list of the class or event session.
-     * `0` for appointments, use [AppointmentWaitListApi](/Wl/Appointment/WaitList/AppointmentWaitList.json)
-     * instead.
+     * `0` for appointments, use AppointmentWaitListApi instead.
      *
      * @var int|null
      */
@@ -54,8 +53,7 @@ class AttendanceListGetResponse
 
     /**
      * `true` to use class/event specific wait list limit, `false` to use the limit from default policies.
-     * `false` for appointments. Use [AppointmentWaitListApi](/Wl/Appointment/WaitList/AppointmentWaitList.json)
-     * instead.
+     * `false` for appointments. Use AppointmentWaitListApi instead.
      *
      * @var bool|null
      */

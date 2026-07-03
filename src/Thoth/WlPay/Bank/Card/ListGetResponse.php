@@ -18,7 +18,7 @@ class ListGetResponse
 
     /**
      * List of bank cards.
-     * Duplicate of the [ListApi](/Thoth/WlPay/Bank/Card/List.json).
+     * Duplicate of the {@link \WlSdk\Thoth\WlPay\Bank\Card\ListEndpoint}.
      *
      * @var array|null
      */

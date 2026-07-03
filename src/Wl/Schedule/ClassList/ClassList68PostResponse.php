@@ -35,8 +35,8 @@ class ClassList68PostResponse
     public ?ClassList68PostResponseQuick $a_quick = null;
 
     /**
-     * A list of classes sessions starting with the date [ClassListApi](/Wl/Schedule/ClassList/ClassList.json)
-     * and in the 62 days ahead (or up to [ClassListApi](/Wl/Schedule/ClassList/ClassList.json)).
+     * A list of classes sessions starting with the date {@link \WlSdk\Wl\Schedule\ClassList\ClassList}
+     * and in the 62 days ahead (or up to {@link \WlSdk\Wl\Schedule\ClassList\ClassList}).
      * Every element has the following keys:
      *
      * @var ClassList68PostResponseSession[]|null

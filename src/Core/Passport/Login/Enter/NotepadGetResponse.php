@@ -15,7 +15,7 @@ class NotepadGetResponse
      *
      * If ID of the datacenter returned in this property differs from the current datacenter, this means that this
      * API request was forwarded to the datacenter returned here, and the notepad was created there.
-     * So that [EnterApi](/Core/Passport/Login/Enter/Enter.json) must always go to the datacenter specified in this
+     * So that {@link \WlSdk\Core\Passport\Login\Enter\Enter} must always go to the datacenter specified in this
      * property.
      *
      * `null` if datacenter preference was not evaluated, or it is not known.

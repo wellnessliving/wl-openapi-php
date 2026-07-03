@@ -20,8 +20,8 @@ class Enter
     /**
      * Signs the user in using their login and hashed password.
      *
-     * Accepts the user login, a password hash derived using the notepad obtained from
-     * [NotepadApi](/Core/Passport/Login/Enter/Notepad.json),
+     * Accepts the user login, a password hash derived using the notepad obtained from {@link
+     * \WlSdk\Core\Passport\Login\Enter\Notepad},
      * and an optional remember preference. Validates credentials, enforces CAPTCHA when too many failed
      * attempts have occurred, starts a session for the user, and returns a redirect URL if applicable.
      *

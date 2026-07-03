@@ -39,8 +39,8 @@ class Response
      * Saves a quiz response with the given element answers.
      *
      * Validates the submitted answers and persists the response record in a transaction. If
-     * [QuizResponseApi](/Core/Quiz/QuizResponse.json) is set, only validation runs and no record is created.
-     * Pass [QuizResponseApi](/Core/Quiz/QuizResponse.json) to bypass validation for pre-confirmed responses.
+     * QuizResponseApi is set, only validation runs and no record is created.
+     * Pass QuizResponseApi to bypass validation for pre-confirmed responses.
      *
      * @deprecated Use {@link Wl\Quiz\Response\Response65Api} instead.
      *

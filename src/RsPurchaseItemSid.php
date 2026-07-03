@@ -20,8 +20,7 @@ namespace WlSdk;
  *
  *
  *
- *   A purchased item that is created during the online booking process
- * [RsPurchaseItemSid::SERVICE](#/components/schemas/RsPurchaseItemSid).
+ *   A purchased item that is created during the online booking process {@link \WlSdk\RsPurchaseItemSid}.
  * - 18 (`APPOINTMENT_DEPOSIT`): Single appointment reservation with deposit.
  *
  *   This purchase created when client books a single appointment reservation with deposit amount,
@@ -30,8 +29,7 @@ namespace WlSdk;
  *
  *
  *
- *   A purchased item that is created during the online booking process
- * [RsPurchaseItemSid::SERVICE](#/components/schemas/RsPurchaseItemSid).
+ *   A purchased item that is created during the online booking process {@link \WlSdk\RsPurchaseItemSid}.
  * - 16 (`BUSINESS_EXPENSE`): Expense that comes along with the payment business. It contains information about
  * additional services which are
  *   included in the package. For example, payment for SMS.
@@ -64,8 +62,7 @@ namespace WlSdk;
  *
  *
  *
- *   Purchase that is created when a staff adds payment for an appointment at POS
- * [RsPurchaseItemSid::APPOINTMENT](#/components/schemas/RsPurchaseItemSid).
+ *   Purchase that is created when a staff adds payment for an appointment at POS {@link \WlSdk\RsPurchaseItemSid}.
  * - 26 (`TUITION`): Tuition purchase item.
  *   Used when client purchases tuition for an event list.
  */

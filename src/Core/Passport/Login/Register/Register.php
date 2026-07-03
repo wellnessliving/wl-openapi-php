@@ -21,8 +21,8 @@ class Register
      * Validates the new user's data and sends a confirmation email to complete registration.
      *
      * Accepts the new user's name, email, and password, validates each field, stores the pending registration,
-     * and sends a confirmation email with a link to complete registration via
-     * [RegisterConfirmApi](/Core/Passport/Login/Register/RegisterConfirm.json).
+     * and sends a confirmation email with a link to complete registration via {@link
+     * \WlSdk\Core\Passport\Login\Register\RegisterConfirm}.
      * An optional application ID and custom confirmation URL may be provided.
      *
      * @return RegisterPostResponse

@@ -29,7 +29,7 @@ class ElementGetResponse
     /**
      * Business policies connected to clients and bookings.
      *
-     * Contains the same structure as [BusinessConfigApi](/Wl/Business/Config/BusinessConfig.json).
+     * Contains the same structure as {@link \WlSdk\Wl\Business\Config\BusinessConfig}.
      *
      * If the event has custom overrides, those policies are used; otherwise, the default
      *  business policies are returned.

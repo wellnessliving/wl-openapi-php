@@ -293,8 +293,7 @@ namespace WlSdk;
  *
  *   Sent to the staff member with their attendance list for the day.
  * - 79 (`LOGIN_BACK`): Sent when user long time did not visit location, and it not has active promotion.
- *   Client Win-Back send only for inactive members
- * [SystemSid::INACTIVE](#/components/schemas/Wl.Login.Type.SystemSid).
+ *   Client Win-Back send only for inactive members {@link \WlSdk\Wl\Login\Type\SystemSid}.
  * - 49 (`LOGIN_BIRTHDAY`): Email to send on the day, when client has birthday.
  * - 51 (`LOGIN_CARD_EXPIRE`): Clients Payment Card expires this month.
  * - 123 (`LOGIN_MAIL_CONFIRM`): Email address confirmation.
@@ -315,8 +314,7 @@ namespace WlSdk;
  * account balance.
  * - 50 (`LOGIN_RETENTION`): Sent to a client when they haven't visited in a set number of days,
  *   but still have an active pass or membership.
- *   Client Retention send only for active members [SystemSid::ACTIVE](#/components/schemas/Wl.Login.Type.SystemSid)
- * and custom client types.
+ *   Client Retention send only for active members {@link \WlSdk\Wl\Login\Type\SystemSid} and custom client types.
  * - 213 (`LOGIN_STATEMENT_NEW`): Sent to the client when a new account statement becomes available.
  *   Email includes the statement as a PDF attachment.
  * - 9 (`LOGIN_WELCOME`): Sent to all new users after they create an account for the first time.
@@ -344,9 +342,8 @@ namespace WlSdk;
  *   Sent to the customer in the following cases:
  *   * An automatic renewal of a purchase option is successful.
  *   * Recurrent payment of installment plan is successful.
- *   * Suspended payment completed successfully [Task](#/components/schemas/Wl.Catalog.Payment.Task).
- *   * When status of a recurrently paid transaction is changed to
- * [RsPayTransactionStatusSid::PURCHASE_OK](#/components/schemas/RsPayTransactionStatusSid).
+ *   * Suspended payment completed successfully {@link \WlSdk\Wl\Catalog\Payment\Task}.
+ *   * When status of a recurrently paid transaction is changed to {@link \WlSdk\RsPayTransactionStatusSid}.
  *
  *   Should be disabled by default according to the task (see link below).
  * - 181 (`PAY_TRANSACTION_FAIL`): Transaction failed.
@@ -370,7 +367,7 @@ namespace WlSdk;
  *   Sent in the following cases:
  *   * Automatic renewal of a purchase option.
  *   * Account payment for installment plan.
- *   * Suspended payment [Task](#/components/schemas/Wl.Catalog.Payment.Task).
+ *   * Suspended payment {@link \WlSdk\Wl\Catalog\Payment\Task}.
  * - 55 (`PROMOTION_MEMBERSHIP_PAY_FAIL`): Automatic Payment Failed.
  *
  *   In case of unsuccessful Credit Card transaction.
@@ -378,7 +375,7 @@ namespace WlSdk;
  *   Sent to the customer in the following cases:
  *   * An automatic renewal of a purchase option is failed.
  *   * Recurrent payment of installment plan is failed.
- *   * Suspended payment failed [Task](#/components/schemas/Wl.Catalog.Payment.Task).
+ *   * Suspended payment failed {@link \WlSdk\Wl\Catalog\Payment\Task}.
  * - 56 (`PROMOTION_MEMBERSHIP_PAY_OK`): Membership Payment Confirmation.
  *
  *   In case of a successful Credit Card transaction.

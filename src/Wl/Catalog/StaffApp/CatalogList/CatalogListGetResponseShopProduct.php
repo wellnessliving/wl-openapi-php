@@ -40,10 +40,10 @@ class CatalogListGetResponseShopProduct
      * The program ID, set for promotions. One of the {@link \WlSdk\RsProgramSid} constants.
      *  <p>If `id_program` is {@link \WlSdk\RsProgramSid}, then use:</p>
      *  <ul>
-     *    <li>[ProgramListApi](/Wl/Insurance/Catalog/ProgramList.json) to obtain a list of active programs.</li>
-     *    <li>[EnrollmentFieldListApi](/Wl/Insurance/Enrollment/Field/EnrollmentFieldList.json) to get and validate
-     * fields for a given program.</li>
-     *    <li>[PaymentApi](/Wl/Catalog/Payment/Payment.json) for a program purchase.</li>
+     *    <li>{@link \WlSdk\Wl\Insurance\Catalog\ProgramList} to obtain a list of active programs.</li>
+     *    <li>{@link \WlSdk\Wl\Insurance\Enrollment\Field\EnrollmentFieldList} to get and validate fields for a
+     * given program.</li>
+     *    <li>{@link \WlSdk\Wl\Catalog\Payment\Payment} for a program purchase.</li>
      *  </ul>
      *
      * @var int|null
