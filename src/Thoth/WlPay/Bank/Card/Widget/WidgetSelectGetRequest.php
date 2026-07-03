@@ -5,7 +5,7 @@ namespace WlSdk\Thoth\WlPay\Bank\Card\Widget;
 class WidgetSelectGetRequest
 {
     /**
-     * Payment method. One of {@link \WlSdk\RsPayMethodSid} constants.
+     * Payment method.
      *
      * @var int|null
      * @see \WlSdk\RsPayMethodSid
@@ -14,7 +14,6 @@ class WidgetSelectGetRequest
 
     /**
      * Payment mode.
-     * One of {@link \WlSdk\RsPayModeSid} constants.
      *
      * @var int|null
      * @see \WlSdk\RsPayModeSid

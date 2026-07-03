@@ -446,7 +446,8 @@ class PurchaseListElementGetResponse
     public ?string $k_currency = null;
 
     /**
-     * The key of the item. This can correspond to one of many values depending on `id_sale`.
+     * The key of the item. This can correspond to one of many values depending on
+     * [PurchaseListElementApi](/Wl/Profile/PurchaseList/PurchaseListElement.json).
      *
      * @var string|null
      */

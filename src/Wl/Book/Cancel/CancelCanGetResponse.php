@@ -30,7 +30,7 @@ class CancelCanGetResponse
     /**
      * `true` if the client's account will be flagged instead of charging a monetary fee, `false` otherwise.
      *
-     * Meaningful only when `is_late` is `true`.
+     * Meaningful only when [CancelCanApi](/Wl/Book/Cancel/CancelCan.json) is `true`.
      *
      * @var bool|null
      */

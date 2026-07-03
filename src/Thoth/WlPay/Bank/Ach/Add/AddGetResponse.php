@@ -15,7 +15,7 @@ class AddGetResponse
     public ?string $html_widget = null;
 
     /**
-     * Transaction processor id. One of {@link \WlSdk\Thoth\PayProcessor\PayProcessorSid} constants.
+     * Transaction processor ID.
      *
      * @var int|null
      * @see \WlSdk\Thoth\PayProcessor\PayProcessorSid

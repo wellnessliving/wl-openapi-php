@@ -8,7 +8,8 @@ class ClassList68PostRequest
      * The list of classes keys to filter.
      * Return sessions with matching class IDs.
      *
-     * If it's empty and `show_class` is `true`, all classes will be returned.
+     * If it's empty and [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) is `true`, all classes will be
+     * returned.
      *
      * @var string[]|null
      */
@@ -17,9 +18,9 @@ class ClassList68PostRequest
     /**
      * List of tabs keys.
      *
-     * This will be ignored if `is_tab_all` is `true`.
+     * This will be ignored if [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) is `true`.
      *
-     * If list of tab keys is not empty, `id_class_tab` is mandatory.
+     * If list of tab keys is not empty, [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) is mandatory.
      *
      * `null` if no filtering by Book Now Tab is required.
      *
@@ -43,7 +44,8 @@ class ClassList68PostRequest
      * The list of event keys to filter.
      * Return sessions with matching event keys.
      *
-     * If it's empty and `show_event` is `true`, all events will be returned.
+     * If it's empty and [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) is `true`, all events will be
+     * returned.
      *
      * @var string[]|null
      */
@@ -89,7 +91,7 @@ class ClassList68PostRequest
 
     /**
      * ID of tab. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
-     * This will be ignored if `is_tab_all` is `true`.
+     * This will be ignored if [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) is `true`.
      *
      * `null` if no filtering by tab is required.
      *
@@ -99,9 +101,9 @@ class ClassList68PostRequest
     public ?int $id_class_tab = null;
 
     /**
-     * `true` means to not generate `a_session` result.
-     * Can be used, if you do not need full information about existing classes and result in `a_calendar` is
-     * enough.
+     * `true` means to not generate [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) result.
+     * Can be used, if you do not need full information about existing classes and result in
+     * [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) is enough.
      *
      * @var bool|null
      */
@@ -109,7 +111,8 @@ class ClassList68PostRequest
 
     /**
      * If `true`, sessions from every class tab are returned. If `false`, use the
-     * `k_class_tab` or `id_class_tab` to filter sessions by class tab.
+     * [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) or
+     * [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) to filter sessions by class tab.
      *
      * @var bool|null
      */
@@ -136,11 +139,20 @@ class ClassList68PostRequest
 
     /**
      * The tab key.
-     * This will be ignored if `is_tab_all` is `true`.
+     * This will be ignored if [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) is `true`.
      *
      * @var string|null
      */
     public ?string $k_class_tab = null;
+
+    /**
+     * Key of timezone.
+     *
+     * If not set then use default client timezone.
+     *
+     * @var string|null
+     */
+    public ?string $k_timezone = null;
 
     /**
      * The list of staff members to filter.
@@ -180,7 +192,7 @@ class ClassList68PostRequest
     public ?bool $show_event = null;
 
     /**
-     * Whether to generate `a_quick` a quick filter.
+     * Whether to generate [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) a quick filter.
      * If `true`, a quick filter will be generated. `false` otherwise.
      *
      * @var bool|null
@@ -212,6 +224,7 @@ class ClassList68PostRequest
             'is_virtual' => $this->is_virtual,
             'k_business' => $this->k_business,
             'k_class_tab' => $this->k_class_tab,
+            'k_timezone' => $this->k_timezone,
             's_staff' => $this->s_staff,
             's_staff_uid' => $this->s_staff_uid,
             'show_cancel' => $this->show_cancel,

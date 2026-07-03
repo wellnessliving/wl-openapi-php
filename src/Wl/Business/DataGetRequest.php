@@ -27,7 +27,7 @@ class DataGetRequest
 
     /**
      * The authorization token.
-     * This may be used instead of `k_business` to
+     * This may be used instead of [DataApi](/Wl/Business/Data.json) to
      * identify a business.
      *
      * @var string|null
