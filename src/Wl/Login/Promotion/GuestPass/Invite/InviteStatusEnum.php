@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
 /**
  * Lifecycle state of a guest pass invitation.
  *
- * Last used: 10
+ * Last used: 12
  *
  * Values:
  * - 9 (`ATTEND`): Guest attended the visit booked with the guest pass.
@@ -30,6 +30,15 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass\Invite;
  *    counts toward "Used".
  * - 4 (`NO_SHOW`): Guest accepted the invitation but did not show up for the visit. Pass is
  *    consumed and counts toward "Used".
+ * - 12 (`PENDING`): Guest has a visit linked to the guest pass, but its outcome (attended, no-show,
+ *    or late-cancelled) has not been determined yet and must be resolved manually by
+ *    staff. Distinct from
+ * [InviteStatusEnum::INVITE_ACCEPTED](#/components/schemas/Wl.Login.Promotion.GuestPass.Invite.InviteStatusEnum): the
+ * guest already
+ *    has a linked visit here, rather than merely having accepted the invitation.
+ * - 11 (`WAITLISTED`): Guest is on the waitlist for the class session booked with the guest pass.
+ *    Pass is committed to the guest - it is no longer "Available" to the host,
+ *    but the guest has not secured a confirmed spot in the class yet.
  */
 class InviteStatusEnum
 {
@@ -62,4 +71,10 @@ class InviteStatusEnum
 
     /** Guest accepted the invitation but did not show up for the visit. Pass is */
     public const NO_SHOW = 4;
+
+    /** Guest has a visit linked to the guest pass, but its outcome (attended, no-show, */
+    public const PENDING = 12;
+
+    /** Guest is on the waitlist for the class session booked with the guest pass. */
+    public const WAITLISTED = 11;
 }

@@ -32,6 +32,15 @@ class EditGetResponse
     public ?bool $is_brivo_active = null;
 
     /**
+     * Whether automatic check-in on Brivo access granted is enabled for the group.
+     * When enabled, a successful Brivo door access reported for a client of this group triggers an automatic
+     *  check-in attempt in WellnessLiving. When disabled, Brivo access events for these clients are ignored.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_brivo_checkin_active = null;
+
+    /**
      * Whether Brivo invitation feature enabled for the group.
      *
      * @var bool|null
@@ -94,6 +103,7 @@ class EditGetResponse
         $this->id_conversion_type = isset($data['id_conversion_type']) ? (int)$data['id_conversion_type'] : null;
         $this->id_member_group_shape = isset($data['id_member_group_shape']) ? (int)$data['id_member_group_shape'] : null;
         $this->is_brivo_active = isset($data['is_brivo_active']) ? (bool)$data['is_brivo_active'] : null;
+        $this->is_brivo_checkin_active = isset($data['is_brivo_checkin_active']) ? (bool)$data['is_brivo_checkin_active'] : null;
         $this->is_brivo_invitation_active = isset($data['is_brivo_invitation_active']) ? (bool)$data['is_brivo_invitation_active'] : null;
         $this->is_icon = isset($data['is_icon']) ? (bool)$data['is_icon'] : null;
         $this->is_update = isset($data['is_update']) ? (bool)$data['is_update'] : null;

@@ -105,6 +105,15 @@ class EditPostRequest
     public ?bool $is_brivo_active = null;
 
     /**
+     * Whether automatic check-in on Brivo access granted is enabled for the group.
+     * When enabled, a successful Brivo door access reported for a client of this group triggers an automatic
+     *  check-in attempt in WellnessLiving. When disabled, Brivo access events for these clients are ignored.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_brivo_checkin_active = null;
+
+    /**
      * Whether Brivo invitation feature enabled for the group.
      *
      * @var bool|null
@@ -178,6 +187,7 @@ class EditPostRequest
             'id_member_group_shape' => $this->id_member_group_shape,
             'id_share' => $this->id_share,
             'is_brivo_active' => $this->is_brivo_active,
+            'is_brivo_checkin_active' => $this->is_brivo_checkin_active,
             'is_brivo_invitation_active' => $this->is_brivo_invitation_active,
             'is_icon' => $this->is_icon,
             'is_update' => $this->is_update,
