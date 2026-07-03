@@ -13,7 +13,7 @@ class ElementGetResponseClassList
 
     /**
      * Class-specific business policies overriding the business defaults.
-     * Has the same structure as [BusinessConfigApi](/Wl/Business/Config/BusinessConfig.json).
+     * Has the same structure as [BusinessConfigApi::$a_business_policy](/Wl/Business/Config/BusinessConfig.json).
      * `null` when the class uses the default business policy without overrides.
      *
      * @var ElementGetResponseClassListConfig|null

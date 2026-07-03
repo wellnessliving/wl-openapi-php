@@ -36,7 +36,8 @@ class PaymentPostPostRequest
     public ?bool $is_walk_in = null;
 
     /**
-     * The item key. Depends on [PaymentApi](/Wl/Appointment/Book/Payment/Payment.json) property.
+     * The item key. Depends on [PaymentApi::$id_purchase_item](/Wl/Appointment/Book/Payment/Payment.json)
+     * property.
      *
      * @var string|null
      */
@@ -79,7 +80,7 @@ class PaymentPostPostRequest
 
     /**
      * Information detailing an appointment booking.
-     * Has the same structure as [PaymentApi](/Wl/Appointment/Book/Payment/Payment.json).
+     * Has the same structure as [PaymentApi::$a_book_data](/Wl/Appointment/Book/Payment/Payment.json).
      *
      * @var array|null
      */

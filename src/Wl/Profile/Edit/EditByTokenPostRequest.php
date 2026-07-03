@@ -144,7 +144,7 @@ class EditByTokenPostRequest
     public ?array $a_intents = null;
 
     /**
-     * A copy of the [EditApi](/Wl/Profile/Edit/Edit.json).
+     * A copy of the [EditApi::$a_change](/Wl/Profile/Edit/Edit.json).
      * This is used for POST requests when creating a new user.
      *
      * @var array|null
@@ -177,7 +177,7 @@ class EditByTokenPostRequest
      * `true` - user agreed to receive marketing SMS;
      * `false` - otherwise.
      *
-     * Only matters if [EditApi](/Wl/Profile/Edit/Edit.json) is `true`.
+     * Only matters if [EditApi::$is_sms_subscription_presented](/Wl/Profile/Edit/Edit.json) is `true`.
      *
      * @var bool|null
      */
@@ -196,7 +196,7 @@ class EditByTokenPostRequest
      * `true` - user agreed to receive transactional SMS;
      * `false` - otherwise.
      *
-     * Only matters if [EditApi](/Wl/Profile/Edit/Edit.json) is `true`.
+     * Only matters if [EditApi::$is_sms_subscription_presented](/Wl/Profile/Edit/Edit.json) is `true`.
      *
      * @var bool|null
      */

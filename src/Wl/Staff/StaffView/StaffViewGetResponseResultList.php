@@ -6,7 +6,8 @@ class StaffViewGetResponseResultList
 {
     /**
      * Contains a schedule of classes per day.
-     * Each element has a structure like in [StaffViewApi](/Wl/Staff/StaffView/StaffView.json) property.
+     * Each element has a structure like in [StaffViewApi::$a_class_day](/Wl/Staff/StaffView/StaffView.json)
+     * property.
      *
      * @var StaffViewGetResponseResultListClassDay|null
      */
@@ -14,7 +15,7 @@ class StaffViewGetResponseResultList
 
     /**
      * Staff information.
-     * Each element has a structure like in [StaffViewApi](/Wl/Staff/StaffView/StaffView.json) property.
+     * Each element has a structure like in [StaffViewApi::$a_staff](/Wl/Staff/StaffView/StaffView.json) property.
      *
      * @var StaffViewGetResponseResultListStaff|null
      */

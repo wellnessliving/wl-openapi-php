@@ -19,7 +19,7 @@ class ImageUploadPutRequest
     public ?bool $is_temporary = null;
 
     /**
-     * The image ID set in [ImageUploadApi](/Core/Drive/ImageUpload/ImageUpload.json).
+     * The image ID set in [ImageUploadApi::$s_class](/Core/Drive/ImageUpload/ImageUpload.json).
      *
      * @var string|null
      */

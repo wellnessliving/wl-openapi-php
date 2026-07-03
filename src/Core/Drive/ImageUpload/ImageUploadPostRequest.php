@@ -19,8 +19,8 @@ class ImageUploadPostRequest
     public ?string $s_class = null;
 
     /**
-     * A list of image IDs set in [ImageUploadApi](/Core/Drive/ImageUpload/ImageUpload.json), serialized using
-     * JSON.
+     * A list of image IDs set in [ImageUploadApi::$s_class](/Core/Drive/ImageUpload/ImageUpload.json), serialized
+     * using JSON.
      *
      * This will be `null` if there's no data being sent by the client.
      *

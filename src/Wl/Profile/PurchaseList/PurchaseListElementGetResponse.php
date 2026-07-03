@@ -447,7 +447,7 @@ class PurchaseListElementGetResponse
 
     /**
      * The key of the item. This can correspond to one of many values depending on
-     * [PurchaseListElementApi](/Wl/Profile/PurchaseList/PurchaseListElement.json).
+     * [PurchaseListElementApi::$id_sale](/Wl/Profile/PurchaseList/PurchaseListElement.json).
      *
      * @var string|null
      */

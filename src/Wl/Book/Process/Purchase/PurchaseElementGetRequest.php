@@ -26,8 +26,8 @@ class PurchaseElementGetRequest
     /**
      * The number of sessions which are booked simultaneously.
      *
-     * Required when [PurchaseElementApi](/Wl/Book/Process/Purchase/PurchaseElement.json) = {@link
-     * \WlSdk\RsPurchaseItemSid}.
+     * Required when [PurchaseElementApi::$id_purchase_item](/Wl/Book/Process/Purchase/PurchaseElement.json) =
+     * {@link \WlSdk\RsPurchaseItemSid}.
      *
      * @var int|null
      * @see \WlSdk\RsPurchaseItemSid

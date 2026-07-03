@@ -37,7 +37,7 @@ class PromotionPayPausePutRequest
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
      *
      * `null` if not yet initialized or if the request is based on
-     * [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json).
+     * [PromotionPayPauseApi::$k_login_promotion](/Wl/Login/Promotion/PromotionPayPause.json).
      *
      * @var string|null
      */

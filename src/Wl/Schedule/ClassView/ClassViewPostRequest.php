@@ -48,7 +48,8 @@ class ClassViewPostRequest
 
     /**
      * A list of sessions to get information for.
-     * A serialized array. See [ClassViewApi](/Wl/Schedule/ClassView/ClassView.json) for the array structure.
+     * A serialized array. See [ClassViewApi::$a_session_request](/Wl/Schedule/ClassView/ClassView.json) for the
+     * array structure.
      * Serialization and sending by POST is necessary to send big lists.
      *
      * @var string|null

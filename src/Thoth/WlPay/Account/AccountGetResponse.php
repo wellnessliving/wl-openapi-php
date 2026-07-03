@@ -29,7 +29,7 @@ class AccountGetResponse
     /**
      * Determines whether the user is a debtor. If `true` - the owner of this account is a debtor.
      * If `false` - the user is not a debtor or the information is not returned for the
-     * account owner ([AccountApi](/Thoth/WlPay/Account/Account.json) is `false`).
+     * account owner ([AccountApi::$is_owner](/Thoth/WlPay/Account/Account.json) is `false`).
      *
      * @var bool|null
      */

@@ -7,8 +7,9 @@ class InfoCanCompleteGetRequest
     /**
      * A list of sessions of an event that can be booked together.
      *
-     * This is the same as [InfoCanCompleteApi](/Wl/Book/Process/Info/InfoCanComplete.json), but limited by query
-     * string
+     * This is the same as
+     * [InfoCanCompleteApi::$a_session_select_post](/Wl/Book/Process/Info/InfoCanComplete.json), but limited by
+     * query string
      * length and might fail if the user is booking more than 50 sessions at once.
      * Therefore, using the POST method is preferable.
      *

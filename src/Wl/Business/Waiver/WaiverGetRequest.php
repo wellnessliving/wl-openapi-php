@@ -24,7 +24,7 @@ class WaiverGetRequest
      * User key for which the waiver is shown.
      * Used to fill the variables in the contract
      * Not necessarily if the user does not already exist. In this case, you need to set
-     * [WaiverApi](/Wl/Business/Waiver/Waiver.json).
+     * [WaiverApi::$text_fullname](/Wl/Business/Waiver/Waiver.json).
      *
      * @var string|null
      */

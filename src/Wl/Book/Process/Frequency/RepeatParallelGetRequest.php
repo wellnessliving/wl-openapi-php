@@ -28,24 +28,24 @@ class RepeatParallelGetRequest
     public ?string $dt_date = null;
 
     /**
-     * Date to start recurring booking. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json) ==
-     * {@link \WlSdk\RsRepeatEndSid}.
+     * Date to start recurring booking. Not empty only when
+     * [RepeatApi::$id_repeat_end](/Wl/Book/Process/Frequency/Repeat.json) == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var string|null
      */
     public ?string $dt_from = null;
 
     /**
-     * Date to finish recurring booking. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json) ==
-     * {@link \WlSdk\RsRepeatEndSid}.
+     * Date to finish recurring booking. Not empty only when
+     * [RepeatApi::$id_repeat_end](/Wl/Book/Process/Frequency/Repeat.json) == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var string|null
      */
     public ?string $dt_to = null;
 
     /**
-     * Count of the visits to be created. Not empty only when [RepeatApi](/Wl/Book/Process/Frequency/Repeat.json)
-     * == {@link \WlSdk\RsRepeatEndSid}.
+     * Count of the visits to be created. Not empty only when
+     * [RepeatApi::$id_repeat_end](/Wl/Book/Process/Frequency/Repeat.json) == {@link \WlSdk\RsRepeatEndSid}.
      *
      * @var int|null
      * @see \WlSdk\RsRepeatEndSid

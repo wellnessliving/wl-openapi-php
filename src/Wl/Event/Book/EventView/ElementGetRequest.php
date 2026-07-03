@@ -6,8 +6,9 @@ class ElementGetRequest
 {
     /**
      * The last available date for booking.
-     * If this is set and [ElementApi](/Wl/Event/Book/EventView/Element.json) is a set list of
-     *   sessions available for booking, [ElementApi](/Wl/Event/Book/EventView/Element.json)
+     * If this is set and [ElementApi::$dl_book_available_start](/Wl/Event/Book/EventView/Element.json) is a set
+     * list of
+     *   sessions available for booking, [ElementApi::$a_book_available](/Wl/Event/Book/EventView/Element.json)
      *   should match given date range.
      *
      * @var string|null
@@ -16,8 +17,9 @@ class ElementGetRequest
 
     /**
      * The first available date for booking.
-     * If this is set and [ElementApi](/Wl/Event/Book/EventView/Element.json) is a set list of
-     *   sessions available for booking [ElementApi](/Wl/Event/Book/EventView/Element.json)
+     * If this is set and [ElementApi::$dl_book_available_end](/Wl/Event/Book/EventView/Element.json) is a set list
+     * of
+     *   sessions available for booking [ElementApi::$a_book_available](/Wl/Event/Book/EventView/Element.json)
      *   should match given date range.
      *
      * @var string|null
@@ -27,7 +29,8 @@ class ElementGetRequest
     /**
      * Datetime of the session.
      * Is not `null` only if we need to get information for an event with a specific class period and datetime.
-     * If this is `null`, then the [ElementApi](/Wl/Event/Book/EventView/Element.json) should be `null` too.
+     * If this is `null`, then the [ElementApi::$k_class_period](/Wl/Event/Book/EventView/Element.json) should be
+     * `null` too.
      *
      * @var string|null
      */
@@ -84,7 +87,8 @@ class ElementGetRequest
      * Key of a class period to show information for.
      *
      * Is not `null` only if we need to get information for an event with a specific class period and datetime.
-     * If this is `null`, then the [ElementApi](/Wl/Event/Book/EventView/Element.json) should be `null` too.
+     * If this is `null`, then the [ElementApi::$dtu_session](/Wl/Event/Book/EventView/Element.json) should be
+     * `null` too.
      *
      * @var string|null
      */
@@ -92,8 +96,8 @@ class ElementGetRequest
 
     /**
      * The event key.
-     * You can specify [ElementApi](/Wl/Event/Book/EventView/Element.json) instead to get information for a large
-     * number of events.
+     * You can specify [ElementApi::$s_event](/Wl/Event/Book/EventView/Element.json) instead to get information for
+     * a large number of events.
      *
      * @var string|null
      */
@@ -101,8 +105,8 @@ class ElementGetRequest
 
     /**
      * A list of event keys serialized with JSON.
-     * Specify instead of [ElementApi](/Wl/Event/Book/EventView/Element.json) to get information for a large number
-     * of events.
+     * Specify instead of [ElementApi::$k_event](/Wl/Event/Book/EventView/Element.json) to get information for a
+     * large number of events.
      *
      * @var string|null
      */

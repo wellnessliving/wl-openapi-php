@@ -37,8 +37,8 @@ class AttachElement
      * In case the attachment key is not specified, it adds a new attachment.
 In case the attachment key is specified, edits the attachment.
      *
-     * When [AttachElementApi](/Wl/Profile/Attach/AttachElement.json) is empty, uploads a new file to the client
-     * profile; when set, updates the
+     * When [AttachElementApi::$k_attach](/Wl/Profile/Attach/AttachElement.json) is empty, uploads a new file to
+     * the client profile; when set, updates the
      *  attachment metadata, file content, or visibility flag depending on the provided fields.
      *
      * @return AttachElementPostResponse

@@ -114,9 +114,9 @@ class ElementGetRequest
      * Note that this must be serialized via JSON.
      *
      * If this field is specified, don't specify any of the following fields:
-     * * [ElementApi](/Wl/Catalog/CatalogList/Element.json)
-     * * [ElementApi](/Wl/Catalog/CatalogList/Element.json)
-     * * [ElementApi](/Wl/Catalog/CatalogList/Element.json)
+     * * [ElementApi::$id_sale](/Wl/Catalog/CatalogList/Element.json)
+     * * [ElementApi::$k_id](/Wl/Catalog/CatalogList/Element.json)
+     * * [ElementApi::$k_shop_product_option](/Wl/Catalog/CatalogList/Element.json)
      *
      * This will be `null` to get information for only one item.
      *

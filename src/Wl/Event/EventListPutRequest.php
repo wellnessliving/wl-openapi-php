@@ -7,7 +7,7 @@ class EventListPutRequest
     /**
      * The event business key to retrieve a list of all event sessions in business.
      *
-     * `null` to retrieve events from [EventListApi](/Wl/Event/EventList.json).
+     * `null` to retrieve events from [EventListApi::$k_location](/Wl/Event/EventList.json).
      *
      * @var string|null
      */

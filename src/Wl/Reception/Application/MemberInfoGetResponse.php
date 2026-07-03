@@ -9,7 +9,7 @@ class MemberInfoGetResponse
 {
     /**
      * Additional member data or `null` if any data can be shown.
-     * Will be filled if [InfoApi](/Wl/Member/Info/Info.json) flag is set.
+     * Will be filled if [InfoApi::$is_full](/Wl/Member/Info/Info.json) flag is set.
      *
      * @var MemberInfoGetResponseInfo|null
      */
@@ -58,7 +58,7 @@ class MemberInfoGetResponse
     /**
      * If `true`, the client is a traveler. Otherwise, this will be `false`.
      * This will be `null` in cases when the client is a walk-in. Or when
-     * [MemberInfoApi](/Wl/Reception/Application/MemberInfo.json) is `false`.
+     * [MemberInfoApi::$is_full](/Wl/Reception/Application/MemberInfo.json) is `false`.
      *
      * @var bool|null
      */

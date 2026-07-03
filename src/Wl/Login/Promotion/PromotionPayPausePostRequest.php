@@ -37,7 +37,8 @@ class PromotionPayPausePostRequest
      * `start-cross`
      * status code if a hold is already in place.
      *
-     * Ignored if [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json) is provided.
+     * Ignored if [PromotionPayPauseApi::$k_promotion_pay_pause](/Wl/Login/Promotion/PromotionPayPause.json) is
+     * provided.
      *
      * `null` if not yet initialized.
      *
@@ -50,7 +51,7 @@ class PromotionPayPausePostRequest
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
      *
      * `null` if not yet initialized or if the request is based on
-     * [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json).
+     * [PromotionPayPauseApi::$k_login_promotion](/Wl/Login/Promotion/PromotionPayPause.json).
      *
      * @var string|null
      */

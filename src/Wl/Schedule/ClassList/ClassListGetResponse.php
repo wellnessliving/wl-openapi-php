@@ -19,8 +19,9 @@ class ClassListGetResponse
     public ?array $a_calendar = null;
 
     /**
-     * A list of classes sessions starting with the date [ClassListApi](/Wl/Schedule/ClassList/ClassList.json)
-     * and in the 62 days ahead (or up to [ClassListApi](/Wl/Schedule/ClassList/ClassList.json)).
+     * A list of classes sessions starting with the date
+     * [ClassListApi::$dt_date](/Wl/Schedule/ClassList/ClassList.json)
+     * and in the 62 days ahead (or up to [ClassListApi::$dt_end](/Wl/Schedule/ClassList/ClassList.json)).
      * Every element has the following keys:
      *
      * @var ClassListGetResponseSession[]|null
@@ -37,8 +38,8 @@ class ClassListGetResponse
 
     /**
      * If `true`, there exists at least one virtual service by a specified
-     * [ClassListApi](/Wl/Schedule/ClassList/ClassList.json) and
-     * [ClassListApi](/Wl/Schedule/ClassList/ClassList.json),
+     * [ClassListApi::$k_business](/Wl/Schedule/ClassList/ClassList.json) and
+     * [ClassListApi::$k_class_tab](/Wl/Schedule/ClassList/ClassList.json),
      * Otherwise, this will be `false`.
      *
      * @var bool|null

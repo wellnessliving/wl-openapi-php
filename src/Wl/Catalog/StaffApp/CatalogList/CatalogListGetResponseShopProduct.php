@@ -76,10 +76,10 @@ class CatalogListGetResponseShopProduct
 
     /**
      * This will be `true` if this Purchase Option is suitable to pay for the visit
-     * [CatalogListApi](/Wl/Catalog/StaffApp/CatalogList/CatalogList.json).
+     * [CatalogListApi::$k_visit](/Wl/Catalog/StaffApp/CatalogList/CatalogList.json).
      * Otherwise, this will be `false`.
-     * If [CatalogListApi](/Wl/Catalog/StaffApp/CatalogList/CatalogList.json) is empty, this will always be
-     * `false`.
+     * If [CatalogListApi::$k_visit](/Wl/Catalog/StaffApp/CatalogList/CatalogList.json) is empty, this will always
+     * be `false`.
      *
      * @var bool|null
      */

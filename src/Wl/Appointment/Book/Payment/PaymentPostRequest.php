@@ -43,7 +43,8 @@ class PaymentPostRequest
     public ?bool $is_walk_in = null;
 
     /**
-     * The item key. Depends on [PaymentApi](/Wl/Appointment/Book/Payment/Payment.json) property.
+     * The item key. Depends on [PaymentApi::$id_purchase_item](/Wl/Appointment/Book/Payment/Payment.json)
+     * property.
      *
      * @var string|null
      */

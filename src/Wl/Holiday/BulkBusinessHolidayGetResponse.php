@@ -9,7 +9,7 @@ class BulkBusinessHolidayGetResponse
 {
     /**
      * An array consisting of the business's closed day data for all locations by holiday keys
-     * [HolidayApi](/Wl/Holiday/Holiday.json).
+     * [HolidayApi::$dl_work](/Wl/Holiday/Holiday.json).
      *
      * List of holidays.
      *

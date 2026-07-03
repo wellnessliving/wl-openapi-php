@@ -6,8 +6,8 @@ class ListGetRequest
 {
     /**
      * A list of business keys.
-     * You can specify this instead of [ListApi](/Wl/Location/List.json) to load data for many businesses in one
-     * call.
+     * You can specify this instead of [ListApi::$k_business](/Wl/Location/List.json) to load data for many
+     * businesses in one call.
      *
      * @var string[]|null
      */
@@ -25,8 +25,8 @@ class ListGetRequest
 
     /**
      * The primary keys of the selected businesses.
-     * You can specify this instead of [ListApi](/Wl/Location/List.json) to load data for many businesses in one
-     * call.
+     * You can specify this instead of [ListApi::$k_business](/Wl/Location/List.json) to load data for many
+     * businesses in one call.
      *
      * This is the same as `$a_business`, but serialized with JSON (to make the URL shorter).
      *

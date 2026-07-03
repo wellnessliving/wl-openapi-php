@@ -18,7 +18,7 @@ class ScheduleListGetRequest
      * The end date of the range from which the list of schedule sessions should be retrieved.
      *
      * This will be `null` if the range has no end date. If this value is used,
-     * [ScheduleListApi](/Wl/Schedule/ScheduleList/StaffApp/ScheduleList.json) should not be set.
+     * [ScheduleListApi::$dt_date](/Wl/Schedule/ScheduleList/StaffApp/ScheduleList.json) should not be set.
      *
      * @var string|null
      */
@@ -28,7 +28,7 @@ class ScheduleListGetRequest
      * The start date of the range from which the list of scheduled sessions should be retrieved.
      *
      * This will be `null` if the range has no start date. If this value is used,
-     * [ScheduleListApi](/Wl/Schedule/ScheduleList/StaffApp/ScheduleList.json) should not be set.
+     * [ScheduleListApi::$dt_date](/Wl/Schedule/ScheduleList/StaffApp/ScheduleList.json) should not be set.
      *
      * @var string|null
      */
@@ -38,8 +38,8 @@ class ScheduleListGetRequest
      * The date of the sessions in Coordinated Universal Time (UTC) and MySQL format.
      *
      * If this value is used, then
-     * [ScheduleListApi](/Wl/Schedule/ScheduleList/StaffApp/ScheduleList.json) and
-     * [ScheduleListApi](/Wl/Schedule/ScheduleList/StaffApp/ScheduleList.json) should not be set.
+     * [ScheduleListApi::$dl_end](/Wl/Schedule/ScheduleList/StaffApp/ScheduleList.json) and
+     * [ScheduleListApi::$dl_start](/Wl/Schedule/ScheduleList/StaffApp/ScheduleList.json) should not be set.
      *
      * @var string|null
      */

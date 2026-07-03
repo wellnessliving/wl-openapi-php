@@ -18,8 +18,9 @@ class MicrosoftLoginGetRequest
      * * All possible links must be registered in the Microsoft application used for authorization.
      * * WARNING: Do not use this link for a direct redirect. This will present a vulnerability.
      *
-     * * A [LoginApi](/Social/Microsoft/Login.json) link will be generated along with this redirect URI.
-     * * When checking the received [LoginApi](/Social/Microsoft/Login.json) from Microsoft.
+     * * A [LoginApi::$url_login](/Social/Microsoft/Login.json) link will be generated along with this redirect
+     * URI.
+     * * When checking the received [LoginApi::$s_code](/Social/Microsoft/Login.json) from Microsoft.
      * The link must be sent along with it to the `post()` method.
      *
      * @var string|null

@@ -104,7 +104,7 @@ class EventListGetRequest
 
     /**
      * Determines whether you need to retrieve a list of event sessions regardless of the tab specified in
-     * [EventListApi](/Wl/Event/EventList.json).
+     * [EventListApi::$k_class_tab](/Wl/Event/EventList.json).
      *
      * * `true` - retrieves a list regardless of the specified tab.
      * * `false` - retrieves a list only for the specific tab.
@@ -116,7 +116,7 @@ class EventListGetRequest
     /**
      * The event business key to retrieve a list of all event sessions in business.
      *
-     * `null` to retrieve events from [EventListApi](/Wl/Event/EventList.json).
+     * `null` to retrieve events from [EventListApi::$k_location](/Wl/Event/EventList.json).
      *
      * @var string|null
      */
@@ -135,8 +135,8 @@ class EventListGetRequest
      * An empty value to retrieve a list of event sessions that don't belong to any tab.
      *
      * Will be ignored in next cases:
-     * * [EventListApi](/Wl/Event/EventList.json) specified.
-     * * [EventListApi](/Wl/Event/EventList.json) is `true`.
+     * * [EventListApi::$k_skin](/Wl/Event/EventList.json) specified.
+     * * [EventListApi::$is_tab_all](/Wl/Event/EventList.json) is `true`.
      *
      * @var string|null
      */
@@ -145,9 +145,9 @@ class EventListGetRequest
     /**
      * The event location key to retrieve a list of all event sessions in a specific location.
      *
-     * Required if [EventListApi](/Wl/Event/EventList.json) isn't specified.
+     * Required if [EventListApi::$k_business](/Wl/Event/EventList.json) isn't specified.
      * `null` if you need to retrieve a list of event sessions in all locations of
-     * [EventListApi](/Wl/Event/EventList.json).
+     * [EventListApi::$k_business](/Wl/Event/EventList.json).
      *
      * @var string|null
      */
@@ -156,7 +156,7 @@ class EventListGetRequest
     /**
      * The skin key if an event list is used for widget mode.
      *
-     * [EventListApi](/Wl/Event/EventList.json) will be ignored for widget mode.
+     * [EventListApi::$k_class_tab](/Wl/Event/EventList.json) will be ignored for widget mode.
      *
      * @var string|null
      */

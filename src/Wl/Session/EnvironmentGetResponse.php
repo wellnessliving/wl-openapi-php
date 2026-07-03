@@ -54,7 +54,7 @@ class EnvironmentGetResponse
     public ?EnvironmentGetResponseSplashScreen $a_splash_screen = null;
 
     /**
-     * Local date with time now in current location [EnvironmentApi](/Wl/Session/Environment.json).
+     * Local date with time now in current location [EnvironmentApi::$k_location](/Wl/Session/Environment.json).
      *
      * @var string|null
      */
@@ -69,7 +69,7 @@ class EnvironmentGetResponse
 
     /**
      * Whether the merchant is configured for the client's home location or for business
-     * [EnvironmentApi](/Wl/Session/Environment.json).
+     * [EnvironmentApi::$k_business](/Wl/Session/Environment.json).
      *
      * @var bool|null
      */

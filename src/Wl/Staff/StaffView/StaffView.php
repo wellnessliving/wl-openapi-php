@@ -20,8 +20,9 @@ class StaffView
     /**
      * Retrieves information about staff.
      *
-     * This method can accept or one staff key [StaffViewApi](/Wl/Staff/StaffView/StaffView.json) or staff list
-     * [StaffViewApi](/Wl/Staff/StaffView/StaffView.json) but not both (exception would be thrown).
+     * This method can accept or one staff key [StaffViewApi::$k_staff](/Wl/Staff/StaffView/StaffView.json) or
+     * staff list
+     * [StaffViewApi::$a_staff_list](/Wl/Staff/StaffView/StaffView.json) but not both (exception would be thrown).
      *
      * @deprecated Use {@link \Wl\Staff\StaffView\StaffView74Api}
      *

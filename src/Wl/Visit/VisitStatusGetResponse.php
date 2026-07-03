@@ -32,7 +32,7 @@ class VisitStatusGetResponse
      * An array of service resources.
      *
      * Contains an extended data set, as well as a different format than
-     * [VisitStatusApi](/Wl/Visit/VisitStatus.json).
+     * [VisitStatusApi::$a_resource](/Wl/Visit/VisitStatus.json).
      *
      * Each element contains the following set of data:
      *

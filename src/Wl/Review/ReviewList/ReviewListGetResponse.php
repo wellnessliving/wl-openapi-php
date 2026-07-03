@@ -8,8 +8,8 @@ namespace WlSdk\Wl\Review\ReviewList;
 class ReviewListGetResponse
 {
     /**
-     * List of reviews. If passed [ReviewListApi](/Wl/Review/ReviewList/ReviewList.json) then the result will be
-     * full, otherwise in result will be keys: `k_review`, `uid`.
+     * List of reviews. If passed [ReviewListApi::$i_page](/Wl/Review/ReviewList/ReviewList.json) then the result
+     * will be full, otherwise in result will be keys: `k_review`, `uid`.
      *
      * @var ReviewListGetResponseReview[]|null
      */

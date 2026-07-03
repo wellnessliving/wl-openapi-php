@@ -22,8 +22,8 @@ class TagListPostRequest
 
     /**
      * List of tags in json format.
-     * See [TagListApi](/Wl/Tag/TagList.json) for the structure of each tag.
-     * `null` to use [TagListApi](/Wl/Tag/TagList.json) for getting the tag list.
+     * See [TagListApi::$a_list](/Wl/Tag/TagList.json) for the structure of each tag.
+     * `null` to use [TagListApi::$a_list](/Wl/Tag/TagList.json) for getting the tag list.
      *
      * @var string|null
      */

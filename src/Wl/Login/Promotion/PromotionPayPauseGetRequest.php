@@ -25,13 +25,14 @@ class PromotionPayPauseGetRequest
 
     /**
      * Whether need to get all pause periods for the login promotion.
-     * If `true` then [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json) will be returned.
+     * If `true` then [PromotionPayPauseApi::$a_pay_pause_list](/Wl/Login/Promotion/PromotionPayPause.json) will be
+     * returned.
      * If `false` then information about specified
-     * [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json) or
+     * [PromotionPayPauseApi::$k_promotion_pay_pause](/Wl/Login/Promotion/PromotionPayPause.json) or
      * currently active pause period will be returned
-     * ([PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json),
-     * [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json) and
-     * [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json)).
+     * ([PromotionPayPauseApi::$dt_start](/Wl/Login/Promotion/PromotionPayPause.json),
+     * [PromotionPayPauseApi::$dt_end](/Wl/Login/Promotion/PromotionPayPause.json) and
+     * [PromotionPayPauseApi::$text_note](/Wl/Login/Promotion/PromotionPayPause.json)).
      *
      * @var bool|null
      */
@@ -51,7 +52,8 @@ class PromotionPayPauseGetRequest
      * `start-cross`
      * status code if a hold is already in place.
      *
-     * Ignored if [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json) is provided.
+     * Ignored if [PromotionPayPauseApi::$k_promotion_pay_pause](/Wl/Login/Promotion/PromotionPayPause.json) is
+     * provided.
      *
      * `null` if not yet initialized.
      *
@@ -64,7 +66,7 @@ class PromotionPayPauseGetRequest
      * This key will be empty if there's no active hold in place or if a scheduled hold isn't in effect.
      *
      * `null` if not yet initialized or if the request is based on
-     * [PromotionPayPauseApi](/Wl/Login/Promotion/PromotionPayPause.json).
+     * [PromotionPayPauseApi::$k_login_promotion](/Wl/Login/Promotion/PromotionPayPause.json).
      *
      * @var string|null
      */

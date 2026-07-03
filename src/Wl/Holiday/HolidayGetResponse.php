@@ -9,7 +9,7 @@ class HolidayGetResponse
 {
     /**
      * A list of the location's closed day titles by location keys on the date
-     * [HolidayApi](/Wl/Holiday/Holiday.json).
+     * [HolidayApi::$dl_work](/Wl/Holiday/Holiday.json).
      *
      * Keys are location keys. Values are holiday title strings.
      *
@@ -18,15 +18,15 @@ class HolidayGetResponse
     public ?array $a_location_holiday = null;
 
     /**
-     * `true` if the business has a closed day on the date [HolidayApi](/Wl/Holiday/Holiday.json), `false` if
-     * otherwise.
+     * `true` if the business has a closed day on the date [HolidayApi::$dl_work](/Wl/Holiday/Holiday.json),
+     * `false` if otherwise.
      *
      * @var bool|null
      */
     public ?bool $is_business_holiday = null;
 
     /**
-     * The message used for the business's closed day on the date [HolidayApi](/Wl/Holiday/Holiday.json).
+     * The message used for the business's closed day on the date [HolidayApi::$dl_work](/Wl/Holiday/Holiday.json).
      *
      * @var string|null
      */

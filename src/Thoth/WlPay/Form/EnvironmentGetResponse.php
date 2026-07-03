@@ -57,8 +57,8 @@ class EnvironmentGetResponse
     public ?array $a_pay_processor = null;
 
     /**
-     * Current local date in current location [EnvironmentApi](/Thoth/WlPay/Form/Environment.json)
-     * or business [EnvironmentApi](/Thoth/WlPay/Form/Environment.json) if not set location.
+     * Current local date in current location [EnvironmentApi::$k_location](/Thoth/WlPay/Form/Environment.json)
+     * or business [EnvironmentApi::$k_business](/Thoth/WlPay/Form/Environment.json) if not set location.
      *
      * @var string|null
      */

@@ -20,7 +20,7 @@ class DynamicIdGetResponse
      *
      * Dynamic, if business uses barcode as dynamic ID.
      * Or static, if business uses static ID. In this case
-     * [DynamicIdApi](/Wl/Login/Member/DynamicId/DynamicId.json) will be zero.
+     * [DynamicIdApi::$i_expire](/Wl/Login/Member/DynamicId/DynamicId.json) will be zero.
      *
      * @var string|null
      */

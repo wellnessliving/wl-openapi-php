@@ -25,7 +25,8 @@ class ChargePostRequest
      * The ID of the business the user account belongs to.
      *
      * This shouldn't be passed if a user account has already been created.
-     * In such cases, [ChargeApi](/Thoth/WlPay/Account/Charge/Charge.json) should be passed instead.
+     * In such cases, [ChargeApi::$k_pay_account](/Thoth/WlPay/Account/Charge/Charge.json) should be passed
+     * instead.
      *
      * If both the business ID and account ID passed, the system checks if the given business is the owner of the
      * specified account.
@@ -38,8 +39,8 @@ class ChargePostRequest
      * The ID of the user account to refill.
      *
      * This may be 0 if a user account hasn't been created yet.
-     * In such cases, [ChargeApi](/Thoth/WlPay/Account/Charge/Charge.json) and
-     * [ChargeApi](/Thoth/WlPay/Account/Charge/Charge.json) should be passed instead.
+     * In such cases, [ChargeApi::$k_business](/Thoth/WlPay/Account/Charge/Charge.json) and
+     * [ChargeApi::$uid](/Thoth/WlPay/Account/Charge/Charge.json) should be passed instead.
      *
      * If not passed, the currency of account equals the default business currency.
      *
@@ -51,7 +52,8 @@ class ChargePostRequest
      * The ID of the user whose account is being refilled.
      *
      * This shouldn't be passed if a user account has already been created.
-     * In such cases, [ChargeApi](/Thoth/WlPay/Account/Charge/Charge.json) should be passed instead.
+     * In such cases, [ChargeApi::$k_pay_account](/Thoth/WlPay/Account/Charge/Charge.json) should be passed
+     * instead.
      *
      * If both the user ID and account ID passed, the system checks if the given user is the owner of the specified
      * account.

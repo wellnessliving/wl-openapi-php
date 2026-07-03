@@ -20,8 +20,8 @@ class Access
     /**
      * Checks access to given report.
      *
-     * Accepts either [AccessApi](/Wl/Report/Access.json) (first-generation reports) or
-     * [AccessApi](/Wl/Report/Access.json) (second-generation reports), but not both,
+     * Accepts either [AccessApi::$id_report](/Wl/Report/Access.json) (first-generation reports) or
+     * [AccessApi::$cid_report](/Wl/Report/Access.json) (second-generation reports), but not both,
      * and returns `has_access` indicating whether the current user may view the report in the given business.
      *
      * @return AccessGetResponse

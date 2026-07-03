@@ -25,18 +25,19 @@ class ClassList68PostResponse
      *
      *
      * For generating this filter, all filters are applied except:
-     * - [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json);
-     * - [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json);
-     * - [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json);
-     * - [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json).
+     * - [ClassList68Api::$a_class](/Wl/Schedule/ClassList/ClassList68.json);
+     * - [ClassList68Api::$a_event](/Wl/Schedule/ClassList/ClassList68.json);
+     * - [ClassList68Api::$show_class](/Wl/Schedule/ClassList/ClassList68.json);
+     * - [ClassList68Api::$show_event](/Wl/Schedule/ClassList/ClassList68.json).
      *
      * @var ClassList68PostResponseQuick|null
      */
     public ?ClassList68PostResponseQuick $a_quick = null;
 
     /**
-     * A list of classes sessions starting with the date [ClassListApi](/Wl/Schedule/ClassList/ClassList.json)
-     * and in the 62 days ahead (or up to [ClassListApi](/Wl/Schedule/ClassList/ClassList.json)).
+     * A list of classes sessions starting with the date
+     * [ClassListApi::$dt_date](/Wl/Schedule/ClassList/ClassList.json)
+     * and in the 62 days ahead (or up to [ClassListApi::$dt_end](/Wl/Schedule/ClassList/ClassList.json)).
      * Every element has the following keys:
      *
      * @var ClassList68PostResponseSession[]|null
@@ -53,8 +54,8 @@ class ClassList68PostResponse
 
     /**
      * If `true`, there exists at least one virtual service by a specified
-     * [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json) and
-     * [ClassList68Api](/Wl/Schedule/ClassList/ClassList68.json),
+     * [ClassList68Api::$k_business](/Wl/Schedule/ClassList/ClassList68.json) and
+     * [ClassList68Api::$k_class_tab](/Wl/Schedule/ClassList/ClassList68.json),
      * Otherwise, this will be `false`.
      *
      * @var bool|null

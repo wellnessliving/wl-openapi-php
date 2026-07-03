@@ -20,8 +20,9 @@ class StaffView74
     /**
      * Retrieves information about staff.
      *
-     * This method can accept or one staff key [StaffViewApi](/Wl/Staff/StaffView/StaffView.json) or staff list
-     * [StaffViewApi](/Wl/Staff/StaffView/StaffView.json) but not both (exception would be thrown).
+     * This method can accept or one staff key [StaffViewApi::$k_staff](/Wl/Staff/StaffView/StaffView.json) or
+     * staff list
+     * [StaffViewApi::$a_staff_list](/Wl/Staff/StaffView/StaffView.json) but not both (exception would be thrown).
      *
      * @return StaffView74GetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

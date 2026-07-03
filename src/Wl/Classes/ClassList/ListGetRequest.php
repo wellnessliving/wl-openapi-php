@@ -6,7 +6,8 @@ class ListGetRequest
 {
     /**
      * List of tabs keys.
-     * Filtering by Book Now Tab is not supported if [ListApi](/Wl/Classes/ClassList/List.json) is `true`.
+     * Filtering by Book Now Tab is not supported if [ListApi::$is_franchise](/Wl/Classes/ClassList/List.json) is
+     * `true`.
      *
      * `null` if no filtering by Book Now Tab is required.
      *
@@ -18,7 +19,8 @@ class ListGetRequest
      * ID of book now tab. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
      * Only {@link \WlSdk\Wl\Classes\Tab\TabSid} and {@link \WlSdk\Wl\Classes\Tab\TabSid} book now tab are
      * supported.
-     * Filtering by Book Now Tab is not supported if [ListApi](/Wl/Classes/ClassList/List.json) is `true`.
+     * Filtering by Book Now Tab is not supported if [ListApi::$is_franchise](/Wl/Classes/ClassList/List.json) is
+     * `true`.
      *
      * `null` if no filtering by Book Now Tab is required.
      *
@@ -34,7 +36,7 @@ class ListGetRequest
      * * `false` to return only one event from each enrollment block.
      *
      * Only published and non-empty events will be returned for the client.
-     * To return empty events, use [ListApi](/Wl/Classes/ClassList/List.json).
+     * To return empty events, use [ListApi::$is_enrollment_block_empty](/Wl/Classes/ClassList/List.json).
      *
      * For the staff, filtering by publication or emptiness is not applied.
      *
@@ -50,7 +52,8 @@ class ListGetRequest
      * Affects clients only.
      * Does not affect staff. Staff always see empty events.
      *
-     * Makes sense in conjunction with the flag [ListApi](/Wl/Classes/ClassList/List.json).
+     * Makes sense in conjunction with the flag
+     * [ListApi::$is_enrollment_block_all](/Wl/Classes/ClassList/List.json).
      *
      * * `true` to include events without sessions.
      * * `false` to exclude events without sessions.

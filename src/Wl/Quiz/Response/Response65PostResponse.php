@@ -11,7 +11,7 @@ class Response65PostResponse
      * Quiz response key.
      *
      * `null` in a case of response creation or
-     * removing set of responses in [QuizResponseApi](/Core/Quiz/QuizResponse.json).
+     * removing set of responses in [QuizResponseApi::$a_quiz_response_key](/Core/Quiz/QuizResponse.json).
      *
      * @var string|null
      */

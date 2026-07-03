@@ -28,7 +28,7 @@ class EnterPostRequest
     /**
      * A copy of the notepad that was used to hash the user password.
      *
-     * See [EnterApi](/Core/Passport/Login/Enter/Enter.json) for details.
+     * See [EnterApi::$s_password](/Core/Passport/Login/Enter/Enter.json) for details.
      *
      * @var string|null
      */

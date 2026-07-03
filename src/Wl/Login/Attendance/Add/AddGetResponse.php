@@ -63,7 +63,8 @@ class AddGetResponse
     public ?string $m_price = null;
 
     /**
-     * The user's account balance if they were charged the [AddApi](/Wl/Login/Attendance/Add/Add.json) amount.
+     * The user's account balance if they were charged the [AddApi::$m_price](/Wl/Login/Attendance/Add/Add.json)
+     * amount.
      *
      * @var string|null
      */
