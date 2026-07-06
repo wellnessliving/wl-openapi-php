@@ -2,7 +2,7 @@
 
 namespace WlSdk\Wl\Service\ServiceList;
 
-class ListGetResponseService
+class List75GetResponseService
 {
     /**
      * Whether service will be hidden in the White Label mobile application.
