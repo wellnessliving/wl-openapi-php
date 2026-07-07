@@ -89,7 +89,7 @@ class PaymentMultipleGetResponseClientService
     public ?string $text_timezone_abbr = null;
 
     /**
-     * Appointment staff user key, primary key in PassportLoginSql table.
+     * Appointment user key.
      *
      * @var string|null
      */
