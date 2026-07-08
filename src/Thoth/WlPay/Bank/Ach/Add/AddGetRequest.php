@@ -5,7 +5,7 @@ namespace WlSdk\Thoth\WlPay\Bank\Ach\Add;
 class AddGetRequest
 {
     /**
-     * Locale ID. One of {@link \WlSdk\Core\Locale\LocaleSid} constants.
+     * Locale ID.
      * `null` - if it is not set.
      *
      * @var int|null
