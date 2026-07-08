@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Privilege;
 /**
  * Wellnessliving-wide privileges.
  *
- * Last Used ID: 244.
+ * Last Used ID: 245.
  *
  * Values:
  * - 225 (`AI_AGENT_KNOWLEDGE_BASE`): Allows user to view, create or edit knowledge base entries, or conversational
@@ -168,6 +168,7 @@ namespace WlSdk\Wl\Privilege;
  * - 164 (`OVERRIDE_FEE`): Override late cancel and no show fees.
  * - 94 (`PARTNER_PROGRAM_MANAGE`): Manage partner program.
  * - 166 (`PAYMENT_PROCESSING`): Access to Payment Processing.
+ * - 245 (`PERFORM_BULK_BILLING`): Allows the staff member to initiate bulk billing of multiple clients in one batch.
  * - 156 (`PHYSICAL_INVENTORY_COUNT`): Permission to perform Physical Inventory Count.
  * - 88 (`POSTCARD_SEND`): Staff member with this role will be able to send postcards.
  * - 106 (`POWER_SEARCH_DELETE`): Delete shared power searches.
@@ -672,6 +673,9 @@ class PrivilegeSid
 
     /** Access to Payment Processing. */
     public const PAYMENT_PROCESSING = 166;
+
+    /** Allows the staff member to initiate bulk billing of multiple clients in one batch. */
+    public const PERFORM_BULK_BILLING = 245;
 
     /** Permission to perform Physical Inventory Count. */
     public const PHYSICAL_INVENTORY_COUNT = 156;
