@@ -20,6 +20,9 @@ class PurchaseItemList
     /**
      * Gets the list of promotions and products available at the location.
      *
+     * Validates access to the business, then loads promotions with their prices and products expanded into
+     *  their options, keeping only the items available at the requested location.
+     *
      * @return PurchaseItemListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

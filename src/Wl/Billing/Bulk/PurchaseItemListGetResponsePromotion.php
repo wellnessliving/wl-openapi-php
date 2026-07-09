@@ -5,16 +5,18 @@ namespace WlSdk\Wl\Billing\Bulk;
 class PurchaseItemListGetResponsePromotion
 {
     /**
-     * The promotion program.
+     * The promotion program. One of the {@link \WlSdk\RsProgramSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramSid
      */
     public ?int $id_program = null;
 
     /**
-     * The promotion program type.
+     * The promotion program type. One of the {@link \WlSdk\RsProgramTypeSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
      */
     public ?int $id_program_type = null;
 
