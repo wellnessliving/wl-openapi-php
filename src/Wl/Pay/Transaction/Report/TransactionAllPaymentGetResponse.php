@@ -11,7 +11,7 @@ class TransactionAllPaymentGetResponse
      * A list of fields in the report.
      *
      * This array is effectively a title row for the table returned in {@link
-     * \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPaymentGetResponse::$a_row}.
+     * \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPayment}.
      *
      * @var string[]|null
      */
@@ -22,10 +22,10 @@ class TransactionAllPaymentGetResponse
      *
      * This is an indexed array where each element is also an indexed array representing one report row.
      * Column positions in each row correspond to the field names in {@link
-     * \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPaymentGetResponse::$a_field}.
+     * \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPayment}.
      *
-     * Known columns (use {@link \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPaymentGetResponse::$a_field}
-     * to resolve their positional indexes):
+     * Known columns (use {@link \WlSdk\Thoth\WlPay\Transaction\Report\TransactionAllPayment} to resolve their
+     * positional indexes):
      *
      * @var TransactionAllPaymentGetResponseRow[]|null
      */

@@ -19,6 +19,8 @@ class PaymentMultipleGetRequest
     /**
      * Local date and time for which visit is booked in MySQL format.
      *
+     * Can be `null` in case when {@link \WlSdk\Wl\Profile\Attendance\Schedule\PaymentMultiple} passed.
+     *
      * @var string|null
      */
     public ?string $dtl_date = null;
@@ -42,6 +44,8 @@ class PaymentMultipleGetRequest
 
     /**
      * The location key.
+     *
+     * Can be `null` in case when {@link \WlSdk\Wl\Profile\Attendance\Schedule\PaymentMultiple} passed.
      *
      * @var string|null
      */
