@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Privilege;
 /**
  * Wellnessliving-wide privileges.
  *
- * Last Used ID: 245.
+ * Last Used ID: 246.
  *
  * Values:
  * - 225 (`AI_AGENT_KNOWLEDGE_BASE`): Allows user to view, create or edit knowledge base entries, or conversational
@@ -60,6 +60,9 @@ namespace WlSdk\Wl\Privilege;
  * - 17 (`CLASS_FOREIGN`): Change/View all classes.
  * - 152 (`CLASS_LOCK_SEARCH`): Lock search bar on class attendance list.
  * - 5 (`CLASS_PERIOD`): Edit class schedule.
+ * - 246 (`CLASS_SCHEDULE_VIEW`): Allows a staff member to see other staff members' class sessions on the schedule in
+ * read-only mode
+ *    while the Classes scope is set to only their own schedules.
  * - 135 (`CONTACT_LOG_MANAGE`): Add and view client's contact logs.
  * - 31 (`COUPON`): Add, remove, and edit gift cards.
  * - 131 (`DASHBOARD_DELETE`): Delete shared dashboard.
@@ -400,6 +403,9 @@ class PrivilegeSid
 
     /** Edit class schedule. */
     public const CLASS_PERIOD = 5;
+
+    /** Allows a staff member to see other staff members' class sessions on the schedule in read-only mode */
+    public const CLASS_SCHEDULE_VIEW = 246;
 
     /** Add and view client's contact logs. */
     public const CONTACT_LOG_MANAGE = 135;
