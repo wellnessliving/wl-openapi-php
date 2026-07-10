@@ -22,20 +22,12 @@ class ImageUploadTemporaryPostRequest
      */
     public ?string $s_class = null;
 
-    /**
-     * The image to be uploaded.
-     *
-     * @var string|null
-     */
-    public ?string $f_image = null;
-
     public function params(): array
     {
         return array_filter(
             [
             'k_id' => $this->k_id,
             's_class' => $this->s_class,
-            'f_image' => $this->f_image,
             ],
             static fn ($v) => $v !== null
         );

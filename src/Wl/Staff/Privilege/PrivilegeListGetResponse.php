@@ -13,7 +13,7 @@ class PrivilegeListGetResponse
      * There is no certain list of admin privileges, as they are name-based.
      * If you need to check access to certain place contact WellnessLiving integration team.
      *
-     * @var string[]|null
+     * @var array|null
      */
     public ?array $a_privilege_passport = null;
 

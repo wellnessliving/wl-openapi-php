@@ -40,6 +40,8 @@ class LoginGetResponse
     /**
      * The user's staff key for the specified business.
      *
+     * `null` if staff key not available for this application.
+     *
      * @var string|null
      */
     public ?string $k_staff = null;
