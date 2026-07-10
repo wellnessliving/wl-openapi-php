@@ -65,7 +65,7 @@ class PaymentIntentUpdatePostRequest
      *
      * @var string|null
      */
-    public ?string $m_amount = null;
+    public ?string $m_amount = '0.00';
 
     /**
      * Surcharge amount to set.
@@ -73,7 +73,7 @@ class PaymentIntentUpdatePostRequest
      *
      * @var string|null
      */
-    public ?string $m_surcharge = null;
+    public ?string $m_surcharge = '0.00';
 
     public function params(): array
     {

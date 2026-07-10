@@ -50,7 +50,7 @@ class ResourcePostRequest
      *
      * @var bool|null
      */
-    public ?bool $is_credit_card_check = null;
+    public ?bool $is_credit_card_check = true;
 
     /**
      * Key of session which is booked.
@@ -106,7 +106,7 @@ class ResourcePostRequest
      *
      * @var bool|null
      */
-    public ?bool $can_book = null;
+    public ?bool $can_book = true;
 
     /**
      * `true` to book unpaid.

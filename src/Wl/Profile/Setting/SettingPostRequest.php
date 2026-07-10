@@ -24,7 +24,7 @@ class SettingPostRequest
      *
      * @var bool|null
      */
-    public ?bool $is_account_management_email = null;
+    public ?bool $is_account_management_email = true;
 
     /**
      * Determines whether SMS notifications related to purchases, contracts, and other activity in a client's
@@ -32,7 +32,7 @@ class SettingPostRequest
      *
      * @var bool|null
      */
-    public ?bool $is_account_management_sms = null;
+    public ?bool $is_account_management_sms = true;
 
     /**
      * Determines whether email notifications related to news and updates from the business regarding their
@@ -40,7 +40,7 @@ class SettingPostRequest
      *
      * @var bool|null
      */
-    public ?bool $is_news_and_updates_email = null;
+    public ?bool $is_news_and_updates_email = true;
 
     /**
      * Whether sms notifications related to news and updates from the business regarding their services,
@@ -48,21 +48,21 @@ class SettingPostRequest
      *
      * @var bool|null
      */
-    public ?bool $is_news_and_updates_sms = null;
+    public ?bool $is_news_and_updates_sms = true;
 
     /**
      * Determines whether email notifications related to the services a client has booked are enabled.
      *
      * @var bool|null
      */
-    public ?bool $is_schedule_and_reminders_email = null;
+    public ?bool $is_schedule_and_reminders_email = true;
 
     /**
      * Determines whether SMS notifications related to the services a client has booked are enabled.
      *
      * @var bool|null
      */
-    public ?bool $is_schedule_and_reminders_sms = null;
+    public ?bool $is_schedule_and_reminders_sms = true;
 
     public function params(): array
     {

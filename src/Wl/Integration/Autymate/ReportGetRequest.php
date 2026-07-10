@@ -10,7 +10,7 @@ class ReportGetRequest
      *
      * @var int[]|null
      */
-    public ?array $a_pay_method_remove = null;
+    public ?array $a_pay_method_remove = [7];
 
     /**
      * The date in local time to retrieve transactions for.

@@ -19,7 +19,7 @@ class ResponseGetRequest
      *
      * @var bool|null
      */
-    public ?bool $is_answer = null;
+    public ?bool $is_answer = true;
 
     /**
      * Whether quiz response received by kiosk or direct mode link.

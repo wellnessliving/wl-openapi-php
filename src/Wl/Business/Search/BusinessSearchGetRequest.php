@@ -9,7 +9,7 @@ class BusinessSearchGetRequest
      *
      * @var bool|null
      */
-    public ?bool $is_customer = null;
+    public ?bool $is_customer = true;
 
     /**
      * If `true`, returns only active customer businesses, if `false`, returns all businesses.

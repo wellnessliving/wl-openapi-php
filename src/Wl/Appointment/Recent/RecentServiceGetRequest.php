@@ -9,7 +9,7 @@ class RecentServiceGetRequest
      *
      * @var int|null
      */
-    public ?int $i_visit = null;
+    public ?int $i_visit = 5;
 
     /**
      * Type of service to return. One of {@link \WlSdk\Wl\Service\ServiceSid} constants.

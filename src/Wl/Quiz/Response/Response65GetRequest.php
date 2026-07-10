@@ -19,7 +19,7 @@ class Response65GetRequest
      *
      * @var bool|null
      */
-    public ?bool $is_answer = null;
+    public ?bool $is_answer = true;
 
     /**
      * No description.

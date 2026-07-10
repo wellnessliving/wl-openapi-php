@@ -10,7 +10,7 @@ class GoogleCaptchaPutRequest
      * @var int|null
      * @see \WlSdk\Core\Google\Captcha\CaptchaVersionSid
      */
-    public ?int $id_version = null;
+    public ?int $id_version = 1;
 
     /**
      * The action name.

@@ -9,14 +9,14 @@ class DataGetRequest
      *
      * @var int|null
      */
-    public ?int $i_logo_height = null;
+    public ?int $i_logo_height = 100;
 
     /**
      * The maximum width of the business image (in pixels).
      *
      * @var int|null
      */
-    public ?int $i_logo_width = null;
+    public ?int $i_logo_width = 220;
 
     /**
      * The business key.

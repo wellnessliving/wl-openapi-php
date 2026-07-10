@@ -72,7 +72,7 @@ class QuizElementPostRequest
      *
      * @var bool|null
      */
-    public ?bool $is_active = null;
+    public ?bool $is_active = true;
 
     /**
      * List of quiz elements in json format.
@@ -100,7 +100,7 @@ class QuizElementPostRequest
      *
      * @var bool|null
      */
-    public ?bool $show_numbering = null;
+    public ?bool $show_numbering = true;
 
     /**
      * Quiz form title.

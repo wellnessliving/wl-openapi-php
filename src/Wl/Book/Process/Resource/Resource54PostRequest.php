@@ -50,7 +50,7 @@ class Resource54PostRequest
      *
      * @var bool|null
      */
-    public ?bool $is_credit_card_check = null;
+    public ?bool $is_credit_card_check = true;
 
     /**
      * Selected sessions.
@@ -120,7 +120,7 @@ class Resource54PostRequest
      *
      * @var bool|null
      */
-    public ?bool $can_book = null;
+    public ?bool $can_book = true;
 
     /**
      * `true` to book unpaid.

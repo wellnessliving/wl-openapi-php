@@ -23,14 +23,14 @@ class ProductGetRequest
      *
      * @var int|null
      */
-    public ?int $i_page = null;
+    public ?int $i_page = 1;
 
     /**
      * Page size.
      *
      * @var int|null
      */
-    public ?int $i_page_size = null;
+    public ?int $i_page_size = 50;
 
     /**
      * ID of the payment method. One of the {@link \WlSdk\RsPayMethodSid} constants. Zero means no filter by
@@ -67,14 +67,14 @@ class ProductGetRequest
      *
      * @var string|null
      */
-    public ?string $m_price_max = null;
+    public ?string $m_price_max = '0.00';
 
     /**
      * Minimum price of the product.
      *
      * @var string|null
      */
-    public ?string $m_price_min = null;
+    public ?string $m_price_min = '0.00';
 
     /**
      * User key. Empty string means return products purchased by walk-in.

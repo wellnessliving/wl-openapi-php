@@ -9,7 +9,7 @@ class ListGetRequest
      *
      * @var bool|null
      */
-    public ?bool $is_active = null;
+    public ?bool $is_active = true;
 
     /**
      * The business key.

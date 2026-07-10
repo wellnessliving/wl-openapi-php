@@ -74,7 +74,7 @@ class QueryPostRequest
      *
      * @var string|null
      */
-    public ?string $json_filter = null;
+    public ?string $json_filter = '[]';
 
     /**
      * Key of the business which report should be shown.

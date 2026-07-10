@@ -9,7 +9,7 @@ class ApplicationResourceMaterialPostRequest
      *
      * @var int|null
      */
-    public ?int $i_version = null;
+    public ?int $i_version = 1;
 
     /**
      * Application category in the store.
@@ -28,7 +28,7 @@ class ApplicationResourceMaterialPostRequest
      * @var int|null
      * @see \WlSdk\Wl\Skin\Application\Upgrade\AppUpdateTypeEnum
      */
-    public ?int $id_version_change = null;
+    public ?int $id_version_change = 1;
 
     /**
      * Business key.
@@ -49,7 +49,7 @@ class ApplicationResourceMaterialPostRequest
      *
      * @var string|null
      */
-    public ?string $s_version_name = null;
+    public ?string $s_version_name = '2.0.1';
 
     /**
      * Short application description in the store (up to 80 characters).
