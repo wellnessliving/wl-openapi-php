@@ -197,6 +197,15 @@ class ScheduleListGetResponseSchedule
     public ?bool $is_arrive = null;
 
     /**
+     * `true` if this class session is visible only through the "View other staff schedules"
+     * permission and must be shown read-only (no attendance roster, no booked client identities,
+     * and no edit, cancel, reschedule, or booking actions); `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_class_view = null;
+
+    /**
      * For appointments: `true` if appointment is paid; `false` otherwise.
      * For classes always `null`.
      *
@@ -357,6 +366,7 @@ class ScheduleListGetResponseSchedule
         $this->id_option = isset($data['id_option']) ? (int)$data['id_option'] : null;
         $this->id_service = isset($data['id_service']) ? (int)$data['id_service'] : null;
         $this->is_arrive = isset($data['is_arrive']) ? (bool)$data['is_arrive'] : null;
+        $this->is_class_view = isset($data['is_class_view']) ? (bool)$data['is_class_view'] : null;
         $this->is_pay = isset($data['is_pay']) ? (bool)$data['is_pay'] : null;
         $this->is_repeat = isset($data['is_repeat']) ? (bool)$data['is_repeat'] : null;
         $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;
