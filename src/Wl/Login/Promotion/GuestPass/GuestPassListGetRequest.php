@@ -5,6 +5,13 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass;
 class GuestPassListGetRequest
 {
     /**
+     * Local calendar date for which guest pass availability should be calculated.
+     *
+     * @var string|null
+     */
+    public ?string $dl_date = null;
+
+    /**
      * Business key.
      *
      * @var string|null
@@ -40,6 +47,7 @@ class GuestPassListGetRequest
     {
         return array_filter(
             [
+            'dl_date' => $this->dl_date,
             'k_business' => $this->k_business,
             'k_class' => $this->k_class,
             'k_location' => $this->k_location,
