@@ -11,7 +11,7 @@ class LoginMemberListAllGetRequest
      *
      * @var int|null
      */
-    public ?int $i_page_size = null;
+    public ?int $i_page_size = 150;
 
     /**
      * The key of the business to get a list of members for.

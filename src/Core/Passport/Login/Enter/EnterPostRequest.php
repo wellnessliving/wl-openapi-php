@@ -9,7 +9,7 @@ class EnterPostRequest
      *
      * @var string|null
      */
-    public ?string $json_data = null;
+    public ?string $json_data = '[]';
 
     /**
      * The answer to the captcha, if needed.

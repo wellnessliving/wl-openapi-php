@@ -147,7 +147,7 @@ class ClassListGetRequest
      *
      * @var bool|null
      */
-    public ?bool $show_class = null;
+    public ?bool $show_class = true;
 
     /**
      * If `true`, events are also returned. If `false`, only classes are returned.

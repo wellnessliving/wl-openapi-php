@@ -16,7 +16,7 @@ class CartGetRequest
      *
      * @var bool|null
      */
-    public ?bool $is_auto_apply_prize = null;
+    public ?bool $is_auto_apply_prize = true;
 
     /**
      * The location key.

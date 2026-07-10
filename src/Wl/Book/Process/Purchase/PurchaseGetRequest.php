@@ -105,7 +105,7 @@ class PurchaseGetRequest
      *
      * @var bool|null
      */
-    public ?bool $is_credit_card_check = null;
+    public ?bool $is_credit_card_check = true;
 
     /**
      * The business key.

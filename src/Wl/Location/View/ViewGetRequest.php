@@ -9,14 +9,14 @@ class ViewGetRequest
      *
      * @var int|null
      */
-    public ?int $i_logo_height = null;
+    public ?int $i_logo_height = 100;
 
     /**
      * Maximum location image width.
      *
      * @var int|null
      */
-    public ?int $i_logo_width = null;
+    public ?int $i_logo_width = 220;
 
     /**
      * The location key.

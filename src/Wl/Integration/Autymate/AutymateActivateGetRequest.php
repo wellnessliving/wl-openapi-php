@@ -12,7 +12,7 @@ class AutymateActivateGetRequest
      * @var int|null
      * @see \WlSdk\Wl\Integration\Autymate\AutymateAccessModeSid
      */
-    public ?int $id_mode = null;
+    public ?int $id_mode = 1;
 
     /**
      * The new status of the enrollment. If `0`, the current status is returned.

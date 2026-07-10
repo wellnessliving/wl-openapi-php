@@ -82,7 +82,7 @@ class ChargePostRequest
      *
      * @var string|null
      */
-    public ?string $m_amount = null;
+    public ?string $m_amount = '0.00';
 
     /**
      * The transaction comment.

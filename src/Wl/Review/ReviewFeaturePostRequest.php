@@ -9,7 +9,7 @@ class ReviewFeaturePostRequest
      *
      * @var bool|null
      */
-    public ?bool $is_featured = null;
+    public ?bool $is_featured = true;
 
     /**
      * The business key.

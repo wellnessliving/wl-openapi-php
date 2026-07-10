@@ -57,7 +57,7 @@ class CalendarGetRequest
      *
      * @var bool|null
      */
-    public ?bool $is_month_view = null;
+    public ?bool $is_month_view = true;
 
     /**
      * `true` if the request is made by staff member; in this case booking policy restrictions are ignored.
