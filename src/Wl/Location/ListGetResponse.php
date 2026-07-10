@@ -13,12 +13,12 @@ class ListGetResponse
      * return location information for multiple businesses. Keys refer to location keys. Values refer to nested
      * arrays with the next keys:
      *
-     * @var ListGetResponseLocation[]|null
+     * @var array|null
      */
     public ?array $a_location = null;
 
     public function __construct(array $data)
     {
-        $this->a_location = isset($data['a_location']) ? array_map(static fn ($item) => new ListGetResponseLocation((array)$item), (array)$data['a_location']) : null;
+        $this->a_location = isset($data['a_location']) ? (array)$data['a_location'] : null;
     }
 }

@@ -114,101 +114,6 @@ class EditPostRequest
      */
     public ?string $uid_relative_key = null;
 
-    /**
-     * Family relation data for the newly created user.
-     * `null` if no family relation is required:
-     *
-     * @var array|null
-     */
-    public ?array $a_family_relation = null;
-
-    /**
-     * Information for user's photo.
-     * It is necessary to save simultaneously user and photo in staff member mode.
-     *
-     * Attention!
-     * Data from this field is taken directly from a POST somewhere in the depths of the photo upload.
-     *
-     * @var string|null
-     */
-    public ?string $a_image_upload = null;
-
-    /**
-     * List of intent identifiers. Each element is one of {@link \WlSdk\Wl\Login\Member\Intents\MemberIntentsSid}
-     * constants.
-     *
-     * Available only for leads added by CAASI agent.
-     *
-     * @var int[]|null
-     */
-    public ?array $a_intents = null;
-
-    /**
-     * A copy of the {@link \WlSdk\Wl\Profile\Edit\Edit}.
-     * This is used for POST requests when creating a new user.
-     *
-     * @var array|null
-     */
-    public ?array $a_new = null;
-
-    /**
-     * An array contained with information about phone inheritance.
-     * The array has the following structure:
-     *
-     * @var array|null
-     */
-    public ?array $a_phone_inherit = null;
-
-    /**
-     * `true` to throw an exception in a case of validation error; `false` to not throw.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_exception_throw = null;
-
-    /**
-     * This will be `true` to sign in a created user. Otherwise, this will be `false`.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_sing_in = null;
-
-    /**
-     * `true` - user agreed to receive marketing SMS;
-     * `false` - otherwise.
-     *
-     * Only matters if {@link \WlSdk\Wl\Profile\Edit\Edit} is `true`.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_sms_subscription_marketing = null;
-
-    /**
-     * `true` - user was shown checkboxes to subscribe to marketing and transactional sms messages.
-     *   This means we need to modify his subscription based on the values in these fields.
-     * `false` - otherwise. This means we should not change subscription settings.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_sms_subscription_presented = null;
-
-    /**
-     * `true` - user agreed to receive transactional SMS;
-     * `false` - otherwise.
-     *
-     * Only matters if {@link \WlSdk\Wl\Profile\Edit\Edit} is `true`.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_sms_subscription_transactional = null;
-
-    /**
-     * The password to be set for a new user.
-     *
-     * @var string|null
-     */
-    public ?string $text_password = null;
-
     public function params(): array
     {
         return array_filter(
@@ -225,17 +130,6 @@ class EditPostRequest
             'uid_existed' => $this->uid_existed,
             'uid_inherit_address' => $this->uid_inherit_address,
             'uid_relative_key' => $this->uid_relative_key,
-            'a_family_relation' => $this->a_family_relation,
-            'a_image_upload' => $this->a_image_upload,
-            'a_intents' => $this->a_intents,
-            'a_new' => $this->a_new,
-            'a_phone_inherit' => $this->a_phone_inherit,
-            'is_exception_throw' => $this->is_exception_throw,
-            'is_sing_in' => $this->is_sing_in,
-            'is_sms_subscription_marketing' => $this->is_sms_subscription_marketing,
-            'is_sms_subscription_presented' => $this->is_sms_subscription_presented,
-            'is_sms_subscription_transactional' => $this->is_sms_subscription_transactional,
-            'text_password' => $this->text_password,
             ],
             static fn ($v) => $v !== null
         );

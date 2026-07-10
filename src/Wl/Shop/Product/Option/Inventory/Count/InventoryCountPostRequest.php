@@ -8,7 +8,7 @@ class InventoryCountPostRequest
      * The list of notes for product options in the store.
      * Keys refer to product options in the store. Values refer to text notes.
      *
-     * @var string[]|null
+     * @var array|null
      */
     public ?array $a_note = null;
 
@@ -16,7 +16,7 @@ class InventoryCountPostRequest
      * The list of product option quantities in the store.
      * Keys refer to product options in the store. Values refer to product counts.
      *
-     * @var int[]|null
+     * @var array|null
      */
     public ?array $a_quantity = null;
 

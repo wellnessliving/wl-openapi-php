@@ -20,7 +20,7 @@ class ServiceGetResponse
      * If you're rebooking an appointment, check the value of `a_resource_busy['15']['10']`.
      * If it's equal to the key of your current appointment booking, you can assume the asset is available.
      *
-     * @var string[][]|null
+     * @var array|null
      */
     public ?array $a_resource_busy = null;
 

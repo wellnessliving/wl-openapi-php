@@ -12,20 +12,20 @@ class ListBulkGetResponse
      *
      * Keys refer to location primary keys. Values refer to sub-arrays with the next keys:
      *
-     * @var ListBulkGetResponseLocation|null
+     * @var array|null
      */
-    public ?ListBulkGetResponseLocation $a_location = null;
+    public ?array $a_location = null;
 
     /**
      * A list of models with full information about each location.
      *
-     * @var ListBulkGetResponseLocationFull[]|null
+     * @var array|null
      */
     public ?array $a_location_full = null;
 
     public function __construct(array $data)
     {
-        $this->a_location = isset($data['a_location']) ? new ListBulkGetResponseLocation((array)$data['a_location']) : null;
-        $this->a_location_full = isset($data['a_location_full']) ? array_map(static fn ($item) => new ListBulkGetResponseLocationFull((array)$item), (array)$data['a_location_full']) : null;
+        $this->a_location = isset($data['a_location']) ? (array)$data['a_location'] : null;
+        $this->a_location_full = isset($data['a_location_full']) ? (array)$data['a_location_full'] : null;
     }
 }
