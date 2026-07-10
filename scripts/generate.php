@@ -100,6 +100,51 @@ function wlResolveRef(array $spec, string $ref): array
     return is_array($node) ? $node : [];
 }
 
+/**
+ * Resolves a `$ref` on a parameter or property schema and checks for an explicit `default`.
+ *
+ * @param array $spec Full OpenAPI spec.
+ * @param array $schema Parameter or property schema, possibly a `$ref`.
+ * @return array{hasDefault: bool, value: mixed} Presence flag and the raw `default` value.
+ */
+function wlGetSchemaDefault(array $spec, array $schema): array
+{
+    if (isset($schema['$ref'])) {
+        $schema = wlResolveRef($spec, $schema['$ref']) ?: $schema;
+    }
+
+    return array_key_exists('default', $schema)
+        ? ['hasDefault' => true, 'value' => $schema['default']]
+        : ['hasDefault' => false, 'value' => null];
+}
+
+/**
+ * Converts a decoded YAML/JSON scalar or array `default` value into a PHP literal expression.
+ *
+ * @param mixed $value Decoded `default` value from an OpenAPI schema.
+ * @return string PHP literal expression, ready to embed as a property's default value.
+ */
+function wlValueToPhpLiteral($value): string
+{
+    if ($value === null) {
+        return 'null';
+    }
+    if (is_bool($value)) {
+        return $value ? 'true' : 'false';
+    }
+    if (is_int($value) || is_float($value)) {
+        return (string)$value;
+    }
+    if (is_string($value)) {
+        return "'" . str_replace(['\\', "'"], ['\\\\', "\\'"], $value) . "'";
+    }
+    if (is_array($value)) {
+        return '[' . implode(', ', array_map('wlValueToPhpLiteral', $value)) . ']';
+    }
+
+    return 'null';
+}
+
 // PHP reserved words that cannot be used as class names (case-insensitive check).
 const PHP_RESERVED_WORDS = [
     'abstract', 'and', 'array', 'as', 'break', 'callable', 'case', 'catch', 'class', 'clone',
@@ -721,6 +766,7 @@ function wlCollectParams(array $spec, array $operations): array
                 continue;
             }
             $schema = $param['schema'] ?? [];
+            $default = wlGetSchemaDefault($spec, $schema);
             $params[$name] = [
                 'phpName' => wlSanitizePropertyName($name),
                 'phpType' => wlSchemaToPhpType($spec, $schema),
@@ -728,6 +774,8 @@ function wlCollectParams(array $spec, array $operations): array
                 'description' => wlConvertDescriptionLinks(trim($param['description'] ?? '')),
                 'enumClass' => wlGetEnumSchemaName($spec, $schema),
                 'required' => !empty($param['required']),
+                'hasDefault' => $default['hasDefault'],
+                'default' => $default['value'],
             ];
         }
 
@@ -750,6 +798,7 @@ function wlCollectParams(array $spec, array $operations): array
             if (isset($params[$propName])) {
                 continue;
             }
+            $default = wlGetSchemaDefault($spec, $propSchema);
             $params[$propName] = [
                 'phpName' => wlSanitizePropertyName($propName),
                 'phpType' => wlSchemaToPhpType($spec, $propSchema),
@@ -757,6 +806,8 @@ function wlCollectParams(array $spec, array $operations): array
                 'description' => wlConvertDescriptionLinks(trim($propSchema['description'] ?? '')),
                 'enumClass' => wlGetEnumSchemaName($spec, $propSchema),
                 'required' => in_array($propName, $requiredFields, true),
+                'hasDefault' => $default['hasDefault'],
+                'default' => $default['value'],
             ];
         }
     }
@@ -912,10 +963,11 @@ function wlGenerateRequestClass(
             $propsCode .= "     * @see " . wlEnumSchemaToClassRef($info['enumClass']) . "\n";
         }
         $propsCode .= "     */\n";
+        $literal = $info['hasDefault'] ? wlValueToPhpLiteral($info['default']) : 'null';
         if ($info['phpType'] !== null) {
-            $propsCode .= "    public ?{$info['phpType']} \${$phpName} = null;\n\n";
+            $propsCode .= "    public ?{$info['phpType']} \${$phpName} = {$literal};\n\n";
         } else {
-            $propsCode .= "    public \${$phpName} = null;\n\n";
+            $propsCode .= "    public \${$phpName} = {$literal};\n\n";
         }
     }
 
