@@ -31,4 +31,21 @@ class PurchaseItemList
     {
         return new PurchaseItemListGetResponse($this->client->request('/Wl/Billing/Bulk/PurchaseItemList.json', $request->params(), 'GET'));
     }
+
+    /**
+     * Prepares the bulk billing review: the per-client totals and the list of clients that will be billed.
+     *
+     * Validates access to the business, calculates the per-client subtotal, tax and total for the selected
+     * purchase
+     *  items, and collects each client contact data and payment method label. The list of clients skipped due to
+     *  restrictions is returned separately and is empty for now.
+     *
+     * @return PurchaseItemListPostResponse
+     * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
+     * @throws \RuntimeException On network or cURL error.
+     */
+    public function post(PurchaseItemListPostRequest $request): PurchaseItemListPostResponse
+    {
+        return new PurchaseItemListPostResponse($this->client->request('/Wl/Billing/Bulk/PurchaseItemList.json', $request->params(), 'POST'));
+    }
 }
