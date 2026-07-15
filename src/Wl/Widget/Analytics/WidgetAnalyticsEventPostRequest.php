@@ -7,9 +7,23 @@ class WidgetAnalyticsEventPostRequest
     /**
      * Event-specific payload.
      *
+     * Structure:
+     * - `a_item`: Selected checkout items.
+     * - `id_checkout_type`: Checkout type.
+     * - `k_location`: Location key.
+     * - `k_skin`: Widget skin key, or `null`.
+     * - `m_total`: Checkout total.
+     * - `s_funnel_step`: Last funnel step reached.
+     * - `s_session_id`: Widget checkout session identifier.
+     * - `s_utm_campaign`: UTM campaign value.
+     * - `s_utm_medium`: UTM medium value.
+     * - `s_utm_source`: UTM source value.
+     * - `uid`: User key.
+     * - `url_continue`: Continuation URL.
+     *
      * @var array|null
      */
-    public ?array $a_payload = null;
+    public $a_payload = null;
 
     /**
      * Event schema version.

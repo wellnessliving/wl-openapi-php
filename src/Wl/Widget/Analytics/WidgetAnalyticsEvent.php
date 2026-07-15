@@ -20,6 +20,8 @@ class WidgetAnalyticsEvent
     /**
      * Accepts a Widget analytics event.
      *
+     * Validates the event envelope and payload, stores the event, and schedules asynchronous processing.
+     *
      * @return WidgetAnalyticsEventPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
