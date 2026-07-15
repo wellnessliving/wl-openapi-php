@@ -34,10 +34,21 @@ class ListGetResponse
      */
     public ?bool $can_add = null;
 
+    /**
+     * Whether the client is allowed to remove their own saved credit cards.
+     *
+     * `true` if the client can remove their own saved credit cards.
+     * `false` if the client must contact the business to remove a saved credit card.
+     *
+     * @var bool|null
+     */
+    public ?bool $can_remove_self = null;
+
     public function __construct(array $data)
     {
         $this->a_bank_card = isset($data['a_bank_card']) ? new ListGetResponseBankCard((array)$data['a_bank_card']) : null;
         $this->a_list = isset($data['a_list']) ? array_map(static fn ($item) => new ListGetResponseList((array)$item), (array)$data['a_list']) : null;
         $this->can_add = isset($data['can_add']) ? (bool)$data['can_add'] : null;
+        $this->can_remove_self = isset($data['can_remove_self']) ? (bool)$data['can_remove_self'] : null;
     }
 }
