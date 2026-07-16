@@ -7,16 +7,12 @@ class SelectGetRequest
     /**
      * Business to retrieve relationship information.
      *
-     * Primary key in RsBusinessSql.
-     *
      * @var string|null
      */
     public ?string $k_business = null;
 
     /**
      * UID to retrieve relationship information.
-     *
-     * Primary key in PassportLoginSql.
      *
      * @var string|null
      */
