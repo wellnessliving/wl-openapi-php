@@ -10,12 +10,12 @@ class SelectGetResponse
     /**
      * Array with information about current user and his relationship with sub accounts.
      *
-     * @var array|null
+     * @var SelectGetResponseUser|null
      */
-    public ?array $a_user = null;
+    public ?SelectGetResponseUser $a_user = null;
 
     public function __construct(array $data)
     {
-        $this->a_user = isset($data['a_user']) ? (array)$data['a_user'] : null;
+        $this->a_user = isset($data['a_user']) ? new SelectGetResponseUser((array)$data['a_user']) : null;
     }
 }

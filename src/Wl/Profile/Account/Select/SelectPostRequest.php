@@ -7,8 +7,6 @@ class SelectPostRequest
     /**
      * Business to retrieve relationship information.
      *
-     * Primary key in RsBusinessSql.
-     *
      * @var string|null
      */
     public ?string $k_business = null;
@@ -16,16 +14,12 @@ class SelectPostRequest
     /**
      * UID to retrieve relationship information.
      *
-     * Primary key in PassportLoginSql.
-     *
      * @var string|null
      */
     public ?string $uid = null;
 
     /**
      * ID of relative to sign in.
-     *
-     * Primary key in PassportLoginSql.
      *
      * @var string|null
      */
