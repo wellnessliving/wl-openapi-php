@@ -7,9 +7,9 @@ class SelectGetResponseUser
     /**
      * ID of relationship between current user and sub account.
      *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $id_family_relation = null;
+    public ?int $id_family_relation = null;
 
     /**
      * Name of sub account.
@@ -27,7 +27,7 @@ class SelectGetResponseUser
 
     public function __construct(array $data)
     {
-        $this->id_family_relation = isset($data['id_family_relation']) ? (string)$data['id_family_relation'] : null;
+        $this->id_family_relation = isset($data['id_family_relation']) ? (int)$data['id_family_relation'] : null;
         $this->s_name = isset($data['s_name']) ? (string)$data['s_name'] : null;
         $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
     }
