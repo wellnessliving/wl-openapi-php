@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Privilege;
 /**
  * Wellnessliving-wide privileges.
  *
- * Last Used ID: 246.
+ * Last Used ID: 247.
  *
  * Values:
  * - 225 (`AI_AGENT_KNOWLEDGE_BASE`): Allows user to view, create or edit knowledge base entries, or conversational
@@ -81,6 +81,9 @@ namespace WlSdk\Wl\Privilege;
  * added.
  * - 53 (`ENROLLMENT_FOREIGN`): Change/View all classes.
  * - 153 (`ENROLLMENT_LOCK_SEARCH`): Lock search bar on enrollment attendance list.
+ * - 247 (`ENROLLMENT_SCHEDULE_VIEW`): Allows a staff member to see other staff members' event sessions on the schedule
+ * in read-only mode
+ *    while the Events scope is set to only their own schedules.
  * - 207 (`ENTERPRISE_CLOUD_FEES`): Manage Enterprise Cloud Fees.
  * - 190 (`FITBUILDER_LEADERBOARD`): Allows to manage leaderboard in the `FitBuilder` addon.
  * - 189 (`FITBUILDER_SUBSCRIPTION`): Allows to subscribe to `FitBuilder` subscription addon.
@@ -454,6 +457,9 @@ class PrivilegeSid
 
     /** Lock search bar on enrollment attendance list. */
     public const ENROLLMENT_LOCK_SEARCH = 153;
+
+    /** Allows a staff member to see other staff members' event sessions on the schedule in read-only mode */
+    public const ENROLLMENT_SCHEDULE_VIEW = 247;
 
     /** Manage Enterprise Cloud Fees. */
     public const ENTERPRISE_CLOUD_FEES = 207;
