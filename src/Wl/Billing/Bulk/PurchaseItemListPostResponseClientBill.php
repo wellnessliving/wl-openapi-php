@@ -5,48 +5,23 @@ namespace WlSdk\Wl\Billing\Bulk;
 class PurchaseItemListPostResponseClientBill
 {
     /**
-     * The client email address. Empty string if the client has no email.
+     * The inventory and introductory-eligibility warnings produced while preparing the bill. Each
+     * element has the following structure:
      *
-     * @var string|null
+     * @var PurchaseItemListPostResponseClientBillWarning|null
      */
-    public ?string $text_mail = null;
+    public ?PurchaseItemListPostResponseClientBillWarning $a_warning = null;
 
     /**
-     * The client full name.
+     * The list of clients that will be billed. Each element has the following structure:
      *
-     * @var string|null
+     * @var PurchaseItemListPostResponseClientBillClient|null
      */
-    public ?string $text_name = null;
-
-    /**
-     * The payment method label for this client. `Account` when billing to the client account; otherwise the
-     * default stored card label (for example, `Visa ****1234`), the default ACH account label when no card is on
-     * file, or an account fallback when neither is on file.
-     *
-     * @var string|null
-     */
-    public ?string $text_pay_method = null;
-
-    /**
-     * The client cell phone number. Empty string if the client has no cell phone.
-     *
-     * @var string|null
-     */
-    public ?string $text_phone = null;
-
-    /**
-     * The client user key.
-     *
-     * @var string|null
-     */
-    public ?string $uid = null;
+    public ?PurchaseItemListPostResponseClientBillClient $a_client = null;
 
     public function __construct(array $data)
     {
-        $this->text_mail = isset($data['text_mail']) ? (string)$data['text_mail'] : null;
-        $this->text_name = isset($data['text_name']) ? (string)$data['text_name'] : null;
-        $this->text_pay_method = isset($data['text_pay_method']) ? (string)$data['text_pay_method'] : null;
-        $this->text_phone = isset($data['text_phone']) ? (string)$data['text_phone'] : null;
-        $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
+        $this->a_warning = isset($data['a_warning']) ? new PurchaseItemListPostResponseClientBillWarning((array)$data['a_warning']) : null;
+        $this->a_client = isset($data['a_client']) ? new PurchaseItemListPostResponseClientBillClient((array)$data['a_client']) : null;
     }
 }

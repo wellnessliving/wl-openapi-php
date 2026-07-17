@@ -8,21 +8,19 @@ namespace WlSdk\Wl\Billing\Bulk;
 class PurchaseItemListPostResponse
 {
     /**
-     * The list of clients that will be billed. Each element has the following structure:
+     * The result of preparing the clients to bill. Has the following structure:
      *
-     * @var PurchaseItemListPostResponseClientBill[]|null
+     * @var PurchaseItemListPostResponseClientBill|null
      */
-    public ?array $a_client_bill = null;
+    public ?PurchaseItemListPostResponseClientBill $a_client_bill = null;
 
     /**
-     * The list of clients that will be skipped due to restrictions. Each element has the same structure as an
-     *  element of {@link \WlSdk\Wl\Billing\Bulk\PurchaseItemListPostResponse::$a_client_bill}.
+     * The clients removed from the bulk billing because a selected item is not available to their client type or
+     *  member group, together with the warnings that explain why. Has the following structure:
      *
-     * This list is always empty for now and will be populated once the restriction checks are implemented.
-     *
-     * @var array[]|null
+     * @var PurchaseItemListPostResponseClientRestrict|null
      */
-    public ?array $a_client_ignore = null;
+    public ?PurchaseItemListPostResponseClientRestrict $a_client_restrict = null;
 
     /**
      * The total amount charged across every client that will be billed (per-client total multiplied by the number
@@ -55,8 +53,8 @@ class PurchaseItemListPostResponse
 
     public function __construct(array $data)
     {
-        $this->a_client_bill = isset($data['a_client_bill']) ? array_map(static fn ($item) => new PurchaseItemListPostResponseClientBill((array)$item), (array)$data['a_client_bill']) : null;
-        $this->a_client_ignore = isset($data['a_client_ignore']) ? (array)$data['a_client_ignore'] : null;
+        $this->a_client_bill = isset($data['a_client_bill']) ? new PurchaseItemListPostResponseClientBill((array)$data['a_client_bill']) : null;
+        $this->a_client_restrict = isset($data['a_client_restrict']) ? new PurchaseItemListPostResponseClientRestrict((array)$data['a_client_restrict']) : null;
         $this->m_batch = isset($data['m_batch']) ? (string)$data['m_batch'] : null;
         $this->m_subtotal = isset($data['m_subtotal']) ? (string)$data['m_subtotal'] : null;
         $this->m_tax = isset($data['m_tax']) ? (string)$data['m_tax'] : null;

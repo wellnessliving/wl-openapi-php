@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Billing\Bulk;
 class PurchaseItemListGetResponseProduct
 {
     /**
-     * The list of product options available at the location. Each element has the following structure:
+     * The options of the product available at the location. Each element has the following structure:
      *
      * @var PurchaseItemListGetResponseProductOption|null
      */

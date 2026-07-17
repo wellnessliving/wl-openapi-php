@@ -44,6 +44,13 @@ class PurchaseItemListPostRequest
     public ?bool $is_payment_method_default = null;
 
     /**
+     * Whether to send a receipt to the client email address after billing.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_receipt_send = null;
+
+    /**
      * Whether to include the pre-configured taxes into the totals.
      *
      * @var bool|null
@@ -59,6 +66,7 @@ class PurchaseItemListPostRequest
             'a_purchase_item' => $this->a_purchase_item,
             'a_uid' => $this->a_uid,
             'is_payment_method_default' => $this->is_payment_method_default,
+            'is_receipt_send' => $this->is_receipt_send,
             'is_tax' => $this->is_tax,
             ],
             static fn ($v) => $v !== null

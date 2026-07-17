@@ -37,8 +37,13 @@ class PurchaseItemList
      *
      * Validates access to the business, calculates the per-client subtotal, tax and total for the selected
      * purchase
-     *  items, and collects each client contact data and payment method label. The list of clients skipped due to
-     *  restrictions is returned separately and is empty for now.
+     *  items, and collects each client contact data and payment method label. Clients that a selected item is not
+     *  available to (by their client type or member group) are removed from billing and returned in
+     *  {@link \WlSdk\Wl\Billing\Bulk\PurchaseItemListPostResponse::$a_client_restrict}. Clients that are not
+     * eligible for the selected introductory
+     *  items are flagged with `is_warning` and described in {@link
+     * \WlSdk\Wl\Billing\Bulk\PurchaseItemListPostResponse::$a_client_bill} (`a_warning`
+     *  key).
      *
      * @return PurchaseItemListPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
