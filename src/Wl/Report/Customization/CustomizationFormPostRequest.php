@@ -1,8 +1,8 @@
 <?php
 
-namespace WlSdk\Thoth\ReportCore\QueryEngine\Report\Customization;
+namespace WlSdk\Wl\Report\Customization;
 
-class ReportQueryCustomizationFormPostRequest
+class CustomizationFormPostRequest
 {
     /**
      * Report page CID.
@@ -26,16 +26,6 @@ class ReportQueryCustomizationFormPostRequest
      * @var string|null
      */
     public ?string $k_business = null;
-
-    /**
-     * SQL query primary key. Primary key in ReportQuerySql.
-     *
-     * Scopes the customization record to a specific SQL query.
-     * `null` loads the generic shared row as a backward-compatible fallback.
-     *
-     * @var string|null
-     */
-    public ?string $k_report_query = null;
 
     /**
      * Primary key of a saved report.
@@ -67,7 +57,6 @@ class ReportQueryCustomizationFormPostRequest
             'cid_page' => $this->cid_page,
             'cid_report' => $this->cid_report,
             'k_business' => $this->k_business,
-            'k_report_query' => $this->k_report_query,
             'k_report_save' => $this->k_report_save,
             'uid_actor' => $this->uid_actor,
             'a_customization_form' => $this->a_customization_form,
