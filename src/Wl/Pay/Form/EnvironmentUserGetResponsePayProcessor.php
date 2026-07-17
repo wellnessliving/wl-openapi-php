@@ -9,18 +9,18 @@ class EnvironmentUserGetResponsePayProcessor
      *
      * `null` if this payment processor does not support public keys.
      *
-     * @var array|null
+     * @var EnvironmentUserGetResponsePayProcessorPublicKeys|null
      */
-    public ?array $a_public_keys = null;
+    public ?EnvironmentUserGetResponsePayProcessorPublicKeys $a_public_keys = null;
 
     /**
      * Public info configured for this payment processor.
      *
      * `null` if this payment processor does not support public info.
      *
-     * @var array|null
+     * @var EnvironmentUserGetResponsePayProcessorPublicInfo|null
      */
-    public ?array $a_public_info = null;
+    public ?EnvironmentUserGetResponsePayProcessorPublicInfo $a_public_info = null;
 
     /**
      * Whether `save payment method` option should be hidden. `true` if hidden, `false` - otherwise.
@@ -63,8 +63,8 @@ class EnvironmentUserGetResponsePayProcessor
 
     public function __construct(array $data)
     {
-        $this->a_public_keys = isset($data['a_public_keys']) ? (array)$data['a_public_keys'] : null;
-        $this->a_public_info = isset($data['a_public_info']) ? (array)$data['a_public_info'] : null;
+        $this->a_public_keys = isset($data['a_public_keys']) ? new EnvironmentUserGetResponsePayProcessorPublicKeys((array)$data['a_public_keys']) : null;
+        $this->a_public_info = isset($data['a_public_info']) ? new EnvironmentUserGetResponsePayProcessorPublicInfo((array)$data['a_public_info']) : null;
         $this->hide_save_source = isset($data['hide_save_source']) ? (bool)$data['hide_save_source'] : null;
         $this->id_pay_processor = isset($data['id_pay_processor']) ? (int)$data['id_pay_processor'] : null;
         $this->is_enabled_3ds = isset($data['is_enabled_3ds']) ? (bool)$data['is_enabled_3ds'] : null;
