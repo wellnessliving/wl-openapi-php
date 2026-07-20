@@ -13,13 +13,6 @@ class ListGetResponseService
     public ?bool $hide_application = null;
 
     /**
-     * Whether appointment type is active.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_active = null;
-
-    /**
      * Appointment type identifier, primary key.
      *
      * @var string|null
@@ -50,7 +43,6 @@ class ListGetResponseService
     public function __construct(array $data)
     {
         $this->hide_application = isset($data['hide_application']) ? (bool)$data['hide_application'] : null;
-        $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
         $this->k_service = isset($data['k_service']) ? (string)$data['k_service'] : null;
         $this->k_service_category = isset($data['k_service_category']) ? (string)$data['k_service_category'] : null;
         $this->text_category = isset($data['text_category']) ? (string)$data['text_category'] : null;
