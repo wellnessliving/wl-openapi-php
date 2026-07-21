@@ -8,17 +8,17 @@ namespace WlSdk\Wl\Business\Account\Subscription\AiAgent;
  * Last used ID: 5.
  *
  * Values:
- * - 4 (`CHAT_AGENT`): Chat Agent
  * - 5 (`DENTAL_PHONE_AGENT`): Dental Phone Agent
  * - 1 (`FREE`): None
  * - 2 (`PROFESSIONAL`): Professional
+ * - 6 (`PROFESSIONAL_TRIAL`): Professional subscription, which will be automatically converted to {@link
+ * \WlSdk\Wl\Business\Account\Subscription\AiAgent\AiAgentSubscriptionSid} after the 5th lead.
  * - 3 (`STANDARD`): Assistant
+ * - 7 (`STANDARD_TRIAL`): Standard subscription, which will be automatically converted to {@link
+ * \WlSdk\Wl\Business\Account\Subscription\AiAgent\AiAgentSubscriptionSid} after the 5th lead.
  */
 class AiAgentSubscriptionSid
 {
-    /** Chat Agent */
-    public const CHAT_AGENT = 4;
-
     /** Dental Phone Agent */
     public const DENTAL_PHONE_AGENT = 5;
 
@@ -28,6 +28,12 @@ class AiAgentSubscriptionSid
     /** Professional */
     public const PROFESSIONAL = 2;
 
+    /** Professional subscription, which will be automatically converted to {@link \WlSdk\Wl\Business\Account\Subscription\AiAgent\AiAgentSubscriptionSid} after the 5th lead. */
+    public const PROFESSIONAL_TRIAL = 6;
+
     /** Assistant */
     public const STANDARD = 3;
+
+    /** Standard subscription, which will be automatically converted to {@link \WlSdk\Wl\Business\Account\Subscription\AiAgent\AiAgentSubscriptionSid} after the 5th lead. */
+    public const STANDARD_TRIAL = 7;
 }
