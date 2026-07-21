@@ -45,6 +45,13 @@ class ApplicationResourceMaterialPostRequest
     public ?string $s_firebase_ios = null;
 
     /**
+     * Android splash screen background color in hex format.
+     *
+     * @var string|null
+     */
+    public ?string $s_splash_color_android = null;
+
+    /**
      * Version name for the App Store and Google Play builds.
      *
      * @var string|null
@@ -145,6 +152,7 @@ class ApplicationResourceMaterialPostRequest
             'id_version_change' => $this->id_version_change,
             'k_business' => $this->k_business,
             's_firebase_ios' => $this->s_firebase_ios,
+            's_splash_color_android' => $this->s_splash_color_android,
             's_version_name' => $this->s_version_name,
             'text_annotation' => $this->text_annotation,
             'text_country' => $this->text_country,
