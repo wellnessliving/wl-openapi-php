@@ -51,6 +51,15 @@ class PurchaseItemListPostResponse
      */
     public ?string $m_total = null;
 
+    /**
+     * The review id that identifies this prepared bulk billing. Pass it to {@link
+     * \WlSdk\Wl\Billing\Bulk\BulkBilling} to schedule the
+     *  billing without sending the clients and items again.
+     *
+     * @var string|null
+     */
+    public ?string $s_id = null;
+
     public function __construct(array $data)
     {
         $this->a_client_bill = isset($data['a_client_bill']) ? new PurchaseItemListPostResponseClientBill((array)$data['a_client_bill']) : null;
@@ -59,5 +68,6 @@ class PurchaseItemListPostResponse
         $this->m_subtotal = isset($data['m_subtotal']) ? (string)$data['m_subtotal'] : null;
         $this->m_tax = isset($data['m_tax']) ? (string)$data['m_tax'] : null;
         $this->m_total = isset($data['m_total']) ? (string)$data['m_total'] : null;
+        $this->s_id = isset($data['s_id']) ? (string)$data['s_id'] : null;
     }
 }
