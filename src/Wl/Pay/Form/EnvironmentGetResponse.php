@@ -39,9 +39,9 @@ class EnvironmentGetResponse
      * The structure of this array depends on the payment processor being used.
      * `null` when mobile card readers are not supported, or when actor has no access to them.
      *
-     * @var array|null
+     * @var array|mixed|null
      */
-    public ?array $a_mobile_config = null;
+    public $a_mobile_config = null;
 
     /**
      * Represents information about payment processors.
@@ -137,7 +137,7 @@ class EnvironmentGetResponse
         $this->a_card_system = isset($data['a_card_system']) ? (array)$data['a_card_system'] : null;
         $this->a_method_staff = isset($data['a_method_staff']) ? (array)$data['a_method_staff'] : null;
         $this->a_method_support = isset($data['a_method_support']) ? array_map(static fn ($item) => new EnvironmentGetResponseMethodSupport((array)$item), (array)$data['a_method_support']) : null;
-        $this->a_mobile_config = isset($data['a_mobile_config']) ? (array)$data['a_mobile_config'] : null;
+        $this->a_mobile_config = $data['a_mobile_config'] ?? null;
         $this->a_pay_processor = isset($data['a_pay_processor']) ? array_map(static fn ($item) => new EnvironmentGetResponsePayProcessor((array)$item), (array)$data['a_pay_processor']) : null;
         $this->dl_now = isset($data['dl_now']) ? (string)$data['dl_now'] : null;
         $this->f_surcharge = isset($data['f_surcharge']) ? (string)$data['f_surcharge'] : null;
