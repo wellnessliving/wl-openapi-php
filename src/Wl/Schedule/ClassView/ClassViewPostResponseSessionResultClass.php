@@ -170,6 +170,13 @@ class ClassViewPostResponseSessionResultClass
     public ?bool $is_cancel = null;
 
     /**
+     * `true` if clients can cancel this session. Otherwise, this will be `false`.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_cancellation_enabled = null;
+
+    /**
      * `true` if it is event; `false` if it is class.
      *
      * @var bool|null
@@ -264,6 +271,7 @@ class ClassViewPostResponseSessionResultClass
         $this->is_book = isset($data['is_book']) ? (bool)$data['is_book'] : null;
         $this->is_book_for_guest = isset($data['is_book_for_guest']) ? (bool)$data['is_book_for_guest'] : null;
         $this->is_cancel = isset($data['is_cancel']) ? (bool)$data['is_cancel'] : null;
+        $this->is_cancellation_enabled = isset($data['is_cancellation_enabled']) ? (bool)$data['is_cancellation_enabled'] : null;
         $this->is_event = isset($data['is_event']) ? (bool)$data['is_event'] : null;
         $this->is_promotion_only = isset($data['is_promotion_only']) ? (bool)$data['is_promotion_only'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
