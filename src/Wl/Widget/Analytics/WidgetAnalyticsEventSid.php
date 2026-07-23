@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Widget\Analytics;
 /**
  * Widget analytics event types.
  *
- * Last ID: 33
+ * Last ID: 1
  *
  * Values:
  * - 1 (`ABANDONED_CHECKOUT`): Checkout abandonment event.
