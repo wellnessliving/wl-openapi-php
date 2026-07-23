@@ -20,6 +20,8 @@ class LoginRankElement
     /**
      * Deletes a rank record for a user.
      *
+     * Removes the rank record from the database and logs the action in the belt history.
+     *
      * @return LoginRankElementDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

@@ -19,7 +19,7 @@ class LoginRankElementDeleteRequest
     public ?string $k_business = null;
 
     /**
-     * Login rank key. Primary key in RsLoginRankSql table.
+     * Login rank key.
      *
      * @var string|null
      */
