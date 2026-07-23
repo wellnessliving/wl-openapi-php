@@ -1,11 +1,11 @@
 <?php
 
-namespace WlSdk\Wl\Widget\Analytics;
+namespace WlSdk\Wl\Login\Rank;
 
 /**
- * Response from POST
+ * Response from DELETE
  */
-class WidgetAnalyticsEventPostResponse
+class LoginRankElementDeleteResponse
 {
     public function __construct(array $data)
     {
