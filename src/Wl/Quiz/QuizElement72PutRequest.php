@@ -33,7 +33,7 @@ class QuizElement72PutRequest
      *
      * @var bool|null
      */
-    public ?bool $is_active = null;
+    public ?bool $is_active = true;
 
     public function params(): array
     {

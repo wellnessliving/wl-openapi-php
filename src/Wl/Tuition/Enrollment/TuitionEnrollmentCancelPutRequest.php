@@ -28,6 +28,13 @@ class TuitionEnrollmentCancelPutRequest
     public ?bool $is_pass_deactivate = null;
 
     /**
+     * Key of the business.
+     *
+     * @var string|null
+     */
+    public ?string $k_business = null;
+
+    /**
      * Key of the tuition purchase item. This is enrollment key, which can be got from {@link
      * \WlSdk\Wl\Tuition\Enrollment\TuitionEnrollmentList}.
      *
@@ -42,6 +49,7 @@ class TuitionEnrollmentCancelPutRequest
             'a_event_cancel' => $this->a_event_cancel,
             'is_cancel_visits' => $this->is_cancel_visits,
             'is_pass_deactivate' => $this->is_pass_deactivate,
+            'k_business' => $this->k_business,
             'k_purchase_item_tuition' => $this->k_purchase_item_tuition,
             ],
             static fn ($v) => $v !== null

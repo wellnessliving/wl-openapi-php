@@ -27,7 +27,7 @@ class ListGetRequest
      * @var int|null
      * @see \WlSdk\Wl\Login\LoginRoleSid
      */
-    public ?int $id_role = null;
+    public ?int $id_role = 2;
 
     /**
      * `true` - returns service categories that have no staff members available to conduct them.

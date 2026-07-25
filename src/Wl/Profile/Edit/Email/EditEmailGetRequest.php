@@ -9,7 +9,7 @@ class EditEmailGetRequest
      *
      * @var bool|null
      */
-    public ?bool $is_backend = null;
+    public ?bool $is_backend = true;
 
     /**
      * The business key where the check must be performed.

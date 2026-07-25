@@ -9,7 +9,7 @@ class BusinessAccessGetRequest
      *
      * @var bool|null
      */
-    public ?bool $is_backend = null;
+    public ?bool $is_backend = true;
 
     /**
      * The staff member's Facebook ID. This won't be empty if the staff member is logging in with Facebook.

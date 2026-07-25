@@ -42,6 +42,8 @@ class TuitionEnrollmentListGetResponseEnrollment
     /**
      * Installment plan status.
      *
+     * `null` if tuition paid in full without installment.
+     *
      * @var int|null
      */
     public ?int $id_installment_status = null;

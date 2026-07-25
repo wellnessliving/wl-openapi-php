@@ -9,7 +9,7 @@ class EditPasswordPostRequest
      *
      * @var bool|null
      */
-    public ?bool $is_old_password_required = null;
+    public ?bool $is_old_password_required = true;
 
     /**
      * The key ID of business where actions take place.

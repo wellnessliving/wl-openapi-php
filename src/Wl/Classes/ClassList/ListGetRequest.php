@@ -67,7 +67,7 @@ class ListGetRequest
      *
      * @var bool|null
      */
-    public ?bool $is_event_include = null;
+    public ?bool $is_event_include = true;
 
     /**
      * Whether to return franchisee-created classes (if business is franchisor).

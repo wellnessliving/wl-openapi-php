@@ -258,6 +258,13 @@ class ServiceListGetResponseService
     public ?bool $is_virtual = null;
 
     /**
+     * Off-site location if service requires such type of asset.
+     *
+     * @var string|null
+     */
+    public ?string $k_resource_location = null;
+
+    /**
      * The appointment primary key.
      *
      * @var string|null
@@ -356,6 +363,7 @@ class ServiceListGetResponseService
         $this->is_staff_skip = isset($data['is_staff_skip']) ? (bool)$data['is_staff_skip'] : null;
         $this->is_question = isset($data['is_question']) ? (bool)$data['is_question'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
+        $this->k_resource_location = isset($data['k_resource_location']) ? (string)$data['k_resource_location'] : null;
         $this->k_service = isset($data['k_service']) ? (string)$data['k_service'] : null;
         $this->k_service_category = isset($data['k_service_category']) ? (string)$data['k_service_category'] : null;
         $this->s_duration = isset($data['s_duration']) ? (string)$data['s_duration'] : null;

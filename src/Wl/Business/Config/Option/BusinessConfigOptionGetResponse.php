@@ -12,7 +12,7 @@ class BusinessConfigOptionGetResponse
      * Key - config option class CID.
      * Values - config option value.
      *
-     * @var string[]|null
+     * @var array|null
      */
     public ?array $a_option = null;
 

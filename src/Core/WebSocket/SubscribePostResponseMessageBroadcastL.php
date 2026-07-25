@@ -5,22 +5,14 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastL
 {
     /**
-     * Whether message is active. This is needed to avoid showing previous messages on page reload.
+     * New title of the business.
      *
-     * @var bool|null
+     * @var string|null
      */
-    public ?bool $is_active = null;
-
-    /**
-     * Whether booking is in progress.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_booking_in_progress = null;
+    public ?string $text_title = null;
 
     public function __construct(array $data)
     {
-        $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
-        $this->is_booking_in_progress = isset($data['is_booking_in_progress']) ? (bool)$data['is_booking_in_progress'] : null;
+        $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }
 }

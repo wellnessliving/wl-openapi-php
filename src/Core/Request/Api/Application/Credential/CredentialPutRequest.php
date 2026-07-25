@@ -17,7 +17,7 @@ class CredentialPutRequest
      *
      * @var string|null
      */
-    public ?string $json_credential = null;
+    public ?string $json_credential = '[]';
 
     public function params(): array
     {

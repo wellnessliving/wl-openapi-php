@@ -5,14 +5,14 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastD
 {
     /**
-     * Business key.
+     * Key of a book/visit.
      *
      * @var string|null
      */
-    public ?string $k_business = null;
+    public ?string $k_visit = null;
 
     public function __construct(array $data)
     {
-        $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;
+        $this->k_visit = isset($data['k_visit']) ? (string)$data['k_visit'] : null;
     }
 }

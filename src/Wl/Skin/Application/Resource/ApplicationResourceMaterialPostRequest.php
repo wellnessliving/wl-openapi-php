@@ -9,7 +9,7 @@ class ApplicationResourceMaterialPostRequest
      *
      * @var int|null
      */
-    public ?int $i_version = null;
+    public ?int $i_version = 1;
 
     /**
      * Application category in the store.
@@ -28,7 +28,7 @@ class ApplicationResourceMaterialPostRequest
      * @var int|null
      * @see \WlSdk\Wl\Skin\Application\Upgrade\AppUpdateTypeEnum
      */
-    public ?int $id_version_change = null;
+    public ?int $id_version_change = 1;
 
     /**
      * Business key.
@@ -45,11 +45,18 @@ class ApplicationResourceMaterialPostRequest
     public ?string $s_firebase_ios = null;
 
     /**
+     * Android splash screen background color in hex format.
+     *
+     * @var string|null
+     */
+    public ?string $s_splash_color_android = null;
+
+    /**
      * Version name for the App Store and Google Play builds.
      *
      * @var string|null
      */
-    public ?string $s_version_name = null;
+    public ?string $s_version_name = '2.0.1';
 
     /**
      * Short application description in the store (up to 80 characters).
@@ -145,6 +152,7 @@ class ApplicationResourceMaterialPostRequest
             'id_version_change' => $this->id_version_change,
             'k_business' => $this->k_business,
             's_firebase_ios' => $this->s_firebase_ios,
+            's_splash_color_android' => $this->s_splash_color_android,
             's_version_name' => $this->s_version_name,
             'text_annotation' => $this->text_annotation,
             'text_country' => $this->text_country,

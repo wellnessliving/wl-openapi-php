@@ -51,7 +51,7 @@ class DiscountCodeEditPostRequest
      *
      * @var string|null
      */
-    public ?string $f_value = null;
+    public ?string $f_value = '0.00';
 
     /**
      * Count of calendar periods from `id_duration` before expiration.

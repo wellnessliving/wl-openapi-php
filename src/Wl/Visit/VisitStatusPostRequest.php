@@ -11,7 +11,7 @@ class VisitStatusPostRequest
      *
      * @var bool|null
      */
-    public ?bool $is_charge_fee = null;
+    public ?bool $is_charge_fee = true;
 
     /**
      * The business key.

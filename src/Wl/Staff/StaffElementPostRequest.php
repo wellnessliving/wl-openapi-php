@@ -95,7 +95,7 @@ class StaffElementPostRequest
      *
      * @var bool|null
      */
-    public ?bool $is_uid = null;
+    public ?bool $is_uid = true;
 
     /**
      * The key of the business in which the staff member is being created or edited.

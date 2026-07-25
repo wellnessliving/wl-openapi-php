@@ -5,14 +5,14 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastV
 {
     /**
-     * New data of changes schedule item:
+     * The count with unread SMS in the business.
      *
-     * @var SubscribePostResponseMessageBroadcastVVisit|null
+     * @var int|null
      */
-    public ?SubscribePostResponseMessageBroadcastVVisit $a_visit = null;
+    public ?int $i_unread_sms = null;
 
     public function __construct(array $data)
     {
-        $this->a_visit = isset($data['a_visit']) ? new SubscribePostResponseMessageBroadcastVVisit((array)$data['a_visit']) : null;
+        $this->i_unread_sms = isset($data['i_unread_sms']) ? (int)$data['i_unread_sms'] : null;
     }
 }

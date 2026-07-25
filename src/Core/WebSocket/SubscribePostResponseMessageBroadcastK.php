@@ -5,44 +5,30 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastK
 {
     /**
-     * Session end date/time.
+     * The text of the error.
      *
      * @var string|null
      */
-    public ?string $dtl_end = null;
+    public ?string $html_error_message = null;
 
     /**
-     * Session start date/time.
+     * The unique key of the sent SMS.
      *
      * @var string|null
      */
-    public ?string $dtl_start = null;
+    public ?string $s_key = null;
 
     /**
-     * Key of the changed appointment.
-     * Is set only if changed session is appointment.
+     * The time in UNIX format when socket message was sent.
      *
-     * `null` if changed session is not an appointment.
-     *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $k_appointment = null;
-
-    /**
-     * Key of the changed class session.
-     * Is set only if changed session is class.
-     *
-     * `null` if changed session is not a class.
-     *
-     * @var string|null
-     */
-    public ?string $k_class_period = null;
+    public ?int $tl_send = null;
 
     public function __construct(array $data)
     {
-        $this->dtl_end = isset($data['dtl_end']) ? (string)$data['dtl_end'] : null;
-        $this->dtl_start = isset($data['dtl_start']) ? (string)$data['dtl_start'] : null;
-        $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;
-        $this->k_class_period = isset($data['k_class_period']) ? (string)$data['k_class_period'] : null;
+        $this->html_error_message = isset($data['html_error_message']) ? (string)$data['html_error_message'] : null;
+        $this->s_key = isset($data['s_key']) ? (string)$data['s_key'] : null;
+        $this->tl_send = isset($data['tl_send']) ? (int)$data['tl_send'] : null;
     }
 }

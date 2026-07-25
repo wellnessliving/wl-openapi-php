@@ -5,46 +5,44 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastN
 {
     /**
-     * Number of successfully processed items.
-     *
-     * @var int|null
-     */
-    public ?int $i_complete = null;
-
-    /**
-     * Number of failed items.
-     *
-     * @var int|null
-     */
-    public ?int $i_fail = null;
-
-    /**
-     * Number of items left to process.
-     *
-     * @var int|null
-     */
-    public ?int $i_left = null;
-
-    /**
-     * Key of the import being processing.
+     * Session end date/time.
      *
      * @var string|null
      */
-    public ?string $k_import = null;
+    public ?string $dtl_end = null;
 
     /**
-     * Url link to download log file with import progress.
+     * Session start date/time.
      *
      * @var string|null
      */
-    public ?string $url_log = null;
+    public ?string $dtl_start = null;
+
+    /**
+     * Key of the changed appointment.
+     * Is set only if changed session is appointment.
+     *
+     * `null` if changed session is not an appointment.
+     *
+     * @var string|null
+     */
+    public ?string $k_appointment = null;
+
+    /**
+     * Key of the changed class session.
+     * Is set only if changed session is class.
+     *
+     * `null` if changed session is not a class.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_period = null;
 
     public function __construct(array $data)
     {
-        $this->i_complete = isset($data['i_complete']) ? (int)$data['i_complete'] : null;
-        $this->i_fail = isset($data['i_fail']) ? (int)$data['i_fail'] : null;
-        $this->i_left = isset($data['i_left']) ? (int)$data['i_left'] : null;
-        $this->k_import = isset($data['k_import']) ? (string)$data['k_import'] : null;
-        $this->url_log = isset($data['url_log']) ? (string)$data['url_log'] : null;
+        $this->dtl_end = isset($data['dtl_end']) ? (string)$data['dtl_end'] : null;
+        $this->dtl_start = isset($data['dtl_start']) ? (string)$data['dtl_start'] : null;
+        $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;
+        $this->k_class_period = isset($data['k_class_period']) ? (string)$data['k_class_period'] : null;
     }
 }

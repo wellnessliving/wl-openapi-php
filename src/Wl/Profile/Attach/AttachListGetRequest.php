@@ -9,7 +9,7 @@ class AttachListGetRequest
      *
      * @var bool|null
      */
-    public ?bool $is_backend = null;
+    public ?bool $is_backend = true;
 
     /**
      * Business key.

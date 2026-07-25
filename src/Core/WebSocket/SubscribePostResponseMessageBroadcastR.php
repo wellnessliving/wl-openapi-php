@@ -5,37 +5,26 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastR
 {
     /**
-     * List of email domain tokens:
-     *
-     * Empty array if the business does not have a mail domain set up.
-     *
-     * @var SubscribePostResponseMessageBroadcastRDomainToken|null
-     */
-    public ?SubscribePostResponseMessageBroadcastRDomainToken $a_domain_token = null;
-
-    /**
-     * Email domain status.
-     *
-     * `null` if the business does not have a mail domain set up.
+     * Status of mail verification.
+     * One of the {@link \WlSdk\Wl\Mail\Verify\MailVerifyStatusSid} constants.
+     * Or {@link \WlSdk\Wl\Business\Config\Option\OptionSidAbstract} if option "Enable Custom Reply To Emails" in
+     * Business -> Feature is disabled.
      *
      * @var int|null
-     * @see \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid
+     * @see \WlSdk\Wl\Mail\Verify\MailVerifyStatusSid
      */
-    public ?int $id_domain_status = null;
+    public ?int $id_mail_verify_status = null;
 
     /**
-     * CSS class for the icon representing the email domain status.
-     *
-     * Empty string if the business does not have a mail domain set up.
+     * Email address to check.
      *
      * @var string|null
      */
-    public ?string $text_domain_status_icon = null;
+    public ?string $text_email = null;
 
     public function __construct(array $data)
     {
-        $this->a_domain_token = isset($data['a_domain_token']) ? new SubscribePostResponseMessageBroadcastRDomainToken((array)$data['a_domain_token']) : null;
-        $this->id_domain_status = isset($data['id_domain_status']) ? (int)$data['id_domain_status'] : null;
-        $this->text_domain_status_icon = isset($data['text_domain_status_icon']) ? (string)$data['text_domain_status_icon'] : null;
+        $this->id_mail_verify_status = isset($data['id_mail_verify_status']) ? (int)$data['id_mail_verify_status'] : null;
+        $this->text_email = isset($data['text_email']) ? (string)$data['text_email'] : null;
     }
 }

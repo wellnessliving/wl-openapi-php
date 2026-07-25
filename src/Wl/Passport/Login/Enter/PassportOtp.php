@@ -27,26 +27,34 @@ class PassportOtp
      *
      * **1. Broadcast strategy** (default)
      *
-     * Set `$id_delivery_strategy` to `0` or {@link \WlSdk\Wl\Passport\Login\Enter\OtpDeliveryStrategyEnum} (or
-     * omit it entirely).
-     * Use `$is_mail` and/or `$is_phone` to specify which channels to use.
+     * Set {@link \WlSdk\Wl\Passport\Login\Enter\PassportOtp} to `null` or {@link
+     * \WlSdk\Wl\Passport\Login\Enter\OtpDeliveryStrategyEnum} (or omit it entirely).
+     * Use {@link \WlSdk\Wl\Passport\Login\Enter\PassportOtp} and/or {@link
+     * \WlSdk\Wl\Passport\Login\Enter\PassportOtp} to specify which channels to use.
      * At least one of them must be `true`; the OTP is sent to every channel that is enabled.
-     * The user must have a corresponding contact — a phone number when `$is_phone` is `true`, an email when
-     * `$is_mail` is `true` — otherwise an error is thrown.
+     * The user must have a corresponding contact — a phone number when {@link
+     * \WlSdk\Wl\Passport\Login\Enter\PassportOtp} is `true`, an email when
+     * {@link \WlSdk\Wl\Passport\Login\Enter\PassportOtp} is `true` — otherwise an error is thrown.
      *
-     * Example: set `$is_mail = true` and `$is_phone = true` to send OTP via both email and SMS simultaneously.
+     * Example: set {@link \WlSdk\Wl\Passport\Login\Enter\PassportOtp} to `true` and {@link
+     * \WlSdk\Wl\Passport\Login\Enter\PassportOtp} to `true` to send OTP via both email and SMS simultaneously.
      *
      * **2. Priority strategy**
      *
-     * Set `$id_delivery_strategy` to {@link \WlSdk\Wl\Passport\Login\Enter\OtpDeliveryStrategyEnum}.
-     * Provide `$text_delivery_priority` — a comma-separated list of `sms` and `email` values in the preferred
+     * Set {@link \WlSdk\Wl\Passport\Login\Enter\PassportOtp} to {@link
+     * \WlSdk\Wl\Passport\Login\Enter\OtpDeliveryStrategyEnum}.
+     * Provide {@link \WlSdk\Wl\Passport\Login\Enter\PassportOtp} — a comma-separated list of `sms` and `email`
+     * values in the preferred
      * order, e.g. `"sms,email"`.
      * The system picks the first channel from the list for which the user has valid contact data and sends the OTP
-     * only to that one channel. The selected channel is returned in `$text_delivery_selected`; when SMS is
-     * selected, the last four digits of the phone are returned in `$text_phone_masked`.
+     * only to that one channel. The selected channel is returned in {@link
+     * \WlSdk\Wl\Passport\Login\Enter\PassportOtpGetResponse::$text_delivery_selected}; when SMS is
+     * selected, the last four digits of the phone are returned in {@link
+     * \WlSdk\Wl\Passport\Login\Enter\PassportOtpGetResponse::$text_phone_masked}.
      * If none of the listed channels can be used, an error is thrown.
      *
-     * Example: set `$text_delivery_priority = "sms,email"` to prefer SMS but fall back to email if the user
+     * Example: set {@link \WlSdk\Wl\Passport\Login\Enter\PassportOtp} set to `sms,email` to prefer SMS but fall
+     * back to email if the user
      * has no phone number.
      *
      * @return PassportOtpGetResponse

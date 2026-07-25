@@ -101,7 +101,7 @@ class EditPutRequest
      *
      * @var string|null
      */
-    public ?string $json_criteria = null;
+    public ?string $json_criteria = '[]';
 
     /**
      * Hexadecimal color of icon background.

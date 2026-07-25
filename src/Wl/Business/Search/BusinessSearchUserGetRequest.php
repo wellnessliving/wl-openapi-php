@@ -9,7 +9,7 @@ class BusinessSearchUserGetRequest
      *
      * @var bool|null
      */
-    public ?bool $is_customer = null;
+    public ?bool $is_customer = true;
 
     /**
      * User email to search business keys.

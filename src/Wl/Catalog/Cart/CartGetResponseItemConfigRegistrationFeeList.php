@@ -9,10 +9,10 @@ class CartGetResponseItemConfigRegistrationFeeList
      *
      * @var string|null
      */
-    public ?string $m_amount_fee = null;
+    public ?string $m_amount = null;
 
     public function __construct(array $data)
     {
-        $this->m_amount_fee = isset($data['m_amount_fee']) ? (string)$data['m_amount_fee'] : null;
+        $this->m_amount = isset($data['m_amount']) ? (string)$data['m_amount'] : null;
     }
 }

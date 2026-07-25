@@ -8,9 +8,7 @@ namespace WlSdk\Wl\Discount\Code;
 class DiscountCodeGetResponse
 {
     /**
-     * Discount codes list.
-     *
-     * Each element has next structure:
+     * Discount codes list. Each element has the following structure:
      *
      * @var DiscountCodeGetResponseList[]|null
      */
