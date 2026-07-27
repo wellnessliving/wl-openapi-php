@@ -7,7 +7,7 @@ class ServiceAvailabilityGetResponseTime
     /**
      * Availability data of the staff. Keys are dates and values are lists of available appointment start times.
      *
-     * @var array[]|null
+     * @var string[][]|null
      */
     public ?array $a_availability = null;
 
