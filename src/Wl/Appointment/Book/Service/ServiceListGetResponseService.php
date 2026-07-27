@@ -152,6 +152,15 @@ class ServiceListGetResponseService
     public ?int $id_service_require = null;
 
     /**
+     * Virtual provider ID. One of {@link \WlSdk\Wl\Virtual\VirtualProviderSid} constants. `null` for non-virtual
+     * services.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Virtual\VirtualProviderSid
+     */
+    public ?int $id_virtual_provider = null;
+
+    /**
      * `true` if age restrictions are public. Otherwise, `false` if they should be hidden from clients.
      *
      * @var bool|null
@@ -348,6 +357,7 @@ class ServiceListGetResponseService
         $this->id_book_flow = isset($data['id_book_flow']) ? (int)$data['id_book_flow'] : null;
         $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
         $this->id_service_require = isset($data['id_service_require']) ? (int)$data['id_service_require'] : null;
+        $this->id_virtual_provider = isset($data['id_virtual_provider']) ? (int)$data['id_virtual_provider'] : null;
         $this->is_age_public = isset($data['is_age_public']) ? (bool)$data['is_age_public'] : null;
         $this->is_age_restricted = isset($data['is_age_restricted']) ? (bool)$data['is_age_restricted'] : null;
         $this->is_back_to_back = isset($data['is_back_to_back']) ? (bool)$data['is_back_to_back'] : null;
