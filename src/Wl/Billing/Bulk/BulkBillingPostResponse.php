@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Billing\Bulk;
 class BulkBillingPostResponse
 {
     /**
-     * The key of the created purchase batch.
+     * The purchase batch key.
      *
      * @var string|null
      */

@@ -32,4 +32,33 @@ class BulkBilling
     {
         return new BulkBillingPostResponse($this->client->request('/Wl/Billing/Bulk/BulkBilling.json', $request->params(), 'POST'));
     }
+
+    /**
+     * Reschedules a previously scheduled bulk billing to a new date and time.
+     *
+     * A reschedule always targets an explicit date and time.
+     * Only a batch that has not started billing yet can be rescheduled.
+     *
+     * @return BulkBillingPutResponse
+     * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
+     * @throws \RuntimeException On network or cURL error.
+     */
+    public function put(BulkBillingPutRequest $request): BulkBillingPutResponse
+    {
+        return new BulkBillingPutResponse($this->client->request('/Wl/Billing/Bulk/BulkBilling.json', $request->params(), 'PUT'));
+    }
+
+    /**
+     * Cancels a scheduled bulk billing so that it is never billed.
+     *
+     * Only a batch that has not started billing yet can be cancelled.
+     *
+     * @return BulkBillingDeleteResponse
+     * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
+     * @throws \RuntimeException On network or cURL error.
+     */
+    public function delete(BulkBillingDeleteRequest $request): BulkBillingDeleteResponse
+    {
+        return new BulkBillingDeleteResponse($this->client->request('/Wl/Billing/Bulk/BulkBilling.json', $request->params(), 'DELETE'));
+    }
 }
