@@ -5,9 +5,10 @@ namespace WlSdk\Wl\Profile\Account\Select;
 class SelectGetResponseUser
 {
     /**
-     * ID of relationship between current user and sub account.
+     * ID of relationship between current user and sub account from {@link \WlSdk\RsFamilyRelationSid}.
      *
      * @var int|null
+     * @see \WlSdk\RsFamilyRelationSid
      */
     public ?int $id_family_relation = null;
 
