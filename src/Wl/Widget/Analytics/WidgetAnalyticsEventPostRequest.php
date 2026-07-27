@@ -12,7 +12,7 @@ class WidgetAnalyticsEventPostRequest
     public ?array $a_payload = null;
 
     /**
-     * Event name. Initially only {@link \WlSdk\Wl\Widget\Analytics\WidgetAnalyticsEventSid} is supported.
+     * Event name.
      *
      * @var int|null
      * @see \WlSdk\Wl\Widget\Analytics\WidgetAnalyticsEventSid
