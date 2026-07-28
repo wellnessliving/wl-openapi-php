@@ -73,6 +73,15 @@ class ElementGetResponse
     public ?array $a_installment_template = null;
 
     /**
+     * Class selected for make-up sessions.
+     *
+     * Every element has the following keys:
+     *
+     * @var ElementGetResponseMakeupClass[]|null
+     */
+    public ?array $a_makeup_class = null;
+
+    /**
      * A list of event sessions. Every element has the following next keys:
      *
      * @var ElementGetResponseSchedule[]|null
@@ -168,6 +177,15 @@ class ElementGetResponse
      * @var int|null
      */
     public ?int $i_capacity = null;
+
+    /**
+     * Number of allowed make-up sessions for event.
+     *
+     * `0` if make-up sessions are disabled for event or all missed sessions are available for make-up.
+     *
+     * @var int|null
+     */
+    public ?int $i_makeup_cap = null;
 
     /**
      * The session count.
@@ -400,6 +418,7 @@ class ElementGetResponse
         $this->a_class_tab = isset($data['a_class_tab']) ? (array)$data['a_class_tab'] : null;
         $this->a_event = isset($data['a_event']) ? array_map(static fn ($item) => new ElementGetResponseEvent((array)$item), (array)$data['a_event']) : null;
         $this->a_installment_template = isset($data['a_installment_template']) ? array_map(static fn ($item) => new ElementGetResponseInstallmentTemplate((array)$item), (array)$data['a_installment_template']) : null;
+        $this->a_makeup_class = isset($data['a_makeup_class']) ? array_map(static fn ($item) => new ElementGetResponseMakeupClass((array)$item), (array)$data['a_makeup_class']) : null;
         $this->a_schedule = isset($data['a_schedule']) ? array_map(static fn ($item) => new ElementGetResponseSchedule((array)$item), (array)$data['a_schedule']) : null;
         $this->a_shop_category = isset($data['a_shop_category']) ? (array)$data['a_shop_category'] : null;
         $this->a_staff_logo = isset($data['a_staff_logo']) ? new ElementGetResponseStaffLogo((array)$data['a_staff_logo']) : null;
@@ -413,6 +432,7 @@ class ElementGetResponse
         $this->html_description = isset($data['html_description']) ? (string)$data['html_description'] : null;
         $this->html_special = isset($data['html_special']) ? (string)$data['html_special'] : null;
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
+        $this->i_makeup_cap = isset($data['i_makeup_cap']) ? (int)$data['i_makeup_cap'] : null;
         $this->i_session = isset($data['i_session']) ? (int)$data['i_session'] : null;
         $this->i_session_remain = isset($data['i_session_remain']) ? (int)$data['i_session_remain'] : null;
         $this->id_pay_require = isset($data['id_pay_require']) ? (int)$data['id_pay_require'] : null;
