@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Appointment\Info;
 class InfoGetRequest
 {
     /**
-     * Class identifier to get information for.
+     * Appointment key to get information for.
      *
      * @var string|null
      */
