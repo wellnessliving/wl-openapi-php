@@ -44,6 +44,13 @@ class SendMailPostRequest
     public ?string $text_action = null;
 
     /**
+     * URL suffix for the link. Optional.
+     *
+     * @var string|null
+     */
+    public ?string $text_url_suffix = null;
+
+    /**
      * User ID. Required.
      *
      * @var string|null
@@ -59,6 +66,7 @@ class SendMailPostRequest
             'k_business' => $this->k_business,
             'k_id' => $this->k_id,
             'text_action' => $this->text_action,
+            'text_url_suffix' => $this->text_url_suffix,
             'uid' => $this->uid,
             ],
             static fn ($v) => $v !== null
