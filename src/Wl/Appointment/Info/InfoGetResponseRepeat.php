@@ -37,7 +37,7 @@ class InfoGetResponseRepeat
      *
      * @var string|null
      */
-    public ?string $tl_time = null;
+    public ?string $s_time = null;
 
     public function __construct(array $data)
     {
@@ -45,6 +45,6 @@ class InfoGetResponseRepeat
         $this->dl_date = isset($data['dl_date']) ? (string)$data['dl_date'] : null;
         $this->dl_edit_from = isset($data['dl_edit_from']) ? (string)$data['dl_edit_from'] : null;
         $this->dl_edit_to = isset($data['dl_edit_to']) ? (string)$data['dl_edit_to'] : null;
-        $this->tl_time = isset($data['tl_time']) ? (string)$data['tl_time'] : null;
+        $this->s_time = isset($data['s_time']) ? (string)$data['s_time'] : null;
     }
 }
