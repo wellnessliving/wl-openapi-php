@@ -97,6 +97,8 @@ class ApplicationResourceMaterialPostRequest
     /**
      * Support email address shown in the store listing.
      *
+     * `null` to not change exists email.
+     *
      * @var string|null
      */
     public ?string $text_email = null;
