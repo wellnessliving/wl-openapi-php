@@ -83,18 +83,46 @@ class ClassViewGetResponseClass
     public ?string $text_timezone = null;
 
     /**
-     * Age from that class is allowed. `null` if information is not available.
+     * The minimum age restriction. Deprecated and is left only for back compatibility.
      *
      * @var int|null
      */
     public ?int $i_age_from = null;
 
     /**
-     * Age to that class is allowed. `null` if information is not available.
+     * The minimum age restriction (months).
+     *
+     * @var int|null
+     */
+    public ?int $i_age_from_month = null;
+
+    /**
+     * The minimum age restriction (years).
+     *
+     * @var int|null
+     */
+    public ?int $i_age_from_year = null;
+
+    /**
+     * The maximum age restriction. Deprecated and is left only for back compatibility.
      *
      * @var int|null
      */
     public ?int $i_age_to = null;
+
+    /**
+     * The maximum age restriction (months).
+     *
+     * @var int|null
+     */
+    public ?int $i_age_to_month = null;
+
+    /**
+     * The maximum age restriction (years).
+     *
+     * @var int|null
+     */
+    public ?int $i_age_to_year = null;
 
     /**
      * A total number of booked visits in the class, including all lists: active and waitlist.
@@ -260,7 +288,11 @@ class ClassViewGetResponseClass
         $this->html_special = isset($data['html_special']) ? (string)$data['html_special'] : null;
         $this->text_timezone = isset($data['text_timezone']) ? (string)$data['text_timezone'] : null;
         $this->i_age_from = isset($data['i_age_from']) ? (int)$data['i_age_from'] : null;
+        $this->i_age_from_month = isset($data['i_age_from_month']) ? (int)$data['i_age_from_month'] : null;
+        $this->i_age_from_year = isset($data['i_age_from_year']) ? (int)$data['i_age_from_year'] : null;
         $this->i_age_to = isset($data['i_age_to']) ? (int)$data['i_age_to'] : null;
+        $this->i_age_to_month = isset($data['i_age_to_month']) ? (int)$data['i_age_to_month'] : null;
+        $this->i_age_to_year = isset($data['i_age_to_year']) ? (int)$data['i_age_to_year'] : null;
         $this->i_book = isset($data['i_book']) ? (int)$data['i_book'] : null;
         $this->i_book_active = isset($data['i_book_active']) ? (int)$data['i_book_active'] : null;
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
