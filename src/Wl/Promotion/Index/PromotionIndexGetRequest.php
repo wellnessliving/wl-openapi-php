@@ -33,6 +33,8 @@ class PromotionIndexGetRequest
     /**
      * The business key.
      *
+     * `null` to get a business from location.
+     *
      * @var string|null
      */
     public ?string $k_business = null;
