@@ -2,7 +2,7 @@
 
 namespace WlSdk\Wl\Event\Book\EventView;
 
-class ElementGetResponseMakeupClass
+class ElementGetResponseEventMakeupClass
 {
     /**
      * Class key.
