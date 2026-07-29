@@ -31,6 +31,13 @@ class PromotionIndexGetRequest
     public ?int $id_program_type = null;
 
     /**
+     * The business key.
+     *
+     * @var string|null
+     */
+    public ?string $k_business = null;
+
+    /**
      * The location key.
      *
      * @var string|null
@@ -44,6 +51,7 @@ class PromotionIndexGetRequest
             'i_image_height' => $this->i_image_height,
             'i_image_width' => $this->i_image_width,
             'id_program_type' => $this->id_program_type,
+            'k_business' => $this->k_business,
             'k_location' => $this->k_location,
             ],
             static fn ($v) => $v !== null

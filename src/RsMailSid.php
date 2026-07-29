@@ -13,9 +13,10 @@ namespace WlSdk;
  *
  * Pay attention that all `\MailPrioritySid` must start with backslash.
  *
- * Last used ID: 219.
+ * Last used ID: 220.
  *
  * Values:
+ * - 220 (`ABANDONED_CHECKOUT`): Sent when a client abandons a checkout (used in automations).
  * - 206 (`AI_LINK_BOOK`): Sent by CASSI phone agent, when client requests a booking url.
  * - 207 (`AI_LINK_PURCHASE`): Sent by CASSI phone agent, when client requests a purchase url.
  * - 71 (`APPOINTMENT_APPROVE_STAFF`): Appointment approved by staff.
@@ -477,6 +478,9 @@ namespace WlSdk;
  */
 class RsMailSid
 {
+    /** Sent when a client abandons a checkout (used in automations). */
+    public const ABANDONED_CHECKOUT = 220;
+
     /** Sent by CASSI phone agent, when client requests a booking url. */
     public const AI_LINK_BOOK = 206;
 

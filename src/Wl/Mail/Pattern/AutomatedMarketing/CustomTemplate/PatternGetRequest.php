@@ -35,6 +35,19 @@ class PatternGetRequest
     public ?string $k_mail_pattern = null;
 
     /**
+     * Key of the service being booked.
+     *
+     * Used to prefer a service-specific custom notification template, when one is configured,
+     * over the business-level template.
+     *
+     * `null` when no single service is in context (e.g. several services are selected at once),
+     * in which case the business-level template is returned.
+     *
+     * @var string|null
+     */
+    public ?string $k_service = null;
+
+    /**
      * SID of the mail form. String representation of one from {@link \WlSdk\RsMailFormSid} class constants.
      *
      * @var string|null
@@ -49,6 +62,7 @@ class PatternGetRequest
             'is_custom_list' => $this->is_custom_list,
             'k_business' => $this->k_business,
             'k_mail_pattern' => $this->k_mail_pattern,
+            'k_service' => $this->k_service,
             'sid_mail_form' => $this->sid_mail_form,
             ],
             static fn ($v) => $v !== null

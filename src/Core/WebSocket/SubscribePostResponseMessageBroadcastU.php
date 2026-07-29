@@ -21,7 +21,6 @@ class SubscribePostResponseMessageBroadcastU
      * `null` If were unable to determine the card type. See `id_card_type`.
      *
      * @var int|null
-     * @see \WlSdk\Wl\Pay\Bank\Card\CardTypeEnum
      */
     public ?int $id_card_type = null;
 

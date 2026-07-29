@@ -145,6 +145,15 @@ class ClassList68PostRequest
     public ?string $k_class_tab = null;
 
     /**
+     * Key of timezone.
+     *
+     * If not set then use default client timezone.
+     *
+     * @var string|null
+     */
+    public ?string $k_timezone = null;
+
+    /**
      * The list of staff members to filter.
      * A comma separated list of staff keys.
      *
@@ -214,6 +223,7 @@ class ClassList68PostRequest
             'is_virtual' => $this->is_virtual,
             'k_business' => $this->k_business,
             'k_class_tab' => $this->k_class_tab,
+            'k_timezone' => $this->k_timezone,
             's_staff' => $this->s_staff,
             's_staff_uid' => $this->s_staff_uid,
             'show_cancel' => $this->show_cancel,

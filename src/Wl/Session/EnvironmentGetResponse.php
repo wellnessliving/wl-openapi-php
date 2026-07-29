@@ -68,6 +68,13 @@ class EnvironmentGetResponse
     public ?bool $has_form_quiz = null;
 
     /**
+     * `true` if the "home" page is turned on for the current business; `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $has_home = null;
+
+    /**
      * Whether the merchant is configured for the client's home location or for business {@link
      * \WlSdk\Wl\Session\EnvironmentGetResponse::$k_business}.
      *
@@ -327,6 +334,7 @@ class EnvironmentGetResponse
         $this->a_splash_screen = isset($data['a_splash_screen']) ? new EnvironmentGetResponseSplashScreen((array)$data['a_splash_screen']) : null;
         $this->dtl_now = isset($data['dtl_now']) ? (string)$data['dtl_now'] : null;
         $this->has_form_quiz = isset($data['has_form_quiz']) ? (bool)$data['has_form_quiz'] : null;
+        $this->has_home = isset($data['has_home']) ? (bool)$data['has_home'] : null;
         $this->has_merchant = isset($data['has_merchant']) ? (bool)$data['has_merchant'] : null;
         $this->id_currency = isset($data['id_currency']) ? (int)$data['id_currency'] : null;
         $this->id_locale = isset($data['id_locale']) ? (int)$data['id_locale'] : null;

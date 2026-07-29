@@ -5,18 +5,36 @@ namespace WlSdk\Wl\Appointment\Book\Asset;
 class AssetListGetResponseAssetAgeRestrictions
 {
     /**
-     * The minimum age permitted for the event. This will be `null` if a minimum age isn't set or available.
+     * The minimum age permitted for the event (years part). This will be `null` if a minimum age isn't set or
+     * available.
      *
      * @var int|null
      */
     public ?int $i_age_from = null;
 
     /**
-     * The maximum age permitted for the event. This will be `null` if a maximum age isn't set or available.
+     * The minimum age permitted for the event (month part). This will be `null` if a minimum age isn't set or
+     * available.
+     *
+     * @var int|null
+     */
+    public ?int $i_age_from_month = null;
+
+    /**
+     * The maximum age permitted for the event (years part). This will be `null` if a maximum age isn't set or
+     * available.
      *
      * @var int|null
      */
     public ?int $i_age_to = null;
+
+    /**
+     * The maximum age permitted for the event (month part). This will be `null` if a maximum age isn't set or
+     * available.
+     *
+     * @var int|null
+     */
+    public ?int $i_age_to_month = null;
 
     /**
      * This will be `true` if age restrictions are public and available. Otherwise, this will be `false` if they're
@@ -30,7 +48,9 @@ class AssetListGetResponseAssetAgeRestrictions
     public function __construct(array $data)
     {
         $this->i_age_from = isset($data['i_age_from']) ? (int)$data['i_age_from'] : null;
+        $this->i_age_from_month = isset($data['i_age_from_month']) ? (int)$data['i_age_from_month'] : null;
         $this->i_age_to = isset($data['i_age_to']) ? (int)$data['i_age_to'] : null;
+        $this->i_age_to_month = isset($data['i_age_to_month']) ? (int)$data['i_age_to_month'] : null;
         $this->is_age_public = isset($data['is_age_public']) ? (bool)$data['is_age_public'] : null;
     }
 }

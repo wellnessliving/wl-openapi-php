@@ -10,7 +10,7 @@ class ElementGetResponse
     /**
      * Displays information about age restrictions for this event.
      *
-     * An empty array if there are no age restrictions.
+     * Will be empty array if there are no age restrictions.
      *
      * @var ElementGetResponseAgeRestrictions|null
      */

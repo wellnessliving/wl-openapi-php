@@ -18,9 +18,9 @@ class PaymentMultipleGetResponse
     /**
      * List of available staff members for tips.
      *
-     * @var PaymentMultipleGetResponseStaffList|null
+     * @var array|null
      */
-    public ?PaymentMultipleGetResponseStaffList $a_staff_list = null;
+    public $a_staff_list = null;
 
     /**
      * Total number of unpaid appointments.
@@ -39,7 +39,7 @@ class PaymentMultipleGetResponse
     public function __construct(array $data)
     {
         $this->a_client = isset($data['a_client']) ? new PaymentMultipleGetResponseClient((array)$data['a_client']) : null;
-        $this->a_staff_list = isset($data['a_staff_list']) ? new PaymentMultipleGetResponseStaffList((array)$data['a_staff_list']) : null;
+        $this->a_staff_list = $data['a_staff_list'] ?? null;
         $this->i_unpaid_number = isset($data['i_unpaid_number']) ? (int)$data['i_unpaid_number'] : null;
         $this->is_tip = isset($data['is_tip']) ? (bool)$data['is_tip'] : null;
     }

@@ -54,13 +54,6 @@ class PaymentMultipleGetResponseClientService
     public ?string $k_appointment = null;
 
     /**
-     * Appointment staff key.
-     *
-     * @var string|null
-     */
-    public ?string $k_staff = null;
-
-    /**
      * Appointment date.
      *
      * @var string|null
@@ -95,6 +88,13 @@ class PaymentMultipleGetResponseClientService
      */
     public ?string $text_timezone_abbr = null;
 
+    /**
+     * Appointment user key.
+     *
+     * @var string|null
+     */
+    public ?string $uid_staff = null;
+
     public function __construct(array $data)
     {
         $this->a_addon = isset($data['a_addon']) ? new PaymentMultipleGetResponseClientServiceAddon((array)$data['a_addon']) : null;
@@ -104,11 +104,11 @@ class PaymentMultipleGetResponseClientService
         $this->is_pay_need = isset($data['is_pay_need']) ? (bool)$data['is_pay_need'] : null;
         $this->is_required = isset($data['is_required']) ? (bool)$data['is_required'] : null;
         $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;
-        $this->k_staff = isset($data['k_staff']) ? (string)$data['k_staff'] : null;
         $this->text_date = isset($data['text_date']) ? (string)$data['text_date'] : null;
         $this->text_service = isset($data['text_service']) ? (string)$data['text_service'] : null;
         $this->text_staff = isset($data['text_staff']) ? (string)$data['text_staff'] : null;
         $this->text_time = isset($data['text_time']) ? (string)$data['text_time'] : null;
         $this->text_timezone_abbr = isset($data['text_timezone_abbr']) ? (string)$data['text_timezone_abbr'] : null;
+        $this->uid_staff = isset($data['uid_staff']) ? (string)$data['uid_staff'] : null;
     }
 }
