@@ -21,9 +21,17 @@ class CartGetResponseItemConfig
      */
     public ?CartGetResponseItemConfigRegistrationFeeList $a_registration_fee_list = null;
 
+    /**
+     * The total amount that will be charged for the tuition item when during purchase.
+     *
+     * @var string|null
+     */
+    public ?string $m_checkout = null;
+
     public function __construct(array $data)
     {
         $this->a_event_list = isset($data['a_event_list']) ? new CartGetResponseItemConfigEventList((array)$data['a_event_list']) : null;
         $this->a_registration_fee_list = isset($data['a_registration_fee_list']) ? new CartGetResponseItemConfigRegistrationFeeList((array)$data['a_registration_fee_list']) : null;
+        $this->m_checkout = isset($data['m_checkout']) ? (string)$data['m_checkout'] : null;
     }
 }

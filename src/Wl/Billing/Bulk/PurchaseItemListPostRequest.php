@@ -44,6 +44,20 @@ class PurchaseItemListPostRequest
     public ?bool $is_receipt_send = null;
 
     /**
+     * Whether to apply the ACH surcharge.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_surcharge_ach = null;
+
+    /**
+     * Whether to apply the e-commerce surcharge.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_surcharge_ecommerce = null;
+
+    /**
      * Whether to include the pre-configured taxes into the totals.
      *
      * @var bool|null
@@ -73,6 +87,8 @@ class PurchaseItemListPostRequest
             'a_purchase_item' => $this->a_purchase_item,
             'is_payment_method_default' => $this->is_payment_method_default,
             'is_receipt_send' => $this->is_receipt_send,
+            'is_surcharge_ach' => $this->is_surcharge_ach,
+            'is_surcharge_ecommerce' => $this->is_surcharge_ecommerce,
             'is_tax' => $this->is_tax,
             's_uid' => $this->s_uid,
             'text_note' => $this->text_note,

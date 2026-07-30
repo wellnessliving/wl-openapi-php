@@ -23,33 +23,14 @@ class PurchaseItemListPostResponse
     public ?PurchaseItemListPostResponseClientRestrict $a_client_restrict = null;
 
     /**
-     * The total amount charged across every client that will be billed (per-client total multiplied by the number
-     *  of billed clients). Excludes taxes when {@link \WlSdk\Wl\Billing\Bulk\PurchaseItemList} is `false`.
+     * The totals of the bulk billing: the price of the selected items for a single client, and what the whole
+     * batch
+     *  adds up to once the client type discount of every client is applied. All amounts are money strings in the
+     *  currency of the business. Has the following structure:
      *
-     * @var string|null
+     * @var PurchaseItemListPostResponseTotal|null
      */
-    public ?string $m_batch = null;
-
-    /**
-     * The subtotal per client (sum of the selected purchase item prices, excluding taxes).
-     *
-     * @var string|null
-     */
-    public ?string $m_subtotal = null;
-
-    /**
-     * The tax amount per client. Always `0` when {@link \WlSdk\Wl\Billing\Bulk\PurchaseItemList} is `false`.
-     *
-     * @var string|null
-     */
-    public ?string $m_tax = null;
-
-    /**
-     * The total per client (subtotal plus tax).
-     *
-     * @var string|null
-     */
-    public ?string $m_total = null;
+    public ?PurchaseItemListPostResponseTotal $a_total = null;
 
     /**
      * The review id that identifies this prepared bulk billing. Pass it to {@link
@@ -64,10 +45,7 @@ class PurchaseItemListPostResponse
     {
         $this->a_client_bill = isset($data['a_client_bill']) ? new PurchaseItemListPostResponseClientBill((array)$data['a_client_bill']) : null;
         $this->a_client_restrict = isset($data['a_client_restrict']) ? new PurchaseItemListPostResponseClientRestrict((array)$data['a_client_restrict']) : null;
-        $this->m_batch = isset($data['m_batch']) ? (string)$data['m_batch'] : null;
-        $this->m_subtotal = isset($data['m_subtotal']) ? (string)$data['m_subtotal'] : null;
-        $this->m_tax = isset($data['m_tax']) ? (string)$data['m_tax'] : null;
-        $this->m_total = isset($data['m_total']) ? (string)$data['m_total'] : null;
+        $this->a_total = isset($data['a_total']) ? new PurchaseItemListPostResponseTotal((array)$data['a_total']) : null;
         $this->s_id = isset($data['s_id']) ? (string)$data['s_id'] : null;
     }
 }
