@@ -12,6 +12,13 @@ class CalendarGetResponseTime
     public ?string $dt_date = null;
 
     /**
+     * Same moment as `dt_date`, converted to real UTC date and time, in MySQL format.
+     *
+     * @var string|null
+     */
+    public ?string $dtu_date = null;
+
+    /**
      * The count of clients that have already booked this appointment.
      *
      * @var int|null
@@ -66,6 +73,7 @@ class CalendarGetResponseTime
     public function __construct(array $data)
     {
         $this->dt_date = isset($data['dt_date']) ? (string)$data['dt_date'] : null;
+        $this->dtu_date = isset($data['dtu_date']) ? (string)$data['dtu_date'] : null;
         $this->i_count = isset($data['i_count']) ? (int)$data['i_count'] : null;
         $this->i_time = isset($data['i_time']) ? (int)$data['i_time'] : null;
         $this->i_wait = isset($data['i_wait']) ? (int)$data['i_wait'] : null;
