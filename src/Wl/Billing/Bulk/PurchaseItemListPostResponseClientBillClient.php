@@ -5,6 +5,18 @@ namespace WlSdk\Wl\Billing\Bulk;
 class PurchaseItemListPostResponseClientBillClient
 {
     /**
+     * The payment method this client is charged with, which decides whether the client is surcharged and
+     * which surcharge applies. One of the {@link \WlSdk\RsPayMethodSid} constants:
+     * {@link \WlSdk\RsPayMethodSid} for a stored card, {@link \WlSdk\RsPayMethodSid} for a stored bank
+     * account, and {@link \WlSdk\RsPayMethodSid} when the client account is billed, which is never
+     * surcharged.
+     *
+     * @var int|null
+     * @see \WlSdk\RsPayMethodSid
+     */
+    public ?int $id_pay_method = null;
+
+    /**
      * `true` if the client has no default payment method on file, has no email on file while a receipt is
      * to be sent, or is not eligible for at least one of the selected introductory items; `false`
      * otherwise.
@@ -52,6 +64,7 @@ class PurchaseItemListPostResponseClientBillClient
 
     public function __construct(array $data)
     {
+        $this->id_pay_method = isset($data['id_pay_method']) ? (int)$data['id_pay_method'] : null;
         $this->is_warning = isset($data['is_warning']) ? (bool)$data['is_warning'] : null;
         $this->text_mail = isset($data['text_mail']) ? (string)$data['text_mail'] : null;
         $this->text_name = isset($data['text_name']) ? (string)$data['text_name'] : null;
