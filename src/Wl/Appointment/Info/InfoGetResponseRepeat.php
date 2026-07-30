@@ -9,7 +9,7 @@ class InfoGetResponseRepeat
      *
      * @var int[]|null
      */
-    public ?array $a_day = null;
+    public ?array $a_week = null;
 
     /**
      * Start date for range edit in location timezone.
@@ -33,7 +33,7 @@ class InfoGetResponseRepeat
      *
      * @var string|null
      */
-    public ?string $dl_repeat_end = null;
+    public ?string $dl_end = null;
 
     /**
      * Number of occurrences after that the repeat cycle stops.
@@ -41,22 +41,14 @@ class InfoGetResponseRepeat
      *
      * @var int|null
      */
-    public ?int $i_repeat_count = null;
+    public ?int $i_occurrence = null;
 
     /**
      * Frequency of the repeats. For example, `2` for every second week.
      *
      * @var int|null
      */
-    public ?int $i_repeat_period = null;
-
-    /**
-     * Measurement unit of `i_repeat_period`. One of {@link \WlSdk\ADurationSid} constants.
-     *
-     * @var int|null
-     * @see \WlSdk\ADurationSid
-     */
-    public ?int $id_repeat_duration = null;
+    public ?int $i_period = null;
 
     /**
      * Type of repeat cycle end. One of {@link \WlSdk\RsRepeatEndSid} constants.
@@ -64,7 +56,15 @@ class InfoGetResponseRepeat
      * @var int|null
      * @see \WlSdk\RsRepeatEndSid
      */
-    public ?int $id_repeat_end = null;
+    public ?int $id_end = null;
+
+    /**
+     * Measurement unit of `i_period`. One of {@link \WlSdk\ADurationSid} constants.
+     *
+     * @var int|null
+     * @see \WlSdk\ADurationSid
+     */
+    public ?int $id_period = null;
 
     /**
      * `true` if the appointment repeats monthly at the same date.
@@ -87,14 +87,14 @@ class InfoGetResponseRepeat
 
     public function __construct(array $data)
     {
-        $this->a_day = isset($data['a_day']) ? (array)$data['a_day'] : null;
+        $this->a_week = isset($data['a_week']) ? (array)$data['a_week'] : null;
         $this->dl_edit_from = isset($data['dl_edit_from']) ? (string)$data['dl_edit_from'] : null;
         $this->dl_edit_to = isset($data['dl_edit_to']) ? (string)$data['dl_edit_to'] : null;
-        $this->dl_repeat_end = isset($data['dl_repeat_end']) ? (string)$data['dl_repeat_end'] : null;
-        $this->i_repeat_count = isset($data['i_repeat_count']) ? (int)$data['i_repeat_count'] : null;
-        $this->i_repeat_period = isset($data['i_repeat_period']) ? (int)$data['i_repeat_period'] : null;
-        $this->id_repeat_duration = isset($data['id_repeat_duration']) ? (int)$data['id_repeat_duration'] : null;
-        $this->id_repeat_end = isset($data['id_repeat_end']) ? (int)$data['id_repeat_end'] : null;
+        $this->dl_end = isset($data['dl_end']) ? (string)$data['dl_end'] : null;
+        $this->i_occurrence = isset($data['i_occurrence']) ? (int)$data['i_occurrence'] : null;
+        $this->i_period = isset($data['i_period']) ? (int)$data['i_period'] : null;
+        $this->id_end = isset($data['id_end']) ? (int)$data['id_end'] : null;
+        $this->id_period = isset($data['id_period']) ? (int)$data['id_period'] : null;
         $this->is_month = isset($data['is_month']) ? (bool)$data['is_month'] : null;
         $this->s_time = isset($data['s_time']) ? (string)$data['s_time'] : null;
     }
