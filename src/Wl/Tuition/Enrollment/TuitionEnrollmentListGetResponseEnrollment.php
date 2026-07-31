@@ -14,6 +14,8 @@ class TuitionEnrollmentListGetResponseEnrollment
     /**
      * Next payment date in local business timezone and MySQL format.
      *
+     * `null` for membership-based tuition.
+     *
      * @var string|null
      */
     public ?string $dl_next = null;
@@ -26,7 +28,16 @@ class TuitionEnrollmentListGetResponseEnrollment
     public ?string $dtl_enrollment = null;
 
     /**
+     * Number of payments done.
+     *
+     * @var int|null
+     */
+    public ?int $i_payments_done = null;
+
+    /**
      * Number of payments left.
+     *
+     * `null` for membership-based tuition.
      *
      * @var int|null
      */
@@ -57,6 +68,13 @@ class TuitionEnrollmentListGetResponseEnrollment
     public ?string $k_purchase_item_tuition = null;
 
     /**
+     * Rest amount has been already paid.
+     *
+     * @var string|null
+     */
+    public ?string $m_paid = null;
+
+    /**
      * One payment amount.
      *
      * @var string|null
@@ -66,12 +84,16 @@ class TuitionEnrollmentListGetResponseEnrollment
     /**
      * Rest amount to be paid.
      *
+     * `null` for membership-based tuition.
+     *
      * @var string|null
      */
     public ?string $m_rest = null;
 
     /**
      * Total initial amount to be paid.
+     *
+     * `null` for membership-based tuition.
      *
      * @var string|null
      */
@@ -91,10 +113,12 @@ class TuitionEnrollmentListGetResponseEnrollment
         $this->a_events = isset($data['a_events']) ? array_map(static fn ($item) => new TuitionEnrollmentListGetResponseEnrollmentEvents((array)$item), (array)$data['a_events']) : null;
         $this->dl_next = isset($data['dl_next']) ? (string)$data['dl_next'] : null;
         $this->dtl_enrollment = isset($data['dtl_enrollment']) ? (string)$data['dtl_enrollment'] : null;
+        $this->i_payments_done = isset($data['i_payments_done']) ? (int)$data['i_payments_done'] : null;
         $this->i_payments_left = isset($data['i_payments_left']) ? (int)$data['i_payments_left'] : null;
         $this->i_payments_total = isset($data['i_payments_total']) ? (int)$data['i_payments_total'] : null;
         $this->id_installment_status = isset($data['id_installment_status']) ? (int)$data['id_installment_status'] : null;
         $this->k_purchase_item_tuition = isset($data['k_purchase_item_tuition']) ? (string)$data['k_purchase_item_tuition'] : null;
+        $this->m_paid = isset($data['m_paid']) ? (string)$data['m_paid'] : null;
         $this->m_payment = isset($data['m_payment']) ? (string)$data['m_payment'] : null;
         $this->m_rest = isset($data['m_rest']) ? (string)$data['m_rest'] : null;
         $this->m_total = isset($data['m_total']) ? (string)$data['m_total'] : null;

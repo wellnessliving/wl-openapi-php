@@ -5,7 +5,7 @@ namespace WlSdk\Core\AI\LogTriage;
 use WlSdk\WlSdkClient;
 
 /**
- * Returns a fixed value used to verify the signed SDK connection.
+ * Returns a fixed connection value and, when requested, selected log findings.
  */
 class ConnectionCheck
 {
@@ -18,7 +18,7 @@ class ConnectionCheck
     }
 
     /**
-     * Returns a fixed value used to verify the signed SDK connection.
+     * Returns a fixed connection value and, when requested, selected log findings.
      *
      * @return ConnectionCheckGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
