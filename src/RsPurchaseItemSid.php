@@ -70,7 +70,7 @@ namespace WlSdk;
  * - 28 (`TUITION_PRORATE`): Tuition prorate purchase item.
  *
  *   Represents the amount due right now for a tuition purchase (the part not deferred to the
- *   installment plan). See TuitionProrate.
+ *   installment plan).
  */
 class RsPurchaseItemSid
 {

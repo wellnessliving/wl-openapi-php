@@ -47,6 +47,15 @@ class EventListGetRequest
     public ?array $a_time = null;
 
     /**
+     * List of staff UIDs applied by filter.
+     *
+     * Cannot be specified together with {@link \WlSdk\Wl\Event\EventList}.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_uid_staff = null;
+
+    /**
      * List of IDs to include/exclude virtual events.
      * If the only ID is {@link \WlSdk\Core\Sid\YesNoSid}, only virtual events are included.
      * If the only ID is {@link \WlSdk\Core\Sid\YesNoSid}, only in-person events are included.
@@ -187,6 +196,7 @@ class EventListGetRequest
             'a_location' => $this->a_location,
             'a_staff' => $this->a_staff,
             'a_time' => $this->a_time,
+            'a_uid_staff' => $this->a_uid_staff,
             'a_virtual' => $this->a_virtual,
             'dl_end' => $this->dl_end,
             'dl_start' => $this->dl_start,
