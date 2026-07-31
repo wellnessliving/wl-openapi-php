@@ -20,6 +20,9 @@ class CacheFlush
     /**
      * Flushes all application caches.
      *
+     * Clears every cache layer used by the application via `CoreCache::flush_all()`. Intended for use by
+     * automation tests that need a clean cache state before or between test runs.
+     *
      * @return CacheFlushGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
