@@ -15,7 +15,7 @@ class WlSdkInfo
     /**
      * OpenAPI specification version used to generate this SDK.
      */
-    public const SPEC_VERSION = '1.1.20260803120914';
+    public const SPEC_VERSION = '1.1.20260803155956';
 
     /**
      * Date the SDK was last generated (Y-m-d).
