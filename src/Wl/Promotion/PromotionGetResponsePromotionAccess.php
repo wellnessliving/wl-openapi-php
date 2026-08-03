@@ -33,9 +33,22 @@ class PromotionGetResponsePromotionAccess
     public ?PromotionGetResponsePromotionAccessService $a_service = null;
 
     /**
+     * Class access flag, one of {@link \WlSdk\AFlagSid} constants.
+     * {@link \WlSdk\AFlagSid} if any class in the business can be visited with this Purchase Option,
+     * including classes created later.
+     * {@link \WlSdk\AFlagSid} if only selected classes can be visited with this Purchase Option.
+     * Selected classes can be found in the list of available classes and events.
+     *
+     * @var int|null
+     * @see \WlSdk\AFlagSid
+     */
+    public ?int $id_class_access = null;
+
+    /**
      * This will be `true` if any class in the business can be visited with this Purchase Option.
      * Otherwise, this will be `false` if only selected classes can be visited with this Purchase Option.
      * Selected classes can be found in the list of available classes and events.
+     * Equivalent to `id_class_access` being {@link \WlSdk\AFlagSid}.
      *
      * @var bool|null
      */
@@ -56,6 +69,7 @@ class PromotionGetResponsePromotionAccess
         $this->a_event = isset($data['a_event']) ? new PromotionGetResponsePromotionAccessEvent((array)$data['a_event']) : null;
         $this->a_resource = isset($data['a_resource']) ? new PromotionGetResponsePromotionAccessResource((array)$data['a_resource']) : null;
         $this->a_service = isset($data['a_service']) ? new PromotionGetResponsePromotionAccessService((array)$data['a_service']) : null;
+        $this->id_class_access = isset($data['id_class_access']) ? (int)$data['id_class_access'] : null;
         $this->is_class_all = isset($data['is_class_all']) ? (bool)$data['is_class_all'] : null;
         $this->is_event_all = isset($data['is_event_all']) ? (bool)$data['is_event_all'] : null;
     }

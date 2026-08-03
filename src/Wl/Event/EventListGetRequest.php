@@ -49,6 +49,8 @@ class EventListGetRequest
     /**
      * List of staff UIDs applied by filter.
      *
+     * `null` if the filter by staff is not applied.
+     *
      * Cannot be specified together with {@link \WlSdk\Wl\Event\EventList}.
      *
      * @var string[]|null
