@@ -8,13 +8,13 @@ namespace WlSdk\Core\AI\LogTriage;
 class ConnectionCheckGetResponse
 {
     /**
-     * Grouped log findings.
+     * Grouped findings.
      *
      * One element contains:
      *
-     * @var ConnectionCheckGetResponseLog[]|null
+     * @var ConnectionCheckGetResponseFinding[]|null
      */
-    public ?array $a_log = null;
+    public ?array $a_finding = null;
 
     /**
      * Connection check value.
@@ -25,7 +25,7 @@ class ConnectionCheckGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_log = isset($data['a_log']) ? array_map(static fn ($item) => new ConnectionCheckGetResponseLog((array)$item), (array)$data['a_log']) : null;
+        $this->a_finding = isset($data['a_finding']) ? array_map(static fn ($item) => new ConnectionCheckGetResponseFinding((array)$item), (array)$data['a_finding']) : null;
         $this->i_result = isset($data['i_result']) ? (int)$data['i_result'] : null;
     }
 }

@@ -5,11 +5,18 @@ namespace WlSdk\Core\AI\LogTriage;
 class ConnectionCheckGetRequest
 {
     /**
-     * Whether log findings must be returned.
+     * IDs of finding sources from {@link \WlSdk\Core\AI\LogTriage\TriageSourceSid}.
+     *
+     * @var int[]|null
+     */
+    public ?array $a_id_source = null;
+
+    /**
+     * Whether findings must be returned.
      *
      * @var bool|null
      */
-    public ?bool $is_log = null;
+    public ?bool $is_finding = null;
 
     /**
      * Date/time mask accepted by LogSearchQuery.
@@ -25,23 +32,16 @@ class ConnectionCheckGetRequest
      *
      * @var string|null
      */
-    public ?string $s_search = null;
-
-    /**
-     * Log source: `all`, `error`, or `slow`.
-     *
-     * @var string|null
-     */
-    public ?string $s_source = 'all';
+    public ?string $text_search = null;
 
     public function params(): array
     {
         return array_filter(
             [
-            'is_log' => $this->is_log,
+            'a_id_source' => $this->a_id_source,
+            'is_finding' => $this->is_finding,
             's_date_mask' => $this->s_date_mask,
-            's_search' => $this->s_search,
-            's_source' => $this->s_source,
+            'text_search' => $this->text_search,
             ],
             static fn ($v) => $v !== null
         );
