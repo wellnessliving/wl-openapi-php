@@ -140,6 +140,22 @@ class ServiceList52GetResponseService
     public ?int $i_duration = null;
 
     /**
+     * Padding time after the end of the appointment, in minutes. Used to detect when a staff member is
+     *   busy after this appointment when booking back-to-back appointments.
+     *
+     * @var int|null
+     */
+    public ?int $i_padding_after = null;
+
+    /**
+     * Padding time before the beginning of the appointment, in minutes. Used to detect when a staff member is
+     *   busy before this appointment when booking back-to-back appointments.
+     *
+     * @var int|null
+     */
+    public ?int $i_padding_before = null;
+
+    /**
      * The type of client booking flow. One of {@link \WlSdk\Wl\Service\ServiceBookFlowSid} constants.
      *
      * @var int|null
@@ -370,6 +386,8 @@ class ServiceList52GetResponseService
         $this->i_age_to_month = isset($data['i_age_to_month']) ? (int)$data['i_age_to_month'] : null;
         $this->i_price = isset($data['i_price']) ? (int)$data['i_price'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
+        $this->i_padding_after = isset($data['i_padding_after']) ? (int)$data['i_padding_after'] : null;
+        $this->i_padding_before = isset($data['i_padding_before']) ? (int)$data['i_padding_before'] : null;
         $this->id_book_flow = isset($data['id_book_flow']) ? (int)$data['id_book_flow'] : null;
         $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
         $this->id_service_require = isset($data['id_service_require']) ? (int)$data['id_service_require'] : null;
