@@ -1,7 +1,7 @@
 {
     "name": "wellnessliving/wl-openapi-php-stable",
     "description": "WellnessLiving PHP SDK - stable channel",
-    "version": "1.1.20260804093644",
+    "version": "1.1.20260804100140",
     "license": "MIT",
     "require": {
         "php": ">=7.4",
