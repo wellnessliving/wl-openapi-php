@@ -12,6 +12,13 @@ class EventListGetResponseEventListSchedule
     public ?array $a_day = null;
 
     /**
+     * Information about event repeating.
+     *
+     * @var EventListGetResponseEventListScheduleRepeat|null
+     */
+    public ?EventListGetResponseEventListScheduleRepeat $a_repeat = null;
+
+    /**
      * List of staff members providing event session.
      *
      * @var EventListGetResponseEventListScheduleStaffMember|null
@@ -88,6 +95,7 @@ class EventListGetResponseEventListSchedule
     public function __construct(array $data)
     {
         $this->a_day = isset($data['a_day']) ? (array)$data['a_day'] : null;
+        $this->a_repeat = isset($data['a_repeat']) ? new EventListGetResponseEventListScheduleRepeat((array)$data['a_repeat']) : null;
         $this->a_staff_member = isset($data['a_staff_member']) ? new EventListGetResponseEventListScheduleStaffMember((array)$data['a_staff_member']) : null;
         $this->dl_end = isset($data['dl_end']) ? (string)$data['dl_end'] : null;
         $this->dl_start = isset($data['dl_start']) ? (string)$data['dl_start'] : null;

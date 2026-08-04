@@ -76,6 +76,15 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *   Batching is a process when all transactions are sent to processing by merchant in a certain time of next day.
  * - 1572 (`Thoth\Report\SalesReport\Transaction\Cash\SummaryReport`): "Cash Reconciliation Summary" report.
  *   This report is only accessible as a part of "Sales and Attendance Summary" report.
+ * - 2316 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReport`): "Bulk Charges" report. Summary of
+ * Bulk Billing batches created from the Clients tab.
+ *
+ *   There is no persisted "expected total" for a batch - PurchaseBatchManager::create() does
+ *   not compute or store one, and the actual charge amount is only known once
+ *   PurchaseBatchBill::billClient() prices each client live at billing time. `Total Amount`
+ *   therefore combines the already-charged clients' actual `f_sum`/`m_surcharge` with a live
+ *   re-pricing (via BulkBillingManager::purchaseItemTotal()) of the clients still pending/failed - see
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
  * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -> Memberships
  * Details by Location" report. Detailed list of all memberships in the franchise.
  * - 1498 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReport`): Franchise "Memberships Summary by
@@ -301,6 +310,9 @@ class ReportGeneratorReportAbstract
 
     /** "Cash Reconciliation Summary" report. */
     public const Cash_SummaryReport = 1572;
+
+    /** "Bulk Charges" report. Summary of Bulk Billing batches created from the Clients tab. */
+    public const BulkChargesReport = 2316;
 
     /** "Enterprise Reports -> Memberships Details by Location" report. Detailed list of all memberships in the franchise. */
     public const MembershipDetailReport = 1448;
