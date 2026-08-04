@@ -12,9 +12,10 @@ class EventListGetResponseEventListScheduleRepeat
     public ?int $i_repeat = null;
 
     /**
-     * Measuring unit of `i_repeat` (week, month, year).
+     * Measuring unit of `i_repeat` (week, month, year) from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_repeat = null;
 
