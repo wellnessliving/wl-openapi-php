@@ -79,11 +79,11 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 2316 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReport`): "Bulk Charges" report. Summary of
  * Bulk Billing batches created from the Clients tab.
  *
- *   There is no persisted "expected total" for a batch - PurchaseBatchManager::create() does
+ *   There is no persisted "expected total" for a batch - `\Wl\Billing\Bulk\PurchaseBatchManager::create()` does
  *   not compute or store one, and the actual charge amount is only known once
- *   PurchaseBatchBill::billClient() prices each client live at billing time. `Total Amount`
+ *   `\Wl\Billing\Bulk\PurchaseBatchBill::billClient()` prices each client live at billing time. `Total Amount`
  *   therefore combines the already-charged clients' actual `f_sum`/`m_surcharge` with a live
- *   re-pricing (via BulkBillingManager::purchaseItemTotal()) of the clients still pending/failed - see
+ *   re-pricing (via `BulkBillingManager::purchaseItemTotal()`) of the clients still pending/failed - see
  *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
  * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -> Memberships
  * Details by Location" report. Detailed list of all memberships in the franchise.
