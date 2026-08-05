@@ -82,7 +82,7 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *   There is no persisted "expected total" for a batch - `\Wl\Billing\Bulk\PurchaseBatchManager::create()` does
  *   not compute or store one, and the actual charge amount is only known once
  *   `\Wl\Billing\Bulk\PurchaseBatchBill::billClient()` prices each client live at billing time. `Total Amount`
- *   therefore combines the already-charged clients' actual `f_sum`/`m_surcharge` with a live
+ *   therefore combines the already-charged clients' actual `RsPurchaseSql::$f_sum`, `m_surcharge` with a live
  *   re-pricing (via `BulkBillingManager::purchaseItemTotal()`) of the clients still pending/failed - see
  *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
  * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -> Memberships
