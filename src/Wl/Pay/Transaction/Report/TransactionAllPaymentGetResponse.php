@@ -63,7 +63,7 @@ class TransactionAllPaymentGetResponse
      * The report status.
      *
      * @var int|null
-     * @see \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid
+     * @see \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid
      */
     public ?int $id_report_status = null;
 

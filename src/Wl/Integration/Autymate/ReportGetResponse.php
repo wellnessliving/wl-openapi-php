@@ -67,10 +67,10 @@ class ReportGetResponse
     /**
      * The status of the report.
      *
-     * One of the {@link \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid} constants.
+     * One of the {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid} constants.
      *
      * @var int|null
-     * @see \WlSdk\Wl\Report\Generator\ReportGeneratorStatusSid
+     * @see \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid
      */
     public ?int $id_report_status = null;
 
