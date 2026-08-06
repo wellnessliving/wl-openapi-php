@@ -235,7 +235,9 @@ class PageElementGetResponse
     public ?string $s_title = null;
 
     /**
-     * Location title.
+     * Location title. If the visit is assigned a resource whose category is {@link
+     * \WlSdk\Wl\Resource\ResourceCategoryEnum},
+     * this is that resource's title instead of the actual location's title.
      *
      * @var string|null
      */
