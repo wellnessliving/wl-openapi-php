@@ -20,7 +20,7 @@ class WlSdkInfo
     /**
      * Date the SDK was last generated (Y-m-d).
      */
-    public const BUILD_DATE = '2026-08-05';
+    public const BUILD_DATE = '2026-08-06';
 
     /**
      * Number of generated API endpoint classes.
