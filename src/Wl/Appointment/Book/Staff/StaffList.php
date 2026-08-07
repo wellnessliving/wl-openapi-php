@@ -7,7 +7,7 @@ use WlSdk\WlSdkClient;
 /**
  * Retrieves an information about staff members for the current service.
  */
-class ListEndpoint
+class StaffList
 {
     /** @var WlSdkClient */
     private $client;
@@ -24,14 +24,12 @@ class ListEndpoint
      *  on the specified date and time. Each entry includes the staff member's name, image, gender,
      *  and availability. An 'any staff' option is included when the service allows random staff assignment.
      *
-     * @deprecated Use {@link \Wl\Appointment\Book\Staff\StaffListApi} instead.
-     *
-     * @return ListEndpointGetResponse
+     * @return StaffListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
      */
-    public function get(ListEndpointGetRequest $request): ListEndpointGetResponse
+    public function get(StaffListGetRequest $request): StaffListGetResponse
     {
-        return new ListEndpointGetResponse($this->client->request('/Wl/Appointment/Book/Staff/List.json', $request->params(), 'GET'));
+        return new StaffListGetResponse($this->client->request('/Wl/Appointment/Book/Staff/StaffList.json', $request->params(), 'GET'));
     }
 }
