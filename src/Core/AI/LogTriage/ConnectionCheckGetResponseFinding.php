@@ -20,21 +20,21 @@ class ConnectionCheckGetResponseFinding
     public ?int $id_source = null;
 
     /**
-     * Log message. Present for log sources.
+     * Log message or task description. Present for log and task sources.
      *
      * @var string|null
      */
     public ?string $text_message = null;
 
     /**
-     * UTC date/time of the first matching log record.
+     * UTC date/time of the first matching log or async-task record. Empty for background tasks.
      *
      * @var string|null
      */
     public ?string $dtu_first_seen = null;
 
     /**
-     * UTC date/time of the last matching log record.
+     * UTC date/time of the last matching log or async-task record. Empty for background tasks.
      *
      * @var string|null
      */

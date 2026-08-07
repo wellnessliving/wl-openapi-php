@@ -6,12 +6,20 @@ namespace WlSdk\Core\AI\LogTriage;
  * Sources from which log triage findings can be collected.
  *
  * Values:
+ * - 5 (`ASYNC_TASK`): Erroneous asynchronous tasks stored by AsyncErrorSql.
+ * - 4 (`BACKGROUND_TASK`): Erroneous background tasks stored by CmsTaskQueueSql.
  * - 1 (`ERROR_LOG`): PHP error log represented by {@link \WlSdk\Core\Log\CoreLog}.
  * - 2 (`SLOW_LOG`): Slow-operation log represented by {@link \WlSdk\Core\Log\CoreLog}.
  * - 3 (`WATCH_USAGE_STAT`): Aggregated usage statistics stored by WatchUsageStat.
  */
 class TriageSourceSid
 {
+    /** Erroneous asynchronous tasks stored by AsyncErrorSql. */
+    public const ASYNC_TASK = 5;
+
+    /** Erroneous background tasks stored by CmsTaskQueueSql. */
+    public const BACKGROUND_TASK = 4;
+
     /** PHP error log represented by {@link \WlSdk\Core\Log\CoreLog}. */
     public const ERROR_LOG = 1;
 
