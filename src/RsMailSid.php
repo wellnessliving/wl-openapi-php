@@ -13,7 +13,7 @@ namespace WlSdk;
  *
  * Pay attention that all `\MailPrioritySid` must start with backslash.
  *
- * Last used ID: 220.
+ * Last used ID: 221.
  *
  * Values:
  * - 220 (`ABANDONED_CHECKOUT`): Sent when a client abandons a checkout (used in automations).
@@ -259,6 +259,7 @@ namespace WlSdk;
  * - 117 (`CLASSES_STAFF_SUBSTITUTION_REMIND`): Send to the staff a remind about an upcoming class session.
  *   It is sent only when this staff is a substitution.
  * - 161 (`CLASSES_VIDEO_PUBLISH`): Sent to the client after a video uploaded to an attendance list is published.
+ * - 221 (`CLIENT_BIRTHDAY`): Automated marketing email sent on the client's birthday.
  * - 98 (`CONTRACT_COPY`): Send a copy of contract.
  * - 84 (`COUPON_PURCHASE`): Sent after purchase of coupon.
  * - 129 (`EVENT_BOOK_SESSION_CLIENT`): Enrollment Session(s) Booking Confirmation.
@@ -780,6 +781,9 @@ class RsMailSid
 
     /** Sent to the client after a video uploaded to an attendance list is published. */
     public const CLASSES_VIDEO_PUBLISH = 161;
+
+    /** Automated marketing email sent on the client's birthday. */
+    public const CLIENT_BIRTHDAY = 221;
 
     /** Send a copy of contract. */
     public const CONTRACT_COPY = 98;
