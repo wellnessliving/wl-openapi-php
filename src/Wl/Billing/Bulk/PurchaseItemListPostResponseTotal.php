@@ -13,6 +13,34 @@ class PurchaseItemListPostResponseTotal
     public ?PurchaseItemListPostResponseTotalDiscountList $a_discount_list = null;
 
     /**
+     * The number of clients that paid by account.
+     *
+     * @var int|null
+     */
+    public ?int $i_pay_account = null;
+
+    /**
+     * The number of clients that paid by card or ACH.
+     *
+     * @var int|null
+     */
+    public ?int $i_pay_card = null;
+
+    /**
+     * The total amount paid by account.
+     *
+     * @var string|null
+     */
+    public ?string $m_pay_account = null;
+
+    /**
+     * The total amount paid by card or ACH.
+     *
+     * @var string|null
+     */
+    public ?string $m_pay_card = null;
+
+    /**
      * The price of the selected items for all the clients, with the client type discounts applied.
      *
      * @var string|null
@@ -61,6 +89,10 @@ class PurchaseItemListPostResponseTotal
     public function __construct(array $data)
     {
         $this->a_discount_list = isset($data['a_discount_list']) ? new PurchaseItemListPostResponseTotalDiscountList((array)$data['a_discount_list']) : null;
+        $this->i_pay_account = isset($data['i_pay_account']) ? (int)$data['i_pay_account'] : null;
+        $this->i_pay_card = isset($data['i_pay_card']) ? (int)$data['i_pay_card'] : null;
+        $this->m_pay_account = isset($data['m_pay_account']) ? (string)$data['m_pay_account'] : null;
+        $this->m_pay_card = isset($data['m_pay_card']) ? (string)$data['m_pay_card'] : null;
         $this->m_subtotal_after_discount = isset($data['m_subtotal_after_discount']) ? (string)$data['m_subtotal_after_discount'] : null;
         $this->m_subtotal_before_discount = isset($data['m_subtotal_before_discount']) ? (string)$data['m_subtotal_before_discount'] : null;
         $this->m_subtotal_per_client = isset($data['m_subtotal_per_client']) ? (string)$data['m_subtotal_per_client'] : null;
