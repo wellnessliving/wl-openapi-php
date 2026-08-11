@@ -15,15 +15,41 @@ class PaymentMultipleGetResponse
     public ?PaymentMultipleGetResponsePromotionData $a_promotion_data = null;
 
     /**
-     * Fields refer to strings in the format `id_purchase_item-k_id`. Values refer to an array with the next
-     * stricture:
+     * List of purchase options to be purchased.
+     *
+     * <b>Warning:</b>
+     * * This field contains incorrect data for multiple bookings. Use {@link
+     * \WlSdk\Wl\Appointment\Book\Payment\PaymentMultipleGetResponse::$a_purchase_provider} instead.
+     * * This field can be safely used for a single booking.
+     * * This field can contain valid data for the {@link \WlSdk\RsPurchaseItemSid} purchase that does not belong
+     * to any provider.
+     *
+     * Array structure:
+     * * Keys refer to strings in the format `id_purchase_item-k_id`.
+     * * Values refer to an array with the next stricture:
      *
      * @var PaymentMultipleGetResponsePurchase|null
      */
     public ?PaymentMultipleGetResponsePurchase $a_purchase = null;
 
     /**
+     * A list of purchase options grouped by provider.
+     *
+     * * The first level keys are provider indexes from {@link \WlSdk\Wl\Appointment\Book\Payment\PaymentMultiple}
+     * field.
+     * * The second level keys are strings in the format `id_purchase_item-k_id`.
+     * * Each value has the same structure as {@link
+     * \WlSdk\Wl\Appointment\Book\Payment\PaymentMultipleGetResponse::$a_purchase}.
+     *
+     * @var PaymentMultipleGetResponsePurchaseProvider[]|null
+     */
+    public ?array $a_purchase_provider = null;
+
+    /**
      * The list of amounts to pay for appointments from the batch, with taxes and without surcharges.
+     *
+     * * Keys are provider indexes from {@link \WlSdk\Wl\Appointment\Book\Payment\PaymentMultiple}.
+     * * Values are the total amount for the corresponding provider, or `0.00` if the provider has nothing to pay.
      *
      * @var string[]|null
      */
@@ -82,6 +108,7 @@ class PaymentMultipleGetResponse
     {
         $this->a_promotion_data = isset($data['a_promotion_data']) ? new PaymentMultipleGetResponsePromotionData((array)$data['a_promotion_data']) : null;
         $this->a_purchase = isset($data['a_purchase']) ? new PaymentMultipleGetResponsePurchase((array)$data['a_purchase']) : null;
+        $this->a_purchase_provider = isset($data['a_purchase_provider']) ? array_map(static fn ($item) => new PaymentMultipleGetResponsePurchaseProvider((array)$item), (array)$data['a_purchase_provider']) : null;
         $this->a_total = isset($data['a_total']) ? (array)$data['a_total'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
         $this->m_coupon = isset($data['m_coupon']) ? (string)$data['m_coupon'] : null;
