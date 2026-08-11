@@ -41,21 +41,21 @@ class ConnectionCheckGetResponseFinding
     public ?string $dtu_last_seen = null;
 
     /**
-     * WatchUsageStat object. Present for this source.
+     * Usage-statistics object. Present for the usage-statistics source.
      *
      * @var string|null
      */
     public ?string $s_object = null;
 
     /**
-     * Local date of the first WatchUsageStat record.
+     * Local date of the first usage-statistics record.
      *
      * @var string|null
      */
     public ?string $dl_first_seen = null;
 
     /**
-     * Local date of the last WatchUsageStat record.
+     * Local date of the last usage-statistics record.
      *
      * @var string|null
      */
