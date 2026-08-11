@@ -120,9 +120,12 @@ class FinishMultiplePostRequest
     public ?array $a_paid = null;
 
     /**
-     * A list of payment sources to pay with.
+     * Payment is not processed by this API.
      *
-     * Each source contains:
+     * Use the following APIs for payment:
+     * * {@link \WlSdk\Wl\Appointment\Book\Payment\Payment}
+     * * {@link \WlSdk\Wl\Appointment\Book\Payment\PaymentPost}
+     * * {@link \WlSdk\Wl\Appointment\Book\Payment\PaymentMultiple}
      *
      * @var array[]|null
      */
