@@ -116,7 +116,7 @@ class FinishPostRequest
      * * {@link \WlSdk\Wl\Appointment\Book\Payment\PaymentPost}
      * * {@link \WlSdk\Wl\Appointment\Book\Payment\PaymentMultiple}
      *
-     * @var array[]|null
+     * @var array|null
      */
     public ?array $a_pay_form = null;
 
