@@ -28,10 +28,18 @@ class CartGetResponseItemConfig
      */
     public ?string $m_checkout = null;
 
+    /**
+     * The part of the tuition cost that is not charged during purchase.
+     *
+     * @var string|null
+     */
+    public ?string $m_deferred = null;
+
     public function __construct(array $data)
     {
         $this->a_event_list = isset($data['a_event_list']) ? new CartGetResponseItemConfigEventList((array)$data['a_event_list']) : null;
         $this->a_registration_fee_list = isset($data['a_registration_fee_list']) ? new CartGetResponseItemConfigRegistrationFeeList((array)$data['a_registration_fee_list']) : null;
         $this->m_checkout = isset($data['m_checkout']) ? (string)$data['m_checkout'] : null;
+        $this->m_deferred = isset($data['m_deferred']) ? (string)$data['m_deferred'] : null;
     }
 }

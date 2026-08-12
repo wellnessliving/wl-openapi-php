@@ -61,6 +61,20 @@ class CartGetResponse
     public ?int $i_score = null;
 
     /**
+     * The amount that has to be charged right now for the cart.
+     *
+     * Equals {@link \WlSdk\Wl\Catalog\Cart\CartGetResponse::$m_total} for everything that is paid for in full at
+     * once. A tuition
+     * defers a part of its cost to an installment plan or to a membership schedule, and `m_total`
+     * covers the full cost regardless, so this is the amount to put into the payment form. It is
+     * `m_total` minus `a_config.m_deferred` of every tuition item in {@link
+     * \WlSdk\Wl\Catalog\Cart\CartGetResponse::$a_item}.
+     *
+     * @var string|null
+     */
+    public ?string $m_checkout = null;
+
+    /**
      * The full discount of the cart.
      *
      * If `null`, the discount isn't calculated yet.
@@ -119,6 +133,7 @@ class CartGetResponse
         $this->a_reward_propose = isset($data['a_reward_propose']) ? array_map(static fn ($item) => new CartGetResponseRewardPropose((array)$item), (array)$data['a_reward_propose']) : null;
         $this->a_tax_list = isset($data['a_tax_list']) ? (array)$data['a_tax_list'] : null;
         $this->i_score = isset($data['i_score']) ? (int)$data['i_score'] : null;
+        $this->m_checkout = isset($data['m_checkout']) ? (string)$data['m_checkout'] : null;
         $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;
         $this->m_discount_total = isset($data['m_discount_total']) ? (string)$data['m_discount_total'] : null;
         $this->m_subtotal = isset($data['m_subtotal']) ? (string)$data['m_subtotal'] : null;
