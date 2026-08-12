@@ -8,7 +8,13 @@ class PurchaseElementGetRequest
      * Additional configuration for the purchase item.
      * Depending on purchase item type different configuration parameters can be passed.
      *
-     * For purchase items with {@link \WlSdk\RsPurchaseItemSid} type next structure expected:
+     * For purchase items with {@link \WlSdk\RsPurchaseItemSid} type only `a_event_list` is
+     * expected in the request, and only `k_class` and `uid` are accepted in every its entry. Prices,
+     * discounts, and taxes can not be overridden here: this booking flow is never authenticated as a
+     * staff member, so Tuition::verifyObjectFromSource() strips such fields.
+     *
+     * In the response this is not an echo: `a_event_list` comes back recomputed, and
+     * `a_registration_fee_list`, `m_checkout`, and `m_deferred` are added.
      *
      * @var array|null
      */
