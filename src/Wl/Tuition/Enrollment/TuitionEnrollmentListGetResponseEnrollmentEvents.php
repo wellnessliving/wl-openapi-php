@@ -5,6 +5,24 @@ namespace WlSdk\Wl\Tuition\Enrollment;
 class TuitionEnrollmentListGetResponseEnrollmentEvents
 {
     /**
+     * Enrollment status. Active user is enrolled into the event, and there are upcoming sessions.
+     * Canceled, if enrollment is canceled.
+     * Completed, if all event sessions are in the past and enrollment is not canceled.
+     *
+     * @var int|null
+     */
+    public ?int $id_enrollment_status = null;
+
+    /**
+     * Membership status.
+     *
+     * `null` if tuition paid in full with installment.
+     *
+     * @var int|null
+     */
+    public ?int $id_membership_status = null;
+
+    /**
      * Whether this enrollment is cancelled or not.
      *
      * @var bool|null
@@ -48,6 +66,8 @@ class TuitionEnrollmentListGetResponseEnrollmentEvents
 
     public function __construct(array $data)
     {
+        $this->id_enrollment_status = isset($data['id_enrollment_status']) ? (int)$data['id_enrollment_status'] : null;
+        $this->id_membership_status = isset($data['id_membership_status']) ? (int)$data['id_membership_status'] : null;
         $this->is_cancelled = isset($data['is_cancelled']) ? (bool)$data['is_cancelled'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
         $this->m_event_discount = isset($data['m_event_discount']) ? (string)$data['m_event_discount'] : null;
