@@ -79,11 +79,12 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 2316 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReport`): "Bulk Charges" report. Summary of
  * Bulk Billing batches created from the Clients tab.
  *
- *   There is no persisted "expected total" for a batch - `\Wl\Billing\Bulk\PurchaseBatchManager::create()` does
- *   not compute or store one, and the actual charge amount is only known once
- *   `\Wl\Billing\Bulk\PurchaseBatchBill::billClient()` prices each client live at billing time. `Total Amount`
- *   therefore combines the already-charged clients' actual `RsPurchaseSql::$f_sum`, `m_surcharge` with a live
- *   re-pricing (via `BulkBillingManager::purchaseItemTotal()`) of the clients still pending/failed - see
+ *   There is no persisted "expected total" for a batch - `\Wl\Billing\Bulk\PurchaseBatchManager::create()` does not
+ *   compute or store one. It does, however, freeze each item's price into `wl_purchase_batch_item.m_price` at that
+ *   same moment, and `\Wl\Billing\Bulk\PurchaseBatchBill::billClient()` bills every client off that frozen price, not
+ *   off the price list current at billing time. `Total Amount` therefore combines the already-charged clients'
+ *   actual `RsPurchaseSql::$f_sum`, `m_surcharge` with a re-pricing (via `BulkBillingManager::purchaseItemTotal()`,
+ *   passed the same frozen `m_price`) of the clients still pending/failed - see
  *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
  * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -> Memberships
  * Details by Location" report. Detailed list of all memberships in the franchise.
