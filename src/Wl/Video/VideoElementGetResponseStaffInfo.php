@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Video;
 class VideoElementGetResponseStaffInfo
 {
     /**
-     * <b>Deprecated</b> The staff member key.
+     * <b>Deprecated</b> The optional staff member key returned only to legacy applications.
      *
      * @var string|null
      */

@@ -15,7 +15,14 @@ class VideoElementGetResponse
     public ?array $a_location = null;
 
     /**
-     * The keys of the user staff members who are on the video.
+     * The legacy staff keys associated with the video.
+     *
+     * For GET requests, this field is populated only for applications listed in
+     * `APPS_USE_OLD_K_STAFF`; otherwise it is empty.
+     * An empty value outside the allow-list does not indicate that no staff members are assigned; use
+     * {@link \WlSdk\Wl\Video\VideoElementGetResponse::$a_staff_uid} as the authoritative list.
+     * For POST requests, applications outside the allow-list must use {@link
+     * \WlSdk\Wl\Video\VideoElementGetResponse::$a_staff_uid}.
      *
      * @var string[]|null
      */
@@ -31,6 +38,7 @@ class VideoElementGetResponse
     /**
      * The user IDs of the staff members who are on the video (authoritative list for who is assigned to the
      * video).
+     * Use this field instead of {@link \WlSdk\Wl\Video\VideoElementGetResponse::$a_staff} in POST requests.
      *
      * @var string[]|null
      */
