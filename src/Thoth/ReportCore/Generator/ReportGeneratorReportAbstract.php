@@ -86,6 +86,17 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *   actual `RsPurchaseSql::$f_sum`, `m_surcharge` with a re-pricing (via `BulkBillingManager::purchaseItemTotal()`,
  *   passed the same frozen `m_price`) of the clients still pending/failed - see
  *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
+ * - 2325 (`Thoth\Report\SalesReport\Transaction\BulkChargesDetail\BulkChargesDetailReport`): "Bulk Charges" batch
+ * detail report. Client-level drill-down for a single batch, reached from
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s `Batch ID`/`Total Clients` columns.
+ *
+ *   `Subtotal`/`Discount Amount`/`Total Taxes`/`Purchase Total` are read off PurchaseInfo once a client has
+ *   been billed (`\Wl\Billing\Bulk\PurchaseBatchUserStatusSid::CHARGED`). The per-tax-name `Custom tax` columns (e.g.
+ *   `HST Tax`/`GST Tax`) are dynamic - one per business-configured `\RsTax::get()` entry - added in
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} and populated in {@link
+ * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
+ *   from `\Wl\Purchase\PurchaseItemInfo::$a_tax`, same mechanism as
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s own per-tax columns.
  * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -> Memberships
  * Details by Location" report. Detailed list of all memberships in the franchise.
  * - 1498 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReport`): Franchise "Memberships Summary by
@@ -314,6 +325,9 @@ class ReportGeneratorReportAbstract
 
     /** "Bulk Charges" report. Summary of Bulk Billing batches created from the Clients tab. */
     public const BulkChargesReport = 2316;
+
+    /** "Bulk Charges" batch detail report. Client-level drill-down for a single batch, reached from */
+    public const BulkChargesDetailReport = 2325;
 
     /** "Enterprise Reports -> Memberships Details by Location" report. Detailed list of all memberships in the franchise. */
     public const MembershipDetailReport = 1448;
