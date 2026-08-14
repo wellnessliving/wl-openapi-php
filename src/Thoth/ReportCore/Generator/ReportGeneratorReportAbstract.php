@@ -90,9 +90,9 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * detail report. Client-level drill-down for a single batch, reached from
  *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s `Batch ID`/`Total Clients` columns.
  *
- *   `Subtotal`/`Discount Amount`/`Total Taxes`/`Purchase Total` are read off PurchaseInfo once a client has
- *   been billed (`\Wl\Billing\Bulk\PurchaseBatchUserStatusSid::CHARGED`). The per-tax-name `Custom tax` columns (e.g.
- *   `HST Tax`/`GST Tax`) are dynamic - one per business-configured `\RsTax::get()` entry - added in
+ *   `Subtotal`/`Discount Amount`/`Total Taxes`/`Purchase Total` are read off `\Wl\Purchase\Info\PurchaseInfo` once a
+ *   client has been billed (`\Wl\Billing\Bulk\PurchaseBatchUserStatusSid::CHARGED`). The per-tax-name `Custom tax`
+ *   columns (e.g. `HST Tax`/`GST Tax`) are dynamic - one per business-configured `\RsTax::get()` entry - added in
  *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} and populated in {@link
  * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
  *   from `\Wl\Purchase\PurchaseItemInfo::$a_tax`, same mechanism as
