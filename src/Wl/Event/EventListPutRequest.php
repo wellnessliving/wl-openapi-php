@@ -5,6 +5,13 @@ namespace WlSdk\Wl\Event;
 class EventListPutRequest
 {
     /**
+     * Model cache reset flag.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_cache_reset = null;
+
+    /**
      * The event business key to retrieve a list of all event sessions in business.
      *
      * `null` to retrieve events from {@link \WlSdk\Wl\Event\EventList}.
@@ -21,20 +28,13 @@ class EventListPutRequest
      */
     public ?string $uid = null;
 
-    /**
-     * Model cache reset flag.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_cache_reset = null;
-
     public function params(): array
     {
         return array_filter(
             [
+            'is_cache_reset' => $this->is_cache_reset,
             'k_business' => $this->k_business,
             'uid' => $this->uid,
-            'is_cache_reset' => $this->is_cache_reset,
             ],
             static fn ($v) => $v !== null
         );
