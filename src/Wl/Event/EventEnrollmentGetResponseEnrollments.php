@@ -13,7 +13,7 @@ class EventEnrollmentGetResponseEnrollments
     public ?bool $is_enrolled_full = null;
 
     /**
-     * Key of the client who attended or will attend the event. Primary key in PassportLoginSql table.
+     * Key of the client who attended or will attend the event.
      *
      * @var string|null
      */
