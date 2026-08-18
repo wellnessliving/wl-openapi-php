@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Privilege;
 /**
  * Wellnessliving-wide privileges.
  *
- * Last Used ID: 247.
+ * Last Used ID: 248.
  *
  * Values:
  * - 225 (`AI_AGENT_KNOWLEDGE_BASE`): Allows user to view, create or edit knowledge base entries, or conversational
@@ -165,6 +165,7 @@ namespace WlSdk\Wl\Privilege;
  * - 217 (`NOTIFICATION_LEAD_CAPTURE_AI`): Receive Lead Capture (AI Agent) notification.
  * - 214 (`NOTIFICATION_MEMBERSHIP_CANCEL`): Staff with this role will receive the membership cancel mails.
  * - 223 (`NOTIFICATION_MEMBERSHIP_QUERY`): Receive Membership or Purchase Options Query notification.
+ * - 248 (`NOTIFICATION_PHONE_AGENT_CALL_RECEIVED`): Receive CAASI Phone Call Received (AI Agent) notification.
  * - 90 (`NOTIFICATION_PRIZE_REDEMPTION`): Staff with this role will receive emails about reward prizes.
  * - 77 (`NOTIFICATION_PRODUCT_INVENTORY`): Staff with this role will receive the inventory mails.
  * - 162 (`NOTIFICATION_QUIZ`): Receive new quiz notification form staff.
@@ -658,6 +659,9 @@ class PrivilegeSid
 
     /** Receive Membership or Purchase Options Query notification. */
     public const NOTIFICATION_MEMBERSHIP_QUERY = 223;
+
+    /** Receive CAASI Phone Call Received (AI Agent) notification. */
+    public const NOTIFICATION_PHONE_AGENT_CALL_RECEIVED = 248;
 
     /** Staff with this role will receive emails about reward prizes. */
     public const NOTIFICATION_PRIZE_REDEMPTION = 90;
