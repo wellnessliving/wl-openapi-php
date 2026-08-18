@@ -82,6 +82,20 @@ class AttendanceOverlapGetResponseVisitList
     public ?string $k_location = null;
 
     /**
+     * Local end time of the visit, formatted according to the business locale.
+     *
+     * @var string|null
+     */
+    public ?string $text_time_end = null;
+
+    /**
+     * Local start time of the visit, formatted according to the business locale.
+     *
+     * @var string|null
+     */
+    public ?string $text_time_start = null;
+
+    /**
      * Title of a service
      *
      * @var string|null
@@ -101,6 +115,8 @@ class AttendanceOverlapGetResponseVisitList
         $this->k_class_period = isset($data['k_class_period']) ? (string)$data['k_class_period'] : null;
         $this->k_enrollment_book = isset($data['k_enrollment_book']) ? (string)$data['k_enrollment_book'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
+        $this->text_time_end = isset($data['text_time_end']) ? (string)$data['text_time_end'] : null;
+        $this->text_time_start = isset($data['text_time_start']) ? (string)$data['text_time_start'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }
 }

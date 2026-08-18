@@ -13,7 +13,7 @@ namespace WlSdk;
  *
  * Pay attention that all `\MailPrioritySid` must start with backslash.
  *
- * Last used ID: 221.
+ * Last used ID: 222.
  *
  * Values:
  * - 220 (`ABANDONED_CHECKOUT`): Sent when a client abandons a checkout (used in automations).
@@ -351,6 +351,8 @@ namespace WlSdk;
  * - 181 (`PAY_TRANSACTION_FAIL`): Transaction failed.
  *
  *   Sent to support whenever transaction fails.
+ * - 222 (`PHONE_AGENT_CALL_RECEIVED`): Sent to staff when CAASI's Phone Agent concludes a call, regardless of outcome
+ *   (resolved by CAASI, transferred live, or callback requested).
  * - 137 (`PRESENCE_ACTIVATE`): Request a custom website subscription.
  * - 127 (`PRODUCT_PURCHASE`): Sent after purchase of product.
  * - 93 (`PROFILE_MAIL_CHANGE`): Email to inform user that they email is changed.
@@ -919,6 +921,9 @@ class RsMailSid
 
     /** Transaction failed. */
     public const PAY_TRANSACTION_FAIL = 181;
+
+    /** Sent to staff when CAASI's Phone Agent concludes a call, regardless of outcome */
+    public const PHONE_AGENT_CALL_RECEIVED = 222;
 
     /** Request a custom website subscription. */
     public const PRESENCE_ACTIVATE = 137;
