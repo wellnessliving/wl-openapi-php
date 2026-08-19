@@ -170,6 +170,21 @@ class ClassList68PostRequest
     public ?string $s_staff_uid = null;
 
     /**
+     * Whether to compute and add the per-session booking status fields to each element of
+     * {@link \WlSdk\Wl\Schedule\ClassList\ClassList68PostResponse::$a_session}: `can_book`, `is_book`,
+     * `is_wait_list`,
+     * `id_deny_reason`.
+     *
+     *  It requires evaluating the full
+     * booking policy (promotions, family accounts, resource availability, etc.) for every returned session, which
+     * is significantly more expensive than the rest of this API. Defaults to `false` so that regular schedule
+     * listing calls are not slowed down; enable it only when the caller actually needs these fields.
+     *
+     * @var bool|null
+     */
+    public ?bool $show_book_status = null;
+
+    /**
      * If `true`, canceled sessions will be returned. If `false`, canceled sessions won't be returned.
      *
      * @var bool|null
@@ -226,6 +241,7 @@ class ClassList68PostRequest
             'k_timezone' => $this->k_timezone,
             's_staff' => $this->s_staff,
             's_staff_uid' => $this->s_staff_uid,
+            'show_book_status' => $this->show_book_status,
             'show_cancel' => $this->show_cancel,
             'show_class' => $this->show_class,
             'show_event' => $this->show_event,
