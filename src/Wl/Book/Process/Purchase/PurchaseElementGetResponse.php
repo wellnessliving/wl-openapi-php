@@ -46,6 +46,18 @@ class PurchaseElementGetResponse
     public ?string $m_checkout = null;
 
     /**
+     * The tax portion of {@link \WlSdk\Wl\Book\Process\Purchase\PurchaseElementGroupGetResponse::$m_checkout}.
+     *
+     * Equals {@link \WlSdk\Wl\Book\Process\Purchase\PurchaseElementGroupGetResponse::$m_tax} for everything that
+     * is paid for in full at
+     * once. A tuition defers a part of its tax to an installment plan along with the rest of its
+     * cost, so this is the tax on the amount actually charged right now, not on the full cost.
+     *
+     * @var string|null
+     */
+    public ?string $m_checkout_tax = null;
+
+    /**
      * The total cost of the given purchase options.
      *
      * For a tuition this is the full cost, including whatever is deferred to an installment plan or
@@ -102,6 +114,7 @@ class PurchaseElementGetResponse
         $this->a_config = isset($data['a_config']) ? new PurchaseElementGetResponseConfig((array)$data['a_config']) : null;
         $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
         $this->m_checkout = isset($data['m_checkout']) ? (string)$data['m_checkout'] : null;
+        $this->m_checkout_tax = isset($data['m_checkout_tax']) ? (string)$data['m_checkout_tax'] : null;
         $this->m_cost = isset($data['m_cost']) ? (string)$data['m_cost'] : null;
         $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;
         $this->m_discount_code = isset($data['m_discount_code']) ? (string)$data['m_discount_code'] : null;
