@@ -122,7 +122,10 @@ class InfoGetResponse
     public ?int $i_duration = null;
 
     /**
-     * Total number of sessions including both past and future sessions.
+     * Total number of sessions.
+     *
+     * For classes this value is always `1`.
+     * For events this value includes both past and future sessions.
      *
      * @var int|null
      */
