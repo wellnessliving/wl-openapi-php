@@ -320,6 +320,8 @@ namespace WlSdk;
  * - 213 (`LOGIN_STATEMENT_NEW`): Sent to the client when a new account statement becomes available.
  *   Email includes the statement as a PDF attachment.
  * - 9 (`LOGIN_WELCOME`): Sent to all new users after they create an account for the first time.
+ * - 223 (`MARKETING_AUTOMATION_NOTIFY_STAFF`): Sent to selected staff or staff roles when a marketing automation flow
+ * reaches a Notify Staff step.
  * - 214 (`MEMBER_GROUP_USER_ADD`): Client added to a member group.
  * - 215 (`MEMBER_GROUP_USER_REMOVE`): Client removed from a member group.
  * - 203 (`MEMBERSHIP_QUERY`): Sent to staff when the AI Agent logs a membership or purchase query.
@@ -894,6 +896,9 @@ class RsMailSid
 
     /** Sent to all new users after they create an account for the first time. */
     public const LOGIN_WELCOME = 9;
+
+    /** Sent to selected staff or staff roles when a marketing automation flow reaches a Notify Staff step. */
+    public const MARKETING_AUTOMATION_NOTIFY_STAFF = 223;
 
     /** Client added to a member group. */
     public const MEMBER_GROUP_USER_ADD = 214;
