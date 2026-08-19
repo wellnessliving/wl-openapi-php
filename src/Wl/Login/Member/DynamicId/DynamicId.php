@@ -24,6 +24,12 @@ class DynamicId
      * expiry countdown, and an image URL. If the business uses static barcodes, returns the member's static ID
      * with a zero expiry.
      *
+     * If the business uses QR code as the scan format ({@link
+     * \WlSdk\Wl\Login\Member\DynamicId\DynamicIdGetResponse::$is_qr}), also returns the issue
+     * timestamp ({@link \WlSdk\Wl\Login\Member\DynamicId\DynamicIdGetResponse::$i_qr_issued}) that the Achieve app
+     * uses to build and locally refresh the QR
+     * code payload, and does not generate a barcode image URL.
+     *
      * @return DynamicIdGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

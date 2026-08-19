@@ -31,6 +31,14 @@ class PromotionIndexGetRequest
     public ?int $id_program_type = null;
 
     /**
+     * If `true`, purchase options are loaded for backend mode. Otherwise, this will be `false` if purchase options
+     * are loaded for frontend mode.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_backend = null;
+
+    /**
      * The business key.
      *
      * `null` to get a business from location.
@@ -53,6 +61,7 @@ class PromotionIndexGetRequest
             'i_image_height' => $this->i_image_height,
             'i_image_width' => $this->i_image_width,
             'id_program_type' => $this->id_program_type,
+            'is_backend' => $this->is_backend,
             'k_business' => $this->k_business,
             'k_location' => $this->k_location,
             ],
