@@ -134,6 +134,13 @@ class ElementGetResponseEvent
     public ?int $i_session = null;
 
     /**
+     * Total number of sessions including both past and future sessions.
+     *
+     * @var int|null
+     */
+    public ?int $i_session_all = null;
+
+    /**
      * Remaining session count in event.
      *
      * @var int|null
@@ -259,6 +266,7 @@ class ElementGetResponseEvent
         $this->html_special = isset($data['html_special']) ? (string)$data['html_special'] : null;
         $this->i_makeup_cap = isset($data['i_makeup_cap']) ? (int)$data['i_makeup_cap'] : null;
         $this->i_session = isset($data['i_session']) ? (int)$data['i_session'] : null;
+        $this->i_session_all = isset($data['i_session_all']) ? (int)$data['i_session_all'] : null;
         $this->i_session_remain = isset($data['i_session_remain']) ? (int)$data['i_session_remain'] : null;
         $this->is_availability_checked = isset($data['is_availability_checked']) ? (bool)$data['is_availability_checked'] : null;
         $this->is_book = isset($data['is_book']) ? (bool)$data['is_book'] : null;
