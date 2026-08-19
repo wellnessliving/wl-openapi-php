@@ -44,11 +44,22 @@ class ListGetResponse
      */
     public ?bool $can_remove_self = null;
 
+    /**
+     * Whether the feature "client is allowed to remove their own saved credit cards" has been released.
+     *
+     * `true` if the feature has been released.
+     * `false` if the feature has not been released.
+     *
+     * @var bool|null
+     */
+    public ?bool $has_remove_self = null;
+
     public function __construct(array $data)
     {
         $this->a_bank_card = isset($data['a_bank_card']) ? new ListGetResponseBankCard((array)$data['a_bank_card']) : null;
         $this->a_list = isset($data['a_list']) ? array_map(static fn ($item) => new ListGetResponseList((array)$item), (array)$data['a_list']) : null;
         $this->can_add = isset($data['can_add']) ? (bool)$data['can_add'] : null;
         $this->can_remove_self = isset($data['can_remove_self']) ? (bool)$data['can_remove_self'] : null;
+        $this->has_remove_self = isset($data['has_remove_self']) ? (bool)$data['has_remove_self'] : null;
     }
 }
