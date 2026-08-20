@@ -10,6 +10,8 @@ class RegisterOtpJwtPublicKeyGetResponse
     /**
      * Public key in JWK format.
      *
+     * Each array item is one JWK with the following structure:
+     *
      * @var array[]|null
      */
     public ?array $a_keys = null;
