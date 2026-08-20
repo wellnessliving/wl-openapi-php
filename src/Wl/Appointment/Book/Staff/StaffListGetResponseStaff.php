@@ -13,6 +13,15 @@ class StaffListGetResponseStaff
     public ?int $id_gender = null;
 
     /**
+     * How many clients can still be booked with the staff member at the requested time.
+     * If `dt_date` is not passed, this value is `null`.
+     * If `dt_date` is passed, this is calculated for the specific staff member at that time.
+     *
+     * @var int|null
+     */
+    public ?int $i_free_spot = null;
+
+    /**
      * Whether staff member is available for booking. Note, if staff member reached daily limits, this field
      * will be different for client and staff booking flows. If client books, such staff member is not available
      * and
@@ -74,6 +83,7 @@ class StaffListGetResponseStaff
     public function __construct(array $data)
     {
         $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
+        $this->i_free_spot = isset($data['i_free_spot']) ? (int)$data['i_free_spot'] : null;
         $this->is_available = isset($data['is_available']) ? (bool)$data['is_available'] : null;
         $this->is_daily_limit = isset($data['is_daily_limit']) ? (bool)$data['is_daily_limit'] : null;
         $this->is_wait_list = isset($data['is_wait_list']) ? (bool)$data['is_wait_list'] : null;
