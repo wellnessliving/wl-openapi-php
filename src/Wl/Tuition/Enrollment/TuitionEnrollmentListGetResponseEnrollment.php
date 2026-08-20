@@ -13,8 +13,9 @@ class TuitionEnrollmentListGetResponseEnrollment
 
     /**
      * Next payment date in local business timezone and MySQL format.
+     * It will be the closest date to the current date for membership tuition.
      *
-     * `null` for membership-based tuition.
+     * `null` if we cannot define next payment date.
      *
      * @var string|null
      */
