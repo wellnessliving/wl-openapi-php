@@ -18,9 +18,17 @@ class CatalogCartGetResponseItemConfigRegistrationFeeList
      */
     public ?string $m_amount = null;
 
+    /**
+     * Total discount amount actually applied to the registration fee.
+     *
+     * @var string|null
+     */
+    public ?string $m_discount = null;
+
     public function __construct(array $data)
     {
         $this->a_discount = isset($data['a_discount']) ? new CatalogCartGetResponseItemConfigRegistrationFeeListDiscount((array)$data['a_discount']) : null;
         $this->m_amount = isset($data['m_amount']) ? (string)$data['m_amount'] : null;
+        $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;
     }
 }
