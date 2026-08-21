@@ -175,7 +175,8 @@ namespace WlSdk\Wl\Privilege;
  * - 164 (`OVERRIDE_FEE`): Override late cancel and no show fees.
  * - 94 (`PARTNER_PROGRAM_MANAGE`): Manage partner program.
  * - 166 (`PAYMENT_PROCESSING`): Access to Payment Processing.
- * - 245 (`PERFORM_BULK_BILLING`): Allows the staff member to initiate bulk billing of multiple clients in one batch.
+ * - 245 (`PERFORM_BULK_BILLING`): Allows staff to select multiple clients and post a single bulk transaction for a
+ * store item.
  * - 156 (`PHYSICAL_INVENTORY_COUNT`): Permission to perform Physical Inventory Count.
  * - 88 (`POSTCARD_SEND`): Staff member with this role will be able to send postcards.
  * - 106 (`POWER_SEARCH_DELETE`): Delete shared power searches.
@@ -690,7 +691,7 @@ class PrivilegeSid
     /** Access to Payment Processing. */
     public const PAYMENT_PROCESSING = 166;
 
-    /** Allows the staff member to initiate bulk billing of multiple clients in one batch. */
+    /** Allows staff to select multiple clients and post a single bulk transaction for a store item. */
     public const PERFORM_BULK_BILLING = 245;
 
     /** Permission to perform Physical Inventory Count. */
