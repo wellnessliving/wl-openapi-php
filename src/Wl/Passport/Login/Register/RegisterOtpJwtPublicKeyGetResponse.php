@@ -12,7 +12,7 @@ class RegisterOtpJwtPublicKeyGetResponse
      *
      * Each array item is one JWK with the following structure:
      *
-     * @var array[]|null
+     * @var RegisterOtpJwtPublicKeyGetResponseKeys[]|null
      */
     public ?array $a_keys = null;
 
@@ -25,7 +25,7 @@ class RegisterOtpJwtPublicKeyGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_keys = isset($data['a_keys']) ? (array)$data['a_keys'] : null;
+        $this->a_keys = isset($data['a_keys']) ? array_map(static fn ($item) => new RegisterOtpJwtPublicKeyGetResponseKeys((array)$item), (array)$data['a_keys']) : null;
         $this->s_public_key = isset($data['s_public_key']) ? (string)$data['s_public_key'] : null;
     }
 }
