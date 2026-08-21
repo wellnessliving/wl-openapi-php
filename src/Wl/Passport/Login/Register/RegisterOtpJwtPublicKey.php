@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Passport\Login\Register;
 use WlSdk\WlSdkClient;
 
 /**
- * Returns public key material for OTP registration JWT verification.
+ * Gets the public key material for OTP registration JWT verification.
  */
 class RegisterOtpJwtPublicKey
 {
@@ -18,7 +18,9 @@ class RegisterOtpJwtPublicKey
     }
 
     /**
-     * Returns public key material for OTP registration JWT verification.
+     * Gets the public key material for OTP registration JWT verification.
+     *
+     * The public key is used to verify a JWT token.
      *
      * @return RegisterOtpJwtPublicKeyGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
