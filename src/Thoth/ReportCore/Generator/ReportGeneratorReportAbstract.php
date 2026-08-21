@@ -91,12 +91,17 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s `Batch ID`/`Total Clients` columns.
  *
  *   `Subtotal`/`Discount Amount`/`Total Taxes`/`Purchase Total` are read off `\Wl\Purchase\Info\PurchaseInfo` once a
- *   client has been billed (`\Wl\Billing\Bulk\PurchaseBatchUserStatusSid::CHARGED`). The per-tax-name `Custom tax`
- *   columns (e.g. `HST Tax`/`GST Tax`) are dynamic - one per business-configured `\RsTax::get()` entry - added in
- *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} and populated in {@link
- * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}
- *   from `\Wl\Purchase\PurchaseItemInfo::$a_tax`, same mechanism as
- *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s own per-tax columns.
+ *   client has been billed (`\Wl\Billing\Bulk\PurchaseBatchUserStatusSid::CHARGED`), or re-priced via
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} for a `PENDING`/`FAIL` client not billed
+ * yet - see
+ *   SAL-1180. The per-tax-name `Custom tax` columns (e.g. `HST Tax`/`GST Tax`) are dynamic - one per
+ *   business-configured `\RsTax::get()` entry - added in {@link
+ * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} and
+ *   populated in {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} from
+ * `\Wl\Purchase\PurchaseItemInfo::$a_tax`, same
+ *   mechanism as {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s own
+ *   per-tax columns - unlike the aggregate `Total Taxes` column, this per-name breakdown is only available once
+ *   billed, so it stays blank for a `PENDING`/`FAIL` client.
  * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -> Memberships
  * Details by Location" report. Detailed list of all memberships in the franchise.
  * - 1498 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReport`): Franchise "Memberships Summary by

@@ -26,8 +26,8 @@ class DynamicId
      *
      * If the business uses QR code as the scan format ({@link
      * \WlSdk\Wl\Login\Member\DynamicId\DynamicIdGetResponse::$is_qr}), also returns the issue
-     * timestamp ({@link \WlSdk\Wl\Login\Member\DynamicId\DynamicIdGetResponse::$i_qr_issued}) that the Achieve app
-     * uses to build and locally refresh the QR
+     * timestamp ({@link \WlSdk\Wl\Login\Member\DynamicId\DynamicIdGetResponse::$tu_qr_issued}) that the Achieve
+     * app uses to build and locally refresh the QR
      * code payload, and does not generate a barcode image URL.
      *
      * @return DynamicIdGetResponse
