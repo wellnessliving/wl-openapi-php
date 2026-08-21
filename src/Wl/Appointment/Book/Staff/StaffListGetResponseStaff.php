@@ -14,8 +14,9 @@ class StaffListGetResponseStaff
 
     /**
      * How many clients can still be booked with the staff member at the requested time.
-     * If `dt_date` is not passed, this value is `null`.
-     * If `dt_date` is passed, this is calculated for the specific staff member at that time.
+     * <p>If {@link \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} is not passed, this value is `null`.</p>
+     * <p>If {@link \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} is passed, this is calculated for the specific
+     * staff member at that time.</p>
      *
      * @var int|null
      */
