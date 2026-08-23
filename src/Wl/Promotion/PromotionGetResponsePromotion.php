@@ -12,6 +12,14 @@ class PromotionGetResponsePromotion
     public ?PromotionGetResponsePromotionAccess $a_access = null;
 
     /**
+     * A list of franchise regions where a guest may redeem this Guest Pass, in addition to the location that
+     * sold it. Only meaningful when `is_regional_access` is `true` and `is_regional` is `true`.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_franchise_region = null;
+
+    /**
      * Information about Purchase Option image.
      * This will be an empty array if the Purchase Option doesn't have an image.
      *
@@ -106,8 +114,7 @@ class PromotionGetResponsePromotion
     public ?int $id_duration_type = null;
 
     /**
-     * The Purchase Option type.
-     * For more information, see {@link \WlSdk\RsProgramSid}.
+     * The Purchase Option type. For more information, see {@link \WlSdk\RsProgramSid}.
      *
      * @var int|null
      * @see \WlSdk\RsProgramSid
@@ -156,6 +163,32 @@ class PromotionGetResponsePromotion
      * @var bool|null
      */
     public ?bool $is_payroll = null;
+
+    /**
+     * Whether a guest may redeem this Guest Pass at other locations within the regions listed in
+     * `a_franchise_region`, in addition to the location that sold it. `false` means the pass can only be
+     * redeemed at the location that sold it. Only meaningful when `is_regional_access` is `true`.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_regional = null;
+
+    /**
+     * Whether the regional access setting can be configured for this promotion and business at all.
+     * `false` if the business does not take part in a franchise region, in which case `is_regional`
+     * and `a_franchise_region` should be ignored.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_regional_access = null;
+
+    /**
+     * Whether the regional access setting is read-only for this business. `true` for a franchisee location,
+     * which can only view the regions selected by the franchisor.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_regional_access_readonly = null;
 
     /**
      * If `true` need to add approximate revenue per session value.
@@ -223,6 +256,7 @@ class PromotionGetResponsePromotion
     public function __construct(array $data)
     {
         $this->a_access = isset($data['a_access']) ? new PromotionGetResponsePromotionAccess((array)$data['a_access']) : null;
+        $this->a_franchise_region = isset($data['a_franchise_region']) ? (array)$data['a_franchise_region'] : null;
         $this->a_image = isset($data['a_image']) ? new PromotionGetResponsePromotionImage((array)$data['a_image']) : null;
         $this->a_location = isset($data['a_location']) ? (array)$data['a_location'] : null;
         $this->a_login_type = isset($data['a_login_type']) ? (array)$data['a_login_type'] : null;
@@ -242,6 +276,9 @@ class PromotionGetResponsePromotion
         $this->is_introductory = isset($data['is_introductory']) ? (bool)$data['is_introductory'] : null;
         $this->is_online = isset($data['is_online']) ? (bool)$data['is_online'] : null;
         $this->is_payroll = isset($data['is_payroll']) ? (bool)$data['is_payroll'] : null;
+        $this->is_regional = isset($data['is_regional']) ? (bool)$data['is_regional'] : null;
+        $this->is_regional_access = isset($data['is_regional_access']) ? (bool)$data['is_regional_access'] : null;
+        $this->is_regional_access_readonly = isset($data['is_regional_access_readonly']) ? (bool)$data['is_regional_access_readonly'] : null;
         $this->is_revenue_single = isset($data['is_revenue_single']) ? (bool)$data['is_revenue_single'] : null;
         $this->is_use = isset($data['is_use']) ? (bool)$data['is_use'] : null;
         $this->k_promotion = isset($data['k_promotion']) ? (string)$data['k_promotion'] : null;
