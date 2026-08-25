@@ -61,6 +61,27 @@ class ConnectionCheckGetResponseFinding
      */
     public ?string $dl_last_seen = null;
 
+    /**
+     * Number of original usage-statistics objects merged into a normalized finding.
+     *
+     * @var int|null
+     */
+    public ?int $i_variant_count = null;
+
+    /**
+     * Bounded original usage-statistics object examples.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_object_example = null;
+
+    /**
+     * Whether the object reached the WatchUsageStat storage limit and was therefore kept exact.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_identity_incomplete = null;
+
     public function __construct(array $data)
     {
         $this->i_occurrence_count = isset($data['i_occurrence_count']) ? (int)$data['i_occurrence_count'] : null;
@@ -71,5 +92,8 @@ class ConnectionCheckGetResponseFinding
         $this->s_object = isset($data['s_object']) ? (string)$data['s_object'] : null;
         $this->dl_first_seen = isset($data['dl_first_seen']) ? (string)$data['dl_first_seen'] : null;
         $this->dl_last_seen = isset($data['dl_last_seen']) ? (string)$data['dl_last_seen'] : null;
+        $this->i_variant_count = isset($data['i_variant_count']) ? (int)$data['i_variant_count'] : null;
+        $this->a_object_example = isset($data['a_object_example']) ? (array)$data['a_object_example'] : null;
+        $this->is_identity_incomplete = isset($data['is_identity_incomplete']) ? (bool)$data['is_identity_incomplete'] : null;
     }
 }
