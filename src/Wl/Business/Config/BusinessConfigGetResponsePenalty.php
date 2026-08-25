@@ -80,18 +80,18 @@ class BusinessConfigGetResponsePenalty
     public ?int $id_charge = null;
 
     /**
-     * Charge measure type. `0` for percent, `1` for money amount.
-     *
-     * @var int|null
-     */
-    public ?int $id_charge_measure = null;
-
-    /**
      * `1` if all classes are selected, `0` - otherwise.
      *
      * @var bool|null
      */
     public ?bool $is_appointment_all = null;
+
+    /**
+     * `true` for a fixed money amount, `false` for a percentage.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_charge_measure_money = null;
 
     /**
      * `1` if all classes are selected, `0` - otherwise.
@@ -147,8 +147,8 @@ class BusinessConfigGetResponsePenalty
         $this->id_blame = isset($data['id_blame']) ? (int)$data['id_blame'] : null;
         $this->id_cancel_period = isset($data['id_cancel_period']) ? (int)$data['id_cancel_period'] : null;
         $this->id_charge = isset($data['id_charge']) ? (int)$data['id_charge'] : null;
-        $this->id_charge_measure = isset($data['id_charge_measure']) ? (int)$data['id_charge_measure'] : null;
         $this->is_appointment_all = isset($data['is_appointment_all']) ? (bool)$data['is_appointment_all'] : null;
+        $this->is_charge_measure_money = isset($data['is_charge_measure_money']) ? (bool)$data['is_charge_measure_money'] : null;
         $this->is_class_all = isset($data['is_class_all']) ? (bool)$data['is_class_all'] : null;
         $this->is_enable_cancel_charge = isset($data['is_enable_cancel_charge']) ? (bool)$data['is_enable_cancel_charge'] : null;
         $this->is_event_all = isset($data['is_event_all']) ? (bool)$data['is_event_all'] : null;

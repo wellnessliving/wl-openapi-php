@@ -61,18 +61,46 @@ class ElementGetResponseClassList
     public ?string $html_special_instruction = null;
 
     /**
-     * The minimum age restriction.
+     * The minimum age restriction. Deprecated and is left only for back compatibility.
      *
      * @var int|null
      */
     public ?int $i_age_from = null;
 
     /**
-     * The maximum age restriction.
+     * The minimum age restriction (months).
+     *
+     * @var int|null
+     */
+    public ?int $i_age_from_month = null;
+
+    /**
+     * The minimum age restriction (years).
+     *
+     * @var int|null
+     */
+    public ?int $i_age_from_year = null;
+
+    /**
+     * The maximum age restriction. Deprecated and is left only for back compatibility.
      *
      * @var int|null
      */
     public ?int $i_age_to = null;
+
+    /**
+     * The maximum age restriction (months).
+     *
+     * @var int|null
+     */
+    public ?int $i_age_to_month = null;
+
+    /**
+     * The maximum age restriction (years).
+     *
+     * @var int|null
+     */
+    public ?int $i_age_to_year = null;
 
     /**
      * Determines whether age restriction exist and should be taken into account prior to booking this class/event.
@@ -203,7 +231,11 @@ class ElementGetResponseClassList
         $this->html_description = isset($data['html_description']) ? (string)$data['html_description'] : null;
         $this->html_special_instruction = isset($data['html_special_instruction']) ? (string)$data['html_special_instruction'] : null;
         $this->i_age_from = isset($data['i_age_from']) ? (int)$data['i_age_from'] : null;
+        $this->i_age_from_month = isset($data['i_age_from_month']) ? (int)$data['i_age_from_month'] : null;
+        $this->i_age_from_year = isset($data['i_age_from_year']) ? (int)$data['i_age_from_year'] : null;
         $this->i_age_to = isset($data['i_age_to']) ? (int)$data['i_age_to'] : null;
+        $this->i_age_to_month = isset($data['i_age_to_month']) ? (int)$data['i_age_to_month'] : null;
+        $this->i_age_to_year = isset($data['i_age_to_year']) ? (int)$data['i_age_to_year'] : null;
         $this->is_age_public = isset($data['is_age_public']) ? (bool)$data['is_age_public'] : null;
         $this->is_bookable = isset($data['is_bookable']) ? (bool)$data['is_bookable'] : null;
         $this->is_online_private = isset($data['is_online_private']) ? (bool)$data['is_online_private'] : null;

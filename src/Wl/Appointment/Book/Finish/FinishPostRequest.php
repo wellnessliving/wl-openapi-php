@@ -29,7 +29,9 @@ class FinishPostRequest
     public ?array $a_user = null;
 
     /**
-     * The payment type ID for the appointment. One of the {@link \WlSdk\RsAppointmentPaySid} constants.
+     * The payment type ID for the service.
+     *
+     * One of the {@link \WlSdk\RsAppointmentPaySid} constants.
      *
      * @var int|null
      * @see \WlSdk\RsAppointmentPaySid
@@ -107,9 +109,14 @@ class FinishPostRequest
     public ?array $a_notification = null;
 
     /**
-     * A list of payment sources to pay with.
+     * Payment is not processed by this API.
      *
-     * @var array[]|null
+     * Use the following APIs for payment:
+     * * {@link \WlSdk\Wl\Appointment\Book\Payment\Payment}
+     * * {@link \WlSdk\Wl\Appointment\Book\Payment\PaymentPost}
+     * * {@link \WlSdk\Wl\Appointment\Book\Payment\PaymentMultiple}
+     *
+     * @var array|null
      */
     public ?array $a_pay_form = null;
 
@@ -161,7 +168,13 @@ class FinishPostRequest
     public ?bool $is_unpaid_force = null;
 
     /**
-     * The sum paid for a deposit.
+     * The sum paid without tax.
+     *
+     * Only used for the following types of purchases:
+     * * {@link \WlSdk\RsPurchaseItemSid}
+     * * {@link \WlSdk\RsPurchaseItemSid}
+     * * {@link \WlSdk\RsPurchaseItemSid}
+     * * {@link \WlSdk\RsPurchaseItemSid}
      *
      * @var string|null
      */

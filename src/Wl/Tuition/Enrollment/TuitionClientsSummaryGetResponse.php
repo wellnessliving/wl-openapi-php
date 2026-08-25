@@ -10,7 +10,8 @@ class TuitionClientsSummaryGetResponse
     /**
      * Summary of clients and events enrolled, per tuition.
      *
-     * Keys - tuition IDs from $a_tuition_id. Values - summary information:
+     * Keys - tuition IDs from {@link \WlSdk\Wl\Tuition\Enrollment\TuitionClientsSummary}. Values - summary
+     * information:
      *
      * @var TuitionClientsSummaryGetResponseSummary[]|null
      */

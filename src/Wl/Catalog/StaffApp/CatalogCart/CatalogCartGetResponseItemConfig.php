@@ -21,6 +21,20 @@ class CatalogCartGetResponseItemConfig
     public ?CatalogCartGetResponseItemConfigRegistrationFeeList $a_registration_fee_list = null;
 
     /**
+     * The total amount that will be charged for the tuition item during purchase.
+     *
+     * @var string|null
+     */
+    public ?string $m_checkout = null;
+
+    /**
+     * The part of the tuition cost that is not charged during purchase.
+     *
+     * @var string|null
+     */
+    public ?string $m_deferred = null;
+
+    /**
      * The custom price.
      *
      * @var string|null
@@ -136,6 +150,8 @@ class CatalogCartGetResponseItemConfig
     {
         $this->a_event_list = isset($data['a_event_list']) ? new CatalogCartGetResponseItemConfigEventList((array)$data['a_event_list']) : null;
         $this->a_registration_fee_list = isset($data['a_registration_fee_list']) ? new CatalogCartGetResponseItemConfigRegistrationFeeList((array)$data['a_registration_fee_list']) : null;
+        $this->m_checkout = isset($data['m_checkout']) ? (string)$data['m_checkout'] : null;
+        $this->m_deferred = isset($data['m_deferred']) ? (string)$data['m_deferred'] : null;
         $this->f_price = isset($data['f_price']) ? (string)$data['f_price'] : null;
         $this->dt_prorate = isset($data['dt_prorate']) ? (string)$data['dt_prorate'] : null;
         $this->dt_start = isset($data['dt_start']) ? (string)$data['dt_start'] : null;

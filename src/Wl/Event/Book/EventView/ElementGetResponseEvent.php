@@ -35,12 +35,11 @@ class ElementGetResponseEvent
     public ?ElementGetResponseEventInstallmentTemplate $a_installment_template = null;
 
     /**
-     * Classes selected for make-up sessions. See {@link
-     * \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_makeup_class}.
+     * Classes selected for make-up sessions. Every element has the following keys:
      *
-     * @var array[]|null
+     * @var ElementGetResponseEventMakeupClass|null
      */
-    public ?array $a_makeup_class = null;
+    public ?ElementGetResponseEventMakeupClass $a_makeup_class = null;
 
     /**
      * Schedule of event sessions. See {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_schedule}.
@@ -133,6 +132,13 @@ class ElementGetResponseEvent
      * @var int|null
      */
     public ?int $i_session = null;
+
+    /**
+     * Total number of sessions including both past and future sessions.
+     *
+     * @var int|null
+     */
+    public ?int $i_session_all = null;
 
     /**
      * Remaining session count in event.
@@ -246,7 +252,7 @@ class ElementGetResponseEvent
         $this->a_class_logo = isset($data['a_class_logo']) ? new ElementGetResponseEventClassLogo((array)$data['a_class_logo']) : null;
         $this->a_class_tab = isset($data['a_class_tab']) ? (array)$data['a_class_tab'] : null;
         $this->a_installment_template = isset($data['a_installment_template']) ? new ElementGetResponseEventInstallmentTemplate((array)$data['a_installment_template']) : null;
-        $this->a_makeup_class = isset($data['a_makeup_class']) ? (array)$data['a_makeup_class'] : null;
+        $this->a_makeup_class = isset($data['a_makeup_class']) ? new ElementGetResponseEventMakeupClass((array)$data['a_makeup_class']) : null;
         $this->a_schedule = isset($data['a_schedule']) ? new ElementGetResponseEventSchedule((array)$data['a_schedule']) : null;
         $this->a_shop_category = isset($data['a_shop_category']) ? (array)$data['a_shop_category'] : null;
         $this->a_staff_logo = isset($data['a_staff_logo']) ? new ElementGetResponseEventStaffLogo((array)$data['a_staff_logo']) : null;
@@ -260,6 +266,7 @@ class ElementGetResponseEvent
         $this->html_special = isset($data['html_special']) ? (string)$data['html_special'] : null;
         $this->i_makeup_cap = isset($data['i_makeup_cap']) ? (int)$data['i_makeup_cap'] : null;
         $this->i_session = isset($data['i_session']) ? (int)$data['i_session'] : null;
+        $this->i_session_all = isset($data['i_session_all']) ? (int)$data['i_session_all'] : null;
         $this->i_session_remain = isset($data['i_session_remain']) ? (int)$data['i_session_remain'] : null;
         $this->is_availability_checked = isset($data['is_availability_checked']) ? (bool)$data['is_availability_checked'] : null;
         $this->is_book = isset($data['is_book']) ? (bool)$data['is_book'] : null;

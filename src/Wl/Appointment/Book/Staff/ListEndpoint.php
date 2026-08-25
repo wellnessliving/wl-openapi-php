@@ -24,6 +24,8 @@ class ListEndpoint
      *  on the specified date and time. Each entry includes the staff member's name, image, gender,
      *  and availability. An 'any staff' option is included when the service allows random staff assignment.
      *
+     * @deprecated Use {@link \Wl\Appointment\Book\Staff\StaffListApi} instead.
+     *
      * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

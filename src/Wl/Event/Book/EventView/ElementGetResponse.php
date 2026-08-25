@@ -10,7 +10,7 @@ class ElementGetResponse
     /**
      * Displays information about age restrictions for this event.
      *
-     * An empty array if there are no age restrictions.
+     * Will be empty array if there are no age restrictions.
      *
      * @var ElementGetResponseAgeRestrictions|null
      */
@@ -193,6 +193,13 @@ class ElementGetResponse
      * @var int|null
      */
     public ?int $i_session = null;
+
+    /**
+     * Total number of sessions including both past and future sessions.
+     *
+     * @var int|null
+     */
+    public ?int $i_session_all = null;
 
     /**
      * The remaining session count.
@@ -434,6 +441,7 @@ class ElementGetResponse
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
         $this->i_makeup_cap = isset($data['i_makeup_cap']) ? (int)$data['i_makeup_cap'] : null;
         $this->i_session = isset($data['i_session']) ? (int)$data['i_session'] : null;
+        $this->i_session_all = isset($data['i_session_all']) ? (int)$data['i_session_all'] : null;
         $this->i_session_remain = isset($data['i_session_remain']) ? (int)$data['i_session_remain'] : null;
         $this->id_pay_require = isset($data['id_pay_require']) ? (int)$data['id_pay_require'] : null;
         $this->id_pay_require_option = isset($data['id_pay_require_option']) ? (int)$data['id_pay_require_option'] : null;

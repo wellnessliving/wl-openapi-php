@@ -22,7 +22,13 @@ class PurchaseElementGroup
      *
      * Validates each item in `a_purchase_item` (type, key, installment eligibility, and prize applicability),
      * applies discount codes, login-type discounts, and installment adjustments, then accumulates price, subtotal,
-     * discount, tax, and cost totals across all items and returns them as result fields.
+     * discount, tax, and cost totals across all items and returns them as result fields. For tuition
+     * items the totals cover the full cost, so the amount that has to be charged right now, and the
+     * tax portion of it, are reported separately in {@link
+     * \WlSdk\Wl\Book\Process\Purchase\PurchaseElementGroupGetResponse::$m_checkout} and
+     * {@link \WlSdk\Wl\Book\Process\Purchase\PurchaseElementGroupGetResponse::$m_checkout_tax}, and the
+     * per-component split is written back
+     * into `a_config` of the item it belongs to.
      *
      * @return PurchaseElementGroupGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

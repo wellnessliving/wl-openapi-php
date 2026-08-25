@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Privilege;
 /**
  * Wellnessliving-wide privileges.
  *
- * Last Used ID: 244.
+ * Last Used ID: 247.
  *
  * Values:
  * - 225 (`AI_AGENT_KNOWLEDGE_BASE`): Allows user to view, create or edit knowledge base entries, or conversational
@@ -60,6 +60,9 @@ namespace WlSdk\Wl\Privilege;
  * - 17 (`CLASS_FOREIGN`): Change/View all classes.
  * - 152 (`CLASS_LOCK_SEARCH`): Lock search bar on class attendance list.
  * - 5 (`CLASS_PERIOD`): Edit class schedule.
+ * - 246 (`CLASS_SCHEDULE_VIEW`): Allows a staff member to see other staff members' class sessions on the schedule in
+ * read-only mode
+ *    while the Classes scope is set to only their own schedules.
  * - 135 (`CONTACT_LOG_MANAGE`): Add and view client's contact logs.
  * - 31 (`COUPON`): Add, remove, and edit gift cards.
  * - 131 (`DASHBOARD_DELETE`): Delete shared dashboard.
@@ -78,6 +81,9 @@ namespace WlSdk\Wl\Privilege;
  * added.
  * - 53 (`ENROLLMENT_FOREIGN`): Change/View all classes.
  * - 153 (`ENROLLMENT_LOCK_SEARCH`): Lock search bar on enrollment attendance list.
+ * - 247 (`ENROLLMENT_SCHEDULE_VIEW`): Allows a staff member to see other staff members' event sessions on the schedule
+ * in read-only mode
+ *    while the Events scope is set to only their own schedules.
  * - 207 (`ENTERPRISE_CLOUD_FEES`): Manage Enterprise Cloud Fees.
  * - 190 (`FITBUILDER_LEADERBOARD`): Allows to manage leaderboard in the `FitBuilder` addon.
  * - 189 (`FITBUILDER_SUBSCRIPTION`): Allows to subscribe to `FitBuilder` subscription addon.
@@ -168,6 +174,8 @@ namespace WlSdk\Wl\Privilege;
  * - 164 (`OVERRIDE_FEE`): Override late cancel and no show fees.
  * - 94 (`PARTNER_PROGRAM_MANAGE`): Manage partner program.
  * - 166 (`PAYMENT_PROCESSING`): Access to Payment Processing.
+ * - 245 (`PERFORM_BULK_BILLING`): Allows staff to select multiple clients and post a single bulk transaction for a
+ * store item.
  * - 156 (`PHYSICAL_INVENTORY_COUNT`): Permission to perform Physical Inventory Count.
  * - 88 (`POSTCARD_SEND`): Staff member with this role will be able to send postcards.
  * - 106 (`POWER_SEARCH_DELETE`): Delete shared power searches.
@@ -400,6 +408,9 @@ class PrivilegeSid
     /** Edit class schedule. */
     public const CLASS_PERIOD = 5;
 
+    /** Allows a staff member to see other staff members' class sessions on the schedule in read-only mode */
+    public const CLASS_SCHEDULE_VIEW = 246;
+
     /** Add and view client's contact logs. */
     public const CONTACT_LOG_MANAGE = 135;
 
@@ -447,6 +458,9 @@ class PrivilegeSid
 
     /** Lock search bar on enrollment attendance list. */
     public const ENROLLMENT_LOCK_SEARCH = 153;
+
+    /** Allows a staff member to see other staff members' event sessions on the schedule in read-only mode */
+    public const ENROLLMENT_SCHEDULE_VIEW = 247;
 
     /** Manage Enterprise Cloud Fees. */
     public const ENTERPRISE_CLOUD_FEES = 207;
@@ -672,6 +686,9 @@ class PrivilegeSid
 
     /** Access to Payment Processing. */
     public const PAYMENT_PROCESSING = 166;
+
+    /** Allows staff to select multiple clients and post a single bulk transaction for a store item. */
+    public const PERFORM_BULK_BILLING = 245;
 
     /** Permission to perform Physical Inventory Count. */
     public const PHYSICAL_INVENTORY_COUNT = 156;

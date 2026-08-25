@@ -5,11 +5,13 @@ namespace WlSdk\Wl\Mode;
 /**
  * The source of a visit.
  *
- * Last used ID: 30.
+ * Last used ID: 33.
  *
  * Values:
  * - 28 (`API`): Action made via Api Endpoint. Default for leads created via API, unless overridden.
  * - 21 (`AZURE`): Registered through `Azure`.
+ * - 31 (`BRIVO_DOOR_ACCESS`): Visit has been checked-in by Brivo Door Access.
+ * - 33 (`BULK_BILLING`): Purchase created by a bulk billing batch charge.
  * - 23 (`CENTRED`): Visit has been created by `CENTRED`.
  * - 8 (`CLASSPASS_BOOKING`): Visit has been created by `ClassPass`.
  * - 22 (`COLLECTIONS`): Debt paid via collections.
@@ -27,6 +29,7 @@ namespace WlSdk\Wl\Mode;
  *   It is also names as directory listing.
  * - 24 (`MICROSOFT`): Indicating that the source is Microsoft.
  * - 13 (`MY_PRESENCE_SITE`): Client booked session on My Presence Site.
+ * - 32 (`PASSPORT_DOOR_ACCESS`): Visit has been created by `Passport Door Access`.
  * - 17 (`SMS`): Action made via SMS.
  * - 4 (`SPA_BACKEND`): Staff booked session from spa backend.
  * - 3 (`SPA_FRONTEND`): Client booked session from spa frontend.
@@ -46,6 +49,12 @@ class ModeSid
 
     /** Registered through `Azure`. */
     public const AZURE = 21;
+
+    /** Visit has been checked-in by Brivo Door Access. */
+    public const BRIVO_DOOR_ACCESS = 31;
+
+    /** Purchase created by a bulk billing batch charge. */
+    public const BULK_BILLING = 33;
 
     /** Visit has been created by `CENTRED`. */
     public const CENTRED = 23;
@@ -91,6 +100,9 @@ class ModeSid
 
     /** Client booked session on My Presence Site. */
     public const MY_PRESENCE_SITE = 13;
+
+    /** Visit has been created by `Passport Door Access`. */
+    public const PASSPORT_DOOR_ACCESS = 32;
 
     /** Action made via SMS. */
     public const SMS = 17;

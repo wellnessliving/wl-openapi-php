@@ -5,6 +5,20 @@ namespace WlSdk\Wl\Book\Process\Purchase;
 class PurchaseElementListGetResponsePurchaseItemResult
 {
     /**
+     * Tuition events with calculated amounts.
+     *
+     * @var array[]|null
+     */
+    public ?array $a_event_list = null;
+
+    /**
+     * Registration fees with calculated amounts, keyed by participant key.
+     *
+     * @var array[]|null
+     */
+    public ?array $a_registration_fee_list = null;
+
+    /**
      * Information about taxes. The key refers to the tax key, and the value refers to the tax amount.
      *
      * @var string[]|null
@@ -25,6 +39,25 @@ class PurchaseElementListGetResponsePurchaseItemResult
      * @var string|null
      */
     public ?string $k_id = null;
+
+    /**
+     * The amount that has to be charged for the tuition right now, including tax. The other
+     * amounts of this row cover the full cost, including whatever is deferred to an installment
+     * plan or to a membership schedule.
+     *
+     * @var string|null
+     */
+    public ?string $m_checkout = null;
+
+    /**
+     * The part of the tuition cost that is not charged right now, including tax. Equals
+     * `m_cost` minus `m_checkout`. Rows for everything else are always paid for in full at once,
+     * so the amount to charge for the whole list is the sum of `m_cost` minus the sum of
+     * `m_deferred`.
+     *
+     * @var string|null
+     */
+    public ?string $m_deferred = null;
 
     /**
      * The cost of the purchase item (with taxes).
@@ -63,9 +96,13 @@ class PurchaseElementListGetResponsePurchaseItemResult
 
     public function __construct(array $data)
     {
+        $this->a_event_list = isset($data['a_event_list']) ? (array)$data['a_event_list'] : null;
+        $this->a_registration_fee_list = isset($data['a_registration_fee_list']) ? (array)$data['a_registration_fee_list'] : null;
         $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
         $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
+        $this->m_checkout = isset($data['m_checkout']) ? (string)$data['m_checkout'] : null;
+        $this->m_deferred = isset($data['m_deferred']) ? (string)$data['m_deferred'] : null;
         $this->m_cost = isset($data['m_cost']) ? (string)$data['m_cost'] : null;
         $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;
         $this->m_discount_login = isset($data['m_discount_login']) ? (string)$data['m_discount_login'] : null;

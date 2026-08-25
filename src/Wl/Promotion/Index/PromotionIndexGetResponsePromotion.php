@@ -77,6 +77,13 @@ class PromotionIndexGetResponsePromotion
     public ?int $i_limit_duration = null;
 
     /**
+     * The number of `id_duration` periods between payments for memberships.
+     *
+     * @var int|null
+     */
+    public ?int $i_payment_period = null;
+
+    /**
      * The type of `i_limit_duration`.
      * One of {@link \WlSdk\ADurationSid} contantant.
      * This can only be: <ul>
@@ -214,6 +221,7 @@ class PromotionIndexGetResponsePromotion
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
         $this->i_limit_duration = isset($data['i_limit_duration']) ? (int)$data['i_limit_duration'] : null;
+        $this->i_payment_period = isset($data['i_payment_period']) ? (int)$data['i_payment_period'] : null;
         $this->id_limit_duration = isset($data['id_limit_duration']) ? (int)$data['id_limit_duration'] : null;
         $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;
         $this->id_duration_type = isset($data['id_duration_type']) ? (int)$data['id_duration_type'] : null;

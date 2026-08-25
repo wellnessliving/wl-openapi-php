@@ -13,9 +13,10 @@ namespace WlSdk;
  *
  * Pay attention that all `\MailPrioritySid` must start with backslash.
  *
- * Last used ID: 219.
+ * Last used ID: 221.
  *
  * Values:
+ * - 220 (`ABANDONED_CHECKOUT`): Sent when a client abandons a checkout (used in automations).
  * - 206 (`AI_LINK_BOOK`): Sent by CASSI phone agent, when client requests a booking url.
  * - 207 (`AI_LINK_PURCHASE`): Sent by CASSI phone agent, when client requests a purchase url.
  * - 71 (`APPOINTMENT_APPROVE_STAFF`): Appointment approved by staff.
@@ -258,6 +259,7 @@ namespace WlSdk;
  * - 117 (`CLASSES_STAFF_SUBSTITUTION_REMIND`): Send to the staff a remind about an upcoming class session.
  *   It is sent only when this staff is a substitution.
  * - 161 (`CLASSES_VIDEO_PUBLISH`): Sent to the client after a video uploaded to an attendance list is published.
+ * - 221 (`CLIENT_BIRTHDAY`): Automated marketing email sent on the client's birthday.
  * - 98 (`CONTRACT_COPY`): Send a copy of contract.
  * - 84 (`COUPON_PURCHASE`): Sent after purchase of coupon.
  * - 129 (`EVENT_BOOK_SESSION_CLIENT`): Enrollment Session(s) Booking Confirmation.
@@ -477,6 +479,9 @@ namespace WlSdk;
  */
 class RsMailSid
 {
+    /** Sent when a client abandons a checkout (used in automations). */
+    public const ABANDONED_CHECKOUT = 220;
+
     /** Sent by CASSI phone agent, when client requests a booking url. */
     public const AI_LINK_BOOK = 206;
 
@@ -776,6 +781,9 @@ class RsMailSid
 
     /** Sent to the client after a video uploaded to an attendance list is published. */
     public const CLASSES_VIDEO_PUBLISH = 161;
+
+    /** Automated marketing email sent on the client's birthday. */
+    public const CLIENT_BIRTHDAY = 221;
 
     /** Send a copy of contract. */
     public const CONTRACT_COPY = 98;

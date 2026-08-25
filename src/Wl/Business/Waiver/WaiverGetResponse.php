@@ -21,9 +21,19 @@ class WaiverGetResponse
      */
     public ?string $html_waiver = null;
 
+    /**
+     * URL to the waiver page.
+     *
+     * This page is only available to logged-in clients.
+     *
+     * @var string|null
+     */
+    public ?string $url_waiver = null;
+
     public function __construct(array $data)
     {
         $this->has_waiver = isset($data['has_waiver']) ? (bool)$data['has_waiver'] : null;
         $this->html_waiver = isset($data['html_waiver']) ? (string)$data['html_waiver'] : null;
+        $this->url_waiver = isset($data['url_waiver']) ? (string)$data['url_waiver'] : null;
     }
 }

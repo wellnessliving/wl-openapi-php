@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Event\Book\EventView;
 class ElementGetResponseMakeupClass
 {
     /**
-     * Class key. Primary key in table RsClassSql.
+     * Class key.
      *
      * @var string|null
      */

@@ -44,6 +44,20 @@ class CatalogCartGetResponse
     public ?bool $is_receipt_note = null;
 
     /**
+     * The amount that has to be charged right now for the cart.
+     *
+     * Equals {@link \WlSdk\Wl\Catalog\StaffApp\CatalogCart\CatalogCartGetResponse::$m_total} for everything that
+     * is paid for in full at once. A
+     * tuition defers a part of its cost to an installment plan or to a membership schedule, and
+     * `m_total` covers the full cost regardless, so this is the amount to put into the payment form.
+     * It is `m_total` minus `a_config.m_deferred` of every tuition item in
+     * {@link \WlSdk\Wl\Catalog\StaffApp\CatalogCart\CatalogCartGetResponse::$a_item}.
+     *
+     * @var string|null
+     */
+    public ?string $m_checkout = null;
+
+    /**
      * The discount amount in dollars, excluding tax.
      *
      * @var string|null
@@ -117,6 +131,7 @@ class CatalogCartGetResponse
         $this->is_commission = isset($data['is_commission']) ? (bool)$data['is_commission'] : null;
         $this->is_discount_code_mode_select = isset($data['is_discount_code_mode_select']) ? (bool)$data['is_discount_code_mode_select'] : null;
         $this->is_receipt_note = isset($data['is_receipt_note']) ? (bool)$data['is_receipt_note'] : null;
+        $this->m_checkout = isset($data['m_checkout']) ? (string)$data['m_checkout'] : null;
         $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;
         $this->m_discount_total = isset($data['m_discount_total']) ? (string)$data['m_discount_total'] : null;
         $this->m_subtotal = isset($data['m_subtotal']) ? (string)$data['m_subtotal'] : null;

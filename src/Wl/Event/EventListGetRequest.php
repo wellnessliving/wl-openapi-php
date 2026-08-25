@@ -86,7 +86,7 @@ class EventListGetRequest
      * @var int|null
      * @see \WlSdk\AFlagSid
      */
-    public ?int $id_flag = 3;
+    public ?int $id_flag = null;
 
     /**
      * Determines whether the endpoint is used for backend mode.
@@ -94,6 +94,13 @@ class EventListGetRequest
      * @var bool|null
      */
     public ?bool $is_backend = null;
+
+    /**
+     * Model cache reset flag.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_cache_reset = null;
 
     /**
      * `true` to show even event restricted by booking policies; `false` to show available events only.
@@ -192,6 +199,7 @@ class EventListGetRequest
             'dl_start' => $this->dl_start,
             'id_flag' => $this->id_flag,
             'is_backend' => $this->is_backend,
+            'is_cache_reset' => $this->is_cache_reset,
             'is_ignore_requirement' => $this->is_ignore_requirement,
             'is_tab_all' => $this->is_tab_all,
             'k_business' => $this->k_business,

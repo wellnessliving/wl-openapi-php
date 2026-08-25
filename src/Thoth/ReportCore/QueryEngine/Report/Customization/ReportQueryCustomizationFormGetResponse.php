@@ -8,15 +8,14 @@ namespace WlSdk\Thoth\ReportCore\QueryEngine\Report\Customization;
 class ReportQueryCustomizationFormGetResponse
 {
     /**
-     * Customization form data.
-     * See CustomizationFormAbstract::toArray() for details.
+     * Customization form data keyed by report or page CID. Each value has the following structure:
      *
-     * @var array|null
+     * @var ReportQueryCustomizationFormGetResponseCustomizationForm|null
      */
-    public ?array $a_customization_form = null;
+    public ?ReportQueryCustomizationFormGetResponseCustomizationForm $a_customization_form = null;
 
     public function __construct(array $data)
     {
-        $this->a_customization_form = isset($data['a_customization_form']) ? (array)$data['a_customization_form'] : null;
+        $this->a_customization_form = isset($data['a_customization_form']) ? new ReportQueryCustomizationFormGetResponseCustomizationForm((array)$data['a_customization_form']) : null;
     }
 }

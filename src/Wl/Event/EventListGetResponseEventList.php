@@ -210,6 +210,13 @@ class EventListGetResponseEventList
     public ?bool $is_booked = null;
 
     /**
+     * `true` if clients can cancel this event. Otherwise, this will be `false`.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_cancellation_enabled = null;
+
+    /**
      * Whether booking of the event is closed already.
      * Means that in general it is bookable but currently booking is closed.
      *
@@ -397,6 +404,7 @@ class EventListGetResponseEventList
         $this->is_book_for_guest = isset($data['is_book_for_guest']) ? (bool)$data['is_book_for_guest'] : null;
         $this->is_bookable = isset($data['is_bookable']) ? (bool)$data['is_bookable'] : null;
         $this->is_booked = isset($data['is_booked']) ? (bool)$data['is_booked'] : null;
+        $this->is_cancellation_enabled = isset($data['is_cancellation_enabled']) ? (bool)$data['is_cancellation_enabled'] : null;
         $this->is_closed = isset($data['is_closed']) ? (bool)$data['is_closed'] : null;
         $this->is_full = isset($data['is_full']) ? (bool)$data['is_full'] : null;
         $this->is_online = isset($data['is_online']) ? (bool)$data['is_online'] : null;

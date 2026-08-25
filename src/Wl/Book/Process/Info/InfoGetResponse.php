@@ -122,6 +122,16 @@ class InfoGetResponse
     public ?int $i_duration = null;
 
     /**
+     * Total number of sessions.
+     *
+     * For classes this value is always `1`.
+     * For events this value includes both past and future sessions.
+     *
+     * @var int|null
+     */
+    public ?int $i_session_all = null;
+
+    /**
      * Total number of clients on the wait list.
      *
      * @var int|null
@@ -305,6 +315,7 @@ class InfoGetResponse
         $this->i_available = isset($data['i_available']) ? (int)$data['i_available'] : null;
         $this->i_book = isset($data['i_book']) ? (int)$data['i_book'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
+        $this->i_session_all = isset($data['i_session_all']) ? (int)$data['i_session_all'] : null;
         $this->i_wait = isset($data['i_wait']) ? (int)$data['i_wait'] : null;
         $this->i_wait_limit = isset($data['i_wait_limit']) ? (int)$data['i_wait_limit'] : null;
         $this->i_wait_spot = isset($data['i_wait_spot']) ? (int)$data['i_wait_spot'] : null;

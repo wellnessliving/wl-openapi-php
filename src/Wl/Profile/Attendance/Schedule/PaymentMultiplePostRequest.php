@@ -32,6 +32,9 @@ class PaymentMultiplePostRequest
     /**
      * The user's key.
      *
+     * Can be empty when the payment is for one or more walk-in visits, in which case
+     *    {@link \WlSdk\Wl\Profile\Attendance\Schedule\PaymentMultiple} must be passed instead.
+     *
      * @var string|null
      */
     public ?string $uid = null;

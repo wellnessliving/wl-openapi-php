@@ -8,18 +8,20 @@ class ReportQueryCustomizationFormPostRequest
      * Report page CID.
      *
      * @var int|null
+     * @see \WlSdk\Thoth\ReportCore\Generator\ReportPageAbstract
      */
     public ?int $cid_page = null;
 
     /**
-     * Page CID.
+     * Report CID.
      *
      * @var int|null
+     * @see \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract
      */
     public ?int $cid_report = null;
 
     /**
-     * Business primary key in RsBusinessSql table.
+     * Business primary key.
      *
      * @var string|null
      */
@@ -36,7 +38,7 @@ class ReportQueryCustomizationFormPostRequest
     public ?string $k_report_query = null;
 
     /**
-     * Primary key of a saved report in RsReportSaveSql table.
+     * Primary key of a saved report.
      *
      * `null` means that report is not saved.
      *
@@ -45,15 +47,14 @@ class ReportQueryCustomizationFormPostRequest
     public ?string $k_report_save = null;
 
     /**
-     * Current user's primary key in PassportLoginAr table.
+     * Current user's primary key.
      *
      * @var string|null
      */
     public ?string $uid_actor = null;
 
     /**
-     * Customization form data.
-     * See CustomizationFormAbstract::toArray() for details.
+     * Customization form data keyed by report or page CID. Each value has the following structure:
      *
      * @var array|null
      */

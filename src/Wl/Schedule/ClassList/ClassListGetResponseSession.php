@@ -123,7 +123,7 @@ class ClassListGetResponseSession
 
     /**
      * Allow clients to book on behalf of a guest.
-     *      `true` if clients can book on behalf of a guest.
+     *  `true` if clients can book on behalf of a guest.
      *  `false` otherwise.
      *
      * @var bool|null
@@ -136,6 +136,13 @@ class ClassListGetResponseSession
      * @var bool|null
      */
     public ?bool $is_cancel = null;
+
+    /**
+     * `true` if clients can cancel this session. Otherwise, this will be `false`.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_cancellation_enabled = null;
 
     /**
      * If `true`, this is an event. Otherwise, this will be `false`.
@@ -213,6 +220,7 @@ class ClassListGetResponseSession
         $this->i_wait = isset($data['i_wait']) ? (int)$data['i_wait'] : null;
         $this->is_book_for_guest = isset($data['is_book_for_guest']) ? (bool)$data['is_book_for_guest'] : null;
         $this->is_cancel = isset($data['is_cancel']) ? (bool)$data['is_cancel'] : null;
+        $this->is_cancellation_enabled = isset($data['is_cancellation_enabled']) ? (bool)$data['is_cancellation_enabled'] : null;
         $this->is_event = isset($data['is_event']) ? (bool)$data['is_event'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
         $this->is_wait_list_enabled = isset($data['is_wait_list_enabled']) ? (bool)$data['is_wait_list_enabled'] : null;

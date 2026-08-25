@@ -67,6 +67,10 @@ namespace WlSdk;
  *   Used when client purchases tuition for an event list.
  * - 27 (`TUITION_FEE`): Tuition fee purchase item.
  *   Used when client purchases tuition for an event list.
+ * - 28 (`TUITION_PRORATE`): Tuition prorate purchase item.
+ *
+ *   Represents the amount due right now for a tuition purchase (the part not deferred to the
+ *   installment plan).
  */
 class RsPurchaseItemSid
 {
@@ -147,4 +151,7 @@ class RsPurchaseItemSid
 
     /** Tuition fee purchase item. */
     public const TUITION_FEE = 27;
+
+    /** Tuition prorate purchase item. */
+    public const TUITION_PRORATE = 28;
 }
