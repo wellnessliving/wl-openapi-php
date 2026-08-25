@@ -49,6 +49,7 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * - 2225 (`Wl\Business\Account\Subscription\BusinessCoach\BusinessCoachSubscription`): Business Success Coaching.
  *
  *   Does not change or open any functional. Just financial subscription.
+ * - 2331 (`Wl\Business\Account\Subscription\QuickBooks\QuickBooksSubscription`): Quickbooks Suite subscription.
  */
 class SubscriptionAbstract
 {
@@ -129,4 +130,7 @@ class SubscriptionAbstract
 
     /** Business Success Coaching. */
     public const BusinessCoachSubscription = 2225;
+
+    /** Quickbooks Suite subscription. */
+    public const QuickBooksSubscription = 2331;
 }
