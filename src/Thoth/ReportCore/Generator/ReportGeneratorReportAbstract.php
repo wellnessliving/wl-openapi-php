@@ -14,6 +14,7 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 1287 (`Wl\Member\Report\MemberReport`): "All clients" report generator (this report used for the "Clients" link
  * accessed from the top nav or WL menu).
  * - 689 (`Wl\Member\Report\MemberAllReport`): "All clients" report generator.
+ * - 2329 (`Wl\Member\Report\MemberProfileReport`): "Client Data" report generator.
  * - 1358 (`Wl\Login\Account\LoginAccountReport`): "Balance Due Report".
  *   List of clients with their accounts state.
  * - 1740 (`Wl\Visit\Report\VisitLifetimeReport`): Controls list for "Lifetime Value & Visit Milestones" report.
@@ -205,6 +206,9 @@ class ReportGeneratorReportAbstract
 
     /** "All clients" report generator. */
     public const MemberAllReport = 689;
+
+    /** "Client Data" report generator. */
+    public const MemberProfileReport = 2329;
 
     /** "Balance Due Report". */
     public const LoginAccountReport = 1358;

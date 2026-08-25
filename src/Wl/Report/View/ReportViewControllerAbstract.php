@@ -55,6 +55,7 @@ namespace WlSdk\Wl\Report\View;
  * - 1288 (`Wl\Member\Report\MemberReportController`): "All clients" report controller (this report used for the
  * "Clients" link accessed from the top nav or WL menu).
  *   Table representation.
+ * - 2330 (`Wl\Member\Report\MemberProfileReportController`): "Client Data" report controller. Table representation.
  * - 1359 (`Wl\Login\Account\LoginAccountReportController`): Controller for "Balance Due Report".
  * - 1741 (`Wl\Visit\Report\VisitLifetimeReportController`): Controls list for "Lifetime Value & Visit Milestones"
  * report.
@@ -284,6 +285,9 @@ class ReportViewControllerAbstract
 
     /** "All clients" report controller (this report used for the "Clients" link accessed from the top nav or WL menu). */
     public const MemberReportController = 1288;
+
+    /** "Client Data" report controller. Table representation. */
+    public const MemberProfileReportController = 2330;
 
     /** Controller for "Balance Due Report". */
     public const LoginAccountReportController = 1359;
