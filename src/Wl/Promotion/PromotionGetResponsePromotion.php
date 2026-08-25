@@ -94,6 +94,13 @@ class PromotionGetResponsePromotion
     public ?int $i_limit = null;
 
     /**
+     * The number of `id_duration` periods between payments for memberships.
+     *
+     * @var int|null
+     */
+    public ?int $i_payment_period = null;
+
+    /**
      * The type of period for the 'Period' duration type.
      * For example, if the duration of the Purchase Option is 12 months, this field will display the ID of the
      * month.
@@ -267,6 +274,7 @@ class PromotionGetResponsePromotion
         $this->f_revenue_single = isset($data['f_revenue_single']) ? (string)$data['f_revenue_single'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
+        $this->i_payment_period = isset($data['i_payment_period']) ? (int)$data['i_payment_period'] : null;
         $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;
         $this->id_duration_type = isset($data['id_duration_type']) ? (int)$data['id_duration_type'] : null;
         $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
