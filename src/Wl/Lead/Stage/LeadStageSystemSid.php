@@ -5,7 +5,10 @@ namespace WlSdk\Wl\Lead\Stage;
 /**
  * System-defined lead stages.
  *
- * Every business has one stage of each type by default.
+ * Every business has one stage of each of them by default.
+ *
+ * Type of every system stage is defined by the system and can not be changed,
+ * see {@link \WlSdk\Wl\Lead\Stage\LeadStageSystemSid} and {@link \WlSdk\Wl\Lead\Stage\LeadStageTypeSid}.
  *
  * Custom stages created by a business have no system ID.
  *
@@ -13,21 +16,28 @@ namespace WlSdk\Wl\Lead\Stage;
  *
  * Values:
  * - 6 (`CONTACTED`): A lead which was contacted by a staff member.
+ *
+ *   Type of the stage is {@link \WlSdk\Wl\Lead\Stage\LeadStageTypeSid}.
  * - 2 (`HOT`): A lead which is being actively worked with and is close to a purchase.
  *
  *   Replaces {@link \WlSdk\RsLeadStatusSid}.
+ *   Type of the stage is {@link \WlSdk\Wl\Lead\Stage\LeadStageTypeSid}.
  * - 5 (`LOST`): A lead which was lost.
  *
  *   Replaces {@link \WlSdk\Wl\Lead\Conversion\LeadConversionTypeSid}.
+ *   Type of the stage is {@link \WlSdk\Wl\Lead\Stage\LeadStageTypeSid}.
  * - 1 (`NEW`): A newly captured lead. This stage is set to a client when they are added as a lead.
  *
  *   Replaces {@link \WlSdk\RsLeadStatusSid}.
+ *   Type of the stage is {@link \WlSdk\Wl\Lead\Stage\LeadStageTypeSid}.
  * - 3 (`WARM`): A lead which has shown some interest, but is not ready to purchase yet.
  *
  *   Replaces {@link \WlSdk\RsLeadStatusSid}.
+ *   Type of the stage is {@link \WlSdk\Wl\Lead\Stage\LeadStageTypeSid}.
  * - 4 (`WON`): A lead which was successfully converted into a client.
  *
  *   Replaces {@link \WlSdk\Wl\Lead\Conversion\LeadConversionTypeSid}.
+ *   Type of the stage is {@link \WlSdk\Wl\Lead\Stage\LeadStageTypeSid}.
  */
 class LeadStageSystemSid
 {

@@ -37,6 +37,15 @@ class LeadStageListGetResponseLeadStage
     public ?int $id_lead_stage_system = null;
 
     /**
+     * Type of the stage. One of {@link \WlSdk\Wl\Lead\Stage\LeadStageTypeSid} constants.
+     * The type is set when the stage is created and can not be changed afterwards.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Lead\Stage\LeadStageTypeSid
+     */
+    public ?int $id_lead_stage_type = null;
+
+    /**
      * Key of the stage.
      *
      * @var string|null
@@ -77,6 +86,7 @@ class LeadStageListGetResponseLeadStage
         $this->i_user = isset($data['i_user']) ? (int)$data['i_user'] : null;
         $this->id_lead_stage_shape = isset($data['id_lead_stage_shape']) ? (int)$data['id_lead_stage_shape'] : null;
         $this->id_lead_stage_system = isset($data['id_lead_stage_system']) ? (int)$data['id_lead_stage_system'] : null;
+        $this->id_lead_stage_type = isset($data['id_lead_stage_type']) ? (int)$data['id_lead_stage_type'] : null;
         $this->k_lead_stage = isset($data['k_lead_stage']) ? (string)$data['k_lead_stage'] : null;
         $this->s_color_background = isset($data['s_color_background']) ? (string)$data['s_color_background'] : null;
         $this->s_color_foreground = isset($data['s_color_foreground']) ? (string)$data['s_color_foreground'] : null;

@@ -11,7 +11,7 @@ class PurchaseElementGetRequest
      * For purchase items with {@link \WlSdk\RsPurchaseItemSid} type only `a_event_list` is
      * expected in the request, and only `k_class` and `uid` are accepted in every its entry. Prices,
      * discounts, and taxes can not be overridden here: this booking flow is never authenticated as a
-     * staff member, so Tuition::verifyObjectFromSource() strips such fields.
+     * staff member, so such fields are stripped from the input.
      *
      * In the response this is not an echo: `a_event_list` comes back recomputed, and
      * `a_registration_fee_list`, `m_checkout`, and `m_deferred` are added.
