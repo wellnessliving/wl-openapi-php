@@ -53,6 +53,33 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *   Batching is a process when all transactions are sent to processing by merchant in a certain time of next day.
  * - 1572 (`Thoth\Report\SalesReport\Transaction\Cash\SummaryReport`): "Cash Reconciliation Summary" report.
  *   This report is only accessible as a part of "Sales and Attendance Summary" report.
+ * - 2316 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReport`): "Bulk Charges" report. Summary of
+ * Bulk Billing batches created from the Clients tab.
+ *
+ *   There is no persisted "expected total" for a batch - `\Wl\Billing\Bulk\PurchaseBatchManager::create()` does not
+ *   compute or store one. It does, however, freeze each item's price into `wl_purchase_batch_item.m_price` at that
+ *   same moment, and `\Wl\Billing\Bulk\PurchaseBatchBill::billClient()` bills every client off that frozen price, not
+ *   off the price list current at billing time. `Total Amount` therefore combines the already-charged clients'
+ *   actual `RsPurchaseSql::$f_sum`, `m_surcharge` with a re-pricing (via `BulkBillingManager::purchaseItemTotal()`,
+ *   passed the same frozen `m_price`) of the clients still pending/failed - see
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
+ * - 2325 (`Thoth\Report\SalesReport\Transaction\BulkChargesDetail\BulkChargesDetailReport`): "Bulk Charges" batch
+ * detail report. Client-level drill-down for a single batch, reached from
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s `Batch ID`/`Total Clients` columns.
+ *
+ *   `Subtotal`/`Discount Amount`/`Total Taxes`/`Purchase Total` are read off `\Wl\Purchase\Info\PurchaseInfo` once a
+ *   client has been billed (`\Wl\Billing\Bulk\PurchaseBatchUserStatusSid::CHARGED`), or re-priced via
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} for a `PENDING`/`FAIL` client not billed
+ * yet - see
+ *   SAL-1180. The per-tax-name `Custom tax` columns (e.g. `HST Tax`/`GST Tax`) are dynamic - one per
+ *   business-configured `\RsTax::get()` entry - added in {@link
+ * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} and
+ *   populated in {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} from
+ * `\Wl\Purchase\PurchaseItemInfo::$a_tax` for a
+ *   billed client (same mechanism as
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s own per-tax
+ *   columns), or from `_clientExpectedGet()`'s own re-priced `a_tax_by_name` for a `PENDING`/`FAIL` client - see
+ *   SAL-1195.
  * - 1295 (`Thoth\Report\SalesReport\Client\SummaryReport\SummaryReport`): "Sales Summary by Client" report.
  * - 1908 (`Thoth\Report\SalesReport\Client\AccountReport\AccountHistoryReport`): "Account Balance History" report.
  * - 2223 (`Thoth\Report\SalesReport\Client\ClientStatementHistoryReport\ClientStatementHistoryReport`): "Statement
@@ -244,6 +271,12 @@ class ReportGeneratorReportAbstract
 
     /** "Cash Reconciliation Summary" report. */
     public const Cash_SummaryReport = 1572;
+
+    /** "Bulk Charges" report. Summary of Bulk Billing batches created from the Clients tab. */
+    public const BulkChargesReport = 2316;
+
+    /** "Bulk Charges" batch detail report. Client-level drill-down for a single batch, reached from */
+    public const BulkChargesDetailReport = 2325;
 
     /** "Sales Summary by Client" report. */
     public const Client_SummaryReport_SummaryReport = 1295;
