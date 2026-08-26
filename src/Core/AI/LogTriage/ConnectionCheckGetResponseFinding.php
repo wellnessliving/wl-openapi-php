@@ -76,7 +76,7 @@ class ConnectionCheckGetResponseFinding
     public ?array $a_object_example = null;
 
     /**
-     * Whether the object reached the WatchUsageStat storage limit and was therefore kept exact.
+     * Whether the stored object reached its length limit and was therefore kept exact.
      *
      * @var bool|null
      */
