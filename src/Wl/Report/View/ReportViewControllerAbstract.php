@@ -98,6 +98,10 @@ namespace WlSdk\Wl\Report\View;
  * - 1573 (`Thoth\Report\SalesReport\Transaction\Cash\SummaryReportController`): Controller for "Cash Reconciliation
  * Summary" report.
  * - 1286 (`Thoth\Report\SalesReport\Transaction\Batch\BatchReportController`): Controller for "Batch Report".
+ * - 2317 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReportController`): "Bulk Charges" report
+ * controller. Table representation.
+ * - 2326 (`Thoth\Report\SalesReport\Transaction\BulkChargesDetail\BulkChargesDetailReportController`): "Bulk Charges"
+ * batch detail report controller.
  * - 1447 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReportController`): "Enterprise Reports ->
  * Memberships Details by Location" report controller. Table representation.
  * - 1499 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReportController`): Franchise "Memberships
@@ -349,6 +353,12 @@ class ReportViewControllerAbstract
 
     /** Controller for "Batch Report". */
     public const BatchReportController = 1286;
+
+    /** "Bulk Charges" report controller. Table representation. */
+    public const BulkChargesReportController = 2317;
+
+    /** "Bulk Charges" batch detail report controller. */
+    public const BulkChargesDetailReportController = 2326;
 
     /** "Enterprise Reports -> Memberships Details by Location" report controller. Table representation. */
     public const MembershipDetailReportController = 1447;
