@@ -2,15 +2,11 @@
 
 namespace WlSdk\Wl\Lead\Stage;
 
-class LeadStageElementPutRequest
+/**
+ * Response from GET
+ */
+class LeadStageElementGetResponse
 {
-    /**
-     * Business key.
-     *
-     * @var string|null
-     */
-    public ?string $k_business = null;
-
     /**
      * Shape of the stage icon. One of {@link \WlSdk\Wl\Lead\Stage\LeadStageShapeSid} constants.
      *
@@ -60,19 +56,13 @@ class LeadStageElementPutRequest
      */
     public ?string $text_title = null;
 
-    public function params(): array
+    public function __construct(array $data)
     {
-        return array_filter(
-            [
-            'k_business' => $this->k_business,
-            'id_lead_stage_shape' => $this->id_lead_stage_shape,
-            'id_lead_stage_type' => $this->id_lead_stage_type,
-            's_color_background' => $this->s_color_background,
-            's_color_foreground' => $this->s_color_foreground,
-            's_icon' => $this->s_icon,
-            'text_title' => $this->text_title,
-            ],
-            static fn ($v) => $v !== null
-        );
+        $this->id_lead_stage_shape = isset($data['id_lead_stage_shape']) ? (int)$data['id_lead_stage_shape'] : null;
+        $this->id_lead_stage_type = isset($data['id_lead_stage_type']) ? (int)$data['id_lead_stage_type'] : null;
+        $this->s_color_background = isset($data['s_color_background']) ? (string)$data['s_color_background'] : null;
+        $this->s_color_foreground = isset($data['s_color_foreground']) ? (string)$data['s_color_foreground'] : null;
+        $this->s_icon = isset($data['s_icon']) ? (string)$data['s_icon'] : null;
+        $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }
 }

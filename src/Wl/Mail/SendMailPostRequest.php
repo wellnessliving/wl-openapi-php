@@ -60,13 +60,6 @@ class SendMailPostRequest
      */
     public ?string $s_subject = null;
 
-    /**
-     * The message content.
-     *
-     * @var string|null
-     */
-    public ?string $z_html = null;
-
     public function params(): array
     {
         return array_filter(
@@ -79,7 +72,6 @@ class SendMailPostRequest
             's_html' => $this->s_html,
             's_mail' => $this->s_mail,
             's_subject' => $this->s_subject,
-            'z_html' => $this->z_html,
             ],
             static fn ($v) => $v !== null
         );

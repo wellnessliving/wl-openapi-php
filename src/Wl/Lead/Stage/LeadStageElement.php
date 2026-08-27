@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Lead\Stage;
 use WlSdk\WlSdkClient;
 
 /**
- * Edits name and icon of a lead stage.
+ * Returns information about a lead stage.
  */
 class LeadStageElement
 {
@@ -15,6 +15,20 @@ class LeadStageElement
     public function __construct(WlSdkClient $client)
     {
         $this->client = $client;
+    }
+
+    /**
+     * Returns information about a lead stage.
+     *
+     * The information includes the name, icon and type of the lead stage.
+     *
+     * @return LeadStageElementGetResponse
+     * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
+     * @throws \RuntimeException On network or cURL error.
+     */
+    public function get(LeadStageElementGetRequest $request): LeadStageElementGetResponse
+    {
+        return new LeadStageElementGetResponse($this->client->request('/Wl/Lead/Stage/LeadStageElement.json', $request->params(), 'GET'));
     }
 
     /**
@@ -35,7 +49,8 @@ class LeadStageElement
      * Creates a new custom lead stage.
      *
      * The name must be unique within the business and no longer than `TITLE_LENGTH_MAX`
-     * characters. {@link \WlSdk\Wl\Lead\Stage\LeadStageElement} is required and can not be changed afterwards.
+     * characters. {@link \WlSdk\Wl\Lead\Stage\LeadStageElementGetResponse::$id_lead_stage_type} is required and
+     * can not be changed afterwards.
      * A business may have no more than `STAGE_LIMIT` stages.
      *
      * @return LeadStageElementPutResponse

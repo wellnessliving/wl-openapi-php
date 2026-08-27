@@ -5,14 +5,6 @@ namespace WlSdk\Wl\Lead\Stage;
 class LeadStageElementPostRequest
 {
     /**
-     * Shape of the stage icon. One of {@link \WlSdk\Wl\Lead\Stage\LeadStageShapeSid} constants.
-     *
-     * @var int|null
-     * @see \WlSdk\Wl\Lead\Stage\LeadStageShapeSid
-     */
-    public ?int $id_lead_stage_shape = null;
-
-    /**
      * Business key.
      *
      * @var string|null
@@ -25,6 +17,14 @@ class LeadStageElementPostRequest
      * @var string|null
      */
     public ?string $k_lead_stage = null;
+
+    /**
+     * Shape of the stage icon. One of {@link \WlSdk\Wl\Lead\Stage\LeadStageShapeSid} constants.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Lead\Stage\LeadStageShapeSid
+     */
+    public ?int $id_lead_stage_shape = null;
 
     /**
      * Background color of the icon. Hexadecimal color.
@@ -43,7 +43,7 @@ class LeadStageElementPostRequest
     /**
      * Characters on the icon.
      *
-     * Allowed length depends on {@link \WlSdk\Wl\Lead\Stage\LeadStageElement},
+     * Allowed length depends on {@link \WlSdk\Wl\Lead\Stage\LeadStageElementGetResponse::$id_lead_stage_shape},
      * see {@link \WlSdk\Wl\Lead\Stage\LeadStageShapeSid}.
      *
      * @var string|null
@@ -61,9 +61,9 @@ class LeadStageElementPostRequest
     {
         return array_filter(
             [
-            'id_lead_stage_shape' => $this->id_lead_stage_shape,
             'k_business' => $this->k_business,
             'k_lead_stage' => $this->k_lead_stage,
+            'id_lead_stage_shape' => $this->id_lead_stage_shape,
             's_color_background' => $this->s_color_background,
             's_color_foreground' => $this->s_color_foreground,
             's_icon' => $this->s_icon,
