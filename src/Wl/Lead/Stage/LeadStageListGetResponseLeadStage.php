@@ -12,6 +12,14 @@ class LeadStageListGetResponseLeadStage
     public ?int $i_order = null;
 
     /**
+     * Number of automations used this stage.
+     * Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true`.
+     *
+     * @var int|null
+     */
+    public ?int $i_automation = null;
+
+    /**
      * Number of clients who are in this stage.
      * Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true`.
      *
@@ -83,6 +91,7 @@ class LeadStageListGetResponseLeadStage
     public function __construct(array $data)
     {
         $this->i_order = isset($data['i_order']) ? (int)$data['i_order'] : null;
+        $this->i_automation = isset($data['i_automation']) ? (int)$data['i_automation'] : null;
         $this->i_user = isset($data['i_user']) ? (int)$data['i_user'] : null;
         $this->id_lead_stage_shape = isset($data['id_lead_stage_shape']) ? (int)$data['id_lead_stage_shape'] : null;
         $this->id_lead_stage_system = isset($data['id_lead_stage_system']) ? (int)$data['id_lead_stage_system'] : null;
