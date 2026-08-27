@@ -5,12 +5,12 @@ namespace WlSdk\Wl\Book\Process\Purchase;
 class PurchaseElementGroupGetResponsePurchaseItemConfigRegistrationFeeList
 {
     /**
-     * Discounts applied to the fee, `null` if there are none. Rows have the same
-     *      keys as in `a_event_list`.
+     * Discounts applied to the fee, `null` if there are none. Every row has the
+     *      next keys:
      *
-     * @var array[]|null
+     * @var PurchaseElementGroupGetResponsePurchaseItemConfigRegistrationFeeListDiscount|null
      */
-    public ?array $a_discount = null;
+    public ?PurchaseElementGroupGetResponsePurchaseItemConfigRegistrationFeeListDiscount $a_discount = null;
 
     /**
      * Taxes of the fee. Keys are tax keys, values are tax amounts.
@@ -43,7 +43,7 @@ class PurchaseElementGroupGetResponsePurchaseItemConfigRegistrationFeeList
 
     public function __construct(array $data)
     {
-        $this->a_discount = isset($data['a_discount']) ? (array)$data['a_discount'] : null;
+        $this->a_discount = isset($data['a_discount']) ? new PurchaseElementGroupGetResponsePurchaseItemConfigRegistrationFeeListDiscount((array)$data['a_discount']) : null;
         $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
         $this->m_amount = isset($data['m_amount']) ? (string)$data['m_amount'] : null;
         $this->m_checkout = isset($data['m_checkout']) ? (string)$data['m_checkout'] : null;

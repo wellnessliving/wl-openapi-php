@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Privilege;
 /**
  * Wellnessliving-wide privileges.
  *
- * Last Used ID: 247.
+ * Last Used ID: 249.
  *
  * Values:
  * - 225 (`AI_AGENT_KNOWLEDGE_BASE`): Allows user to view, create or edit knowledge base entries, or conversational
@@ -200,6 +200,7 @@ namespace WlSdk\Wl\Privilege;
  * - 127 (`PROMOTION_MANAGE_BASE`): Allows to edit only base information about purchase option.
  * - 93 (`PURCHASE_EDIT`): Access to edit client purchases (passes and memberships).
  * - 92 (`PURCHASE_VIEW`): Access to view client purchases (passes and memberships).
+ * - 249 (`QUICKBOOKS`): Access to set up and change quickbooks integration.
  * - 193 (`RECEIVE_ALERT`): Allow to see alerts.
  * - 71 (`REPORT_ALL`): Access to view reports for all staff.
  *
@@ -761,6 +762,9 @@ class PrivilegeSid
 
     /** Access to view client purchases (passes and memberships). */
     public const PURCHASE_VIEW = 92;
+
+    /** Access to set up and change quickbooks integration. */
+    public const QUICKBOOKS = 249;
 
     /** Allow to see alerts. */
     public const RECEIVE_ALERT = 193;

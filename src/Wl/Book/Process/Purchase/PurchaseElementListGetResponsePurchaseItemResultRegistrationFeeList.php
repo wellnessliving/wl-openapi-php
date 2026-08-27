@@ -2,14 +2,14 @@
 
 namespace WlSdk\Wl\Book\Process\Purchase;
 
-class PurchaseElementGetResponseConfigRegistrationFeeList
+class PurchaseElementListGetResponsePurchaseItemResultRegistrationFeeList
 {
     /**
      * Discounts applied to the fee, `null` if there are none. Every row has the next keys:
      *
-     * @var PurchaseElementGetResponseConfigRegistrationFeeListDiscount|null
+     * @var PurchaseElementListGetResponsePurchaseItemResultRegistrationFeeListDiscount|null
      */
-    public ?PurchaseElementGetResponseConfigRegistrationFeeListDiscount $a_discount = null;
+    public ?PurchaseElementListGetResponsePurchaseItemResultRegistrationFeeListDiscount $a_discount = null;
 
     /**
      * Taxes of the fee. Keys are tax keys, values are tax amounts.
@@ -42,7 +42,7 @@ class PurchaseElementGetResponseConfigRegistrationFeeList
 
     public function __construct(array $data)
     {
-        $this->a_discount = isset($data['a_discount']) ? new PurchaseElementGetResponseConfigRegistrationFeeListDiscount((array)$data['a_discount']) : null;
+        $this->a_discount = isset($data['a_discount']) ? new PurchaseElementListGetResponsePurchaseItemResultRegistrationFeeListDiscount((array)$data['a_discount']) : null;
         $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
         $this->m_amount = isset($data['m_amount']) ? (string)$data['m_amount'] : null;
         $this->m_checkout = isset($data['m_checkout']) ? (string)$data['m_checkout'] : null;

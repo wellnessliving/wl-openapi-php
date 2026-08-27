@@ -10,6 +10,7 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * `ConstantContact` integration.
  * - 2165 (`Wl\Business\Account\Subscription\Eml\MailchimpSubscription`): Eml marketing subscription for `Mailchimp`
  * integration.
+ * - 2331 (`Wl\Business\Account\Subscription\QuickBooks\QuickBooksSubscription`): Quickbooks Suite subscription.
  * - 1965 (`Wl\Business\Account\Subscription\Email\EmailSubscription`): Email marketing services.
  * - 861 (`Wl\Business\Account\Subscription\Base\BaseSubscription`): Base subscription settings reader.
  * - 986 (`Wl\Business\Account\Subscription\Fitlive\FitliveSubscription`): Subscription allows business to access
@@ -57,6 +58,9 @@ class SubscriptionAbstract
 
     /** Eml marketing subscription for `Mailchimp` integration. */
     public const MailchimpSubscription = 2165;
+
+    /** Quickbooks Suite subscription. */
+    public const QuickBooksSubscription = 2331;
 
     /** Email marketing services. */
     public const EmailSubscription = 1965;

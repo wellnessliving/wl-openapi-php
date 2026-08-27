@@ -7,16 +7,21 @@ class PurchaseElementListGetResponsePurchaseItemResult
     /**
      * Tuition events with calculated amounts.
      *
-     * @var array[]|null
+     * Each entry has the next structure:
+     *
+     * @var PurchaseElementListGetResponsePurchaseItemResultEventList|null
      */
-    public ?array $a_event_list = null;
+    public ?PurchaseElementListGetResponsePurchaseItemResultEventList $a_event_list = null;
 
     /**
      * Registration fees with calculated amounts, keyed by participant key.
      *
-     * @var array[]|null
+     *
+     * Each value has the next structure:
+     *
+     * @var PurchaseElementListGetResponsePurchaseItemResultRegistrationFeeList|null
      */
-    public ?array $a_registration_fee_list = null;
+    public ?PurchaseElementListGetResponsePurchaseItemResultRegistrationFeeList $a_registration_fee_list = null;
 
     /**
      * Information about taxes. The key refers to the tax key, and the value refers to the tax amount.
@@ -96,8 +101,8 @@ class PurchaseElementListGetResponsePurchaseItemResult
 
     public function __construct(array $data)
     {
-        $this->a_event_list = isset($data['a_event_list']) ? (array)$data['a_event_list'] : null;
-        $this->a_registration_fee_list = isset($data['a_registration_fee_list']) ? (array)$data['a_registration_fee_list'] : null;
+        $this->a_event_list = isset($data['a_event_list']) ? new PurchaseElementListGetResponsePurchaseItemResultEventList((array)$data['a_event_list']) : null;
+        $this->a_registration_fee_list = isset($data['a_registration_fee_list']) ? new PurchaseElementListGetResponsePurchaseItemResultRegistrationFeeList((array)$data['a_registration_fee_list']) : null;
         $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
         $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
