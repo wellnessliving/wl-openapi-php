@@ -5,48 +5,37 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastQ
 {
     /**
-     * Duration of the generation of the report in seconds.
+     * List of email domain tokens:
+     *
+     * Empty array if the business does not have a mail domain set up.
+     *
+     * @var SubscribePostResponseMessageBroadcastQDomainToken|null
+     */
+    public ?SubscribePostResponseMessageBroadcastQDomainToken $a_domain_token = null;
+
+    /**
+     * Email domain status.
+     *
+     * `null` if the business does not have a mail domain set up.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid
      */
-    public ?int $i_generation = null;
+    public ?int $id_domain_status = null;
 
     /**
-     * ID of the report that was generated.
-     * One of the {@link \WlSdk\RsReportSid} constants.
+     * CSS class for the icon representing the email domain status.
      *
-     * @var int|null
-     * @see \WlSdk\RsReportSid
-     */
-    public ?int $id_report = null;
-
-    /**
-     * Whether need to display a message about report generation, regardless of the generation time.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_need_show = null;
-
-    /**
-     * Report accumulation.
+     * Empty string if the business does not have a mail domain set up.
      *
      * @var string|null
      */
-    public ?string $k_report_accumulation = null;
-
-    /**
-     * Title of the report that was generated.
-     *
-     * @var string|null
-     */
-    public ?string $text_report = null;
+    public ?string $text_domain_status_icon = null;
 
     public function __construct(array $data)
     {
-        $this->i_generation = isset($data['i_generation']) ? (int)$data['i_generation'] : null;
-        $this->id_report = isset($data['id_report']) ? (int)$data['id_report'] : null;
-        $this->is_need_show = isset($data['is_need_show']) ? (bool)$data['is_need_show'] : null;
-        $this->k_report_accumulation = isset($data['k_report_accumulation']) ? (string)$data['k_report_accumulation'] : null;
-        $this->text_report = isset($data['text_report']) ? (string)$data['text_report'] : null;
+        $this->a_domain_token = isset($data['a_domain_token']) ? new SubscribePostResponseMessageBroadcastQDomainToken((array)$data['a_domain_token']) : null;
+        $this->id_domain_status = isset($data['id_domain_status']) ? (int)$data['id_domain_status'] : null;
+        $this->text_domain_status_icon = isset($data['text_domain_status_icon']) ? (string)$data['text_domain_status_icon'] : null;
     }
 }

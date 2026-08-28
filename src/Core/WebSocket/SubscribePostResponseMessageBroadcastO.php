@@ -5,30 +5,22 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastO
 {
     /**
-     * The text of the error.
+     * Whether message is active. This is needed to avoid showing previous messages on page reload.
      *
-     * @var string|null
+     * @var bool|null
      */
-    public ?string $html_error_message = null;
+    public ?bool $is_active = null;
 
     /**
-     * The unique key of the sent SMS.
+     * Whether booking is in progress.
      *
-     * @var string|null
+     * @var bool|null
      */
-    public ?string $s_key = null;
-
-    /**
-     * The time in UNIX format when socket message was sent.
-     *
-     * @var int|null
-     */
-    public ?int $tl_send = null;
+    public ?bool $is_booking_in_progress = null;
 
     public function __construct(array $data)
     {
-        $this->html_error_message = isset($data['html_error_message']) ? (string)$data['html_error_message'] : null;
-        $this->s_key = isset($data['s_key']) ? (string)$data['s_key'] : null;
-        $this->tl_send = isset($data['tl_send']) ? (int)$data['tl_send'] : null;
+        $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
+        $this->is_booking_in_progress = isset($data['is_booking_in_progress']) ? (bool)$data['is_booking_in_progress'] : null;
     }
 }

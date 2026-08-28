@@ -5,15 +5,14 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastZ
 {
     /**
-     * `true` if a new assess request has been sent (question window must be not closed);
-     * `false` otherwise (question window must be closed).
+     * New data of changes schedule item:
      *
-     * @var bool|null
+     * @var SubscribePostResponseMessageBroadcastZVisit|null
      */
-    public ?bool $is_inactive = null;
+    public ?SubscribePostResponseMessageBroadcastZVisit $a_visit = null;
 
     public function __construct(array $data)
     {
-        $this->is_inactive = isset($data['is_inactive']) ? (bool)$data['is_inactive'] : null;
+        $this->a_visit = isset($data['a_visit']) ? new SubscribePostResponseMessageBroadcastZVisit((array)$data['a_visit']) : null;
     }
 }

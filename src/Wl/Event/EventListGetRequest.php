@@ -86,7 +86,7 @@ class EventListGetRequest
      * @var int|null
      * @see \WlSdk\AFlagSid
      */
-    public ?int $id_flag = 3;
+    public ?int $id_flag = null;
 
     /**
      * Determines whether the endpoint is used for backend mode.

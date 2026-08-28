@@ -21,11 +21,29 @@ namespace WlSdk\Wl\Search\Criteria;
  * - 1177 (`Wl\Login\Promotion\Search\PromotionExpireSearchCriteria`): Client`s "Purchase Option expiring" search
  * criteria.
  * - 1150 (`Wl\Login\Attendance\Search\AttendanceCriteria`): Client`s "Service Visits" search criteria.
+ * - 294 (`Wl\Login\Search\SearchCriteria\ProgressBloodPressureCriteria`): Client`s progress (transformation) log
+ * search criteria for "Blood Pressure" field.
+ *
+ *   Search data consists of two values that are compared independently and glued with "and" operator
+ *   with the same comparison operation. So if, for example,
+ *   {@link \WlSdk\Wl\Search\SearchOperationSid} is chosen then
+ *   both numbers must be greater for the record to match.
+ *   E.g. 120/80 is greater than 110/70, but is neither less, greater or equal to 130/70.
+ *
+ *   It is also possible to search by only one part of blood pressure.
+ *   {@link \WlSdk\Wl\Search\Data\SearchDataAbstract}
+ *   can be initialized from array (see
+ *   {@link \WlSdk\Wl\Search\Data\SearchDataAbstract}
+ *   ) with either only one of the array keys provided or one of the values being an empty string. For example,
+ *   if `s_diastolic` is set to '80' and `s_systolic` is `null`, ''(empty string), or absent -
+ *   the criterion will match all users with diastolic pressure being 80, regardless of their systolic value.
+ *
+ *   `['s_diastolic' =&gt; '123']`
+ * - 889 (`Wl\Login\Search\SearchCriteria\PurchasesActiveCriteria`): Client`s "Active Purchases" search criteria.
  * - 1831 (`Wl\Login\Search\SearchCriteria\LeadSourceCriteria`): "Lead source" search criteria.
  * - 1233 (`Wl\Login\Search\SearchCriteria\QuizFormStatusCriteria`): Client's form completion search criteria.
  * - 119 (`Wl\Login\Search\SearchCriteria\SignedWaiverCriteria`): Client`s "Signed Waiver" search criteria.
  * - 139 (`Wl\Login\Search\SearchCriteria\PurchasesCriteria`): Client`s "Purchases" search criteria.
- * - 889 (`Wl\Login\Search\SearchCriteria\PurchasesActiveCriteria`): Client`s "Active Purchases" search criteria.
  * - 1215 (`Wl\Login\Search\SearchCriteria\ACHSavedCriteria`): Client`s ACH Data saved / not saved search criteria.
  * - 84 (`Wl\Login\Search\SearchCriteria\AccountBalanceCriteria`): Client`s "Account Balance" search criteria.
  * - 127 (`Wl\Login\Search\SearchCriteria\AchieveUserCriteria`): Client`s "Achieve User" search criteria.
@@ -62,24 +80,6 @@ namespace WlSdk\Wl\Search\Criteria;
  * - 1525 (`Wl\Login\Search\SearchCriteria\LocationAttendCriteria`): Client`s "Location Attended" search criteria.
  * - 67 (`Wl\Login\Search\SearchCriteria\NameFirstCriteria`): Client`s "First Name" search criteria.
  * - 70 (`Wl\Login\Search\SearchCriteria\NameLastCriteria`): Client`s "Last Name" search criteria.
- * - 294 (`Wl\Login\Search\SearchCriteria\ProgressBloodPressureCriteria`): Client`s progress (transformation) log
- * search criteria for "Blood Pressure" field.
- *
- *   Search data consists of two values that are compared independently and glued with "and" operator
- *   with the same comparison operation. So if, for example,
- *   {@link \WlSdk\Wl\Search\SearchOperationSid} is chosen then
- *   both numbers must be greater for the record to match.
- *   E.g. 120/80 is greater than 110/70, but is neither less, greater or equal to 130/70.
- *
- *   It is also possible to search by only one part of blood pressure.
- *   {@link \WlSdk\Wl\Search\Data\SearchDataAbstract}
- *   can be initialized from array (see
- *   {@link \WlSdk\Wl\Search\Data\SearchDataAbstract}
- *   ) with either only one of the array keys provided or one of the values being an empty string. For example,
- *   if `s_diastolic` is set to '80' and `s_systolic` is `null`, ''(empty string), or absent -
- *   the criterion will match all users with diastolic pressure being 80, regardless of their systolic value.
- *
- *   `['s_diastolic' =&gt; '123']`
  * - 163 (`Wl\Login\Search\SearchCriteria\ProgressDecimalCriteria`): Client`s "Custom Field (Float)" search criteria.
  * - 251 (`Wl\Login\Search\SearchCriteria\ProgressImageCriteria`): Client's "Custom Field (Image)" search criteria.
  * - 164 (`Wl\Login\Search\SearchCriteria\ProgressIntegerCriteria`): Client`s "Custom Field (Integer)" search criteria.
@@ -128,6 +128,12 @@ class SearchCriteriaAbstract
     /** Client`s "Service Visits" search criteria. */
     public const AttendanceCriteria = 1150;
 
+    /** Client`s progress (transformation) log search criteria for "Blood Pressure" field. */
+    public const ProgressBloodPressureCriteria = 294;
+
+    /** Client`s "Active Purchases" search criteria. */
+    public const PurchasesActiveCriteria = 889;
+
     /** "Lead source" search criteria. */
     public const LeadSourceCriteria = 1831;
 
@@ -139,9 +145,6 @@ class SearchCriteriaAbstract
 
     /** Client`s "Purchases" search criteria. */
     public const PurchasesCriteria = 139;
-
-    /** Client`s "Active Purchases" search criteria. */
-    public const PurchasesActiveCriteria = 889;
 
     /** Client`s ACH Data saved / not saved search criteria. */
     public const ACHSavedCriteria = 1215;
@@ -238,9 +241,6 @@ class SearchCriteriaAbstract
 
     /** Client`s "Last Name" search criteria. */
     public const NameLastCriteria = 70;
-
-    /** Client`s progress (transformation) log search criteria for "Blood Pressure" field. */
-    public const ProgressBloodPressureCriteria = 294;
 
     /** Client`s "Custom Field (Float)" search criteria. */
     public const ProgressDecimalCriteria = 163;

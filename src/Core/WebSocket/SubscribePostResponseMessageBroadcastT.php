@@ -5,24 +5,44 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastT
 {
     /**
-     * Key of the client type.
+     * End of change interval.
      *
-     * `null` if client type is not set.
+     * Empty string if change interval has no end.
      *
      * @var string|null
      */
-    public ?string $k_login_type = null;
+    public ?string $dt_end_local = null;
 
     /**
-     * Key of the user.
+     * Start of change interval.
      *
      * @var string|null
      */
-    public ?string $uid = null;
+    public ?string $dt_start_local = null;
+
+    /**
+     * New "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
+     *
+     * `null` means system default tab.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_tab_new = null;
+
+    /**
+     * Old "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
+     *
+     * `null` means system default tab.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_tab_old = null;
 
     public function __construct(array $data)
     {
-        $this->k_login_type = isset($data['k_login_type']) ? (string)$data['k_login_type'] : null;
-        $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
+        $this->dt_end_local = isset($data['dt_end_local']) ? (string)$data['dt_end_local'] : null;
+        $this->dt_start_local = isset($data['dt_start_local']) ? (string)$data['dt_start_local'] : null;
+        $this->k_class_tab_new = isset($data['k_class_tab_new']) ? (string)$data['k_class_tab_new'] : null;
+        $this->k_class_tab_old = isset($data['k_class_tab_old']) ? (string)$data['k_class_tab_old'] : null;
     }
 }
