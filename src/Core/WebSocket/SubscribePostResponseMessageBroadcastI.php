@@ -5,24 +5,22 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastI
 {
     /**
-     * Key of the client type.
+     * Whether message is active. This is needed to avoid showing previous messages on page reload.
      *
-     * `null` if client type is not set.
-     *
-     * @var string|null
+     * @var bool|null
      */
-    public ?string $k_login_type = null;
+    public ?bool $is_active = null;
 
     /**
-     * Key of the user.
+     * Whether booking is in progress.
      *
-     * @var string|null
+     * @var bool|null
      */
-    public ?string $uid = null;
+    public ?bool $is_booking_in_progress = null;
 
     public function __construct(array $data)
     {
-        $this->k_login_type = isset($data['k_login_type']) ? (string)$data['k_login_type'] : null;
-        $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
+        $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
+        $this->is_booking_in_progress = isset($data['is_booking_in_progress']) ? (bool)$data['is_booking_in_progress'] : null;
     }
 }

@@ -5,44 +5,26 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastP
 {
     /**
-     * Session end date/time.
+     * Status of mail verification.
+     * One of the {@link \WlSdk\Wl\Mail\Verify\MailVerifyStatusSid} constants.
+     * Or {@link \WlSdk\Wl\Business\Config\Option\OptionSidAbstract} if option "Enable Custom Reply To Emails" in
+     * Business -> Feature is disabled.
      *
-     * @var string|null
+     * @var int|null
+     * @see \WlSdk\Wl\Mail\Verify\MailVerifyStatusSid
      */
-    public ?string $dtl_end = null;
+    public ?int $id_mail_verify_status = null;
 
     /**
-     * Session start date/time.
+     * Email address to check.
      *
      * @var string|null
      */
-    public ?string $dtl_start = null;
-
-    /**
-     * Key of the changed appointment.
-     * Is set only if changed session is appointment.
-     *
-     * `null` if changed session is not an appointment.
-     *
-     * @var string|null
-     */
-    public ?string $k_appointment = null;
-
-    /**
-     * Key of the changed class session.
-     * Is set only if changed session is class.
-     *
-     * `null` if changed session is not a class.
-     *
-     * @var string|null
-     */
-    public ?string $k_class_period = null;
+    public ?string $text_email = null;
 
     public function __construct(array $data)
     {
-        $this->dtl_end = isset($data['dtl_end']) ? (string)$data['dtl_end'] : null;
-        $this->dtl_start = isset($data['dtl_start']) ? (string)$data['dtl_start'] : null;
-        $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;
-        $this->k_class_period = isset($data['k_class_period']) ? (string)$data['k_class_period'] : null;
+        $this->id_mail_verify_status = isset($data['id_mail_verify_status']) ? (int)$data['id_mail_verify_status'] : null;
+        $this->text_email = isset($data['text_email']) ? (string)$data['text_email'] : null;
     }
 }

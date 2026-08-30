@@ -36,17 +36,20 @@ namespace WlSdk\Core\WebSocket;
  * Values:
  * - 1921 (`Wl\Visit\VisitStatusChannel`): A message is sent through this channel when the status of a visit is
  * changed.
- * - 1869 (`Wl\Task\TaskChangeChannel`): A message is sent through this channel every time a task created or edited.
- * - 1583 (`Wl\Fitbuilder\MessageChannel`): Channel to inform Fitbuilder messenger about new information.
  * - 1342 (`Wl\Alert\AlertChannel`): A message is sent through this channel every time an alert created or read.
+ * - 1583 (`Wl\Fitbuilder\MessageChannel`): Channel to inform Fitbuilder messenger about new information.
  * - 733 (`Wl\Virtual\AccountUpdateChannel`): Channel to pass over information about virtual account release.
  * - 688 (`Wl\Virtual\MeetingScheduleChannel`): Channel to pass over information about meeting creation.
+ * - 1869 (`Wl\Task\TaskChangeChannel`): A message is sent through this channel every time a task created or edited.
  * - 735 (`Thoth\ReportCore\Generator\UpdateChannel`): A message is sent through this channel every time a report gets
  * updated.
  * - 19 (`Core\WebSocket\Example\ExampleFunctionChannel`): Example channel to test how asynchronous function calls
  * work.
- * - 1820 (`Wl\Member\Info\ClientTypeChangeChannel`): A message is sent through this channel every time a client type
- * is changed.
+ * - 1163 (`Wl\Book\Multiple\MultipleTaskSessionChannel`): Channel to pass over information about booking.
+ * - 1660 (`Wl\Profile\Contract\ContractChannel`): Channel to notify user about new unsigned documents.
+ * - 510 (`Wl\Profile\Schedule\ProfileScheduleChannel`): Channel to notify certain clients about changes of they
+ * schedule.
+ * - 1850 (`Wl\Import\Progress\ProgressChannel`): Channel to pass over information about business import progress.
  * - 842 (`Wl\Report\Background\ReportBackgroundProcessChannel`): Channel to notify certain user about complete of
  * report accumulation process.
  * - 1543 (`Wl\Report\AutoUpdate\ReportAutoUpdateChannel`): When the specified report is updated, auto-update request
@@ -57,16 +60,13 @@ namespace WlSdk\Core\WebSocket;
  * - 1834 (`Wl\Mail\Domain\DomainVerifyStatusChannel`): Domain verification status verification channel.
  * - 677 (`Wl\Mail\Verify\MailVerifyStatusChangeChannel`): When mail verify status was changed new value is sent over
  * this channel.
- * - 1657 (`Wl\Reception\Design\ReceptionDesignChannel`): Channel to pass over information about changing the Self
- * Check-In settings.
- * - 298 (`Wl\Schedule\ClassList\ClassListChannel`): Channel to notify user that class schedule is changed.
  * - 305 (`Wl\Schedule\ScheduleList\ScheduleListChannel`): Channel to notify user that a session has been booked or
  * book cancelled.
- * - 1163 (`Wl\Book\Multiple\MultipleTaskSessionChannel`): Channel to pass over information about booking.
- * - 1850 (`Wl\Import\Progress\ProgressChannel`): Channel to pass over information about business import progress.
- * - 510 (`Wl\Profile\Schedule\ProfileScheduleChannel`): Channel to notify certain clients about changes of they
- * schedule.
- * - 1660 (`Wl\Profile\Contract\ContractChannel`): Channel to notify user about new unsigned documents.
+ * - 298 (`Wl\Schedule\ClassList\ClassListChannel`): Channel to notify user that class schedule is changed.
+ * - 1820 (`Wl\Member\Info\ClientTypeChangeChannel`): A message is sent through this channel every time a client type
+ * is changed.
+ * - 1657 (`Wl\Reception\Design\ReceptionDesignChannel`): Channel to pass over information about changing the Self
+ * Check-In settings.
  * - 1421 (`Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusChannel`): Channel to pass over
  * information about ticket status.
  * - 960 (`Wl\Business\Sms\Unread\SmsUnreadCountChannel`): Channel to pass over information about unread SMS in the
@@ -82,26 +82,23 @@ namespace WlSdk\Core\WebSocket;
  * address verification.
  * - 1736 (`Thoth\PayProcessor\Nuvei\Terminal\OMNIChannelApi\PaymentStatusChannel`): Channel to pass over information
  * about payment status.
+ * - 549 (`Wl\Business\Franchise\Report\Curves\AccumulationProcessChannel`): When accumulation progress was changed new
+ * value is sent over this channel.
  * - 963 (`Wl\Business\Sms\Chat\Dialog\DialogChannel`): Channel to pass over information about changing the dialog with
  * specific client.
  * - 952 (`Wl\Business\Sms\Chat\Dialog\MessageHistoryChannel`): Channel to pass over information about new message in
  * the chat.
- * - 549 (`Wl\Business\Franchise\Report\Curves\AccumulationProcessChannel`): When accumulation progress was changed new
- * value is sent over this channel.
  */
 class ChannelAbstract
 {
     /** A message is sent through this channel when the status of a visit is changed. */
     public const VisitStatusChannel = 1921;
 
-    /** A message is sent through this channel every time a task created or edited. */
-    public const TaskChangeChannel = 1869;
+    /** A message is sent through this channel every time an alert created or read. */
+    public const AlertChannel = 1342;
 
     /** Channel to inform Fitbuilder messenger about new information. */
     public const MessageChannel = 1583;
-
-    /** A message is sent through this channel every time an alert created or read. */
-    public const AlertChannel = 1342;
 
     /** Channel to pass over information about virtual account release. */
     public const AccountUpdateChannel = 733;
@@ -109,14 +106,26 @@ class ChannelAbstract
     /** Channel to pass over information about meeting creation. */
     public const MeetingScheduleChannel = 688;
 
+    /** A message is sent through this channel every time a task created or edited. */
+    public const TaskChangeChannel = 1869;
+
     /** A message is sent through this channel every time a report gets updated. */
     public const UpdateChannel = 735;
 
     /** Example channel to test how asynchronous function calls work. */
     public const ExampleFunctionChannel = 19;
 
-    /** A message is sent through this channel every time a client type is changed. */
-    public const ClientTypeChangeChannel = 1820;
+    /** Channel to pass over information about booking. */
+    public const MultipleTaskSessionChannel = 1163;
+
+    /** Channel to notify user about new unsigned documents. */
+    public const ContractChannel = 1660;
+
+    /** Channel to notify certain clients about changes of they schedule. */
+    public const ProfileScheduleChannel = 510;
+
+    /** Channel to pass over information about business import progress. */
+    public const ProgressChannel = 1850;
 
     /** Channel to notify certain user about complete of report accumulation process. */
     public const ReportBackgroundProcessChannel = 842;
@@ -136,26 +145,17 @@ class ChannelAbstract
     /** When mail verify status was changed new value is sent over this channel. */
     public const MailVerifyStatusChangeChannel = 677;
 
-    /** Channel to pass over information about changing the Self Check-In settings. */
-    public const ReceptionDesignChannel = 1657;
+    /** Channel to notify user that a session has been booked or book cancelled. */
+    public const ScheduleList_ScheduleListChannel = 305;
 
     /** Channel to notify user that class schedule is changed. */
     public const ClassListChannel = 298;
 
-    /** Channel to notify user that a session has been booked or book cancelled. */
-    public const ScheduleList_ScheduleListChannel = 305;
+    /** A message is sent through this channel every time a client type is changed. */
+    public const ClientTypeChangeChannel = 1820;
 
-    /** Channel to pass over information about booking. */
-    public const MultipleTaskSessionChannel = 1163;
-
-    /** Channel to pass over information about business import progress. */
-    public const ProgressChannel = 1850;
-
-    /** Channel to notify certain clients about changes of they schedule. */
-    public const ProfileScheduleChannel = 510;
-
-    /** Channel to notify user about new unsigned documents. */
-    public const ContractChannel = 1660;
+    /** Channel to pass over information about changing the Self Check-In settings. */
+    public const ReceptionDesignChannel = 1657;
 
     /** Channel to pass over information about ticket status. */
     public const DirectConnectTicketStatusChannel = 1421;
@@ -181,12 +181,12 @@ class ChannelAbstract
     /** Channel to pass over information about payment status. */
     public const PaymentStatusChannel = 1736;
 
+    /** When accumulation progress was changed new value is sent over this channel. */
+    public const AccumulationProcessChannel = 549;
+
     /** Channel to pass over information about changing the dialog with specific client. */
     public const DialogChannel = 963;
 
     /** Channel to pass over information about new message in the chat. */
     public const MessageHistoryChannel = 952;
-
-    /** When accumulation progress was changed new value is sent over this channel. */
-    public const AccumulationProcessChannel = 549;
 }

@@ -5,33 +5,48 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastB
 {
     /**
-     * Number of overdue tasks.
+     * The count with unread alert for the user.
      *
      * @var int|null
      */
-    public ?int $i_overdue = null;
+    public ?int $i_unread_alert = null;
 
     /**
-     * New task status of the changed task.
+     * Whether message is active. This is needed to avoid showing previous messages on page reload.
      *
-     * One of {@link \WlSdk\Wl\Task\TaskStatusSid}.
-     *
-     * @var int|null
-     * @see \WlSdk\Wl\Task\TaskStatusSid
+     * @var bool|null
      */
-    public ?int $id_task_status = null;
+    public ?bool $is_active = null;
 
     /**
-     * Key of the changed task.
+     * Whether this is an alert for an SMS message
+     *
+     * @var bool|null
+     */
+    public ?bool $is_message = null;
+
+    /**
+     * Whether the user should hear a sound when a notification is sent.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_sound = null;
+
+    /**
+     * Key of the alert that was just sent.
+     *
+     * `null` means alert was read.
      *
      * @var string|null
      */
-    public ?string $k_task = null;
+    public ?string $k_alert = null;
 
     public function __construct(array $data)
     {
-        $this->i_overdue = isset($data['i_overdue']) ? (int)$data['i_overdue'] : null;
-        $this->id_task_status = isset($data['id_task_status']) ? (int)$data['id_task_status'] : null;
-        $this->k_task = isset($data['k_task']) ? (string)$data['k_task'] : null;
+        $this->i_unread_alert = isset($data['i_unread_alert']) ? (int)$data['i_unread_alert'] : null;
+        $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
+        $this->is_message = isset($data['is_message']) ? (bool)$data['is_message'] : null;
+        $this->is_sound = isset($data['is_sound']) ? (bool)$data['is_sound'] : null;
+        $this->k_alert = isset($data['k_alert']) ? (string)$data['k_alert'] : null;
     }
 }

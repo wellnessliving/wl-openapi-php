@@ -12,7 +12,7 @@ class ConnectionCheckGetRequest
     public ?array $a_id_source = null;
 
     /**
-     * Whether findings must be returned.
+     * `true` returns findings; otherwise `false` performs only the connection check.
      *
      * @var bool|null
      */

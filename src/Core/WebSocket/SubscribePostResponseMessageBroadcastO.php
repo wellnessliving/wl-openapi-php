@@ -5,44 +5,37 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastO
 {
     /**
-     * End of change interval.
+     * List of email domain tokens:
      *
-     * Empty string if change interval has no end.
+     * Empty array if the business does not have a mail domain set up.
      *
-     * @var string|null
+     * @var SubscribePostResponseMessageBroadcastODomainToken|null
      */
-    public ?string $dt_end_local = null;
+    public ?SubscribePostResponseMessageBroadcastODomainToken $a_domain_token = null;
 
     /**
-     * Start of change interval.
+     * Email domain status.
      *
-     * @var string|null
+     * `null` if the business does not have a mail domain set up.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid
      */
-    public ?string $dt_start_local = null;
+    public ?int $id_domain_status = null;
 
     /**
-     * New "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
+     * CSS class for the icon representing the email domain status.
      *
-     * `null` means system default tab.
-     *
-     * @var string|null
-     */
-    public ?string $k_class_tab_new = null;
-
-    /**
-     * Old "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
-     *
-     * `null` means system default tab.
+     * Empty string if the business does not have a mail domain set up.
      *
      * @var string|null
      */
-    public ?string $k_class_tab_old = null;
+    public ?string $text_domain_status_icon = null;
 
     public function __construct(array $data)
     {
-        $this->dt_end_local = isset($data['dt_end_local']) ? (string)$data['dt_end_local'] : null;
-        $this->dt_start_local = isset($data['dt_start_local']) ? (string)$data['dt_start_local'] : null;
-        $this->k_class_tab_new = isset($data['k_class_tab_new']) ? (string)$data['k_class_tab_new'] : null;
-        $this->k_class_tab_old = isset($data['k_class_tab_old']) ? (string)$data['k_class_tab_old'] : null;
+        $this->a_domain_token = isset($data['a_domain_token']) ? new SubscribePostResponseMessageBroadcastODomainToken((array)$data['a_domain_token']) : null;
+        $this->id_domain_status = isset($data['id_domain_status']) ? (int)$data['id_domain_status'] : null;
+        $this->text_domain_status_icon = isset($data['text_domain_status_icon']) ? (string)$data['text_domain_status_icon'] : null;
     }
 }
