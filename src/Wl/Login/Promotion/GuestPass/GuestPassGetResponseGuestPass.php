@@ -57,6 +57,14 @@ class GuestPassGetResponseGuestPass
     public ?bool $has_service = null;
 
     /**
+     * `true` if regional access is enabled for the guest pass, i.e. it may be redeemed at other
+     * businesses within the franchise region, not only the business that granted it.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_regional = null;
+
+    /**
      * Maximum guest passes that can be sent per day. `null` if there is no daily cap.
      *
      * @var int|null
@@ -226,6 +234,7 @@ class GuestPassGetResponseGuestPass
         $this->can_send = isset($data['can_send']) ? (bool)$data['can_send'] : null;
         $this->dl_reset = isset($data['dl_reset']) ? (string)$data['dl_reset'] : null;
         $this->has_service = isset($data['has_service']) ? (bool)$data['has_service'] : null;
+        $this->is_regional = isset($data['is_regional']) ? (bool)$data['is_regional'] : null;
         $this->i_cap_day = isset($data['i_cap_day']) ? (int)$data['i_cap_day'] : null;
         $this->i_limit = isset($data['i_limit']) ? (int)$data['i_limit'] : null;
         $this->i_period = isset($data['i_period']) ? (int)$data['i_period'] : null;
