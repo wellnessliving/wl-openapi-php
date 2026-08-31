@@ -110,6 +110,7 @@ namespace WlSdk\Wl\Privilege;
  * - 215 (`IMPORT_CLIENT`): Allows to import clients from a CSV file.
  * - 163 (`INTEGRATION_AUTYMATE`): Set up and modify Autymate integration.
  * - 179 (`INTEGRATION_BRIVO`): Set up and modify Brivo integration.
+ * - 249 (`INTEGRATION_QUICKBOOKS`): Access to set up and change quickbooks integration.
  * - 87 (`INTERFACE_ACHIEVE_APP`): Enroll into and manage the WellnessLiving Achieve App. These settings are located
  * under Setup > Achieve Client App.
  * - 39 (`INTERFACE_WIDGET_EDIT`): Modify the look and functionality business’s widgets. These settings are located
@@ -200,7 +201,6 @@ namespace WlSdk\Wl\Privilege;
  * - 127 (`PROMOTION_MANAGE_BASE`): Allows to edit only base information about purchase option.
  * - 93 (`PURCHASE_EDIT`): Access to edit client purchases (passes and memberships).
  * - 92 (`PURCHASE_VIEW`): Access to view client purchases (passes and memberships).
- * - 249 (`QUICKBOOKS`): Access to set up and change quickbooks integration.
  * - 193 (`RECEIVE_ALERT`): Allow to see alerts.
  * - 71 (`REPORT_ALL`): Access to view reports for all staff.
  *
@@ -526,6 +526,9 @@ class PrivilegeSid
     /** Set up and modify Brivo integration. */
     public const INTEGRATION_BRIVO = 179;
 
+    /** Access to set up and change quickbooks integration. */
+    public const INTEGRATION_QUICKBOOKS = 249;
+
     /** Enroll into and manage the WellnessLiving Achieve App. These settings are located under Setup > Achieve Client App. */
     public const INTERFACE_ACHIEVE_APP = 87;
 
@@ -762,9 +765,6 @@ class PrivilegeSid
 
     /** Access to view client purchases (passes and memberships). */
     public const PURCHASE_VIEW = 92;
-
-    /** Access to set up and change quickbooks integration. */
-    public const QUICKBOOKS = 249;
 
     /** Allow to see alerts. */
     public const RECEIVE_ALERT = 193;
