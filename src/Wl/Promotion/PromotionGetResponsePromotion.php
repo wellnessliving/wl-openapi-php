@@ -181,7 +181,7 @@ class PromotionGetResponsePromotion
     public ?bool $is_regional = null;
 
     /**
-     * Whether the regional access setting can be configured for this promotion and business at all.
+     * Whether the regional access setting can be configured for this Guest Pass promotion and business at all.
      * `false` if the business does not take part in a franchise region, in which case `is_regional`
      * and `a_franchise_region` should be ignored.
      *
