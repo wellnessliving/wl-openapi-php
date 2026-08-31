@@ -12,6 +12,20 @@ class TuitionClientsSummaryGetResponseSummary
     public ?int $i_clients_enrolled = null;
 
     /**
+     * Total number of group enrollments with at least one not cancelled enrolled client in the group.
+     *
+     * @var int|null
+     */
+    public ?int $i_enrollments_active = null;
+
+    /**
+     * Total number of group enrollments.
+     *
+     * @var int|null
+     */
+    public ?int $i_enrollments_total = null;
+
+    /**
      * Total number of not cancelled event enrollments.
      *
      * @var int|null
@@ -28,6 +42,8 @@ class TuitionClientsSummaryGetResponseSummary
     public function __construct(array $data)
     {
         $this->i_clients_enrolled = isset($data['i_clients_enrolled']) ? (int)$data['i_clients_enrolled'] : null;
+        $this->i_enrollments_active = isset($data['i_enrollments_active']) ? (int)$data['i_enrollments_active'] : null;
+        $this->i_enrollments_total = isset($data['i_enrollments_total']) ? (int)$data['i_enrollments_total'] : null;
         $this->i_enrolled_total = isset($data['i_enrolled_total']) ? (int)$data['i_enrolled_total'] : null;
         $this->i_events_unique = isset($data['i_events_unique']) ? (int)$data['i_events_unique'] : null;
     }
