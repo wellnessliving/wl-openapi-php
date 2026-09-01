@@ -40,7 +40,7 @@ class ConnectionCheckGetResponseFinding
     public ?int $i_occurrence_count = null;
 
     /**
-     * WatchUsageStat priority multiplier. Present for the usage-statistics source.
+     * Usage-statistics priority multiplier. Present for the usage-statistics source.
      *
      * @var int|null
      */
