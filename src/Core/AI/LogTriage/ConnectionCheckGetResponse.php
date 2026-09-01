@@ -12,7 +12,7 @@ class ConnectionCheckGetResponse
      *
      * One element contains:
      *
-     * @var ConnectionCheckGetResponseFinding[]|null
+     * @var array|null
      */
     public ?array $a_finding = null;
 
@@ -25,7 +25,7 @@ class ConnectionCheckGetResponse
 
     public function __construct(array $data)
     {
-        $this->a_finding = isset($data['a_finding']) ? array_map(static fn ($item) => new ConnectionCheckGetResponseFinding((array)$item), (array)$data['a_finding']) : null;
+        $this->a_finding = isset($data['a_finding']) ? (array)$data['a_finding'] : null;
         $this->i_result = isset($data['i_result']) ? (int)$data['i_result'] : null;
     }
 }
