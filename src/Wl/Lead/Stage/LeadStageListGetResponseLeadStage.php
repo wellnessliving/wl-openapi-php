@@ -89,6 +89,15 @@ class LeadStageListGetResponseLeadStage
     public ?string $text_title = null;
 
     /**
+     * URL of the list of automations which use this stage.
+     *  Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true` and the stage is used in
+     * automations.
+     *
+     * @var string|null
+     */
+    public ?string $url_automation_list = null;
+
+    /**
      * URL of the report of clients who are in this stage.
      *  Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true` and the stage contains clients.
      *
@@ -109,6 +118,7 @@ class LeadStageListGetResponseLeadStage
         $this->s_color_foreground = isset($data['s_color_foreground']) ? (string)$data['s_color_foreground'] : null;
         $this->s_icon = isset($data['s_icon']) ? (string)$data['s_icon'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
+        $this->url_automation_list = isset($data['url_automation_list']) ? (string)$data['url_automation_list'] : null;
         $this->url_member_report = isset($data['url_member_report']) ? (string)$data['url_member_report'] : null;
     }
 }
