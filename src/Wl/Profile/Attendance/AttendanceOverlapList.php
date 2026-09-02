@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Profile\Attendance;
 use WlSdk\WlSdkClient;
 
 /**
- * Checks a batch of candidate visits for booking overlaps.
+ * Checks whether the specified user has any existing bookings that overlap with a given time range or service.
  */
 class AttendanceOverlapList
 {
@@ -18,7 +18,9 @@ class AttendanceOverlapList
     }
 
     /**
-     * Checks a batch of candidate visits for booking overlaps.
+     * Checks whether the specified user has any existing bookings that overlap with a given time range or service.
+     *
+     * Used before scheduling to detect conflicts and prompt staff or the client with a warning.
      *
      * @return AttendanceOverlapListPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
