@@ -18,9 +18,17 @@ class TagGetResponseTagAsset
      */
     public ?bool $is_primary = null;
 
+    /**
+     * The resource title.
+     *
+     * @var string|null
+     */
+    public ?string $text_title = null;
+
     public function __construct(array $data)
     {
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->is_primary = isset($data['is_primary']) ? (bool)$data['is_primary'] : null;
+        $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }
 }
