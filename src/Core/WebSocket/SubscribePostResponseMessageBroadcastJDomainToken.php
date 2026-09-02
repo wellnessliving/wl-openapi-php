@@ -2,7 +2,7 @@
 
 namespace WlSdk\Core\WebSocket;
 
-class SubscribePostResponseMessageBroadcastSDomainToken
+class SubscribePostResponseMessageBroadcastJDomainToken
 {
     /**
      * Status of the token. One of {@link \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid} constants.

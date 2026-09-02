@@ -5,14 +5,14 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastC
 {
     /**
-     * Url link to redirect to join virtual meeting.
+     * New information for messenger.
      *
-     * @var string|null
+     * @var SubscribePostResponseMessageBroadcastCData|null
      */
-    public ?string $url_redirect = null;
+    public ?SubscribePostResponseMessageBroadcastCData $a_data = null;
 
     public function __construct(array $data)
     {
-        $this->url_redirect = isset($data['url_redirect']) ? (string)$data['url_redirect'] : null;
+        $this->a_data = isset($data['a_data']) ? new SubscribePostResponseMessageBroadcastCData((array)$data['a_data']) : null;
     }
 }

@@ -5,37 +5,44 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastS
 {
     /**
-     * List of email domain tokens:
-     *
-     * Empty array if the business does not have a mail domain set up.
-     *
-     * @var SubscribePostResponseMessageBroadcastSDomainToken|null
-     */
-    public ?SubscribePostResponseMessageBroadcastSDomainToken $a_domain_token = null;
-
-    /**
-     * Email domain status.
-     *
-     * `null` if the business does not have a mail domain set up.
-     *
-     * @var int|null
-     * @see \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid
-     */
-    public ?int $id_domain_status = null;
-
-    /**
-     * CSS class for the icon representing the email domain status.
-     *
-     * Empty string if the business does not have a mail domain set up.
+     * Session end date/time.
      *
      * @var string|null
      */
-    public ?string $text_domain_status_icon = null;
+    public ?string $dtl_end = null;
+
+    /**
+     * Session start date/time.
+     *
+     * @var string|null
+     */
+    public ?string $dtl_start = null;
+
+    /**
+     * Key of the changed appointment.
+     * Is set only if changed session is appointment.
+     *
+     * `null` if changed session is not an appointment.
+     *
+     * @var string|null
+     */
+    public ?string $k_appointment = null;
+
+    /**
+     * Key of the changed class session.
+     * Is set only if changed session is class.
+     *
+     * `null` if changed session is not a class.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_period = null;
 
     public function __construct(array $data)
     {
-        $this->a_domain_token = isset($data['a_domain_token']) ? new SubscribePostResponseMessageBroadcastSDomainToken((array)$data['a_domain_token']) : null;
-        $this->id_domain_status = isset($data['id_domain_status']) ? (int)$data['id_domain_status'] : null;
-        $this->text_domain_status_icon = isset($data['text_domain_status_icon']) ? (string)$data['text_domain_status_icon'] : null;
+        $this->dtl_end = isset($data['dtl_end']) ? (string)$data['dtl_end'] : null;
+        $this->dtl_start = isset($data['dtl_start']) ? (string)$data['dtl_start'] : null;
+        $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;
+        $this->k_class_period = isset($data['k_class_period']) ? (string)$data['k_class_period'] : null;
     }
 }
