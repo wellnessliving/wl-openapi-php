@@ -67,7 +67,11 @@ class ScheduleAvailableDateGetRequest
     public ?string $dtu_start = null;
 
     /**
-     * "Book now" tab ID. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
+     * Optional "Book now" tab ID filter. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
+     *
+     * `0` means this filter is not set.
+     * If both {@link \WlSdk\Wl\Schedule\ScheduleAvailableDate} and
+     * {@link \WlSdk\Wl\Schedule\ScheduleAvailableDate} are not set, all tabs are used.
      *
      * @var int|null
      * @see \WlSdk\Wl\Classes\Tab\TabSid
@@ -105,6 +109,17 @@ class ScheduleAvailableDateGetRequest
     public ?string $k_business = null;
 
     /**
+     * Optional book now tab key filter.
+     *
+     * Empty string means this filter is not set.
+     * If both {@link \WlSdk\Wl\Schedule\ScheduleAvailableDate} and
+     * {@link \WlSdk\Wl\Schedule\ScheduleAvailableDate} are not set, all tabs are used.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_tab = null;
+
+    /**
      * Timezone key.
      *
      * @var string|null
@@ -127,6 +142,7 @@ class ScheduleAvailableDateGetRequest
             'is_event' => $this->is_event,
             'is_virtual' => $this->is_virtual,
             'k_business' => $this->k_business,
+            'k_class_tab' => $this->k_class_tab,
             'k_timezone' => $this->k_timezone,
             ],
             static fn ($v) => $v !== null

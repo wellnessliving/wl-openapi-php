@@ -54,7 +54,7 @@ class PageElementGetResponseResourceImage
     public ?string $sid_image = null;
 
     /**
-     * Icon name.String representation of one of {@link \WlSdk\Wl\Resource\Image\ImageIconSid} constants.
+     * Icon name. String representation of one of {@link \WlSdk\Wl\Resource\Image\ImageIconSid} constants.
      * Is set only if `sid_image` equals to `image`.
      *
      * @var string|null
