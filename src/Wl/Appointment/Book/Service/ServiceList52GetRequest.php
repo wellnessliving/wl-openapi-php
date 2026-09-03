@@ -15,6 +15,16 @@ class ServiceList52GetRequest
     public ?array $a_class_tab = null;
 
     /**
+     * List of services to filter a result.
+     *
+     * Each element is a service key, a primary key in RsServiceSql.
+     * Empty if the filtering is not necessary.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_service_filter = null;
+
+    /**
      * List of staff members to filter a result.
      *
      * Empty if the filtering is not necessary.
@@ -103,6 +113,7 @@ class ServiceList52GetRequest
         return array_filter(
             [
             'a_class_tab' => $this->a_class_tab,
+            'a_service_filter' => $this->a_service_filter,
             'a_staff' => $this->a_staff,
             'a_uid' => $this->a_uid,
             'i_height' => $this->i_height,
