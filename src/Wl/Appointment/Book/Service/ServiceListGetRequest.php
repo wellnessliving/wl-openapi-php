@@ -17,7 +17,7 @@ class ServiceListGetRequest
     /**
      * List of services to filter a result.
      *
-     * Each element is a service key, a primary key in RsServiceSql.
+     * Each element is a service key.
      * Empty if the filtering is not necessary.
      *
      * @var string[]|null
