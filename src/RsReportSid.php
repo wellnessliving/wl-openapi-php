@@ -118,7 +118,6 @@ namespace WlSdk;
  * - 72 (`LOGIN_PROFILE`): Report "Client Data".
  * - 40 (`LOGIN_RANK`): Report about client's ranks.
  * - 261 (`LOGIN_RISK`): List of clients that are at churn risk according to isaac prediction.
- * - 52 (`LOGIN_VISIT`): Report with client's attendance history.
  * - 46 (`MAIL_BUSINESS_LIST`): Count of sent mail and sms per business.
  * - 37 (`MAIL_CAMPAIGN_DETAIL`): Mail campaign details list report.
  * - 36 (`MAIL_CAMPAIGN_LIST`): Mail campaign history list report.
@@ -604,9 +603,6 @@ class RsReportSid
 
     /** List of clients that are at churn risk according to isaac prediction. */
     public const LOGIN_RISK = 261;
-
-    /** Report with client's attendance history. */
-    public const LOGIN_VISIT = 52;
 
     /** Count of sent mail and sms per business. */
     public const MAIL_BUSINESS_LIST = 46;
