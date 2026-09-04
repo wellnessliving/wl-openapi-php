@@ -58,6 +58,53 @@ class CatalogCartGetResponse
     public ?string $m_checkout = null;
 
     /**
+     * The subtotal amount that has to be charged right now for the cart, before discount.
+     *
+     * Equals {@link \WlSdk\Wl\Catalog\StaffApp\CatalogCart\CatalogCartGetResponse::$m_subtotal} for everything
+     * that is paid for in full at once. See
+     * {@link \WlSdk\Wl\Catalog\StaffApp\CatalogCart\CatalogCartGetResponse::$m_checkout} for how a tuition's
+     * deferred cost is excluded.
+     *
+     * @var string|null
+     */
+    public ?string $m_checkout_before_discount = null;
+
+    /**
+     * The amount that has to be charged right now for the cart, after discount but before tax.
+     *
+     * Equals {@link \WlSdk\Wl\Catalog\StaffApp\CatalogCart\CatalogCartGetResponse::$m_checkout_before_discount}
+     * minus
+     * {@link \WlSdk\Wl\Catalog\StaffApp\CatalogCart\CatalogCartGetResponse::$m_checkout_discount}.
+     *
+     * @var string|null
+     */
+    public ?string $m_checkout_before_tax = null;
+
+    /**
+     * The discount amount that applies to the part of the cart charged right now, excluding tax.
+     *
+     * Equals {@link \WlSdk\Wl\Catalog\StaffApp\CatalogCart\CatalogCartGetResponse::$m_discount_total} for
+     * everything that is paid for in full at once. See
+     * {@link \WlSdk\Wl\Catalog\StaffApp\CatalogCart\CatalogCartGetResponse::$m_checkout} for how a tuition's
+     * deferred cost is excluded.
+     *
+     * @var string|null
+     */
+    public ?string $m_checkout_discount = null;
+
+    /**
+     * The amount of tax that applies to the part of the cart charged right now.
+     *
+     * Equals {@link \WlSdk\Wl\Catalog\StaffApp\CatalogCart\CatalogCartGetResponse::$m_tax} for everything that is
+     * paid for in full at once. See
+     * {@link \WlSdk\Wl\Catalog\StaffApp\CatalogCart\CatalogCartGetResponse::$m_checkout} for how a tuition's
+     * deferred cost is excluded.
+     *
+     * @var string|null
+     */
+    public ?string $m_checkout_tax = null;
+
+    /**
      * The discount amount in dollars, excluding tax.
      *
      * @var string|null
@@ -132,6 +179,10 @@ class CatalogCartGetResponse
         $this->is_discount_code_mode_select = isset($data['is_discount_code_mode_select']) ? (bool)$data['is_discount_code_mode_select'] : null;
         $this->is_receipt_note = isset($data['is_receipt_note']) ? (bool)$data['is_receipt_note'] : null;
         $this->m_checkout = isset($data['m_checkout']) ? (string)$data['m_checkout'] : null;
+        $this->m_checkout_before_discount = isset($data['m_checkout_before_discount']) ? (string)$data['m_checkout_before_discount'] : null;
+        $this->m_checkout_before_tax = isset($data['m_checkout_before_tax']) ? (string)$data['m_checkout_before_tax'] : null;
+        $this->m_checkout_discount = isset($data['m_checkout_discount']) ? (string)$data['m_checkout_discount'] : null;
+        $this->m_checkout_tax = isset($data['m_checkout_tax']) ? (string)$data['m_checkout_tax'] : null;
         $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;
         $this->m_discount_total = isset($data['m_discount_total']) ? (string)$data['m_discount_total'] : null;
         $this->m_subtotal = isset($data['m_subtotal']) ? (string)$data['m_subtotal'] : null;
