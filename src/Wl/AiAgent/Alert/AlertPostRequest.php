@@ -12,11 +12,12 @@ class AlertPostRequest
     public ?string $k_business = null;
 
     /**
-     * Business key.
+     * CID of the alert to be fired.
      *
-     * @var string|null
+     * @var int|null
+     * @see \WlSdk\Wl\AiAgent\Alert\AiAgentAlertAbstract
      */
-    public ?string $cid_alert = null;
+    public ?int $cid_alert = null;
 
     /**
      * Conversation link assigned by the `AI Agent`.
