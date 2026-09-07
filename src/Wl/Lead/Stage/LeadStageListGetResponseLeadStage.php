@@ -20,6 +20,16 @@ class LeadStageListGetResponseLeadStage
     public ?int $i_automation = null;
 
     /**
+     * Number of client groups which convert their clients into this stage. Such a group depends on the stage: the
+     * stage
+     * may only be deleted with a replacement stage for the groups.
+     * Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true`.
+     *
+     * @var int|null
+     */
+    public ?int $i_member_group = null;
+
+    /**
      * Number of clients who are in this stage.
      * Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true`.
      *
@@ -109,6 +119,7 @@ class LeadStageListGetResponseLeadStage
     {
         $this->i_order = isset($data['i_order']) ? (int)$data['i_order'] : null;
         $this->i_automation = isset($data['i_automation']) ? (int)$data['i_automation'] : null;
+        $this->i_member_group = isset($data['i_member_group']) ? (int)$data['i_member_group'] : null;
         $this->i_user = isset($data['i_user']) ? (int)$data['i_user'] : null;
         $this->id_lead_stage_shape = isset($data['id_lead_stage_shape']) ? (int)$data['id_lead_stage_shape'] : null;
         $this->id_lead_stage_system = isset($data['id_lead_stage_system']) ? (int)$data['id_lead_stage_system'] : null;

@@ -71,6 +71,10 @@ class LeadStageElement
      * {@link \WlSdk\Wl\Lead\Stage\LeadStageElement} must be given - they are moved to the replacement stage,
      * which must be of the same type.
      *
+     * A system stage of a conversion type can also be used by the `Won` / `Lost` client groups of the business.
+     * Such a stage requires a replacement stage too, even if it has no clients: the system ID of the stage moves
+     * to the replacement one, and the groups convert their clients into it from now on.
+     *
      * @return LeadStageElementDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
