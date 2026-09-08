@@ -5,6 +5,13 @@ namespace WlSdk\Wl\Schedule\Tab;
 class TabGetRequest
 {
     /**
+     * Whether to return all tabs or only the tabs for which sessions are available.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_full_list = null;
+
+    /**
      * Whether we are inside the widget or not.
      *
      * @var bool|null
@@ -42,6 +49,7 @@ class TabGetRequest
     {
         return array_filter(
             [
+            'is_full_list' => $this->is_full_list,
             'is_widget' => $this->is_widget,
             'k_business' => $this->k_business,
             'k_location' => $this->k_location,
