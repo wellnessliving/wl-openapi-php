@@ -12,7 +12,12 @@ class TuitionClientsSummaryGetResponseSummary
     public ?int $i_clients_enrolled = null;
 
     /**
-     * Total number of group enrollments with at least one not cancelled enrolled client in the group.
+     * Total number of group enrollments with at least one not cancelled enrolled client in the group and
+     *     an active payment plan - `id_installment_status` equal to {@link
+     * \WlSdk\Wl\Pay\Installment\InstallmentStatusSid} for
+     *     installment-based tuition plans, or at least one `id_promotion_status` equal to
+     *     {@link \WlSdk\Wl\Login\Promotion\LoginPromotionStatusSid} among the group's memberships for
+     * membership-based tuitions.
      *
      * @var int|null
      */
