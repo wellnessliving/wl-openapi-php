@@ -1,0 +1,135 @@
+<?php
+
+namespace WlSdk\Wl\Lead\Stage;
+
+class LeadStageListGetResponseLeadStage
+{
+    /**
+     * Sequence number of the stage in the list.
+     *
+     * @var int|null
+     */
+    public ?int $i_order = null;
+
+    /**
+     * Number of automations used this stage.
+     * Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true`.
+     *
+     * @var int|null
+     */
+    public ?int $i_automation = null;
+
+    /**
+     * Number of client groups which convert their clients into this stage. Such a group depends on the stage: the
+     * stage
+     * may only be deleted with a replacement stage for the groups.
+     * Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true`.
+     *
+     * @var int|null
+     */
+    public ?int $i_member_group = null;
+
+    /**
+     * Number of clients who are in this stage.
+     * Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true`.
+     *
+     * @var int|null
+     */
+    public ?int $i_user = null;
+
+    /**
+     * Shape of the stage icon. One of {@link \WlSdk\Wl\Lead\Stage\LeadStageShapeSid} constants.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Lead\Stage\LeadStageShapeSid
+     */
+    public ?int $id_lead_stage_shape = null;
+
+    /**
+     * System-defined lead stage. One of {@link \WlSdk\Wl\Lead\Stage\LeadStageSystemSid} constants.
+     * `null` for a custom stage created by the business.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Lead\Stage\LeadStageSystemSid
+     */
+    public ?int $id_lead_stage_system = null;
+
+    /**
+     * Type of the stage. One of {@link \WlSdk\Wl\Lead\Stage\LeadStageTypeSid} constants.
+     * The type is set when the stage is created and can not be changed afterwards.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Lead\Stage\LeadStageTypeSid
+     */
+    public ?int $id_lead_stage_type = null;
+
+    /**
+     * Key of the stage.
+     *
+     * @var string|null
+     */
+    public ?string $k_lead_stage = null;
+
+    /**
+     * Background color of the icon. Hexadecimal color.
+     *
+     * @var string|null
+     */
+    public ?string $s_color_background = null;
+
+    /**
+     * Color of characters on the icon. Hexadecimal color.
+     *
+     * @var string|null
+     */
+    public ?string $s_color_foreground = null;
+
+    /**
+     * Characters on the icon.
+     *
+     * @var string|null
+     */
+    public ?string $s_icon = null;
+
+    /**
+     * Name of the stage.
+     *
+     * @var string|null
+     */
+    public ?string $text_title = null;
+
+    /**
+     * URL of the list of automations which use this stage.
+     *  Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true` and the stage is used in
+     * automations.
+     *
+     * @var string|null
+     */
+    public ?string $url_automation_list = null;
+
+    /**
+     * URL of the report of clients who are in this stage.
+     *  Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true` and the stage contains clients.
+     *
+     * @var string|null
+     */
+    public ?string $url_member_report = null;
+
+    public function __construct(array $data)
+    {
+        $this->i_order = isset($data['i_order']) ? (int)$data['i_order'] : null;
+        $this->i_automation = isset($data['i_automation']) ? (int)$data['i_automation'] : null;
+        $this->i_member_group = isset($data['i_member_group']) ? (int)$data['i_member_group'] : null;
+        $this->i_user = isset($data['i_user']) ? (int)$data['i_user'] : null;
+        $this->id_lead_stage_shape = isset($data['id_lead_stage_shape']) ? (int)$data['id_lead_stage_shape'] : null;
+        $this->id_lead_stage_system = isset($data['id_lead_stage_system']) ? (int)$data['id_lead_stage_system'] : null;
+        $this->id_lead_stage_type = isset($data['id_lead_stage_type']) ? (int)$data['id_lead_stage_type'] : null;
+        $this->k_lead_stage = isset($data['k_lead_stage']) ? (string)$data['k_lead_stage'] : null;
+        $this->s_color_background = isset($data['s_color_background']) ? (string)$data['s_color_background'] : null;
+        $this->s_color_foreground = isset($data['s_color_foreground']) ? (string)$data['s_color_foreground'] : null;
+        $this->s_icon = isset($data['s_icon']) ? (string)$data['s_icon'] : null;
+        $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
+        $this->url_automation_list = isset($data['url_automation_list']) ? (string)$data['url_automation_list'] : null;
+        $this->url_member_report = isset($data['url_member_report']) ? (string)$data['url_member_report'] : null;
+    }
+}

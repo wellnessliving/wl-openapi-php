@@ -115,6 +115,15 @@ class InviteListGetResponseList
     public ?bool $is_checkin = null;
 
     /**
+     * `true` if the visit was redeemed at a sibling franchisee business rather than the business that
+     * issued the guest pass (regional redemption). `false` if no visit is associated or it was
+     * redeemed at the issuing business.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_visit_business_other = null;
+
+    /**
      * `true` if associated visit in future, `false` otherwise.
      *
      * @var bool|null
@@ -183,6 +192,14 @@ class InviteListGetResponseList
     public ?string $text_promotion_host = null;
 
     /**
+     * Title of the location the visit was redeemed at - may be a sibling franchisee's location when the
+     * guest pass has regional access. `null` if no visit is associated.
+     *
+     * @var string|null
+     */
+    public ?string $text_location = null;
+
+    /**
      * Title of the service booked with the guest pass.
      * `null` if no visit is associated.
      *
@@ -230,6 +247,7 @@ class InviteListGetResponseList
         $this->dtu_reject = isset($data['dtu_reject']) ? (string)$data['dtu_reject'] : null;
         $this->id_status = isset($data['id_status']) ? (int)$data['id_status'] : null;
         $this->is_checkin = isset($data['is_checkin']) ? (bool)$data['is_checkin'] : null;
+        $this->is_visit_business_other = isset($data['is_visit_business_other']) ? (bool)$data['is_visit_business_other'] : null;
         $this->is_visit_future = isset($data['is_visit_future']) ? (bool)$data['is_visit_future'] : null;
         $this->k_login_promotion_guest = isset($data['k_login_promotion_guest']) ? (string)$data['k_login_promotion_guest'] : null;
         $this->k_login_promotion_host = isset($data['k_login_promotion_host']) ? (string)$data['k_login_promotion_host'] : null;
@@ -239,6 +257,7 @@ class InviteListGetResponseList
         $this->text_host_name = isset($data['text_host_name']) ? (string)$data['text_host_name'] : null;
         $this->text_promotion_guest = isset($data['text_promotion_guest']) ? (string)$data['text_promotion_guest'] : null;
         $this->text_promotion_host = isset($data['text_promotion_host']) ? (string)$data['text_promotion_host'] : null;
+        $this->text_location = isset($data['text_location']) ? (string)$data['text_location'] : null;
         $this->text_service_title = isset($data['text_service_title']) ? (string)$data['text_service_title'] : null;
         $this->text_timezone = isset($data['text_timezone']) ? (string)$data['text_timezone'] : null;
         $this->uid_host = isset($data['uid_host']) ? (string)$data['uid_host'] : null;

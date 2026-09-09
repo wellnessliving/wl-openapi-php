@@ -26,6 +26,14 @@ class PaymentMultipleGetRequest
     public ?string $dtl_date = null;
 
     /**
+     * `true` to all appointments are related to the same user, `false` if appointments can be related to different
+     * users.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_relationship = true;
+
+    /**
      * When set to `true` it's mean that need load full information about unpaid visits:
      *  * List of available/existing POs.
      *  * List of unpaid addons.
@@ -34,6 +42,13 @@ class PaymentMultipleGetRequest
      * @var bool|null
      */
     public ?bool $is_simple = null;
+
+    /**
+     * `true` to get only unpaid appointments, `false` to get all appointments.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_unpaid = true;
 
     /**
      * The business key.
@@ -74,7 +89,9 @@ class PaymentMultipleGetRequest
             [
             'a_appointment' => $this->a_appointment,
             'dtl_date' => $this->dtl_date,
+            'is_relationship' => $this->is_relationship,
             'is_simple' => $this->is_simple,
+            'is_unpaid' => $this->is_unpaid,
             'k_business' => $this->k_business,
             'k_location' => $this->k_location,
             'k_visit' => $this->k_visit,

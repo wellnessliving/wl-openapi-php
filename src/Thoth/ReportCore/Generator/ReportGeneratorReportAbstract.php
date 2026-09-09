@@ -44,6 +44,7 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 689 (`Wl\Member\Report\MemberAllReport`): "All clients" report generator.
  * - 1287 (`Wl\Member\Report\MemberReport`): "All clients" report generator (this report used for the "Clients" link
  * accessed from the top nav or WL menu).
+ * - 2329 (`Wl\Member\Report\MemberProfileReport`): "Client Data" report generator.
  * - 1791 (`Wl\Lead\Report\LeadManagementReport`): "Lead Management Report".
  * - 1556 (`Wl\Visit\Report\VisitBuySummaryReport`): Controls list report for attendance.
  * - 1740 (`Wl\Visit\Report\VisitLifetimeReport`): Controls list for "Lifetime Value & Visit Milestones" report.
@@ -256,6 +257,9 @@ class ReportGeneratorReportAbstract
 
     /** "All clients" report generator (this report used for the "Clients" link accessed from the top nav or WL menu). */
     public const MemberReport = 1287;
+
+    /** "Client Data" report generator. */
+    public const MemberProfileReport = 2329;
 
     /** "Lead Management Report". */
     public const LeadManagementReport = 1791;

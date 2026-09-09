@@ -17,6 +17,13 @@ class PromotionPayPauseGetResponse
     public ?array $a_pay_pause_list = null;
 
     /**
+     * List of all upcoming payments for the give pricing option. Just dates in local timezone.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_payment_schedule = null;
+
+    /**
      * The end date of the current hold, in the local time zone.
      * This can be set to a special value `0000-00-00` to make the period indefinite until further action.
      *
@@ -116,6 +123,7 @@ class PromotionPayPauseGetResponse
     public function __construct(array $data)
     {
         $this->a_pay_pause_list = isset($data['a_pay_pause_list']) ? array_map(static fn ($item) => new PromotionPayPauseGetResponsePayPauseList((array)$item), (array)$data['a_pay_pause_list']) : null;
+        $this->a_payment_schedule = isset($data['a_payment_schedule']) ? (array)$data['a_payment_schedule'] : null;
         $this->dt_end = isset($data['dt_end']) ? (string)$data['dt_end'] : null;
         $this->dt_start = isset($data['dt_start']) ? (string)$data['dt_start'] : null;
         $this->dtu_date_notification = isset($data['dtu_date_notification']) ? (string)$data['dtu_date_notification'] : null;
