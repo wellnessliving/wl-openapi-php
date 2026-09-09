@@ -7,6 +7,8 @@ namespace WlSdk\Core\Locale;
  *
  * Currency constant names must comply with the standard `ISO 4217` for correct integration with other services.
  *
+ * Last used ID: 20
+ *
  * Values:
  * - 11 (`AED`): United Arab Emirates dirham.
  * - 6 (`AUD`): Australian dollar.
