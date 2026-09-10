@@ -22,7 +22,12 @@ class Contract
      *
      * Renders the contract text for the specified purchase option, applying any applicable
      *  discounts, and returns the content needed to display the contract acceptance modal to the
-     *  client.
+     *  client. If the purchase option requires agreement to several distinct contracts at once,
+     *  returns them through {@link \WlSdk\Wl\Profile\Contract\ContractGetResponse::$a_contract_list} instead, each
+     * rendered the same
+     *  way as a single contract, using the discount already resolved for that specific contract -
+     *  {@link \WlSdk\Wl\Profile\Contract\Contract}, {@link \WlSdk\Wl\Profile\Contract\Contract}, and
+     *  {@link \WlSdk\Wl\Profile\Contract\Contract} are not supported in that case.
      *
      * @return ContractGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

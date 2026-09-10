@@ -107,6 +107,27 @@ class EventListGetResponseEventList
     public ?string $html_reason = null;
 
     /**
+     * Number of clients in the active list.
+     *
+     * For non-block events, this is the sum across all future sessions of the event (same aggregation as used
+     *  for `is_full`). For block events, this is the count for the whole block.
+     *
+     * @var int|null
+     */
+    public ?int $i_book_active = null;
+
+    /**
+     * Capacity of the active list.
+     *
+     * For non-block events, this is `i_session_future` multiplied by the capacity of
+     *  a single session (same aggregation as used for `is_full`). For block events,
+     *  this is the capacity of the whole block.
+     *
+     * @var int|null
+     */
+    public ?int $i_capacity = null;
+
+    /**
      * Number of all sessions in the event.
      *
      * @var int|null
@@ -126,6 +147,25 @@ class EventListGetResponseEventList
      * @var int|null
      */
     public ?int $i_session_past = null;
+
+    /**
+     * Number of clients in the wait list.
+     *
+     * For non-block events, this is the sum across all future sessions of the event. For block events, this is
+     *  the count for the whole block.
+     *
+     * @var int|null
+     */
+    public ?int $i_wait = null;
+
+    /**
+     * Wait list limit of the event.
+     *
+     * `null` if wait list is not enabled for this event, or if it is enabled without a limit.
+     *
+     * @var int|null
+     */
+    public ?int $i_wait_limit = null;
 
     /**
      * ID of deny reason.
@@ -278,11 +318,28 @@ class EventListGetResponseEventList
     public ?bool $is_single_buy = null;
 
     /**
+     * Whether current user is booked or on the wait list.
+     *
+     * Unlike `is_booked`, this field is also `true` when the user is on the wait
+     *  list, not only when actually booked into the active list.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_user_booked = null;
+
+    /**
      * Whether event is virtual.
      *
      * @var bool|null
      */
     public ?bool $is_virtual = null;
+
+    /**
+     * Whether wait list is enabled for this event.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_wait_list_enabled = null;
 
     /**
      * Class key.
@@ -393,9 +450,13 @@ class EventListGetResponseEventList
         $this->dl_start = isset($data['dl_start']) ? (string)$data['dl_start'] : null;
         $this->dtu_session = isset($data['dtu_session']) ? (string)$data['dtu_session'] : null;
         $this->html_reason = isset($data['html_reason']) ? (string)$data['html_reason'] : null;
+        $this->i_book_active = isset($data['i_book_active']) ? (int)$data['i_book_active'] : null;
+        $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
         $this->i_session_all = isset($data['i_session_all']) ? (int)$data['i_session_all'] : null;
         $this->i_session_future = isset($data['i_session_future']) ? (int)$data['i_session_future'] : null;
         $this->i_session_past = isset($data['i_session_past']) ? (int)$data['i_session_past'] : null;
+        $this->i_wait = isset($data['i_wait']) ? (int)$data['i_wait'] : null;
+        $this->i_wait_limit = isset($data['i_wait_limit']) ? (int)$data['i_wait_limit'] : null;
         $this->id_reason = isset($data['id_reason']) ? (int)$data['id_reason'] : null;
         $this->is_age_restrict = isset($data['is_age_restrict']) ? (bool)$data['is_age_restrict'] : null;
         $this->is_age_restrict_only = isset($data['is_age_restrict_only']) ? (bool)$data['is_age_restrict_only'] : null;
@@ -413,7 +474,9 @@ class EventListGetResponseEventList
         $this->is_promotion_only = isset($data['is_promotion_only']) ? (bool)$data['is_promotion_only'] : null;
         $this->is_prorate = isset($data['is_prorate']) ? (bool)$data['is_prorate'] : null;
         $this->is_single_buy = isset($data['is_single_buy']) ? (bool)$data['is_single_buy'] : null;
+        $this->is_user_booked = isset($data['is_user_booked']) ? (bool)$data['is_user_booked'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
+        $this->is_wait_list_enabled = isset($data['is_wait_list_enabled']) ? (bool)$data['is_wait_list_enabled'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
         $this->k_class_period = isset($data['k_class_period']) ? (string)$data['k_class_period'] : null;
         $this->k_enrollment_block = isset($data['k_enrollment_block']) ? (string)$data['k_enrollment_block'] : null;

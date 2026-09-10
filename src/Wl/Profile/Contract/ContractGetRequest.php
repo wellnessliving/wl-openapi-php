@@ -5,6 +5,16 @@ namespace WlSdk\Wl\Profile\Contract;
 class ContractGetRequest
 {
     /**
+     * Additional configuration for the item that might influence contracts.
+     *
+     * When {@link \WlSdk\Wl\Profile\Contract\Contract} is {@link \WlSdk\RsPurchaseItemSid}.
+     * Use next structure:
+     *
+     * @var array|null
+     */
+    public ?array $a_config = null;
+
+    /**
      * The start date of the contract.
      *
      * @var string|null
@@ -13,6 +23,9 @@ class ContractGetRequest
 
     /**
      * The percentage discount for the item.
+     *
+     * Not supported when the purchase option requires several distinct contracts at once - see
+     *  {@link \WlSdk\Wl\Profile\Contract\ContractGetResponse::$a_contract_list}.
      *
      * @var float|null
      */
@@ -59,6 +72,9 @@ class ContractGetRequest
     /**
      * Amount of a flat manual discount.
      *
+     * Not supported when the purchase option requires several distinct contracts at once - see
+     *   {@link \WlSdk\Wl\Profile\Contract\ContractGetResponse::$a_contract_list}.
+     *
      * @var string|null
      */
     public ?string $m_discount_flat = null;
@@ -66,12 +82,18 @@ class ContractGetRequest
     /**
      * The custom price of the item.
      *
+     * Not supported when the purchase option requires several distinct contracts at once - see
+     *   {@link \WlSdk\Wl\Profile\Contract\ContractGetResponse::$a_contract_list}.
+     *
      * @var string|null
      */
     public ?string $m_price_custom = null;
 
     /**
      * The discount code used for the item.
+     *
+     * Not supported when the purchase option requires several distinct contracts at once - see
+     *  {@link \WlSdk\Wl\Profile\Contract\ContractGetResponse::$a_contract_list}.
      *
      * @var string|null
      */
@@ -88,6 +110,7 @@ class ContractGetRequest
     {
         return array_filter(
             [
+            'a_config' => $this->a_config,
             'dt_start' => $this->dt_start,
             'f_manual_discount' => $this->f_manual_discount,
             'id_purchase_item' => $this->id_purchase_item,
