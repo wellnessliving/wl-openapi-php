@@ -13,6 +13,7 @@ namespace WlSdk;
  * - 19 (`AI_AGENT`): Ai Agent web-chat.
  * - 13 (`APPLICATION`): Application skin.
  * - 7 (`APPOINTMENT`): Appointment booking wizard.
+ * - 22 (`APPOINTMENT_FOREIGN`): Appointment booking wizard built by microservice widget team.
  * - 21 (`CATALOG_FOREIGN`): Online store widget.
  * - 8 (`ENROLLMENT`): Event enrollment wizard widget.
  * - 17 (`FITBUILDER`): Fitbuilder widget.
@@ -41,6 +42,9 @@ class RsSkinSid
 
     /** Appointment booking wizard. */
     public const APPOINTMENT = 7;
+
+    /** Appointment booking wizard built by microservice widget team. */
+    public const APPOINTMENT_FOREIGN = 22;
 
     /** Online store widget. */
     public const CATALOG_FOREIGN = 21;
