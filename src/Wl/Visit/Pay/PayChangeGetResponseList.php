@@ -5,11 +5,11 @@ namespace WlSdk\Wl\Visit\Pay;
 class PayChangeGetResponseList
 {
     /**
-     * Promotion logo, see result of RsPromotionImageLogo::data(). Empty array for not paid option.
+     * Promotion logo. Empty array for not paid option.
      *
-     * @var array|null
+     * @var PayChangeGetResponseListLogo|null
      */
-    public ?array $a_logo = null;
+    public ?PayChangeGetResponseListLogo $a_logo = null;
 
     /**
      * Whether current element selected in the list.
@@ -35,7 +35,7 @@ class PayChangeGetResponseList
 
     public function __construct(array $data)
     {
-        $this->a_logo = isset($data['a_logo']) ? (array)$data['a_logo'] : null;
+        $this->a_logo = isset($data['a_logo']) ? new PayChangeGetResponseListLogo((array)$data['a_logo']) : null;
         $this->is_select = isset($data['is_select']) ? (bool)$data['is_select'] : null;
         $this->s_key = isset($data['s_key']) ? (string)$data['s_key'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
