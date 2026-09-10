@@ -15,7 +15,7 @@ class WlSdkInfo
     /**
      * OpenAPI specification version used to generate this SDK.
      */
-    public const SPEC_VERSION = '1.1.20260910104158';
+    public const SPEC_VERSION = '1.1.20260910105324';
 
     /**
      * Date the SDK was last generated (Y-m-d).
@@ -25,5 +25,5 @@ class WlSdkInfo
     /**
      * Number of generated API endpoint classes.
      */
-    public const ENDPOINT_COUNT = 390;
+    public const ENDPOINT_COUNT = 391;
 }
