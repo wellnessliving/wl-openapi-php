@@ -51,7 +51,9 @@ class InviteListGetResponseList
     public ?string $dtl_reject = null;
 
     /**
-     * Visit date and time in MySQL datetime format.
+     * Visit date and time in MySQL datetime format, in the timezone of the location the visit took
+     * place at - not necessarily the same as `text_timezone` below, when the guest pass was redeemed
+     * at a sibling franchisee business via regional access.
      * `null` if no visit is associated.
      *
      * @var string|null
