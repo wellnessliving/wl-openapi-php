@@ -34,6 +34,14 @@ class ElementGetResponse
     public ?ElementGetResponseData $a_data = null;
 
     /**
+     * Information about promotion guest pass. Empty array if promotion does not have guest pass or
+     * guest pass is not enabled. Has follow structure:
+     *
+     * @var ElementGetResponseGuestPass|null
+     */
+    public ?ElementGetResponseGuestPass $a_guest_pass = null;
+
+    /**
      * Image information:
      *
      * @var ElementGetResponseImage|null
@@ -271,6 +279,7 @@ class ElementGetResponse
     {
         $this->a_age_restriction = isset($data['a_age_restriction']) ? new ElementGetResponseAgeRestriction((array)$data['a_age_restriction']) : null;
         $this->a_data = isset($data['a_data']) ? new ElementGetResponseData((array)$data['a_data']) : null;
+        $this->a_guest_pass = isset($data['a_guest_pass']) ? new ElementGetResponseGuestPass((array)$data['a_guest_pass']) : null;
         $this->a_image = isset($data['a_image']) ? new ElementGetResponseImage((array)$data['a_image']) : null;
         $this->a_image_list = isset($data['a_image_list']) ? array_map(static fn ($item) => new ElementGetResponseImageList((array)$item), (array)$data['a_image_list']) : null;
         $this->a_installment_template = isset($data['a_installment_template']) ? array_map(static fn ($item) => new ElementGetResponseInstallmentTemplate((array)$item), (array)$data['a_installment_template']) : null;
