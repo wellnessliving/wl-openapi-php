@@ -5,6 +5,14 @@ namespace WlSdk\Wl\User\Info;
 class UserListInfoGetResponseUserData
 {
     /**
+     * Relation between the user and family members. Keys are UIDs of relatives, values -
+     * relation type from {@link \WlSdk\RsFamilyRelationSid}.
+     *
+     * @var array|null
+     */
+    public ?array $a_relation = null;
+
+    /**
      * Gender type, One of {@link \WlSdk\Wl\Gender\GenderSid} constants. Empty means that client is not selected
      * gender type.
      *
@@ -143,6 +151,7 @@ class UserListInfoGetResponseUserData
 
     public function __construct(array $data)
     {
+        $this->a_relation = isset($data['a_relation']) ? (array)$data['a_relation'] : null;
         $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
         $this->is_address_inherited = isset($data['is_address_inherited']) ? (bool)$data['is_address_inherited'] : null;
         $this->is_inherited = isset($data['is_inherited']) ? (bool)$data['is_inherited'] : null;
