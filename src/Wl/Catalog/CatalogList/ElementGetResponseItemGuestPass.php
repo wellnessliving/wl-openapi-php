@@ -2,7 +2,7 @@
 
 namespace WlSdk\Wl\Catalog\CatalogList;
 
-class ElementGetResponseGuestPass
+class ElementGetResponseItemGuestPass
 {
     /**
      * Number of times guest pass can be used per period. `null` for unlimited guest pass.
