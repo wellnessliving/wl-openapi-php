@@ -12,7 +12,7 @@ class ContractGetResponseContractList
     public ?string $html_contract = null;
 
     /**
-     * Key of the visitor this contract applies to. Primary key in PassportLoginSql.
+     * Key of the visitor this contract applies to.
      *
      * @var string|null
      */
