@@ -19,8 +19,8 @@ class ElementGetResponseImageList
     public ?int $i_width = null;
 
     /**
-     * `true` - item has no image (in this case ignore other keys of this array).
-     * `false` - item has an image.
+     * `true` - the item has no image (in this case, ignore the other keys of this array).
+     * `false` - the item has an image.
      *
      * @var bool|null
      */

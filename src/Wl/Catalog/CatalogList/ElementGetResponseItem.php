@@ -5,14 +5,20 @@ namespace WlSdk\Wl\Catalog\CatalogList;
 class ElementGetResponseItem
 {
     /**
-     * Contains additional data for the sale item.
-     * For Package, it contains also the following key:
-     *
-     * The same structure as {@link \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$a_data} has.
+     * Contains additional data for the sale item. The same structure as {@link
+     * \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$a_data} has.
      *
      * @var ElementGetResponseItemData|null
      */
     public ?ElementGetResponseItemData $a_data = null;
+
+    /**
+     * Information about promotion guest pass. The same structure as {@link
+     * \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$a_guest_pass} has.
+     *
+     * @var ElementGetResponseItemGuestPass|null
+     */
+    public ?ElementGetResponseItemGuestPass $a_guest_pass = null;
 
     /**
      * Contains information about one image connected to a sale item.
@@ -22,11 +28,11 @@ class ElementGetResponseItem
     public ?ElementGetResponseItemImage $a_image = null;
 
     /**
-     * Contains information about taxes.
+     * Tax amounts keyed by tax key. Keys are primary keys in the RsTaxSql table.
      *
-     * @var ElementGetResponseItemTax|null
+     * @var string[]|null
      */
-    public ?ElementGetResponseItemTax $a_tax = null;
+    public ?array $a_tax = null;
 
     /**
      * The Purchase Option view type. One of the {@link \WlSdk\Wl\Catalog\PurchaseOptionViewSid} constants.
@@ -81,8 +87,9 @@ class ElementGetResponseItem
     public function __construct(array $data)
     {
         $this->a_data = isset($data['a_data']) ? new ElementGetResponseItemData((array)$data['a_data']) : null;
+        $this->a_guest_pass = isset($data['a_guest_pass']) ? new ElementGetResponseItemGuestPass((array)$data['a_guest_pass']) : null;
         $this->a_image = isset($data['a_image']) ? new ElementGetResponseItemImage((array)$data['a_image']) : null;
-        $this->a_tax = isset($data['a_tax']) ? new ElementGetResponseItemTax((array)$data['a_tax']) : null;
+        $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
         $this->id_purchase_option_view = isset($data['id_purchase_option_view']) ? (int)$data['id_purchase_option_view'] : null;
         $this->m_discount_code = isset($data['m_discount_code']) ? (string)$data['m_discount_code'] : null;
         $this->m_discount_login = isset($data['m_discount_login']) ? (string)$data['m_discount_login'] : null;
