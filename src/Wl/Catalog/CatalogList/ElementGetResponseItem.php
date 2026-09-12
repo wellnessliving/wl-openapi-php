@@ -28,7 +28,8 @@ class ElementGetResponseItem
     public ?ElementGetResponseItemImage $a_image = null;
 
     /**
-     * Tax amounts keyed by tax key. Keys are primary keys in the RsTaxSql table.
+     * Tax amounts keyed by tax key. The same structure as {@link
+     * \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$a_tax} has.
      *
      * @var string[]|null
      */
