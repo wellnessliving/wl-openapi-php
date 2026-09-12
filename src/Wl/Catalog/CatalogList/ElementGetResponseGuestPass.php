@@ -26,9 +26,11 @@ class ElementGetResponseGuestPass
     public ?int $i_period = null;
 
     /**
-     * Period type by which guest pass limits are reset. `null` for unlimited guest pass.
+     * Period type by which guest pass limits are reset. One of the {@link \WlSdk\ADurationSid} constants. `null`
+     * for unlimited guest pass.
      *
      * @var int|null
+     * @see \WlSdk\ADurationSid
      */
     public ?int $id_period = null;
 
@@ -43,7 +45,7 @@ class ElementGetResponseGuestPass
     public ?int $id_reset_type = null;
 
     /**
-     * Guest pass promotion key. Primary key from RsPromotionSql table.
+     * Guest pass promotion key.
      *
      * @var string|null
      */
