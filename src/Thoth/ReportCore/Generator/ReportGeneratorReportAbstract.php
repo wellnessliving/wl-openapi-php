@@ -36,6 +36,8 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 1290 (`Wl\Collector\Report\TransactionReport`): Report with list of all debt payments.
  * - 1297 (`Wl\Collector\Report\TransactionCollectorReport`): Report with list of payments that were performed via
  * collections service.
+ * - 2352 (`Wl\Purchase\Membership\MembershipReport`): External membership report.
+ *   Is developed as microservice. This class only provides access validation and URL generation.
  * - 1670 (`Wl\Purchase\Tip\PurchaseTipReport`): Report to show details of the earned tips by staff members who takes
  * tips.
  * - 1713 (`Wl\Purchase\Reconcile\ReconcileReport`): External reconciliation report for franchisee.
@@ -242,6 +244,9 @@ class ReportGeneratorReportAbstract
 
     /** Report with list of payments that were performed via collections service. */
     public const TransactionCollectorReport = 1297;
+
+    /** External membership report. */
+    public const MembershipReport = 2352;
 
     /** Report to show details of the earned tips by staff members who takes tips. */
     public const PurchaseTipReport = 1670;
