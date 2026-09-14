@@ -60,6 +60,8 @@ namespace WlSdk\Wl\Report\View;
  * - 1291 (`Wl\Collector\Report\TransactionReportController`): Controller for {@link
  * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} report.
  * - 1792 (`Wl\Lead\Report\LeadManagementReportController`): Controller for "Lead Management Report".
+ * - 2355 (`Wl\Purchase\Membership\MembershipReportController`): External membership report.
+ *   Is developed as microservice. This class only provides access validation and URL generation.
  * - 1669 (`Wl\Purchase\Tip\PurchaseTipReportController`): Controller for "Tips Earned Details".
  * - 1741 (`Wl\Visit\Report\VisitLifetimeReportController`): Controls list for "Lifetime Value & Visit Milestones"
  * report.
@@ -294,6 +296,9 @@ class ReportViewControllerAbstract
 
     /** Controller for "Lead Management Report". */
     public const LeadManagementReportController = 1792;
+
+    /** External membership report. */
+    public const MembershipReportController = 2355;
 
     /** Controller for "Tips Earned Details". */
     public const PurchaseTipReportController = 1669;

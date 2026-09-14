@@ -79,6 +79,14 @@ class UserInfoGetResponse
     public ?int $id_gender = null;
 
     /**
+     * The ID of the language that is currently effective for the user.
+     *
+     * @var int|null
+     * @see \WlSdk\Core\Locale\Language\LocaleLanguageSid
+     */
+    public ?int $id_language = null;
+
+    /**
      * This will be `true` if the user has Google Calendar linked to their account; otherwise, `false`.
      *
      * @var bool|null
@@ -235,6 +243,7 @@ class UserInfoGetResponse
         $this->dt_birth = isset($data['dt_birth']) ? (string)$data['dt_birth'] : null;
         $this->has_discount = isset($data['has_discount']) ? (bool)$data['has_discount'] : null;
         $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
+        $this->id_language = isset($data['id_language']) ? (int)$data['id_language'] : null;
         $this->is_calendar_google = isset($data['is_calendar_google']) ? (bool)$data['is_calendar_google'] : null;
         $this->is_calendar_microsoft = isset($data['is_calendar_microsoft']) ? (bool)$data['is_calendar_microsoft'] : null;
         $this->is_customer_new = isset($data['is_customer_new']) ? (bool)$data['is_customer_new'] : null;

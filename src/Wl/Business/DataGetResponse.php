@@ -51,6 +51,14 @@ class DataGetResponse
     public ?int $id_currency = null;
 
     /**
+     * Default language of the business.
+     *
+     * @var int|null
+     * @see \WlSdk\Core\Locale\Language\LocaleLanguageSid
+     */
+    public ?int $id_language = null;
+
+    /**
      * The Locale ID, used to search geo items.
      *
      * @var int|null
@@ -340,6 +348,7 @@ class DataGetResponse
         $this->id_category = isset($data['id_category']) ? (int)$data['id_category'] : null;
         $this->id_claim_status = isset($data['id_claim_status']) ? (int)$data['id_claim_status'] : null;
         $this->id_currency = isset($data['id_currency']) ? (int)$data['id_currency'] : null;
+        $this->id_language = isset($data['id_language']) ? (int)$data['id_language'] : null;
         $this->id_locale = isset($data['id_locale']) ? (int)$data['id_locale'] : null;
         $this->id_rank_type = isset($data['id_rank_type']) ? (int)$data['id_rank_type'] : null;
         $this->id_region = isset($data['id_region']) ? (int)$data['id_region'] : null;
