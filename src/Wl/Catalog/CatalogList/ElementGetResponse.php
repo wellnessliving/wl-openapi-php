@@ -51,7 +51,7 @@ class ElementGetResponse
     /**
      * List of images.
      *
-     * Keys are index and each element hase same structure as {@link
+     * Keys are index and each element has the same structure as {@link
      * \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$a_image} field.
      *
      * @var ElementGetResponseImageList[]|null
