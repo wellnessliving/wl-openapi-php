@@ -49,8 +49,10 @@ class UserInfoGetResponseResultList
 
     /**
      * The ID of the language that is effective for the user.
+     *   One of the {@link \WlSdk\Core\Locale\Language\LocaleLanguageSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\Core\Locale\Language\LocaleLanguageSid
      */
     public ?int $id_language = null;
 
