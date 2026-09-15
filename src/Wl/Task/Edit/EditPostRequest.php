@@ -74,6 +74,13 @@ class EditPostRequest
     public ?string $text_title = null;
 
     /**
+     * Due time.
+     *
+     * @var string|null
+     */
+    public ?string $tl_due = null;
+
+    /**
      * Client's uid for whom connected task.
      *
      * `null` means not set.
@@ -101,6 +108,7 @@ class EditPostRequest
             'id_task_status' => $this->id_task_status,
             'k_location' => $this->k_location,
             'text_title' => $this->text_title,
+            'tl_due' => $this->tl_due,
             'uid' => $this->uid,
             'xml_description' => $this->xml_description,
             ],

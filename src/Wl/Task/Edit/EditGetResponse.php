@@ -59,6 +59,13 @@ class EditGetResponse
     public ?string $text_title = null;
 
     /**
+     * Due time.
+     *
+     * @var string|null
+     */
+    public ?string $tl_due = null;
+
+    /**
      * Client's uid for whom connected task.
      *
      * `null` means not set.
@@ -82,6 +89,7 @@ class EditGetResponse
         $this->id_task_status = isset($data['id_task_status']) ? (int)$data['id_task_status'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
+        $this->tl_due = isset($data['tl_due']) ? (string)$data['tl_due'] : null;
         $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
         $this->xml_description = isset($data['xml_description']) ? (string)$data['xml_description'] : null;
     }
