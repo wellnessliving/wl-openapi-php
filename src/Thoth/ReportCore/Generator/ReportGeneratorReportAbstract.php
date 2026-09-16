@@ -36,6 +36,8 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * collections service.
  * - 1358 (`Wl\Login\Account\LoginAccountReport`): "Balance Due Report".
  *   List of clients with their accounts state.
+ * - 2352 (`Wl\Purchase\Membership\MembershipReport`): External membership report.
+ *   Is developed as microservice. This class only provides access validation and URL generation.
  * - 1670 (`Wl\Purchase\Tip\PurchaseTipReport`): Report to show details of the earned tips by staff members who takes
  * tips.
  * - 1713 (`Wl\Purchase\Reconcile\ReconcileReport`): External reconciliation report for franchisee.
@@ -241,6 +243,9 @@ class ReportGeneratorReportAbstract
 
     /** "Balance Due Report". */
     public const LoginAccountReport = 1358;
+
+    /** External membership report. */
+    public const MembershipReport = 2352;
 
     /** Report to show details of the earned tips by staff members who takes tips. */
     public const PurchaseTipReport = 1670;
