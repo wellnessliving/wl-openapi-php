@@ -57,7 +57,7 @@ class PaymentPostRequest
     /**
      * The list of answers for questions.
      *
-     * * Key is a question hash from QuestionApi::$a_question.
+     * * Key is a question hash from {@link \WlSdk\Wl\Appointment\Book\Question\QuestionGetResponse::$a_question}.
      * * Value is the answer text for that question.
      *
      * @var string[]|null
