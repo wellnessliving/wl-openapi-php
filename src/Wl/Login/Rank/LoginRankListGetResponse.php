@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Login\Rank;
 class LoginRankListGetResponse
 {
     /**
-     * List of users with information about their ranks in the business. Each element:
+     * List of users with information about their ranks in the business.
      *
      * @var LoginRankListGetResponseUserList[]|null
      */

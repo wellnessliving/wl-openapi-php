@@ -8,8 +8,7 @@ namespace WlSdk\Wl\Catalog\View\Image;
 class ImageGetResponse
 {
     /**
-     * Contains a list of images for the current product. Each element has the structure
-     *  described in .
+     * Contains a list of images for the current product.
      *
      * @var ImageGetResponseImage[]|null
      */

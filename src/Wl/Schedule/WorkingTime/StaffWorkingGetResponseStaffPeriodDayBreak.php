@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Schedule\WorkingTime;
 class StaffWorkingGetResponseStaffPeriodDayBreak
 {
     /**
-     * Services that affect this hours. Primary keys in  table.
+     * Services that affect this hours.
      * `null` if affects all services.
      *
      * @var string[]|null
@@ -34,7 +34,7 @@ class StaffWorkingGetResponseStaffPeriodDayBreak
     public ?int $i_start = null;
 
     /**
-     * Primary key of location in  table.
+     * Location key.
      *
      * @var string|null
      */

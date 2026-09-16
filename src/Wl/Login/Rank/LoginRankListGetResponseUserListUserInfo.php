@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Login\Rank;
 class LoginRankListGetResponseUserListUserInfo
 {
     /**
-     * Result of  function.
+     * HTML information about user.
      *
      * @var string|null
      */
@@ -19,7 +19,7 @@ class LoginRankListGetResponseUserListUserInfo
     public ?string $text_name = null;
 
     /**
-     * User key. Primary key in the  table.
+     * User key.
      *
      * @var string|null
      */

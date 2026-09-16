@@ -8,8 +8,8 @@ namespace WlSdk\Wl\Schedule\ScheduleList\StaffApp\Service;
 class ScheduleListServiceGetResponse
 {
     /**
-     * List of appointment services. Keys - service IDs; primary key in the `rs_service` table. Values - service
-     * title.
+     * List of appointment services.
+     * Keys - service keys. Values - service title.
      *
      * @var array|null
      */

@@ -68,7 +68,7 @@ class AppointmentWaitListGetResponseWait
     public ?bool $is_wait_confirm = null;
 
     /**
-     * Visit key. Primary key in the  table.
+     * Visit key.  table.
      *
      * @var string|null
      */

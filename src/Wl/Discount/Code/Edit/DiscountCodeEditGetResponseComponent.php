@@ -17,7 +17,10 @@ class DiscountCodeEditGetResponseComponent
      * <p>Special Notes:</p>
      * <ul>
      *   <li>Zero means that all elements of this type are available.</li>
-     *   <li>For `id_purchase_item`={@link \WlSdk\RsPurchaseItemSid} we store .`k_class` in the `k_id` field.</li>
+     *   <li>
+     *     For `id_purchase_item`={@link \WlSdk\RsPurchaseItemSid} it's class key.
+     *
+     *   </li>
      * </ul>
      *
      * @var string|null

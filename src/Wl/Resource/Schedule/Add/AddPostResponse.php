@@ -8,8 +8,7 @@ namespace WlSdk\Wl\Resource\Schedule\Add;
 class AddPostResponse
 {
     /**
-     * Resource period key.
-     * Primary key from the `rs_resource_period` table.
+     * Resource period keys.
      *
      * @var string[]|null
      */

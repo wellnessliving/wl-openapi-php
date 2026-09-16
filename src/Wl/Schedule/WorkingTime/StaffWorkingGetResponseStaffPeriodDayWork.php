@@ -34,7 +34,7 @@ class StaffWorkingGetResponseStaffPeriodDayWork
     public ?int $i_start = null;
 
     /**
-     * Primary key of location in  table.
+     * Location key.
      *
      * @var string|null
      */

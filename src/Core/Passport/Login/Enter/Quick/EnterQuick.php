@@ -21,9 +21,8 @@ class EnterQuick
      * Generates secret key to verify legitimacy of the request.
      *
      * Verifies that the current session belongs to the requested user, then builds a protected
-     *  link through  that can be opened to sign the user in
-     *  without further authorization. The generated link expires after
-     *   seconds.
+     * link that can be opened to sign the user in without further authorization.
+     * The generated link expires after `900` seconds.
      *
      * @return EnterQuickGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

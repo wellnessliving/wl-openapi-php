@@ -26,7 +26,7 @@ class AppointmentWaitListGetResponseWaitUser
     public ?string $text_phone = null;
 
     /**
-     * User key. Primary key in the  table.
+     * User key.
      *
      * @var string|null
      */

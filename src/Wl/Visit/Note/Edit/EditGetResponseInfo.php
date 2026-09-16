@@ -19,7 +19,8 @@ class EditGetResponseInfo
     public ?string $dtl_edit = null;
 
     /**
-     * Visit note key, primary key in . `0` if the note does not exist yet.
+     * Visit note key.
+     * `0` if the note does not exist yet.
      *
      * @var string|null
      */

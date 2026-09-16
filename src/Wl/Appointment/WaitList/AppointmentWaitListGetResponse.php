@@ -15,7 +15,7 @@ class AppointmentWaitListGetResponse
     public ?AppointmentWaitListGetResponseAppointment $a_appointment = null;
 
     /**
-     * List of visits in wait list. Each element has next structure:
+     * List of visits in wait list.
      *
      * @var AppointmentWaitListGetResponseWait[]|null
      */

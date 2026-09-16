@@ -12,8 +12,8 @@ class LoginRankListPostRequest
     public ?string $k_business = null;
 
     /**
-     * Users with rank categories and ranks that need to be saved encoded by Javascript analogue of the
-     *  method.
+     * Users with rank categories and ranks that need to be saved.
+     *
      *
      * `null` if not initialized.
      *

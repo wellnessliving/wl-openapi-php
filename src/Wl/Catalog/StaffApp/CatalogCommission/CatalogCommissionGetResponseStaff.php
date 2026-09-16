@@ -12,7 +12,8 @@ class CatalogCommissionGetResponseStaff
     public ?CatalogCommissionGetResponseStaffCommission $a_commission = null;
 
     /**
-     * @deprecated Staff key. Primary key of  table. It's use `uid` instead of this field.
+     * [Deprecated]Staff key.
+     *     table. It's use `uid` instead of this field.
      *
      * @var string|null
      */
@@ -26,7 +27,7 @@ class CatalogCommissionGetResponseStaff
     public ?string $html_name = null;
 
     /**
-     * User key. Primary key of  table.
+     * User key.  table.
      *
      * @var string|null
      */

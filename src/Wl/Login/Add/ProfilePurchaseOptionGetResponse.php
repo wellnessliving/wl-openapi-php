@@ -9,7 +9,7 @@ class ProfilePurchaseOptionGetResponse
 {
     /**
      * User's active purchase options data.
-     * For more details see .
+     *
      *
      * Serialized with JSON.
      *

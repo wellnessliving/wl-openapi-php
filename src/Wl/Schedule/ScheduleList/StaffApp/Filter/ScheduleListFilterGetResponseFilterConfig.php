@@ -5,42 +5,42 @@ namespace WlSdk\Wl\Schedule\ScheduleList\StaffApp\Filter;
 class ScheduleListFilterGetResponseFilterConfig
 {
     /**
-     * Classes. Primary keys in  table.
+     * Classes.
      *
      * @var string[]|null
      */
     public ?array $a_class = null;
 
     /**
-     * Events. Primary keys in  table.
+     * Events.
      *
      * @var string[]|null
      */
     public ?array $a_event = null;
 
     /**
-     * Locations. Primary keys in  table.
+     * Locations.
      *
      * @var string[]|null
      */
     public ?array $a_location = null;
 
     /**
-     * Assets. Primary keys in  table.
+     * Assets.
      *
      * @var string[]|null
      */
     public ?array $a_resource = null;
 
     /**
-     * Appointment services. Primary keys in  table.
+     * Appointment services.
      *
      * @var string[]|null
      */
     public ?array $a_service = null;
 
     /**
-     * Staff members. Primary keys in  table.
+     * Staff members.
      *
      * @var string[]|null
      */

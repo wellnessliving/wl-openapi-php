@@ -9,7 +9,6 @@ class AddPostResponse
 {
     /**
      * Staff period key.
-     * Primary key from .
      *
      * @var string[]|null
      */

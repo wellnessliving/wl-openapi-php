@@ -12,7 +12,7 @@ class CategoryGetResponseShopCategory
     public ?int $i_order = null;
 
     /**
-     * ID in  table.
+     * Shop category key.
      *
      * @var string|null
      */

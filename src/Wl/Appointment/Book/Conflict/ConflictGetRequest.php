@@ -22,7 +22,7 @@ class ConflictGetRequest
     public ?array $a_repeat = null;
 
     /**
-     * List of assets. Every element has next keys:
+     * List of assets.
      *
      *
      * May be specified for service booking only.

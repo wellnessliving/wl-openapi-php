@@ -5,21 +5,21 @@ namespace WlSdk\Wl\Login\Rank;
 class LoginRankListGetResponseUserListRankCategoryCurrent
 {
     /**
-     * Rank logo thumbnail data:
+     * Rank logo thumbnail data.
      *
      * @var LoginRankListGetResponseUserListRankCategoryCurrentLogo|null
      */
     public ?LoginRankListGetResponseUserListRankCategoryCurrentLogo $a_logo = null;
 
     /**
-     * Login rank key. Primary key from  table.
+     * Login rank key.
      *
      * @var string|null
      */
     public ?string $k_login_rank = null;
 
     /**
-     * Rank key. Primary key from  table.
+     * Rank key.
      *
      * @var string|null
      */

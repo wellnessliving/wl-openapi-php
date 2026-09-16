@@ -20,8 +20,9 @@ class LoadGetResponsePayRate
     public ?int $id_staff_pay = null;
 
     /**
-     * Location key. Primary key from . This is a location where pay rate can be used for a staff load. If empty
-     * then pay rate can be used in any location. Used only for pay
+     * Location key.
+     * This is a location where pay rate can be used for a staff load.
+     * If empty then pay rate can be used in any location. Used only for pay
      * rates with `id_staff_pay` {@link \WlSdk\RsStaffPaySid} and `is_report`.
      *
      * @var string|null
@@ -29,7 +30,7 @@ class LoadGetResponsePayRate
     public ?string $k_location = null;
 
     /**
-     * Pay rate identifier, primary key in
+     * Pay rate key.
      *
      * @var string|null
      */

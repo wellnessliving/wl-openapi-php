@@ -22,18 +22,15 @@ class LoginRankListGetRequest
     public ?string $k_class = null;
 
     /**
-     * UIDs of users encoded by Javascript analogue of the
-     * method.
+     * Encoded list of UIDs.
      *
      * @var string|null
      */
     public ?string $s_user_key = null;
 
     /**
-     * Users with rank categories encoded by Javascript analogue of the
-     *  method. This logic was selected, because there is
-     * a possibility to promote belts of too many users. In this case
-     * URI is too long.
+     * Encoded users with rank categories.
+     *
      *
      * `null` if not initialized.
      *

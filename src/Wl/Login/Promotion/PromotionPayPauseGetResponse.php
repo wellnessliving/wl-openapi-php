@@ -17,6 +17,13 @@ class PromotionPayPauseGetResponse
     public ?array $a_pay_pause_list = null;
 
     /**
+     * List of all payment periods for the give pricing option. Just dates in local timezone.
+     *
+     * @var PromotionPayPauseGetResponsePaymentPeriods[]|null
+     */
+    public ?array $a_payment_periods = null;
+
+    /**
      * List of all upcoming payments for the give pricing option. Just dates in local timezone.
      *
      * @var string[]|null
@@ -50,6 +57,14 @@ class PromotionPayPauseGetResponse
      * @var string|null
      */
     public ?string $dtu_date_notification = null;
+
+    /**
+     * Type of the hold from {@link \WlSdk\Wl\Promotion\Pay\PromotionPayHoldSid}.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Promotion\Pay\PromotionPayHoldSid
+     */
+    public ?int $id_hold = null;
 
     /**
      * Whether or not to send email notification.
@@ -123,10 +138,12 @@ class PromotionPayPauseGetResponse
     public function __construct(array $data)
     {
         $this->a_pay_pause_list = isset($data['a_pay_pause_list']) ? array_map(static fn ($item) => new PromotionPayPauseGetResponsePayPauseList((array)$item), (array)$data['a_pay_pause_list']) : null;
+        $this->a_payment_periods = isset($data['a_payment_periods']) ? array_map(static fn ($item) => new PromotionPayPauseGetResponsePaymentPeriods((array)$item), (array)$data['a_payment_periods']) : null;
         $this->a_payment_schedule = isset($data['a_payment_schedule']) ? (array)$data['a_payment_schedule'] : null;
         $this->dt_end = isset($data['dt_end']) ? (string)$data['dt_end'] : null;
         $this->dt_start = isset($data['dt_start']) ? (string)$data['dt_start'] : null;
         $this->dtu_date_notification = isset($data['dtu_date_notification']) ? (string)$data['dtu_date_notification'] : null;
+        $this->id_hold = isset($data['id_hold']) ? (int)$data['id_hold'] : null;
         $this->is_mail = isset($data['is_mail']) ? (bool)$data['is_mail'] : null;
         $this->is_push = isset($data['is_push']) ? (bool)$data['is_push'] : null;
         $this->is_sms = isset($data['is_sms']) ? (bool)$data['is_sms'] : null;

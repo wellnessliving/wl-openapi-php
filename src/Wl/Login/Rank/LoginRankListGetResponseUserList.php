@@ -5,14 +5,14 @@ namespace WlSdk\Wl\Login\Rank;
 class LoginRankListGetResponseUserList
 {
     /**
-     * List of rank categories with rank details for the user. Each element:
+     * List of rank categories with rank details for the user.
      *
      * @var LoginRankListGetResponseUserListRankCategory|null
      */
     public ?LoginRankListGetResponseUserListRankCategory $a_rank_category = null;
 
     /**
-     * User info:
+     * User information.
      *
      * @var LoginRankListGetResponseUserListUserInfo|null
      */

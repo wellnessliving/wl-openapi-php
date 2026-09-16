@@ -8,15 +8,15 @@ namespace WlSdk\Wl\Staff\Load;
 class LoadGetResponse
 {
     /**
-     * Staff pay rates info. See .
+     * Staff pay rates info.
      *
      * @var LoadGetResponsePayRate|null
      */
     public ?LoadGetResponsePayRate $a_pay_rate = null;
 
     /**
-     * Staff work information. See `rs_staff_load_check_work_trx()`. Empty array if the staff
-     *  member is currently clocked out. Structure:
+     * Staff work information.
+     * Empty array if the staff member is currently clocked out.
      *
      * @var LoadGetResponseWork|null
      */
