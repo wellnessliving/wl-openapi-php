@@ -55,6 +55,16 @@ class PaymentPostRequest
     public ?string $uid = null;
 
     /**
+     * The list of answers for questions.
+     *
+     * * Key is a question hash from QuestionApi::$a_question.
+     * * Value is the answer text for that question.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_answer = null;
+
+    /**
      * The list of items in the cart.
      *
      * This parameter is required.
@@ -154,6 +164,7 @@ class PaymentPostRequest
             'k_business' => $this->k_business,
             'k_location' => $this->k_location,
             'uid' => $this->uid,
+            'a_answer' => $this->a_answer,
             'a_item' => $this->a_item,
             'a_pay_form' => $this->a_pay_form,
             'a_quiz_response' => $this->a_quiz_response,
