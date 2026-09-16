@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Catalog\View\Image;
 class ImageGetResponseImage
 {
     /**
-     * No description.
+     * Information about the image.
      *
      * @var ImageGetResponseImageImage|null
      */
