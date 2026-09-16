@@ -36,7 +36,10 @@ class QuizElementGetResponseElementN
     public ?int $id_element = null;
 
     /**
-     * No description.
+     * Whether element is required or not.
+     *
+     * `true` if element is required.
+     * `false` if element is not required.
      *
      * @var bool|null
      */

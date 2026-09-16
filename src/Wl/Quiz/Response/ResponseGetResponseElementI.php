@@ -57,7 +57,10 @@ class ResponseGetResponseElementI
     public ?bool $is_multiple = null;
 
     /**
-     * No description.
+     * Whether element is required or not.
+     *
+     * `true` if element is required.
+     * `false` if element is not required.
      *
      * @var bool|null
      */

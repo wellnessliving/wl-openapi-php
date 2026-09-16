@@ -22,7 +22,7 @@ class Response65GetRequest
     public ?bool $is_answer = true;
 
     /**
-     * No description.
+     * `true` if API is being used from backend, `false` otherwise.
      *
      * @var bool|null
      */
