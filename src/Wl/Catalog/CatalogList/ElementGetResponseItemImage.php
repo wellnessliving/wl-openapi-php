@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Catalog\CatalogList;
 class ElementGetResponseItemImage
 {
     /**
-     * No description.
+     * Information about the image.
      *
      * @var ElementGetResponseItemImageImage|null
      */
