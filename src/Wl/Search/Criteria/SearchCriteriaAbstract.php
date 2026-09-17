@@ -20,7 +20,6 @@ namespace WlSdk\Wl\Search\Criteria;
  * - 1173 (`Wl\Login\Promotion\Search\PromotionRemainSearchCriteria`): Client`s "Visits remaining" search criteria.
  * - 1177 (`Wl\Login\Promotion\Search\PromotionExpireSearchCriteria`): Client`s "Purchase Option expiring" search
  * criteria.
- * - 1150 (`Wl\Login\Attendance\Search\AttendanceCriteria`): Client`s "Service Visits" search criteria.
  * - 294 (`Wl\Login\Search\SearchCriteria\ProgressBloodPressureCriteria`): Client`s progress (transformation) log
  * search criteria for "Blood Pressure" field.
  *
@@ -101,6 +100,7 @@ namespace WlSdk\Wl\Search\Criteria;
  * - 1146 (`Wl\Login\Search\SearchCriteria\VisitMilestoneCriteria`): Client`s "Milestones visit" search criteria.
  * - 76 (`Wl\Login\Search\SearchCriteria\WorkPhoneCriteria`): Client`s "Work Phone" search criteria.
  * - 80 (`Wl\Login\Search\SearchCriteria\ZipCriteria`): Client`s "Zip" search criteria.
+ * - 1150 (`Wl\Login\Attendance\Search\AttendanceCriteria`): Client`s "Service Visits" search criteria.
  */
 class SearchCriteriaAbstract
 {
@@ -124,9 +124,6 @@ class SearchCriteriaAbstract
 
     /** Client`s "Purchase Option expiring" search criteria. */
     public const PromotionExpireSearchCriteria = 1177;
-
-    /** Client`s "Service Visits" search criteria. */
-    public const AttendanceCriteria = 1150;
 
     /** Client`s progress (transformation) log search criteria for "Blood Pressure" field. */
     public const ProgressBloodPressureCriteria = 294;
@@ -295,4 +292,7 @@ class SearchCriteriaAbstract
 
     /** Client`s "Zip" search criteria. */
     public const ZipCriteria = 80;
+
+    /** Client`s "Service Visits" search criteria. */
+    public const AttendanceCriteria = 1150;
 }

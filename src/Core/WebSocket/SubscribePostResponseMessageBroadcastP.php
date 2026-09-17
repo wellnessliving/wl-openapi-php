@@ -5,26 +5,44 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastP
 {
     /**
-     * Status of mail verification.
-     * One of the {@link \WlSdk\Wl\Mail\Verify\MailVerifyStatusSid} constants.
-     * Or {@link \WlSdk\Wl\Business\Config\Option\OptionSidAbstract} if option "Enable Custom Reply To Emails" in
-     * Business -> Feature is disabled.
+     * End of change interval.
      *
-     * @var int|null
-     * @see \WlSdk\Wl\Mail\Verify\MailVerifyStatusSid
-     */
-    public ?int $id_mail_verify_status = null;
-
-    /**
-     * Email address to check.
+     * Empty string if change interval has no end.
      *
      * @var string|null
      */
-    public ?string $text_email = null;
+    public ?string $dt_end_local = null;
+
+    /**
+     * Start of change interval.
+     *
+     * @var string|null
+     */
+    public ?string $dt_start_local = null;
+
+    /**
+     * New "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
+     *
+     * `null` means system default tab.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_tab_new = null;
+
+    /**
+     * Old "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
+     *
+     * `null` means system default tab.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_tab_old = null;
 
     public function __construct(array $data)
     {
-        $this->id_mail_verify_status = isset($data['id_mail_verify_status']) ? (int)$data['id_mail_verify_status'] : null;
-        $this->text_email = isset($data['text_email']) ? (string)$data['text_email'] : null;
+        $this->dt_end_local = isset($data['dt_end_local']) ? (string)$data['dt_end_local'] : null;
+        $this->dt_start_local = isset($data['dt_start_local']) ? (string)$data['dt_start_local'] : null;
+        $this->k_class_tab_new = isset($data['k_class_tab_new']) ? (string)$data['k_class_tab_new'] : null;
+        $this->k_class_tab_old = isset($data['k_class_tab_old']) ? (string)$data['k_class_tab_old'] : null;
     }
 }

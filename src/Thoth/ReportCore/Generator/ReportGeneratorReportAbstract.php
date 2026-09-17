@@ -12,64 +12,64 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 1849 (`Thoth\ProgressLog\Report\ProgressLogListReport`): Progress log list report.
  * - 1358 (`Wl\Login\Account\LoginAccountReport`): "Balance Due Report".
  *   List of clients with their accounts state.
- * - 1050 (`Wl\Appointment\Report\BookingFlowReport`): Client Appointment Booking Flow report.
+ * - 1791 (`Wl\Lead\Report\LeadManagementReport`): "Lead Management Report".
  * - 1271 (`Wl\Collector\Report\DebtReport`): Report with list of debts that should be sent to third party service to
  * collect a debt by force.
  * - 1290 (`Wl\Collector\Report\TransactionReport`): Report with list of all debt payments.
  * - 1297 (`Wl\Collector\Report\TransactionCollectorReport`): Report with list of payments that were performed via
  * collections service.
- * - 1791 (`Wl\Lead\Report\LeadManagementReport`): "Lead Management Report".
  * - 2352 (`Wl\Purchase\Membership\MembershipReport`): External membership report.
  *   Is developed as microservice. This class only provides access validation and URL generation.
  * - 1670 (`Wl\Purchase\Tip\PurchaseTipReport`): Report to show details of the earned tips by staff members who takes
  * tips.
  * - 1713 (`Wl\Purchase\Reconcile\ReconcileReport`): External reconciliation report for franchisee.
  *   Is developed as microservice. This class only provides access validation and URL generation.
+ * - 1050 (`Wl\Appointment\Report\BookingFlowReport`): Client Appointment Booking Flow report.
  * - 1556 (`Wl\Visit\Report\VisitBuySummaryReport`): Controls list report for attendance.
  * - 1740 (`Wl\Visit\Report\VisitLifetimeReport`): Controls list for "Lifetime Value & Visit Milestones" report.
  * - 2329 (`Wl\Member\Report\MemberProfileReport`): "Client Data" report generator.
  * - 689 (`Wl\Member\Report\MemberAllReport`): "All clients" report generator.
  * - 1287 (`Wl\Member\Report\MemberReport`): "All clients" report generator (this report used for the "Clients" link
  * accessed from the top nav or WL menu).
- * - 1763 (`Thoth\MarketingCampaigns\Report\CampaignList\CampaignListReport`): "Marketing Campaigns" list report.
  * - 1777 (`Thoth\MarketingCampaigns\Report\CampaignDetail\CampaignDetailReport`): "Marketing Campaigns" detail report.
+ * - 1763 (`Thoth\MarketingCampaigns\Report\CampaignList\CampaignListReport`): "Marketing Campaigns" list report.
  * - 1255 (`Thoth\Report\SalesReport\Client\TransactionAllPaymentClientReport`): Report about user's transactions.
  * - 1321 (`Thoth\Report\SalesReport\Client\TransactionAllPaymentStaffClientReport`): Report about client's
  * transactions.
  * - 1324 (`Thoth\Report\SalesReport\Client\TransactionAllItemStaffClientReport`): Client's 'Purchases' report.
+ * - 739 (`Thoth\Report\SalesReport\Transaction\TransactionAllItemReport`): "All Transactions" report / "All Sales"
+ * report (item view).
  * - 799 (`Thoth\Report\SalesReport\Transaction\TransactionAllPaymentReport`): "All Transactions" report.
  *
  *   This is a placeholder for now.
- * - 739 (`Thoth\Report\SalesReport\Transaction\TransactionAllItemReport`): "All Transactions" report / "All Sales"
- * report (item view).
  * - 1350 (`Thoth\Report\SalesReport\Transaction\TransactionFailReport`): "Failed Transactions" report.
  * - 900 (`Thoth\Report\SalesReport\Product\ProductCostItemReport`): "Cost of Goods Sold" report.
+ * - 2226 (`Thoth\ReportCore\QueryEngine\Report\ReportQueryReport`): Executes a registry-stored SQL query and exposes
+ * the result as a report.
  * - 919 (`Thoth\ReportCore\Generator\Example\ExampleReport`): Example report used to demonstrate report creation in
  * step by step guide.
  *
  *   See `namespace.Wl/Report/Generator/doc/how-to-create-a-report.md`.
- * - 2226 (`Thoth\ReportCore\QueryEngine\Report\ReportQueryReport`): Executes a registry-stored SQL query and exposes
- * the result as a report.
  * - 1619 (`Wl\Login\Rank\Report\LoginRankReport`): "Belts" report.
  * - 1450 (`Wl\Login\Franchise\Status\StatusListReport`): Franchise client status report.
  * - 1385 (`Wl\Login\Franchise\Coupon\LoginFranchiseCouponReport`): "All Transactions" report.
  * - 1504 (`Wl\Login\Franchise\Detail\DetailListReport`): Franchise client detail report generator.
- * - 1705 (`Wl\Franchise\Fee\Report\FeeLocationReport`): "Royalties And Fees By Location" corporate report.
  * - 1451 (`Wl\Lead\Franchise\Report\LeadByLocationReport`): "Leads by location" report.
  * - 1697 (`Wl\Mail\History\Report\MailHistoryReport`): "Email History" report.
  * - 1684 (`Wl\Purchase\Tip\FilterLimiter\FilterLimiterReport`): Supporting report which used for purchase tip filter
  * limiter.
  * - 1666 (`Wl\Purchase\Tip\Sum\PurchaseTipSumReport`): Report to show sum of the earned tips by staff members.
+ * - 1744 (`Wl\Staff\Pay\Report\StaffPayDetailReport`): Report to show detailed list of instructor's classes and
+ * payments for these classes.
+ * - 1751 (`Wl\Staff\Pay\Report\StaffPaySummaryReport`): "Payroll Summary" report.
+ * - 1971 (`Wl\Staff\Pay\Report\StaffPayDetailWithUpcomingReport`): Special version of the report to calculate upcoming
+ * visits revenue.
+ * - 2193 (`Wl\Sms\History\Report\SmsHistoryReport`): "SMS History" report.
  * - 1628 (`Wl\Visit\Remain\Report\VisitRemainReport`): "Visits Remaining" report.
  * - 1603 (`Wl\Visit\Revenue\Report\VisitRevenueServiceReport`): "Service Revenue Summary" report.
  * - 1608 (`Wl\Visit\Revenue\Report\VisitRevenueDetailReport`): "Revenue by Service" report.
  * - 1602 (`Wl\Visit\Revenue\Report\VisitRevenueServiceTypeReport`): "Revenue by Service Type" report.
- * - 1751 (`Wl\Staff\Pay\Report\StaffPaySummaryReport`): "Payroll Summary" report.
- * - 1744 (`Wl\Staff\Pay\Report\StaffPayDetailReport`): Report to show detailed list of instructor's classes and
- * payments for these classes.
- * - 1971 (`Wl\Staff\Pay\Report\StaffPayDetailWithUpcomingReport`): Special version of the report to calculate upcoming
- * visits revenue.
- * - 2193 (`Wl\Sms\History\Report\SmsHistoryReport`): "SMS History" report.
+ * - 1705 (`Wl\Franchise\Fee\Report\FeeLocationReport`): "Royalties And Fees By Location" corporate report.
  * - 1522 (`Wl\Attendance\Report\Appointment\DetailReport`): Controls detailed appointment analysis report in list
  * format.
  * - 1523 (`Wl\Attendance\Report\Appointment\SummaryReport`): Controls appointment summary report in list format.
@@ -79,22 +79,6 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *
  *   Lists account statements generated for a client.
  * - 1295 (`Thoth\Report\SalesReport\Client\SummaryReport\SummaryReport`): "Sales Summary by Client" report.
- * - 2316 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReport`): "Bulk Charges" report. Summary of
- * Bulk Billing batches created from the Clients tab.
- *
- *   There is no persisted "expected total" for a batch - `Wl\Billing\Bulk\PurchaseBatchManager::create()` does not
- *   compute or store one. It does, however, freeze each item's price into `wl_purchase_batch_item.m_price` at that
- *   same moment, and `Wl\Billing\Bulk\PurchaseBatchBill::billClient()` bills every client off that frozen price, not
- *   off the price list current at billing time. `Total Amount` therefore combines the already-charged clients'
- *   actual `RsPurchaseSql::$f_sum`, `m_surcharge` with a re-pricing (via `BulkBillingManager::purchaseItemTotal()`,
- *   passed the same frozen `m_price`) of the clients still pending/failed - see
- *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
- *
- *   The `Wl\Billing\Bulk\*` references above are plain text, not `{@link}` tags, on purpose - this class docblock is
- *   surfaced as the `Bulk Charges` entry's description in the `$cid_report` enum of every report-facing API
- *   (`{@link \WlSdk\Thoth\ReportCore\Generator\Query}`, `{@link \WlSdk\Wl\Report\Access}`, and others), and the
- * OpenAPI
- *   generator rejects `{@link}` references to `Wl\Billing\Bulk\*` there as internal-class leaks into public docs.
  * - 2325 (`Thoth\Report\SalesReport\Transaction\BulkChargesDetail\BulkChargesDetailReport`): "Bulk Charges" batch
  * detail report. Client-level drill-down for a single batch, reached from
  *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s `Batch ID`/`Total Clients` columns.
@@ -112,18 +96,34 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s own per-tax
  *   columns), or from `_clientExpectedGet()`'s own re-priced `a_tax_by_name` for a `PENDING`/`FAIL` client - see
  *   SAL-1195.
+ * - 2316 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReport`): "Bulk Charges" report. Summary of
+ * Bulk Billing batches created from the Clients tab.
+ *
+ *   There is no persisted "expected total" for a batch - `Wl\Billing\Bulk\PurchaseBatchManager::create()` does not
+ *   compute or store one. It does, however, freeze each item's price into `wl_purchase_batch_item.m_price` at that
+ *   same moment, and `Wl\Billing\Bulk\PurchaseBatchBill::billClient()` bills every client off that frozen price, not
+ *   off the price list current at billing time. `Total Amount` therefore combines the already-charged clients'
+ *   actual `RsPurchaseSql::$f_sum`, `m_surcharge` with a re-pricing (via `BulkBillingManager::purchaseItemTotal()`,
+ *   passed the same frozen `m_price`) of the clients still pending/failed - see
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
+ *
+ *   The `Wl\Billing\Bulk\*` references above are plain text, not `{@link}` tags, on purpose - this class docblock is
+ *   surfaced as the `Bulk Charges` entry's description in the `$cid_report` enum of every report-facing API
+ *   (`{@link \WlSdk\Thoth\ReportCore\Generator\Query}`, `{@link \WlSdk\Wl\Report\Access}`, and others), and the
+ * OpenAPI
+ *   generator rejects `{@link}` references to `Wl\Billing\Bulk\*` there as internal-class leaks into public docs.
  * - 1572 (`Thoth\Report\SalesReport\Transaction\Cash\SummaryReport`): "Cash Reconciliation Summary" report.
  *   This report is only accessible as a part of "Sales and Attendance Summary" report.
  * - 1283 (`Thoth\Report\SalesReport\Transaction\Batch\BatchReport`): "Batch Report".
  *
  *   Report by transactions that are bathing.
  *   Batching is a process when all transactions are sent to processing by merchant in a certain time of next day.
- * - 1268 (`Thoth\Report\SalesReport\Tag\Summary\ListReport`): "Sales Summary by Revenue Category" report.
- * - 1262 (`Thoth\Report\SalesReport\Tag\Detail\ListRevenueReport`): "Sales Details by Revenue Category" report.
  * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -> Memberships
  * Details by Location" report. Detailed list of all memberships in the franchise.
  * - 1498 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReport`): Franchise "Memberships Summary by
  * Location" report.
+ * - 1268 (`Thoth\Report\SalesReport\Tag\Summary\ListReport`): "Sales Summary by Revenue Category" report.
+ * - 1262 (`Thoth\Report\SalesReport\Tag\Detail\ListRevenueReport`): "Sales Details by Revenue Category" report.
  * - 1031 (`Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryReport`): Generator class for "Sales
  * Summary By Location" report (item view).
  * - 1042 (`Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryPaymentReport`): Generator class for
@@ -156,12 +156,12 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * limiter.
  * - 1261 (`Wl\Purchase\Item\Report\FilterLimiterClient\FilterLimiterReport`): Supporting report which used for filter
  * limiter of client reports.
+ * - 1748 (`Wl\Staff\Pay\Report\StaffMemberLimiter\FilterLimiterReport`): Supporting report which used for payroll
+ * details filter limiter.
+ * - 1727 (`Wl\Shop\Product\Inventory\Report\InventoryReport`): "Inventory On Hand" report.
  * - 1456 (`Wl\Visit\Location\Cross\Detail\VisitLocationCrossDetailReport`): "Cross-Location Visit Details" report.
  * - 1480 (`Wl\Visit\Location\Cross\Summary\VisitLocationCrossDetailSummaryReport`): "Cross-Location Visit Summary"
  * report.
- * - 1727 (`Wl\Shop\Product\Inventory\Report\InventoryReport`): "Inventory On Hand" report.
- * - 1748 (`Wl\Staff\Pay\Report\StaffMemberLimiter\FilterLimiterReport`): Supporting report which used for payroll
- * details filter limiter.
  * - 1668 (`Wl\Contact\Member\History\Report\ContactHistoryReport`): "Contact History" report.
  * - 1692 (`Wl\Contact\Member\History\Report\ContactHistoryClientReport`): "Contact History" report for the specified
  * client.
@@ -169,6 +169,8 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * (Approved) report.
  * - 1560 (`Thoth\Report\SalesReport\Transaction\Batch\Summary\SettledReport`): "Batch Reconciliation Summary"
  * (Settled) report.
+ * - 1580 (`Thoth\Report\SalesReport\Closeout\Report\PurchaseOption\UsageReport`): "Purchase Option Usage Summary"
+ * report.
  * - 1034 (`Thoth\Report\SalesReport\Franchise\Location\Detail\PurchaseFranchiseLocationPaymentReport`): Generates data
  * for "Sales Details By Location" corporate report.
  * - 961 (`Thoth\Report\SalesReport\Franchise\Location\Detail\PurchaseFranchiseLocationReport`): Generates data for
@@ -187,8 +189,6 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 1025 (`Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryReport`): Generates
  * data for "Sales Summary By Location" corporate report.
  * - 1274 (`Thoth\Report\SalesReport\Franchise\Sale\Compare\CompareListReport`): "YOY Sales Comparison" report.
- * - 1580 (`Thoth\Report\SalesReport\Closeout\Report\PurchaseOption\UsageReport`): "Purchase Option Usage Summary"
- * report.
  * - 1472 (`Wl\Visit\Franchise\Location\Cross\Detail\VisitFranchiseLocationCrossDetailReport`): Franchise
  * "Cross-Location Visit Details" report.
  * - 1470 (`Wl\Visit\Franchise\Location\Cross\Detail\VisitFranchiseeLocationCrossDetailReport`): Franchisee
@@ -209,8 +209,8 @@ class ReportGeneratorReportAbstract
     /** "Balance Due Report". */
     public const LoginAccountReport = 1358;
 
-    /** Client Appointment Booking Flow report. */
-    public const BookingFlowReport = 1050;
+    /** "Lead Management Report". */
+    public const LeadManagementReport = 1791;
 
     /** Report with list of debts that should be sent to third party service to collect a debt by force. */
     public const DebtReport = 1271;
@@ -221,9 +221,6 @@ class ReportGeneratorReportAbstract
     /** Report with list of payments that were performed via collections service. */
     public const TransactionCollectorReport = 1297;
 
-    /** "Lead Management Report". */
-    public const LeadManagementReport = 1791;
-
     /** External membership report. */
     public const MembershipReport = 2352;
 
@@ -232,6 +229,9 @@ class ReportGeneratorReportAbstract
 
     /** External reconciliation report for franchisee. */
     public const ReconcileReport = 1713;
+
+    /** Client Appointment Booking Flow report. */
+    public const BookingFlowReport = 1050;
 
     /** Controls list report for attendance. */
     public const VisitBuySummaryReport = 1556;
@@ -248,11 +248,11 @@ class ReportGeneratorReportAbstract
     /** "All clients" report generator (this report used for the "Clients" link accessed from the top nav or WL menu). */
     public const MemberReport = 1287;
 
-    /** "Marketing Campaigns" list report. */
-    public const CampaignListReport = 1763;
-
     /** "Marketing Campaigns" detail report. */
     public const CampaignDetailReport = 1777;
+
+    /** "Marketing Campaigns" list report. */
+    public const CampaignListReport = 1763;
 
     /** Report about user's transactions. */
     public const TransactionAllPaymentClientReport = 1255;
@@ -263,11 +263,11 @@ class ReportGeneratorReportAbstract
     /** Client's 'Purchases' report. */
     public const TransactionAllItemStaffClientReport = 1324;
 
-    /** "All Transactions" report. */
-    public const TransactionAllPaymentReport = 799;
-
     /** "All Transactions" report / "All Sales" report (item view). */
     public const TransactionAllItemReport = 739;
+
+    /** "All Transactions" report. */
+    public const TransactionAllPaymentReport = 799;
 
     /** "Failed Transactions" report. */
     public const TransactionFailReport = 1350;
@@ -275,11 +275,11 @@ class ReportGeneratorReportAbstract
     /** "Cost of Goods Sold" report. */
     public const ProductCostItemReport = 900;
 
-    /** Example report used to demonstrate report creation in step by step guide. */
-    public const ExampleReport = 919;
-
     /** Executes a registry-stored SQL query and exposes the result as a report. */
     public const ReportQueryReport = 2226;
+
+    /** Example report used to demonstrate report creation in step by step guide. */
+    public const ExampleReport = 919;
 
     /** "Belts" report. */
     public const LoginRankReport = 1619;
@@ -293,9 +293,6 @@ class ReportGeneratorReportAbstract
     /** Franchise client detail report generator. */
     public const DetailListReport = 1504;
 
-    /** "Royalties And Fees By Location" corporate report. */
-    public const FeeLocationReport = 1705;
-
     /** "Leads by location" report. */
     public const LeadByLocationReport = 1451;
 
@@ -307,6 +304,18 @@ class ReportGeneratorReportAbstract
 
     /** Report to show sum of the earned tips by staff members. */
     public const PurchaseTipSumReport = 1666;
+
+    /** Report to show detailed list of instructor's classes and payments for these classes. */
+    public const StaffPayDetailReport = 1744;
+
+    /** "Payroll Summary" report. */
+    public const StaffPaySummaryReport = 1751;
+
+    /** Special version of the report to calculate upcoming visits revenue. */
+    public const StaffPayDetailWithUpcomingReport = 1971;
+
+    /** "SMS History" report. */
+    public const SmsHistoryReport = 2193;
 
     /** "Visits Remaining" report. */
     public const VisitRemainReport = 1628;
@@ -320,17 +329,8 @@ class ReportGeneratorReportAbstract
     /** "Revenue by Service Type" report. */
     public const VisitRevenueServiceTypeReport = 1602;
 
-    /** "Payroll Summary" report. */
-    public const StaffPaySummaryReport = 1751;
-
-    /** Report to show detailed list of instructor's classes and payments for these classes. */
-    public const StaffPayDetailReport = 1744;
-
-    /** Special version of the report to calculate upcoming visits revenue. */
-    public const StaffPayDetailWithUpcomingReport = 1971;
-
-    /** "SMS History" report. */
-    public const SmsHistoryReport = 2193;
+    /** "Royalties And Fees By Location" corporate report. */
+    public const FeeLocationReport = 1705;
 
     /** Controls detailed appointment analysis report in list format. */
     public const DetailReport = 1522;
@@ -347,11 +347,11 @@ class ReportGeneratorReportAbstract
     /** "Sales Summary by Client" report. */
     public const Client_SummaryReport_SummaryReport = 1295;
 
-    /** "Bulk Charges" report. Summary of Bulk Billing batches created from the Clients tab. */
-    public const BulkChargesReport = 2316;
-
     /** "Bulk Charges" batch detail report. Client-level drill-down for a single batch, reached from */
     public const BulkChargesDetailReport = 2325;
+
+    /** "Bulk Charges" report. Summary of Bulk Billing batches created from the Clients tab. */
+    public const BulkChargesReport = 2316;
 
     /** "Cash Reconciliation Summary" report. */
     public const Cash_SummaryReport = 1572;
@@ -359,17 +359,17 @@ class ReportGeneratorReportAbstract
     /** "Batch Report". */
     public const BatchReport = 1283;
 
-    /** "Sales Summary by Revenue Category" report. */
-    public const ListReport = 1268;
-
-    /** "Sales Details by Revenue Category" report. */
-    public const ListRevenueReport = 1262;
-
     /** "Enterprise Reports -> Memberships Details by Location" report. Detailed list of all memberships in the franchise. */
     public const MembershipDetailReport = 1448;
 
     /** Franchise "Memberships Summary by Location" report. */
     public const MembershipSummaryReport = 1498;
+
+    /** "Sales Summary by Revenue Category" report. */
+    public const ListReport = 1268;
+
+    /** "Sales Details by Revenue Category" report. */
+    public const ListRevenueReport = 1262;
 
     /** Generator class for "Sales Summary By Location" report (item view). */
     public const PurchaseLocationSummaryReport = 1031;
@@ -407,17 +407,17 @@ class ReportGeneratorReportAbstract
     /** Supporting report which used for filter limiter of client reports. */
     public const FilterLimiterClient_FilterLimiterReport = 1261;
 
+    /** Supporting report which used for payroll details filter limiter. */
+    public const StaffMemberLimiter_FilterLimiterReport = 1748;
+
+    /** "Inventory On Hand" report. */
+    public const InventoryReport = 1727;
+
     /** "Cross-Location Visit Details" report. */
     public const VisitLocationCrossDetailReport = 1456;
 
     /** "Cross-Location Visit Summary" report. */
     public const VisitLocationCrossDetailSummaryReport = 1480;
-
-    /** "Inventory On Hand" report. */
-    public const InventoryReport = 1727;
-
-    /** Supporting report which used for payroll details filter limiter. */
-    public const StaffMemberLimiter_FilterLimiterReport = 1748;
 
     /** "Contact History" report. */
     public const ContactHistoryReport = 1668;
@@ -430,6 +430,9 @@ class ReportGeneratorReportAbstract
 
     /** "Batch Reconciliation Summary" (Settled) report. */
     public const SettledReport = 1560;
+
+    /** "Purchase Option Usage Summary" report. */
+    public const UsageReport = 1580;
 
     /** Generates data for "Sales Details By Location" corporate report. */
     public const PurchaseFranchiseLocationPaymentReport = 1034;
@@ -445,9 +448,6 @@ class ReportGeneratorReportAbstract
 
     /** "YOY Sales Comparison" report. */
     public const CompareListReport = 1274;
-
-    /** "Purchase Option Usage Summary" report. */
-    public const UsageReport = 1580;
 
     /** Franchise "Cross-Location Visit Details" report. */
     public const VisitFranchiseLocationCrossDetailReport = 1472;

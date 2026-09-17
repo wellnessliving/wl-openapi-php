@@ -6,11 +6,14 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * Subscription manager.
  *
  * Values:
+ * - 1250 (`Wl\Business\Account\Subscription\Collections\CollectionsSubscription`): Class for "Collections"
+ * subscription.
+ * - 858 (`Wl\Business\Account\Subscription\Achieve\AchieveSubscription`):
+ * Wl\Business\Account\Subscription\Achieve\AchieveSubscription
+ * - 882 (`Wl\Business\Account\Subscription\Asset\AssetSubscription`): Asset subscription settings reader.
  * - 2331 (`Wl\Business\Account\Subscription\QuickBooks\QuickBooksSubscription`): Quickbooks Suite subscription.
  * - 1868 (`Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription`):
  * Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription
- * - 1250 (`Wl\Business\Account\Subscription\Collections\CollectionsSubscription`): Class for "Collections"
- * subscription.
  * - 1965 (`Wl\Business\Account\Subscription\Email\EmailSubscription`): Email marketing services.
  * - 2166 (`Wl\Business\Account\Subscription\Eml\ConstantContactSubscription`): Eml marketing subscription for
  * `ConstantContact` integration.
@@ -18,8 +21,6 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * integration.
  * - 1838 (`Wl\Business\Account\Subscription\MarketingSuite\MarketingSuiteSubscription`): Marketing Suite subscription.
  * - 857 (`Wl\Business\Account\Subscription\Sms\SmsSubscription`): Wl\Business\Account\Subscription\Sms\SmsSubscription
- * - 858 (`Wl\Business\Account\Subscription\Achieve\AchieveSubscription`):
- * Wl\Business\Account\Subscription\Achieve\AchieveSubscription
  * - 861 (`Wl\Business\Account\Subscription\Base\BaseSubscription`): Base subscription settings reader.
  * - 1225 (`Wl\Business\Account\Subscription\Finance\FinanceSubscription`):
  * Wl\Business\Account\Subscription\Finance\FinanceSubscription
@@ -49,18 +50,23 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * Wl\Business\Account\Subscription\Fitzone\FitzoneSubscription
  * - 885 (`Wl\Business\Account\Subscription\Review\ReviewSubscription`):
  * Wl\Business\Account\Subscription\Review\ReviewSubscription
- * - 882 (`Wl\Business\Account\Subscription\Asset\AssetSubscription`): Asset subscription settings reader.
  */
 class SubscriptionAbstract
 {
+    /** Class for "Collections" subscription. */
+    public const CollectionsSubscription = 1250;
+
+    /** Wl\Business\Account\Subscription\Achieve\AchieveSubscription */
+    public const AchieveSubscription = 858;
+
+    /** Asset subscription settings reader. */
+    public const AssetSubscription = 882;
+
     /** Quickbooks Suite subscription. */
     public const QuickBooksSubscription = 2331;
 
     /** Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription */
     public const AiAgentSubscription = 1868;
-
-    /** Class for "Collections" subscription. */
-    public const CollectionsSubscription = 1250;
 
     /** Email marketing services. */
     public const EmailSubscription = 1965;
@@ -76,9 +82,6 @@ class SubscriptionAbstract
 
     /** Wl\Business\Account\Subscription\Sms\SmsSubscription */
     public const SmsSubscription = 857;
-
-    /** Wl\Business\Account\Subscription\Achieve\AchieveSubscription */
-    public const AchieveSubscription = 858;
 
     /** Base subscription settings reader. */
     public const BaseSubscription = 861;
@@ -130,7 +133,4 @@ class SubscriptionAbstract
 
     /** Wl\Business\Account\Subscription\Review\ReviewSubscription */
     public const ReviewSubscription = 885;
-
-    /** Asset subscription settings reader. */
-    public const AssetSubscription = 882;
 }

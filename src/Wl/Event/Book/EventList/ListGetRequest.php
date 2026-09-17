@@ -16,7 +16,7 @@ class ListGetRequest
      * @var int|null
      * @see \WlSdk\AFlagSid
      */
-    public ?int $id_status = 3;
+    public ?int $id_status = null;
 
     /**
      * The key of the business to show information for.

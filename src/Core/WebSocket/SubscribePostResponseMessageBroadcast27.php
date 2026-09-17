@@ -5,14 +5,22 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcast27
 {
     /**
-     * Accumulation process progress.
+     * An array with information about dialog:
      *
-     * @var float|null
+     * @var SubscribePostResponseMessageBroadcast27Info|null
      */
-    public ?float $f_progress = null;
+    public ?SubscribePostResponseMessageBroadcast27Info $a_info = null;
+
+    /**
+     * The time in UNIX format when socket message was sent.
+     *
+     * @var int|null
+     */
+    public ?int $tl_send = null;
 
     public function __construct(array $data)
     {
-        $this->f_progress = isset($data['f_progress']) ? (float)$data['f_progress'] : null;
+        $this->a_info = isset($data['a_info']) ? new SubscribePostResponseMessageBroadcast27Info((array)$data['a_info']) : null;
+        $this->tl_send = isset($data['tl_send']) ? (int)$data['tl_send'] : null;
     }
 }

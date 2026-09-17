@@ -5,44 +5,48 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastR
 {
     /**
-     * End of change interval.
+     * Duration of the generation of the report in seconds.
      *
-     * Empty string if change interval has no end.
-     *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $dt_end_local = null;
+    public ?int $i_generation = null;
 
     /**
-     * Start of change interval.
+     * ID of the report that was generated.
+     * One of the {@link \WlSdk\RsReportSid} constants.
      *
-     * @var string|null
+     * @var int|null
+     * @see \WlSdk\RsReportSid
      */
-    public ?string $dt_start_local = null;
+    public ?int $id_report = null;
 
     /**
-     * New "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
+     * Whether need to display a message about report generation, regardless of the generation time.
      *
-     * `null` means system default tab.
-     *
-     * @var string|null
+     * @var bool|null
      */
-    public ?string $k_class_tab_new = null;
+    public ?bool $is_need_show = null;
 
     /**
-     * Old "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
-     *
-     * `null` means system default tab.
+     * Report accumulation.
      *
      * @var string|null
      */
-    public ?string $k_class_tab_old = null;
+    public ?string $k_report_accumulation = null;
+
+    /**
+     * Title of the report that was generated.
+     *
+     * @var string|null
+     */
+    public ?string $text_report = null;
 
     public function __construct(array $data)
     {
-        $this->dt_end_local = isset($data['dt_end_local']) ? (string)$data['dt_end_local'] : null;
-        $this->dt_start_local = isset($data['dt_start_local']) ? (string)$data['dt_start_local'] : null;
-        $this->k_class_tab_new = isset($data['k_class_tab_new']) ? (string)$data['k_class_tab_new'] : null;
-        $this->k_class_tab_old = isset($data['k_class_tab_old']) ? (string)$data['k_class_tab_old'] : null;
+        $this->i_generation = isset($data['i_generation']) ? (int)$data['i_generation'] : null;
+        $this->id_report = isset($data['id_report']) ? (int)$data['id_report'] : null;
+        $this->is_need_show = isset($data['is_need_show']) ? (bool)$data['is_need_show'] : null;
+        $this->k_report_accumulation = isset($data['k_report_accumulation']) ? (string)$data['k_report_accumulation'] : null;
+        $this->text_report = isset($data['text_report']) ? (string)$data['text_report'] : null;
     }
 }

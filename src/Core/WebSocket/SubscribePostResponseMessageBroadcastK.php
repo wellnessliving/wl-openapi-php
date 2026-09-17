@@ -5,46 +5,26 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastK
 {
     /**
-     * Number of successfully processed items.
+     * Status of mail verification.
+     * One of the {@link \WlSdk\Wl\Mail\Verify\MailVerifyStatusSid} constants.
+     * Or {@link \WlSdk\Wl\Business\Config\Option\OptionSidAbstract} if option "Enable Custom Reply To Emails" in
+     * Business -> Feature is disabled.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Mail\Verify\MailVerifyStatusSid
      */
-    public ?int $i_complete = null;
+    public ?int $id_mail_verify_status = null;
 
     /**
-     * Number of failed items.
-     *
-     * @var int|null
-     */
-    public ?int $i_fail = null;
-
-    /**
-     * Number of items left to process.
-     *
-     * @var int|null
-     */
-    public ?int $i_left = null;
-
-    /**
-     * Key of the import being processing.
+     * Email address to check.
      *
      * @var string|null
      */
-    public ?string $k_import = null;
-
-    /**
-     * Url link to download log file with import progress.
-     *
-     * @var string|null
-     */
-    public ?string $url_log = null;
+    public ?string $text_email = null;
 
     public function __construct(array $data)
     {
-        $this->i_complete = isset($data['i_complete']) ? (int)$data['i_complete'] : null;
-        $this->i_fail = isset($data['i_fail']) ? (int)$data['i_fail'] : null;
-        $this->i_left = isset($data['i_left']) ? (int)$data['i_left'] : null;
-        $this->k_import = isset($data['k_import']) ? (string)$data['k_import'] : null;
-        $this->url_log = isset($data['url_log']) ? (string)$data['url_log'] : null;
+        $this->id_mail_verify_status = isset($data['id_mail_verify_status']) ? (int)$data['id_mail_verify_status'] : null;
+        $this->text_email = isset($data['text_email']) ? (string)$data['text_email'] : null;
     }
 }

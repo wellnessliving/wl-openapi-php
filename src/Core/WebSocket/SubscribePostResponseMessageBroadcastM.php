@@ -5,30 +5,14 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastM
 {
     /**
-     * The text of the error.
+     * New title of the business.
      *
      * @var string|null
      */
-    public ?string $html_error_message = null;
-
-    /**
-     * The unique key of the sent SMS.
-     *
-     * @var string|null
-     */
-    public ?string $s_key = null;
-
-    /**
-     * The time in UNIX format when socket message was sent.
-     *
-     * @var int|null
-     */
-    public ?int $tl_send = null;
+    public ?string $text_title = null;
 
     public function __construct(array $data)
     {
-        $this->html_error_message = isset($data['html_error_message']) ? (string)$data['html_error_message'] : null;
-        $this->s_key = isset($data['s_key']) ? (string)$data['s_key'] : null;
-        $this->tl_send = isset($data['tl_send']) ? (int)$data['tl_send'] : null;
+        $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }
 }

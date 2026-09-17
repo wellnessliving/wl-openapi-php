@@ -5,14 +5,33 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastC
 {
     /**
-     * New information for messenger.
+     * Number of overdue tasks.
      *
-     * @var SubscribePostResponseMessageBroadcastCData|null
+     * @var int|null
      */
-    public ?SubscribePostResponseMessageBroadcastCData $a_data = null;
+    public ?int $i_overdue = null;
+
+    /**
+     * New task status of the changed task.
+     *
+     * One of {@link \WlSdk\Wl\Task\TaskStatusSid}.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Task\TaskStatusSid
+     */
+    public ?int $id_task_status = null;
+
+    /**
+     * Key of the changed task.
+     *
+     * @var string|null
+     */
+    public ?string $k_task = null;
 
     public function __construct(array $data)
     {
-        $this->a_data = isset($data['a_data']) ? new SubscribePostResponseMessageBroadcastCData((array)$data['a_data']) : null;
+        $this->i_overdue = isset($data['i_overdue']) ? (int)$data['i_overdue'] : null;
+        $this->id_task_status = isset($data['id_task_status']) ? (int)$data['id_task_status'] : null;
+        $this->k_task = isset($data['k_task']) ? (string)$data['k_task'] : null;
     }
 }
