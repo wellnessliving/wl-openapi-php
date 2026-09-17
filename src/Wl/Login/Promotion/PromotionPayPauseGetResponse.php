@@ -59,7 +59,7 @@ class PromotionPayPauseGetResponse
     public ?string $dtu_date_notification = null;
 
     /**
-     * Type of the hold from {@link \WlSdk\Wl\Promotion\Pay\PromotionPayHoldSid}.
+     * Type of the hold.
      *
      * @var int|null
      * @see \WlSdk\Wl\Promotion\Pay\PromotionPayHoldSid
