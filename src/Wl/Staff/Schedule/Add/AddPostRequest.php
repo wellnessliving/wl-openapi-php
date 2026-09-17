@@ -19,7 +19,7 @@ class AddPostRequest
     public ?array $a_day = null;
 
     /**
-     * Services list, each element is a primary key in .
+     * Services list key.
      *
      * Empty list means all services.
      * `null` means not set.

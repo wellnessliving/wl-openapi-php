@@ -93,7 +93,7 @@ class AddPostRequest
     public ?string $k_location = null;
 
     /**
-     * Resource key. Primary key in the `rs_resource` table.
+     * Resource key.
      *
      * @var string|null
      */

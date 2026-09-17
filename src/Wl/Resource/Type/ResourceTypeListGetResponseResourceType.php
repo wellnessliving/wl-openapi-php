@@ -23,7 +23,7 @@ class ResourceTypeListGetResponseResourceType
     public ?bool $is_active = null;
 
     /**
-     * Resource type key, primary key in the  table.
+     * Resource type key.
      *
      * @var string|null
      */

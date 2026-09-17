@@ -12,14 +12,14 @@ class AddonGetResponseAddon
     public ?string $dt_add = null;
 
     /**
-     * Rank key. Primary key in the  table.
+     * Rank key.
      *
      * @var string|null
      */
     public ?string $k_rank = null;
 
     /**
-     * Category rank key. Primary key in the  table.
+     * Category rank key.
      *
      * @var string|null
      */
@@ -40,7 +40,7 @@ class AddonGetResponseAddon
     public ?string $s_rank_category = null;
 
     /**
-     * User's key. Primary key in  table.
+     * User's key.
      *
      * @var string|null
      */

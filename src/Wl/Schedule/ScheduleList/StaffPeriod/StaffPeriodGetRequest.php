@@ -13,8 +13,7 @@ class StaffPeriodGetRequest
     public ?string $dt_date = null;
 
     /**
-     * ID of business for which working hours are required.
-     * Primary key in the `rs_business` table.
+     * Key of business for which working hours are required.
      *
      * @var string|null
      */

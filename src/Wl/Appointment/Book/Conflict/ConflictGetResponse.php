@@ -10,9 +10,6 @@ class ConflictGetResponse
     /**
      * List of appointment booking conflicts.
      *
-     * Based on the result of , with
-     *  additional entries for client age restriction conflicts. Each element:
-     *
      * @var ConflictGetResponseConflict[]|null
      */
     public ?array $a_conflict = null;

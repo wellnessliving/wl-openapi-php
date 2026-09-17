@@ -10,7 +10,6 @@ class AddonGetResponse
     /**
      * Full list of ranks owned by the client.
      * The key of the array is a category rank key.
-     * Primary key in the  table.
      *
      * @var AddonGetResponseAddon[]|null
      */

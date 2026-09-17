@@ -8,8 +8,8 @@ namespace WlSdk\Wl\Staff\Load;
 class LoadPutResponse
 {
     /**
-     * Staff work information. See `rs_staff_load_check_work_trx()`. Empty array if the staff
-     *  member is currently clocked out. Structure:
+     * Staff work information.
+     * Empty array if the staff member is currently clocked out.
      *
      * @var LoadPutResponseWork|null
      */

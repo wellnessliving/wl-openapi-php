@@ -8,8 +8,9 @@ namespace WlSdk\Wl\Schedule\ScheduleList\StaffApp\Filter;
 class ScheduleListFilterGetResponse
 {
     /**
-     * List of schedule filters. Keys - filters IDs; primary key in the `rs_schedule_config` table. Values - sub
-     * arrays with next keys:
+     * List of schedule filters.
+     * Keys - filters IDs;
+     * Values - sub arrays with next keys:
      *
      * @var ScheduleListFilterGetResponseFilter|null
      */

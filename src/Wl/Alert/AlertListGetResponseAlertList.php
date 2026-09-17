@@ -34,14 +34,14 @@ class AlertListGetResponseAlertList
     public ?bool $is_read = null;
 
     /**
-     * Alert key. Primary key in  table.
+     * Alert key.  table.
      *
      * @var string|null
      */
     public ?string $k_alert = null;
 
     /**
-     * Business key. Primary key in  table.
+     * Business key.  table.
      *
      * @var string|null
      */
@@ -69,15 +69,17 @@ class AlertListGetResponseAlertList
     public ?string $text_title = null;
 
     /**
-     * User key associated with this alert. Primary key in .`null` if user is walk-in.
+     * User key associated with this alert.
+     *    .
+     *    `null` if user is walk-in.
      *
      * @var string|null
      */
     public ?string $uid_client = null;
 
     /**
-     * A link to detail page related to the alert. Can be empty if the user had
-     *    no access to this page at the time the alert was created.
+     * A link to detail page related to the alert.
+     *    Can be empty if the user had no access to this page at the time the alert was created.
      *
      * @var string|null
      */

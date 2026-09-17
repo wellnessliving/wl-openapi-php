@@ -43,7 +43,7 @@ class UserListInfoGetResponseUserData
     public ?bool $is_phone_inherited = null;
 
     /**
-     * City key. Primary key in the  table.
+     * City key.
      *
      * @var string|null
      */
@@ -78,9 +78,10 @@ class UserListInfoGetResponseUserData
     public ?string $text_city = null;
 
     /**
-     * Compound key delimited wit a colon. First part is business key. Primary key in  table. Second part - uid of
-     * a user.
-     * Primary key in  table.
+     * Compound key delimited wit a colon.
+     * First part is business key.
+     *
+     * Second part - uid of a user.
      *
      * @var string|null
      */

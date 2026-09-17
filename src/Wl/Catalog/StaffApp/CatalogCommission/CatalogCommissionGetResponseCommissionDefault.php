@@ -5,21 +5,21 @@ namespace WlSdk\Wl\Catalog\StaffApp\CatalogCommission;
 class CatalogCommissionGetResponseCommissionDefault
 {
     /**
-     * @deprecated Staff key. Primary key of  table.
+     * <b>Deprecated.</b> Staff key.
      *
      * @var string|null
      */
     public ?string $k_staff = null;
 
     /**
-     * Staff pay key. Primary key of  table.
+     * Staff pay key.
      *
      * @var string|null
      */
     public ?string $k_staff_pay = null;
 
     /**
-     * User key of staff. Primary key of  table.
+     * User key of staff.
      *
      * @var string|null
      */

@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Appointment\WaitList;
 class AppointmentWaitListGetResponseWaitAddon
 {
     /**
-     * Key of the shop product option. Primary key from  table.
+     * Key of the shop product option.
      *
      * @var string|null
      */

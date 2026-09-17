@@ -34,7 +34,7 @@ class CatalogCommissionGetResponseStaffCommission
     public ?string $html_commission = null;
 
     /**
-     * Staff pay key. Primary key of  table.
+     * Staff pay key.  table.
      *
      * @var string|null
      */

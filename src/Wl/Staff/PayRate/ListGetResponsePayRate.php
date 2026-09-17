@@ -34,8 +34,10 @@ class ListGetResponsePayRate
     public ?bool $is_hour_default = null;
 
     /**
-     * Location key. Primary key from . This is a location where pay rate can be used for a staff staff load. If
-     * empty then pay rate can be used in any location. Used only for pay
+     * Location key.
+     *
+     * This is a location where pay rate can be used for a staff staff load.
+     * If empty then pay rate can be used in any location. Used only for pay
      * rates with `id_staff_pay`={@link \WlSdk\RsStaffPaySid} and `is_report`=1.
      *
      * @var string|null
@@ -43,15 +45,15 @@ class ListGetResponsePayRate
     public ?string $k_location = null;
 
     /**
-     * Staff key, primary key in .
-     * deprecated Returned only for applications from legacy allow-list. Use `uid_staff`.
+     * Staff key.
+     * <b>Deprecated</b> Returned only for applications from legacy allow-list. Use `uid_staff`.
      *
      * @var string|null
      */
     public ?string $k_staff = null;
 
     /**
-     * Pay rate identifier, primary key in .
+     * Pay rate key.
      *
      * @var string|null
      */
@@ -72,7 +74,7 @@ class ListGetResponsePayRate
     public ?string $text_title = null;
 
     /**
-     * Staff user ID. Primary key in .
+     * Staff user key.
      *
      * @var string|null
      */

@@ -33,7 +33,7 @@ class LoginRankListGetResponseUserListRankCategoryAvailable
     public ?string $json_condition = null;
 
     /**
-     * Rank key. Primary key from  table.
+     * Rank key.
      *
      * @var string|null
      */

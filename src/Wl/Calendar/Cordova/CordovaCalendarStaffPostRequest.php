@@ -27,7 +27,7 @@ class CordovaCalendarStaffPostRequest
 
     /**
      * Books/visits that are already synchronized in client's calendar.
-     * Serialized list of pairs [[visit key () => visit hash], ...].
+     * Serialized list of pairs [[visit key  => visit hash], ...].
      *
      * @var string|null
      */

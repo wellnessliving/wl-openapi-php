@@ -26,7 +26,7 @@ class MessageHistoryGetResponseMessageHistoryList
     public ?bool $is_outbound = null;
 
     /**
-     * The key of SMS history. Primary key in  table.
+     * The key of SMS history.  table.
      *
      * @var string|null
      */

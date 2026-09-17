@@ -5,23 +5,24 @@ namespace WlSdk\Wl\Login\Rank;
 class LoginRankListGetResponseUserListRankCategory
 {
     /**
-     * List of ranks available for the category. Each element:
+     * List of ranks available for the category.
      *
      * @var LoginRankListGetResponseUserListRankCategoryAvailable|null
      */
     public ?LoginRankListGetResponseUserListRankCategoryAvailable $a_available = null;
 
     /**
-     * Data of the user's current rank in the category, merged with promotion condition data. Contains
-     *   only `html_condition` (the belt condition of the first available rank) when the user does not
-     *   have a current rank yet. When the user has a current rank, also contains:
+     * Data of the user's current rank in the category, merged with promotion condition data.
+     * Contains only `html_condition` (the belt condition of the first available rank) when the user does not
+     * have a current rank yet.
+     * When the user has a current rank, also contains additional information.
      *
      * @var LoginRankListGetResponseUserListRankCategoryCurrent|null
      */
     public ?LoginRankListGetResponseUserListRankCategoryCurrent $a_current = null;
 
     /**
-     * Rank category key. Primary key from  table.
+     * Rank category key.
      *
      * @var string|null
      */
