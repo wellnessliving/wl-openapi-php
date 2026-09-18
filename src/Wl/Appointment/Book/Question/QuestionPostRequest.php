@@ -5,7 +5,13 @@ namespace WlSdk\Wl\Appointment\Book\Question;
 class QuestionPostRequest
 {
     /**
-     * Appointment key to save answers for.
+     * Appointment key used to load or save question answers.
+     *
+     * Optional for question loading.
+     * When provided, access is validated and `has_answer` is calculated from stored appointment answers.
+     *
+     * Required for answer saving.
+     * Identifies the appointment where answers are saved after access validation.
      *
      * @var string|null
      */
