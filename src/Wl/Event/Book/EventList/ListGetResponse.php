@@ -25,7 +25,7 @@ class ListGetResponse
      * Key is the event class key.
      * Value is `true` if the event is available for booking, `false` if it is unavailable.
      *
-     * @var bool[]|null
+     * @var array|null
      */
     public ?array $a_event_available = null;
 
@@ -35,7 +35,7 @@ class ListGetResponse
      * Key is the event class key.
      * Value is `true` if the event is a ticketed event, `false` otherwise.
      *
-     * @var bool[]|null
+     * @var array|null
      */
     public ?array $a_event_ticket = null;
 

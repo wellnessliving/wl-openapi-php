@@ -35,8 +35,9 @@ class ScheduleListByTokenGetResponseSchedule
     public ?array $a_staff = null;
 
     /**
-     * Information about staff members who conduct this session. The keys are .
-     * Values are array with data:
+     * Information about staff members who conduct this session. The keys are staff keys.
+     *
+     * Every value is an array with the following data.
      *
      * @var ScheduleListByTokenGetResponseScheduleStaffInfo|null
      */
@@ -50,7 +51,7 @@ class ScheduleListByTokenGetResponseSchedule
     public ?array $a_user = null;
 
     /**
-     * List of virtual locations. Each value is .
+     * List of virtual locations.
      *
      * @var string[]|null
      */

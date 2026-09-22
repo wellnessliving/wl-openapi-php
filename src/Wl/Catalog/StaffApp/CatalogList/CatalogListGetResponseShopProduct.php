@@ -52,6 +52,15 @@ class CatalogListGetResponseShopProduct
     public ?int $id_program = null;
 
     /**
+     * The number of tickets that can still be sold for the event instance.
+     * Never negative, even when the capacity was lowered below the number of tickets already sold.
+     * Returned for ticket items only, that is when `is_ticket` is `true`.
+     *
+     * @var int|null
+     */
+    public ?int $i_ticket_left = null;
+
+    /**
      * The restriction ID. One of the {@link \WlSdk\Wl\Shop\Product\PurchaseRestrictionSid} constants.
      *
      * @var int|null
@@ -75,8 +84,20 @@ class CatalogListGetResponseShopProduct
     public ?bool $is_online_sell = null;
 
     /**
-     * `true` if the sale item is a ticketed event, `false` otherwise.
+     * `true` if all tickets of the event instance are sold and no more can be sold, `false` otherwise.
+     * A sold out instance is still returned, so that staff can see it.
+     * Returned for ticket items only, that is when `is_ticket` is `true`.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_sold_out = null;
+
+    /**
+     * `true` if the sale item is one instance of a ticketed event, `false` otherwise.
      * Returned for items with `id_sale` equal to {@link \WlSdk\RsSaleSid} only.
+     * A ticket item is never accompanied by an ordinary event item for the same instance, and the start
+     * and the end of the instance are returned in `a_data` so that two shows of one event can be told
+     * apart. Staff who may not sell from the store receive no ticket items at all.
      *
      * @var bool|null
      */
@@ -120,9 +141,11 @@ class CatalogListGetResponseShopProduct
         $this->a_member_group = isset($data['a_member_group']) ? (array)$data['a_member_group'] : null;
         $this->a_shop_category = isset($data['a_shop_category']) ? (array)$data['a_shop_category'] : null;
         $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
+        $this->i_ticket_left = isset($data['i_ticket_left']) ? (int)$data['i_ticket_left'] : null;
         $this->id_restriction = isset($data['id_restriction']) ? (int)$data['id_restriction'] : null;
         $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->is_online_sell = isset($data['is_online_sell']) ? (bool)$data['is_online_sell'] : null;
+        $this->is_sold_out = isset($data['is_sold_out']) ? (bool)$data['is_sold_out'] : null;
         $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->is_visit = isset($data['is_visit']) ? (bool)$data['is_visit'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;

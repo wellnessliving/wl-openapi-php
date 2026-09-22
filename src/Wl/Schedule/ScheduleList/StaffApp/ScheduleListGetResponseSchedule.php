@@ -62,9 +62,11 @@ class ScheduleListGetResponseSchedule
 
     /**
      * Information about staff members who conduct this session.
-     * For applications in the `APPS_USE_OLD_K_STAFF` allow-list, keys are .
-     * For other applications, keys are .
-     * Values are array with data:
+     * For applications in the `APPS_USE_OLD_K_STAFF` allow-list, keys are staff keys.
+     *
+     * For other applications, keys are staff user keys.
+     *
+     * Every value is an array with the following data:
      *
      * @var ScheduleListGetResponseScheduleStaffInfo|null
      */
@@ -78,7 +80,7 @@ class ScheduleListGetResponseSchedule
     public ?array $a_user = null;
 
     /**
-     * List of virtual locations. Each value is .
+     * List of virtual locations.
      *
      * @var string[]|null
      */
