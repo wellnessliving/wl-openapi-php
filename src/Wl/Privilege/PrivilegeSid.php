@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Privilege;
 /**
  * Wellnessliving-wide privileges.
  *
- * Last Used ID: 249.
+ * Last Used ID: 251.
  *
  * Values:
  * - 225 (`AI_AGENT_KNOWLEDGE_BASE`): Allows user to view, create or edit knowledge base entries, or conversational
@@ -109,6 +109,8 @@ namespace WlSdk\Wl\Privilege;
  * - 7 (`HOLIDAY`): Add holidays.
  * - 215 (`IMPORT_CLIENT`): Allows to import clients from a CSV file.
  * - 163 (`INTEGRATION_AUTYMATE`): Set up and modify Autymate integration.
+ * - 251 (`INTEGRATION_BRIDGE_ATHLETIC_ACCESS`): Access to view Bridge Athletic integration.
+ * - 250 (`INTEGRATION_BRIDGE_ATHLETIC_MANAGE`): Access to set up and change Bridge Athletic integration.
  * - 179 (`INTEGRATION_BRIVO`): Set up and modify Brivo integration.
  * - 249 (`INTEGRATION_QUICKBOOKS`): Access to set up and change quickbooks integration.
  * - 87 (`INTERFACE_ACHIEVE_APP`): Enroll into and manage the WellnessLiving Achieve App. These settings are located
@@ -523,6 +525,12 @@ class PrivilegeSid
 
     /** Set up and modify Autymate integration. */
     public const INTEGRATION_AUTYMATE = 163;
+
+    /** Access to view Bridge Athletic integration. */
+    public const INTEGRATION_BRIDGE_ATHLETIC_ACCESS = 251;
+
+    /** Access to set up and change Bridge Athletic integration. */
+    public const INTEGRATION_BRIDGE_ATHLETIC_MANAGE = 250;
 
     /** Set up and modify Brivo integration. */
     public const INTEGRATION_BRIVO = 179;

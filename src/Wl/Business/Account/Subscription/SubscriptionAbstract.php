@@ -50,6 +50,8 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * Wl\Business\Account\Subscription\Fitzone\FitzoneSubscription
  * - 885 (`Wl\Business\Account\Subscription\Review\ReviewSubscription`):
  * Wl\Business\Account\Subscription\Review\ReviewSubscription
+ * - 2366 (`Wl\Business\Account\Subscription\BridgeAthletic\BridgeAthleticSubscription`):
+ * Wl\Business\Account\Subscription\BridgeAthletic\BridgeAthleticSubscription
  */
 class SubscriptionAbstract
 {
@@ -133,4 +135,7 @@ class SubscriptionAbstract
 
     /** Wl\Business\Account\Subscription\Review\ReviewSubscription */
     public const ReviewSubscription = 885;
+
+    /** Wl\Business\Account\Subscription\BridgeAthletic\BridgeAthleticSubscription */
+    public const BridgeAthleticSubscription = 2366;
 }
