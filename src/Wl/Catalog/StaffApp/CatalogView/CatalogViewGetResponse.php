@@ -15,6 +15,15 @@ class CatalogViewGetResponse
     public ?CatalogViewGetResponseTaxData $a_tax_data = null;
 
     /**
+     * `true` if the sale item is a ticketed event, `false` otherwise.
+     *
+     * Always `false` for sale items other than {@link \WlSdk\RsSaleSid}.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
+    /**
      * The prorated amount.
      *
      * @var string|null
@@ -45,6 +54,7 @@ class CatalogViewGetResponse
     public function __construct(array $data)
     {
         $this->a_tax_data = isset($data['a_tax_data']) ? new CatalogViewGetResponseTaxData((array)$data['a_tax_data']) : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->m_prorate = isset($data['m_prorate']) ? (string)$data['m_prorate'] : null;
         $this->m_subtotal = isset($data['m_subtotal']) ? (string)$data['m_subtotal'] : null;
         $this->m_tax = isset($data['m_tax']) ? (string)$data['m_tax'] : null;

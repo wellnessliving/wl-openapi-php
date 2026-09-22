@@ -62,6 +62,14 @@ class ListGetResponseProduct
     public ?bool $is_introductory = null;
 
     /**
+     * `true` if the item is a ticketed event, `false` otherwise.
+     * Returned for items with `id_sale` equal to {@link \WlSdk\RsSaleSid} only.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
+    /**
      * The item key.
      *
      * @var string|null
@@ -106,6 +114,7 @@ class ListGetResponseProduct
         $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->is_direct = isset($data['is_direct']) ? (bool)$data['is_direct'] : null;
         $this->is_introductory = isset($data['is_introductory']) ? (bool)$data['is_introductory'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->k_shop_category = isset($data['k_shop_category']) ? (string)$data['k_shop_category'] : null;
         $this->s_key = isset($data['s_key']) ? (string)$data['s_key'] : null;

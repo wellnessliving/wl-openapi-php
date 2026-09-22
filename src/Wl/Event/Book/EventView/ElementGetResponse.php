@@ -328,6 +328,13 @@ class ElementGetResponse
     public ?bool $is_single_session_buy = null;
 
     /**
+     * `true` if this event is a ticketed event, `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
+    /**
      * `true` if event is virtual; `false` otherwise.
      *
      * @var bool|null
@@ -457,6 +464,7 @@ class ElementGetResponse
         $this->is_promotion_only = isset($data['is_promotion_only']) ? (bool)$data['is_promotion_only'] : null;
         $this->is_prorate = isset($data['is_prorate']) ? (bool)$data['is_prorate'] : null;
         $this->is_single_session_buy = isset($data['is_single_session_buy']) ? (bool)$data['is_single_session_buy'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
         $this->k_book_class_period = isset($data['k_book_class_period']) ? (string)$data['k_book_class_period'] : null;
         $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;

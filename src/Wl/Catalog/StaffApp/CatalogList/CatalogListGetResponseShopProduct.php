@@ -75,6 +75,14 @@ class CatalogListGetResponseShopProduct
     public ?bool $is_online_sell = null;
 
     /**
+     * `true` if the sale item is a ticketed event, `false` otherwise.
+     * Returned for items with `id_sale` equal to {@link \WlSdk\RsSaleSid} only.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
+    /**
      * This will be `true` if this Purchase Option is suitable to pay for the visit {@link
      * \WlSdk\Wl\Catalog\StaffApp\CatalogList\CatalogList}.
      * Otherwise, this will be `false`.
@@ -115,6 +123,7 @@ class CatalogListGetResponseShopProduct
         $this->id_restriction = isset($data['id_restriction']) ? (int)$data['id_restriction'] : null;
         $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->is_online_sell = isset($data['is_online_sell']) ? (bool)$data['is_online_sell'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->is_visit = isset($data['is_visit']) ? (bool)$data['is_visit'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;

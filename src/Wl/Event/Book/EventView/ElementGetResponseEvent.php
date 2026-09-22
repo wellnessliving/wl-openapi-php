@@ -191,6 +191,13 @@ class ElementGetResponseEvent
     public ?bool $is_policy_custom = null;
 
     /**
+     * `true` if the event is a ticketed event; `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
+    /**
      * `true` if event is virtual; `false` otherwise.
      *
      * @var bool|null
@@ -274,6 +281,7 @@ class ElementGetResponseEvent
         $this->is_makeup = isset($data['is_makeup']) ? (bool)$data['is_makeup'] : null;
         $this->is_past = isset($data['is_past']) ? (bool)$data['is_past'] : null;
         $this->is_policy_custom = isset($data['is_policy_custom']) ? (bool)$data['is_policy_custom'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
         $this->k_book_class_period = isset($data['k_book_class_period']) ? (string)$data['k_book_class_period'] : null;
         $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;

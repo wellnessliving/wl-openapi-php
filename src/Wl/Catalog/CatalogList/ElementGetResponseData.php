@@ -103,6 +103,14 @@ class ElementGetResponseData
      */
     public ?bool $is_price_breakdown = null;
 
+    /**
+     * This applies to enrollment/event items.
+     * `true` if the item is a ticketed event, `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
     public function __construct(array $data)
     {
         $this->a_service_access = isset($data['a_service_access']) ? (array)$data['a_service_access'] : null;
@@ -117,5 +125,6 @@ class ElementGetResponseData
         $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;
         $this->id_duration_type = isset($data['id_duration_type']) ? (int)$data['id_duration_type'] : null;
         $this->is_price_breakdown = isset($data['is_price_breakdown']) ? (bool)$data['is_price_breakdown'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
     }
 }

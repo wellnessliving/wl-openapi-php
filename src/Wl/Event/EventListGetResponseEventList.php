@@ -318,6 +318,13 @@ class EventListGetResponseEventList
     public ?bool $is_single_buy = null;
 
     /**
+     * `true` if the event is a ticketed event, `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
+    /**
      * Whether current user is booked or on the wait list.
      *
      * Unlike `is_booked`, this field is also `true` when the user is on the wait
@@ -474,6 +481,7 @@ class EventListGetResponseEventList
         $this->is_promotion_only = isset($data['is_promotion_only']) ? (bool)$data['is_promotion_only'] : null;
         $this->is_prorate = isset($data['is_prorate']) ? (bool)$data['is_prorate'] : null;
         $this->is_single_buy = isset($data['is_single_buy']) ? (bool)$data['is_single_buy'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->is_user_booked = isset($data['is_user_booked']) ? (bool)$data['is_user_booked'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
         $this->is_wait_list_enabled = isset($data['is_wait_list_enabled']) ? (bool)$data['is_wait_list_enabled'] : null;

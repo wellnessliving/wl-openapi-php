@@ -222,6 +222,14 @@ class ScheduleListGetResponseSchedule
     public ?bool $is_repeat = null;
 
     /**
+     * `true` if the session belongs to a ticketed event, `false` otherwise.
+     * Always `false` for classes, appointments, assets and events that are not ticketed.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
+    /**
      * The appointment key.
      * If the session isn't an appointment, this will be `0`.
      *
@@ -369,6 +377,7 @@ class ScheduleListGetResponseSchedule
         $this->is_class_view = isset($data['is_class_view']) ? (bool)$data['is_class_view'] : null;
         $this->is_pay = isset($data['is_pay']) ? (bool)$data['is_pay'] : null;
         $this->is_repeat = isset($data['is_repeat']) ? (bool)$data['is_repeat'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;
         $this->dt_confirm = isset($data['dt_confirm']) ? (string)$data['dt_confirm'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
