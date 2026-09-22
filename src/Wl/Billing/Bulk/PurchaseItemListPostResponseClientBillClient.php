@@ -5,6 +5,15 @@ namespace WlSdk\Wl\Billing\Bulk;
 class PurchaseItemListPostResponseClientBillClient
 {
     /**
+     * The card system ({@link \WlSdk\ACardSystemSid}) of the client's default payment method when it is a card,
+     * `null` for a stored bank account or when `text_pay_method` is `Account`.
+     *
+     * @var int|null
+     * @see \WlSdk\ACardSystemSid
+     */
+    public ?int $id_card_system = null;
+
+    /**
      * The payment method this client is charged with, which decides whether the client is surcharged and
      * which surcharge applies. One of the {@link \WlSdk\RsPayMethodSid} constants:
      * {@link \WlSdk\RsPayMethodSid} for a stored card, {@link \WlSdk\RsPayMethodSid} for a stored bank
@@ -26,6 +35,14 @@ class PurchaseItemListPostResponseClientBillClient
     public ?bool $is_warning = null;
 
     /**
+     * The masked card or account number of the client's default payment method, or `null` when
+     * `text_pay_method` is `Account`.
+     *
+     * @var string|null
+     */
+    public ?string $s_number = null;
+
+    /**
      * The client email address. Empty string if the client has no email.
      *
      * @var string|null
@@ -41,7 +58,7 @@ class PurchaseItemListPostResponseClientBillClient
 
     /**
      * The payment method label for this client. `Account` when billing to the client account; otherwise the
-     * default stored card label (for example, `Visa ****1234`), the default ACH account label when no card
+     * default stored card label (for example, `Visa-1234`), the default ACH account label when no card
      * is on file, or an account fallback when neither is on file.
      *
      * @var string|null
@@ -64,8 +81,10 @@ class PurchaseItemListPostResponseClientBillClient
 
     public function __construct(array $data)
     {
+        $this->id_card_system = isset($data['id_card_system']) ? (int)$data['id_card_system'] : null;
         $this->id_pay_method = isset($data['id_pay_method']) ? (int)$data['id_pay_method'] : null;
         $this->is_warning = isset($data['is_warning']) ? (bool)$data['is_warning'] : null;
+        $this->s_number = isset($data['s_number']) ? (string)$data['s_number'] : null;
         $this->text_mail = isset($data['text_mail']) ? (string)$data['text_mail'] : null;
         $this->text_name = isset($data['text_name']) ? (string)$data['text_name'] : null;
         $this->text_pay_method = isset($data['text_pay_method']) ? (string)$data['text_pay_method'] : null;
