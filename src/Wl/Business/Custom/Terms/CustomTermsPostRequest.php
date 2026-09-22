@@ -5,13 +5,9 @@ namespace WlSdk\Wl\Business\Custom\Terms;
 class CustomTermsPostRequest
 {
     /**
-     * Current value of every term slot to save.
+     * Current value of every term slot to save. Has the following structure:
      *
-     * Each value is one of {@link \WlSdk\Wl\Business\Custom\Terms\CustomTermOptionAbstractSid} child class
-     * constants
-     *   keyed by {@link \WlSdk\Wl\Business\Custom\Terms\CustomTermSid} constants.
-     *
-     * @var int[]|null
+     * @var array[]|null
      */
     public ?array $a_term_option = null;
 

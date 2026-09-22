@@ -36,6 +36,9 @@ class Question
     /**
      * Saves answers for an existing appointment.
      *
+     * Matches submitted answers to the service's questions by hash key, and saves them to the specified
+     * appointment.
+     *
      * @return QuestionPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
