@@ -52,13 +52,19 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 2316 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReport`): "Bulk Charges" report. Summary of
  * Bulk Billing batches created from the Clients tab.
  *
- *   There is no persisted "expected total" for a batch - `\Wl\Billing\Bulk\PurchaseBatchManager::create()` does not
+ *   There is no persisted "expected total" for a batch - `Wl\Billing\Bulk\PurchaseBatchManager::create()` does not
  *   compute or store one. It does, however, freeze each item's price into `wl_purchase_batch_item.m_price` at that
- *   same moment, and `\Wl\Billing\Bulk\PurchaseBatchBill::billClient()` bills every client off that frozen price, not
+ *   same moment, and `Wl\Billing\Bulk\PurchaseBatchBill::billClient()` bills every client off that frozen price, not
  *   off the price list current at billing time. `Total Amount` therefore combines the already-charged clients'
  *   actual `RsPurchaseSql::$f_sum`, `m_surcharge` with a re-pricing (via `BulkBillingManager::purchaseItemTotal()`,
  *   passed the same frozen `m_price`) of the clients still pending/failed - see
  *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
+ *
+ *   The `Wl\Billing\Bulk\*` references above are plain text, not `{@link}` tags, on purpose - this class docblock is
+ *   surfaced as the `Bulk Charges` entry's description in the `$cid_report` enum of every report-facing API
+ *   (`{@link \WlSdk\Thoth\ReportCore\Generator\Query}`, `{@link \WlSdk\Wl\Report\Access}`, and others), and the
+ * OpenAPI
+ *   generator rejects `{@link}` references to `Wl\Billing\Bulk\*` there as internal-class leaks into public docs.
  * - 2325 (`Thoth\Report\SalesReport\Transaction\BulkChargesDetail\BulkChargesDetailReport`): "Bulk Charges" batch
  * detail report. Client-level drill-down for a single batch, reached from
  *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s `Batch ID`/`Total Clients` columns.
