@@ -12,12 +12,21 @@ class LeadStageListGetResponseLeadStage
     public ?int $i_order = null;
 
     /**
-     * Number of automations used this stage.
+     * Number of active automations which use this stage.
      * Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true`.
      *
      * @var int|null
      */
-    public ?int $i_automation = null;
+    public ?int $i_automation_active = null;
+
+    /**
+     * Number of inactive automations which use this stage. Such an automation still refers the stage, so it
+     * still makes a replacement stage mandatory when the stage is deleted.
+     * Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true`.
+     *
+     * @var int|null
+     */
+    public ?int $i_automation_inactive = null;
 
     /**
      * Number of client groups which convert their clients into this stage. Such a group depends on the stage: the
@@ -99,9 +108,9 @@ class LeadStageListGetResponseLeadStage
     public ?string $text_title = null;
 
     /**
-     * URL of the list of automations which use this stage.
-     *  Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true` and the stage is used in
-     * automations.
+     * URL of the list of the active automations which use this stage.
+     *  Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true` and the stage is used by at least
+     *  one active automation.
      *
      * @var string|null
      */
@@ -118,7 +127,8 @@ class LeadStageListGetResponseLeadStage
     public function __construct(array $data)
     {
         $this->i_order = isset($data['i_order']) ? (int)$data['i_order'] : null;
-        $this->i_automation = isset($data['i_automation']) ? (int)$data['i_automation'] : null;
+        $this->i_automation_active = isset($data['i_automation_active']) ? (int)$data['i_automation_active'] : null;
+        $this->i_automation_inactive = isset($data['i_automation_inactive']) ? (int)$data['i_automation_inactive'] : null;
         $this->i_member_group = isset($data['i_member_group']) ? (int)$data['i_member_group'] : null;
         $this->i_user = isset($data['i_user']) ? (int)$data['i_user'] : null;
         $this->id_lead_stage_shape = isset($data['id_lead_stage_shape']) ? (int)$data['id_lead_stage_shape'] : null;
