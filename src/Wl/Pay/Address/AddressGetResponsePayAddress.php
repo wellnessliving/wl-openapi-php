@@ -19,7 +19,7 @@ class AddressGetResponsePayAddress
     public ?string $k_country = null;
 
     /**
-     * Payment address key. Primary key in the `rs_pay_address` table.
+     * Payment address key.
      *
      * @var string|null
      */
