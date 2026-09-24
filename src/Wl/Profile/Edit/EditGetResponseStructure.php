@@ -14,37 +14,44 @@ class EditGetResponseStructure
     public ?int $id_field_general = null;
 
     /**
-     * Requirement for a case when a client books a service. One of FieldLevelEnum members.
+     * Requirement for a case when a client books a service. One of {@link \WlSdk\Wl\Field\FieldLevelEnum} members.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Field\FieldLevelEnum
      */
     public ?int $id_level_booking = null;
 
     /**
-     * Requirement for a case when a guest books or buys. One of FieldLevelEnum members.
+     * Requirement for a case when a guest books or buys. One of {@link \WlSdk\Wl\Field\FieldLevelEnum} members.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Field\FieldLevelEnum
      */
     public ?int $id_level_guest = null;
 
     /**
-     * Requirement for a case when a client makes a purchase. One of FieldLevelEnum members.
+     * Requirement for a case when a client makes a purchase. One of {@link \WlSdk\Wl\Field\FieldLevelEnum}
+     * members.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Field\FieldLevelEnum
      */
     public ?int $id_level_purchase = null;
 
     /**
-     * Requirement for a case when a client adds a relationship. One of FieldLevelEnum members.
+     * Requirement for a case when a client adds a relationship. One of {@link \WlSdk\Wl\Field\FieldLevelEnum}
+     * members.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Field\FieldLevelEnum
      */
     public ?int $id_level_relationship = null;
 
     /**
-     * Requirement for a case when a client signs up. One of FieldLevelEnum members.
+     * Requirement for a case when a client signs up. One of {@link \WlSdk\Wl\Field\FieldLevelEnum} members.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Field\FieldLevelEnum
      */
     public ?int $id_level_signup = null;
 
