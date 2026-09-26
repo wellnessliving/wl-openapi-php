@@ -5,14 +5,14 @@ namespace WlSdk\Core\AI\LogTriage;
 class ConnectionCheckGetResponseFinding
 {
     /**
-     * Local date of the first usage-statistics record.
+     * Date of the first usage-statistics record.
      *
      * @var string|null
      */
     public ?string $dl_first_seen = null;
 
     /**
-     * Local date of the last usage-statistics record.
+     * Date of the last usage-statistics record.
      *
      * @var string|null
      */
@@ -47,12 +47,12 @@ class ConnectionCheckGetResponseFinding
     public ?int $i_priority_multiplier = null;
 
     /**
-     * Finding source from {@link \WlSdk\Core\AI\LogTriage\TriageSourceSid}.
+     * CID of a {@link \WlSdk\Core\AI\LogTriage\TriageProblemAbstract} subclass.
      *
      * @var int|null
-     * @see \WlSdk\Core\AI\LogTriage\TriageSourceSid
+     * @see \WlSdk\Core\AI\LogTriage\TriageProblemAbstract
      */
-    public ?int $id_source = null;
+    public ?int $cid_source = null;
 
     /**
      * Usage-statistics object. Present for the usage-statistics source.
@@ -90,7 +90,7 @@ class ConnectionCheckGetResponseFinding
         $this->dtu_last_seen = isset($data['dtu_last_seen']) ? (string)$data['dtu_last_seen'] : null;
         $this->i_occurrence_count = isset($data['i_occurrence_count']) ? (int)$data['i_occurrence_count'] : null;
         $this->i_priority_multiplier = isset($data['i_priority_multiplier']) ? (int)$data['i_priority_multiplier'] : null;
-        $this->id_source = isset($data['id_source']) ? (int)$data['id_source'] : null;
+        $this->cid_source = isset($data['cid_source']) ? (int)$data['cid_source'] : null;
         $this->s_object = isset($data['s_object']) ? (string)$data['s_object'] : null;
         $this->s_period = isset($data['s_period']) ? (string)$data['s_period'] : null;
         $this->s_priority = isset($data['s_priority']) ? (string)$data['s_priority'] : null;

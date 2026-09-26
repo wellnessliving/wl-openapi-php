@@ -15,21 +15,11 @@ class SetupGetResponse
     public ?array $a_class_tab = null;
 
     /**
-     * Business policies the form starts with.
+     * Send rules of the client reminder. Keys are:
      *
-     * Policies of the event for a saved event, policies of the business for a new one, so that the fields of the
-     * Business policies section are filled in either case.
-     *
-     * @var array|null
+     * @var SetupGetResponseReminderInfo|null
      */
-    public ?array $a_config = null;
-
-    /**
-     * Send rules of the client reminder.
-     *
-     * @var array|null
-     */
-    public ?array $a_reminder_info = null;
+    public ?SetupGetResponseReminderInfo $a_reminder_info = null;
 
     /**
      * Quick search tags of the category of the business. Every element is an array:
@@ -55,10 +45,9 @@ class SetupGetResponse
     /**
      * Markup of the Business policies block of the form.
      *
-     * The block is a form of the legacy page, which is built by RsBusinessConfigFormView from the policy
-     * rules of the business. There is no template of this form on the client, so the block is rendered here and
-     * the
-     * client only moves the markup into the section it belongs to.
+     * The block is the form of the policy rules of the business. There is no template of this form on the client,
+     * so
+     * the block is rendered here and the client only moves the markup into the section it belongs to.
      *
      * @var string|null
      */
@@ -67,10 +56,8 @@ class SetupGetResponse
     /**
      * Markup of the Prerequisites block of the form.
      *
-     * The block is a picker of services built by ComponentView from the services of the business. There is no
-     * template of this picker on the client, so the block is rendered here and the client only moves the markup
-     * into
-     * the section it belongs to.
+     * The block is a picker of the services of the business. There is no template of this picker on the client, so
+     * the block is rendered here and the client only moves the markup into the section it belongs to.
      *
      * @var string|null
      */
@@ -79,9 +66,10 @@ class SetupGetResponse
     /**
      * Markup of the Purchase Options block of the form.
      *
-     * The block is a picker of Purchase Options built by ComponentView, followed by the list of the picked
-     * ones built by ListView. There is no template of either of them on the client, so the block is rendered
-     * here and the client only moves the markup into the section it belongs to.
+     * The block is a picker of the Purchase Options of the business, followed by the list of the picked ones.
+     * There
+     * is no template of either of them on the client, so the block is rendered here and the client only moves the
+     * markup into the section it belongs to.
      *
      * @var string|null
      */
@@ -90,10 +78,8 @@ class SetupGetResponse
     /**
      * Markup of the Quick Buy block of the form.
      *
-     * The block is a picker of products built by ComponentView from the products of the business. There is no
-     * template of this picker on the client, so the block is rendered here and the client only moves the markup
-     * into
-     * the section it belongs to.
+     * The block is a picker of the products of the business. There is no template of this picker on the client, so
+     * the block is rendered here and the client only moves the markup into the section it belongs to.
      *
      * @var string|null
      */
@@ -102,10 +88,9 @@ class SetupGetResponse
     /**
      * Markup of the Taxes block of the form.
      *
-     * The block is a select built by RsTaxSelectView from the taxes of the business. There is no template of
-     * this select on the client, so the block is rendered here and the client only moves the markup into the
-     * section
-     * it belongs to.
+     * The block is a selector of the taxes of the business. There is no template of this select on the client, so
+     * the
+     * block is rendered here and the client only moves the markup into the section it belongs to.
      *
      * @var string|null
      */
@@ -128,8 +113,7 @@ class SetupGetResponse
     public function __construct(array $data)
     {
         $this->a_class_tab = isset($data['a_class_tab']) ? array_map(static fn ($item) => new SetupGetResponseClassTab((array)$item), (array)$data['a_class_tab']) : null;
-        $this->a_config = isset($data['a_config']) ? (array)$data['a_config'] : null;
-        $this->a_reminder_info = isset($data['a_reminder_info']) ? (array)$data['a_reminder_info'] : null;
+        $this->a_reminder_info = isset($data['a_reminder_info']) ? new SetupGetResponseReminderInfo((array)$data['a_reminder_info']) : null;
         $this->a_search_tag = isset($data['a_search_tag']) ? array_map(static fn ($item) => new SetupGetResponseSearchTag((array)$item), (array)$data['a_search_tag']) : null;
         $this->a_shop_category = isset($data['a_shop_category']) ? array_map(static fn ($item) => new SetupGetResponseShopCategory((array)$item), (array)$data['a_shop_category']) : null;
         $this->a_url = isset($data['a_url']) ? array_map(static fn ($item) => new SetupGetResponseUrl((array)$item), (array)$data['a_url']) : null;
