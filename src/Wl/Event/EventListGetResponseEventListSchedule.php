@@ -26,6 +26,15 @@ class EventListGetResponseEventListSchedule
     public ?EventListGetResponseEventListScheduleStaffMember $a_staff_member = null;
 
     /**
+     * List of location keys where the virtual service can be booked from other locations.
+     *
+     * Empty array if the setting is off or no locations are selected.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_virtual_location = null;
+
+    /**
      * End date of the schedule in `MySql` format.
      *
      * @var string|null
@@ -97,6 +106,7 @@ class EventListGetResponseEventListSchedule
         $this->a_day = isset($data['a_day']) ? (array)$data['a_day'] : null;
         $this->a_repeat = isset($data['a_repeat']) ? new EventListGetResponseEventListScheduleRepeat((array)$data['a_repeat']) : null;
         $this->a_staff_member = isset($data['a_staff_member']) ? new EventListGetResponseEventListScheduleStaffMember((array)$data['a_staff_member']) : null;
+        $this->a_virtual_location = isset($data['a_virtual_location']) ? (array)$data['a_virtual_location'] : null;
         $this->dl_end = isset($data['dl_end']) ? (string)$data['dl_end'] : null;
         $this->dl_start = isset($data['dl_start']) ? (string)$data['dl_start'] : null;
         $this->is_day = isset($data['is_day']) ? (bool)$data['is_day'] : null;

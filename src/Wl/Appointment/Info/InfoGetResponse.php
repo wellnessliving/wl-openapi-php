@@ -61,6 +61,24 @@ class InfoGetResponse
     public ?string $dt_date_local = null;
 
     /**
+     * Background color of the appointment on the schedule (RGB).
+     *
+     * Uses the service color, or the asset color for a booking with no service.
+     *
+     * @var int|null
+     */
+    public ?int $i_color_background = null;
+
+    /**
+     * Border color of the appointment on the schedule (RGB).
+     *
+     * Uses the service color, or the asset color for a booking with no service.
+     *
+     * @var int|null
+     */
+    public ?int $i_color_border = null;
+
+    /**
      * Appointment duration (in minutes).
      *
      * @var int|null
@@ -81,6 +99,25 @@ class InfoGetResponse
      * @see \WlSdk\RsAppointmentPaySid
      */
     public ?int $id_appointment_pay = null;
+
+    /**
+     * Virtual provider ID.
+     *
+     * `null` for non-virtual services.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Virtual\VirtualProviderSid
+     */
+    public ?int $id_virtual_provider = null;
+
+    /**
+     * Whether the service is virtual.
+     *
+     * `null` for non-virtual services.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_virtual = null;
 
     /**
      * Location key.
@@ -171,9 +208,13 @@ class InfoGetResponse
         $this->a_resource = isset($data['a_resource']) ? array_map(static fn ($item) => new InfoGetResponseResource((array)$item), (array)$data['a_resource']) : null;
         $this->a_shop_product_option = isset($data['a_shop_product_option']) ? array_map(static fn ($item) => new InfoGetResponseShopProductOption((array)$item), (array)$data['a_shop_product_option']) : null;
         $this->dt_date_local = isset($data['dt_date_local']) ? (string)$data['dt_date_local'] : null;
+        $this->i_color_background = isset($data['i_color_background']) ? (int)$data['i_color_background'] : null;
+        $this->i_color_border = isset($data['i_color_border']) ? (int)$data['i_color_border'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_index = isset($data['i_index']) ? (int)$data['i_index'] : null;
         $this->id_appointment_pay = isset($data['id_appointment_pay']) ? (int)$data['id_appointment_pay'] : null;
+        $this->id_virtual_provider = isset($data['id_virtual_provider']) ? (int)$data['id_virtual_provider'] : null;
+        $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
         $this->k_login_promotion = isset($data['k_login_promotion']) ? (string)$data['k_login_promotion'] : null;
         $this->k_resource = isset($data['k_resource']) ? (string)$data['k_resource'] : null;
