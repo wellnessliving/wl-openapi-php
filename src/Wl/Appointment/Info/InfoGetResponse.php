@@ -101,6 +101,25 @@ class InfoGetResponse
     public ?int $id_appointment_pay = null;
 
     /**
+     * Virtual provider ID.
+     *
+     * `null` for non-virtual services.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Virtual\VirtualProviderSid
+     */
+    public ?int $id_virtual_provider = null;
+
+    /**
+     * Whether the service is virtual.
+     *
+     * `null` for non-virtual services.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_virtual = null;
+
+    /**
      * Location key.
      *
      * @var string|null
@@ -194,6 +213,8 @@ class InfoGetResponse
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->i_index = isset($data['i_index']) ? (int)$data['i_index'] : null;
         $this->id_appointment_pay = isset($data['id_appointment_pay']) ? (int)$data['id_appointment_pay'] : null;
+        $this->id_virtual_provider = isset($data['id_virtual_provider']) ? (int)$data['id_virtual_provider'] : null;
+        $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
         $this->k_login_promotion = isset($data['k_login_promotion']) ? (string)$data['k_login_promotion'] : null;
         $this->k_resource = isset($data['k_resource']) ? (string)$data['k_resource'] : null;

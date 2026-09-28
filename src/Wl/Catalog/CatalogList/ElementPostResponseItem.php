@@ -1,0 +1,102 @@
+<?php
+
+namespace WlSdk\Wl\Catalog\CatalogList;
+
+class ElementPostResponseItem
+{
+    /**
+     * Contains additional data for the sale item. The same structure as {@link
+     * \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$a_data} has.
+     *
+     * @var ElementPostResponseItemData|null
+     */
+    public ?ElementPostResponseItemData $a_data = null;
+
+    /**
+     * Information about promotion guest pass. The same structure as {@link
+     * \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$a_guest_pass} has.
+     *
+     * @var ElementPostResponseItemGuestPass|null
+     */
+    public ?ElementPostResponseItemGuestPass $a_guest_pass = null;
+
+    /**
+     * Contains information about one image connected to a sale item.
+     *
+     * @var ElementPostResponseItemImage|null
+     */
+    public ?ElementPostResponseItemImage $a_image = null;
+
+    /**
+     * Tax amounts keyed by tax key. The same structure as {@link
+     * \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$a_tax} has.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_tax = null;
+
+    /**
+     * The Purchase Option view type. One of the {@link \WlSdk\Wl\Catalog\PurchaseOptionViewSid} constants.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Catalog\PurchaseOptionViewSid
+     */
+    public ?int $id_purchase_option_view = null;
+
+    /**
+     * The discount code amount.
+     *
+     * @var string|null
+     */
+    public ?string $m_discount_code = null;
+
+    /**
+     * The discount amount for the client type.
+     *
+     * @var string|null
+     */
+    public ?string $m_discount_login = null;
+
+    /**
+     * Additional information about the sale item. For example, information about 'introductory offer'.
+     *
+     * @var string|null
+     */
+    public ?string $s_comment = null;
+
+    /**
+     * The price of the sale item in a human-readable format.
+     *
+     * @var string|null
+     */
+    public ?string $s_price = null;
+
+    /**
+     * The category title of the sale item.
+     *
+     * @var string|null
+     */
+    public ?string $s_sale = null;
+
+    /**
+     * The title of the sale item.
+     *
+     * @var string|null
+     */
+    public ?string $s_title = null;
+
+    public function __construct(array $data)
+    {
+        $this->a_data = isset($data['a_data']) ? new ElementPostResponseItemData((array)$data['a_data']) : null;
+        $this->a_guest_pass = isset($data['a_guest_pass']) ? new ElementPostResponseItemGuestPass((array)$data['a_guest_pass']) : null;
+        $this->a_image = isset($data['a_image']) ? new ElementPostResponseItemImage((array)$data['a_image']) : null;
+        $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
+        $this->id_purchase_option_view = isset($data['id_purchase_option_view']) ? (int)$data['id_purchase_option_view'] : null;
+        $this->m_discount_code = isset($data['m_discount_code']) ? (string)$data['m_discount_code'] : null;
+        $this->m_discount_login = isset($data['m_discount_login']) ? (string)$data['m_discount_login'] : null;
+        $this->s_comment = isset($data['s_comment']) ? (string)$data['s_comment'] : null;
+        $this->s_price = isset($data['s_price']) ? (string)$data['s_price'] : null;
+        $this->s_sale = isset($data['s_sale']) ? (string)$data['s_sale'] : null;
+        $this->s_title = isset($data['s_title']) ? (string)$data['s_title'] : null;
+    }
+}

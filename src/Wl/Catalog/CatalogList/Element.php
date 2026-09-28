@@ -32,4 +32,20 @@ class Element
     {
         return new ElementGetResponse($this->client->request('/Wl/Catalog/CatalogList/Element.json', $request->params(), 'GET'));
     }
+
+    /**
+     * Displays information about a certain item in the store.
+     *
+     * Works exactly as `get()` method.
+     * This method is added so that batched item identifiers can be sent in the request body
+     * rather than as URL query parameters, avoiding URL length limits.
+     *
+     * @return ElementPostResponse
+     * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
+     * @throws \RuntimeException On network or cURL error.
+     */
+    public function post(ElementPostRequest $request): ElementPostResponse
+    {
+        return new ElementPostResponse($this->client->request('/Wl/Catalog/CatalogList/Element.json', $request->params(), 'POST'));
+    }
 }

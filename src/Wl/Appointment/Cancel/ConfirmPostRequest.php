@@ -149,6 +149,15 @@ class ConfirmPostRequest
      */
     public ?string $text_reason = null;
 
+    /**
+     * Information for sending an appointment cancellation notification.
+     *
+     * All keys are optional. A key that is not provided keeps the template's value.
+     *
+     * @var array|null
+     */
+    public ?array $a_notification = null;
+
     public function params(): array
     {
         return array_filter(
@@ -171,6 +180,7 @@ class ConfirmPostRequest
             'k_visit' => $this->k_visit,
             'm_fee_amount' => $this->m_fee_amount,
             'text_reason' => $this->text_reason,
+            'a_notification' => $this->a_notification,
             ],
             static fn ($v) => $v !== null
         );
