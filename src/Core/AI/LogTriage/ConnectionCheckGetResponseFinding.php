@@ -52,7 +52,7 @@ class ConnectionCheckGetResponseFinding
      * @var int|null
      * @see \WlSdk\Core\AI\LogTriage\TriageProblemAbstract
      */
-    public ?int $cid_source = null;
+    public ?int $cid_problem = null;
 
     /**
      * Usage-statistics object. Present for the usage-statistics source.
@@ -90,7 +90,7 @@ class ConnectionCheckGetResponseFinding
         $this->dtu_last_seen = isset($data['dtu_last_seen']) ? (string)$data['dtu_last_seen'] : null;
         $this->i_occurrence_count = isset($data['i_occurrence_count']) ? (int)$data['i_occurrence_count'] : null;
         $this->i_priority_multiplier = isset($data['i_priority_multiplier']) ? (int)$data['i_priority_multiplier'] : null;
-        $this->cid_source = isset($data['cid_source']) ? (int)$data['cid_source'] : null;
+        $this->cid_problem = isset($data['cid_problem']) ? (int)$data['cid_problem'] : null;
         $this->s_object = isset($data['s_object']) ? (string)$data['s_object'] : null;
         $this->s_period = isset($data['s_period']) ? (string)$data['s_period'] : null;
         $this->s_priority = isset($data['s_priority']) ? (string)$data['s_priority'] : null;
