@@ -5,7 +5,7 @@ namespace WlSdk\Core\Passport\Passkey;
 use WlSdk\WlSdkClient;
 
 /**
- * Lists the signed-in user's registered passkey credentials.
+ * Lists the user's registered passkey credentials.
  */
 class PasskeyCredential
 {
@@ -18,7 +18,7 @@ class PasskeyCredential
     }
 
     /**
-     * Lists the signed-in user's registered passkey credentials.
+     * Lists the user's registered passkey credentials.
      *
      * Includes revoked credentials.
      *
@@ -34,9 +34,8 @@ class PasskeyCredential
     /**
      * Revokes one of the signed-in user's passkey credentials.
      *
-     * Marks the credential as revoked rather than deleting the row.  Only a credential owned by the signed-in user
-     * can be
-     * revoked - specifying another user's credential key has no effect.
+     * Marks the credential as revoked rather than deleting the row.  A credential owned by another user can not be
+     * revoked.
      *
      * @return PasskeyCredentialDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
