@@ -156,6 +156,22 @@ class BusinessDesignGetResponseData
     public ?string $s_color_submenu_press = null;
 
     /**
+     * Meta Conversion API Access Token. Empty string if CAPI not used or application that made request does not
+     * have access to it.
+     *
+     * @var string|null
+     */
+    public ?string $s_fb_capi_access_token = null;
+
+    /**
+     * Meta Conversion API Test Event Code. Optional, used for QA in Meta Events Manager. Empty string if not used
+     * or application that made request does not have access to it.
+     *
+     * @var string|null
+     */
+    public ?string $s_fb_capi_test_event_code = null;
+
+    /**
      * Facebook Pixel ID. Used for Facebook analytics tracking. Empty string if tracking is disabled.
      *
      * @var string|null
@@ -206,6 +222,8 @@ class BusinessDesignGetResponseData
         $this->s_color_submenu_element = isset($data['s_color_submenu_element']) ? (string)$data['s_color_submenu_element'] : null;
         $this->s_color_submenu_hover = isset($data['s_color_submenu_hover']) ? (string)$data['s_color_submenu_hover'] : null;
         $this->s_color_submenu_press = isset($data['s_color_submenu_press']) ? (string)$data['s_color_submenu_press'] : null;
+        $this->s_fb_capi_access_token = isset($data['s_fb_capi_access_token']) ? (string)$data['s_fb_capi_access_token'] : null;
+        $this->s_fb_capi_test_event_code = isset($data['s_fb_capi_test_event_code']) ? (string)$data['s_fb_capi_test_event_code'] : null;
         $this->s_fb_pixel_id = isset($data['s_fb_pixel_id']) ? (string)$data['s_fb_pixel_id'] : null;
         $this->s_ga_tracking_id = isset($data['s_ga_tracking_id']) ? (string)$data['s_ga_tracking_id'] : null;
         $this->s_gtm_container_id = isset($data['s_gtm_container_id']) ? (string)$data['s_gtm_container_id'] : null;
