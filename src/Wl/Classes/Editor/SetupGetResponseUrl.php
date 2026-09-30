@@ -1,6 +1,6 @@
 <?php
 
-namespace WlSdk\Wl\Event\Editor;
+namespace WlSdk\Wl\Classes\Editor;
 
 class SetupGetResponseUrl
 {
@@ -19,14 +19,14 @@ class SetupGetResponseUrl
     public ?string $url_notification_client = null;
 
     /**
-     * Client confirmation notification of an event.
+     * Client confirmation notification of a class.
      *
      * @var string|null
      */
     public ?string $url_notification_confirmation = null;
 
     /**
-     * Client reminder notification of an event.
+     * Client reminder notification of a class.
      *
      * @var string|null
      */

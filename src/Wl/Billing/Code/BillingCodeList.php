@@ -1,0 +1,35 @@
+<?php
+
+namespace WlSdk\Wl\Billing\Code;
+
+use WlSdk\WlSdkClient;
+
+/**
+ * Gets the billing code list of the business.
+ */
+class BillingCodeList
+{
+    /** @var WlSdkClient */
+    private $client;
+
+    public function __construct(WlSdkClient $client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * Gets the billing code list of the business.
+     *
+     * The list contains the custom codes of the business for now, and is meant to become the single place a client
+     * asks for codes, with the diagnostic codes of the read-only ICD-10-CM reference library to be returned
+     * from here as well.
+     *
+     * @return BillingCodeListGetResponse
+     * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
+     * @throws \RuntimeException On network or cURL error.
+     */
+    public function get(BillingCodeListGetRequest $request): BillingCodeListGetResponse
+    {
+        return new BillingCodeListGetResponse($this->client->request('/Wl/Billing/Code/BillingCodeList.json', $request->params(), 'GET'));
+    }
+}

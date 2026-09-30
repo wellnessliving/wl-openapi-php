@@ -1,18 +1,18 @@
 <?php
 
-namespace WlSdk\Wl\Event\Editor;
+namespace WlSdk\Wl\Classes\Editor;
 
-class SetupGetResponseShopCategory
+class SetupGetResponseSearchTag
 {
     /**
-     * Key of the category.
+     * Key of the tag.
      *
      * @var string|null
      */
-    public ?string $k_shop_category = null;
+    public ?string $k_search_tag = null;
 
     /**
-     * Title of the category.
+     * Title of the tag.
      *
      * @var string|null
      */
@@ -20,7 +20,7 @@ class SetupGetResponseShopCategory
 
     public function __construct(array $data)
     {
-        $this->k_shop_category = isset($data['k_shop_category']) ? (string)$data['k_shop_category'] : null;
+        $this->k_search_tag = isset($data['k_search_tag']) ? (string)$data['k_search_tag'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }
 }

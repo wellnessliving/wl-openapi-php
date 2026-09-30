@@ -1,8 +1,8 @@
 <?php
 
-namespace WlSdk\Wl\Event\Editor;
+namespace WlSdk\Wl\Billing\Code;
 
-class SetupGetRequest
+class BillingCodeGetRequest
 {
     /**
      * Business key.
@@ -12,21 +12,18 @@ class SetupGetRequest
     public ?string $k_business = null;
 
     /**
-     * Event key.
-     *
-     * `0` while a new event is created, so the key of the model of the client has a value. The key is only checked
-     * when it points at an event.
+     * Key of the custom billing code.
      *
      * @var string|null
      */
-    public ?string $k_class = null;
+    public ?string $k_code = null;
 
     public function params(): array
     {
         return array_filter(
             [
             'k_business' => $this->k_business,
-            'k_class' => $this->k_class,
+            'k_code' => $this->k_code,
             ],
             static fn ($v) => $v !== null
         );

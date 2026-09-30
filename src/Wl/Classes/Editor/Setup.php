@@ -1,11 +1,11 @@
 <?php
 
-namespace WlSdk\Wl\Event\Editor;
+namespace WlSdk\Wl\Classes\Editor;
 
 use WlSdk\WlSdkClient;
 
 /**
- * Returns everything the event setup form needs besides the event itself.
+ * Returns everything the class setup form needs besides the class itself.
  */
 class Setup
 {
@@ -18,7 +18,7 @@ class Setup
     }
 
     /**
-     * Returns everything the event setup form needs besides the event itself.
+     * Returns everything the class setup form needs besides the class itself.
      *
      * The form is rendered by the client, so this endpoint answers with data: the lists the Book Now Tab, the
      * quick
@@ -35,6 +35,6 @@ class Setup
      */
     public function get(SetupGetRequest $request): SetupGetResponse
     {
-        return new SetupGetResponse($this->client->request('/Wl/Event/Editor/Setup.json', $request->params(), 'GET'));
+        return new SetupGetResponse($this->client->request('/Wl/Classes/Editor/Setup.json', $request->params(), 'GET'));
     }
 }

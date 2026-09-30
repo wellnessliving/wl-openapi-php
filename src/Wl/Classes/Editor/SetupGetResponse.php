@@ -1,6 +1,6 @@
 <?php
 
-namespace WlSdk\Wl\Event\Editor;
+namespace WlSdk\Wl\Classes\Editor;
 
 /**
  * Response from GET
@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Event\Editor;
 class SetupGetResponse
 {
     /**
-     * Book Now Tabs the event may be shown in. Every element is an array:
+     * Book Now Tabs the class may be shown in. Every element is an array:
      *
      * @var SetupGetResponseClassTab[]|null
      */

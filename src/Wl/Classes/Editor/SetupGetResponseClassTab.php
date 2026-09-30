@@ -1,11 +1,11 @@
 <?php
 
-namespace WlSdk\Wl\Event\Editor;
+namespace WlSdk\Wl\Classes\Editor;
 
 class SetupGetResponseClassTab
 {
     /**
-     * `true` if the event is shown in this tab, `false` otherwise.
+     * `true` if the class is shown in this tab, `false` otherwise.
      *
      * @var bool|null
      */

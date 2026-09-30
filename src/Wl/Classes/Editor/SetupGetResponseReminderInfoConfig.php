@@ -1,6 +1,6 @@
 <?php
 
-namespace WlSdk\Wl\Event\Editor;
+namespace WlSdk\Wl\Classes\Editor;
 
 class SetupGetResponseReminderInfoConfig
 {
