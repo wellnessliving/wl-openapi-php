@@ -5,9 +5,11 @@ namespace WlSdk\Wl\Business\Account\Subscription\AiAgent;
 /**
  * List of possible plans for {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} subscription.
  *
- * Last used ID: 5.
+ * Last used ID: 9.
  *
  * Values:
+ * - 8 (`CHAT_AGENT_BUNDLE`): Chat Agent (Bundle)
+ * - 9 (`CHAT_AGENT_BUNDLE_TRIAL`): Chat Agent (Bundle) Trial
  * - 5 (`DENTAL_PHONE_AGENT`): Dental Phone Agent
  * - 1 (`FREE`): None
  * - 2 (`PROFESSIONAL`): Professional
@@ -19,6 +21,12 @@ namespace WlSdk\Wl\Business\Account\Subscription\AiAgent;
  */
 class AiAgentSubscriptionSid
 {
+    /** Chat Agent (Bundle) */
+    public const CHAT_AGENT_BUNDLE = 8;
+
+    /** Chat Agent (Bundle) Trial */
+    public const CHAT_AGENT_BUNDLE_TRIAL = 9;
+
     /** Dental Phone Agent */
     public const DENTAL_PHONE_AGENT = 5;
 
