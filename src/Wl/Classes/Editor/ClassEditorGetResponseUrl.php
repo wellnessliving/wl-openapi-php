@@ -2,7 +2,7 @@
 
 namespace WlSdk\Wl\Classes\Editor;
 
-class SetupGetResponseUrl
+class ClassEditorGetResponseUrl
 {
     /**
      * List of store categories.

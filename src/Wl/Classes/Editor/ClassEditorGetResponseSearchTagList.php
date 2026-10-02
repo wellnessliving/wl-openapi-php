@@ -2,7 +2,7 @@
 
 namespace WlSdk\Wl\Classes\Editor;
 
-class SetupGetResponseSearchTag
+class ClassEditorGetResponseSearchTagList
 {
     /**
      * Key of the tag.

@@ -2,7 +2,7 @@
 
 namespace WlSdk\Wl\Classes\Editor;
 
-class SetupGetResponseShopCategory
+class ClassEditorGetResponseShopCategoryList
 {
     /**
      * Key of the category.

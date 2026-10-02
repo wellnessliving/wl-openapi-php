@@ -2,7 +2,7 @@
 
 namespace WlSdk\Wl\Classes\Editor;
 
-class SetupGetRequest
+class ClassEditorGetRequest
 {
     /**
      * Business key.

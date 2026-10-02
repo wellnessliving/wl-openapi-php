@@ -2,14 +2,14 @@
 
 namespace WlSdk\Wl\Classes\Editor;
 
-class SetupGetResponseReminderInfo
+class ClassEditorGetResponseReminderInfo
 {
     /**
      * Times the reminder is sent at, the earliest one first. Every element is an array:
      *
-     * @var SetupGetResponseReminderInfoConfig|null
+     * @var ClassEditorGetResponseReminderInfoConfig|null
      */
-    public ?SetupGetResponseReminderInfoConfig $a_config = null;
+    public ?ClassEditorGetResponseReminderInfoConfig $a_config = null;
 
     /**
      * Number of the client types the reminder is sent to.
@@ -69,7 +69,7 @@ class SetupGetResponseReminderInfo
 
     public function __construct(array $data)
     {
-        $this->a_config = isset($data['a_config']) ? new SetupGetResponseReminderInfoConfig((array)$data['a_config']) : null;
+        $this->a_config = isset($data['a_config']) ? new ClassEditorGetResponseReminderInfoConfig((array)$data['a_config']) : null;
         $this->i_login_type = isset($data['i_login_type']) ? (int)$data['i_login_type'] : null;
         $this->i_login_type_all = isset($data['i_login_type_all']) ? (int)$data['i_login_type_all'] : null;
         $this->i_member_group = isset($data['i_member_group']) ? (int)$data['i_member_group'] : null;

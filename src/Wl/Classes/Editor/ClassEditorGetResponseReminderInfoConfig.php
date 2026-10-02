@@ -2,7 +2,7 @@
 
 namespace WlSdk\Wl\Classes\Editor;
 
-class SetupGetResponseReminderInfoConfig
+class ClassEditorGetResponseReminderInfoConfig
 {
     /**
      * Number of the units of time the reminder is sent before the session.
