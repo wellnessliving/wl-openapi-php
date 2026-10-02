@@ -103,6 +103,14 @@ class ElementGetResponse
     public ?ElementGetResponseStaffLogo $a_staff_logo = null;
 
     /**
+     * List of ticket options available for booking the event. Empty if the event is not a ticketed
+     * event.
+     *
+     * @var array[]|null
+     */
+    public ?array $a_tickets = null;
+
+    /**
      * Timezone information for all timezones used in the event schedule.
      *
      * Key is the timezone key. Primary key in the `a_geo_timezone` table.
@@ -436,6 +444,7 @@ class ElementGetResponse
         $this->a_schedule = isset($data['a_schedule']) ? array_map(static fn ($item) => new ElementGetResponseSchedule((array)$item), (array)$data['a_schedule']) : null;
         $this->a_shop_category = isset($data['a_shop_category']) ? (array)$data['a_shop_category'] : null;
         $this->a_staff_logo = isset($data['a_staff_logo']) ? new ElementGetResponseStaffLogo((array)$data['a_staff_logo']) : null;
+        $this->a_tickets = isset($data['a_tickets']) ? (array)$data['a_tickets'] : null;
         $this->a_timezone_info = isset($data['a_timezone_info']) ? array_map(static fn ($item) => new ElementGetResponseTimezoneInfo((array)$item), (array)$data['a_timezone_info']) : null;
         $this->a_visits_required = isset($data['a_visits_required']) ? array_map(static fn ($item) => new ElementGetResponseVisitsRequired((array)$item), (array)$data['a_visits_required']) : null;
         $this->dt_book_date = isset($data['dt_book_date']) ? (string)$data['dt_book_date'] : null;

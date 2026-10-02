@@ -40,6 +40,14 @@ class EventListGetResponseEventList
     public ?EventListGetResponseEventListSearchTag $a_search_tag = null;
 
     /**
+     * List of ticket options available for booking the event. Empty if the event is not a ticketed
+     * event.
+     *
+     * @var array[]|null
+     */
+    public ?array $a_tickets = null;
+
+    /**
      * Whether event can be booked or not.
      * * `true` - there are no restrictions to book this event in general.
      * * `false` - for some reason event cannot be booked.
@@ -450,6 +458,7 @@ class EventListGetResponseEventList
         $this->a_logo = isset($data['a_logo']) ? new EventListGetResponseEventListLogo((array)$data['a_logo']) : null;
         $this->a_schedule = isset($data['a_schedule']) ? new EventListGetResponseEventListSchedule((array)$data['a_schedule']) : null;
         $this->a_search_tag = isset($data['a_search_tag']) ? new EventListGetResponseEventListSearchTag((array)$data['a_search_tag']) : null;
+        $this->a_tickets = isset($data['a_tickets']) ? (array)$data['a_tickets'] : null;
         $this->can_book = isset($data['can_book']) ? (bool)$data['can_book'] : null;
         $this->can_cancel = isset($data['can_cancel']) ? (bool)$data['can_cancel'] : null;
         $this->dl_early = isset($data['dl_early']) ? (string)$data['dl_early'] : null;

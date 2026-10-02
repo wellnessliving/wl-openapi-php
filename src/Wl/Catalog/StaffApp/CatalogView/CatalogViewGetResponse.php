@@ -15,6 +15,16 @@ class CatalogViewGetResponse
     public ?CatalogViewGetResponseTaxData $a_tax_data = null;
 
     /**
+     * List of ticket options available for booking the event. Empty if the sale item is not a
+     * ticketed event.
+     *
+     * Always empty for sale items other than {@link \WlSdk\RsSaleSid}.
+     *
+     * @var array[]|null
+     */
+    public ?array $a_tickets = null;
+
+    /**
      * `true` if the sale item is a ticketed event, `false` otherwise.
      *
      * Always `false` for sale items other than {@link \WlSdk\RsSaleSid}.
@@ -54,6 +64,7 @@ class CatalogViewGetResponse
     public function __construct(array $data)
     {
         $this->a_tax_data = isset($data['a_tax_data']) ? new CatalogViewGetResponseTaxData((array)$data['a_tax_data']) : null;
+        $this->a_tickets = isset($data['a_tickets']) ? (array)$data['a_tickets'] : null;
         $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->m_prorate = isset($data['m_prorate']) ? (string)$data['m_prorate'] : null;
         $this->m_subtotal = isset($data['m_subtotal']) ? (string)$data['m_subtotal'] : null;

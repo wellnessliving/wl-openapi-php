@@ -19,6 +19,14 @@ class ListGetResponseProduct
     public ?array $a_shop_category = null;
 
     /**
+     * List of ticket options available for booking the event. Empty if the item is not a
+     * ticketed event. .
+     *
+     * @var array[]|null
+     */
+    public ?array $a_tickets = null;
+
+    /**
      * UTC creation date of the item in MySQL format.
      *
      * @var string|null
@@ -108,6 +116,7 @@ class ListGetResponseProduct
     {
         $this->a_location = isset($data['a_location']) ? (array)$data['a_location'] : null;
         $this->a_shop_category = isset($data['a_shop_category']) ? (array)$data['a_shop_category'] : null;
+        $this->a_tickets = isset($data['a_tickets']) ? (array)$data['a_tickets'] : null;
         $this->dtu_create = isset($data['dtu_create']) ? (string)$data['dtu_create'] : null;
         $this->f_price = isset($data['f_price']) ? (string)$data['f_price'] : null;
         $this->hide_application = isset($data['hide_application']) ? (bool)$data['hide_application'] : null;
