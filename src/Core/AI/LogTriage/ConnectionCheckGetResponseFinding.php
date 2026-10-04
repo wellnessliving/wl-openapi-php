@@ -62,18 +62,20 @@ class ConnectionCheckGetResponseFinding
     public ?string $s_object = null;
 
     /**
-     * Usage-statistics aggregation period. Present for the usage-statistics source.
+     * Usage-statistics aggregation period. One of {@link \WlSdk\Core\AI\LogTriage\TriageWatchUsagePeriodEnum}
+     *   cases. Present for the usage-statistics source.
      *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $s_period = null;
+    public ?int $eid_period = null;
 
     /**
-     * Usage-statistics priority. Present for the usage-statistics source.
+     * Usage-statistics priority. One of {@link \WlSdk\Core\AI\LogTriage\TriageUrgencyEnum} cases. Present for
+     *   the usage-statistics source.
      *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $s_priority = null;
+    public ?int $eid_priority = null;
 
     /**
      * Log message or task description. Present for log and task sources.
@@ -92,8 +94,8 @@ class ConnectionCheckGetResponseFinding
         $this->i_priority_multiplier = isset($data['i_priority_multiplier']) ? (int)$data['i_priority_multiplier'] : null;
         $this->cid_problem = isset($data['cid_problem']) ? (int)$data['cid_problem'] : null;
         $this->s_object = isset($data['s_object']) ? (string)$data['s_object'] : null;
-        $this->s_period = isset($data['s_period']) ? (string)$data['s_period'] : null;
-        $this->s_priority = isset($data['s_priority']) ? (string)$data['s_priority'] : null;
+        $this->eid_period = isset($data['eid_period']) ? (int)$data['eid_period'] : null;
+        $this->eid_priority = isset($data['eid_priority']) ? (int)$data['eid_priority'] : null;
         $this->text_message = isset($data['text_message']) ? (string)$data['text_message'] : null;
     }
 }
