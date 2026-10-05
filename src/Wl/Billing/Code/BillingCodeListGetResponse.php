@@ -19,26 +19,12 @@ class BillingCodeListGetResponse
      *
      * The list is not sorted - sorting and filtering of the list is a matter of the page that shows it.
      *
-     * <dl>
-     *   <dt>array `a_service`</dt>
-     *   <dd>List of services the code is applied to by default.
-     *
-     *   <dt>string `k_code`</dt>
-     *   <dd>Key of the code. </dd>
-     *
-     *   <dt>string `text_code`</dt>
-     *   <dd>Code value, as it is printed on receipts and invoices.</dd>
-     *
-     *   <dt>string `text_description`</dt>
-     *   <dd>Description of the code the business typed in.</dd>
-     * </dl>
-     *
-     * @var array[]|null
+     * @var BillingCodeListGetResponseCode[]|null
      */
     public ?array $a_code = null;
 
     public function __construct(array $data)
     {
-        $this->a_code = isset($data['a_code']) ? (array)$data['a_code'] : null;
+        $this->a_code = isset($data['a_code']) ? array_map(static fn ($item) => new BillingCodeListGetResponseCode((array)$item), (array)$data['a_code']) : null;
     }
 }

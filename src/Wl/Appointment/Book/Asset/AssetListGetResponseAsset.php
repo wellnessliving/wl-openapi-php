@@ -107,6 +107,15 @@ class AssetListGetResponseAsset
     public ?bool $is_age_restricted = null;
 
     /**
+     * Whether clients can book this asset on behalf of a guest.
+     * If the asset has a service-specific booking policy, that value is used.
+     * Otherwise, the business-level booking policy applies.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_book_for_guest = null;
+
+    /**
      * Quick book tab key.
      *
      * @var string|null
@@ -149,6 +158,7 @@ class AssetListGetResponseAsset
         $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
         $this->id_service_require = isset($data['id_service_require']) ? (int)$data['id_service_require'] : null;
         $this->is_age_restricted = isset($data['is_age_restricted']) ? (bool)$data['is_age_restricted'] : null;
+        $this->is_book_for_guest = isset($data['is_book_for_guest']) ? (bool)$data['is_book_for_guest'] : null;
         $this->k_class_tab = isset($data['k_class_tab']) ? (string)$data['k_class_tab'] : null;
         $this->k_resource = isset($data['k_resource']) ? (string)$data['k_resource'] : null;
         $this->k_resource_category = isset($data['k_resource_category']) ? (string)$data['k_resource_category'] : null;
