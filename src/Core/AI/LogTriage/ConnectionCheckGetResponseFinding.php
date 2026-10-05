@@ -55,7 +55,8 @@ class ConnectionCheckGetResponseFinding
     public ?int $cid_problem = null;
 
     /**
-     * Usage-statistics object. Present for the usage-statistics source.
+     * Usage-statistics object: a slash-delimited category and resource identifier, for example
+     *   `'memcache/get/10.0.0.5'` or `'sql/select core_business'`. Present for the usage-statistics source.
      *
      * @var string|null
      */
@@ -70,12 +71,12 @@ class ConnectionCheckGetResponseFinding
     public ?int $eid_period = null;
 
     /**
-     * Usage-statistics priority. One of {@link \WlSdk\Core\AI\LogTriage\TriageUrgencyEnum} cases. Present for
+     * Usage-statistics urgency. One of {@link \WlSdk\Core\AI\LogTriage\TriageUrgencyEnum} cases. Present for
      *   the usage-statistics source.
      *
      * @var int|null
      */
-    public ?int $eid_priority = null;
+    public ?int $eid_urgency = null;
 
     /**
      * Log message or task description. Present for log and task sources.
@@ -95,7 +96,7 @@ class ConnectionCheckGetResponseFinding
         $this->cid_problem = isset($data['cid_problem']) ? (int)$data['cid_problem'] : null;
         $this->s_object = isset($data['s_object']) ? (string)$data['s_object'] : null;
         $this->eid_period = isset($data['eid_period']) ? (int)$data['eid_period'] : null;
-        $this->eid_priority = isset($data['eid_priority']) ? (int)$data['eid_priority'] : null;
+        $this->eid_urgency = isset($data['eid_urgency']) ? (int)$data['eid_urgency'] : null;
         $this->text_message = isset($data['text_message']) ? (string)$data['text_message'] : null;
     }
 }
