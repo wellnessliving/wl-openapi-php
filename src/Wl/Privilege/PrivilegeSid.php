@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Privilege;
 /**
  * Wellnessliving-wide privileges.
  *
- * Last Used ID: 251.
+ * Last Used ID: 252.
  *
  * Values:
  * - 225 (`AI_AGENT_KNOWLEDGE_BASE`): Allows user to view, create or edit knowledge base entries, or conversational
@@ -22,6 +22,10 @@ namespace WlSdk\Wl\Privilege;
  * - 49 (`APPOINTMENT_FOREIGN`): Change/View all appointment.
  * - 51 (`APPOINTMENT_PERIOD`): Edit appointment schedule.
  * - 52 (`APPOINTMENT_VIEW`): View appointment.
+ * - 252 (`BILLING_CODE_ASSIGN`): Ability to assign billing and diagnostic codes to appointments.
+ *
+ *   Allows to select codes of the central billing code list and to search and apply ICD diagnostic codes. Adding a
+ *   new code to the central list is configuring it, so it requires {@link \WlSdk\Wl\Privilege\PrivilegeSid} instead.
  * - 141 (`BOOK_OUTSIDE_PAID_PERIOD`): Ability to book clients outside their current paid period.
  * - 154 (`BOOK_OVER_CAPACITY`): Ability to book clients over capacity during or after the services have been
  * scheduled.
@@ -318,6 +322,9 @@ class PrivilegeSid
 
     /** View appointment. */
     public const APPOINTMENT_VIEW = 52;
+
+    /** Ability to assign billing and diagnostic codes to appointments. */
+    public const BILLING_CODE_ASSIGN = 252;
 
     /** Ability to book clients outside their current paid period. */
     public const BOOK_OUTSIDE_PAID_PERIOD = 141;
