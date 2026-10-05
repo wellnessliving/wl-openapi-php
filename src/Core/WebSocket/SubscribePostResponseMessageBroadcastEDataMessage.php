@@ -2,7 +2,7 @@
 
 namespace WlSdk\Core\WebSocket;
 
-class SubscribePostResponseMessageBroadcastDDataMessage
+class SubscribePostResponseMessageBroadcastEDataMessage
 {
     /**
      * Message key.

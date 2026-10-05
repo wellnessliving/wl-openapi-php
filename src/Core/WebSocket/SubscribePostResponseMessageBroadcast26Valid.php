@@ -2,14 +2,14 @@
 
 namespace WlSdk\Core\WebSocket;
 
-class SubscribePostResponseMessageBroadcastZInvalid
+class SubscribePostResponseMessageBroadcast26Valid
 {
     /**
      * Address information.
      *
-     * @var SubscribePostResponseMessageBroadcastZInvalidAddress|null
+     * @var SubscribePostResponseMessageBroadcast26ValidAddress|null
      */
-    public ?SubscribePostResponseMessageBroadcastZInvalidAddress $a_address = null;
+    public ?SubscribePostResponseMessageBroadcast26ValidAddress $a_address = null;
 
     /**
      * Whether address string is specified.
@@ -76,7 +76,7 @@ class SubscribePostResponseMessageBroadcastZInvalid
 
     public function __construct(array $data)
     {
-        $this->a_address = isset($data['a_address']) ? new SubscribePostResponseMessageBroadcastZInvalidAddress((array)$data['a_address']) : null;
+        $this->a_address = isset($data['a_address']) ? new SubscribePostResponseMessageBroadcast26ValidAddress((array)$data['a_address']) : null;
         $this->is_address = isset($data['is_address']) ? (bool)$data['is_address'] : null;
         $this->is_checked = isset($data['is_checked']) ? (bool)$data['is_checked'] : null;
         $this->text_email = isset($data['text_email']) ? (string)$data['text_email'] : null;

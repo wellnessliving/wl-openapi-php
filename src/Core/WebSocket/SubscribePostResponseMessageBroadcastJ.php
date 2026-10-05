@@ -5,37 +5,14 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastJ
 {
     /**
-     * List of email domain tokens:
+     * New data of changes schedule item:
      *
-     * Empty array if the business does not have a mail domain set up.
-     *
-     * @var SubscribePostResponseMessageBroadcastJDomainToken|null
+     * @var SubscribePostResponseMessageBroadcastJVisit|null
      */
-    public ?SubscribePostResponseMessageBroadcastJDomainToken $a_domain_token = null;
-
-    /**
-     * Email domain status.
-     *
-     * `null` if the business does not have a mail domain set up.
-     *
-     * @var int|null
-     * @see \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid
-     */
-    public ?int $id_domain_status = null;
-
-    /**
-     * CSS class for the icon representing the email domain status.
-     *
-     * Empty string if the business does not have a mail domain set up.
-     *
-     * @var string|null
-     */
-    public ?string $text_domain_status_icon = null;
+    public ?SubscribePostResponseMessageBroadcastJVisit $a_visit = null;
 
     public function __construct(array $data)
     {
-        $this->a_domain_token = isset($data['a_domain_token']) ? new SubscribePostResponseMessageBroadcastJDomainToken((array)$data['a_domain_token']) : null;
-        $this->id_domain_status = isset($data['id_domain_status']) ? (int)$data['id_domain_status'] : null;
-        $this->text_domain_status_icon = isset($data['text_domain_status_icon']) ? (string)$data['text_domain_status_icon'] : null;
+        $this->a_visit = isset($data['a_visit']) ? new SubscribePostResponseMessageBroadcastJVisit((array)$data['a_visit']) : null;
     }
 }

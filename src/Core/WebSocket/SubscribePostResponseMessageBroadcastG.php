@@ -5,28 +5,14 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastG
 {
     /**
-     * A CAS (compare-and-swap) number that allows to track changes in the report storage.
+     * Url link to redirect to join virtual meeting.
      *
-     * This number is changed every time content of the report gets updated.
-     * If this number is not changed, the content is not updated.
-     *
-     * @var int|null
+     * @var string|null
      */
-    public ?int $i_cas_change = null;
-
-    /**
-     * Status of this report.
-     *
-     * One of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid} constants.
-     *
-     * @var int|null
-     * @see \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid
-     */
-    public ?int $id_report_status = null;
+    public ?string $url_redirect = null;
 
     public function __construct(array $data)
     {
-        $this->i_cas_change = isset($data['i_cas_change']) ? (int)$data['i_cas_change'] : null;
-        $this->id_report_status = isset($data['id_report_status']) ? (int)$data['id_report_status'] : null;
+        $this->url_redirect = isset($data['url_redirect']) ? (string)$data['url_redirect'] : null;
     }
 }

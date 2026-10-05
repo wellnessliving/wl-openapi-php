@@ -5,44 +5,44 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastP
 {
     /**
-     * End of change interval.
-     *
-     * Empty string if change interval has no end.
+     * Session end date/time.
      *
      * @var string|null
      */
-    public ?string $dt_end_local = null;
+    public ?string $dtl_end = null;
 
     /**
-     * Start of change interval.
+     * Session start date/time.
      *
      * @var string|null
      */
-    public ?string $dt_start_local = null;
+    public ?string $dtl_start = null;
 
     /**
-     * New "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
+     * Key of the changed appointment.
+     * Is set only if changed session is appointment.
      *
-     * `null` means system default tab.
+     * `null` if changed session is not an appointment.
      *
      * @var string|null
      */
-    public ?string $k_class_tab_new = null;
+    public ?string $k_appointment = null;
 
     /**
-     * Old "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
+     * Key of the changed class session.
+     * Is set only if changed session is class.
      *
-     * `null` means system default tab.
+     * `null` if changed session is not a class.
      *
      * @var string|null
      */
-    public ?string $k_class_tab_old = null;
+    public ?string $k_class_period = null;
 
     public function __construct(array $data)
     {
-        $this->dt_end_local = isset($data['dt_end_local']) ? (string)$data['dt_end_local'] : null;
-        $this->dt_start_local = isset($data['dt_start_local']) ? (string)$data['dt_start_local'] : null;
-        $this->k_class_tab_new = isset($data['k_class_tab_new']) ? (string)$data['k_class_tab_new'] : null;
-        $this->k_class_tab_old = isset($data['k_class_tab_old']) ? (string)$data['k_class_tab_old'] : null;
+        $this->dtl_end = isset($data['dtl_end']) ? (string)$data['dtl_end'] : null;
+        $this->dtl_start = isset($data['dtl_start']) ? (string)$data['dtl_start'] : null;
+        $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;
+        $this->k_class_period = isset($data['k_class_period']) ? (string)$data['k_class_period'] : null;
     }
 }

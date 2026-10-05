@@ -2,7 +2,7 @@
 
 namespace WlSdk\Core\WebSocket;
 
-class SubscribePostResponseMessageBroadcastDDataUserProfile
+class SubscribePostResponseMessageBroadcastEDataUserProfile
 {
     /**
      * User gender. One of {@link \WlSdk\Wl\Gender\GenderSid} constants.

@@ -2,7 +2,7 @@
 
 namespace WlSdk\Core\WebSocket;
 
-class SubscribePostResponseMessageBroadcastZValidAddress
+class SubscribePostResponseMessageBroadcast26ValidAddress
 {
     /**
      * Address string.

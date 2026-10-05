@@ -2,7 +2,7 @@
 
 namespace WlSdk\Core\WebSocket;
 
-class SubscribePostResponseMessageBroadcastYVisit
+class SubscribePostResponseMessageBroadcastJVisit
 {
     /**
      * Date/time of end.
@@ -31,6 +31,13 @@ class SubscribePostResponseMessageBroadcastYVisit
      * @var string|null
      */
     public ?string $s_key = null;
+
+    /**
+     * Address of location.
+     *
+     * @var string|null
+     */
+    public ?string $text_address = null;
 
     /**
      * Title of location.
@@ -66,6 +73,7 @@ class SubscribePostResponseMessageBroadcastYVisit
         $this->dtl_start = isset($data['dtl_start']) ? (string)$data['dtl_start'] : null;
         $this->is_cancel = isset($data['is_cancel']) ? (bool)$data['is_cancel'] : null;
         $this->s_key = isset($data['s_key']) ? (string)$data['s_key'] : null;
+        $this->text_address = isset($data['text_address']) ? (string)$data['text_address'] : null;
         $this->text_location = isset($data['text_location']) ? (string)$data['text_location'] : null;
         $this->text_note = isset($data['text_note']) ? (string)$data['text_note'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;

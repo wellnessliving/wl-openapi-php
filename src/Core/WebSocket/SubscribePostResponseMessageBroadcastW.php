@@ -5,30 +5,47 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastW
 {
     /**
-     * `true` - access is granted; `false` - denied.
+     * `true` if the request has been already processed (question window must not be shown);
+     * `false` otherwise (question window must be shown).
      *
      * @var bool|null
      */
-    public ?bool $is_grant = null;
+    public ?bool $is_close = null;
 
     /**
-     * Full name of user-receiver of response.
+     * Location key.
+     *
+     * @var string|null
+     */
+    public ?string $k_location = null;
+
+    /**
+     * Name of the user requesting access.
      *
      * @var string|null
      */
     public ?string $text_full_name = null;
 
     /**
-     * The time in seconds with fractional part in UNIX format when socket message was sent.
+     * Location title.
      *
-     * @var float|null
+     * @var string|null
      */
-    public ?float $tu_send = null;
+    public ?string $text_location = null;
+
+    /**
+     * Key of user who request access to location.
+     *
+     * @var string|null
+     */
+    public ?string $uid_request = null;
 
     public function __construct(array $data)
     {
-        $this->is_grant = isset($data['is_grant']) ? (bool)$data['is_grant'] : null;
+        $this->is_close = isset($data['is_close']) ? (bool)$data['is_close'] : null;
+        $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
         $this->text_full_name = isset($data['text_full_name']) ? (string)$data['text_full_name'] : null;
-        $this->tu_send = isset($data['tu_send']) ? (float)$data['tu_send'] : null;
+        $this->text_location = isset($data['text_location']) ? (string)$data['text_location'] : null;
+        $this->uid_request = isset($data['uid_request']) ? (string)$data['uid_request'] : null;
     }
 }

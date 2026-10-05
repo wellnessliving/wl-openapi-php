@@ -28,7 +28,7 @@ class ClassEditorGetResponse
     /**
      * Keys of the client types that may book the class.
      *
-     * Only taken into account while {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$is_bookable} is
+     * Only taken into account while {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$id_bookable} is
      * {@link \WlSdk\Wl\Service\BookableSid}. Empty for a class every client type may book.
      *
      * @var string[]|null
@@ -49,7 +49,7 @@ class ClassEditorGetResponse
     /**
      * Keys of the client groups that may book the class.
      *
-     * Only taken into account while {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$is_bookable} is
+     * Only taken into account while {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$id_bookable} is
      * {@link \WlSdk\Wl\Service\BookableSid}. Empty for a class every client group may book.
      *
      * @var string[]|null
@@ -134,11 +134,9 @@ class ClassEditorGetResponse
     public ?array $a_url = null;
 
     /**
-     * Last day of the early bird discount in MySQL format.
+     * Last day of the early bird discount.
      *
      * Empty string if the event has no early bird discount.
-     *
-     * Copy of RsClassEarlySql.`dt_early`.
      *
      * @var string|null
      */
@@ -153,8 +151,6 @@ class ClassEditorGetResponse
      * {@link \WlSdk\Wl\Classes\RequirePaySid}. The field keeps the name the legacy form posts, which carries
      * both an amount of money and a percent.
      *
-     * Copy of RsClassSql.`f_deposit`.
-     *
      * @var string|null
      */
     public ?string $f_deposit = null;
@@ -164,8 +160,6 @@ class ClassEditorGetResponse
      *
      * `0.00` if the event has no early bird discount. The field keeps the name the legacy form posts.
      *
-     * Copy of RsClassEarlySql.`f_early`.
-     *
      * @var string|null
      */
     public ?string $f_early = null;
@@ -173,11 +167,9 @@ class ClassEditorGetResponse
     /**
      * Price of one session of the event.
      *
-     * Only taken into account while {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$not_single_buy} is
-     * `0`. The field keeps the name the
+     * Only taken into account while {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$is_buy_single} is
+     * `true`. The field keeps the name the
      * legacy form posts.
-     *
-     * Copy of RsClassSql.`f_price`.
      *
      * @var string|null
      */
@@ -186,11 +178,9 @@ class ClassEditorGetResponse
     /**
      * Price of the whole event.
      *
-     * Only taken into account while {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$not_single_buy} is
-     * `1`. The field keeps the name the
+     * Only taken into account while {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$is_buy_total} is
+     * `true`. The field keeps the name the
      * legacy form posts.
-     *
-     * Copy of RsClassSql.`f_price_total`.
      *
      * @var string|null
      */
@@ -206,8 +196,6 @@ class ClassEditorGetResponse
     /**
      * `true` if the price of a single session is hidden from a client who has an applicable Purchase Option,
      * `false` if it is shown to them.
-     *
-     * Copy of RsClassSql.`hide_price`.
      *
      * @var bool|null
      */
@@ -272,8 +260,6 @@ class ClassEditorGetResponse
      *
      * `null` if the class has no minimum age.
      *
-     * Copy of RsClassSql.`i_age_from_month`.
-     *
      * @var int|null
      */
     public ?int $i_age_from_month = null;
@@ -282,8 +268,6 @@ class ClassEditorGetResponse
      * Whole years of the minimum age of a client of the class.
      *
      * `null` if the class has no minimum age.
-     *
-     * Copy of RsClassSql.`i_age_from`.
      *
      * @var int|null
      */
@@ -294,8 +278,6 @@ class ClassEditorGetResponse
      *
      * `null` if the class has no maximum age.
      *
-     * Copy of RsClassSql.`i_age_to_month`.
-     *
      * @var int|null
      */
     public ?int $i_age_to_month = null;
@@ -305,16 +287,12 @@ class ClassEditorGetResponse
      *
      * `null` if the class has no maximum age.
      *
-     * Copy of RsClassSql.`i_age_to`.
-     *
      * @var int|null
      */
     public ?int $i_age_to_year = null;
 
     /**
      * Number of clients that may enroll into each instance of the event.
-     *
-     * Copy of RsClassSql.`i_capacity`.
      *
      * @var int|null
      */
@@ -332,7 +310,7 @@ class ClassEditorGetResponse
     public ?int $i_capacity_ticket = null;
 
     /**
-     * Maximum length of `s_description`.
+     * Maximum length of description.
      *
      * @var int|null
      */
@@ -343,8 +321,6 @@ class ClassEditorGetResponse
      *
      * `0` stands for as many as the number of the sessions the client missed.
      *
-     * Copy of RsClassSql.`i_makeup_cap`.
-     *
      * @var int|null
      */
     public ?int $i_makeup_cap = null;
@@ -352,18 +328,9 @@ class ClassEditorGetResponse
     /**
      * Number of tickets that may be bought in one order of a ticketed event.
      *
-     * Copy of TicketSettingsSql.`i_order_limit`.
-     *
      * @var int|null
      */
     public ?int $i_order_limit = null;
-
-    /**
-     * Maximum length of `xml_terms`.
-     *
-     * @var int|null
-     */
-    public ?int $i_terms_limit = null;
 
     /**
      * Kind of the age restriction of the class.
@@ -371,12 +338,23 @@ class ClassEditorGetResponse
      * Only taken into account while {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$is_age_restrict} is
      * `true`.
      *
-     * Copy of RsClassSql.`id_age_restrict`.
-     *
      * @var int|null
      * @see \WlSdk\Wl\Service\AgeRestrictionStatusSid
      */
     public ?int $id_age_restrict = null;
+
+    /**
+     * Who may book the class online.
+     *
+     * The class keeps the client types and the groups whether online booking is open or not, so the form works
+     * this
+     * out from them: a class that is closed to everyone is only told apart from a restricted one by them being
+     * empty.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Service\BookableSid
+     */
+    public ?int $id_bookable = null;
 
     /**
      * Type of the event.
@@ -389,8 +367,6 @@ class ClassEditorGetResponse
     /**
      * Kind of note staff may take for a client visit.
      *
-     * Copy of RsClassSql.`id_note`.
-     *
      * @var int|null
      * @see \WlSdk\Wl\Visit\Note\Sid\NoteSid
      */
@@ -399,8 +375,6 @@ class ClassEditorGetResponse
     /**
      * Way a client pays for the event.
      *
-     * Copy of RsClassSql.`id_pay_require`.
-     *
      * @var int|null
      * @see \WlSdk\Wl\Classes\RequirePaySid
      */
@@ -408,8 +382,6 @@ class ClassEditorGetResponse
 
     /**
      * Virtual meeting provider of the event. `null` for an in-person event.
-     *
-     * Copy of RsClassSql.`id_virtual_provider`.
      *
      * @var int|null
      * @see \WlSdk\Wl\Virtual\VirtualProviderSid
@@ -436,8 +408,6 @@ class ClassEditorGetResponse
      * `true` if the class is shown to a client who does not meet its age requirement, `false` if it is hidden from
      * them.
      *
-     * Copy of RsClassSql.`is_age_public`.
-     *
      * @var bool|null
      */
     public ?bool $is_age_public = null;
@@ -453,10 +423,9 @@ class ClassEditorGetResponse
     public ?bool $is_age_restrict = null;
 
     /**
-     * `true` if the birth date is a required field of the client profile of the business, `false` otherwise.
+     * `true` if the birthdate is a required field of the client profile of the business, `false` otherwise.
      *
-     * An age restriction can only be kept to when the birth date is known, so the form asks staff to make the
-     * field
+     * An age restriction can only be kept to when the birthdate is known, so the form asks staff to make the field
      * required while the restriction is switched on for a business that does not require it yet.
      *
      * @var bool|null
@@ -464,26 +433,52 @@ class ClassEditorGetResponse
     public ?bool $is_birthday_require = null;
 
     /**
-     * Who may book the class online.
-     *
-     * @var int|null
-     */
-    public ?int $is_bookable = null;
-
-    /**
      * `true` if staff may book any client type into the class, `false` if only the client types of
      * {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$a_login_type_staff}.
-     *
-     * Copy of RsClassSql.`is_bookable_staff`.
      *
      * @var bool|null
      */
     public ?bool $is_bookable_staff = null;
 
     /**
-     * `true` if the clients of the class receive the default client notifications, `false` otherwise.
+     * `true` if a client pays for the event with a Purchase Option only, `false` otherwise.
      *
-     * Copy of RsClassSql.`is_client_notification`.
+     * One of the three ways a client pays for the event, which are mutually exclusive:
+     * {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$is_buy_promotion}, {@link
+     * \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$is_buy_single} and
+     * {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$is_buy_total}.
+     * expects.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_buy_promotion = null;
+
+    /**
+     * `true` if a client buys one session of the event at a time, `false` otherwise.
+     *
+     * {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$f_price} is the price of a session. See
+     * {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$is_buy_promotion} for the other ways a client pays
+     * for the event.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_buy_single = null;
+
+    /**
+     * `true` if a client buys the whole event at once, `false` otherwise.
+     *
+     * {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$f_price_total} is the price of the event. Defaults
+     * to `true`, the same as the legacy
+     * form offers for a new event. See {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$is_buy_promotion}
+     * for the other ways a client pays
+     * for the event.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_buy_total = null;
+
+    /**
+     * `true` if the clients of the class receive the default client notifications, `false` otherwise.
      *
      * @var bool|null
      */
@@ -572,7 +567,7 @@ class ClassEditorGetResponse
      * the event, `false` if it is an
      * amount of money.
      *
-     * Copy of RsClassSql.`is_deposit_percent`.
+     * Copy of the `is_deposit_percent` column of the class.
      *
      * @var bool|null
      */
@@ -634,8 +629,6 @@ class ClassEditorGetResponse
     /**
      * `true` if the class is hidden from a client who may not book it, `false` if it is shown to them.
      *
-     * Copy of RsClassSql.`is_online_private`.
-     *
      * @var bool|null
      */
     public ?bool $is_online_private = null;
@@ -670,8 +663,6 @@ class ClassEditorGetResponse
 
     /**
      * `true` if staff receive the default staff notifications of the class, `false` otherwise.
-     *
-     * Copy of RsClassSql.`is_staff_notification`.
      *
      * @var bool|null
      */
@@ -737,29 +728,12 @@ class ClassEditorGetResponse
      *
      * Ignored while {@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$is_gym_pass} is `false`.
      *
-     * Copy of RsClassSql.`m_revenue_gym_pass`.
-     *
      * @var string|null
      */
     public ?string $m_revenue_gym_pass = null;
 
     /**
-     * How a client pays for the event: `0` for a single session, `1` for the whole event, `2` for a Purchase
-     * Option
-     * only.
-     *
-     * The field keeps the name the legacy form posts, which stores the opposite of the first choice. Defaults to
-     * the
-     * whole event, the same as the legacy form offers for a new event.
-     *
-     * @var int|null
-     */
-    public ?int $not_single_buy = null;
-
-    /**
-     * Color of the event on the schedule in hex format, with a leading `#`.
-     *
-     * Copy of RsClassSql.`s_color_background`.
+     * Color of the event on the schedule in hex format.
      *
      * @var string|null
      */
@@ -768,16 +742,12 @@ class ClassEditorGetResponse
     /**
      * Description of the event.
      *
-     * Copy of RsClassCmsSql.`s_description` in the current language.
-     *
      * @var string|null
      */
     public ?string $s_description = null;
 
     /**
      * Special instructions of the event.
-     *
-     * Copy of RsClassCmsSql.`xml_special`.
      *
      * @var string|null
      */
@@ -786,16 +756,12 @@ class ClassEditorGetResponse
     /**
      * Title of the event.
      *
-     * Copy of RsClassCmsSql.`s_title` in the current language.
-     *
      * @var string|null
      */
     public ?string $s_title = null;
 
     /**
      * `true` if the special instructions may be shown publicly, `false` if only to a client who booked the event.
-     *
-     * Copy of RsClassSql.`show_special_instructions`.
      *
      * @var bool|null
      */
@@ -823,8 +789,6 @@ class ClassEditorGetResponse
      * Terms and conditions a buyer of a ticket must agree to.
      *
      * Empty string for an event that is not ticketed, and for a ticketed event with no terms.
-     *
-     * Copy of TicketSettingsCmsSql.`xml_terms`.
      *
      * @var string|null
      */
@@ -867,8 +831,8 @@ class ClassEditorGetResponse
         $this->i_description_limit = isset($data['i_description_limit']) ? (int)$data['i_description_limit'] : null;
         $this->i_makeup_cap = isset($data['i_makeup_cap']) ? (int)$data['i_makeup_cap'] : null;
         $this->i_order_limit = isset($data['i_order_limit']) ? (int)$data['i_order_limit'] : null;
-        $this->i_terms_limit = isset($data['i_terms_limit']) ? (int)$data['i_terms_limit'] : null;
         $this->id_age_restrict = isset($data['id_age_restrict']) ? (int)$data['id_age_restrict'] : null;
+        $this->id_bookable = isset($data['id_bookable']) ? (int)$data['id_bookable'] : null;
         $this->id_event_type = isset($data['id_event_type']) ? (int)$data['id_event_type'] : null;
         $this->id_note = isset($data['id_note']) ? (int)$data['id_note'] : null;
         $this->id_pay_require = isset($data['id_pay_require']) ? (int)$data['id_pay_require'] : null;
@@ -878,8 +842,10 @@ class ClassEditorGetResponse
         $this->is_age_public = isset($data['is_age_public']) ? (bool)$data['is_age_public'] : null;
         $this->is_age_restrict = isset($data['is_age_restrict']) ? (bool)$data['is_age_restrict'] : null;
         $this->is_birthday_require = isset($data['is_birthday_require']) ? (bool)$data['is_birthday_require'] : null;
-        $this->is_bookable = isset($data['is_bookable']) ? (int)$data['is_bookable'] : null;
         $this->is_bookable_staff = isset($data['is_bookable_staff']) ? (bool)$data['is_bookable_staff'] : null;
+        $this->is_buy_promotion = isset($data['is_buy_promotion']) ? (bool)$data['is_buy_promotion'] : null;
+        $this->is_buy_single = isset($data['is_buy_single']) ? (bool)$data['is_buy_single'] : null;
+        $this->is_buy_total = isset($data['is_buy_total']) ? (bool)$data['is_buy_total'] : null;
         $this->is_client_notification = isset($data['is_client_notification']) ? (bool)$data['is_client_notification'] : null;
         $this->is_config_business = isset($data['is_config_business']) ? (bool)$data['is_config_business'] : null;
         $this->is_custom_confirmation = isset($data['is_custom_confirmation']) ? (bool)$data['is_custom_confirmation'] : null;
@@ -910,7 +876,6 @@ class ClassEditorGetResponse
         $this->is_ticket_waiver_require = isset($data['is_ticket_waiver_require']) ? (bool)$data['is_ticket_waiver_require'] : null;
         $this->k_tag_primary = isset($data['k_tag_primary']) ? (string)$data['k_tag_primary'] : null;
         $this->m_revenue_gym_pass = isset($data['m_revenue_gym_pass']) ? (string)$data['m_revenue_gym_pass'] : null;
-        $this->not_single_buy = isset($data['not_single_buy']) ? (int)$data['not_single_buy'] : null;
         $this->s_color_background = isset($data['s_color_background']) ? (string)$data['s_color_background'] : null;
         $this->s_description = isset($data['s_description']) ? (string)$data['s_description'] : null;
         $this->s_special = isset($data['s_special']) ? (string)$data['s_special'] : null;

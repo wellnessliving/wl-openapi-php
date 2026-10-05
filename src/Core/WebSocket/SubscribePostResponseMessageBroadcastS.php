@@ -5,46 +5,48 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastS
 {
     /**
-     * Number of successfully processed items.
+     * Duration of the generation of the report in seconds.
      *
      * @var int|null
      */
-    public ?int $i_complete = null;
+    public ?int $i_generation = null;
 
     /**
-     * Number of failed items.
+     * ID of the report that was generated.
+     * One of the {@link \WlSdk\RsReportSid} constants.
      *
      * @var int|null
+     * @see \WlSdk\RsReportSid
      */
-    public ?int $i_fail = null;
+    public ?int $id_report = null;
 
     /**
-     * Number of items left to process.
+     * Whether need to display a message about report generation, regardless of the generation time.
      *
-     * @var int|null
+     * @var bool|null
      */
-    public ?int $i_left = null;
+    public ?bool $is_need_show = null;
 
     /**
-     * Key of the import being processing.
+     * Report accumulation.
      *
      * @var string|null
      */
-    public ?string $k_import = null;
+    public ?string $k_report_accumulation = null;
 
     /**
-     * Url link to download log file with import progress.
+     * Title of the report that was generated.
      *
      * @var string|null
      */
-    public ?string $url_log = null;
+    public ?string $text_report = null;
 
     public function __construct(array $data)
     {
-        $this->i_complete = isset($data['i_complete']) ? (int)$data['i_complete'] : null;
-        $this->i_fail = isset($data['i_fail']) ? (int)$data['i_fail'] : null;
-        $this->i_left = isset($data['i_left']) ? (int)$data['i_left'] : null;
-        $this->k_import = isset($data['k_import']) ? (string)$data['k_import'] : null;
-        $this->url_log = isset($data['url_log']) ? (string)$data['url_log'] : null;
+        $this->i_generation = isset($data['i_generation']) ? (int)$data['i_generation'] : null;
+        $this->id_report = isset($data['id_report']) ? (int)$data['id_report'] : null;
+        $this->is_need_show = isset($data['is_need_show']) ? (bool)$data['is_need_show'] : null;
+        $this->k_report_accumulation = isset($data['k_report_accumulation']) ? (string)$data['k_report_accumulation'] : null;
+        $this->text_report = isset($data['text_report']) ? (string)$data['text_report'] : null;
     }
 }
