@@ -12,7 +12,7 @@ class AddPostResponseBookBackground
     public ?string $dt_date = null;
 
     /**
-     * The class period key. Primary key in RsClassPeriodSql table.
+     * The class period key.
      *
      * @var string|null
      */
