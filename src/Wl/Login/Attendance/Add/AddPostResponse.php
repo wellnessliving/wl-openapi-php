@@ -8,6 +8,21 @@ namespace WlSdk\Wl\Login\Attendance\Add;
 class AddPostResponse
 {
     /**
+     * A list of sessions that are being booked asynchronously in the background.
+     *
+     * When a multi-session block event booking is processed, the first session is booked synchronously
+     * and the remaining sessions are queued for background processing.
+     *
+     * `null` if there are no background sessions (single session booking or all sessions were booked
+     * synchronously).
+     *
+     * Each element is an array with the following keys:
+     *
+     * @var AddPostResponseBookBackground[]|null
+     */
+    public ?array $a_book_background = null;
+
+    /**
      * The status of the visit.
      * One of the {@link \WlSdk\Wl\Visit\VisitSid} constants.
      *
@@ -43,6 +58,7 @@ class AddPostResponse
 
     public function __construct(array $data)
     {
+        $this->a_book_background = isset($data['a_book_background']) ? array_map(static fn ($item) => new AddPostResponseBookBackground((array)$item), (array)$data['a_book_background']) : null;
         $this->id_visit = isset($data['id_visit']) ? (int)$data['id_visit'] : null;
         $this->is_paid = isset($data['is_paid']) ? (bool)$data['is_paid'] : null;
         $this->k_visit = isset($data['k_visit']) ? (string)$data['k_visit'] : null;
