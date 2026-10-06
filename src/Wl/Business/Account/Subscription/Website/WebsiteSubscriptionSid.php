@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Business\Account\Subscription\Website;
 /**
  * List of possible plans for {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} subscription.
  *
- * Last used ID: 8.
+ * Last used ID: 11.
  *
  * Values:
  * - 2 (`BASIC`): Basic
