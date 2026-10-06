@@ -48,6 +48,15 @@ class UserInfoGetResponseResultList
     public ?int $id_gender = null;
 
     /**
+     * The ID of the language that is effective for the user.
+     *   One of the {@link \WlSdk\Core\Locale\Language\LocaleLanguageSid} constants.
+     *
+     * @var int|null
+     * @see \WlSdk\Core\Locale\Language\LocaleLanguageSid
+     */
+    public ?int $id_language = null;
+
+    /**
      * This will be `true` if the user has never made purchases or reservations in this business.
      * Otherwise, this will be `false`.
      *
@@ -151,6 +160,7 @@ class UserInfoGetResponseResultList
         $this->dt_add = isset($data['dt_add']) ? (string)$data['dt_add'] : null;
         $this->dt_birth = isset($data['dt_birth']) ? (string)$data['dt_birth'] : null;
         $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
+        $this->id_language = isset($data['id_language']) ? (int)$data['id_language'] : null;
         $this->is_customer_new = isset($data['is_customer_new']) ? (bool)$data['is_customer_new'] : null;
         $this->is_traveller = isset($data['is_traveller']) ? (bool)$data['is_traveller'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;

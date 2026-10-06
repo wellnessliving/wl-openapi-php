@@ -45,7 +45,7 @@ class AttendanceListByTokenGetResponse
 
     /**
      * The maximum number of clients on wait list of the class or event session.
-     * `0` for appointments, use AppointmentWaitListApi instead.
+     * `0` for appointments, use {@link \WlSdk\Wl\Appointment\WaitList\AppointmentWaitList} instead.
      *
      * @var int|null
      */
@@ -53,7 +53,7 @@ class AttendanceListByTokenGetResponse
 
     /**
      * `true` to use class/event specific wait list limit, `false` to use the limit from default policies.
-     * `false` for appointments. Use AppointmentWaitListApi instead.
+     * `false` for appointments. Use {@link \WlSdk\Wl\Appointment\WaitList\AppointmentWaitList} instead.
      *
      * @var bool|null
      */

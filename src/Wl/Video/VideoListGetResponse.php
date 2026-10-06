@@ -8,6 +8,15 @@ namespace WlSdk\Wl\Video;
 class VideoListGetResponse
 {
     /**
+     * All levels to offer in the level filter of the video catalog.
+     *
+     * Empty array if levels are not shown in this business. Each element:
+     *
+     * @var VideoListGetResponseLevelFilter[]|null
+     */
+    public ?array $a_level_filter = null;
+
+    /**
      * A list of videos.
      * Each element:
      *
@@ -23,6 +32,24 @@ class VideoListGetResponse
      * @var VideoListGetResponsePage|null
      */
     public ?VideoListGetResponsePage $a_page = null;
+
+    /**
+     * All staff members to offer in the staff filter of the video catalog.
+     *
+     * Each element:
+     *
+     * @var VideoListGetResponseStaffFilter[]|null
+     */
+    public ?array $a_staff_filter = null;
+
+    /**
+     * All tags to offer in the tag filter of the video catalog.
+     *
+     * Each element:
+     *
+     * @var VideoListGetResponseVideoTagFilter[]|null
+     */
+    public ?array $a_video_tag_filter = null;
 
     /**
      * Embedded video source.
@@ -73,8 +100,11 @@ class VideoListGetResponse
 
     public function __construct(array $data)
     {
+        $this->a_level_filter = isset($data['a_level_filter']) ? array_map(static fn ($item) => new VideoListGetResponseLevelFilter((array)$item), (array)$data['a_level_filter']) : null;
         $this->a_list = isset($data['a_list']) ? array_map(static fn ($item) => new VideoListGetResponseList((array)$item), (array)$data['a_list']) : null;
         $this->a_page = isset($data['a_page']) ? new VideoListGetResponsePage((array)$data['a_page']) : null;
+        $this->a_staff_filter = isset($data['a_staff_filter']) ? array_map(static fn ($item) => new VideoListGetResponseStaffFilter((array)$item), (array)$data['a_staff_filter']) : null;
+        $this->a_video_tag_filter = isset($data['a_video_tag_filter']) ? array_map(static fn ($item) => new VideoListGetResponseVideoTagFilter((array)$item), (array)$data['a_video_tag_filter']) : null;
         $this->id_embed_source = isset($data['id_embed_source']) ? (int)$data['id_embed_source'] : null;
         $this->id_order = isset($data['id_order']) ? (int)$data['id_order'] : null;
         $this->id_sort = isset($data['id_sort']) ? (int)$data['id_sort'] : null;

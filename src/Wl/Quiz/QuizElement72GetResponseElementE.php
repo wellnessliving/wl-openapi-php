@@ -61,7 +61,10 @@ class QuizElement72GetResponseElementE
     public ?bool $is_delete_custom_markup_image = null;
 
     /**
-     * No description.
+     * Whether element is required or not.
+     *
+     * `true` if element is required.
+     * `false` if element is not required.
      *
      * @var bool|null
      */

@@ -13,6 +13,13 @@ class PurchaseItemListPostResponseTotal
     public ?PurchaseItemListPostResponseTotalDiscountList $a_discount_list = null;
 
     /**
+     * The same total as `m_total_tax` below, split by `k_tax` instead of collapsed into one aggregate.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_tax_by_name = null;
+
+    /**
      * The number of clients that paid by account.
      *
      * @var int|null
@@ -89,6 +96,7 @@ class PurchaseItemListPostResponseTotal
     public function __construct(array $data)
     {
         $this->a_discount_list = isset($data['a_discount_list']) ? new PurchaseItemListPostResponseTotalDiscountList((array)$data['a_discount_list']) : null;
+        $this->a_tax_by_name = isset($data['a_tax_by_name']) ? (array)$data['a_tax_by_name'] : null;
         $this->i_pay_account = isset($data['i_pay_account']) ? (int)$data['i_pay_account'] : null;
         $this->i_pay_card = isset($data['i_pay_card']) ? (int)$data['i_pay_card'] : null;
         $this->m_pay_account = isset($data['m_pay_account']) ? (string)$data['m_pay_account'] : null;

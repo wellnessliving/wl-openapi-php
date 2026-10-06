@@ -15,7 +15,7 @@ class Response65PostRequest
     public ?bool $can_anonymous = null;
 
     /**
-     * No description.
+     * `true` if API is being used from backend, `false` otherwise.
      *
      * @var bool|null
      */

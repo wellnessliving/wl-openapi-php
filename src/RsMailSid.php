@@ -13,7 +13,7 @@ namespace WlSdk;
  *
  * Pay attention that all `\MailPrioritySid` must start with backslash.
  *
- * Last used ID: 221.
+ * Last used ID: 224.
  *
  * Values:
  * - 220 (`ABANDONED_CHECKOUT`): Sent when a client abandons a checkout (used in automations).
@@ -290,6 +290,7 @@ namespace WlSdk;
  * - 87 (`LEAD_CAPTURE`): Sent to the client after they fill out a Lead Capture Form on the website of a business.
  * - 197 (`LEAD_CAPTURE_AI`): Sent to staff when CAASI captures a new lead from a conversation,
  *   including contact details and any provided inquiry notes.
+ * - 224 (`LEAD_STAGE_UPDATED`): Sent to staff when a lead's stage is updated in the Lead Capture Form.
  * - 96 (`LOGIN_ANNIVERSARY`): Sent to client on annual anniversary of the Member Since date.
  * - 42 (`LOGIN_ATTENDANCE`): Attendance List.
  *
@@ -320,6 +321,8 @@ namespace WlSdk;
  * - 213 (`LOGIN_STATEMENT_NEW`): Sent to the client when a new account statement becomes available.
  *   Email includes the statement as a PDF attachment.
  * - 9 (`LOGIN_WELCOME`): Sent to all new users after they create an account for the first time.
+ * - 223 (`MARKETING_AUTOMATION_NOTIFY_STAFF`): Sent to selected staff or staff roles when a marketing automation flow
+ * reaches a Notify Staff step.
  * - 214 (`MEMBER_GROUP_USER_ADD`): Client added to a member group.
  * - 215 (`MEMBER_GROUP_USER_REMOVE`): Client removed from a member group.
  * - 203 (`MEMBERSHIP_QUERY`): Sent to staff when the AI Agent logs a membership or purchase query.
@@ -351,6 +354,8 @@ namespace WlSdk;
  * - 181 (`PAY_TRANSACTION_FAIL`): Transaction failed.
  *
  *   Sent to support whenever transaction fails.
+ * - 222 (`PHONE_AGENT_CALL_RECEIVED`): Sent to staff when CAASI's Phone Agent concludes a call, regardless of outcome
+ *   (resolved by CAASI, transferred live, or callback requested).
  * - 137 (`PRESENCE_ACTIVATE`): Request a custom website subscription.
  * - 127 (`PRODUCT_PURCHASE`): Sent after purchase of product.
  * - 93 (`PROFILE_MAIL_CHANGE`): Email to inform user that they email is changed.
@@ -851,6 +856,9 @@ class RsMailSid
     /** Sent to staff when CAASI captures a new lead from a conversation, */
     public const LEAD_CAPTURE_AI = 197;
 
+    /** Sent to staff when a lead's stage is updated in the Lead Capture Form. */
+    public const LEAD_STAGE_UPDATED = 224;
+
     /** Sent to client on annual anniversary of the Member Since date. */
     public const LOGIN_ANNIVERSARY = 96;
 
@@ -893,6 +901,9 @@ class RsMailSid
     /** Sent to all new users after they create an account for the first time. */
     public const LOGIN_WELCOME = 9;
 
+    /** Sent to selected staff or staff roles when a marketing automation flow reaches a Notify Staff step. */
+    public const MARKETING_AUTOMATION_NOTIFY_STAFF = 223;
+
     /** Client added to a member group. */
     public const MEMBER_GROUP_USER_ADD = 214;
 
@@ -919,6 +930,9 @@ class RsMailSid
 
     /** Transaction failed. */
     public const PAY_TRANSACTION_FAIL = 181;
+
+    /** Sent to staff when CAASI's Phone Agent concludes a call, regardless of outcome */
+    public const PHONE_AGENT_CALL_RECEIVED = 222;
 
     /** Request a custom website subscription. */
     public const PRESENCE_ACTIVATE = 137;

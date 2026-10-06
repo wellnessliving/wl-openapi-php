@@ -5,6 +5,13 @@ namespace WlSdk\Wl\Appointment\Book\Question;
 class QuestionGetResponseQuestion
 {
     /**
+     * `true` if the current appointment already has a non-empty answer for this question, `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $has_answer = null;
+
+    /**
      * Number of text rows for the answer input. Values greater than 1 indicate a multi-line answer.
      *
      * @var int|null
@@ -34,6 +41,7 @@ class QuestionGetResponseQuestion
 
     public function __construct(array $data)
     {
+        $this->has_answer = isset($data['has_answer']) ? (bool)$data['has_answer'] : null;
         $this->i_size = isset($data['i_size']) ? (int)$data['i_size'] : null;
         $this->is_multiple = isset($data['is_multiple']) ? (bool)$data['is_multiple'] : null;
         $this->s_key = isset($data['s_key']) ? (string)$data['s_key'] : null;

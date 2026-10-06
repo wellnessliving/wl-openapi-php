@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Reward\Action\CategoryList;
 class CategoryListGetResponse
 {
     /**
-     * No description.
+     * List of reward categories.
      *
      * @var CategoryListGetResponseCategory|null
      */

@@ -32,4 +32,19 @@ class Question
     {
         return new QuestionGetResponse($this->client->request('/Wl/Appointment/Book/Question/Question.json', $request->params(), 'GET'));
     }
+
+    /**
+     * Saves answers for an existing appointment.
+     *
+     * Matches submitted answers to the service's questions by hash key, and saves them to the specified
+     * appointment.
+     *
+     * @return QuestionPostResponse
+     * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
+     * @throws \RuntimeException On network or cURL error.
+     */
+    public function post(QuestionPostRequest $request): QuestionPostResponse
+    {
+        return new QuestionPostResponse($this->client->request('/Wl/Appointment/Book/Question/Question.json', $request->params(), 'POST'));
+    }
 }

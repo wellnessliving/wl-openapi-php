@@ -96,6 +96,13 @@ class ElementGetResponseData
      */
     public ?int $id_duration_type = null;
 
+    /**
+     * Whether to display individual prices for each item in the package.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_price_breakdown = null;
+
     public function __construct(array $data)
     {
         $this->a_service_access = isset($data['a_service_access']) ? (array)$data['a_service_access'] : null;
@@ -109,5 +116,6 @@ class ElementGetResponseData
         $this->id_activation = isset($data['id_activation']) ? (int)$data['id_activation'] : null;
         $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;
         $this->id_duration_type = isset($data['id_duration_type']) ? (int)$data['id_duration_type'] : null;
+        $this->is_price_breakdown = isset($data['is_price_breakdown']) ? (bool)$data['is_price_breakdown'] : null;
     }
 }

@@ -1,0 +1,61 @@
+<?php
+
+namespace WlSdk\Wl\Login\Rank;
+
+class LoginRankListGetRequest
+{
+    /**
+     * Business key.
+     *
+     * @var string|null
+     */
+    public ?string $k_business = null;
+
+    /**
+     * Class key.
+     * Used to filter the list of ranks by their visit conditions.
+     *
+     * `null` if no need to filter by class.
+     *
+     * @var string|null
+     */
+    public ?string $k_class = null;
+
+    /**
+     * Encoded list of UIDs.
+     *
+     * @var string|null
+     */
+    public ?string $s_user_key = null;
+
+    /**
+     * Encoded users with rank categories.
+     *
+     *
+     * `null` if not initialized.
+     *
+     * @var string|null
+     */
+    public ?string $s_user_rank_category = null;
+
+    /**
+     * Whether need to return user detail information (mail, phone).
+     *
+     * @var bool|null
+     */
+    public ?bool $show_user_detail = true;
+
+    public function params(): array
+    {
+        return array_filter(
+            [
+            'k_business' => $this->k_business,
+            'k_class' => $this->k_class,
+            's_user_key' => $this->s_user_key,
+            's_user_rank_category' => $this->s_user_rank_category,
+            'show_user_detail' => $this->show_user_detail,
+            ],
+            static fn ($v) => $v !== null
+        );
+    }
+}

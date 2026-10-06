@@ -56,6 +56,15 @@ class AlertEditPostRequest
     public ?bool $is_flag = null;
 
     /**
+     * Whether note icon should be shown on appointment in Schedule.
+     *
+     * `null` means default value (`true`) on note adding and not changing on note editing.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_icon = null;
+
+    /**
      * Whether flagged user can make purchases. Does not matter if {@link \WlSdk\Wl\Profile\Alert\AlertEdit} is
      * `false`.
      *
@@ -81,6 +90,7 @@ class AlertEditPostRequest
             'id_login_note_access' => $this->id_login_note_access,
             'is_book' => $this->is_book,
             'is_flag' => $this->is_flag,
+            'is_icon' => $this->is_icon,
             'is_purchase' => $this->is_purchase,
             'text_note' => $this->text_note,
             ],

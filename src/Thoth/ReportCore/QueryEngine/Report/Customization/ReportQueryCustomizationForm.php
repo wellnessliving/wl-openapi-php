@@ -5,7 +5,7 @@ namespace WlSdk\Thoth\ReportCore\QueryEngine\Report\Customization;
 use WlSdk\WlSdkClient;
 
 /**
- * API endpoint: /Thoth/ReportCore/QueryEngine/Report/Customization/ReportQueryCustomizationForm.json
+ * Loads customization data of the customization form that corresponds to specified report / report page.
  */
 class ReportQueryCustomizationForm
 {
@@ -18,7 +18,12 @@ class ReportQueryCustomizationForm
     }
 
     /**
-     * Calls GET /Thoth/ReportCore/QueryEngine/Report/Customization/ReportQueryCustomizationForm.json.
+     * Loads customization data of the customization form that corresponds to specified report / report page.
+     *
+     * Populates {@link \WlSdk\Wl\Report\Customization\CustomizationFormGetResponse::$a_customization_form} with
+     * the customization data of the requested
+     * report or report page, optionally converted to the reports listed in {@link
+     * \WlSdk\Wl\Report\Customization\CustomizationForm}.
      *
      * @return ReportQueryCustomizationFormGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
@@ -30,7 +35,11 @@ class ReportQueryCustomizationForm
     }
 
     /**
-     * Calls POST /Thoth/ReportCore/QueryEngine/Report/Customization/ReportQueryCustomizationForm.json.
+     * Saves given data of a customization form into database.
+     *
+     * Stores the customization data supplied in {@link
+     * \WlSdk\Wl\Report\Customization\CustomizationFormGetResponse::$a_customization_form} for the
+     * requested report or report page and resets the related report configuration cache.
      *
      * @return ReportQueryCustomizationFormPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
