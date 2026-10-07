@@ -49,7 +49,7 @@ class TicketScanPostResponse
     public ?int $i_attend = null;
 
     /**
-     * Number of the tickets sold for the session: not cancelled ones.
+     * Number of the tickets sold for the session: not cancelled ones, including those whose holders have not come.
      *
      * @var int|null
      */
