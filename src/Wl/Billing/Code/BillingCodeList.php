@@ -21,7 +21,8 @@ class BillingCodeList
      * Gets the billing code list of the business.
      *
      * The list contains the custom codes of the business and the diagnostic codes of the read-only ICD-10-CM
-     * reference library, the descriptions of the latter in the language of the request.
+     * reference library, the descriptions of the latter in the language of the request. The diagnostic codes are
+     * returned only if the business has turned on ICD diagnostic codes.
      *
      * @return BillingCodeListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

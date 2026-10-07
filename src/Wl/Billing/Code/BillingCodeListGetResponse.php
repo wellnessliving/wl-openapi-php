@@ -11,7 +11,8 @@ class BillingCodeListGetResponse
      * Billing codes of the business.
      *
      * Contains the custom codes of the business and the system codes of the ICD-10-CM reference library, which are
-     * shared by all businesses.
+     * shared by all businesses. The system codes are returned only if the business has turned on ICD diagnostic
+     * codes .
      *
      * Removed codes are not returned - they are not offered for selection anymore, they only stay on the receipts
      * and invoices they have already been applied to.

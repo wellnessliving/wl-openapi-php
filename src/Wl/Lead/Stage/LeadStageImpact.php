@@ -20,6 +20,9 @@ class LeadStageImpact
     /**
      * Finds out what moving the client into the lead stage is going to do.
      *
+     * The client must not be in the stage yet. The caller is expected to ask only about a stage the client is not
+     * in yet.
+     *
      * @return LeadStageImpactGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
