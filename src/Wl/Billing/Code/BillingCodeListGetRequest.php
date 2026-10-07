@@ -12,7 +12,9 @@ class BillingCodeListGetRequest
     public ?string $k_business = null;
 
     /**
-     * Service key. If set, only the codes that are applied to this service by default are returned.
+     * Service key. If set, only the codes that are applied to this service by default are returned. System codes
+     * are
+     * not applied to services by default, so they are not returned then.
      *
      * @var string|null
      */

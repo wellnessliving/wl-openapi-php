@@ -20,9 +20,8 @@ class BillingCodeList
     /**
      * Gets the billing code list of the business.
      *
-     * The list contains the custom codes of the business for now, and is meant to become the single place a client
-     * asks for codes, with the diagnostic codes of the read-only ICD-10-CM reference library to be returned
-     * from here as well.
+     * The list contains the custom codes of the business and the diagnostic codes of the read-only ICD-10-CM
+     * reference library, the descriptions of the latter in the language of the request.
      *
      * @return BillingCodeListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
