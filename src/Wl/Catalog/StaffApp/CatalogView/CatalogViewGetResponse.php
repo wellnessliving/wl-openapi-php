@@ -61,6 +61,13 @@ class CatalogViewGetResponse
      */
     public ?string $m_total = null;
 
+    /**
+     * The text of the terms and conditions for the sale item.
+     *
+     * @var string|null
+     */
+    public ?string $xml_terms = null;
+
     public function __construct(array $data)
     {
         $this->a_tax_data = isset($data['a_tax_data']) ? new CatalogViewGetResponseTaxData((array)$data['a_tax_data']) : null;
@@ -70,5 +77,6 @@ class CatalogViewGetResponse
         $this->m_subtotal = isset($data['m_subtotal']) ? (string)$data['m_subtotal'] : null;
         $this->m_tax = isset($data['m_tax']) ? (string)$data['m_tax'] : null;
         $this->m_total = isset($data['m_total']) ? (string)$data['m_total'] : null;
+        $this->xml_terms = isset($data['xml_terms']) ? (string)$data['xml_terms'] : null;
     }
 }

@@ -2,7 +2,7 @@
 
 namespace WlSdk\Wl\Classes\Editor;
 
-class ClassEditorGetResponseTicketOption
+class ClassEditorGetResponseClassTicketTicketOption
 {
     /**
      * Price of one ticket of this type.
@@ -14,12 +14,16 @@ class ClassEditorGetResponseTicketOption
     /**
      * `true` if at least one ticket of this type has been sold, `false` otherwise.
      *
+     * Only the server sets it. A value posted by the client is ignored.
+     *
      * @var bool|null
      */
     public ?bool $is_sold = null;
 
     /**
      * Key of the type.
+     *
+     * Empty string for a type that has just been added and is not saved yet.
      *
      * @var string|null
      */

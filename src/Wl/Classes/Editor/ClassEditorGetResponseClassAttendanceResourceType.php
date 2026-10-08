@@ -2,11 +2,10 @@
 
 namespace WlSdk\Wl\Classes\Editor;
 
-class ClassEditorGetResponseResourceType
+class ClassEditorGetResponseClassAttendanceResourceType
 {
     /**
-     * Whether a client picks the asset of this category while booking. One of
-     * {@link \WlSdk\Wl\Resource\ResourceClientControlSid} constants.
+     * Whether a client picks the asset of this category while booking.
      *
      * @var int|null
      * @see \WlSdk\Wl\Resource\ResourceClientControlSid
@@ -14,8 +13,7 @@ class ClassEditorGetResponseResourceType
     public ?int $id_resource_control = null;
 
     /**
-     * Whether one asset of this category is taken by the whole class or one by every client. One of
-     * {@link \WlSdk\Wl\Resource\ResourceUseSid} constants.
+     * Whether one asset of this category is taken by the whole class or one by every client.
      *
      * @var int|null
      * @see \WlSdk\Wl\Resource\ResourceUseSid
