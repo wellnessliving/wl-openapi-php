@@ -1,8 +1,8 @@
 <?php
 
-namespace WlSdk\Wl\Book\Process\Store;
+namespace WlSdk\Wl\Book\Process;
 
-class StorePostResponseVisitPayment
+class ProcessGroupPostResponseVisitPayment
 {
     /**
      * `true` if the visit is free; `false` otherwise.
