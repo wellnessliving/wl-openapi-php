@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Privilege;
 /**
  * Wellnessliving-wide privileges.
  *
- * Last Used ID: 252.
+ * Last Used ID: 253.
  *
  * Values:
  * - 225 (`AI_AGENT_KNOWLEDGE_BASE`): Allows user to view, create or edit knowledge base entries, or conversational
@@ -24,8 +24,11 @@ namespace WlSdk\Wl\Privilege;
  * - 52 (`APPOINTMENT_VIEW`): View appointment.
  * - 252 (`BILLING_CODE_ASSIGN`): Ability to assign billing and diagnostic codes to appointments.
  *
- *   Allows to select codes of the central billing code list and to search and apply ICD diagnostic codes. Adding a
- *   new code to the central list is configuring it, so it requires {@link \WlSdk\Wl\Privilege\PrivilegeSid} instead.
+ *   Allows to select codes of the central billing code list and to search and apply ICD diagnostic codes.
+ * - 253 (`BILLING_CODE_TEMPORARY`): Ability to add a temporary custom billing code at the appointment booking.
+ *
+ *   The code exists for that booking only: it shows up on the receipt, but is not saved to the central billing code
+ *   list. Adding a code to the central list requires {@link \WlSdk\Wl\Privilege\PrivilegeSid} instead.
  * - 141 (`BOOK_OUTSIDE_PAID_PERIOD`): Ability to book clients outside their current paid period.
  * - 154 (`BOOK_OVER_CAPACITY`): Ability to book clients over capacity during or after the services have been
  * scheduled.
@@ -325,6 +328,9 @@ class PrivilegeSid
 
     /** Ability to assign billing and diagnostic codes to appointments. */
     public const BILLING_CODE_ASSIGN = 252;
+
+    /** Ability to add a temporary custom billing code at the appointment booking. */
+    public const BILLING_CODE_TEMPORARY = 253;
 
     /** Ability to book clients outside their current paid period. */
     public const BOOK_OUTSIDE_PAID_PERIOD = 141;

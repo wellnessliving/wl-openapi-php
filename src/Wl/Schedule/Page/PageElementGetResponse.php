@@ -173,6 +173,14 @@ class PageElementGetResponse
     public ?bool $is_in_progress = null;
 
     /**
+     * `true` if the visit has been paid for (via a purchase option, session pass, or single purchase).
+     * `false` if the visit is unpaid.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_paid = null;
+
+    /**
      * `true` - service is virtual; `false` - otherwise.
      *
      * @var bool|null
@@ -301,6 +309,7 @@ class PageElementGetResponse
         $this->is_enable_client_cancel = isset($data['is_enable_client_cancel']) ? (bool)$data['is_enable_client_cancel'] : null;
         $this->is_event = isset($data['is_event']) ? (bool)$data['is_event'] : null;
         $this->is_in_progress = isset($data['is_in_progress']) ? (bool)$data['is_in_progress'] : null;
+        $this->is_paid = isset($data['is_paid']) ? (bool)$data['is_paid'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
         $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;

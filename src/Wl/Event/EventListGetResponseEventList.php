@@ -40,6 +40,16 @@ class EventListGetResponseEventList
     public ?EventListGetResponseEventListSearchTag $a_search_tag = null;
 
     /**
+     * Returns how many tickets can be sold for the ticketed event the class belongs to, and how
+     *  many of those are still available to sell.
+     *
+     *  `null` if the class is not a ticketed event.
+     *
+     * @var EventListGetResponseEventListTicketInventory|null
+     */
+    public ?EventListGetResponseEventListTicketInventory $a_ticket_inventory = null;
+
+    /**
      * List of ticket options available for booking the event. Empty if the event is not a ticketed
      * event.
      *
@@ -458,6 +468,7 @@ class EventListGetResponseEventList
         $this->a_logo = isset($data['a_logo']) ? new EventListGetResponseEventListLogo((array)$data['a_logo']) : null;
         $this->a_schedule = isset($data['a_schedule']) ? new EventListGetResponseEventListSchedule((array)$data['a_schedule']) : null;
         $this->a_search_tag = isset($data['a_search_tag']) ? new EventListGetResponseEventListSearchTag((array)$data['a_search_tag']) : null;
+        $this->a_ticket_inventory = isset($data['a_ticket_inventory']) ? new EventListGetResponseEventListTicketInventory((array)$data['a_ticket_inventory']) : null;
         $this->a_tickets = isset($data['a_tickets']) ? (array)$data['a_tickets'] : null;
         $this->can_book = isset($data['can_book']) ? (bool)$data['can_book'] : null;
         $this->can_cancel = isset($data['can_cancel']) ? (bool)$data['can_cancel'] : null;
