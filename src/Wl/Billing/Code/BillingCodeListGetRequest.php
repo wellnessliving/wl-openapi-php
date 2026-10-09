@@ -11,21 +11,11 @@ class BillingCodeListGetRequest
      */
     public ?string $k_business = null;
 
-    /**
-     * Service key. If set, only the codes that are applied to this service by default are returned. System codes
-     * are
-     * not applied to services by default, so they are not returned then.
-     *
-     * @var string|null
-     */
-    public ?string $k_service = null;
-
     public function params(): array
     {
         return array_filter(
             [
             'k_business' => $this->k_business,
-            'k_service' => $this->k_service,
             ],
             static fn ($v) => $v !== null
         );
