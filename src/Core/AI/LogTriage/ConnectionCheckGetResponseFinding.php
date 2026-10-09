@@ -40,13 +40,6 @@ class ConnectionCheckGetResponseFinding
     public ?int $i_occurrence_count = null;
 
     /**
-     * Usage-statistics priority multiplier. Present for the usage-statistics source.
-     *
-     * @var int|null
-     */
-    public ?int $i_priority_multiplier = null;
-
-    /**
      * CID of a {@link \WlSdk\Core\AI\LogTriage\TriageProblemAbstract} subclass.
      *
      * @var int|null
@@ -92,7 +85,6 @@ class ConnectionCheckGetResponseFinding
         $this->dtu_first_seen = isset($data['dtu_first_seen']) ? (string)$data['dtu_first_seen'] : null;
         $this->dtu_last_seen = isset($data['dtu_last_seen']) ? (string)$data['dtu_last_seen'] : null;
         $this->i_occurrence_count = isset($data['i_occurrence_count']) ? (int)$data['i_occurrence_count'] : null;
-        $this->i_priority_multiplier = isset($data['i_priority_multiplier']) ? (int)$data['i_priority_multiplier'] : null;
         $this->cid_problem = isset($data['cid_problem']) ? (int)$data['cid_problem'] : null;
         $this->s_object = isset($data['s_object']) ? (string)$data['s_object'] : null;
         $this->eid_period = isset($data['eid_period']) ? (int)$data['eid_period'] : null;

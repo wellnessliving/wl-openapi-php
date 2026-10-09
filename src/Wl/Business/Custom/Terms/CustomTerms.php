@@ -21,6 +21,8 @@ class CustomTerms
     /**
      * Saves {@link \WlSdk\Wl\Business\Custom\Terms\CustomTerms} as the custom terms of {@link \WlSdk\Wl\Business\Custom\Terms\CustomTerms}.
      *
+     * Validates every posted term slot and its selected option, then writes.
+     *
      * @return CustomTermsPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
