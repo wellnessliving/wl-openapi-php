@@ -1,25 +1,25 @@
 <?php
 
-namespace WlSdk\Wl\Ticket;
+namespace WlSdk\Wl\Event\Book\EventView;
 
-class TicketListGetResponseOrderType
+class ElementGetResponseTickets
 {
     /**
-     * Number of not cancelled tickets of this type in the order.
-     *
-     * @var int|null
-     */
-    public ?int $i_count = null;
-
-    /**
-     * Key of the ticket type.
+     * Globally unique identifier of the ticket option. Primary key in TicketOptionsRouteSql.
      *
      * @var string|null
      */
     public ?string $k_ticket_option = null;
 
     /**
-     * Name of the ticket type.
+     * One ticket price.
+     *
+     * @var string|null
+     */
+    public ?string $m_price = null;
+
+    /**
+     * Ticket option name.
      *
      * @var string|null
      */
@@ -27,8 +27,8 @@ class TicketListGetResponseOrderType
 
     public function __construct(array $data)
     {
-        $this->i_count = isset($data['i_count']) ? (int)$data['i_count'] : null;
         $this->k_ticket_option = isset($data['k_ticket_option']) ? (string)$data['k_ticket_option'] : null;
+        $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }
 }

@@ -63,11 +63,38 @@ class TicketListGetResponseTicket
     public ?string $k_ticket_item = null;
 
     /**
-     * Key of the ticket type. Key of the ticket type.
+     * Key of the ticket type.
      *
      * @var string|null
      */
     public ?string $k_ticket_option = null;
+
+    /**
+     * Amount refunded for this ticket. The refunds of the purchase item of the ticket. If several tickets share
+     * one purchase item, the refunds of the item are split equally between its cancelled tickets. `0` if nothing
+     * was refunded. Decimal string, in the currency {@link \WlSdk\Wl\Ticket\TicketListGetResponse::$k_currency}.
+     *
+     * @var string|null
+     */
+    public ?string $m_refund = null;
+
+    /**
+     * Price of the ticket: how much was paid for it, not net of refunds. Decimal string, in the currency
+     * {@link \WlSdk\Wl\Ticket\TicketListGetResponse::$k_currency}. The paid amount of the purchase item of the
+     * ticket divided by the number
+     * of tickets bought with it.
+     *
+     * @var string|null
+     */
+    public ?string $m_price = null;
+
+    /**
+     * Full name of the holder of the ticket: the person who has claimed it. Empty if nobody has claimed the
+     * ticket.
+     *
+     * @var string|null
+     */
+    public ?string $text_holder = null;
 
     /**
      * Number of the ticket: its short code in the format for displaying, for example `4829-1736`. Empty if the
@@ -95,6 +122,9 @@ class TicketListGetResponseTicket
         $this->k_purchase = isset($data['k_purchase']) ? (string)$data['k_purchase'] : null;
         $this->k_ticket_item = isset($data['k_ticket_item']) ? (string)$data['k_ticket_item'] : null;
         $this->k_ticket_option = isset($data['k_ticket_option']) ? (string)$data['k_ticket_option'] : null;
+        $this->m_refund = isset($data['m_refund']) ? (string)$data['m_refund'] : null;
+        $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;
+        $this->text_holder = isset($data['text_holder']) ? (string)$data['text_holder'] : null;
         $this->text_ticket_code = isset($data['text_ticket_code']) ? (string)$data['text_ticket_code'] : null;
         $this->text_type = isset($data['text_type']) ? (string)$data['text_type'] : null;
     }

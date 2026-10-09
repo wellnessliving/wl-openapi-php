@@ -20,7 +20,7 @@ class CatalogViewGetResponse
      *
      * Always empty for sale items other than {@link \WlSdk\RsSaleSid}.
      *
-     * @var array[]|null
+     * @var CatalogViewGetResponseTickets[]|null
      */
     public ?array $a_tickets = null;
 
@@ -61,22 +61,14 @@ class CatalogViewGetResponse
      */
     public ?string $m_total = null;
 
-    /**
-     * The text of the terms and conditions for the sale item.
-     *
-     * @var string|null
-     */
-    public ?string $xml_terms = null;
-
     public function __construct(array $data)
     {
         $this->a_tax_data = isset($data['a_tax_data']) ? new CatalogViewGetResponseTaxData((array)$data['a_tax_data']) : null;
-        $this->a_tickets = isset($data['a_tickets']) ? (array)$data['a_tickets'] : null;
+        $this->a_tickets = isset($data['a_tickets']) ? array_map(static fn ($item) => new CatalogViewGetResponseTickets((array)$item), (array)$data['a_tickets']) : null;
         $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->m_prorate = isset($data['m_prorate']) ? (string)$data['m_prorate'] : null;
         $this->m_subtotal = isset($data['m_subtotal']) ? (string)$data['m_subtotal'] : null;
         $this->m_tax = isset($data['m_tax']) ? (string)$data['m_tax'] : null;
         $this->m_total = isset($data['m_total']) ? (string)$data['m_total'] : null;
-        $this->xml_terms = isset($data['xml_terms']) ? (string)$data['xml_terms'] : null;
     }
 }

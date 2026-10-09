@@ -114,10 +114,11 @@ class ElementPostResponseData
     /**
      * List of ticket options available for booking the event. Empty if the item is not a
      * ticketed event. .
+     * Each element contains the following keys:
      *
-     * @var array[]|null
+     * @var ElementPostResponseDataTickets|null
      */
-    public ?array $a_tickets = null;
+    public ?ElementPostResponseDataTickets $a_tickets = null;
 
     public function __construct(array $data)
     {
@@ -134,6 +135,6 @@ class ElementPostResponseData
         $this->id_duration_type = isset($data['id_duration_type']) ? (int)$data['id_duration_type'] : null;
         $this->is_price_breakdown = isset($data['is_price_breakdown']) ? (bool)$data['is_price_breakdown'] : null;
         $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
-        $this->a_tickets = isset($data['a_tickets']) ? (array)$data['a_tickets'] : null;
+        $this->a_tickets = isset($data['a_tickets']) ? new ElementPostResponseDataTickets((array)$data['a_tickets']) : null;
     }
 }
