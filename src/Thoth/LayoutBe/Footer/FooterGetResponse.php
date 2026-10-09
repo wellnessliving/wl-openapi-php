@@ -8,8 +8,9 @@ namespace WlSdk\Thoth\LayoutBe\Footer;
 class FooterGetResponse
 {
     /**
-     * `true` to show the "Powered by WellnessLiving" branding and Terms & Conditions links in the footer;
-     * `false` for white-label businesses, which must not display WellnessLiving branding.
+     * Whether the "Powered by WellnessLiving" branding and Terms & Conditions links are shown in the footer.
+     *
+     * `true` to show them; `false` for white-label businesses, which must not display WellnessLiving branding.
      *
      * @var bool|null
      */
