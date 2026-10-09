@@ -60,6 +60,14 @@ class SendMailPostRequest
      */
     public ?string $s_subject = null;
 
+    /**
+     * The receiver user key.
+     * `null` if the email should not be linked to a specific user's contact history.
+     *
+     * @var string|null
+     */
+    public ?string $uid = null;
+
     public function params(): array
     {
         return array_filter(
@@ -72,6 +80,7 @@ class SendMailPostRequest
             's_html' => $this->s_html,
             's_mail' => $this->s_mail,
             's_subject' => $this->s_subject,
+            'uid' => $this->uid,
             ],
             static fn ($v) => $v !== null
         );
