@@ -20,13 +20,6 @@ class BillingCodeListGetResponseCode
     public ?bool $is_custom = null;
 
     /**
-     * Key of the code. Keys of the custom and of the system codes never clash.
-     *
-     * @var string|null
-     */
-    public ?string $k_code = null;
-
-    /**
      * Code value, as it is printed on receipts and invoices.
      *
      * @var string|null
@@ -45,7 +38,6 @@ class BillingCodeListGetResponseCode
     {
         $this->a_service = isset($data['a_service']) ? (array)$data['a_service'] : null;
         $this->is_custom = isset($data['is_custom']) ? (bool)$data['is_custom'] : null;
-        $this->k_code = isset($data['k_code']) ? (string)$data['k_code'] : null;
         $this->text_code = isset($data['text_code']) ? (string)$data['text_code'] : null;
         $this->text_description = isset($data['text_description']) ? (string)$data['text_description'] : null;
     }

@@ -17,7 +17,9 @@ class BillingCodeListGetResponse
      * Removed codes are not returned - they are not offered for selection anymore, they only stay on the receipts
      * and invoices they have already been applied to.
      *
-     * The list is not sorted - sorting and filtering of the list is a matter of the page that shows it.
+     * The custom codes go first, then the system codes, each type sorted by the code value. Filtering of the list
+     * is a
+     * matter of the page that shows it.
      *
      * @var BillingCodeListGetResponseCode[]|null
      */
