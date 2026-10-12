@@ -34,6 +34,15 @@ namespace WlSdk\Core\WebSocket;
  * * Issue {@link \WlSdk\Core\WebSocket\ChannelAbstract} on it.
  *
  * Values:
+ * - 2389 (`Core\OAuth\AuthorizeChangeChannel`): The channel "the access of a user has changed": the authorization page
+ * of the user loads the request again.
+ *
+ *   A project sends a message when it changes what its OAuthAccessInterface::access() checks for the user, for
+ *   example when an administrator approves or rejects a request for access. The page `Core_OAuth_AuthorizeSpa`
+ *   subscribes while it shows a refusal of the project to a signed-in user, and on a message asks
+ *   AuthorizeApi again: the consent or the new refusal appears without a reload of the page. The message has
+ *   no data: only the fact of the change matters, so only the last message is kept. To send it, create an object, set
+ *   {@link \WlSdk\Core\WebSocket\ChannelBroadcast} and call {@link \WlSdk\Core\WebSocket\ChannelBroadcast}.
  * - 1342 (`Wl\Alert\AlertChannel`): A message is sent through this channel every time an alert created or read.
  * - 1921 (`Wl\Visit\VisitStatusChannel`): A message is sent through this channel when the status of a visit is
  * changed.
@@ -95,6 +104,9 @@ namespace WlSdk\Core\WebSocket;
  */
 class ChannelAbstract
 {
+    /** The channel "the access of a user has changed": the authorization page of the user loads the request again. */
+    public const AuthorizeChangeChannel = 2389;
+
     /** A message is sent through this channel every time an alert created or read. */
     public const AlertChannel = 1342;
 
