@@ -28,6 +28,14 @@ class ElementPostResponseItem
     public ?ElementPostResponseItemImage $a_image = null;
 
     /**
+     * Purchase errors for this item. The same structure as {@link
+     * \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$a_purchase_error} has.
+     *
+     * @var ElementPostResponseItemPurchaseError|null
+     */
+    public ?ElementPostResponseItemPurchaseError $a_purchase_error = null;
+
+    /**
      * Tax amounts keyed by tax key. The same structure as {@link
      * \WlSdk\Wl\Catalog\CatalogList\ElementGetResponse::$a_tax} has.
      *
@@ -90,6 +98,7 @@ class ElementPostResponseItem
         $this->a_data = isset($data['a_data']) ? new ElementPostResponseItemData((array)$data['a_data']) : null;
         $this->a_guest_pass = isset($data['a_guest_pass']) ? new ElementPostResponseItemGuestPass((array)$data['a_guest_pass']) : null;
         $this->a_image = isset($data['a_image']) ? new ElementPostResponseItemImage((array)$data['a_image']) : null;
+        $this->a_purchase_error = isset($data['a_purchase_error']) ? new ElementPostResponseItemPurchaseError((array)$data['a_purchase_error']) : null;
         $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
         $this->id_purchase_option_view = isset($data['id_purchase_option_view']) ? (int)$data['id_purchase_option_view'] : null;
         $this->m_discount_code = isset($data['m_discount_code']) ? (string)$data['m_discount_code'] : null;
