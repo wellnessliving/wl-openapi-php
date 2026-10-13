@@ -81,7 +81,10 @@ class NuveiOpenOrderPostRequest
     /**
      * Payment amount.
      *
-     * `null` in case when not initialized yet.
+     * `null` in case when not initialized yet. A subclass under the SAL-1314 rule
+     * (SurchargeCardTypeRule) may correct this to exclude a surcharge the
+     * caller was not allowed to post, so a stale client that still posts one gets the corrected total back (D7)
+     * instead of a rejected request.
      *
      * @var string|null
      */
@@ -90,7 +93,8 @@ class NuveiOpenOrderPostRequest
     /**
      * Surcharge amount.
      *
-     * `null` in case when not initialized yet, empty string or null for zero surcharge amount.
+     * `null` in case when not initialized yet, empty string or null for zero surcharge amount. See
+     * AbstractTransactionStartupApi::$m_amount about a subclass correcting this value (SAL-1314).
      *
      * @var string|null
      */

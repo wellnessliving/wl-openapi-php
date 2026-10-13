@@ -25,7 +25,7 @@ class VisitBillingCodeDefaultGetResponse
     public ?array $a_code_staff = null;
 
     /**
-     * Codes most used for the visits of the client, the most used first.
+     * Codes last applied for the visits of the client, the most recently applied first.
      *
      * Only the codes the current staff member can apply again are returned: a custom code that is still in the
      * billing

@@ -17,9 +17,9 @@ class BillingCodeListGetResponse
      * Removed codes are not returned - they are not offered for selection anymore, they only stay on the receipts
      * and invoices they have already been applied to.
      *
-     * The custom codes go first, then the system codes, each type sorted by the code value. Filtering of the list
-     * is a
-     * matter of the page that shows it.
+     * The custom codes go first, then the system codes, each type sorted by the code value. Only the codes that
+     * match
+     * {@link \WlSdk\Wl\Billing\Code\BillingCodeList} are returned, if it is given.
      *
      * @var BillingCodeListGetResponseCode[]|null
      */

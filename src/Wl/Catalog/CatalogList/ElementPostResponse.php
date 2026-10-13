@@ -73,6 +73,16 @@ class ElementPostResponse
     public ?array $a_item = null;
 
     /**
+     * A list of purchase errors that would prevent this item from being purchased by the current user.
+     *
+     * Each element represents a server-side validation error. Empty if there are no purchase restrictions
+     * or if the request is unauthenticated. Each element has the following structure:
+     *
+     * @var ElementPostResponsePurchaseError[]|null
+     */
+    public ?array $a_purchase_error = null;
+
+    /**
      * A list of the item's taxes.
      * Keys are tax keys, and values are tax amounts.
      *
@@ -286,6 +296,7 @@ class ElementPostResponse
         $this->a_image_list = isset($data['a_image_list']) ? array_map(static fn ($item) => new ElementPostResponseImageList((array)$item), (array)$data['a_image_list']) : null;
         $this->a_installment_template = isset($data['a_installment_template']) ? array_map(static fn ($item) => new ElementPostResponseInstallmentTemplate((array)$item), (array)$data['a_installment_template']) : null;
         $this->a_item = isset($data['a_item']) ? array_map(static fn ($item) => new ElementPostResponseItem((array)$item), (array)$data['a_item']) : null;
+        $this->a_purchase_error = isset($data['a_purchase_error']) ? array_map(static fn ($item) => new ElementPostResponsePurchaseError((array)$item), (array)$data['a_purchase_error']) : null;
         $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
         $this->f_price = isset($data['f_price']) ? (string)$data['f_price'] : null;
         $this->f_price_include = isset($data['f_price_include']) ? (string)$data['f_price_include'] : null;

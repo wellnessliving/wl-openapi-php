@@ -70,6 +70,17 @@ class Calendar73GetResponseTime
      */
     public ?string $s_title = null;
 
+    /**
+     * User key of the staff member the system would assign for this time if the client booked with any staff
+     * member.
+     * Populated only when no specific staff member is requested and the booking is not back-to-back.
+     *
+     * `'0'` when not applicable or for asset bookings.
+     *
+     * @var string|null
+     */
+    public ?string $uid_staff_suggest = null;
+
     public function __construct(array $data)
     {
         $this->dt_date = isset($data['dt_date']) ? (string)$data['dt_date'] : null;
@@ -81,5 +92,6 @@ class Calendar73GetResponseTime
         $this->k_staff = isset($data['k_staff']) ? (string)$data['k_staff'] : null;
         $this->uid_staff = isset($data['uid_staff']) ? (string)$data['uid_staff'] : null;
         $this->s_title = isset($data['s_title']) ? (string)$data['s_title'] : null;
+        $this->uid_staff_suggest = isset($data['uid_staff_suggest']) ? (string)$data['uid_staff_suggest'] : null;
     }
 }

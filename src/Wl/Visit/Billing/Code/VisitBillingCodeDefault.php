@@ -20,9 +20,9 @@ class VisitBillingCodeDefault
     /**
      * Returns the codes suggested for a visit.
      *
-     * The default codes of the service and of the staff member, and up to 5 codes most used for the client, each
-     * list
-     * separately. The current staff member must be able to assign billing codes to appointments.
+     * The default codes of the service and of the staff member, and up to 5 codes last applied for the client,
+     * each
+     * list separately. The current staff member must be able to assign billing codes to appointments.
      *
      * @return VisitBillingCodeDefaultGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
