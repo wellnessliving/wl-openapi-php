@@ -43,8 +43,7 @@ class VisitBillingCodeAssign
      * among the ICD-10-CM diagnostic codes if the business has turned them on. A code found nowhere is a temporary
      * code for this visit only: it requires the access to create temporary codes, and it is not added to the
      * billing
-     * code list. Every added and every removed code is logged with the reason and, if the business requires it,
-     * the
+     * code list. Every added and every removed code is logged with the reason and, if a signature is required, the
      * signature.
      *
      * The version of the codes the list is made from is posted together with the list: if another staff member has

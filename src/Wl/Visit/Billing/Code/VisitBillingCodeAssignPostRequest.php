@@ -58,11 +58,15 @@ class VisitBillingCodeAssignPostRequest
     public ?string $text_reason = null;
 
     /**
-     * Signature of the staff member who applies the codes.
+     * Signature of the staff member who applies the codes: their full name, in any case.
      *
-     * Required and stored only if the business requires a signature when billing codes are saved. Empty string if
-     * no
-     * signature is given.
+     * Required and stored only if the business requires a signature when billing codes are saved and the post adds
+     * or
+     * removes a diagnostic code: a post that changes the custom codes only is saved without a signature. A
+     * signature
+     * that is not the full name of the staff member is rejected with the error `signature-name-other`. Empty
+     * string if
+     * no signature is given.
      *
      * @var string|null
      */
