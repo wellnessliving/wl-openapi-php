@@ -2,7 +2,7 @@
 
 namespace WlSdk\Wl\Visit\Billing\Code;
 
-class VisitBillingCodeDefaultGetResponseCodeTop
+class VisitBillingCodeDefaultGetResponseCodeRecent
 {
     /**
      * `true` for a custom code of the business or a temporary code, `false` for an ICD-10-CM diagnostic code.
