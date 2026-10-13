@@ -33,6 +33,22 @@ class VisitBillingCodeAssignPostRequest
     public ?array $a_text_code = null;
 
     /**
+     * Version of the billing codes of the visit: a value that changes every time the codes of the visit change.
+     *
+     * The version comes with the codes and must be posted back together with them. A post that carries an outdated
+     * version is rejected with the error `code-version-outdated`, so that the codes another staff member has
+     * changed
+     * in the meantime are not overwritten without being seen. The answer of a successful post carries the new
+     * version,
+     * so the codes can be changed again without reading them anew.
+     *
+     * Empty string if the codes of the visit have never been changed.
+     *
+     * @var string|null
+     */
+    public ?string $s_version = null;
+
+    /**
      * Reason of the change, for example when the codes are changed after the receipt has been sent to the client.
      *
      * Empty string if no reason is given.
@@ -59,6 +75,7 @@ class VisitBillingCodeAssignPostRequest
             'k_business' => $this->k_business,
             'k_visit' => $this->k_visit,
             'a_text_code' => $this->a_text_code,
+            's_version' => $this->s_version,
             'text_reason' => $this->text_reason,
             'text_signature' => $this->text_signature,
             ],
