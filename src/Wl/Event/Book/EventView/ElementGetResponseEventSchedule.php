@@ -131,6 +131,15 @@ class ElementGetResponseEventSchedule
     public ?string $s_timezone = null;
 
     /**
+     * Identifier of the timezone of the location of the session (for example `America/New_York`). Unlike
+     * `s_timezone`, it never depends on the timezone of the client. Use it to find out whether the early bird
+     * price is still applied, see {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$dt_early}.
+     *
+     * @var string|null
+     */
+    public ?string $s_timezone_location = null;
+
+    /**
      * The room of the event.
      *
      * @var string|null
@@ -156,6 +165,7 @@ class ElementGetResponseEventSchedule
         $this->s_location = isset($data['s_location']) ? (string)$data['s_location'] : null;
         $this->s_time = isset($data['s_time']) ? (string)$data['s_time'] : null;
         $this->s_timezone = isset($data['s_timezone']) ? (string)$data['s_timezone'] : null;
+        $this->s_timezone_location = isset($data['s_timezone_location']) ? (string)$data['s_timezone_location'] : null;
         $this->text_room = isset($data['text_room']) ? (string)$data['text_room'] : null;
     }
 }

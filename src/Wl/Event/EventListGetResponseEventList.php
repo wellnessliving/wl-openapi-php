@@ -82,7 +82,14 @@ class EventListGetResponseEventList
     public ?bool $can_cancel = null;
 
     /**
-     * End date, when early bird price ends in `MySql` format.
+     * The last date when the early bird price is applied, in `MySql` date format. `null` if the event has
+     * no early bird.
+     *
+     * The early bird price applies while the current date in the timezone of the location of the session
+     * (`s_timezone_location`) is not later than this date, the date itself
+     * included. This is the same rule that is used when the event is purchased.
+     * Applies to `m_price_total_early` and to `m_price_early` of
+     * `a_tickets`.
      *
      * @var string|null
      */

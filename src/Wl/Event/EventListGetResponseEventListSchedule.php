@@ -81,6 +81,16 @@ class EventListGetResponseEventListSchedule
     public ?string $k_resource_location = null;
 
     /**
+     * Identifier of the timezone of the location of the session (for example `America/New_York`).
+     *
+     * It never depends on the timezone of the client. Use it to find out whether the early bird price is still
+     * applied, see `dl_early`.
+     *
+     * @var string|null
+     */
+    public ?string $s_timezone_location = null;
+
+    /**
      * Location title.
      *
      * @var string|null
@@ -113,6 +123,7 @@ class EventListGetResponseEventListSchedule
         $this->k_class_period = isset($data['k_class_period']) ? (string)$data['k_class_period'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
         $this->k_resource_location = isset($data['k_resource_location']) ? (string)$data['k_resource_location'] : null;
+        $this->s_timezone_location = isset($data['s_timezone_location']) ? (string)$data['s_timezone_location'] : null;
         $this->text_location = isset($data['text_location']) ? (string)$data['text_location'] : null;
         $this->text_room = isset($data['text_room']) ? (string)$data['text_room'] : null;
         $this->text_time = isset($data['text_time']) ? (string)$data['text_time'] : null;

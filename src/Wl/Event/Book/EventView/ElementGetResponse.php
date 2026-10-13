@@ -103,6 +103,14 @@ class ElementGetResponse
     public ?ElementGetResponseStaffLogo $a_staff_logo = null;
 
     /**
+     * How many tickets can be sold for the ticketed event and how many of those are still available.
+     * Empty if the event is not a ticketed event.
+     *
+     * @var array|null
+     */
+    public ?array $a_ticket_inventory = null;
+
+    /**
      * List of ticket options available for booking the event. Empty if the event is not a ticketed
      * event.
      *
@@ -135,7 +143,15 @@ class ElementGetResponse
     public ?string $dt_book_date = null;
 
     /**
-     * The early registration date of the event.
+     * The last date when the early bird price is applied, in MySQL date format. `null` if the event has no early
+     * bird.
+     *
+     * The early bird price applies while the current date in the timezone of the location of the session
+     * (`s_timezone_location` of the {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_schedule} item)
+     * is not later than this date,
+     * the date itself included. This is the same rule that is used when the event is purchased.
+     * Applies to {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$m_price_total_early} and to
+     * `m_price_early` of {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$a_tickets}.
      *
      * @var string|null
      */
@@ -343,6 +359,31 @@ class ElementGetResponse
     public ?bool $is_ticket = null;
 
     /**
+     * `true` if a client can buy tickets without creating an account. `false` if the event is not
+     * a ticketed event.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket_guest_allowed = null;
+
+    /**
+     * `true` if a client must accept terms and conditions before buying a ticket, see
+     * {@link \WlSdk\Wl\Event\Book\EventView\ElementGetResponse::$xml_ticket_terms}. `false` if the event is not a
+     * ticketed event.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket_terms = null;
+
+    /**
+     * `true` if a client can reserve tickets without payment and pay at the door. `false` if the event
+     * is not a ticketed event.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket_unpaid_allowed = null;
+
+    /**
      * `true` if event is virtual; `false` otherwise.
      *
      * @var bool|null
@@ -431,6 +472,14 @@ class ElementGetResponse
      */
     public ?string $xml_description = null;
 
+    /**
+     * Terms and conditions as HTML that a client must accept before buying a ticket. Empty if the event
+     * is not a ticketed event or does not require the client to accept anything.
+     *
+     * @var string|null
+     */
+    public ?string $xml_ticket_terms = null;
+
     public function __construct(array $data)
     {
         $this->a_age_restrictions = isset($data['a_age_restrictions']) ? new ElementGetResponseAgeRestrictions((array)$data['a_age_restrictions']) : null;
@@ -444,6 +493,7 @@ class ElementGetResponse
         $this->a_schedule = isset($data['a_schedule']) ? array_map(static fn ($item) => new ElementGetResponseSchedule((array)$item), (array)$data['a_schedule']) : null;
         $this->a_shop_category = isset($data['a_shop_category']) ? (array)$data['a_shop_category'] : null;
         $this->a_staff_logo = isset($data['a_staff_logo']) ? new ElementGetResponseStaffLogo((array)$data['a_staff_logo']) : null;
+        $this->a_ticket_inventory = isset($data['a_ticket_inventory']) ? (array)$data['a_ticket_inventory'] : null;
         $this->a_tickets = isset($data['a_tickets']) ? array_map(static fn ($item) => new ElementGetResponseTickets((array)$item), (array)$data['a_tickets']) : null;
         $this->a_timezone_info = isset($data['a_timezone_info']) ? array_map(static fn ($item) => new ElementGetResponseTimezoneInfo((array)$item), (array)$data['a_timezone_info']) : null;
         $this->a_visits_required = isset($data['a_visits_required']) ? array_map(static fn ($item) => new ElementGetResponseVisitsRequired((array)$item), (array)$data['a_visits_required']) : null;
@@ -474,6 +524,9 @@ class ElementGetResponse
         $this->is_prorate = isset($data['is_prorate']) ? (bool)$data['is_prorate'] : null;
         $this->is_single_session_buy = isset($data['is_single_session_buy']) ? (bool)$data['is_single_session_buy'] : null;
         $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
+        $this->is_ticket_guest_allowed = isset($data['is_ticket_guest_allowed']) ? (bool)$data['is_ticket_guest_allowed'] : null;
+        $this->is_ticket_terms = isset($data['is_ticket_terms']) ? (bool)$data['is_ticket_terms'] : null;
+        $this->is_ticket_unpaid_allowed = isset($data['is_ticket_unpaid_allowed']) ? (bool)$data['is_ticket_unpaid_allowed'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
         $this->k_book_class_period = isset($data['k_book_class_period']) ? (string)$data['k_book_class_period'] : null;
         $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;
@@ -486,5 +539,6 @@ class ElementGetResponse
         $this->text_start = isset($data['text_start']) ? (string)$data['text_start'] : null;
         $this->url_book = isset($data['url_book']) ? (string)$data['url_book'] : null;
         $this->xml_description = isset($data['xml_description']) ? (string)$data['xml_description'] : null;
+        $this->xml_ticket_terms = isset($data['xml_ticket_terms']) ? (string)$data['xml_ticket_terms'] : null;
     }
 }

@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Event\Book\EventView;
 class ElementGetResponseTickets
 {
     /**
-     * Globally unique identifier of the ticket option. Primary key in TicketOptionsRouteSql.
+     * Globally unique identifier of the ticket option.
      *
      * @var string|null
      */
@@ -19,7 +19,9 @@ class ElementGetResponseTickets
     public ?string $m_price = null;
 
     /**
-     * One ticket price with the early bird applied. `null` if the event has no early bird.
+     * One ticket price with the early bird applied, taken from the settings of the event. `null` if the event
+     * has no early bird. The end of the early bird period is not taken into account, so the client decides
+     * whether to apply this price. See `a_options`.
      *
      * @var float|null
      */
