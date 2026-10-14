@@ -40,9 +40,9 @@ class ClassViewGetResponseSessionResultClass
      * taken from the settings of the event, and is returned even when the early bird period is over:
      * the client decides whether to apply it, see `dt_early` and `s_timezone_location`.
      *
-     * @var array[]|null
+     * @var ClassViewGetResponseSessionResultClassTickets|null
      */
-    public ?array $a_tickets = null;
+    public ?ClassViewGetResponseSessionResultClassTickets $a_tickets = null;
 
     /**
      * Whether current client can book class.
@@ -324,7 +324,7 @@ class ClassViewGetResponseSessionResultClass
         $this->a_image = isset($data['a_image']) ? new ClassViewGetResponseSessionResultClassImage((array)$data['a_image']) : null;
         $this->a_search_tag = isset($data['a_search_tag']) ? new ClassViewGetResponseSessionResultClassSearchTag((array)$data['a_search_tag']) : null;
         $this->a_tag = isset($data['a_tag']) ? (array)$data['a_tag'] : null;
-        $this->a_tickets = isset($data['a_tickets']) ? (array)$data['a_tickets'] : null;
+        $this->a_tickets = isset($data['a_tickets']) ? new ClassViewGetResponseSessionResultClassTickets((array)$data['a_tickets']) : null;
         $this->can_book = isset($data['can_book']) ? (bool)$data['can_book'] : null;
         $this->dt_date_global = isset($data['dt_date_global']) ? (string)$data['dt_date_global'] : null;
         $this->dt_date_local = isset($data['dt_date_local']) ? (string)$data['dt_date_local'] : null;

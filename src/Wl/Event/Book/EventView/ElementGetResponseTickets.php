@@ -23,9 +23,9 @@ class ElementGetResponseTickets
      * has no early bird. The end of the early bird period is not taken into account, so the client decides
      * whether to apply this price. See `a_options`.
      *
-     * @var float|null
+     * @var string|null
      */
-    public ?float $m_price_early = null;
+    public ?string $m_price_early = null;
 
     /**
      * Ticket option name.
@@ -38,7 +38,7 @@ class ElementGetResponseTickets
     {
         $this->k_ticket_option = isset($data['k_ticket_option']) ? (string)$data['k_ticket_option'] : null;
         $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;
-        $this->m_price_early = isset($data['m_price_early']) ? (float)$data['m_price_early'] : null;
+        $this->m_price_early = isset($data['m_price_early']) ? (string)$data['m_price_early'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }
 }
