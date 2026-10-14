@@ -20,6 +20,14 @@ class ContractGetResponse
     public ?ContractGetResponseContractList $a_contract_list = null;
 
     /**
+     * Whether the agreement requires a signature.
+     * `false` for a simple agreement without a signature, e.g. terms and conditions of a ticket.
+     *
+     * @var bool|null
+     */
+    public ?bool $has_signature = null;
+
+    /**
      * The text of the contract.
      *
      * @var string|null
@@ -43,6 +51,7 @@ class ContractGetResponse
     public function __construct(array $data)
     {
         $this->a_contract_list = isset($data['a_contract_list']) ? new ContractGetResponseContractList((array)$data['a_contract_list']) : null;
+        $this->has_signature = isset($data['has_signature']) ? (bool)$data['has_signature'] : null;
         $this->html_contract = isset($data['html_contract']) ? (string)$data['html_contract'] : null;
         $this->i_minor_age = isset($data['i_minor_age']) ? (int)$data['i_minor_age'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
