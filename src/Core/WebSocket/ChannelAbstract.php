@@ -47,7 +47,8 @@ namespace WlSdk\Core\WebSocket;
  * - 1921 (`Wl\Visit\VisitStatusChannel`): A message is sent through this channel when the status of a visit is
  * changed.
  * - 1869 (`Wl\Task\TaskChangeChannel`): A message is sent through this channel every time a task created or edited.
- * - 2382 (`Wl\Ticket\TicketScanChannel`): Channel to notify staff that a ticket of a session has been checked in.
+ * - 2382 (`Wl\Ticket\TicketScanChannel`): Channel to notify staff that the visit of a ticket of a session has been
+ * created or changed, for ex. checked in.
  *
  *   Staff members who watch the check-in list of the same session subscribe to the channel to keep the list and the
  *   counters up to date. The message carries no personal data of the ticket holder: clients load them with the list.
@@ -116,7 +117,7 @@ class ChannelAbstract
     /** A message is sent through this channel every time a task created or edited. */
     public const TaskChangeChannel = 1869;
 
-    /** Channel to notify staff that a ticket of a session has been checked in. */
+    /** Channel to notify staff that the visit of a ticket of a session has been created or changed, for ex. checked in. */
     public const TicketScanChannel = 2382;
 
     /** Channel to inform Fitbuilder messenger about new information. */
