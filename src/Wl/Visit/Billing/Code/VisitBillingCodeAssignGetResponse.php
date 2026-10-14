@@ -8,7 +8,7 @@ namespace WlSdk\Wl\Visit\Billing\Code;
 class VisitBillingCodeAssignGetResponse
 {
     /**
-     * Billing codes applied to the visit, the custom codes first, each type sorted by the code value.
+     * Billing codes applied to the visit, the diagnostic codes first, each type sorted by the code value.
      *
      * A staff member who can not assign billing codes gets the custom codes only: the diagnostic codes are a part
      * of

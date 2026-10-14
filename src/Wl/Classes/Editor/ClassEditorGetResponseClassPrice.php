@@ -105,6 +105,16 @@ class ClassEditorGetResponseClassPrice
     public ?int $id_early_period = null;
 
     /**
+     * Whether a client may enroll into a block event that is already in progress, and how much they pay for it.
+     *
+     * Only taken into account while the event is a block event: {@link \WlSdk\Wl\Classes\Edit\EventTypeEnum}.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Classes\Edit\EnrollTimeSid
+     */
+    public ?int $id_enroll_time = null;
+
+    /**
      * Way a client pays for the class.
      *
      * @var int|null
@@ -198,6 +208,7 @@ class ClassEditorGetResponseClassPrice
         $this->id_early_amount = isset($data['id_early_amount']) ? (int)$data['id_early_amount'] : null;
         $this->id_early_duration = isset($data['id_early_duration']) ? (int)$data['id_early_duration'] : null;
         $this->id_early_period = isset($data['id_early_period']) ? (int)$data['id_early_period'] : null;
+        $this->id_enroll_time = isset($data['id_enroll_time']) ? (int)$data['id_enroll_time'] : null;
         $this->id_pay_require = isset($data['id_pay_require']) ? (int)$data['id_pay_require'] : null;
         $this->is_buy_promotion = isset($data['is_buy_promotion']) ? (bool)$data['is_buy_promotion'] : null;
         $this->is_buy_single = isset($data['is_buy_single']) ? (bool)$data['is_buy_single'] : null;
