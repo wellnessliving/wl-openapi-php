@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Schedule\WorkingTime;
 class StaffWorkingGetResponseStaffPeriodDayWork
 {
     /**
-     * Services that affect this hours. Primary keys in  table.
+     * Services that affect this hours.
      * `null` if affects all services.
      *
      * @var string[]|null

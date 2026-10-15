@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Event\Book\EventView;
 class ElementGetResponseScheduleStaff
 {
     /**
-     * @deprecated Legacy staff key. Returned only for applications from allow-list.
+     * <b style="color: red">Deprecated.</b> Legacy staff key. Returned only for applications from allow-list.
      *
      * @var string|null
      */

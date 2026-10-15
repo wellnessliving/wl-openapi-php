@@ -113,7 +113,7 @@ class ElementGetResponseData
 
     /**
      * List of ticket options available for booking the event. Empty if the item is not a
-     * ticketed event. .
+     * ticketed event.
      * Each element contains the following keys:
      *
      * @var ElementGetResponseDataTickets|null

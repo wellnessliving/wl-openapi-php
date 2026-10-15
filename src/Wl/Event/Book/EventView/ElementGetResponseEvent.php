@@ -64,7 +64,7 @@ class ElementGetResponseEvent
 
     /**
      * How many tickets can be sold for the event and how many of those are still available. Empty if the
-     * event is not a ticketed event. .
+     * event is not a ticketed event.
      *
      * @var ElementGetResponseEventTicketInventory|null
      */
@@ -72,7 +72,7 @@ class ElementGetResponseEvent
 
     /**
      * List of ticket options available for booking the event. Empty if the event is not a
-     * ticketed event. .
+     * ticketed event.
      * Each element contains the following keys:
      *
      * @var ElementGetResponseEventTickets|null

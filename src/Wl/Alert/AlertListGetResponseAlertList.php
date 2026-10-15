@@ -34,14 +34,14 @@ class AlertListGetResponseAlertList
     public ?bool $is_read = null;
 
     /**
-     * Alert key.  table.
+     * Alert key.
      *
      * @var string|null
      */
     public ?string $k_alert = null;
 
     /**
-     * Business key.  table.
+     * Business key.
      *
      * @var string|null
      */
@@ -70,7 +70,6 @@ class AlertListGetResponseAlertList
 
     /**
      * User key associated with this alert.
-     *    .
      *    `null` if user is walk-in.
      *
      * @var string|null

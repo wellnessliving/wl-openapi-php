@@ -20,7 +20,7 @@ class CatalogCommissionGetResponseStaffCommission
     public ?int $id_commission_type = null;
 
     /**
-     * `true` - if it is default commission for the staff,`false` - otherwise.
+     * `true` - if it is default commission for the staff, `false` - otherwise.
      *
      * @var bool|null
      */
@@ -34,7 +34,7 @@ class CatalogCommissionGetResponseStaffCommission
     public ?string $html_commission = null;
 
     /**
-     * Staff pay key.  table.
+     * Staff pay key.
      *
      * @var string|null
      */
