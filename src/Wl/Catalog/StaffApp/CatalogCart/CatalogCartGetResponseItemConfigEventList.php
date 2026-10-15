@@ -5,6 +5,14 @@ namespace WlSdk\Wl\Catalog\StaffApp\CatalogCart;
 class CatalogCartGetResponseItemConfigEventList
 {
     /**
+     * Output only. Additional information about how `m_checkout` was calculated when
+     *      the first membership payment is prorated, `null` otherwise:
+     *
+     * @var CatalogCartGetResponseItemConfigEventListCheckout|null
+     */
+    public ?CatalogCartGetResponseItemConfigEventListCheckout $a_checkout = null;
+
+    /**
      * Discount applied to the event price:
      *
      * @var CatalogCartGetResponseItemConfigEventListDiscount|null
@@ -55,6 +63,7 @@ class CatalogCartGetResponseItemConfigEventList
 
     public function __construct(array $data)
     {
+        $this->a_checkout = isset($data['a_checkout']) ? new CatalogCartGetResponseItemConfigEventListCheckout((array)$data['a_checkout']) : null;
         $this->a_discount = isset($data['a_discount']) ? new CatalogCartGetResponseItemConfigEventListDiscount((array)$data['a_discount']) : null;
         $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
