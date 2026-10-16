@@ -5,6 +5,16 @@ namespace WlSdk\Wl\Classes\Editor;
 class ClassEditorGetResponseClassAttendance
 {
     /**
+     * Classes and events a client may transfer a missed session of this one to as a make-up.
+     *
+     * Only taken into account while `is_replace` is `true`, and then may not be
+     * empty.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_replace = null;
+
+    /**
      * Book-a-Spot asset categories the class requires.
      *
      * Only taken into account while `is_resource_type` is `true`.
@@ -38,7 +48,9 @@ class ClassEditorGetResponseClassAttendance
     public ?bool $is_quick_buy = null;
 
     /**
-     * `true` if the number of the make-up sessions of the class is limited, `false` otherwise.
+     * `true` if a client may transfer a missed session of this class to an eligible make-up class or event,
+     * `false`
+     * otherwise.
      *
      * @var bool|null
      */
@@ -62,6 +74,7 @@ class ClassEditorGetResponseClassAttendance
 
     public function __construct(array $data)
     {
+        $this->a_replace = isset($data['a_replace']) ? (array)$data['a_replace'] : null;
         $this->a_resource_type = isset($data['a_resource_type']) ? new ClassEditorGetResponseClassAttendanceResourceType((array)$data['a_resource_type']) : null;
         $this->i_makeup_cap = isset($data['i_makeup_cap']) ? (int)$data['i_makeup_cap'] : null;
         $this->is_prerequisite = isset($data['is_prerequisite']) ? (bool)$data['is_prerequisite'] : null;

@@ -32,6 +32,15 @@ class ClassEditorGetResponse
     public ?ClassEditorGetResponseReminderInfo $a_reminder_info = null;
 
     /**
+     * Classes and events of the business that a client may use a make-up session on, grouped by service.
+     *
+     * Every element is an array:
+     *
+     * @var ClassEditorGetResponseReplaceAvailable[]|null
+     */
+    public ?array $a_replace_available = null;
+
+    /**
      * Quick search tags of the category of the business. Every element is an array:
      *
      * @var ClassEditorGetResponseSearchTagList[]|null
@@ -202,6 +211,7 @@ class ClassEditorGetResponse
         $this->a_class = isset($data['a_class']) ? new ClassEditorGetResponseClass((array)$data['a_class']) : null;
         $this->a_class_tab_list = isset($data['a_class_tab_list']) ? array_map(static fn ($item) => new ClassEditorGetResponseClassTabList((array)$item), (array)$data['a_class_tab_list']) : null;
         $this->a_reminder_info = isset($data['a_reminder_info']) ? new ClassEditorGetResponseReminderInfo((array)$data['a_reminder_info']) : null;
+        $this->a_replace_available = isset($data['a_replace_available']) ? array_map(static fn ($item) => new ClassEditorGetResponseReplaceAvailable((array)$item), (array)$data['a_replace_available']) : null;
         $this->a_search_tag_list = isset($data['a_search_tag_list']) ? array_map(static fn ($item) => new ClassEditorGetResponseSearchTagList((array)$item), (array)$data['a_search_tag_list']) : null;
         $this->a_shop_category_list = isset($data['a_shop_category_list']) ? array_map(static fn ($item) => new ClassEditorGetResponseShopCategoryList((array)$item), (array)$data['a_shop_category_list']) : null;
         $this->a_url = isset($data['a_url']) ? array_map(static fn ($item) => new ClassEditorGetResponseUrl((array)$item), (array)$data['a_url']) : null;
