@@ -19,6 +19,14 @@ class TicketListGetResponseOrder
     public ?string $dtl_purchase = null;
 
     /**
+     * `true` if the buyer agreed to the terms and conditions of the event. `false` if the terms were skipped,
+     * or if the event has no terms.
+     *
+     * @var bool|null
+     */
+    public ?bool $has_terms_agree = null;
+
+    /**
      * Number of tickets of the order that are checked in.
      *
      * @var int|null
@@ -65,6 +73,7 @@ class TicketListGetResponseOrder
     {
         $this->a_type = isset($data['a_type']) ? new TicketListGetResponseOrderType((array)$data['a_type']) : null;
         $this->dtl_purchase = isset($data['dtl_purchase']) ? (string)$data['dtl_purchase'] : null;
+        $this->has_terms_agree = isset($data['has_terms_agree']) ? (bool)$data['has_terms_agree'] : null;
         $this->i_attend = isset($data['i_attend']) ? (int)$data['i_attend'] : null;
         $this->i_ticket = isset($data['i_ticket']) ? (int)$data['i_ticket'] : null;
         $this->is_guest = isset($data['is_guest']) ? (bool)$data['is_guest'] : null;

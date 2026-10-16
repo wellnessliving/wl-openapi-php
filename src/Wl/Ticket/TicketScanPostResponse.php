@@ -56,6 +56,16 @@ class TicketScanPostResponse
     public ?int $i_sold = null;
 
     /**
+     * Whether the ticket is paid.
+     *
+     * `false` if the ticket was reserved to be paid at the door: the session pass of the ticket is not tied to a
+     * purchase item. The client offers to collect the payment in this case.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_paid = null;
+
+    /**
      * Key of the class period the session of the ticket belongs to.
      *
      * Differs from {@link \WlSdk\Wl\Ticket\TicketScan} only when the ticket is for another session.
@@ -102,6 +112,7 @@ class TicketScanPostResponse
         $this->dtu_session_start = isset($data['dtu_session_start']) ? (string)$data['dtu_session_start'] : null;
         $this->i_attend = isset($data['i_attend']) ? (int)$data['i_attend'] : null;
         $this->i_sold = isset($data['i_sold']) ? (int)$data['i_sold'] : null;
+        $this->is_paid = isset($data['is_paid']) ? (bool)$data['is_paid'] : null;
         $this->k_class_period_ticket = isset($data['k_class_period_ticket']) ? (string)$data['k_class_period_ticket'] : null;
         $this->k_ticket_item = isset($data['k_ticket_item']) ? (string)$data['k_ticket_item'] : null;
         $this->k_visit = isset($data['k_visit']) ? (string)$data['k_visit'] : null;

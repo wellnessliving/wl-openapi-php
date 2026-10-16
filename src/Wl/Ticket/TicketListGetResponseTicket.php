@@ -49,6 +49,14 @@ class TicketListGetResponseTicket
     public ?bool $is_cancel = null;
 
     /**
+     * Whether the ticket is paid. `false` if it was reserved to be paid at the door: its session pass is not tied
+     * to a purchase item. A cancelled ticket cannot be paid.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_paid = null;
+
+    /**
      * Order of the ticket, see {@link \WlSdk\Wl\Ticket\TicketListGetResponse::$a_order}.
      *
      * @var string|null
@@ -119,6 +127,7 @@ class TicketListGetResponseTicket
         $this->i_order_size = isset($data['i_order_size']) ? (int)$data['i_order_size'] : null;
         $this->is_attend = isset($data['is_attend']) ? (bool)$data['is_attend'] : null;
         $this->is_cancel = isset($data['is_cancel']) ? (bool)$data['is_cancel'] : null;
+        $this->is_paid = isset($data['is_paid']) ? (bool)$data['is_paid'] : null;
         $this->k_purchase = isset($data['k_purchase']) ? (string)$data['k_purchase'] : null;
         $this->k_ticket_item = isset($data['k_ticket_item']) ? (string)$data['k_ticket_item'] : null;
         $this->k_ticket_option = isset($data['k_ticket_option']) ? (string)$data['k_ticket_option'] : null;
