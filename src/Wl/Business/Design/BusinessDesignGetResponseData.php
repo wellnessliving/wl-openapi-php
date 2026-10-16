@@ -72,6 +72,13 @@ class BusinessDesignGetResponseData
     public ?bool $is_class_spot_only = null;
 
     /**
+     * Whether Meta Conversion API Access Token is set.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_fb_capi_access_token = null;
+
+    /**
      * If `true`, the business name will be shown.
      *
      * @var bool|null
@@ -172,7 +179,7 @@ class BusinessDesignGetResponseData
     public ?string $s_fb_capi_test_event_code = null;
 
     /**
-     * Facebook Pixel ID. Used for Facebook analytics tracking. Empty string if tracking is disabled.
+     * Meta Pixel ID. Used for Meta analytics tracking. Empty string if tracking is disabled.
      *
      * @var string|null
      */
@@ -210,6 +217,7 @@ class BusinessDesignGetResponseData
         $this->is_class_capacity = isset($data['is_class_capacity']) ? (bool)$data['is_class_capacity'] : null;
         $this->is_class_quick = isset($data['is_class_quick']) ? (bool)$data['is_class_quick'] : null;
         $this->is_class_spot_only = isset($data['is_class_spot_only']) ? (bool)$data['is_class_spot_only'] : null;
+        $this->is_fb_capi_access_token = isset($data['is_fb_capi_access_token']) ? (bool)$data['is_fb_capi_access_token'] : null;
         $this->is_show_name = isset($data['is_show_name']) ? (bool)$data['is_show_name'] : null;
         $this->s_color_background = isset($data['s_color_background']) ? (string)$data['s_color_background'] : null;
         $this->s_color_header = isset($data['s_color_header']) ? (string)$data['s_color_header'] : null;
