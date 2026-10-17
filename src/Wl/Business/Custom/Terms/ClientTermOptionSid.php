@@ -11,7 +11,6 @@ namespace WlSdk\Wl\Business\Custom\Terms;
  * - 1 (`ATHLETE`): Athlete.
  * - 2 (`CADET`): Cadet.
  * - 3 (`CAMPER`): Camper.
- * - 4 (`CARE_RECIPIENT`): Care Recipient.
  * - 5 (`CHILD`): Child.
  * - 6 (`CLIENT`): Client.
  * - 7 (`CUSTOMER`): Customer.
@@ -25,6 +24,7 @@ namespace WlSdk\Wl\Business\Custom\Terms;
  * - 15 (`PATRON`): Patron.
  * - 16 (`RESIDENT`): Resident.
  * - 17 (`STUDENT`): Student.
+ * - 4 (`SWIMMER`): Swimmer.
  */
 class ClientTermOptionSid
 {
@@ -36,9 +36,6 @@ class ClientTermOptionSid
 
     /** Camper. */
     public const CAMPER = 3;
-
-    /** Care Recipient. */
-    public const CARE_RECIPIENT = 4;
 
     /** Child. */
     public const CHILD = 5;
@@ -78,4 +75,7 @@ class ClientTermOptionSid
 
     /** Student. */
     public const STUDENT = 17;
+
+    /** Swimmer. */
+    public const SWIMMER = 4;
 }
