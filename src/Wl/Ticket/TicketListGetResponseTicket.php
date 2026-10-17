@@ -57,6 +57,14 @@ class TicketListGetResponseTicket
     public ?bool $is_paid = null;
 
     /**
+     * Whether something was refunded for the ticket, see `m_refund`. Unlike `is_cancel`, a refunded ticket can
+     * stay active.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_refund = null;
+
+    /**
      * Order of the ticket, see {@link \WlSdk\Wl\Ticket\TicketListGetResponse::$a_order}.
      *
      * @var string|null
@@ -119,6 +127,13 @@ class TicketListGetResponseTicket
      */
     public ?string $text_type = null;
 
+    /**
+     * Link to the page with this ticket for view and print. See TicketViewController::urlTicket().
+     *
+     * @var string|null
+     */
+    public ?string $url_viewer = null;
+
     public function __construct(array $data)
     {
         $this->dtl_attend = isset($data['dtl_attend']) ? (string)$data['dtl_attend'] : null;
@@ -128,6 +143,7 @@ class TicketListGetResponseTicket
         $this->is_attend = isset($data['is_attend']) ? (bool)$data['is_attend'] : null;
         $this->is_cancel = isset($data['is_cancel']) ? (bool)$data['is_cancel'] : null;
         $this->is_paid = isset($data['is_paid']) ? (bool)$data['is_paid'] : null;
+        $this->is_refund = isset($data['is_refund']) ? (bool)$data['is_refund'] : null;
         $this->k_purchase = isset($data['k_purchase']) ? (string)$data['k_purchase'] : null;
         $this->k_ticket_item = isset($data['k_ticket_item']) ? (string)$data['k_ticket_item'] : null;
         $this->k_ticket_option = isset($data['k_ticket_option']) ? (string)$data['k_ticket_option'] : null;
@@ -136,5 +152,6 @@ class TicketListGetResponseTicket
         $this->text_holder = isset($data['text_holder']) ? (string)$data['text_holder'] : null;
         $this->text_ticket_code = isset($data['text_ticket_code']) ? (string)$data['text_ticket_code'] : null;
         $this->text_type = isset($data['text_type']) ? (string)$data['text_type'] : null;
+        $this->url_viewer = isset($data['url_viewer']) ? (string)$data['url_viewer'] : null;
     }
 }
