@@ -9,7 +9,7 @@ class TicketScanListPostResponseResult
      *
      * @var string|null
      */
-    public ?string $id_outcome = null;
+    public ?string $sid_outcome = null;
 
     /**
      * Key of the ticket, as it was sent.
@@ -20,7 +20,7 @@ class TicketScanListPostResponseResult
 
     public function __construct(array $data)
     {
-        $this->id_outcome = isset($data['id_outcome']) ? (string)$data['id_outcome'] : null;
+        $this->sid_outcome = isset($data['sid_outcome']) ? (string)$data['sid_outcome'] : null;
         $this->k_ticket_item = isset($data['k_ticket_item']) ? (string)$data['k_ticket_item'] : null;
     }
 }

@@ -128,7 +128,7 @@ class TicketListGetResponseTicket
     public ?string $text_type = null;
 
     /**
-     * Link to the page with this ticket for view and print. See TicketViewController::urlTicket().
+     * Link to the page with this ticket for view and print.
      *
      * @var string|null
      */

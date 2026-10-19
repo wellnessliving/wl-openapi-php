@@ -116,8 +116,7 @@ class TicketListGetResponseOrder
     public ?string $uid = null;
 
     /**
-     * Link to the page with all tickets of the order, to view and print them. See
-     * TicketViewController::urlTicket().
+     * Link to the page with all tickets of the order, to view and print them. .
      *
      * @var string|null
      */
