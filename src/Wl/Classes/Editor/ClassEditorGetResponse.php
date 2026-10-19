@@ -116,11 +116,18 @@ class ClassEditorGetResponse
     public ?string $html_tax = null;
 
     /**
-     * Maximum length of description.
+     * Maximum length of the description of a class that is not virtual.
      *
      * @var int|null
      */
     public ?int $i_description_limit = null;
+
+    /**
+     * Maximum length of the description of a virtual class.
+     *
+     * @var int|null
+     */
+    public ?int $i_description_limit_virtual = null;
 
     /**
      * `true` if the Administration section may be shown, `false` otherwise.
@@ -221,6 +228,7 @@ class ClassEditorGetResponse
         $this->html_quick_buy = isset($data['html_quick_buy']) ? (string)$data['html_quick_buy'] : null;
         $this->html_tax = isset($data['html_tax']) ? (string)$data['html_tax'] : null;
         $this->i_description_limit = isset($data['i_description_limit']) ? (int)$data['i_description_limit'] : null;
+        $this->i_description_limit_virtual = isset($data['i_description_limit_virtual']) ? (int)$data['i_description_limit_virtual'] : null;
         $this->is_admin = isset($data['is_admin']) ? (bool)$data['is_admin'] : null;
         $this->is_birthday_require = isset($data['is_birthday_require']) ? (bool)$data['is_birthday_require'] : null;
         $this->is_currency_before = isset($data['is_currency_before']) ? (bool)$data['is_currency_before'] : null;

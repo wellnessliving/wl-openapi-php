@@ -20,6 +20,12 @@ class Terms
     /**
      * Performs {@link \WlSdk\Wl\Catalog\Terms\Terms} for every item of {@link \WlSdk\Wl\Catalog\Terms\Terms}.
      *
+     * Agreeing or skipping marks the cart items as resolved, so the client can proceed to checkout. Declining
+     * removes
+     * the items from the cart, and {@link \WlSdk\Wl\Catalog\Terms\TermsPostResponse::$url_list} is returned if the
+     * cart became empty. Skipping is
+     * available only in the point of sale.
+     *
      * @return TermsPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

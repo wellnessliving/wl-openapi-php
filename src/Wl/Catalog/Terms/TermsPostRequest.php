@@ -20,9 +20,7 @@ class TermsPostRequest
     public ?array $a_item = null;
 
     /**
-     * Data for Quick Buy.
-     *
-     * Structure of this array is described in RsCatalogCart::__construct().
+     * Data for Quick Buy. Empty if the purchase is not in Quick Buy mode. Structure of the array:
      *
      * @var array|null
      */
@@ -38,8 +36,6 @@ class TermsPostRequest
 
     /**
      * Business the cart belongs to.
-     *
-     * Primary key in RsBusinessSql table.
      *
      * @var string|null
      */
