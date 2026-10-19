@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Catalog\StaffApp\CatalogCommission;
 class CatalogCommissionGetResponseCommissionDefault
 {
     /**
-     * <b>Deprecated.</b> Staff key.
+     * **DEPRECATED** Staff key.
      *
      * @var string|null
      */

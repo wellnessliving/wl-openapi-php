@@ -12,7 +12,7 @@ class CatalogCommissionGetResponseStaff
     public ?CatalogCommissionGetResponseStaffCommission $a_commission = null;
 
     /**
-     * <b style="color: red">Deprecated</b> Staff key.
+     * **DEPRECATED** Staff key.
      * Use `uid` instead of this field.
      *
      * @var string|null

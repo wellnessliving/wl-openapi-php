@@ -47,7 +47,7 @@ class Calendar73GetResponseTime
     public ?bool $is_waitlist = null;
 
     /**
-     * <b style="color: red">Deprecated.</b> If this time is already occupied by any client and staff member
+     * **DEPRECATED** If this time is already occupied by any client and staff member
      * (but service capacity is not exhausted), this key contains key of staff member.
      *  Otherwise - `0`.
      *
