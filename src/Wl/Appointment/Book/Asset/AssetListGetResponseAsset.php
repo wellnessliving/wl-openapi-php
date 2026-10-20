@@ -14,6 +14,15 @@ class AssetListGetResponseAsset
     public ?AssetListGetResponseAssetAgeRestrictions $a_age_restrictions = null;
 
     /**
+     * The asset's effective booking window policy.
+     * When the asset has its own booking policy, these values come from that policy.
+     * Otherwise, the business-level policy values are used.
+     *
+     * @var AssetListGetResponseAssetConfig|null
+     */
+    public ?AssetListGetResponseAssetConfig $a_config = null;
+
+    /**
      * The key of service.
      *   Keys are service key.
      *   Values are class tab key.
@@ -146,6 +155,7 @@ class AssetListGetResponseAsset
     public function __construct(array $data)
     {
         $this->a_age_restrictions = isset($data['a_age_restrictions']) ? new AssetListGetResponseAssetAgeRestrictions((array)$data['a_age_restrictions']) : null;
+        $this->a_config = isset($data['a_config']) ? new AssetListGetResponseAssetConfig((array)$data['a_config']) : null;
         $this->a_class_tab = isset($data['a_class_tab']) ? (array)$data['a_class_tab'] : null;
         $this->a_direct_link = isset($data['a_direct_link']) ? new AssetListGetResponseAssetDirectLink((array)$data['a_direct_link']) : null;
         $this->a_image = isset($data['a_image']) ? new AssetListGetResponseAssetImage((array)$data['a_image']) : null;
