@@ -5,6 +5,15 @@ namespace WlSdk\Wl\Profile\Edit;
 class EditByTokenGetRequest
 {
     /**
+     * Family role for a new user. One of {@link \WlSdk\RsFamilyRelationSid} constants.
+     * Not `null` only for a case of relative registration.
+     *
+     * @var int|null
+     * @see \WlSdk\RsFamilyRelationSid
+     */
+    public ?int $id_family_relation = null;
+
+    /**
      * Registration source ID.
      * One of {@link \WlSdk\Wl\Profile\RegisterSourceSid} constants.
      *
@@ -55,6 +64,7 @@ class EditByTokenGetRequest
     {
         return array_filter(
             [
+            'id_family_relation' => $this->id_family_relation,
             'id_register_source' => $this->id_register_source,
             'is_staff' => $this->is_staff,
             'k_business' => $this->k_business,

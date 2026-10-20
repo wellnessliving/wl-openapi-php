@@ -5,14 +5,14 @@ namespace WlSdk\Core\AI\LogTriage;
 class ConnectionCheckGetResponseFinding
 {
     /**
-     * Local date of the first usage-statistics record.
+     * Date of the first usage-statistics record.
      *
      * @var string|null
      */
     public ?string $dl_first_seen = null;
 
     /**
-     * Local date of the last usage-statistics record.
+     * Date of the last usage-statistics record.
      *
      * @var string|null
      */
@@ -40,40 +40,36 @@ class ConnectionCheckGetResponseFinding
     public ?int $i_occurrence_count = null;
 
     /**
-     * Usage-statistics priority multiplier. Present for the usage-statistics source.
+     * CID of a {@link \WlSdk\Core\AI\LogTriage\TriageProblemAbstract} subclass.
      *
      * @var int|null
+     * @see \WlSdk\Core\AI\LogTriage\TriageProblemAbstract
      */
-    public ?int $i_priority_multiplier = null;
+    public ?int $cid_problem = null;
 
     /**
-     * Finding source from {@link \WlSdk\Core\AI\LogTriage\TriageSourceSid}.
-     *
-     * @var int|null
-     * @see \WlSdk\Core\AI\LogTriage\TriageSourceSid
-     */
-    public ?int $id_source = null;
-
-    /**
-     * Usage-statistics object. Present for the usage-statistics source.
+     * Usage-statistics object: a slash-delimited category and resource identifier, for example
+     *   `'memcache/get/10.0.0.5'` or `'sql/select core_business'`. Present for the usage-statistics source.
      *
      * @var string|null
      */
     public ?string $s_object = null;
 
     /**
-     * Usage-statistics aggregation period. Present for the usage-statistics source.
+     * Usage-statistics aggregation period. One of {@link \WlSdk\Core\AI\LogTriage\TriageWatchUsagePeriodEnum}
+     *   cases. Present for the usage-statistics source.
      *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $s_period = null;
+    public ?int $eid_period = null;
 
     /**
-     * Usage-statistics priority. Present for the usage-statistics source.
+     * Usage-statistics urgency. One of {@link \WlSdk\Core\AI\LogTriage\TriageUrgencyEnum} cases. Present for
+     *   the usage-statistics source.
      *
-     * @var string|null
+     * @var int|null
      */
-    public ?string $s_priority = null;
+    public ?int $eid_urgency = null;
 
     /**
      * Log message or task description. Present for log and task sources.
@@ -89,11 +85,10 @@ class ConnectionCheckGetResponseFinding
         $this->dtu_first_seen = isset($data['dtu_first_seen']) ? (string)$data['dtu_first_seen'] : null;
         $this->dtu_last_seen = isset($data['dtu_last_seen']) ? (string)$data['dtu_last_seen'] : null;
         $this->i_occurrence_count = isset($data['i_occurrence_count']) ? (int)$data['i_occurrence_count'] : null;
-        $this->i_priority_multiplier = isset($data['i_priority_multiplier']) ? (int)$data['i_priority_multiplier'] : null;
-        $this->id_source = isset($data['id_source']) ? (int)$data['id_source'] : null;
+        $this->cid_problem = isset($data['cid_problem']) ? (int)$data['cid_problem'] : null;
         $this->s_object = isset($data['s_object']) ? (string)$data['s_object'] : null;
-        $this->s_period = isset($data['s_period']) ? (string)$data['s_period'] : null;
-        $this->s_priority = isset($data['s_priority']) ? (string)$data['s_priority'] : null;
+        $this->eid_period = isset($data['eid_period']) ? (int)$data['eid_period'] : null;
+        $this->eid_urgency = isset($data['eid_urgency']) ? (int)$data['eid_urgency'] : null;
         $this->text_message = isset($data['text_message']) ? (string)$data['text_message'] : null;
     }
 }

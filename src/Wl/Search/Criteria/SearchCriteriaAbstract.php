@@ -17,10 +17,10 @@ namespace WlSdk\Wl\Search\Criteria;
  *   Determined as disabled.
  * - 62 (`Wl\Search\SearchTestNoInterfaceCriteria`): Test criteria C.
  * - 1491 (`Wl\Review\Search\ReviewSearchCriteria`): "Client reviews" search criteria.
+ * - 1150 (`Wl\Login\Attendance\Search\AttendanceCriteria`): Client`s "Service Visits" search criteria.
  * - 1173 (`Wl\Login\Promotion\Search\PromotionRemainSearchCriteria`): Client`s "Visits remaining" search criteria.
  * - 1177 (`Wl\Login\Promotion\Search\PromotionExpireSearchCriteria`): Client`s "Purchase Option expiring" search
  * criteria.
- * - 1150 (`Wl\Login\Attendance\Search\AttendanceCriteria`): Client`s "Service Visits" search criteria.
  * - 294 (`Wl\Login\Search\SearchCriteria\ProgressBloodPressureCriteria`): Client`s progress (transformation) log
  * search criteria for "Blood Pressure" field.
  *
@@ -119,14 +119,14 @@ class SearchCriteriaAbstract
     /** "Client reviews" search criteria. */
     public const ReviewSearchCriteria = 1491;
 
+    /** Client`s "Service Visits" search criteria. */
+    public const AttendanceCriteria = 1150;
+
     /** Client`s "Visits remaining" search criteria. */
     public const PromotionRemainSearchCriteria = 1173;
 
     /** Client`s "Purchase Option expiring" search criteria. */
     public const PromotionExpireSearchCriteria = 1177;
-
-    /** Client`s "Service Visits" search criteria. */
-    public const AttendanceCriteria = 1150;
 
     /** Client`s progress (transformation) log search criteria for "Blood Pressure" field. */
     public const ProgressBloodPressureCriteria = 294;

@@ -5,48 +5,46 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastL
 {
     /**
-     * Duration of the generation of the report in seconds.
+     * Number of successfully processed items.
      *
      * @var int|null
      */
-    public ?int $i_generation = null;
+    public ?int $i_complete = null;
 
     /**
-     * ID of the report that was generated.
-     * One of the {@link \WlSdk\RsReportSid} constants.
+     * Number of failed items.
      *
      * @var int|null
-     * @see \WlSdk\RsReportSid
      */
-    public ?int $id_report = null;
+    public ?int $i_fail = null;
 
     /**
-     * Whether need to display a message about report generation, regardless of the generation time.
+     * Number of items left to process.
      *
-     * @var bool|null
+     * @var int|null
      */
-    public ?bool $is_need_show = null;
+    public ?int $i_left = null;
 
     /**
-     * Report accumulation.
-     *
-     * @var string|null
-     */
-    public ?string $k_report_accumulation = null;
-
-    /**
-     * Title of the report that was generated.
+     * Key of the import being processing.
      *
      * @var string|null
      */
-    public ?string $text_report = null;
+    public ?string $k_import = null;
+
+    /**
+     * Url link to download log file with import progress.
+     *
+     * @var string|null
+     */
+    public ?string $url_log = null;
 
     public function __construct(array $data)
     {
-        $this->i_generation = isset($data['i_generation']) ? (int)$data['i_generation'] : null;
-        $this->id_report = isset($data['id_report']) ? (int)$data['id_report'] : null;
-        $this->is_need_show = isset($data['is_need_show']) ? (bool)$data['is_need_show'] : null;
-        $this->k_report_accumulation = isset($data['k_report_accumulation']) ? (string)$data['k_report_accumulation'] : null;
-        $this->text_report = isset($data['text_report']) ? (string)$data['text_report'] : null;
+        $this->i_complete = isset($data['i_complete']) ? (int)$data['i_complete'] : null;
+        $this->i_fail = isset($data['i_fail']) ? (int)$data['i_fail'] : null;
+        $this->i_left = isset($data['i_left']) ? (int)$data['i_left'] : null;
+        $this->k_import = isset($data['k_import']) ? (string)$data['k_import'] : null;
+        $this->url_log = isset($data['url_log']) ? (string)$data['url_log'] : null;
     }
 }

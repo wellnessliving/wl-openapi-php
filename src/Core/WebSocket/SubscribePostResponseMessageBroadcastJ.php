@@ -5,14 +5,30 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastJ
 {
     /**
-     * New data of changes schedule item:
+     * The text of the error.
      *
-     * @var SubscribePostResponseMessageBroadcastJVisit|null
+     * @var string|null
      */
-    public ?SubscribePostResponseMessageBroadcastJVisit $a_visit = null;
+    public ?string $html_error_message = null;
+
+    /**
+     * The unique key of the sent SMS.
+     *
+     * @var string|null
+     */
+    public ?string $s_key = null;
+
+    /**
+     * The time in UNIX format when socket message was sent.
+     *
+     * @var int|null
+     */
+    public ?int $tl_send = null;
 
     public function __construct(array $data)
     {
-        $this->a_visit = isset($data['a_visit']) ? new SubscribePostResponseMessageBroadcastJVisit((array)$data['a_visit']) : null;
+        $this->html_error_message = isset($data['html_error_message']) ? (string)$data['html_error_message'] : null;
+        $this->s_key = isset($data['s_key']) ? (string)$data['s_key'] : null;
+        $this->tl_send = isset($data['tl_send']) ? (int)$data['tl_send'] : null;
     }
 }

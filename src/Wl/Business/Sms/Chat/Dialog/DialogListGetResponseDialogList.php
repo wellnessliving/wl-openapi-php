@@ -33,7 +33,7 @@ class DialogListGetResponseDialogList
     public ?string $text_last_sms = null;
 
     /**
-     * UID of the client.  table.
+     * UID of the client.
      *
      * @var string|null
      */

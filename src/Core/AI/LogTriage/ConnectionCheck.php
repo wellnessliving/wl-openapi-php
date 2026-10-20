@@ -5,7 +5,7 @@ namespace WlSdk\Core\AI\LogTriage;
 use WlSdk\WlSdkClient;
 
 /**
- * Returns a fixed connection value and, when requested, selected findings.
+ * Collects findings for the requested calendar date.
  */
 class ConnectionCheck
 {
@@ -18,7 +18,9 @@ class ConnectionCheck
     }
 
     /**
-     * Returns a fixed connection value and, when requested, selected findings.
+     * Collects findings for the requested calendar date.
+     *
+     * Searches every registered problem source using the requested date and optional text filter.
      *
      * @return ConnectionCheckGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

@@ -34,7 +34,7 @@ class StripeComHardwareElementPostRequest
      * @var int|null
      * @see \WlSdk\Thoth\PayProcessor\Terminal\TerminalStatusSid
      */
-    public ?int $id_status = null;
+    public ?int $id_status = 3;
 
     /**
      * Location key.

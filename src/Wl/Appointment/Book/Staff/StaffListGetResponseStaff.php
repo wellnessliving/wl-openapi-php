@@ -47,7 +47,7 @@ class StaffListGetResponseStaff
     public ?bool $is_wait_list = null;
 
     /**
-     * @deprecated Legacy staff key.  Returned only for allow-listed apps.
+     * **DEPRECATED** Legacy staff key.  Returned only for allow-listed apps.
      *
      * @var string|null
      */

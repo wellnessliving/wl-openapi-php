@@ -6,20 +6,24 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * Subscription manager.
  *
  * Values:
- * - 2331 (`Wl\Business\Account\Subscription\QuickBooks\QuickBooksSubscription`): Quickbooks Suite subscription.
- * - 1868 (`Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription`):
- * Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription
+ * - 857 (`Wl\Business\Account\Subscription\Sms\SmsSubscription`): Wl\Business\Account\Subscription\Sms\SmsSubscription
  * - 1250 (`Wl\Business\Account\Subscription\Collections\CollectionsSubscription`): Class for "Collections"
  * subscription.
+ * - 863 (`Wl\Business\Account\Subscription\Website\WebsiteSubscription`): Website subscription.
+ * - 1868 (`Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription`):
+ * Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription
+ * - 2331 (`Wl\Business\Account\Subscription\QuickBooks\QuickBooksSubscription`): Quickbooks Suite subscription.
+ * - 2366 (`Wl\Business\Account\Subscription\BridgeAthletic\BridgeAthleticSubscription`):
+ * Wl\Business\Account\Subscription\BridgeAthletic\BridgeAthleticSubscription
+ * - 858 (`Wl\Business\Account\Subscription\Achieve\AchieveSubscription`):
+ * Wl\Business\Account\Subscription\Achieve\AchieveSubscription
+ * - 882 (`Wl\Business\Account\Subscription\Asset\AssetSubscription`): Asset subscription settings reader.
  * - 1965 (`Wl\Business\Account\Subscription\Email\EmailSubscription`): Email marketing services.
  * - 2166 (`Wl\Business\Account\Subscription\Eml\ConstantContactSubscription`): Eml marketing subscription for
  * `ConstantContact` integration.
  * - 2165 (`Wl\Business\Account\Subscription\Eml\MailchimpSubscription`): Eml marketing subscription for `Mailchimp`
  * integration.
  * - 1838 (`Wl\Business\Account\Subscription\MarketingSuite\MarketingSuiteSubscription`): Marketing Suite subscription.
- * - 857 (`Wl\Business\Account\Subscription\Sms\SmsSubscription`): Wl\Business\Account\Subscription\Sms\SmsSubscription
- * - 858 (`Wl\Business\Account\Subscription\Achieve\AchieveSubscription`):
- * Wl\Business\Account\Subscription\Achieve\AchieveSubscription
  * - 861 (`Wl\Business\Account\Subscription\Base\BaseSubscription`): Base subscription settings reader.
  * - 1225 (`Wl\Business\Account\Subscription\Finance\FinanceSubscription`):
  * Wl\Business\Account\Subscription\Finance\FinanceSubscription
@@ -43,24 +47,37 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * Wl\Business\Account\Subscription\Fitvid\FitvidSubscription
  * - 1133 (`Wl\Business\Account\Subscription\Quiz\QuizSubscription`):
  * Wl\Business\Account\Subscription\Quiz\QuizSubscription
- * - 863 (`Wl\Business\Account\Subscription\Website\WebsiteSubscription`): Website subscription.
  * - 864 (`Wl\Business\Account\Subscription\Zoom\ZoomSubscription`): Zoom subscription.
  * - 884 (`Wl\Business\Account\Subscription\Fitzone\FitzoneSubscription`):
  * Wl\Business\Account\Subscription\Fitzone\FitzoneSubscription
  * - 885 (`Wl\Business\Account\Subscription\Review\ReviewSubscription`):
  * Wl\Business\Account\Subscription\Review\ReviewSubscription
- * - 882 (`Wl\Business\Account\Subscription\Asset\AssetSubscription`): Asset subscription settings reader.
  */
 class SubscriptionAbstract
 {
-    /** Quickbooks Suite subscription. */
-    public const QuickBooksSubscription = 2331;
+    /** Wl\Business\Account\Subscription\Sms\SmsSubscription */
+    public const SmsSubscription = 857;
+
+    /** Class for "Collections" subscription. */
+    public const CollectionsSubscription = 1250;
+
+    /** Website subscription. */
+    public const WebsiteSubscription = 863;
 
     /** Wl\Business\Account\Subscription\AiAgent\AiAgentSubscription */
     public const AiAgentSubscription = 1868;
 
-    /** Class for "Collections" subscription. */
-    public const CollectionsSubscription = 1250;
+    /** Quickbooks Suite subscription. */
+    public const QuickBooksSubscription = 2331;
+
+    /** Wl\Business\Account\Subscription\BridgeAthletic\BridgeAthleticSubscription */
+    public const BridgeAthleticSubscription = 2366;
+
+    /** Wl\Business\Account\Subscription\Achieve\AchieveSubscription */
+    public const AchieveSubscription = 858;
+
+    /** Asset subscription settings reader. */
+    public const AssetSubscription = 882;
 
     /** Email marketing services. */
     public const EmailSubscription = 1965;
@@ -73,12 +90,6 @@ class SubscriptionAbstract
 
     /** Marketing Suite subscription. */
     public const MarketingSuiteSubscription = 1838;
-
-    /** Wl\Business\Account\Subscription\Sms\SmsSubscription */
-    public const SmsSubscription = 857;
-
-    /** Wl\Business\Account\Subscription\Achieve\AchieveSubscription */
-    public const AchieveSubscription = 858;
 
     /** Base subscription settings reader. */
     public const BaseSubscription = 861;
@@ -119,9 +130,6 @@ class SubscriptionAbstract
     /** Wl\Business\Account\Subscription\Quiz\QuizSubscription */
     public const QuizSubscription = 1133;
 
-    /** Website subscription. */
-    public const WebsiteSubscription = 863;
-
     /** Zoom subscription. */
     public const ZoomSubscription = 864;
 
@@ -130,7 +138,4 @@ class SubscriptionAbstract
 
     /** Wl\Business\Account\Subscription\Review\ReviewSubscription */
     public const ReviewSubscription = 885;
-
-    /** Asset subscription settings reader. */
-    public const AssetSubscription = 882;
 }

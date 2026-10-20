@@ -27,21 +27,21 @@ class ScheduleListGetResponseScheduleQuiz
     public ?bool $is_require = null;
 
     /**
-     * Quiz key,
+     * Quiz key.
      *
      * @var string|null
      */
     public ?string $k_quiz = null;
 
     /**
-     * Quiz login key,
+     * Quiz login key.
      *
      * @var string|null
      */
     public ?string $k_quiz_login = null;
 
     /**
-     * Quiz response key,
+     * Quiz response key.
      *
      * @var string|null
      */

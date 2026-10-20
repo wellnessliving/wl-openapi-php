@@ -5,27 +5,11 @@ namespace WlSdk\Core\AI\LogTriage;
 class ConnectionCheckGetRequest
 {
     /**
-     * IDs of finding sources from {@link \WlSdk\Core\AI\LogTriage\TriageSourceSid}.
-     *
-     * @var int[]|null
-     */
-    public ?array $a_id_source = null;
-
-    /**
-     * `true` returns findings; otherwise `false` performs only the connection check.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_finding = null;
-
-    /**
-     * Date/time mask accepted by LogSearchQuery.
-     *
-     * Empty string selects the current UTC date.
+     * Calendar date to collect findings for. Empty string selects the current UTC date.
      *
      * @var string|null
      */
-    public ?string $s_date_mask = null;
+    public ?string $dl_date = null;
 
     /**
      * Optional case-insensitive message substring.
@@ -38,9 +22,7 @@ class ConnectionCheckGetRequest
     {
         return array_filter(
             [
-            'a_id_source' => $this->a_id_source,
-            'is_finding' => $this->is_finding,
-            's_date_mask' => $this->s_date_mask,
+            'dl_date' => $this->dl_date,
             'text_search' => $this->text_search,
             ],
             static fn ($v) => $v !== null

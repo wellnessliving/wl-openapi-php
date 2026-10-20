@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Login\Promotion\GuestPass\Apply;
 use WlSdk\WlSdkClient;
 
 /**
- * Applies the guest pass of the specified login promotion to the attendee's visit.
+ * Returns a list of login promotions with available guest passes for a visit.
  */
 class Apply
 {
@@ -15,6 +15,23 @@ class Apply
     public function __construct(WlSdkClient $client)
     {
         $this->client = $client;
+    }
+
+    /**
+     * Returns a list of login promotions with available guest passes for a visit.
+     *
+     * Searches for members who have active class memberships with guest pass balance
+     * applicable to the class and location of the given visit. Each result item represents
+     * one eligible login promotion, not one user: if a member has several qualifying memberships,
+     * each appears as a separate item.
+     *
+     * @return ApplyGetResponse
+     * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
+     * @throws \RuntimeException On network or cURL error.
+     */
+    public function get(ApplyGetRequest $request): ApplyGetResponse
+    {
+        return new ApplyGetResponse($this->client->request('/Wl/Login/Promotion/GuestPass/Apply/Apply.json', $request->params(), 'GET'));
     }
 
     /**

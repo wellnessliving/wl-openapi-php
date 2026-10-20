@@ -5,7 +5,7 @@ namespace WlSdk;
 /**
  * Manages identifiers of user activity.
  *
- * Last ID: 56.
+ * Last ID: 63.
  *
  * Values:
  * - 27 (`APPOINTMENT_BOOK`): Client books an appointment.
@@ -42,6 +42,13 @@ namespace WlSdk;
  * - 10 (`FRIEND_ADD`): Client added a friend.
  * - 32 (`GYM_VISIT`): Client made a gym visit.
  * - 14 (`INVITE_SEND`): Client sent an invite.
+ * - 57 (`LEAD_STAGE_AUTOMATION`): Lead stage was changed by an automation step.
+ * - 58 (`LEAD_STAGE_AUTOMATION_EXIT`): Lead stage was changed when a client met an automation exit criterion.
+ * - 59 (`LEAD_STAGE_AUTOMATION_FINISH`): Lead stage was changed when a client completed an automation.
+ * - 60 (`LEAD_STAGE_CREATED`): Lead stage was set when the lead was created.
+ * - 61 (`LEAD_STAGE_DELETE`): Lead stage was changed because the previous stage was deleted.
+ * - 62 (`LEAD_STAGE_MANUAL`): Lead stage was changed manually by a staff member.
+ * - 63 (`LEAD_STAGE_MEMBER_GROUP`): Lead stage was changed when the client joined a client group.
  * - 39 (`LOCATION_SHARE_FACEBOOK`): The user shared location item into Facebook
  * - 40 (`LOCATION_SHARE_TWITTER`): The user shared location item into Twitter
  * - 22 (`PAY`): The user spend money.
@@ -167,6 +174,27 @@ class RsLoginActivityTypeSid
 
     /** Client sent an invite. */
     public const INVITE_SEND = 14;
+
+    /** Lead stage was changed by an automation step. */
+    public const LEAD_STAGE_AUTOMATION = 57;
+
+    /** Lead stage was changed when a client met an automation exit criterion. */
+    public const LEAD_STAGE_AUTOMATION_EXIT = 58;
+
+    /** Lead stage was changed when a client completed an automation. */
+    public const LEAD_STAGE_AUTOMATION_FINISH = 59;
+
+    /** Lead stage was set when the lead was created. */
+    public const LEAD_STAGE_CREATED = 60;
+
+    /** Lead stage was changed because the previous stage was deleted. */
+    public const LEAD_STAGE_DELETE = 61;
+
+    /** Lead stage was changed manually by a staff member. */
+    public const LEAD_STAGE_MANUAL = 62;
+
+    /** Lead stage was changed when the client joined a client group. */
+    public const LEAD_STAGE_MEMBER_GROUP = 63;
 
     /** The user shared location item into Facebook */
     public const LOCATION_SHARE_FACEBOOK = 39;

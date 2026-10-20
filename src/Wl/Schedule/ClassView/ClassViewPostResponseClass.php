@@ -34,6 +34,17 @@ class ClassViewPostResponseClass
     public ?array $a_tag = null;
 
     /**
+     * Ticket options available for booking the event. Empty if the event is not a ticketed event.
+     *
+     * Each element has `k_ticket_option`, `m_price`, `m_price_early` and `text_title` keys. `m_price_early` is
+     * taken from the settings of the event, and is returned even when the early bird period is over:
+     * the client decides whether to apply it, see `dt_early` and `s_timezone_location`.
+     *
+     * @var ClassViewPostResponseClassTickets|null
+     */
+    public ?ClassViewPostResponseClassTickets $a_tickets = null;
+
+    /**
      * Whether current client can book class.
      *
      * @var bool|null
@@ -53,6 +64,15 @@ class ClassViewPostResponseClass
      * @var string|null
      */
     public ?string $dt_date_local = null;
+
+    /**
+     * The last date when the early bird price is applied, in MySQL date format, the date itself included. `null`
+     * if the event has no early bird. The early bird price applies while the current date in the timezone
+     * `s_timezone_location` is not later than this date.
+     *
+     * @var string|null
+     */
+    public ?string $dt_early = null;
 
     /**
      * Reason why client can not book class. Not empty only if `can_book` is `false`.
@@ -175,6 +195,14 @@ class ClassViewPostResponseClass
     public ?int $id_deny_reason = null;
 
     /**
+     * `true` if the event is a block event: all its sessions are booked together. `false` for a non-block event
+     * and for a class. Makes sense only if `is_event` is `true`.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_block = null;
+
+    /**
      * Whether current class was booked by current client.
      *
      * @var bool|null
@@ -219,6 +247,13 @@ class ClassViewPostResponseClass
     public ?bool $is_promotion_only = null;
 
     /**
+     * `true` if the event is a ticketed event; `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
+    /**
      * `true` if class is virtual, `false` otherwise.
      *
      * @var bool|null
@@ -261,6 +296,15 @@ class ClassViewPostResponseClass
     public ?string $s_duration = null;
 
     /**
+     * Identifier of the timezone of the location of the session (for example `America/New_York`). Unlike
+     * `text_timezone`, it never depends on the timezone of the client. Use it to find out whether the
+     * early bird price is still applied, see `dt_early`.
+     *
+     * @var string|null
+     */
+    public ?string $s_timezone_location = null;
+
+    /**
      * Class name.
      *
      * @var string|null
@@ -280,9 +324,11 @@ class ClassViewPostResponseClass
         $this->a_image = isset($data['a_image']) ? new ClassViewPostResponseClassImage((array)$data['a_image']) : null;
         $this->a_search_tag = isset($data['a_search_tag']) ? new ClassViewPostResponseClassSearchTag((array)$data['a_search_tag']) : null;
         $this->a_tag = isset($data['a_tag']) ? (array)$data['a_tag'] : null;
+        $this->a_tickets = isset($data['a_tickets']) ? new ClassViewPostResponseClassTickets((array)$data['a_tickets']) : null;
         $this->can_book = isset($data['can_book']) ? (bool)$data['can_book'] : null;
         $this->dt_date_global = isset($data['dt_date_global']) ? (string)$data['dt_date_global'] : null;
         $this->dt_date_local = isset($data['dt_date_local']) ? (string)$data['dt_date_local'] : null;
+        $this->dt_early = isset($data['dt_early']) ? (string)$data['dt_early'] : null;
         $this->html_deny_reason = isset($data['html_deny_reason']) ? (string)$data['html_deny_reason'] : null;
         $this->html_description = isset($data['html_description']) ? (string)$data['html_description'] : null;
         $this->html_special = isset($data['html_special']) ? (string)$data['html_special'] : null;
@@ -300,18 +346,21 @@ class ClassViewPostResponseClass
         $this->i_visit = isset($data['i_visit']) ? (int)$data['i_visit'] : null;
         $this->i_wait_limit = isset($data['i_wait_limit']) ? (int)$data['i_wait_limit'] : null;
         $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
+        $this->is_block = isset($data['is_block']) ? (bool)$data['is_block'] : null;
         $this->is_book = isset($data['is_book']) ? (bool)$data['is_book'] : null;
         $this->is_book_for_guest = isset($data['is_book_for_guest']) ? (bool)$data['is_book_for_guest'] : null;
         $this->is_cancel = isset($data['is_cancel']) ? (bool)$data['is_cancel'] : null;
         $this->is_cancellation_enabled = isset($data['is_cancellation_enabled']) ? (bool)$data['is_cancellation_enabled'] : null;
         $this->is_event = isset($data['is_event']) ? (bool)$data['is_event'] : null;
         $this->is_promotion_only = isset($data['is_promotion_only']) ? (bool)$data['is_promotion_only'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
         $this->is_wait_list = isset($data['is_wait_list']) ? (bool)$data['is_wait_list'] : null;
         $this->is_wait_list_enabled = isset($data['is_wait_list_enabled']) ? (bool)$data['is_wait_list_enabled'] : null;
         $this->k_resource_location = isset($data['k_resource_location']) ? (string)$data['k_resource_location'] : null;
         $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;
         $this->s_duration = isset($data['s_duration']) ? (string)$data['s_duration'] : null;
+        $this->s_timezone_location = isset($data['s_timezone_location']) ? (string)$data['s_timezone_location'] : null;
         $this->s_title = isset($data['s_title']) ? (string)$data['s_title'] : null;
         $this->text_room = isset($data['text_room']) ? (string)$data['text_room'] : null;
     }

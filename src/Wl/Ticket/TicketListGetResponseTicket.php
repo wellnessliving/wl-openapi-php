@@ -1,0 +1,157 @@
+<?php
+
+namespace WlSdk\Wl\Ticket;
+
+class TicketListGetResponseTicket
+{
+    /**
+     * Time of the check-in, in the local time of the location, MySQL format. `null` if the ticket is not
+     * checked in.
+     *
+     * @var string|null
+     */
+    public ?string $dtl_attend = null;
+
+    /**
+     * Time of the cancellation, in the local time of the location, MySQL format. `null` if the ticket is not
+     * cancelled.
+     *
+     * @var string|null
+     */
+    public ?string $dtl_cancel = null;
+
+    /**
+     * Position of the ticket in the order, starting from 1.
+     *
+     * @var int|null
+     */
+    public ?int $i_order = null;
+
+    /**
+     * Number of tickets in the order, cancelled ones included.
+     *
+     * @var int|null
+     */
+    public ?int $i_order_size = null;
+
+    /**
+     * Whether the ticket is checked in. A cancelled ticket is never checked in.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_attend = null;
+
+    /**
+     * Whether the ticket is cancelled: voided, or refunded with the seat returned.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_cancel = null;
+
+    /**
+     * Whether the ticket is paid. `false` if it was reserved to be paid at the door: its session pass is not tied
+     * to a purchase item. A cancelled ticket cannot be paid.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_paid = null;
+
+    /**
+     * Whether something was refunded for the ticket, see `m_refund`. Unlike `is_cancel`, a refunded ticket can
+     * stay active.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_refund = null;
+
+    /**
+     * Order of the ticket, see {@link \WlSdk\Wl\Ticket\TicketListGetResponse::$a_order}.
+     *
+     * @var string|null
+     */
+    public ?string $k_purchase = null;
+
+    /**
+     * Key of the ticket, the one {@link \WlSdk\Wl\Ticket\TicketScan} takes.
+     *
+     * @var string|null
+     */
+    public ?string $k_ticket_item = null;
+
+    /**
+     * Key of the ticket type.
+     *
+     * @var string|null
+     */
+    public ?string $k_ticket_option = null;
+
+    /**
+     * Amount refunded for this ticket. The refunds of the purchase item of the ticket. If several tickets share
+     * one purchase item, the refunds of the item are split equally between its cancelled tickets. `0` if nothing
+     * was refunded. Decimal string, in the currency {@link \WlSdk\Wl\Ticket\TicketListGetResponse::$k_currency}.
+     *
+     * @var string|null
+     */
+    public ?string $m_refund = null;
+
+    /**
+     * Price of the ticket: how much was paid for it, not net of refunds. Decimal string, in the currency
+     * {@link \WlSdk\Wl\Ticket\TicketListGetResponse::$k_currency}. The paid amount of the purchase item of the
+     * ticket divided by the number
+     * of tickets bought with it.
+     *
+     * @var string|null
+     */
+    public ?string $m_price = null;
+
+    /**
+     * Full name of the holder of the ticket: the person who has claimed it. Empty if nobody has claimed the
+     * ticket.
+     *
+     * @var string|null
+     */
+    public ?string $text_holder = null;
+
+    /**
+     * Number of the ticket: its short code in the format for displaying, for example `4829-1736`. Empty if the
+     * ticket has no short code.
+     *
+     * @var string|null
+     */
+    public ?string $text_ticket_code = null;
+
+    /**
+     * Name of the ticket type.
+     *
+     * @var string|null
+     */
+    public ?string $text_type = null;
+
+    /**
+     * Link to the page with this ticket for view and print.
+     *
+     * @var string|null
+     */
+    public ?string $url_viewer = null;
+
+    public function __construct(array $data)
+    {
+        $this->dtl_attend = isset($data['dtl_attend']) ? (string)$data['dtl_attend'] : null;
+        $this->dtl_cancel = isset($data['dtl_cancel']) ? (string)$data['dtl_cancel'] : null;
+        $this->i_order = isset($data['i_order']) ? (int)$data['i_order'] : null;
+        $this->i_order_size = isset($data['i_order_size']) ? (int)$data['i_order_size'] : null;
+        $this->is_attend = isset($data['is_attend']) ? (bool)$data['is_attend'] : null;
+        $this->is_cancel = isset($data['is_cancel']) ? (bool)$data['is_cancel'] : null;
+        $this->is_paid = isset($data['is_paid']) ? (bool)$data['is_paid'] : null;
+        $this->is_refund = isset($data['is_refund']) ? (bool)$data['is_refund'] : null;
+        $this->k_purchase = isset($data['k_purchase']) ? (string)$data['k_purchase'] : null;
+        $this->k_ticket_item = isset($data['k_ticket_item']) ? (string)$data['k_ticket_item'] : null;
+        $this->k_ticket_option = isset($data['k_ticket_option']) ? (string)$data['k_ticket_option'] : null;
+        $this->m_refund = isset($data['m_refund']) ? (string)$data['m_refund'] : null;
+        $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;
+        $this->text_holder = isset($data['text_holder']) ? (string)$data['text_holder'] : null;
+        $this->text_ticket_code = isset($data['text_ticket_code']) ? (string)$data['text_ticket_code'] : null;
+        $this->text_type = isset($data['text_type']) ? (string)$data['text_type'] : null;
+        $this->url_viewer = isset($data['url_viewer']) ? (string)$data['url_viewer'] : null;
+    }
+}
