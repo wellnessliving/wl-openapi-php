@@ -18,7 +18,7 @@ class SendMailPostRequest
      *
      * @var array|null
      */
-    public ?array $a_data = null;
+    public $a_data = null;
 
     /**
      * The mail type ID.
