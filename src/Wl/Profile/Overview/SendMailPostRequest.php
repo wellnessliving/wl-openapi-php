@@ -10,7 +10,7 @@ class SendMailPostRequest
      * @var int|null
      * @see \WlSdk\RsMailSid
      */
-    public ?int $id_mail = null;
+    public ?int $id_mail = 22;
 
     /**
      * Business key.

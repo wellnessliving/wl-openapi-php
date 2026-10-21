@@ -12,6 +12,26 @@ class SendMailPostRequest
     public ?string $k_business = null;
 
     /**
+     * Additional data for the notification.
+     *
+     * The structure depends on the notification type specified in {@link \WlSdk\Wl\Mail\SendMail}.
+     *
+     * @var array|null
+     */
+    public ?array $a_data = null;
+
+    /**
+     * The mail type ID.
+     *
+     * One of the {@link \WlSdk\RsMailSid} constants.
+     * If not provided, {@link \WlSdk\RsMailSid} is used.
+     *
+     * @var int|null
+     * @see \WlSdk\RsMailSid
+     */
+    public ?int $id_mail = 22;
+
+    /**
      * The business's mailing address.
      *
      * @var string|null
@@ -73,6 +93,8 @@ class SendMailPostRequest
         return array_filter(
             [
             'k_business' => $this->k_business,
+            'a_data' => $this->a_data,
+            'id_mail' => $this->id_mail,
             's_business_mail' => $this->s_business_mail,
             's_business_name' => $this->s_business_name,
             's_business_reply' => $this->s_business_reply,

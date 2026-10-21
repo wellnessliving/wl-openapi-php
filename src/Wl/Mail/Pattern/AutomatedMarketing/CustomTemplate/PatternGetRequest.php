@@ -10,7 +10,7 @@ class PatternGetRequest
      * @var int|null
      * @see \WlSdk\RsMailSid
      */
-    public ?int $id_mail = null;
+    public ?int $id_mail = 22;
 
     /**
      * Whether to get a list of custom template data. `true` - to get a list, `false` - otherwise.

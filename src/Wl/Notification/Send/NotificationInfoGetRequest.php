@@ -10,7 +10,7 @@ class NotificationInfoGetRequest
      * @var int|null
      * @see \WlSdk\RsMailSid
      */
-    public ?int $id_notification = null;
+    public ?int $id_notification = 22;
 
     /**
      * Key of the business where information about notification should be retrieved.

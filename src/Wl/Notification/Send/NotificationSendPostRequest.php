@@ -30,7 +30,7 @@ class NotificationSendPostRequest
      * @var int|null
      * @see \WlSdk\RsMailSid
      */
-    public ?int $id_notification = null;
+    public ?int $id_notification = 22;
 
     /**
      * Key of the business where notification should be sent.
