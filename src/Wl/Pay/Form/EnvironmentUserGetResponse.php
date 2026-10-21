@@ -108,6 +108,35 @@ class EnvironmentUserGetResponse
     public ?bool $is_save_source = null;
 
     /**
+     * Whether a card-present (POS) source at this business can never carry a surcharge (SAL-1314, FR-007): the
+     * business's processor implements the card-type contract and card-present surcharge is out of the rule's
+     * scope for it. `false` on a build whose monolith part is not live yet, or whenever surcharges are not
+     * configured for POS at all - both read the same as "nothing to suppress".
+     *
+     * The browser uses this to hide the surcharge row for a POS source outright, without calling
+     * {@link \WlSdk\Thoth\WlPay\Form\Surcharge\SurchargeTender}: a card-present decision never depends on the BIN
+     * or
+     * the saved card, only on the business and the pay method.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_surcharge_card_present_blocked = null;
+
+    /**
+     * Whether the business's ECOMMERCE processor implements the SAL-1314 card-type contract.
+     *
+     * `false` on a build whose monolith part is not live yet, same as a processor that never implements it.
+     *
+     * The browser uses this to decide whether it is worth calling
+     * {@link \WlSdk\Thoth\WlPay\Form\Surcharge\SurchargeTender} at all for a typed card number or a saved-card
+     * switch - calling it when this is `false` would always get `is_allowed=true` back, so the hooks stay
+     * inactive instead.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_surcharge_tender_contract = null;
+
+    /**
      * Whether tips are accepted.
      *
      * @var bool|null
@@ -145,6 +174,8 @@ class EnvironmentUserGetResponse
         $this->id_locale = isset($data['id_locale']) ? (int)$data['id_locale'] : null;
         $this->is_save_optional = isset($data['is_save_optional']) ? (bool)$data['is_save_optional'] : null;
         $this->is_save_source = isset($data['is_save_source']) ? (bool)$data['is_save_source'] : null;
+        $this->is_surcharge_card_present_blocked = isset($data['is_surcharge_card_present_blocked']) ? (bool)$data['is_surcharge_card_present_blocked'] : null;
+        $this->is_surcharge_tender_contract = isset($data['is_surcharge_tender_contract']) ? (bool)$data['is_surcharge_tender_contract'] : null;
         $this->is_tip = isset($data['is_tip']) ? (bool)$data['is_tip'] : null;
         $this->m_surcharge = isset($data['m_surcharge']) ? (string)$data['m_surcharge'] : null;
         $this->m_surcharge_ach = isset($data['m_surcharge_ach']) ? (string)$data['m_surcharge_ach'] : null;
