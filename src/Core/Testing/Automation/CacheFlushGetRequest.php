@@ -17,6 +17,10 @@ class CacheFlushGetRequest
      * A hex-encoded `sha256` signature that proves the caller knows the shared secret.
      * See `checkAccess()` for the expected formula.
      *
+     * The token comes from the URL for a request of the method `POST` as well: the body of such a request carries
+     * the
+     * data of the endpoint, and StandFixtureApplyApi needs the token signed the same way.
+     *
      * @var string|null
      */
     public ?string $s_token = null;
