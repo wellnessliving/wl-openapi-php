@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Business\Custom\Terms;
 /**
  * Preset options for the {@link \WlSdk\Wl\Business\Custom\Terms\CustomTermSid} custom term.
  *
- * Last used ID: 17.
+ * Last used ID: 18.
  *
  * Values:
  * - 1 (`ATHLETE`): Athlete.
@@ -24,7 +24,7 @@ namespace WlSdk\Wl\Business\Custom\Terms;
  * - 15 (`PATRON`): Patron.
  * - 16 (`RESIDENT`): Resident.
  * - 17 (`STUDENT`): Student.
- * - 4 (`SWIMMER`): Swimmer.
+ * - 18 (`SWIMMER`): Swimmer.
  */
 class ClientTermOptionSid
 {
@@ -77,5 +77,5 @@ class ClientTermOptionSid
     public const STUDENT = 17;
 
     /** Swimmer. */
-    public const SWIMMER = 4;
+    public const SWIMMER = 18;
 }
