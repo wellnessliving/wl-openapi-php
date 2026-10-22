@@ -31,6 +31,20 @@ class VisitBillingCodeAssignGetResponse
     public ?array $a_history = null;
 
     /**
+     * `true` if the business requires a signature when diagnostic codes of a visit are saved, `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_signature = null;
+
+    /**
+     * `true` if the business has the diagnostic codes turned on, `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_system = null;
+
+    /**
      * Version of the billing codes of the visit: a value that changes every time the codes of the visit change.
      *
      * The version comes with the codes and must be posted back together with them. A post that carries an outdated
@@ -50,6 +64,8 @@ class VisitBillingCodeAssignGetResponse
     {
         $this->a_code = isset($data['a_code']) ? array_map(static fn ($item) => new VisitBillingCodeAssignGetResponseCode((array)$item), (array)$data['a_code']) : null;
         $this->a_history = isset($data['a_history']) ? array_map(static fn ($item) => new VisitBillingCodeAssignGetResponseHistory((array)$item), (array)$data['a_history']) : null;
+        $this->is_signature = isset($data['is_signature']) ? (bool)$data['is_signature'] : null;
+        $this->is_system = isset($data['is_system']) ? (bool)$data['is_system'] : null;
         $this->s_version = isset($data['s_version']) ? (string)$data['s_version'] : null;
     }
 }
