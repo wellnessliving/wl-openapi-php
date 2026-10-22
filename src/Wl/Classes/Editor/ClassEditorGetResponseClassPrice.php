@@ -168,6 +168,17 @@ class ClassEditorGetResponseClassPrice
     public ?bool $is_early = null;
 
     /**
+     * `true` if `dl_early` is a date that has already passed, `false` otherwise.
+     *
+     * Only taken into account while `id_early_period` is {@link \WlSdk\Wl\Classes\Edit\EarlyPeriodEnum}. A
+     * date that has ended does not block saving and does not clear `is_early`: only the
+     * server sets this field, and a value posted by the client is ignored.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_early_ended = null;
+
+    /**
      * `true` if `f_early` is a percent of the price of the class, `false` if it is an amount
      * of money.
      *
@@ -215,6 +226,7 @@ class ClassEditorGetResponseClassPrice
         $this->is_buy_total = isset($data['is_buy_total']) ? (bool)$data['is_buy_total'] : null;
         $this->is_deposit_percent = isset($data['is_deposit_percent']) ? (bool)$data['is_deposit_percent'] : null;
         $this->is_early = isset($data['is_early']) ? (bool)$data['is_early'] : null;
+        $this->is_early_ended = isset($data['is_early_ended']) ? (bool)$data['is_early_ended'] : null;
         $this->is_early_percent = isset($data['is_early_percent']) ? (bool)$data['is_early_percent'] : null;
         $this->is_tax_enable = isset($data['is_tax_enable']) ? (bool)$data['is_tax_enable'] : null;
         $this->text_early = isset($data['text_early']) ? (string)$data['text_early'] : null;
