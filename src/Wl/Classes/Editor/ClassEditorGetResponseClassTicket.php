@@ -28,13 +28,6 @@ class ClassEditorGetResponseClassTicket
     public ?bool $is_account_require = null;
 
     /**
-     * `true` if a buyer may reserve a ticket and pay for it at the door, `false` if a ticket is paid for at once.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_door_pay = null;
-
-    /**
      * `true` if a buyer of a ticket must agree to terms and conditions, `false` otherwise.
      *
      * @var bool|null
@@ -55,7 +48,6 @@ class ClassEditorGetResponseClassTicket
         $this->a_ticket_option = isset($data['a_ticket_option']) ? new ClassEditorGetResponseClassTicketTicketOption((array)$data['a_ticket_option']) : null;
         $this->i_order_limit = isset($data['i_order_limit']) ? (int)$data['i_order_limit'] : null;
         $this->is_account_require = isset($data['is_account_require']) ? (bool)$data['is_account_require'] : null;
-        $this->is_door_pay = isset($data['is_door_pay']) ? (bool)$data['is_door_pay'] : null;
         $this->is_terms = isset($data['is_terms']) ? (bool)$data['is_terms'] : null;
         $this->xml_terms = isset($data['xml_terms']) ? (string)$data['xml_terms'] : null;
     }
