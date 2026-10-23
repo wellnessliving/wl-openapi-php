@@ -15,6 +15,19 @@ class ListGetRequest
     public ?array $a_class_tab = null;
 
     /**
+     * Direct booking link parameters.
+     *
+     * When provided, the event identified by `k_class` is treated as accessed via a direct booking URL.
+     * This grants the caller the ability to view and book the event even when it is restricted to direct-link-only
+     * access.
+     *
+     * An empty array when no direct link is used.
+     *
+     * @var array|null
+     */
+    public ?array $a_direct_link = null;
+
+    /**
      * ID of book now tab. One of {@link \WlSdk\Wl\Classes\Tab\TabSid} constants.
      * Only {@link \WlSdk\Wl\Classes\Tab\TabSid} and {@link \WlSdk\Wl\Classes\Tab\TabSid} book now tab are
      * supported.
@@ -89,6 +102,7 @@ class ListGetRequest
         return array_filter(
             [
             'a_class_tab' => $this->a_class_tab,
+            'a_direct_link' => $this->a_direct_link,
             'id_class_tab' => $this->id_class_tab,
             'is_enrollment_block_all' => $this->is_enrollment_block_all,
             'is_enrollment_block_empty' => $this->is_enrollment_block_empty,
