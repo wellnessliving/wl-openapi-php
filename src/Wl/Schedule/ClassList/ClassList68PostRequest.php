@@ -214,6 +214,20 @@ class ClassList68PostRequest
     public ?bool $show_quick_filter = null;
 
     /**
+     * If `true`, ticketed events are also returned, even if {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} is
+     * `false`.
+     * If `false`, ticketed events are returned only as a part of all events, see {@link
+     * \WlSdk\Wl\Schedule\ClassList\ClassList68}.
+     *
+     * To get only ticketed events, set {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} and {@link
+     * \WlSdk\Wl\Schedule\ClassList\ClassList68}
+     * to `false`, and this flag to `true`.
+     *
+     * @var bool|null
+     */
+    public ?bool $show_ticket = null;
+
+    /**
      * The user key.
      *
      * @var string|null
@@ -246,6 +260,7 @@ class ClassList68PostRequest
             'show_class' => $this->show_class,
             'show_event' => $this->show_event,
             'show_quick_filter' => $this->show_quick_filter,
+            'show_ticket' => $this->show_ticket,
             'uid' => $this->uid,
             ],
             static fn ($v) => $v !== null
