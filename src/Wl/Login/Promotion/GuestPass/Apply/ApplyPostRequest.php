@@ -12,6 +12,17 @@ class ApplyPostRequest
     public ?string $k_business = null;
 
     /**
+     * The source of the visit change.
+     * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
+     * If you're unsure about the value to use, keep the default value `null`: the source is detected
+     * automatically.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
+     */
+    public ?int $id_mode = null;
+
+    /**
      * Login promotion key of the host member's class membership whose guest pass
      * balance will be used.
      *
@@ -31,6 +42,7 @@ class ApplyPostRequest
         return array_filter(
             [
             'k_business' => $this->k_business,
+            'id_mode' => $this->id_mode,
             'k_login_promotion' => $this->k_login_promotion,
             'k_visit' => $this->k_visit,
             ],
