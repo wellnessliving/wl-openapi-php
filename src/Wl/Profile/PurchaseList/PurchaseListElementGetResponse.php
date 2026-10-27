@@ -597,6 +597,15 @@ class PurchaseListElementGetResponse
     public ?string $s_promotion_convert = null;
 
     /**
+     * The full name of the user who pays for this purchase option instead of its holder.
+     * `null` if the item is not a purchase option, the purchase option is billed to the default payer,
+     * or the payer cannot be resolved.
+     *
+     * @var string|null
+     */
+    public ?string $s_promotion_payer = null;
+
+    /**
      * The purchase ID number as it appears on the receipt. This value will also include the leading 0s for the ID
      * number.
      *
@@ -653,6 +662,15 @@ class PurchaseListElementGetResponse
      * @var string|null
      */
     public ?string $uid_payer = null;
+
+    /**
+     * The key of the user who pays for this purchase option instead of its holder.
+     * `null` under the same conditions as {@link
+     * \WlSdk\Wl\Profile\PurchaseList\PurchaseListElementGetResponse::$s_promotion_payer}.
+     *
+     * @var string|null
+     */
+    public ?string $uid_promotion_payer = null;
 
     /**
      * The key of the user who paid for this purchase.
@@ -738,6 +756,7 @@ class PurchaseListElementGetResponse
         $this->s_message = isset($data['s_message']) ? (string)$data['s_message'] : null;
         $this->s_payer = isset($data['s_payer']) ? (string)$data['s_payer'] : null;
         $this->s_promotion_convert = isset($data['s_promotion_convert']) ? (string)$data['s_promotion_convert'] : null;
+        $this->s_promotion_payer = isset($data['s_promotion_payer']) ? (string)$data['s_promotion_payer'] : null;
         $this->s_purchase = isset($data['s_purchase']) ? (string)$data['s_purchase'] : null;
         $this->s_recipient = isset($data['s_recipient']) ? (string)$data['s_recipient'] : null;
         $this->s_sender = isset($data['s_sender']) ? (string)$data['s_sender'] : null;
@@ -746,6 +765,7 @@ class PurchaseListElementGetResponse
         $this->text_expire = isset($data['text_expire']) ? (string)$data['text_expire'] : null;
         $this->text_guest_pass = isset($data['text_guest_pass']) ? (string)$data['text_guest_pass'] : null;
         $this->uid_payer = isset($data['uid_payer']) ? (string)$data['uid_payer'] : null;
+        $this->uid_promotion_payer = isset($data['uid_promotion_payer']) ? (string)$data['uid_promotion_payer'] : null;
         $this->uid_recipient = isset($data['uid_recipient']) ? (string)$data['uid_recipient'] : null;
     }
 }

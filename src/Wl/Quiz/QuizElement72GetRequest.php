@@ -70,6 +70,15 @@ class QuizElement72GetRequest
     public ?string $k_quiz_login = null;
 
     /**
+     * Secret key of the quiz request given in {@link \WlSdk\Wl\Quiz\QuizElement72}.
+     *
+     * Required when the quiz request is opened by a user who is not signed in, empty otherwise.
+     *
+     * @var string|null
+     */
+    public ?string $s_secret = null;
+
+    /**
      * UID of the client for which quiz requested.
      *
      * @var string|null
@@ -87,6 +96,7 @@ class QuizElement72GetRequest
             'k_business' => $this->k_business,
             'k_quiz' => $this->k_quiz,
             'k_quiz_login' => $this->k_quiz_login,
+            's_secret' => $this->s_secret,
             'uid_client' => $this->uid_client,
             ],
             static fn ($v) => $v !== null
