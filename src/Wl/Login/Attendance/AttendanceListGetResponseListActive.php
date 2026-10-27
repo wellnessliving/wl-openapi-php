@@ -370,6 +370,14 @@ class AttendanceListGetResponseListActive
     public ?string $s_promotion = null;
 
     /**
+     * The status of background booking for a multi-session block event.
+     * One of the following values:
+     *
+     * @var AttendanceListGetResponseListActiveSidBookBackground|null
+     */
+    public ?AttendanceListGetResponseListActiveSidBookBackground $sid_book_background = null;
+
+    /**
      * The expiry information for the Purchase Option.
      *
      * @var string|null
@@ -544,6 +552,7 @@ class AttendanceListGetResponseListActive
         $this->s_lastname = isset($data['s_lastname']) ? (string)$data['s_lastname'] : null;
         $this->s_note = isset($data['s_note']) ? (string)$data['s_note'] : null;
         $this->s_promotion = isset($data['s_promotion']) ? (string)$data['s_promotion'] : null;
+        $this->sid_book_background = isset($data['sid_book_background']) ? new AttendanceListGetResponseListActiveSidBookBackground((array)$data['sid_book_background']) : null;
         $this->text_expire = isset($data['text_expire']) ? (string)$data['text_expire'] : null;
         $this->text_firstname = isset($data['text_firstname']) ? (string)$data['text_firstname'] : null;
         $this->text_lastname = isset($data['text_lastname']) ? (string)$data['text_lastname'] : null;

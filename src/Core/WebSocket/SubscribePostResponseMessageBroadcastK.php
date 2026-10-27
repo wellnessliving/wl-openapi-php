@@ -14,6 +14,16 @@ class SubscribePostResponseMessageBroadcastK
     public ?SubscribePostResponseMessageBroadcastKDomainToken $a_domain_token = null;
 
     /**
+     * Number of resets of the domain that the staff of the business made in its current calendar month.
+     *
+     *
+     * `0` if the domain is not verified.
+     *
+     * @var int|null
+     */
+    public ?int $i_reset_month = null;
+
+    /**
      * Email domain status.
      *
      * `null` if the business does not have a mail domain set up.
@@ -35,6 +45,7 @@ class SubscribePostResponseMessageBroadcastK
     public function __construct(array $data)
     {
         $this->a_domain_token = isset($data['a_domain_token']) ? new SubscribePostResponseMessageBroadcastKDomainToken((array)$data['a_domain_token']) : null;
+        $this->i_reset_month = isset($data['i_reset_month']) ? (int)$data['i_reset_month'] : null;
         $this->id_domain_status = isset($data['id_domain_status']) ? (int)$data['id_domain_status'] : null;
         $this->text_domain_status_icon = isset($data['text_domain_status_icon']) ? (string)$data['text_domain_status_icon'] : null;
     }
