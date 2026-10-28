@@ -12,6 +12,14 @@ class PurchaseReceiptGetResponsePurchaseItem
     public ?PurchaseReceiptGetResponsePurchaseItemLogo $a_logo = null;
 
     /**
+     * The tickets of the purchase item. Only available if the purchase item is a ticket. Every element has the
+     * following keys:
+     *
+     * @var PurchaseReceiptGetResponsePurchaseItemTicketList|null
+     */
+    public ?PurchaseReceiptGetResponsePurchaseItemTicketList $a_ticket_list = null;
+
+    /**
      * List of visit keys. Only available if the purchase item is a class period,
      * enrollment, enrollment deposit, or enrollment discount. Each element is a string visit key.
      *
@@ -123,15 +131,26 @@ class PurchaseReceiptGetResponsePurchaseItem
     public ?string $text_description = null;
 
     /**
-     * The URL to print. Only available if the purchase item is a coupon (gift card).
+     * The URL to print. Only available if the purchase item is a coupon (gift card) or a ticket. For a ticket it
+     * is the page to print all the tickets of the purchase item, one ticket on a page. It is empty if the
+     * purchase item has no tickets.
      *
      * @var string|null
      */
     public ?string $url_print = null;
 
+    /**
+     * The URL of the page with the tickets of the order. The page works without a login. Only available if the
+     * purchase item is a ticket. Empty if the purchase item has no tickets.
+     *
+     * @var string|null
+     */
+    public ?string $url_ticket_view = null;
+
     public function __construct(array $data)
     {
         $this->a_logo = isset($data['a_logo']) ? new PurchaseReceiptGetResponsePurchaseItemLogo((array)$data['a_logo']) : null;
+        $this->a_ticket_list = isset($data['a_ticket_list']) ? new PurchaseReceiptGetResponsePurchaseItemTicketList((array)$data['a_ticket_list']) : null;
         $this->a_visit = isset($data['a_visit']) ? (array)$data['a_visit'] : null;
         $this->i_count = isset($data['i_count']) ? (int)$data['i_count'] : null;
         $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
@@ -148,5 +167,6 @@ class PurchaseReceiptGetResponsePurchaseItem
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
         $this->text_description = isset($data['text_description']) ? (string)$data['text_description'] : null;
         $this->url_print = isset($data['url_print']) ? (string)$data['url_print'] : null;
+        $this->url_ticket_view = isset($data['url_ticket_view']) ? (string)$data['url_ticket_view'] : null;
     }
 }
