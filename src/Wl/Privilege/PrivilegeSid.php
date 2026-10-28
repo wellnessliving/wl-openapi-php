@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Privilege;
 /**
  * Wellnessliving-wide privileges.
  *
- * Last Used ID: 253.
+ * Last Used ID: 254.
  *
  * Values:
  * - 225 (`AI_AGENT_KNOWLEDGE_BASE`): Allows user to view, create or edit knowledge base entries, or conversational
@@ -183,6 +183,10 @@ namespace WlSdk\Wl\Privilege;
  * - 136 (`NOTIFICATION_SALE_STAFF`): Staff with this role will receive the sale receipts mails.
  * - 216 (`NOTIFICATION_STAFF_CALLBACK_REQUEST`): Receive Staff Callback Request notification.
  * - 164 (`OVERRIDE_FEE`): Override late cancel and no show fees.
+ * - 254 (`OVERRIDE_MAKEUP_PASS`): Override make-up passes.
+ *
+ *   Allows a staff member to choose whether a make-up pass is issued when cancelling a visit for a client.
+ *   Without this privilege the Make-up Passes policy of the business applies as it is set.
  * - 94 (`PARTNER_PROGRAM_MANAGE`): Manage partner program.
  * - 166 (`PAYMENT_PROCESSING`): Access to Payment Processing.
  * - 245 (`PERFORM_BULK_BILLING`): Allows staff to select multiple clients and post a single bulk transaction for a
@@ -709,6 +713,9 @@ class PrivilegeSid
 
     /** Override late cancel and no show fees. */
     public const OVERRIDE_FEE = 164;
+
+    /** Override make-up passes. */
+    public const OVERRIDE_MAKEUP_PASS = 254;
 
     /** Manage partner program. */
     public const PARTNER_PROGRAM_MANAGE = 94;

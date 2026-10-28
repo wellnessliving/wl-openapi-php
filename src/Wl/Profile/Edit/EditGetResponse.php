@@ -25,7 +25,13 @@ class EditGetResponse
 
     /**
      * The values and structure of all fields. Array keys are field IDs (`k_field`).
-     * Array values are the field values. The array has the following structure:
+     * Array values are the field values.
+     *
+     * By default, only fields matching the current entry point (register source) are returned.
+     * Set {@link \WlSdk\Wl\Profile\Edit\Edit} to `true` to return every active, non-removed field
+     * regardless of entry-point filtering, with the `id_level_*` values included.
+     *
+     * The array has the following structure:
      *
      * @var EditGetResponseStructure[]|null
      */
