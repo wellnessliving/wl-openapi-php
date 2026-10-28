@@ -46,7 +46,7 @@ class VisitBillingCodeAssignPostRequest
      *
      * @var string|null
      */
-    public ?string $s_version = null;
+    public ?string $s_code_version = null;
 
     /**
      * Reason of the change, for example when the codes are changed after the receipt has been sent to the client.
@@ -79,7 +79,7 @@ class VisitBillingCodeAssignPostRequest
             'k_business' => $this->k_business,
             'k_visit' => $this->k_visit,
             'a_text_code' => $this->a_text_code,
-            's_version' => $this->s_version,
+            's_code_version' => $this->s_code_version,
             'text_reason' => $this->text_reason,
             'text_signature' => $this->text_signature,
             ],

@@ -104,7 +104,7 @@ class VisitBillingCodeAssignGetResponse
      *
      * @var string|null
      */
-    public ?string $s_version = null;
+    public ?string $s_code_version = null;
 
     /**
      * Full name of the staff member who signed and locked the diagnostic codes of the visit, as it is at the
@@ -137,7 +137,7 @@ class VisitBillingCodeAssignGetResponse
         $this->is_receipt_sent = isset($data['is_receipt_sent']) ? (bool)$data['is_receipt_sent'] : null;
         $this->is_signature = isset($data['is_signature']) ? (bool)$data['is_signature'] : null;
         $this->is_system = isset($data['is_system']) ? (bool)$data['is_system'] : null;
-        $this->s_version = isset($data['s_version']) ? (string)$data['s_version'] : null;
+        $this->s_code_version = isset($data['s_code_version']) ? (string)$data['s_code_version'] : null;
         $this->text_staff_name_lock = isset($data['text_staff_name_lock']) ? (string)$data['text_staff_name_lock'] : null;
         $this->uid_staff_lock = isset($data['uid_staff_lock']) ? (string)$data['uid_staff_lock'] : null;
     }
