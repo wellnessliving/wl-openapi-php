@@ -7,7 +7,7 @@ namespace WlSdk;
  *
  *
  *
- * Last used ID: 21.
+ * Last used ID: 23.
  *
  * Values:
  * - 19 (`AI_AGENT`): Ai Agent web-chat.
@@ -16,6 +16,7 @@ namespace WlSdk;
  * - 22 (`APPOINTMENT_FOREIGN`): Appointment booking wizard built by microservice widget team.
  * - 21 (`CATALOG_FOREIGN`): Online store widget.
  * - 8 (`ENROLLMENT`): Event enrollment wizard widget.
+ * - 23 (`EVENT_FOREIGN`): Event widget built by microservice widget team.
  * - 17 (`FITBUILDER`): Fitbuilder widget.
  * - 9 (`LEAD`): Skin for lead tracking form.
  * - 20 (`LEAD_FOREIGN`): Skin for lead tracking form from microservice.
@@ -51,6 +52,9 @@ class RsSkinSid
 
     /** Event enrollment wizard widget. */
     public const ENROLLMENT = 8;
+
+    /** Event widget built by microservice widget team. */
+    public const EVENT_FOREIGN = 23;
 
     /** Fitbuilder widget. */
     public const FITBUILDER = 17;
