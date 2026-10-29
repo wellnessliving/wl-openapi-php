@@ -229,6 +229,14 @@ class AttendanceListByTokenGetResponseListWait
     public ?bool $is_free = null;
 
     /**
+     * `true` if this visit is paid with a guest pass.
+     * When `true`, `text_promotion` contains the formatted guest label instead of the Purchase Option title.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_guest = null;
+
+    /**
      * This will be `true` if details on this visit should be hidden from staff members.
      *
      * @var bool|null
@@ -395,6 +403,8 @@ class AttendanceListByTokenGetResponseListWait
 
     /**
      * The description of the type of Purchase Option.
+     * When `is_guest` is `true`, this contains a formatted label such as "Guest of [Member Name] - [Pass Name]"
+     * instead of the raw Purchase Option title.
      *
      * @var string|null
      */
@@ -512,6 +522,7 @@ class AttendanceListByTokenGetResponseListWait
         $this->is_deposit = isset($data['is_deposit']) ? (bool)$data['is_deposit'] : null;
         $this->is_early = isset($data['is_early']) ? (bool)$data['is_early'] : null;
         $this->is_free = isset($data['is_free']) ? (bool)$data['is_free'] : null;
+        $this->is_guest = isset($data['is_guest']) ? (bool)$data['is_guest'] : null;
         $this->is_hidden = isset($data['is_hidden']) ? (bool)$data['is_hidden'] : null;
         $this->is_penalty = isset($data['is_penalty']) ? (bool)$data['is_penalty'] : null;
         $this->is_promotion_first = isset($data['is_promotion_first']) ? (bool)$data['is_promotion_first'] : null;
