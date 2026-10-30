@@ -62,6 +62,47 @@ class ClassEditorGetResponse
     public ?array $a_url = null;
 
     /**
+     * Direct booking URLs of the event, one per Book Now Tab it is shown in.
+     *
+     * Empty for a new event and for a ticketed event, which has a booking URL per instance instead
+     * ({@link \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$a_url_ticket}). Every element:
+     *
+     * @var ClassEditorGetResponseUrlBook[]|null
+     */
+    public ?array $a_url_book = null;
+
+    /**
+     * Direct detail and checkout URLs of the event, one per instance of the event that has not ended.
+     *
+     * Empty for a new event, for an event outside a block, for an event sold only with purchase options and for an
+     * event with no such instances. Every element:
+     *
+     * @var ClassEditorGetResponseUrlCatalog[]|null
+     */
+    public ?array $a_url_catalog = null;
+
+    /**
+     * Direct scanner URLs of a ticketed event, one per instance in {@link
+     * \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$a_url_catalog}.
+     *
+     * Empty for an event that is not ticketed. Every element:
+     *
+     * @var ClassEditorGetResponseUrlScan[]|null
+     */
+    public ?array $a_url_scan = null;
+
+    /**
+     * Direct booking URLs of a ticketed event, one per instance in {@link
+     * \WlSdk\Wl\Classes\Editor\ClassEditorGetResponse::$a_url_catalog} and per
+     * Book Now Tab the event is shown in.
+     *
+     * Empty for an event that is not ticketed. Every element:
+     *
+     * @var ClassEditorGetResponseUrlTicket[]|null
+     */
+    public ?array $a_url_ticket = null;
+
+    /**
      * `true` if the class has a schedule, so it may not be removed until the schedule is cancelled; `false`
      * otherwise
      * and for a new class.
@@ -231,6 +272,10 @@ class ClassEditorGetResponse
         $this->a_search_tag_list = isset($data['a_search_tag_list']) ? array_map(static fn ($item) => new ClassEditorGetResponseSearchTagList((array)$item), (array)$data['a_search_tag_list']) : null;
         $this->a_shop_category_list = isset($data['a_shop_category_list']) ? array_map(static fn ($item) => new ClassEditorGetResponseShopCategoryList((array)$item), (array)$data['a_shop_category_list']) : null;
         $this->a_url = isset($data['a_url']) ? array_map(static fn ($item) => new ClassEditorGetResponseUrl((array)$item), (array)$data['a_url']) : null;
+        $this->a_url_book = isset($data['a_url_book']) ? array_map(static fn ($item) => new ClassEditorGetResponseUrlBook((array)$item), (array)$data['a_url_book']) : null;
+        $this->a_url_catalog = isset($data['a_url_catalog']) ? array_map(static fn ($item) => new ClassEditorGetResponseUrlCatalog((array)$item), (array)$data['a_url_catalog']) : null;
+        $this->a_url_scan = isset($data['a_url_scan']) ? array_map(static fn ($item) => new ClassEditorGetResponseUrlScan((array)$item), (array)$data['a_url_scan']) : null;
+        $this->a_url_ticket = isset($data['a_url_ticket']) ? array_map(static fn ($item) => new ClassEditorGetResponseUrlTicket((array)$item), (array)$data['a_url_ticket']) : null;
         $this->has_schedule = isset($data['has_schedule']) ? (bool)$data['has_schedule'] : null;
         $this->html_policy = isset($data['html_policy']) ? (string)$data['html_policy'] : null;
         $this->html_prerequisite = isset($data['html_prerequisite']) ? (string)$data['html_prerequisite'] : null;
