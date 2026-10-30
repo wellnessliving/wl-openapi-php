@@ -44,6 +44,13 @@ class PurchaseReceiptGetResponse
     public ?PurchaseReceiptGetResponsePayMethod $a_pay_method = null;
 
     /**
+     * Information about the payor (money owner) of the purchase. Empty when the money owner is the client.
+     *
+     * @var PurchaseReceiptGetResponsePayor|null
+     */
+    public ?PurchaseReceiptGetResponsePayor $a_payor = null;
+
+    /**
      * Complete information about price information for the purchase.
      *
      * @var PurchaseReceiptGetResponsePrice|null
@@ -93,6 +100,15 @@ class PurchaseReceiptGetResponse
     public ?string $text_receipt = null;
 
     /**
+     * The key of the payor (money owner) of the purchase. Primary key in  table.
+     *
+     * Empty when the money owner is the client (the normal case).
+     *
+     * @var string|null
+     */
+    public ?string $uid_payor = null;
+
+    /**
      * The URL for printing on a normal printer.
      *
      * @var string|null
@@ -113,6 +129,7 @@ class PurchaseReceiptGetResponse
         $this->a_card = isset($data['a_card']) ? new PurchaseReceiptGetResponseCard((array)$data['a_card']) : null;
         $this->a_customer = isset($data['a_customer']) ? new PurchaseReceiptGetResponseCustomer((array)$data['a_customer']) : null;
         $this->a_pay_method = isset($data['a_pay_method']) ? new PurchaseReceiptGetResponsePayMethod((array)$data['a_pay_method']) : null;
+        $this->a_payor = isset($data['a_payor']) ? new PurchaseReceiptGetResponsePayor((array)$data['a_payor']) : null;
         $this->a_price = isset($data['a_price']) ? new PurchaseReceiptGetResponsePrice((array)$data['a_price']) : null;
         $this->a_purchase_item = isset($data['a_purchase_item']) ? array_map(static fn ($item) => new PurchaseReceiptGetResponsePurchaseItem((array)$item), (array)$data['a_purchase_item']) : null;
         $this->dtl_purchase = isset($data['dtl_purchase']) ? (string)$data['dtl_purchase'] : null;
@@ -120,6 +137,7 @@ class PurchaseReceiptGetResponse
         $this->html_receipt = isset($data['html_receipt']) ? (string)$data['html_receipt'] : null;
         $this->text_purchase_id = isset($data['text_purchase_id']) ? (string)$data['text_purchase_id'] : null;
         $this->text_receipt = isset($data['text_receipt']) ? (string)$data['text_receipt'] : null;
+        $this->uid_payor = isset($data['uid_payor']) ? (string)$data['uid_payor'] : null;
         $this->url_print = isset($data['url_print']) ? (string)$data['url_print'] : null;
         $this->url_print_receipt = isset($data['url_print_receipt']) ? (string)$data['url_print_receipt'] : null;
     }
