@@ -5,12 +5,21 @@ namespace WlSdk\Wl\Visit;
 /**
  * Possible states of the visit: book, attended, cancelled, etc.
  *
- * Last used ID: 8.
+ * Last used ID: 9.
  *
  * Values:
  * - 3 (`ATTEND`): Client has attended the session.
  * - 1 (`BOOK`): Active reservation means that user is going to attend the session.
  * - 6 (`CANCEL`): Client has cancelled the reservation in time and without penalty.
+ * - 9 (`CANCEL_MAKEUP`): Client has cancelled the reservation early and qualified for a make-up pass under the
+ * business's Make-up
+ *   Passes policy.
+ *
+ *   Unlike {@link \WlSdk\Wl\Visit\VisitSid}, the visit is used and is not returned to the client's pass or membership:
+ *   the reservation stays on the schedule and on the client's Upcoming Schedule, the same way a
+ *   {@link \WlSdk\Wl\Visit\VisitSid} visit does, and the time slot is open for a new booking. No late-cancel fee is
+ *   charged. A client-facing or an external (API, SDK, integration) output must show this status as
+ *   {@link \WlSdk\Wl\Visit\VisitSid}.
  * - 4 (`PENALTY`): Client has cancelled his reservation too late.
  * - 7 (`PENDING`): This state means that visit is registered, but it is unknown is it {@link \WlSdk\Wl\Visit\VisitSid}
  *   or {@link \WlSdk\Wl\Visit\VisitSid} or {@link \WlSdk\Wl\Visit\VisitSid} but definitely one of these states.
@@ -33,6 +42,9 @@ class VisitSid
 
     /** Client has cancelled the reservation in time and without penalty. */
     public const CANCEL = 6;
+
+    /** Client has cancelled the reservation early and qualified for a make-up pass under the business's Make-up */
+    public const CANCEL_MAKEUP = 9;
 
     /** Client has cancelled his reservation too late. */
     public const PENALTY = 4;

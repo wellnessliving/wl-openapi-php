@@ -62,6 +62,15 @@ class ClassEditorGetResponse
     public ?array $a_url = null;
 
     /**
+     * `true` if the class has a schedule, so it may not be removed until the schedule is cancelled; `false`
+     * otherwise
+     * and for a new class.
+     *
+     * @var bool|null
+     */
+    public ?bool $has_schedule = null;
+
+    /**
      * Markup of the Business policies block of the form.
      *
      * The block is the form of the policy rules of the business. There is no template of this form on the client,
@@ -222,6 +231,7 @@ class ClassEditorGetResponse
         $this->a_search_tag_list = isset($data['a_search_tag_list']) ? array_map(static fn ($item) => new ClassEditorGetResponseSearchTagList((array)$item), (array)$data['a_search_tag_list']) : null;
         $this->a_shop_category_list = isset($data['a_shop_category_list']) ? array_map(static fn ($item) => new ClassEditorGetResponseShopCategoryList((array)$item), (array)$data['a_shop_category_list']) : null;
         $this->a_url = isset($data['a_url']) ? array_map(static fn ($item) => new ClassEditorGetResponseUrl((array)$item), (array)$data['a_url']) : null;
+        $this->has_schedule = isset($data['has_schedule']) ? (bool)$data['has_schedule'] : null;
         $this->html_policy = isset($data['html_policy']) ? (string)$data['html_policy'] : null;
         $this->html_prerequisite = isset($data['html_prerequisite']) ? (string)$data['html_prerequisite'] : null;
         $this->html_promotion = isset($data['html_promotion']) ? (string)$data['html_promotion'] : null;

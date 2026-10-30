@@ -54,11 +54,26 @@ class ClassEditorGetResponseUrl
     public ?string $url_product_manage = null;
 
     /**
+     * Removal of the class. Empty string for a new class, or when the class may not be removed.
+     *
+     * @var string|null
+     */
+    public ?string $url_remove = null;
+
+    /**
      * List of Book-a-Spot assets.
      *
      * @var string|null
      */
     public ?string $url_resource_manage = null;
+
+    /**
+     * Schedule of the class, where its sessions are added. Empty string for a new class, or when the staff member
+     * may not schedule it.
+     *
+     * @var string|null
+     */
+    public ?string $url_schedule = null;
 
     /**
      * Store settings that require a card at sign-up.
@@ -83,7 +98,9 @@ class ClassEditorGetResponseUrl
         $this->url_notification_staff = isset($data['url_notification_staff']) ? (string)$data['url_notification_staff'] : null;
         $this->url_policy_manage = isset($data['url_policy_manage']) ? (string)$data['url_policy_manage'] : null;
         $this->url_product_manage = isset($data['url_product_manage']) ? (string)$data['url_product_manage'] : null;
+        $this->url_remove = isset($data['url_remove']) ? (string)$data['url_remove'] : null;
         $this->url_resource_manage = isset($data['url_resource_manage']) ? (string)$data['url_resource_manage'] : null;
+        $this->url_schedule = isset($data['url_schedule']) ? (string)$data['url_schedule'] : null;
         $this->url_ticket_card = isset($data['url_ticket_card']) ? (string)$data['url_ticket_card'] : null;
         $this->url_ticket_waiver = isset($data['url_ticket_waiver']) ? (string)$data['url_ticket_waiver'] : null;
     }
