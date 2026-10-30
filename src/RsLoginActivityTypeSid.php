@@ -5,13 +5,14 @@ namespace WlSdk;
 /**
  * Manages identifiers of user activity.
  *
- * Last ID: 63.
+ * Last ID: 64.
  *
  * Values:
  * - 27 (`APPOINTMENT_BOOK`): Client books an appointment.
  * - 47 (`APPOINTMENT_BOOK_FACEBOOK`): Client booked an appointment and shared on Facebook.
  * - 48 (`APPOINTMENT_BOOK_TWITTER`): Client booked an appointment and shared on Twitter.
  * - 28 (`APPOINTMENT_CANCEL`): Client cancels an appointment.
+ * - 64 (`APPOINTMENT_PHONE_CHANGE`): The phone number of a Phone Call appointment was set or changed.
  * - 23 (`APPOINTMENT_VISIT`): Client attends an appointment.
  * - 52 (`APPOINTMENT_WAIT`): Client books an appointment to wait list.
  * - 49 (`ASSET_BOOK_FACEBOOK`): Client booked an asset and shared on Facebook.
@@ -84,6 +85,9 @@ class RsLoginActivityTypeSid
 
     /** Client cancels an appointment. */
     public const APPOINTMENT_CANCEL = 28;
+
+    /** The phone number of a Phone Call appointment was set or changed. */
+    public const APPOINTMENT_PHONE_CHANGE = 64;
 
     /** Client attends an appointment. */
     public const APPOINTMENT_VISIT = 23;
