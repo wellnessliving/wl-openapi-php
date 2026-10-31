@@ -163,6 +163,16 @@ class ScheduleListByTokenGetResponseSchedule
     public ?bool $is_pay = null;
 
     /**
+     * For appointments: `true` if the appointment was booked as a Phone Call; `false` otherwise.
+     * This is the type of the service at the time of booking, so it stays `true` after the service is switched to
+     * another type.
+     * For classes and events always `false`.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_phone_call = null;
+
+    /**
      * For appointments: `true` if appointment is recurring; `false` otherwise.
      * For classes always `null`.
      *
@@ -291,6 +301,7 @@ class ScheduleListByTokenGetResponseSchedule
         $this->id_service = isset($data['id_service']) ? (int)$data['id_service'] : null;
         $this->is_arrive = isset($data['is_arrive']) ? (bool)$data['is_arrive'] : null;
         $this->is_pay = isset($data['is_pay']) ? (bool)$data['is_pay'] : null;
+        $this->is_phone_call = isset($data['is_phone_call']) ? (bool)$data['is_phone_call'] : null;
         $this->is_repeat = isset($data['is_repeat']) ? (bool)$data['is_repeat'] : null;
         $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;

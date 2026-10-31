@@ -406,6 +406,18 @@ class AttendanceListByTokenGetResponseListConfirm
     public ?string $text_note = null;
 
     /**
+     * The phone number the staff calls for a Phone Call booking, in the international E.164 format,
+     * for example `+15550101001`.
+     * `null` if the visit is not a Phone Call or has no number.
+     * Returned without the {@link \WlSdk\Wl\Privilege\PrivilegeSid} privilege too: this is the data of the
+     * appointment,
+     * staff need it to call the client.
+     *
+     * @var string|null
+     */
+    public ?string $text_phone = null;
+
+    /**
      * Title of purchase option usages of that was returned to user.
      *
      * @var string|null
@@ -557,6 +569,7 @@ class AttendanceListByTokenGetResponseListConfirm
         $this->text_firstname = isset($data['text_firstname']) ? (string)$data['text_firstname'] : null;
         $this->text_lastname = isset($data['text_lastname']) ? (string)$data['text_lastname'] : null;
         $this->text_note = isset($data['text_note']) ? (string)$data['text_note'] : null;
+        $this->text_phone = isset($data['text_phone']) ? (string)$data['text_phone'] : null;
         $this->text_promotion_return = isset($data['text_promotion_return']) ? (string)$data['text_promotion_return'] : null;
         $this->text_promotion = isset($data['text_promotion']) ? (string)$data['text_promotion'] : null;
         $this->text_restrict_title = isset($data['text_restrict_title']) ? (string)$data['text_restrict_title'] : null;

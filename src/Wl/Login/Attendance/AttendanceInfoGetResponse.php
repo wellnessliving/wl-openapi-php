@@ -116,6 +116,18 @@ class AttendanceInfoGetResponse
     public ?int $id_service = null;
 
     /**
+     * Whether the booking was made as a Phone Call.
+     *
+     * This is the type of the service at the time of booking. It stays `true` after the service is switched to
+     * another type,
+     * so it can differ from `id_virtual_provider` of the service. `false` otherwise (in-person, virtual, class
+     * visits).
+     *
+     * @var bool|null
+     */
+    public ?bool $is_phone_call = null;
+
+    /**
      * Whether this service be carried out in Zoom.
      * `true` - If the service can be carried out in Zoom.
      * `false` - otherwise.
@@ -169,6 +181,16 @@ class AttendanceInfoGetResponse
     public ?string $text_location = null;
 
     /**
+     * Phone number the staff calls for this Phone Call booking.
+     *
+     * The number in the international E.164 format, for example `+15550101001`.
+     * `null` if the booking is not a Phone Call or has no number.
+     *
+     * @var string|null
+     */
+    public ?string $text_phone = null;
+
+    /**
      * Time when service starts in format `8:00AM`.
      *
      * @var string|null
@@ -214,6 +236,7 @@ class AttendanceInfoGetResponse
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
         $this->id_note = isset($data['id_note']) ? (int)$data['id_note'] : null;
         $this->id_service = isset($data['id_service']) ? (int)$data['id_service'] : null;
+        $this->is_phone_call = isset($data['is_phone_call']) ? (bool)$data['is_phone_call'] : null;
         $this->is_start_virtual_service = isset($data['is_start_virtual_service']) ? (bool)$data['is_start_virtual_service'] : null;
         $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
@@ -221,6 +244,7 @@ class AttendanceInfoGetResponse
         $this->k_resource = isset($data['k_resource']) ? (string)$data['k_resource'] : null;
         $this->k_service = isset($data['k_service']) ? (string)$data['k_service'] : null;
         $this->text_location = isset($data['text_location']) ? (string)$data['text_location'] : null;
+        $this->text_phone = isset($data['text_phone']) ? (string)$data['text_phone'] : null;
         $this->text_time_end = isset($data['text_time_end']) ? (string)$data['text_time_end'] : null;
         $this->text_time_start = isset($data['text_time_start']) ? (string)$data['text_time_start'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;

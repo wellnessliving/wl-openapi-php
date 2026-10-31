@@ -111,6 +111,17 @@ class InfoGetResponse
     public ?int $id_virtual_provider = null;
 
     /**
+     * Whether the booking was made as a Phone Call.
+     *
+     * This is the type of the service at the time of booking. It stays `true` after the service is switched to
+     * another type,
+     * so it can differ from `id_virtual_provider`. `false` otherwise (in-person, virtual, class visits).
+     *
+     * @var bool|null
+     */
+    public ?bool $is_phone_call = null;
+
+    /**
      * Whether the service is virtual.
      *
      * `null` for non-virtual services.
@@ -179,6 +190,16 @@ class InfoGetResponse
     public ?string $k_staff = null;
 
     /**
+     * Phone number the staff calls for this Phone Call booking.
+     *
+     * The number in the international E.164 format, for example `+15550101001`.
+     * `null` if the booking is not a Phone Call or has no number.
+     *
+     * @var string|null
+     */
+    public ?string $text_phone = null;
+
+    /**
      * Title of the appointment.
      *
      * @var string|null
@@ -214,6 +235,7 @@ class InfoGetResponse
         $this->i_index = isset($data['i_index']) ? (int)$data['i_index'] : null;
         $this->id_appointment_pay = isset($data['id_appointment_pay']) ? (int)$data['id_appointment_pay'] : null;
         $this->id_virtual_provider = isset($data['id_virtual_provider']) ? (int)$data['id_virtual_provider'] : null;
+        $this->is_phone_call = isset($data['is_phone_call']) ? (bool)$data['is_phone_call'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
         $this->k_login_promotion = isset($data['k_login_promotion']) ? (string)$data['k_login_promotion'] : null;
@@ -223,6 +245,7 @@ class InfoGetResponse
         $this->k_service_category = isset($data['k_service_category']) ? (string)$data['k_service_category'] : null;
         $this->k_session_pass = isset($data['k_session_pass']) ? (string)$data['k_session_pass'] : null;
         $this->k_staff = isset($data['k_staff']) ? (string)$data['k_staff'] : null;
+        $this->text_phone = isset($data['text_phone']) ? (string)$data['text_phone'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
         $this->uid_appointment = isset($data['uid_appointment']) ? (string)$data['uid_appointment'] : null;
         $this->uid_staff = isset($data['uid_staff']) ? (string)$data['uid_staff'] : null;
