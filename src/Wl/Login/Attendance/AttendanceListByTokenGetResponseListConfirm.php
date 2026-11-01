@@ -408,10 +408,11 @@ class AttendanceListByTokenGetResponseListConfirm
     /**
      * The phone number the staff calls for a Phone Call booking, in the international E.164 format,
      * for example `+15550101001`.
-     * `null` if the visit is not a Phone Call or has no number.
-     * Returned without the {@link \WlSdk\Wl\Privilege\PrivilegeSid} privilege too: this is the data of the
-     * appointment,
-     * staff need it to call the client.
+     * `null` if the visit is not a Phone Call or has no number, or if the current user may not see the number.
+     * The number is shown like the phone of the client: to the client, to
+     * the user who booked, to a WellnessLiving admin and to staff with the {@link
+     * \WlSdk\Wl\Privilege\PrivilegeSid}
+     * privilege. A caller with a token or a guest application and no such user gets `null`.
      *
      * @var string|null
      */

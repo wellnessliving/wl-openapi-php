@@ -45,7 +45,9 @@ class PageListGetResponseVisit
     /**
      * Phone number the staff calls for a Phone Call visit, in the international E.164 format,
      * for example `+15550101001`.
-     * `null` if the visit is not a Phone Call or has no number.
+     * `null` if the visit is not a Phone Call or has no number, or if the current user may not see the number.
+     * The number is shown like the phone of the client: to the client, to the user who booked and to staff with
+     * the privilege to see contact details of clients.
      *
      * @var string|null
      */
