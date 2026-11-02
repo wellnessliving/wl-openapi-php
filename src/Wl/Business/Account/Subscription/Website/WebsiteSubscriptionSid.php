@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Business\Account\Subscription\Website;
 /**
  * List of possible plans for {@link \WlSdk\Wl\Business\Account\Subscription\SubscriptionAbstract} subscription.
  *
- * Last used ID: 11.
+ * Last used ID: 12.
  *
  * Values:
  * - 2 (`BASIC`): Basic
@@ -18,6 +18,7 @@ namespace WlSdk\Wl\Business\Account\Subscription\Website;
  * - 1 (`FREE`): None
  * - 3 (`PREMIUM`): Premium
  * - 7 (`PREMIUM_MAX`): Premium (Business Max)
+ * - 12 (`PRESENCE_TRIAL`): Presence Trial
  * - 5 (`PROFESSIONAL`): Professional
  */
 class WebsiteSubscriptionSid
@@ -51,6 +52,9 @@ class WebsiteSubscriptionSid
 
     /** Premium (Business Max) */
     public const PREMIUM_MAX = 7;
+
+    /** Presence Trial */
+    public const PRESENCE_TRIAL = 12;
 
     /** Professional */
     public const PROFESSIONAL = 5;
