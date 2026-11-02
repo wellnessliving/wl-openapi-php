@@ -21,10 +21,10 @@ class VisitBillingCodeAssignPostResponse
      *
      * @var string|null
      */
-    public ?string $s_version = null;
+    public ?string $s_code_version = null;
 
     public function __construct(array $data)
     {
-        $this->s_version = isset($data['s_version']) ? (string)$data['s_version'] : null;
+        $this->s_code_version = isset($data['s_code_version']) ? (string)$data['s_code_version'] : null;
     }
 }

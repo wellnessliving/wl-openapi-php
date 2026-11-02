@@ -28,6 +28,19 @@ class EditGetRequest
     public ?int $id_register_source = null;
 
     /**
+     * `true` to return all active, non-removed profile fields of the business regardless of entry-point filtering
+     * (register source, level `DONT_ASK`, booking-and-purchase, and family-relation applies-to filters are
+     * skipped).
+     * The `id_level_*` values are still included in each field element of {@link
+     * \WlSdk\Wl\Profile\Edit\EditGetResponse::$a_structure}.
+     *
+     * `false` (default) to apply the normal entry-point filtering based on {@link \WlSdk\Wl\Profile\Edit\Edit}.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_field_all = null;
+
+    /**
      * Indicates whether to display the form as a user or as a staff member.
      * Staff members may have access to different fields than the user.
      *
@@ -59,6 +72,7 @@ class EditGetRequest
             [
             'id_family_relation' => $this->id_family_relation,
             'id_register_source' => $this->id_register_source,
+            'is_field_all' => $this->is_field_all,
             'is_staff' => $this->is_staff,
             'k_business' => $this->k_business,
             'uid' => $this->uid,

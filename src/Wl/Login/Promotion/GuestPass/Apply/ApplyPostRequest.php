@@ -14,7 +14,8 @@ class ApplyPostRequest
     /**
      * The source of the visit change.
      * One of the {@link \WlSdk\Wl\Mode\ModeSid} constants.
-     * If you're unsure about the value to use, keep the default value.
+     * If you're unsure about the value to use, keep the default value `null`: the source is detected
+     * automatically.
      *
      * @var int|null
      * @see \WlSdk\Wl\Mode\ModeSid
