@@ -29,9 +29,9 @@ class PaymentPostResponse
      * It is returned together with {@link \WlSdk\Wl\Catalog\Payment\PaymentPostResponse::$k_purchase}. Pass it as
      * {@link \WlSdk\Wl\Purchase\Receipt\PurchaseReceipt}
      * to `get()`: this lets a guest, who has no access to the purchase, view the receipt. The
-     * token is valid for one hour. An empty string if no purchase was created, or if the token could not be made:
-     * the
-     * payment does not fail then.
+     * token is valid for one hour. An empty string if the token could not be made: the payment does not fail then,
+     * and
+     * the error is a warning in the error log.
      *
      * @var string|null
      */

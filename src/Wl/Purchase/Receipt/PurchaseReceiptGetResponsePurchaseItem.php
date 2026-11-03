@@ -12,12 +12,12 @@ class PurchaseReceiptGetResponsePurchaseItem
     public ?PurchaseReceiptGetResponsePurchaseItemLogo $a_logo = null;
 
     /**
-     * The tickets of the purchase item. Only available if the purchase item is a ticket. Every element has the
-     * following keys:
+     * The ticket of the purchase item. Only available if the purchase item is a ticket: one purchase item is one
+     * ticket. Empty if the purchase item has no ticket. Has the following keys:
      *
-     * @var PurchaseReceiptGetResponsePurchaseItemTicketList|null
+     * @var PurchaseReceiptGetResponsePurchaseItemTicketInfo|null
      */
-    public ?PurchaseReceiptGetResponsePurchaseItemTicketList $a_ticket_list = null;
+    public ?PurchaseReceiptGetResponsePurchaseItemTicketInfo $a_ticket_info = null;
 
     /**
      * List of visit keys. Only available if the purchase item is a class period,
@@ -150,7 +150,7 @@ class PurchaseReceiptGetResponsePurchaseItem
     public function __construct(array $data)
     {
         $this->a_logo = isset($data['a_logo']) ? new PurchaseReceiptGetResponsePurchaseItemLogo((array)$data['a_logo']) : null;
-        $this->a_ticket_list = isset($data['a_ticket_list']) ? new PurchaseReceiptGetResponsePurchaseItemTicketList((array)$data['a_ticket_list']) : null;
+        $this->a_ticket_info = isset($data['a_ticket_info']) ? new PurchaseReceiptGetResponsePurchaseItemTicketInfo((array)$data['a_ticket_info']) : null;
         $this->a_visit = isset($data['a_visit']) ? (array)$data['a_visit'] : null;
         $this->i_count = isset($data['i_count']) ? (int)$data['i_count'] : null;
         $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;

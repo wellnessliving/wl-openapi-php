@@ -2,7 +2,7 @@
 
 namespace WlSdk\Wl\Purchase\Receipt;
 
-class PurchaseReceiptGetResponsePurchaseItemTicketList
+class PurchaseReceiptGetResponsePurchaseItemTicketInfo
 {
     /**
      * The title of the event the ticket is for.
