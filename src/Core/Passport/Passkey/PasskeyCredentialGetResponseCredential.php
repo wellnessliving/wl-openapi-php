@@ -49,7 +49,7 @@ class PasskeyCredentialGetResponseCredential
     public ?string $k_passkey_credential = null;
 
     /**
-     * User-supplied friendly label of this credential.
+     * Name of this credential, assigned at registration and changed by `put()`.
      *
      * @var string|null
      */

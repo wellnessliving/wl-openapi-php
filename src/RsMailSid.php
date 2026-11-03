@@ -13,7 +13,7 @@ namespace WlSdk;
  *
  * Pay attention that all `\MailPrioritySid` must start with backslash.
  *
- * Last used ID: 225.
+ * Last used ID: 227.
  *
  * Values:
  * - 220 (`ABANDONED_CHECKOUT`): Sent when a client abandons a checkout (used in automations).
@@ -329,6 +329,8 @@ namespace WlSdk;
  * - 191 (`NOTIFICATION_OTP`): Sent OTP code by sms or email to validate phone number or email address.
  * - 187 (`PASSPORT_LOGIN_ENTER`): Sent OTP code by sms and email for the user sign in.
  * - 205 (`PASSPORT_LOGIN_MERGE`): Notification about email address is changed due to merge.
+ * - 226 (`PASSPORT_PASSKEY_ADD`): Notification to a staff member that a passkey was added to their account.
+ * - 227 (`PASSPORT_PASSKEY_REMOVE`): Notification to a staff member that a passkey was removed from their account.
  * - 85 (`PAY_ACCOUNT_INVOICE`): E-mail with a list of user's payment account transactions for last `62` days.
  *
  *   <h2>Acceptance test</h2>
@@ -924,6 +926,12 @@ class RsMailSid
 
     /** Notification about email address is changed due to merge. */
     public const PASSPORT_LOGIN_MERGE = 205;
+
+    /** Notification to a staff member that a passkey was added to their account. */
+    public const PASSPORT_PASSKEY_ADD = 226;
+
+    /** Notification to a staff member that a passkey was removed from their account. */
+    public const PASSPORT_PASSKEY_REMOVE = 227;
 
     /** E-mail with a list of user's payment account transactions for last `62` days. */
     public const PAY_ACCOUNT_INVOICE = 85;
