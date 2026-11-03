@@ -76,12 +76,21 @@ class ClassList68PostRequest
     /**
      * The list start date in MySQL format.
      *
+     * May be empty when {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} is not empty: then the day before the
+     * earliest start date of
+     * these events is used, or today if none of them has a start date.
+     * Otherwise, it is required.
+     *
      * @var string|null
      */
     public ?string $dt_date = null;
 
     /**
      * The list end date in MySQL format.
+     *
+     * If left empty and {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} is not empty, the day after the latest
+     * end date of these
+     * events is used.
      *
      * @var string|null
      */
