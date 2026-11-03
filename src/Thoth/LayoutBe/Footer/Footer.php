@@ -22,7 +22,9 @@ class Footer
      *
      * Loads the business's white-label status and derives whether the "Powered by WellnessLiving"
      * branding and the Terms and Conditions link should be shown in the footer. The result is stored in
-     * {@link \WlSdk\Thoth\LayoutBe\Footer\FooterGetResponse::$show_term}.
+     * {@link \WlSdk\Thoth\LayoutBe\Footer\FooterGetResponse::$show_term}. The URL of the tour page of the business
+     * type, which the badge links to, is
+     * loaded into {@link \WlSdk\Thoth\LayoutBe\Footer\FooterGetResponse::$url_tour}.
      *
      * @return FooterGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

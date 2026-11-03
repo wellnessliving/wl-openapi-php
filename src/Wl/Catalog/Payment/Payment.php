@@ -22,7 +22,9 @@ class Payment
      *
      * The checkout endpoint that finalizes a purchase in the client-facing store. Charges the client's
      * selected payment method, applies any discounts and tips, and creates the purchase record. Returns
-     * the resulting purchase key so the frontend can redirect to the confirmation page.
+     * the resulting purchase key so the frontend can redirect to the confirmation page, and the temporary token of
+     * the
+     * receipt, which lets an anonymous user, who has no access to the purchase, view the receipt.
      *
      * @return PaymentPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
