@@ -63,6 +63,18 @@ class Info54GetRequest
     public ?bool $show_relation = null;
 
     /**
+     * `true` to include in {@link \WlSdk\Wl\Book\Process\Info\InfoGetResponse::$a_session_all} the sessions of a
+     * non-block event that overlap other
+     * bookings of the current client, when the business prevents overlapping class and event bookings.
+     * Such sessions have `is_select` set to `false`, and their booking is still refused.
+     *
+     * `false` to leave such sessions out of the list.
+     *
+     * @var bool|null
+     */
+    public ?bool $show_session_overlap = null;
+
+    /**
      * The client key for which the booking is being made.
      *
      * @var string|null
@@ -80,6 +92,7 @@ class Info54GetRequest
             'k_class_period' => $this->k_class_period,
             'show_class_capacity' => $this->show_class_capacity,
             'show_relation' => $this->show_relation,
+            'show_session_overlap' => $this->show_session_overlap,
             'uid' => $this->uid,
             ],
             static fn ($v) => $v !== null
