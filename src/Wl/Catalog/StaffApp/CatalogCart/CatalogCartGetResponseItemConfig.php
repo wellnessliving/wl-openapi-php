@@ -146,6 +146,14 @@ class CatalogCartGetResponseItemConfig
      */
     public ?string $k_coupon_amount = null;
 
+    /**
+     * Key of the class the ticket is purchased for. Required for a ticket of an event with several
+     * instances.
+     *
+     * @var string|null
+     */
+    public ?string $k_class = null;
+
     public function __construct(array $data)
     {
         $this->a_event_list = isset($data['a_event_list']) ? new CatalogCartGetResponseItemConfigEventList((array)$data['a_event_list']) : null;
@@ -168,5 +176,6 @@ class CatalogCartGetResponseItemConfig
         $this->m_prorate_custom = isset($data['m_prorate_custom']) ? (string)$data['m_prorate_custom'] : null;
         $this->k_coupon = isset($data['k_coupon']) ? (string)$data['k_coupon'] : null;
         $this->k_coupon_amount = isset($data['k_coupon_amount']) ? (string)$data['k_coupon_amount'] : null;
+        $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
     }
 }
