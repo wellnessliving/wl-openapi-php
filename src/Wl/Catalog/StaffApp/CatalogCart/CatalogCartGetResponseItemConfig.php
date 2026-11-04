@@ -147,8 +147,11 @@ class CatalogCartGetResponseItemConfig
     public ?string $k_coupon_amount = null;
 
     /**
+     * Used only for `id_sale` = {@link \WlSdk\RsSaleSid}.
      * Key of the class the ticket is purchased for. Required for a ticket of an event with several
      * instances.
+     * The class must belong to the event of the ticket, otherwise the user error `ticket-nx` or
+     * `ticket-class-settings-mismatch` is returned.
      *
      * @var string|null
      */
