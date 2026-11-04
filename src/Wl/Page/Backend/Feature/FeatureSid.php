@@ -30,7 +30,7 @@ namespace WlSdk\Wl\Page\Backend\Feature;
  * - 21 (`LOG_REPORT`): Log report of staff activity.
  * - 12 (`MARKETING`): List of email patterns that are connected to the online marketing.
  * - 19 (`PARTNER`): Page with information about partner program.
- * - 38 (`PASSKEY`): Passkeys of the signed-in staff member.
+ * - 38 (`PASSKEY`): Passkeys of the staff members.
  * - 23 (`PRESENCE`): Presence landing page, where staff can get their custom website.
  * - 29 (`QUIZ`): Quiz form creator.
  * - 16 (`RECEPTION`): Popup window where client can check-in to the upcoming classes.
@@ -111,7 +111,7 @@ class FeatureSid
     /** Page with information about partner program. */
     public const PARTNER = 19;
 
-    /** Passkeys of the signed-in staff member. */
+    /** Passkeys of the staff members. */
     public const PASSKEY = 38;
 
     /** Presence landing page, where staff can get their custom website. */
