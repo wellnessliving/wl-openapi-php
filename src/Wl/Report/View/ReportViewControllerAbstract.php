@@ -71,6 +71,9 @@ namespace WlSdk\Wl\Report\View;
  * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} report.
  * - 1291 (`Wl\Collector\Report\TransactionReportController`): Controller for {@link
  * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} report.
+ * - 2496 (`Wl\Attendance\Franchisor\FranchisorAttendanceReportController`): External attendance report of a
+ * franchisor.
+ *   Is developed as microservice. This class only provides access validation and URL generation.
  * - 752 (`Thoth\Report\SalesReport\Transaction\TransactionAllItemReportController`): Controller of report "All
  * Transactions (item view)"
  * - 800 (`Thoth\Report\SalesReport\Transaction\TransactionAllPaymentReportController`): Controller of report "All
@@ -317,6 +320,9 @@ class ReportViewControllerAbstract
 
     /** Controller for {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} report. */
     public const TransactionReportController = 1291;
+
+    /** External attendance report of a franchisor. */
+    public const FranchisorAttendanceReportController = 2496;
 
     /** Controller of report "All Transactions (item view)" */
     public const TransactionAllItemReportController = 752;

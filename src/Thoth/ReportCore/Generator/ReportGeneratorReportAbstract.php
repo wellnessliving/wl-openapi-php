@@ -31,6 +31,8 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 1290 (`Wl\Collector\Report\TransactionReport`): Report with list of all debt payments.
  * - 1297 (`Wl\Collector\Report\TransactionCollectorReport`): Report with list of payments that were performed via
  * collections service.
+ * - 2495 (`Wl\Attendance\Franchisor\FranchisorAttendanceReport`): External attendance report of a franchisor.
+ *   Is developed as microservice. This class only provides access validation and URL generation.
  * - 799 (`Thoth\Report\SalesReport\Transaction\TransactionAllPaymentReport`): "All Transactions" report.
  *
  *   This is a placeholder for now.
@@ -247,6 +249,9 @@ class ReportGeneratorReportAbstract
 
     /** Report with list of payments that were performed via collections service. */
     public const TransactionCollectorReport = 1297;
+
+    /** External attendance report of a franchisor. */
+    public const FranchisorAttendanceReport = 2495;
 
     /** "All Transactions" report. */
     public const TransactionAllPaymentReport = 799;
