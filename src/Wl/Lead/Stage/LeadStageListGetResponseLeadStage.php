@@ -20,13 +20,31 @@ class LeadStageListGetResponseLeadStage
     public ?int $i_automation_active = null;
 
     /**
-     * Number of inactive automations which use this stage. Such an automation still refers the stage, so it
-     * still makes a replacement stage mandatory when the stage is deleted.
+     * Number of inactive automations associated with this stage, including any-stage triggers.
+     * Explicit references are counted separately for deletion.
      * Only set in a case {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true`.
      *
      * @var int|null
      */
     public ?int $i_automation_inactive = null;
+
+    /**
+     * Number of distinct active automations whose explicit stage references need updating when this stage
+     * is deleted. Any-stage triggers alone are excluded.
+     * Only set when {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true`.
+     *
+     * @var int|null
+     */
+    public ?int $i_automation_replace_active = null;
+
+    /**
+     * Number of distinct inactive automations whose explicit stage references need updating when this stage
+     * is deleted. Any-stage triggers alone are excluded.
+     * Only set when {@link \WlSdk\Wl\Lead\Stage\LeadStageList} is `true`.
+     *
+     * @var int|null
+     */
+    public ?int $i_automation_replace_inactive = null;
 
     /**
      * Number of client groups which convert their clients into this stage. Such a group depends on the stage: the
@@ -129,6 +147,8 @@ class LeadStageListGetResponseLeadStage
         $this->i_order = isset($data['i_order']) ? (int)$data['i_order'] : null;
         $this->i_automation_active = isset($data['i_automation_active']) ? (int)$data['i_automation_active'] : null;
         $this->i_automation_inactive = isset($data['i_automation_inactive']) ? (int)$data['i_automation_inactive'] : null;
+        $this->i_automation_replace_active = isset($data['i_automation_replace_active']) ? (int)$data['i_automation_replace_active'] : null;
+        $this->i_automation_replace_inactive = isset($data['i_automation_replace_inactive']) ? (int)$data['i_automation_replace_inactive'] : null;
         $this->i_member_group = isset($data['i_member_group']) ? (int)$data['i_member_group'] : null;
         $this->i_user = isset($data['i_user']) ? (int)$data['i_user'] : null;
         $this->id_lead_stage_shape = isset($data['id_lead_stage_shape']) ? (int)$data['id_lead_stage_shape'] : null;
