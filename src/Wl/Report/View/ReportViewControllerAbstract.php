@@ -71,6 +71,9 @@ namespace WlSdk\Wl\Report\View;
  * - 1288 (`Wl\Member\Report\MemberReportController`): "All clients" report controller (this report used for the
  * "Clients" link accessed from the top nav or WL menu).
  *   Table representation.
+ * - 2496 (`Wl\Attendance\Franchisor\FranchisorAttendanceReportController`): External attendance report of a
+ * franchisor.
+ *   Is developed as microservice. This class only provides access validation and URL generation.
  * - 1778 (`Thoth\MarketingCampaigns\Report\CampaignDetail\CampaignDetailReportController`): "Marketing Campaigns"
  * detail report controller.
  * - 1762 (`Thoth\MarketingCampaigns\Report\CampaignList\CampaignListReportController`): "Marketing Campaigns" list
@@ -317,6 +320,9 @@ class ReportViewControllerAbstract
 
     /** "All clients" report controller (this report used for the "Clients" link accessed from the top nav or WL menu). */
     public const MemberReportController = 1288;
+
+    /** External attendance report of a franchisor. */
+    public const FranchisorAttendanceReportController = 2496;
 
     /** "Marketing Campaigns" detail report controller. */
     public const CampaignDetailReportController = 1778;

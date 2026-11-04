@@ -31,6 +31,8 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 689 (`Wl\Member\Report\MemberAllReport`): "All clients" report generator.
  * - 1287 (`Wl\Member\Report\MemberReport`): "All clients" report generator (this report used for the "Clients" link
  * accessed from the top nav or WL menu).
+ * - 2495 (`Wl\Attendance\Franchisor\FranchisorAttendanceReport`): External attendance report of a franchisor.
+ *   Is developed as microservice. This class only provides access validation and URL generation.
  * - 1777 (`Thoth\MarketingCampaigns\Report\CampaignDetail\CampaignDetailReport`): "Marketing Campaigns" detail report.
  * - 1763 (`Thoth\MarketingCampaigns\Report\CampaignList\CampaignListReport`): "Marketing Campaigns" list report.
  * - 1255 (`Thoth\Report\SalesReport\Client\TransactionAllPaymentClientReport`): Report about user's transactions.
@@ -247,6 +249,9 @@ class ReportGeneratorReportAbstract
 
     /** "All clients" report generator (this report used for the "Clients" link accessed from the top nav or WL menu). */
     public const MemberReport = 1287;
+
+    /** External attendance report of a franchisor. */
+    public const FranchisorAttendanceReport = 2495;
 
     /** "Marketing Campaigns" detail report. */
     public const CampaignDetailReport = 1777;
