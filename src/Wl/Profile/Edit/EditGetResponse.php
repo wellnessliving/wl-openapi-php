@@ -30,6 +30,9 @@ class EditGetResponse
      * By default, only fields matching the current entry point (register source) are returned.
      * Set {@link \WlSdk\Wl\Profile\Edit\Edit} to `true` to return every active, non-removed field
      * regardless of entry-point filtering, with the `id_level_*` values included.
+     * Set {@link \WlSdk\Wl\Profile\Edit\Edit} to `true` to also return the fields hidden for the entry point while
+     * keeping
+     * the audience filter.
      *
      * The array has the following structure:
      *

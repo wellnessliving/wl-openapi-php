@@ -92,6 +92,22 @@ class AssetListGetResponseAsset
     public ?string $html_title = null;
 
     /**
+     * Padding after each booking of the asset, in minutes. `0` if the asset has no padding after.
+     * The asset is blocked for this time after each booking. Whether to show it is up to the client.
+     *
+     * @var int|null
+     */
+    public ?int $i_padding_after = null;
+
+    /**
+     * Padding before each booking of the asset, in minutes. `0` if the asset has no padding before.
+     * The asset is blocked for this time before each booking. Whether to show it is up to the client.
+     *
+     * @var int|null
+     */
+    public ?int $i_padding_before = null;
+
+    /**
      * The ID of the reason why the client cannot book this asset.
      * One of {@link \WlSdk\Wl\Schedule\ClassView\DenyReasonSid} constants. `null` if there is no deny reason.
      *
@@ -165,6 +181,8 @@ class AssetListGetResponseAsset
         $this->html_age_restriction = isset($data['html_age_restriction']) ? (string)$data['html_age_restriction'] : null;
         $this->html_deny_reason = isset($data['html_deny_reason']) ? (string)$data['html_deny_reason'] : null;
         $this->html_title = isset($data['html_title']) ? (string)$data['html_title'] : null;
+        $this->i_padding_after = isset($data['i_padding_after']) ? (int)$data['i_padding_after'] : null;
+        $this->i_padding_before = isset($data['i_padding_before']) ? (int)$data['i_padding_before'] : null;
         $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
         $this->id_service_require = isset($data['id_service_require']) ? (int)$data['id_service_require'] : null;
         $this->is_age_restricted = isset($data['is_age_restricted']) ? (bool)$data['is_age_restricted'] : null;
