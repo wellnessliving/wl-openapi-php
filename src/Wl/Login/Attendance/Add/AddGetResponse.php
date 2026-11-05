@@ -9,6 +9,7 @@ class AddGetResponse
 {
     /**
      * Any of the client memberships that can be used to pay for the session.
+     * The best purchase option goes first: the one that is chosen automatically when none is selected.
      * Every element is an array with the following keys:
      *
      * @var AddGetResponseLoginPromotion[]|null
