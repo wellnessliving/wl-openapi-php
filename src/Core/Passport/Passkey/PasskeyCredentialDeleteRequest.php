@@ -8,8 +8,9 @@ class PasskeyCredentialDeleteRequest
      * JSON-encoded structure with any additional information required by the project-specific
      * passkey configuration class, for example `k_business` in `Wl`.
      *
-     * Needed only to manage passkeys of a user other than the signed-in one; empty if no additional
-     * information is required.
+     * Needed to list, to rename and to revoke passkeys, the own ones included, because the project configuration
+     * decides who may
+     * manage them; empty only if the project configuration requires no additional information.
      *
      * @var string|null
      */

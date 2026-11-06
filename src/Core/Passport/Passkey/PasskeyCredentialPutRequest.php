@@ -5,6 +5,18 @@ namespace WlSdk\Core\Passport\Passkey;
 class PasskeyCredentialPutRequest
 {
     /**
+     * JSON-encoded structure with any additional information required by the project-specific
+     * passkey configuration class, for example `k_business` in `Wl`.
+     *
+     * Needed to list, to rename and to revoke passkeys, the own ones included, because the project configuration
+     * decides who may
+     * manage them; empty only if the project configuration requires no additional information.
+     *
+     * @var string|null
+     */
+    public ?string $json_context = null;
+
+    /**
      * Key of the credential to revoke or to rename.
      *
      * Only used to revoke or to rename a credential.
@@ -27,6 +39,7 @@ class PasskeyCredentialPutRequest
     {
         return array_filter(
             [
+            'json_context' => $this->json_context,
             'k_passkey_credential' => $this->k_passkey_credential,
             'text_device' => $this->text_device,
             ],
