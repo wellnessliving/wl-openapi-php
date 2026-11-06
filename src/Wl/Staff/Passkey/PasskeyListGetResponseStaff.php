@@ -27,6 +27,13 @@ class PasskeyListGetResponseStaff
     public ?string $text_name = null;
 
     /**
+     * Business role of the staff member, or an empty string if no role is assigned.
+     *
+     * @var string|null
+     */
+    public ?string $text_role = null;
+
+    /**
      * Staff member key.
      *
      * @var string|null
@@ -38,6 +45,7 @@ class PasskeyListGetResponseStaff
         $this->a_passkey = isset($data['a_passkey']) ? new PasskeyListGetResponseStaffPasskey((array)$data['a_passkey']) : null;
         $this->can_remove = isset($data['can_remove']) ? (bool)$data['can_remove'] : null;
         $this->text_name = isset($data['text_name']) ? (string)$data['text_name'] : null;
+        $this->text_role = isset($data['text_role']) ? (string)$data['text_role'] : null;
         $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
     }
 }
