@@ -49,6 +49,23 @@ class PasskeyCredentialGetResponseCredential
     public ?string $k_passkey_credential = null;
 
     /**
+     * `WebAuthn` credential ID, base64url encoded without padding. Clients pass it to the signal methods of
+     *  `WebAuthn` (for example `PublicKeyCredential.signalUnknownCredential()`) after the credential is revoked,
+     *  so the device deletes its copy of the passkey.
+     *
+     * @var string|null
+     */
+    public ?string $s_credential_id = null;
+
+    /**
+     * `WebAuthn` user handle (`user.id`) stored with the passkey on the device, base64url encoded without padding.
+     *  The same for every credential of the user.
+     *
+     * @var string|null
+     */
+    public ?string $s_user_handle = null;
+
+    /**
      * Name of this credential, assigned at registration and changed by `put()`.
      *
      * @var string|null
@@ -63,6 +80,8 @@ class PasskeyCredentialGetResponseCredential
         $this->id_status = isset($data['id_status']) ? (int)$data['id_status'] : null;
         $this->is_backed_up = isset($data['is_backed_up']) ? (bool)$data['is_backed_up'] : null;
         $this->k_passkey_credential = isset($data['k_passkey_credential']) ? (string)$data['k_passkey_credential'] : null;
+        $this->s_credential_id = isset($data['s_credential_id']) ? (string)$data['s_credential_id'] : null;
+        $this->s_user_handle = isset($data['s_user_handle']) ? (string)$data['s_user_handle'] : null;
         $this->text_device = isset($data['text_device']) ? (string)$data['text_device'] : null;
     }
 }
