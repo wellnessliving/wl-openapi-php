@@ -5,6 +5,15 @@ namespace WlSdk\Wl\Appointment\Book\Block;
 class AddonListGetResponseAddon
 {
     /**
+     * Description of the add-on service, as HTML that is ready to be shown, in the language of the current user.
+     * An
+     * empty string if the add-on has no description.
+     *
+     * @var string|null
+     */
+    public ?string $html_description = null;
+
+    /**
      * Extra time that the add-on adds to the appointment, in minutes. `0` if the add-on takes no time of its own.
      *
      * @var int|null
@@ -34,13 +43,6 @@ class AddonListGetResponseAddon
     public ?string $m_price_regular = null;
 
     /**
-     * Short line that tells why to add the add-on. `null` if the add-on has none.
-     *
-     * @var string|null
-     */
-    public ?string $text_tagline = null;
-
-    /**
      * Title of the add-on.
      *
      * @var string|null
@@ -49,11 +51,11 @@ class AddonListGetResponseAddon
 
     public function __construct(array $data)
     {
+        $this->html_description = isset($data['html_description']) ? (string)$data['html_description'] : null;
         $this->i_extra_time = isset($data['i_extra_time']) ? (int)$data['i_extra_time'] : null;
         $this->k_service_addon = isset($data['k_service_addon']) ? (string)$data['k_service_addon'] : null;
         $this->m_extra_cost = isset($data['m_extra_cost']) ? (string)$data['m_extra_cost'] : null;
         $this->m_price_regular = isset($data['m_price_regular']) ? (string)$data['m_price_regular'] : null;
-        $this->text_tagline = isset($data['text_tagline']) ? (string)$data['text_tagline'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }
 }
