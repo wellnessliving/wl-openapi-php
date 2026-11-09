@@ -59,7 +59,8 @@ class PasskeyCredentialGetResponseCredential
 
     /**
      * `WebAuthn` user handle (`user.id`) stored with the passkey on the device, base64url encoded without padding.
-     *  The same for every credential of the user.
+     *  The same for every credential of the user, and equal to {@link
+     * \WlSdk\Core\Passport\Passkey\PasskeyCredentialGetResponse::$s_user_handle}.
      *
      * @var string|null
      */
