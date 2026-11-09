@@ -69,7 +69,8 @@ class EnvironmentGetResponse
 
     /**
      * `true` if the "home" page is turned on for the current business; `false` otherwise.
-     * The home page is turned on by default; it is off only if a paid Achieve plan explicitly turned it off.
+     * The home page is turned on by default for a business without an active paid Achieve plan (free Achieve).
+     * With a paid plan it is turned off by default, and it is turned on only by a saved navigation.
      *
      * @var bool|null
      */
