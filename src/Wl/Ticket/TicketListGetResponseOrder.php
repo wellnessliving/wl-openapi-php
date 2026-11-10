@@ -48,7 +48,8 @@ class TicketListGetResponseOrder
     public ?bool $is_email = null;
 
     /**
-     * `true` if the order was bought by a guest, who has no profile. In this case `text_name` is empty.
+     * `true` if the order was bought by a guest, who has no profile. In this case `text_name` is the name the
+     * guest gave with the order.
      *
      * @var bool|null
      */
@@ -62,6 +63,15 @@ class TicketListGetResponseOrder
     public ?string $k_purchase = null;
 
     /**
+     * Discounts applied to the tickets of the order, with the currency {@link
+     * \WlSdk\Wl\Ticket\TicketListGetResponse::$k_currency}.
+     * `0` if there are none. Decimal string.
+     *
+     * @var string|null
+     */
+    public ?string $m_discount = null;
+
+    /**
      * Amount refunded for the tickets of the order, with the currency {@link
      * \WlSdk\Wl\Ticket\TicketListGetResponse::$k_currency}.
      * Decimal string.
@@ -71,8 +81,14 @@ class TicketListGetResponseOrder
     public ?string $m_refund = null;
 
     /**
-     * Amount of the tickets of the order after discounts and before taxes, with the currency
-     * {@link \WlSdk\Wl\Ticket\TicketListGetResponse::$k_currency}. Decimal string.
+     * Amount of the tickets of the order before discounts, with the currency
+     * {@link \WlSdk\Wl\Ticket\TicketListGetResponse::$k_currency}. It is counted the same way as the subtotal of
+     * the cart
+     * ({@link \WlSdk\Wl\Catalog\Cart\CartGetResponse::$m_subtotal}): it does not include the taxes in a locale
+     * where taxes are
+     * added to the prices, and includes them in a locale where taxes are included in the prices. Not net of
+     * refunds. Decimal string. Always `m_subtotal - m_discount + m_tax = m_total + m_refund` where taxes are added
+     * to the prices, and `m_subtotal - m_discount = m_total + m_refund` where taxes are included in the prices.
      *
      * @var string|null
      */
@@ -94,7 +110,7 @@ class TicketListGetResponseOrder
     public ?string $m_tax = null;
 
     /**
-     * Total paid for the tickets of the order, net of refunds, with the currency
+     * Total paid for the tickets of the order after discounts and with taxes, net of refunds, with the currency
      * {@link \WlSdk\Wl\Ticket\TicketListGetResponse::$k_currency}. Decimal string.
      *
      * @var string|null
@@ -102,7 +118,8 @@ class TicketListGetResponseOrder
     public ?string $m_total = null;
 
     /**
-     * Full name of the buyer. Empty for a guest.
+     * Full name of the buyer. For a guest, the name given at the time of the order. Empty if a guest gave
+     * none.
      *
      * @var string|null
      */
@@ -132,6 +149,7 @@ class TicketListGetResponseOrder
         $this->is_email = isset($data['is_email']) ? (bool)$data['is_email'] : null;
         $this->is_guest = isset($data['is_guest']) ? (bool)$data['is_guest'] : null;
         $this->k_purchase = isset($data['k_purchase']) ? (string)$data['k_purchase'] : null;
+        $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;
         $this->m_refund = isset($data['m_refund']) ? (string)$data['m_refund'] : null;
         $this->m_subtotal = isset($data['m_subtotal']) ? (string)$data['m_subtotal'] : null;
         $this->m_surcharge = isset($data['m_surcharge']) ? (string)$data['m_surcharge'] : null;

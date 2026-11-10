@@ -158,10 +158,6 @@ class VisitStatusGetResponse
     /**
      * The .ics file for adding the service to a phone calendar.
      *
-     * For a Phone Call appointment, the description has the number only if the current user may see it: the
-     * client,
-     * the user who booked, or staff with the privilege to see contact details of clients.
-     *
      * @var string|null
      */
     public ?string $s_calendar_file_content = null;
