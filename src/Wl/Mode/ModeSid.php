@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Mode;
 /**
  * The source of a visit.
  *
- * Last used ID: 34.
+ * Last used ID: 35.
  *
  * Values:
  * - 28 (`API`): Action made via Api Endpoint. Default for leads created via API, unless overridden.
@@ -33,7 +33,7 @@ namespace WlSdk\Wl\Mode;
  * - 17 (`SMS`): Action made via SMS.
  * - 4 (`SPA_BACKEND`): Staff booked session from spa backend.
  * - 3 (`SPA_FRONTEND`): Client booked session from spa frontend.
- * - 34 (`STAFF_KIOSK`): Staff member checked the client in at the staff check-in kiosk.
+ * - 35 (`STAFF_KIOSK`): Staff member checked the client in at the staff check-in kiosk.
  * - 10 (`SYSTEM`): Created by system.
  * - 6 (`UNDEFINED`): Means that we did not define mode.
  * - 16 (`WEB_APP_ATTENDANCE`): Client booked session from Attendance Web App.
@@ -115,7 +115,7 @@ class ModeSid
     public const SPA_FRONTEND = 3;
 
     /** Staff member checked the client in at the staff check-in kiosk. */
-    public const STAFF_KIOSK = 34;
+    public const STAFF_KIOSK = 35;
 
     /** Created by system. */
     public const SYSTEM = 10;
