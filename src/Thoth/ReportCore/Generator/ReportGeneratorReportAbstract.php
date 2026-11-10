@@ -10,25 +10,6 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * profile, listing the latest Progress Log entry (within a date range)
  *   for each client. Each row represents a unique client.
  * - 1849 (`Thoth\ProgressLog\Report\ProgressLogListReport`): Progress log list report.
- * - 1777 (`Thoth\MarketingCampaigns\Report\CampaignDetail\CampaignDetailReport`): "Marketing Campaigns" detail report.
- * - 1763 (`Thoth\MarketingCampaigns\Report\CampaignList\CampaignListReport`): "Marketing Campaigns" list report.
- * - 799 (`Thoth\Report\SalesReport\Transaction\TransactionAllPaymentReport`): "All Transactions" report.
- *
- *   This is a placeholder for now.
- * - 739 (`Thoth\Report\SalesReport\Transaction\TransactionAllItemReport`): "All Transactions" report / "All Sales"
- * report (item view).
- * - 1350 (`Thoth\Report\SalesReport\Transaction\TransactionFailReport`): "Failed Transactions" report.
- * - 1255 (`Thoth\Report\SalesReport\Client\TransactionAllPaymentClientReport`): Report about user's transactions.
- * - 1321 (`Thoth\Report\SalesReport\Client\TransactionAllPaymentStaffClientReport`): Report about client's
- * transactions.
- * - 1324 (`Thoth\Report\SalesReport\Client\TransactionAllItemStaffClientReport`): Client's 'Purchases' report.
- * - 900 (`Thoth\Report\SalesReport\Product\ProductCostItemReport`): "Cost of Goods Sold" report.
- * - 919 (`Thoth\ReportCore\Generator\Example\ExampleReport`): Example report used to demonstrate report creation in
- * step by step guide.
- *
- *   See `namespace.Wl/Report/Generator/doc/how-to-create-a-report.md`.
- * - 2226 (`Thoth\ReportCore\QueryEngine\Report\ReportQueryReport`): Executes a registry-stored SQL query and exposes
- * the result as a report.
  * - 1271 (`Wl\Collector\Report\DebtReport`): Report with list of debts that should be sent to third party service to
  * collect a debt by force.
  * - 1290 (`Wl\Collector\Report\TransactionReport`): Report with list of all debt payments.
@@ -50,70 +31,27 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 1791 (`Wl\Lead\Report\LeadManagementReport`): "Lead Management Report".
  * - 1556 (`Wl\Visit\Report\VisitBuySummaryReport`): Controls list report for attendance.
  * - 1740 (`Wl\Visit\Report\VisitLifetimeReport`): Controls list for "Lifetime Value & Visit Milestones" report.
- * - 2316 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReport`): "Bulk Charges" report. Summary of
- * Bulk Billing batches created from the Clients tab.
+ * - 2495 (`Wl\Attendance\Franchisor\FranchisorAttendanceReport`): External attendance report of a franchisor.
+ *   Is developed as microservice. This class only provides access validation and URL generation.
+ * - 1777 (`Thoth\MarketingCampaigns\Report\CampaignDetail\CampaignDetailReport`): "Marketing Campaigns" detail report.
+ * - 1763 (`Thoth\MarketingCampaigns\Report\CampaignList\CampaignListReport`): "Marketing Campaigns" list report.
+ * - 799 (`Thoth\Report\SalesReport\Transaction\TransactionAllPaymentReport`): "All Transactions" report.
  *
- *   There is no persisted "expected total" for a batch - `Wl\Billing\Bulk\PurchaseBatchManager::create()` does not
- *   compute or store one. It does, however, freeze each item's price into `wl_purchase_batch_item.m_price` at that
- *   same moment, and `Wl\Billing\Bulk\PurchaseBatchBill::billClient()` bills every client off that frozen price, not
- *   off the price list current at billing time. `Total Amount` therefore combines the already-charged clients'
- *   actual `RsPurchaseSql::$f_sum`, `m_surcharge` with a re-pricing (via `BulkBillingManager::purchaseItemTotal()`,
- *   passed the same frozen `m_price`) of the clients still pending/failed - see
- *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
+ *   This is a placeholder for now.
+ * - 739 (`Thoth\Report\SalesReport\Transaction\TransactionAllItemReport`): "All Transactions" report / "All Sales"
+ * report (item view).
+ * - 1350 (`Thoth\Report\SalesReport\Transaction\TransactionFailReport`): "Failed Transactions" report.
+ * - 1255 (`Thoth\Report\SalesReport\Client\TransactionAllPaymentClientReport`): Report about user's transactions.
+ * - 1321 (`Thoth\Report\SalesReport\Client\TransactionAllPaymentStaffClientReport`): Report about client's
+ * transactions.
+ * - 1324 (`Thoth\Report\SalesReport\Client\TransactionAllItemStaffClientReport`): Client's 'Purchases' report.
+ * - 900 (`Thoth\Report\SalesReport\Product\ProductCostItemReport`): "Cost of Goods Sold" report.
+ * - 2226 (`Thoth\ReportCore\QueryEngine\Report\ReportQueryReport`): Executes a registry-stored SQL query and exposes
+ * the result as a report.
+ * - 919 (`Thoth\ReportCore\Generator\Example\ExampleReport`): Example report used to demonstrate report creation in
+ * step by step guide.
  *
- *   The `Wl\Billing\Bulk\*` references above are plain text, not `{@link}` tags, on purpose - this class docblock is
- *   surfaced as the `Bulk Charges` entry's description in the `$cid_report` enum of every report-facing API
- *   (`{@link \WlSdk\Thoth\ReportCore\Generator\Query}`, `{@link \WlSdk\Wl\Report\Access}`, and others), and the
- * OpenAPI
- *   generator rejects `{@link}` references to `Wl\Billing\Bulk\*` there as internal-class leaks into public docs.
- * - 2325 (`Thoth\Report\SalesReport\Transaction\BulkChargesDetail\BulkChargesDetailReport`): "Bulk Charges" batch
- * detail report. Client-level drill-down for a single batch, reached from
- *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s `Batch ID`/`Total Clients` columns.
- *
- *   `Subtotal`/`Discount Amount`/`Total Taxes`/`Purchase Total` are read off `\Wl\Purchase\Info\PurchaseInfo` once a
- *   client has been billed (`\Wl\Billing\Bulk\PurchaseBatchUserStatusSid::CHARGED`), or re-priced via
- *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} for a `PENDING`/`FAIL` client not billed
- * yet - see
- *   SAL-1180. The per-tax-name `Custom tax` columns (e.g. `HST Tax`/`GST Tax`) are dynamic - one per
- *   business-configured `\RsTax::get()` entry - added in {@link
- * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} and
- *   populated in {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} from
- * `\Wl\Purchase\PurchaseItemInfo::$a_tax` for a
- *   billed client (same mechanism as
- *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s own per-tax
- *   columns), or from `_clientExpectedGet()`'s own re-priced `a_tax_by_name` for a `PENDING`/`FAIL` client - see
- *   SAL-1195.
- * - 1572 (`Thoth\Report\SalesReport\Transaction\Cash\SummaryReport`): "Cash Reconciliation Summary" report.
- *   This report is only accessible as a part of "Sales and Attendance Summary" report.
- * - 1283 (`Thoth\Report\SalesReport\Transaction\Batch\BatchReport`): "Batch Report".
- *
- *   Report by transactions that are bathing.
- *   Batching is a process when all transactions are sent to processing by merchant in a certain time of next day.
- * - 1908 (`Thoth\Report\SalesReport\Client\AccountReport\AccountHistoryReport`): "Account Balance History" report.
- * - 2223 (`Thoth\Report\SalesReport\Client\ClientStatementHistoryReport\ClientStatementHistoryReport`): "Statement
- * History" report.
- *
- *   Lists account statements generated for a client.
- * - 1295 (`Thoth\Report\SalesReport\Client\SummaryReport\SummaryReport`): "Sales Summary by Client" report.
- * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -> Memberships
- * Details by Location" report. Detailed list of all memberships in the franchise.
- * - 1498 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReport`): Franchise "Memberships Summary by
- * Location" report.
- * - 1268 (`Thoth\Report\SalesReport\Tag\Summary\ListReport`): "Sales Summary by Revenue Category" report.
- * - 1262 (`Thoth\Report\SalesReport\Tag\Detail\ListRevenueReport`): "Sales Details by Revenue Category" report.
- * - 1031 (`Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryReport`): Generator class for "Sales
- * Summary By Location" report (item view).
- * - 1042 (`Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryPaymentReport`): Generator class for
- * "Sales Summary By Location" report (payment view).
- * - 1398 (`Thoth\Report\SalesReport\PayMethod\SummaryReport\SummaryReport`): "Sales Summary by Payment Method" report.
- * - 1264 (`Thoth\Report\SalesReport\PurchaseOption\Summary\SummaryReport`): "Sales Summary by Purchase Options"
- * report.
- * - 1216 (`Thoth\Report\SalesReport\Integration\Autymate\AutymateTransactionAllItemReport`): Autymate extension of the
- * "All Transactions" report.
- *   The Autymate user is able to access the "All Transactions" report, but only for the businesses they have an
- * agreement with.
- * - 1254 (`Thoth\WlPay\Transaction\StripeCom\PayoutReconciliation\PayoutReconciliationReport`): "Stripe Payout
- * Reconciliation" report.
+ *   See `namespace.Wl/Report/Generator/doc/how-to-create-a-report.md`.
  * - 1697 (`Wl\Mail\History\Report\MailHistoryReport`): "Email History" report.
  * - 1751 (`Wl\Staff\Pay\Report\StaffPaySummaryReport`): "Payroll Summary" report.
  * - 1744 (`Wl\Staff\Pay\Report\StaffPayDetailReport`): Report to show detailed list of instructor's classes and
@@ -137,30 +75,70 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 1522 (`Wl\Attendance\Report\Appointment\DetailReport`): Controls detailed appointment analysis report in list
  * format.
  * - 1523 (`Wl\Attendance\Report\Appointment\SummaryReport`): Controls appointment summary report in list format.
- * - 1557 (`Thoth\Report\SalesReport\Transaction\Batch\Summary\ApprovedReport`): "Batch Reconciliation Summary"
- * (Approved) report.
- * - 1560 (`Thoth\Report\SalesReport\Transaction\Batch\Summary\SettledReport`): "Batch Reconciliation Summary"
- * (Settled) report.
- * - 1034 (`Thoth\Report\SalesReport\Franchise\Location\Detail\PurchaseFranchiseLocationPaymentReport`): Generates data
- * for "Sales Details By Location" corporate report.
- * - 961 (`Thoth\Report\SalesReport\Franchise\Location\Detail\PurchaseFranchiseLocationReport`): Generates data for
- * "Sales Details By Location" corporate report.
- * - 1041 (`Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryPaymentReport`):
- * Generates data for "Sales Summary By Location" corporate report.
+ * - 2325 (`Thoth\Report\SalesReport\Transaction\BulkChargesDetail\BulkChargesDetailReport`): "Bulk Charges" batch
+ * detail report. Client-level drill-down for a single batch, reached from
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s `Batch ID`/`Total Clients` columns.
  *
+ *   `Subtotal`/`Discount Amount`/`Total Taxes`/`Purchase Total` are read off `\Wl\Purchase\Info\PurchaseInfo` once a
+ *   client has been billed (`\Wl\Billing\Bulk\PurchaseBatchUserStatusSid::CHARGED`), or re-priced via
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} for a `PENDING`/`FAIL` client not billed
+ * yet - see
+ *   SAL-1180. The per-tax-name `Custom tax` columns (e.g. `HST Tax`/`GST Tax`) are dynamic - one per
+ *   business-configured `\RsTax::get()` entry - added in {@link
+ * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} and
+ *   populated in {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} from
+ * `\Wl\Purchase\PurchaseItemInfo::$a_tax` for a
+ *   billed client (same mechanism as
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s own per-tax
+ *   columns), or from `_clientExpectedGet()`'s own re-priced `a_tax_by_name` for a `PENDING`/`FAIL` client - see
+ *   SAL-1195.
+ * - 2316 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReport`): "Bulk Charges" report. Summary of
+ * Bulk Billing batches created from the Clients tab.
  *
- *   While intuitively summary should be same regardless of whether it was calculated from rows grouped by purchase
- * items
- *   or transactions, it may actually differ due to difference in how data for them is filtered. E.g. transaction is
- *   counted whole even if not all items within its purchase match selected filters in payment view, and in reverse
- *   purchase item's price is counted is full even though not all transactions it was paid with match the payment
- * methods
- *   filter.
- * - 1025 (`Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryReport`): Generates
- * data for "Sales Summary By Location" corporate report.
- * - 1274 (`Thoth\Report\SalesReport\Franchise\Sale\Compare\CompareListReport`): "YOY Sales Comparison" report.
- * - 1580 (`Thoth\Report\SalesReport\Closeout\Report\PurchaseOption\UsageReport`): "Purchase Option Usage Summary"
+ *   There is no persisted "expected total" for a batch - `Wl\Billing\Bulk\PurchaseBatchManager::create()` does not
+ *   compute or store one. It does, however, freeze each item's price into `wl_purchase_batch_item.m_price` at that
+ *   same moment, and `Wl\Billing\Bulk\PurchaseBatchBill::billClient()` bills every client off that frozen price, not
+ *   off the price list current at billing time. `Total Amount` therefore combines the already-charged clients'
+ *   actual `RsPurchaseSql::$f_sum`, `m_surcharge` with a re-pricing (via `BulkBillingManager::purchaseItemTotal()`,
+ *   passed the same frozen `m_price`) of the clients still pending/failed - see
+ *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
+ *
+ *   The `Wl\Billing\Bulk\*` references above are plain text, not `{@link}` tags, on purpose - this class docblock is
+ *   surfaced as the `Bulk Charges` entry's description in the `$cid_report` enum of every report-facing API
+ *   (`{@link \WlSdk\Thoth\ReportCore\Generator\Query}`, `{@link \WlSdk\Wl\Report\Access}`, and others), and the
+ * OpenAPI
+ *   generator rejects `{@link}` references to `Wl\Billing\Bulk\*` there as internal-class leaks into public docs.
+ * - 1572 (`Thoth\Report\SalesReport\Transaction\Cash\SummaryReport`): "Cash Reconciliation Summary" report.
+ *   This report is only accessible as a part of "Sales and Attendance Summary" report.
+ * - 1283 (`Thoth\Report\SalesReport\Transaction\Batch\BatchReport`): "Batch Report".
+ *
+ *   Report by transactions that are bathing.
+ *   Batching is a process when all transactions are sent to processing by merchant in a certain time of next day.
+ * - 1908 (`Thoth\Report\SalesReport\Client\AccountReport\AccountHistoryReport`): "Account Balance History" report.
+ * - 2223 (`Thoth\Report\SalesReport\Client\ClientStatementHistoryReport\ClientStatementHistoryReport`): "Statement
+ * History" report.
+ *
+ *   Lists account statements generated for a client.
+ * - 1295 (`Thoth\Report\SalesReport\Client\SummaryReport\SummaryReport`): "Sales Summary by Client" report.
+ * - 1031 (`Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryReport`): Generator class for "Sales
+ * Summary By Location" report (item view).
+ * - 1042 (`Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryPaymentReport`): Generator class for
+ * "Sales Summary By Location" report (payment view).
+ * - 1448 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReport`): "Enterprise Reports -> Memberships
+ * Details by Location" report. Detailed list of all memberships in the franchise.
+ * - 1498 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReport`): Franchise "Memberships Summary by
+ * Location" report.
+ * - 1262 (`Thoth\Report\SalesReport\Tag\Detail\ListRevenueReport`): "Sales Details by Revenue Category" report.
+ * - 1268 (`Thoth\Report\SalesReport\Tag\Summary\ListReport`): "Sales Summary by Revenue Category" report.
+ * - 1398 (`Thoth\Report\SalesReport\PayMethod\SummaryReport\SummaryReport`): "Sales Summary by Payment Method" report.
+ * - 1264 (`Thoth\Report\SalesReport\PurchaseOption\Summary\SummaryReport`): "Sales Summary by Purchase Options"
  * report.
+ * - 1216 (`Thoth\Report\SalesReport\Integration\Autymate\AutymateTransactionAllItemReport`): Autymate extension of the
+ * "All Transactions" report.
+ *   The Autymate user is able to access the "All Transactions" report, but only for the businesses they have an
+ * agreement with.
+ * - 1254 (`Thoth\WlPay\Transaction\StripeCom\PayoutReconciliation\PayoutReconciliationReport`): "Stripe Payout
+ * Reconciliation" report.
  * - 1748 (`Wl\Staff\Pay\Report\StaffMemberLimiter\FilterLimiterReport`): Supporting report which used for payroll
  * details filter limiter.
  * - 2218 (`Wl\Login\Promotion\GuestPass\Report\GuestPassHistoryReport`): "Guest Pass History" report shown on the
@@ -189,6 +167,30 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * - 1456 (`Wl\Visit\Location\Cross\Detail\VisitLocationCrossDetailReport`): "Cross-Location Visit Details" report.
  * - 1480 (`Wl\Visit\Location\Cross\Summary\VisitLocationCrossDetailSummaryReport`): "Cross-Location Visit Summary"
  * report.
+ * - 1557 (`Thoth\Report\SalesReport\Transaction\Batch\Summary\ApprovedReport`): "Batch Reconciliation Summary"
+ * (Approved) report.
+ * - 1560 (`Thoth\Report\SalesReport\Transaction\Batch\Summary\SettledReport`): "Batch Reconciliation Summary"
+ * (Settled) report.
+ * - 1034 (`Thoth\Report\SalesReport\Franchise\Location\Detail\PurchaseFranchiseLocationPaymentReport`): Generates data
+ * for "Sales Details By Location" corporate report.
+ * - 961 (`Thoth\Report\SalesReport\Franchise\Location\Detail\PurchaseFranchiseLocationReport`): Generates data for
+ * "Sales Details By Location" corporate report.
+ * - 1041 (`Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryPaymentReport`):
+ * Generates data for "Sales Summary By Location" corporate report.
+ *
+ *
+ *   While intuitively summary should be same regardless of whether it was calculated from rows grouped by purchase
+ * items
+ *   or transactions, it may actually differ due to difference in how data for them is filtered. E.g. transaction is
+ *   counted whole even if not all items within its purchase match selected filters in payment view, and in reverse
+ *   purchase item's price is counted is full even though not all transactions it was paid with match the payment
+ * methods
+ *   filter.
+ * - 1025 (`Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryReport`): Generates
+ * data for "Sales Summary By Location" corporate report.
+ * - 1274 (`Thoth\Report\SalesReport\Franchise\Sale\Compare\CompareListReport`): "YOY Sales Comparison" report.
+ * - 1580 (`Thoth\Report\SalesReport\Closeout\Report\PurchaseOption\UsageReport`): "Purchase Option Usage Summary"
+ * report.
  * - 1472 (`Wl\Visit\Franchise\Location\Cross\Detail\VisitFranchiseLocationCrossDetailReport`): Franchise
  * "Cross-Location Visit Details" report.
  * - 1470 (`Wl\Visit\Franchise\Location\Cross\Detail\VisitFranchiseeLocationCrossDetailReport`): Franchisee
@@ -205,39 +207,6 @@ class ReportGeneratorReportAbstract
 
     /** Progress log list report. */
     public const ProgressLogListReport = 1849;
-
-    /** "Marketing Campaigns" detail report. */
-    public const CampaignDetailReport = 1777;
-
-    /** "Marketing Campaigns" list report. */
-    public const CampaignListReport = 1763;
-
-    /** "All Transactions" report. */
-    public const TransactionAllPaymentReport = 799;
-
-    /** "All Transactions" report / "All Sales" report (item view). */
-    public const TransactionAllItemReport = 739;
-
-    /** "Failed Transactions" report. */
-    public const TransactionFailReport = 1350;
-
-    /** Report about user's transactions. */
-    public const TransactionAllPaymentClientReport = 1255;
-
-    /** Report about client's transactions. */
-    public const TransactionAllPaymentStaffClientReport = 1321;
-
-    /** Client's 'Purchases' report. */
-    public const TransactionAllItemStaffClientReport = 1324;
-
-    /** "Cost of Goods Sold" report. */
-    public const ProductCostItemReport = 900;
-
-    /** Example report used to demonstrate report creation in step by step guide. */
-    public const ExampleReport = 919;
-
-    /** Executes a registry-stored SQL query and exposes the result as a report. */
-    public const ReportQueryReport = 2226;
 
     /** Report with list of debts that should be sent to third party service to collect a debt by force. */
     public const DebtReport = 1271;
@@ -281,56 +250,41 @@ class ReportGeneratorReportAbstract
     /** Controls list for "Lifetime Value & Visit Milestones" report. */
     public const VisitLifetimeReport = 1740;
 
-    /** "Bulk Charges" report. Summary of Bulk Billing batches created from the Clients tab. */
-    public const BulkChargesReport = 2316;
+    /** External attendance report of a franchisor. */
+    public const FranchisorAttendanceReport = 2495;
 
-    /** "Bulk Charges" batch detail report. Client-level drill-down for a single batch, reached from */
-    public const BulkChargesDetailReport = 2325;
+    /** "Marketing Campaigns" detail report. */
+    public const CampaignDetailReport = 1777;
 
-    /** "Cash Reconciliation Summary" report. */
-    public const Cash_SummaryReport = 1572;
+    /** "Marketing Campaigns" list report. */
+    public const CampaignListReport = 1763;
 
-    /** "Batch Report". */
-    public const BatchReport = 1283;
+    /** "All Transactions" report. */
+    public const TransactionAllPaymentReport = 799;
 
-    /** "Account Balance History" report. */
-    public const AccountHistoryReport = 1908;
+    /** "All Transactions" report / "All Sales" report (item view). */
+    public const TransactionAllItemReport = 739;
 
-    /** "Statement History" report. */
-    public const ClientStatementHistoryReport = 2223;
+    /** "Failed Transactions" report. */
+    public const TransactionFailReport = 1350;
 
-    /** "Sales Summary by Client" report. */
-    public const Client_SummaryReport_SummaryReport = 1295;
+    /** Report about user's transactions. */
+    public const TransactionAllPaymentClientReport = 1255;
 
-    /** "Enterprise Reports -> Memberships Details by Location" report. Detailed list of all memberships in the franchise. */
-    public const MembershipDetailReport = 1448;
+    /** Report about client's transactions. */
+    public const TransactionAllPaymentStaffClientReport = 1321;
 
-    /** Franchise "Memberships Summary by Location" report. */
-    public const MembershipSummaryReport = 1498;
+    /** Client's 'Purchases' report. */
+    public const TransactionAllItemStaffClientReport = 1324;
 
-    /** "Sales Summary by Revenue Category" report. */
-    public const ListReport = 1268;
+    /** "Cost of Goods Sold" report. */
+    public const ProductCostItemReport = 900;
 
-    /** "Sales Details by Revenue Category" report. */
-    public const ListRevenueReport = 1262;
+    /** Executes a registry-stored SQL query and exposes the result as a report. */
+    public const ReportQueryReport = 2226;
 
-    /** Generator class for "Sales Summary By Location" report (item view). */
-    public const PurchaseLocationSummaryReport = 1031;
-
-    /** Generator class for "Sales Summary By Location" report (payment view). */
-    public const PurchaseLocationSummaryPaymentReport = 1042;
-
-    /** "Sales Summary by Payment Method" report. */
-    public const PayMethod_SummaryReport_SummaryReport = 1398;
-
-    /** "Sales Summary by Purchase Options" report. */
-    public const Summary_SummaryReport = 1264;
-
-    /** Autymate extension of the "All Transactions" report. */
-    public const AutymateTransactionAllItemReport = 1216;
-
-    /** "Stripe Payout Reconciliation" report. */
-    public const PayoutReconciliationReport = 1254;
+    /** Example report used to demonstrate report creation in step by step guide. */
+    public const ExampleReport = 919;
 
     /** "Email History" report. */
     public const MailHistoryReport = 1697;
@@ -389,29 +343,56 @@ class ReportGeneratorReportAbstract
     /** Controls appointment summary report in list format. */
     public const Appointment_SummaryReport = 1523;
 
-    /** "Batch Reconciliation Summary" (Approved) report. */
-    public const ApprovedReport = 1557;
+    /** "Bulk Charges" batch detail report. Client-level drill-down for a single batch, reached from */
+    public const BulkChargesDetailReport = 2325;
 
-    /** "Batch Reconciliation Summary" (Settled) report. */
-    public const SettledReport = 1560;
+    /** "Bulk Charges" report. Summary of Bulk Billing batches created from the Clients tab. */
+    public const BulkChargesReport = 2316;
 
-    /** Generates data for "Sales Details By Location" corporate report. */
-    public const PurchaseFranchiseLocationPaymentReport = 1034;
+    /** "Cash Reconciliation Summary" report. */
+    public const Cash_SummaryReport = 1572;
 
-    /** Generates data for "Sales Details By Location" corporate report. */
-    public const PurchaseFranchiseLocationReport = 961;
+    /** "Batch Report". */
+    public const BatchReport = 1283;
 
-    /** Generates data for "Sales Summary By Location" corporate report. */
-    public const PurchaseFranchiseLocationSummaryPaymentReport = 1041;
+    /** "Account Balance History" report. */
+    public const AccountHistoryReport = 1908;
 
-    /** Generates data for "Sales Summary By Location" corporate report. */
-    public const PurchaseFranchiseLocationSummaryReport = 1025;
+    /** "Statement History" report. */
+    public const ClientStatementHistoryReport = 2223;
 
-    /** "YOY Sales Comparison" report. */
-    public const CompareListReport = 1274;
+    /** "Sales Summary by Client" report. */
+    public const Client_SummaryReport_SummaryReport = 1295;
 
-    /** "Purchase Option Usage Summary" report. */
-    public const UsageReport = 1580;
+    /** Generator class for "Sales Summary By Location" report (item view). */
+    public const PurchaseLocationSummaryReport = 1031;
+
+    /** Generator class for "Sales Summary By Location" report (payment view). */
+    public const PurchaseLocationSummaryPaymentReport = 1042;
+
+    /** "Enterprise Reports -> Memberships Details by Location" report. Detailed list of all memberships in the franchise. */
+    public const MembershipDetailReport = 1448;
+
+    /** Franchise "Memberships Summary by Location" report. */
+    public const MembershipSummaryReport = 1498;
+
+    /** "Sales Details by Revenue Category" report. */
+    public const ListRevenueReport = 1262;
+
+    /** "Sales Summary by Revenue Category" report. */
+    public const ListReport = 1268;
+
+    /** "Sales Summary by Payment Method" report. */
+    public const PayMethod_SummaryReport_SummaryReport = 1398;
+
+    /** "Sales Summary by Purchase Options" report. */
+    public const Summary_SummaryReport = 1264;
+
+    /** Autymate extension of the "All Transactions" report. */
+    public const AutymateTransactionAllItemReport = 1216;
+
+    /** "Stripe Payout Reconciliation" report. */
+    public const PayoutReconciliationReport = 1254;
 
     /** Supporting report which used for payroll details filter limiter. */
     public const StaffMemberLimiter_FilterLimiterReport = 1748;
@@ -448,6 +429,30 @@ class ReportGeneratorReportAbstract
 
     /** "Cross-Location Visit Summary" report. */
     public const VisitLocationCrossDetailSummaryReport = 1480;
+
+    /** "Batch Reconciliation Summary" (Approved) report. */
+    public const ApprovedReport = 1557;
+
+    /** "Batch Reconciliation Summary" (Settled) report. */
+    public const SettledReport = 1560;
+
+    /** Generates data for "Sales Details By Location" corporate report. */
+    public const PurchaseFranchiseLocationPaymentReport = 1034;
+
+    /** Generates data for "Sales Details By Location" corporate report. */
+    public const PurchaseFranchiseLocationReport = 961;
+
+    /** Generates data for "Sales Summary By Location" corporate report. */
+    public const PurchaseFranchiseLocationSummaryPaymentReport = 1041;
+
+    /** Generates data for "Sales Summary By Location" corporate report. */
+    public const PurchaseFranchiseLocationSummaryReport = 1025;
+
+    /** "YOY Sales Comparison" report. */
+    public const CompareListReport = 1274;
+
+    /** "Purchase Option Usage Summary" report. */
+    public const UsageReport = 1580;
 
     /** Franchise "Cross-Location Visit Details" report. */
     public const VisitFranchiseLocationCrossDetailReport = 1472;

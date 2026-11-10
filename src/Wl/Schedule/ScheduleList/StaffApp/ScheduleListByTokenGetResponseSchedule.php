@@ -35,8 +35,9 @@ class ScheduleListByTokenGetResponseSchedule
     public ?array $a_staff = null;
 
     /**
-     * Information about staff members who conduct this session. The keys are .
-     * Values are array with data:
+     * Information about staff members who conduct this session. The keys are staff keys.
+     *
+     * Every value is an array with the following data.
      *
      * @var ScheduleListByTokenGetResponseScheduleStaffInfo|null
      */
@@ -50,7 +51,7 @@ class ScheduleListByTokenGetResponseSchedule
     public ?array $a_user = null;
 
     /**
-     * List of virtual locations. Each value is .
+     * List of virtual locations.
      *
      * @var string[]|null
      */
@@ -170,6 +171,14 @@ class ScheduleListByTokenGetResponseSchedule
     public ?bool $is_repeat = null;
 
     /**
+     * `true` if the session belongs to a ticketed event, `false` otherwise.
+     * Always `false` for classes, appointments, assets and events that are not ticketed.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
+    /**
      * The appointment key.
      * If the session isn't an appointment, this will be `0`.
      *
@@ -283,6 +292,7 @@ class ScheduleListByTokenGetResponseSchedule
         $this->is_arrive = isset($data['is_arrive']) ? (bool)$data['is_arrive'] : null;
         $this->is_pay = isset($data['is_pay']) ? (bool)$data['is_pay'] : null;
         $this->is_repeat = isset($data['is_repeat']) ? (bool)$data['is_repeat'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;
         $this->dt_confirm = isset($data['dt_confirm']) ? (string)$data['dt_confirm'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;

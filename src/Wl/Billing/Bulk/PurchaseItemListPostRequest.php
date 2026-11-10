@@ -65,7 +65,7 @@ class PurchaseItemListPostRequest
     public ?bool $is_tax = null;
 
     /**
-     * List of client user keys to bill joined with comma.
+     * List of client user keys to bill joined with comma. Every key must be a client of the business.
      *
      * @var string|null
      */

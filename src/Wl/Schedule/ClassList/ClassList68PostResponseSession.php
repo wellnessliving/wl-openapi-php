@@ -208,6 +208,14 @@ class ClassList68PostResponseSession
     public ?int $id_deny_reason = null;
 
     /**
+     * `true` if the event is a block event: all its sessions are booked together. `false` for a non-block event
+     * and for a class. Makes sense only if `is_event` is `true`.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_block = null;
+
+    /**
      * Whether current class was booked by current client. Only present if
      * {@link \WlSdk\Wl\Schedule\ClassList\ClassList68} is `true`. `null` if not requested.
      *
@@ -259,6 +267,15 @@ class ClassList68PostResponseSession
      * @var bool|null
      */
     public ?bool $is_special_instructions = null;
+
+    /**
+     * `true` if the event is a ticketed event; `false` otherwise.
+     * Tickets are booked into the same capacity as regular bookings, so `i_capacity` and `i_book`
+     * show how many tickets are sold and whether the event is sold out.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
 
     /**
      * If `true`, this class is virtual. Otherwise, this will be `false`.
@@ -375,6 +392,7 @@ class ClassList68PostResponseSession
         $this->i_wait_limit = isset($data['i_wait_limit']) ? (int)$data['i_wait_limit'] : null;
         $this->i_wait_spot = isset($data['i_wait_spot']) ? (int)$data['i_wait_spot'] : null;
         $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
+        $this->is_block = isset($data['is_block']) ? (bool)$data['is_block'] : null;
         $this->is_book = isset($data['is_book']) ? (bool)$data['is_book'] : null;
         $this->is_age_public = isset($data['is_age_public']) ? (bool)$data['is_age_public'] : null;
         $this->is_book_for_guest = isset($data['is_book_for_guest']) ? (bool)$data['is_book_for_guest'] : null;
@@ -382,6 +400,7 @@ class ClassList68PostResponseSession
         $this->is_cancellation_enabled = isset($data['is_cancellation_enabled']) ? (bool)$data['is_cancellation_enabled'] : null;
         $this->is_event = isset($data['is_event']) ? (bool)$data['is_event'] : null;
         $this->is_special_instructions = isset($data['is_special_instructions']) ? (bool)$data['is_special_instructions'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
         $this->is_wait = isset($data['is_wait']) ? (bool)$data['is_wait'] : null;
         $this->is_wait_list = isset($data['is_wait_list']) ? (bool)$data['is_wait_list'] : null;

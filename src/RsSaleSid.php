@@ -23,6 +23,7 @@ namespace WlSdk;
  * \WlSdk\RsProgramCategorySid}.
  * - 13 (`PROMOTION_VIDEO`): Promotions with program category {@link \WlSdk\RsProgramCategorySid}.
  * - 10 (`QUICK_BUY`): Products: water, t-shirts, etc. That is available for quick buy.
+ * - 16 (`TICKET`): Ticket for a ticketed event.
  * - 14 (`TUITION`): Tuition.
  * - 15 (`TUITION_FEE`): Tuition fees.
  */
@@ -66,6 +67,9 @@ class RsSaleSid
 
     /** Products: water, t-shirts, etc. That is available for quick buy. */
     public const QUICK_BUY = 10;
+
+    /** Ticket for a ticketed event. */
+    public const TICKET = 16;
 
     /** Tuition. */
     public const TUITION = 14;

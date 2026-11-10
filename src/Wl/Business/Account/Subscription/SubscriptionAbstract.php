@@ -50,6 +50,8 @@ namespace WlSdk\Wl\Business\Account\Subscription;
  * - 885 (`Wl\Business\Account\Subscription\Review\ReviewSubscription`):
  * Wl\Business\Account\Subscription\Review\ReviewSubscription
  * - 882 (`Wl\Business\Account\Subscription\Asset\AssetSubscription`): Asset subscription settings reader.
+ * - 2366 (`Wl\Business\Account\Subscription\BridgeAthletic\BridgeAthleticSubscription`):
+ * Wl\Business\Account\Subscription\BridgeAthletic\BridgeAthleticSubscription
  */
 class SubscriptionAbstract
 {
@@ -133,4 +135,7 @@ class SubscriptionAbstract
 
     /** Asset subscription settings reader. */
     public const AssetSubscription = 882;
+
+    /** Wl\Business\Account\Subscription\BridgeAthletic\BridgeAthleticSubscription */
+    public const BridgeAthleticSubscription = 2366;
 }

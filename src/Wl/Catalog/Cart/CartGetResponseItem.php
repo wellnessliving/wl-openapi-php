@@ -38,7 +38,8 @@ class CartGetResponseItem
     public ?string $k_id = null;
 
     /**
-     * Additional configuration. Used only for `id_sale` = {@link \WlSdk\RsSaleSid}.
+     * Additional configuration. Used only for `id_sale` = {@link \WlSdk\RsSaleSid}
+     * and `id_sale` = {@link \WlSdk\RsSaleSid}.
      *
      * @var CartGetResponseItemConfig|null
      */

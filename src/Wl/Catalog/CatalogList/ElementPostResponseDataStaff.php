@@ -5,7 +5,8 @@ namespace WlSdk\Wl\Catalog\CatalogList;
 class ElementPostResponseDataStaff
 {
     /**
-     * @deprecated Legacy staff key.  Deprecated, use `uid_staff`.
+     * **DEPRECATED** Legacy staff key.
+     * Use `uid_staff` instead.
      *
      * @var string|null
      */

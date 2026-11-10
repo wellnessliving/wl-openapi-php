@@ -19,6 +19,15 @@ class ListGetResponseProductDuplicate
     public ?array $a_shop_category = null;
 
     /**
+     * List of ticket options available for booking the event. Empty if the item is not a
+     * ticketed event.
+     * Each element contains the following keys:
+     *
+     * @var ListGetResponseProductDuplicateTickets|null
+     */
+    public ?ListGetResponseProductDuplicateTickets $a_tickets = null;
+
+    /**
      * UTC creation date of the item in MySQL format.
      *
      * @var string|null
@@ -62,6 +71,14 @@ class ListGetResponseProductDuplicate
     public ?bool $is_introductory = null;
 
     /**
+     * `true` if the item is a ticketed event, `false` otherwise.
+     * Returned for items with `id_sale` equal to {@link \WlSdk\RsSaleSid} only.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
+    /**
      * The item key.
      *
      * @var string|null
@@ -100,12 +117,14 @@ class ListGetResponseProductDuplicate
     {
         $this->a_location = isset($data['a_location']) ? (array)$data['a_location'] : null;
         $this->a_shop_category = isset($data['a_shop_category']) ? (array)$data['a_shop_category'] : null;
+        $this->a_tickets = isset($data['a_tickets']) ? new ListGetResponseProductDuplicateTickets((array)$data['a_tickets']) : null;
         $this->dtu_create = isset($data['dtu_create']) ? (string)$data['dtu_create'] : null;
         $this->f_price = isset($data['f_price']) ? (string)$data['f_price'] : null;
         $this->hide_application = isset($data['hide_application']) ? (bool)$data['hide_application'] : null;
         $this->id_sale = isset($data['id_sale']) ? (int)$data['id_sale'] : null;
         $this->is_direct = isset($data['is_direct']) ? (bool)$data['is_direct'] : null;
         $this->is_introductory = isset($data['is_introductory']) ? (bool)$data['is_introductory'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->k_shop_category = isset($data['k_shop_category']) ? (string)$data['k_shop_category'] : null;
         $this->s_key = isset($data['s_key']) ? (string)$data['s_key'] : null;

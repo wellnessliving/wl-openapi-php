@@ -13,7 +13,7 @@ namespace WlSdk;
  *
  * Pay attention that all `\MailPrioritySid` must start with backslash.
  *
- * Last used ID: 224.
+ * Last used ID: 225.
  *
  * Values:
  * - 220 (`ABANDONED_CHECKOUT`): Sent when a client abandons a checkout (used in automations).
@@ -471,6 +471,9 @@ namespace WlSdk;
  *   including their contact details and any relevant notes from the conversation.
  * - 104 (`TASK_ASSIGN`): Sends when task assigned to staff.
  * - 99 (`TERM_COPY`): Send a copy of waiver.
+ * - 225 (`TICKET_PURCHASE`): Sent after a ticketed event is purchased.
+ *
+ *   Contains the order summary and QR codes of the tickets. Is sent to a buyer with or without an account.
  * - 112 (`USER_CAMPAIGN`): Global email campaigns allows to send email to all clients, business owners, admins, etc.
  * - 140 (`VIDEO_SUBSCRIPTION_UPGRADE`): Request a video subscription.
  *
@@ -1059,6 +1062,9 @@ class RsMailSid
 
     /** Send a copy of waiver. */
     public const TERM_COPY = 99;
+
+    /** Sent after a ticketed event is purchased. */
+    public const TICKET_PURCHASE = 225;
 
     /** Global email campaigns allows to send email to all clients, business owners, admins, etc. */
     public const USER_CAMPAIGN = 112;

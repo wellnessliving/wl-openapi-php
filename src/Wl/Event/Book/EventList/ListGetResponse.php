@@ -25,9 +25,30 @@ class ListGetResponse
      * Key is the event class key.
      * Value is `true` if the event is available for booking, `false` if it is unavailable.
      *
-     * @var bool[]|null
+     * @var array|null
      */
     public ?array $a_event_available = null;
+
+    /**
+     * Ticketed event map.
+     *
+     * Key is the event class key.
+     * Value is `true` if the event is a ticketed event, `false` otherwise.
+     *
+     * @var array|null
+     */
+    public ?array $a_event_ticket = null;
+
+    /**
+     * Ticket option map.
+     *
+     * Key is the event class key.
+     * Value is the list of ticket options available for booking the event. Empty if the event is not
+     * a ticketed event.
+     *
+     * @var array|null
+     */
+    public ?array $a_event_ticket_option = null;
 
     /**
      * `true` if exist at least one virtual event
@@ -43,6 +64,8 @@ class ListGetResponse
     {
         $this->a_event = isset($data['a_event']) ? (array)$data['a_event'] : null;
         $this->a_event_available = isset($data['a_event_available']) ? (array)$data['a_event_available'] : null;
+        $this->a_event_ticket = isset($data['a_event_ticket']) ? (array)$data['a_event_ticket'] : null;
+        $this->a_event_ticket_option = isset($data['a_event_ticket_option']) ? (array)$data['a_event_ticket_option'] : null;
         $this->is_virtual_service = isset($data['is_virtual_service']) ? (bool)$data['is_virtual_service'] : null;
     }
 }

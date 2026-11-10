@@ -34,8 +34,15 @@ namespace WlSdk\Core\WebSocket;
  * * Issue {@link \WlSdk\Core\WebSocket\ChannelAbstract} on it.
  *
  * Values:
- * - 735 (`Thoth\ReportCore\Generator\UpdateChannel`): A message is sent through this channel every time a report gets
- * updated.
+ * - 2389 (`Core\OAuth\AuthorizeChangeChannel`): The channel "the access of a user has changed": the authorization page
+ * of the user loads the request again.
+ *
+ *   A project sends a message when it changes what its OAuthAccessInterface::access() checks for the user, for
+ *   example when an administrator approves or rejects a request for access. The page `Core_OAuth_AuthorizeSpa`
+ *   subscribes while it shows a refusal of the project to a signed-in user, and on a message asks
+ *   AuthorizeApi again: the consent or the new refusal appears without a reload of the page. The message has
+ *   no data: only the fact of the change matters, so only the last message is kept. To send it, create an object, set
+ *   {@link \WlSdk\Core\WebSocket\ChannelBroadcast} and call {@link \WlSdk\Core\WebSocket\ChannelBroadcast}.
  * - 1921 (`Wl\Visit\VisitStatusChannel`): A message is sent through this channel when the status of a visit is
  * changed.
  * - 1583 (`Wl\Fitbuilder\MessageChannel`): Channel to inform Fitbuilder messenger about new information.
@@ -43,8 +50,13 @@ namespace WlSdk\Core\WebSocket;
  * - 733 (`Wl\Virtual\AccountUpdateChannel`): Channel to pass over information about virtual account release.
  * - 688 (`Wl\Virtual\MeetingScheduleChannel`): Channel to pass over information about meeting creation.
  * - 1342 (`Wl\Alert\AlertChannel`): A message is sent through this channel every time an alert created or read.
- * - 1421 (`Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusChannel`): Channel to pass over
- * information about ticket status.
+ * - 2382 (`Wl\Ticket\TicketScanChannel`): Channel to notify staff that the visit of a ticket of a session has been
+ * created or changed, for ex. checked in.
+ *
+ *   Staff members who watch the check-in list of the same session subscribe to the channel to keep the list and the
+ *   counters up to date. The message carries no personal data of the ticket holder: clients load them with the list.
+ * - 735 (`Thoth\ReportCore\Generator\UpdateChannel`): A message is sent through this channel every time a report gets
+ * updated.
  * - 19 (`Core\WebSocket\Example\ExampleFunctionChannel`): Example channel to test how asynchronous function calls
  * work.
  * - 1834 (`Wl\Mail\Domain\DomainVerifyStatusChannel`): Domain verification status verification channel.
@@ -69,8 +81,8 @@ namespace WlSdk\Core\WebSocket;
  * - 298 (`Wl\Schedule\ClassList\ClassListChannel`): Channel to notify user that class schedule is changed.
  * - 1657 (`Wl\Reception\Design\ReceptionDesignChannel`): Channel to pass over information about changing the Self
  * Check-In settings.
- * - 1736 (`Thoth\PayProcessor\Nuvei\Terminal\OMNIChannelApi\PaymentStatusChannel`): Channel to pass over information
- * about payment status.
+ * - 1421 (`Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusChannel`): Channel to pass over
+ * information about ticket status.
  * - 960 (`Wl\Business\Sms\Unread\SmsUnreadCountChannel`): Channel to pass over information about unread SMS in the
  * business.
  * - 34 (`Wl\Business\AuthorizeSupport\Request\RequestChannel`): Channel to listen requests to access from franchisee.
@@ -82,6 +94,8 @@ namespace WlSdk\Core\WebSocket;
  * changes of schedule.
  * - 828 (`Wl\Postcard\Campaign\CampaignEdit\AddressVerificationChannel`): Channel to pass over information about
  * address verification.
+ * - 1736 (`Thoth\PayProcessor\Nuvei\Terminal\OMNIChannelApi\PaymentStatusChannel`): Channel to pass over information
+ * about payment status.
  * - 963 (`Wl\Business\Sms\Chat\Dialog\DialogChannel`): Channel to pass over information about changing the dialog with
  * specific client.
  * - 952 (`Wl\Business\Sms\Chat\Dialog\MessageHistoryChannel`): Channel to pass over information about new message in
@@ -91,8 +105,8 @@ namespace WlSdk\Core\WebSocket;
  */
 class ChannelAbstract
 {
-    /** A message is sent through this channel every time a report gets updated. */
-    public const UpdateChannel = 735;
+    /** The channel "the access of a user has changed": the authorization page of the user loads the request again. */
+    public const AuthorizeChangeChannel = 2389;
 
     /** A message is sent through this channel when the status of a visit is changed. */
     public const VisitStatusChannel = 1921;
@@ -112,8 +126,11 @@ class ChannelAbstract
     /** A message is sent through this channel every time an alert created or read. */
     public const AlertChannel = 1342;
 
-    /** Channel to pass over information about ticket status. */
-    public const DirectConnectTicketStatusChannel = 1421;
+    /** Channel to notify staff that the visit of a ticket of a session has been created or changed, for ex. checked in. */
+    public const TicketScanChannel = 2382;
+
+    /** A message is sent through this channel every time a report gets updated. */
+    public const UpdateChannel = 735;
 
     /** Example channel to test how asynchronous function calls work. */
     public const ExampleFunctionChannel = 19;
@@ -160,8 +177,8 @@ class ChannelAbstract
     /** Channel to pass over information about changing the Self Check-In settings. */
     public const ReceptionDesignChannel = 1657;
 
-    /** Channel to pass over information about payment status. */
-    public const PaymentStatusChannel = 1736;
+    /** Channel to pass over information about ticket status. */
+    public const DirectConnectTicketStatusChannel = 1421;
 
     /** Channel to pass over information about unread SMS in the business. */
     public const SmsUnreadCountChannel = 960;
@@ -180,6 +197,9 @@ class ChannelAbstract
 
     /** Channel to pass over information about address verification. */
     public const AddressVerificationChannel = 828;
+
+    /** Channel to pass over information about payment status. */
+    public const PaymentStatusChannel = 1736;
 
     /** Channel to pass over information about changing the dialog with specific client. */
     public const DialogChannel = 963;

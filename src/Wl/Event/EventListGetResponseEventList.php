@@ -21,23 +21,41 @@ class EventListGetResponseEventList
     /**
      * Data about logo of the event.
      *
-     * @var array|null
+     * @var EventListGetResponseEventListLogo|null
      */
-    public $a_logo = null;
+    public ?EventListGetResponseEventListLogo $a_logo = null;
 
     /**
      * List of scheduled sessions of the event.
      *
-     * @var EventListGetResponseEventListSchedule[]|null
+     * @var EventListGetResponseEventListSchedule|null
      */
-    public ?array $a_schedule = null;
+    public ?EventListGetResponseEventListSchedule $a_schedule = null;
 
     /**
      * List of search tags connected to this event.
      *
-     * @var EventListGetResponseEventListSearchTag[]|null
+     * @var EventListGetResponseEventListSearchTag|null
      */
-    public ?array $a_search_tag = null;
+    public ?EventListGetResponseEventListSearchTag $a_search_tag = null;
+
+    /**
+     * Returns how many tickets can be sold for the ticketed event the class belongs to, and how
+     *  many of those are still available to sell.
+     *
+     *  `null` if the class is not a ticketed event.
+     *
+     * @var EventListGetResponseEventListTicketInventory|null
+     */
+    public ?EventListGetResponseEventListTicketInventory $a_ticket_inventory = null;
+
+    /**
+     * List of ticket options available for booking the event. Empty if the event is not a ticketed
+     * event.
+     *
+     * @var EventListGetResponseEventListTickets|null
+     */
+    public ?EventListGetResponseEventListTickets $a_tickets = null;
 
     /**
      * Whether event can be booked or not.
@@ -64,7 +82,14 @@ class EventListGetResponseEventList
     public ?bool $can_cancel = null;
 
     /**
-     * End date, when early bird price ends in `MySql` format.
+     * The last date when the early bird price is applied, in `MySql` date format. `null` if the event has
+     * no early bird.
+     *
+     * The early bird price applies while the current date in the timezone of the location of the session
+     * (`s_timezone_location`) is not later than this date, the date itself
+     * included. This is the same rule that is used when the event is purchased.
+     * Applies to `m_price_total_early` and to `m_price_early` of
+     * `a_tickets`.
      *
      * @var string|null
      */
@@ -171,6 +196,7 @@ class EventListGetResponseEventList
      * ID of deny reason.
      *
      * @var int|null
+     * @see \WlSdk\Wl\Event\DenyReasonSid
      */
     public ?int $id_reason = null;
 
@@ -318,6 +344,13 @@ class EventListGetResponseEventList
     public ?bool $is_single_buy = null;
 
     /**
+     * `true` if the event is a ticketed event, `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
+    /**
      * Whether current user is booked or on the wait list.
      *
      * Unlike `is_booked`, this field is also `true` when the user is on the wait
@@ -439,9 +472,11 @@ class EventListGetResponseEventList
     {
         $this->a_age_restriction = isset($data['a_age_restriction']) ? new EventListGetResponseEventListAgeRestriction((array)$data['a_age_restriction']) : null;
         $this->a_class_tab = isset($data['a_class_tab']) ? (array)$data['a_class_tab'] : null;
-        $this->a_logo = $data['a_logo'] ?? null;
-        $this->a_schedule = isset($data['a_schedule']) ? array_map(static fn ($item) => new EventListGetResponseEventListSchedule((array)$item), (array)$data['a_schedule']) : null;
-        $this->a_search_tag = isset($data['a_search_tag']) ? array_map(static fn ($item) => new EventListGetResponseEventListSearchTag((array)$item), (array)$data['a_search_tag']) : null;
+        $this->a_logo = isset($data['a_logo']) ? new EventListGetResponseEventListLogo((array)$data['a_logo']) : null;
+        $this->a_schedule = isset($data['a_schedule']) ? new EventListGetResponseEventListSchedule((array)$data['a_schedule']) : null;
+        $this->a_search_tag = isset($data['a_search_tag']) ? new EventListGetResponseEventListSearchTag((array)$data['a_search_tag']) : null;
+        $this->a_ticket_inventory = isset($data['a_ticket_inventory']) ? new EventListGetResponseEventListTicketInventory((array)$data['a_ticket_inventory']) : null;
+        $this->a_tickets = isset($data['a_tickets']) ? new EventListGetResponseEventListTickets((array)$data['a_tickets']) : null;
         $this->can_book = isset($data['can_book']) ? (bool)$data['can_book'] : null;
         $this->can_cancel = isset($data['can_cancel']) ? (bool)$data['can_cancel'] : null;
         $this->dl_early = isset($data['dl_early']) ? (string)$data['dl_early'] : null;
@@ -474,6 +509,7 @@ class EventListGetResponseEventList
         $this->is_promotion_only = isset($data['is_promotion_only']) ? (bool)$data['is_promotion_only'] : null;
         $this->is_prorate = isset($data['is_prorate']) ? (bool)$data['is_prorate'] : null;
         $this->is_single_buy = isset($data['is_single_buy']) ? (bool)$data['is_single_buy'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->is_user_booked = isset($data['is_user_booked']) ? (bool)$data['is_user_booked'] : null;
         $this->is_virtual = isset($data['is_virtual']) ? (bool)$data['is_virtual'] : null;
         $this->is_wait_list_enabled = isset($data['is_wait_list_enabled']) ? (bool)$data['is_wait_list_enabled'] : null;

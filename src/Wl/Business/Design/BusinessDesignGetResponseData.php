@@ -72,6 +72,13 @@ class BusinessDesignGetResponseData
     public ?bool $is_class_spot_only = null;
 
     /**
+     * Whether Meta Conversion API Access Token is set.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_fb_capi_access_token = null;
+
+    /**
      * If `true`, the business name will be shown.
      *
      * @var bool|null
@@ -156,7 +163,23 @@ class BusinessDesignGetResponseData
     public ?string $s_color_submenu_press = null;
 
     /**
-     * Facebook Pixel ID. Used for Facebook analytics tracking. Empty string if tracking is disabled.
+     * Meta Conversion API Access Token. Empty string if CAPI not used or application that made request does not
+     * have access to it.
+     *
+     * @var string|null
+     */
+    public ?string $s_fb_capi_access_token = null;
+
+    /**
+     * Meta Conversion API Test Event Code. Optional, used for QA in Meta Events Manager. Empty string if not used
+     * or application that made request does not have access to it.
+     *
+     * @var string|null
+     */
+    public ?string $s_fb_capi_test_event_code = null;
+
+    /**
+     * Meta Pixel ID. Used for Meta analytics tracking. Empty string if tracking is disabled.
      *
      * @var string|null
      */
@@ -194,6 +217,7 @@ class BusinessDesignGetResponseData
         $this->is_class_capacity = isset($data['is_class_capacity']) ? (bool)$data['is_class_capacity'] : null;
         $this->is_class_quick = isset($data['is_class_quick']) ? (bool)$data['is_class_quick'] : null;
         $this->is_class_spot_only = isset($data['is_class_spot_only']) ? (bool)$data['is_class_spot_only'] : null;
+        $this->is_fb_capi_access_token = isset($data['is_fb_capi_access_token']) ? (bool)$data['is_fb_capi_access_token'] : null;
         $this->is_show_name = isset($data['is_show_name']) ? (bool)$data['is_show_name'] : null;
         $this->s_color_background = isset($data['s_color_background']) ? (string)$data['s_color_background'] : null;
         $this->s_color_header = isset($data['s_color_header']) ? (string)$data['s_color_header'] : null;
@@ -206,6 +230,8 @@ class BusinessDesignGetResponseData
         $this->s_color_submenu_element = isset($data['s_color_submenu_element']) ? (string)$data['s_color_submenu_element'] : null;
         $this->s_color_submenu_hover = isset($data['s_color_submenu_hover']) ? (string)$data['s_color_submenu_hover'] : null;
         $this->s_color_submenu_press = isset($data['s_color_submenu_press']) ? (string)$data['s_color_submenu_press'] : null;
+        $this->s_fb_capi_access_token = isset($data['s_fb_capi_access_token']) ? (string)$data['s_fb_capi_access_token'] : null;
+        $this->s_fb_capi_test_event_code = isset($data['s_fb_capi_test_event_code']) ? (string)$data['s_fb_capi_test_event_code'] : null;
         $this->s_fb_pixel_id = isset($data['s_fb_pixel_id']) ? (string)$data['s_fb_pixel_id'] : null;
         $this->s_ga_tracking_id = isset($data['s_ga_tracking_id']) ? (string)$data['s_ga_tracking_id'] : null;
         $this->s_gtm_container_id = isset($data['s_gtm_container_id']) ? (string)$data['s_gtm_container_id'] : null;

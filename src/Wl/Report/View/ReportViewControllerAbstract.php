@@ -8,26 +8,26 @@ namespace WlSdk\Wl\Report\View;
  * Values:
  * - 1848 (`Thoth\ProgressLog\Report\ProgressLogListReportPageChartController`): Progress Log (Transformation Log)
  * report view controller. Chart representation.
- * - 803 (`Thoth\Report\SalesReport\Transaction\TransactionAllReportPageChartController`): "All transactions" report
- * page controller. Chart representation.
- * - 925 (`Thoth\ReportCore\Generator\Example\ExampleReportChartController`): "Example report" view controller. Chart
- * representation.
  * - 753 (`Wl\Member\Report\MemberAllReportChartController`): "All clients" report controller. Chart representation.
  * - 1304 (`Wl\Member\Report\MemberReportChartController`): "All clients" report controller (this report used for the
  * "Clients" link accessed from the top nav or WL menu).
  *   Chart representation.
- * - 1495 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReportChartController`): "Enterprise Reports
- * -> Memberships Details by Location" report controller. Chart representation.
- * - 1270 (`Thoth\Report\SalesReport\Tag\Summary\ListReportChartController`): Controller for "Sales Summary by Revenue
- * Category" report. Chart view.
- * - 1047 (`Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryReportPageChartController`): Sales Summary
- * By Location report page, chart representation.
+ * - 803 (`Thoth\Report\SalesReport\Transaction\TransactionAllReportPageChartController`): "All transactions" report
+ * page controller. Chart representation.
+ * - 925 (`Thoth\ReportCore\Generator\Example\ExampleReportChartController`): "Example report" view controller. Chart
+ * representation.
  * - 1511 (`Wl\Login\Franchise\Detail\DetailListReportChartController`): "Enterprise Client Details" report controller.
  *   Chart representation.
  * - 1452 (`Wl\Lead\Franchise\Report\LeadByLocationReportChartController`): "Lead by location" report page controller.
  * Chart representation.
  * - 1527 (`Wl\Attendance\Report\Appointment\DetailReportChartController`): Controls detailed appointment analysis
  * report in chart format.
+ * - 1047 (`Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryReportPageChartController`): Sales Summary
+ * By Location report page, chart representation.
+ * - 1495 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReportChartController`): "Enterprise Reports
+ * -> Memberships Details by Location" report controller. Chart representation.
+ * - 1270 (`Thoth\Report\SalesReport\Tag\Summary\ListReportChartController`): Controller for "Sales Summary by Revenue
+ * Category" report. Chart view.
  * - 1481 (`Wl\Visit\Location\Cross\Summary\VisitLocationCrossDetailSummaryReportChartController`): "Cross-Location
  * Visit Summary" report controller. Chart representation.
  * - 1479 (`Wl\Visit\Franchise\Location\Cross\Summary\VisitFranchiseLocationCrossDetailSummaryReportChartController`):
@@ -50,29 +50,6 @@ namespace WlSdk\Wl\Report\View;
  * Controller for "Sales Summary By Location" corporate report page.
  * - 1855 (`Thoth\ProgressLog\Report\ProgressLogClientReportController`): Controller for "Transformation Log" report
  * that includes all clients.
- * - 1778 (`Thoth\MarketingCampaigns\Report\CampaignDetail\CampaignDetailReportController`): "Marketing Campaigns"
- * detail report controller.
- * - 1762 (`Thoth\MarketingCampaigns\Report\CampaignList\CampaignListReportController`): "Marketing Campaigns" list
- * report controller.
- * - 752 (`Thoth\Report\SalesReport\Transaction\TransactionAllItemReportController`): Controller of report "All
- * Transactions (item view)"
- * - 800 (`Thoth\Report\SalesReport\Transaction\TransactionAllPaymentReportController`): Controller of report "All
- * Transactions (payment view)"
- * - 1351 (`Thoth\Report\SalesReport\Transaction\TransactionFailReportController`): "Failed Transactions" report
- * controller. Table representation.
- * - 1322 (`Thoth\Report\SalesReport\Client\TransactionAllItemStaffClientReportController`): Controller of  client's
- * 'Purchases' report.
- * - 1256 (`Thoth\Report\SalesReport\Client\TransactionAllPaymentClientReportController`): Controller for report about
- * user's transactions.
- * - 1323 (`Thoth\Report\SalesReport\Client\TransactionAllPaymentStaffClientReportController`): Controller of client's
- * report "Transactions"
- * - 899 (`Thoth\Report\SalesReport\Product\ProductCostItemReportController`): "Cost of Goods Sold" report controller.
- * - 920 (`Thoth\ReportCore\Generator\Example\ExampleReportController`): "Example report" view controller. Table
- * representation.
- * - 2229 (`Thoth\ReportCore\QueryEngine\Report\ReportQueryReportController`): View controller for {@link
- * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
- *
- *   Renders a registry-stored SQL report in table mode.
  * - 1272 (`Wl\Collector\Report\DebtReportController`): Controller for {@link
  * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} report.
  * - 1298 (`Wl\Collector\Report\TransactionCollectorReportController`): Controller for {@link
@@ -94,35 +71,32 @@ namespace WlSdk\Wl\Report\View;
  * - 1741 (`Wl\Visit\Report\VisitLifetimeReportController`): Controls list for "Lifetime Value & Visit Milestones"
  * report.
  * - 1555 (`Wl\Visit\Report\VisitBuySummaryReportController`): Controls list report for attendance.
- * - 2317 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReportController`): "Bulk Charges" report
+ * - 2496 (`Wl\Attendance\Franchisor\FranchisorAttendanceReportController`): External attendance report of a
+ * franchisor.
+ *   Is developed as microservice. This class only provides access validation and URL generation.
+ * - 1778 (`Thoth\MarketingCampaigns\Report\CampaignDetail\CampaignDetailReportController`): "Marketing Campaigns"
+ * detail report controller.
+ * - 1762 (`Thoth\MarketingCampaigns\Report\CampaignList\CampaignListReportController`): "Marketing Campaigns" list
+ * report controller.
+ * - 752 (`Thoth\Report\SalesReport\Transaction\TransactionAllItemReportController`): Controller of report "All
+ * Transactions (item view)"
+ * - 800 (`Thoth\Report\SalesReport\Transaction\TransactionAllPaymentReportController`): Controller of report "All
+ * Transactions (payment view)"
+ * - 1351 (`Thoth\Report\SalesReport\Transaction\TransactionFailReportController`): "Failed Transactions" report
  * controller. Table representation.
- * - 2326 (`Thoth\Report\SalesReport\Transaction\BulkChargesDetail\BulkChargesDetailReportController`): "Bulk Charges"
- * batch detail report controller.
- * - 1573 (`Thoth\Report\SalesReport\Transaction\Cash\SummaryReportController`): Controller for "Cash Reconciliation
- * Summary" report.
- * - 1286 (`Thoth\Report\SalesReport\Transaction\Batch\BatchReportController`): Controller for "Batch Report".
- * - 1907 (`Thoth\Report\SalesReport\Client\AccountReport\AccountHistoryReportController`): Controller for "Account
- * Balance History" report.
- * - 2224 (`Thoth\Report\SalesReport\Client\ClientStatementHistoryReport\ClientStatementHistoryReportController`):
- * Controller for "Statement History" report.
- * - 1296 (`Thoth\Report\SalesReport\Client\SummaryReport\SummaryReportController`): Controller for "Sales per Client"
- * report.
- * - 1447 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReportController`): "Enterprise Reports ->
- * Memberships Details by Location" report controller. Table representation.
- * - 1499 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReportController`): Franchise "Memberships
- * Summary by Location" report controller. Table representation.
- * - 1269 (`Thoth\Report\SalesReport\Tag\Summary\ListReportController`): Controller for "Sales Summary by Revenue
- * Category" report.
- * - 1263 (`Thoth\Report\SalesReport\Tag\Detail\ListRevenueReportController`): Controller for "Sales Details by Revenue
- * Category" report.
- * - 1030 (`Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryReportController`): Controller for "Sales
- * Summary By Location" franchisee report.
- * - 1397 (`Thoth\Report\SalesReport\PayMethod\SummaryReport\SummaryReportController`): Controller for "Sales Summary
- * by Payment Method" report.
- * - 1265 (`Thoth\Report\SalesReport\PurchaseOption\Summary\SummaryReportController`): Controller for "Sales Summary by
- * Purchase Options" report.
- * - 1253 (`Thoth\WlPay\Transaction\StripeCom\PayoutReconciliation\PayoutReconciliationReportController`): "Stripe
- * Payout Reconciliation" report controller. Table representation.
+ * - 1322 (`Thoth\Report\SalesReport\Client\TransactionAllItemStaffClientReportController`): Controller of  client's
+ * 'Purchases' report.
+ * - 1256 (`Thoth\Report\SalesReport\Client\TransactionAllPaymentClientReportController`): Controller for report about
+ * user's transactions.
+ * - 1323 (`Thoth\Report\SalesReport\Client\TransactionAllPaymentStaffClientReportController`): Controller of client's
+ * report "Transactions"
+ * - 899 (`Thoth\Report\SalesReport\Product\ProductCostItemReportController`): "Cost of Goods Sold" report controller.
+ * - 2229 (`Thoth\ReportCore\QueryEngine\Report\ReportQueryReportController`): View controller for {@link
+ * \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}.
+ *
+ *   Renders a registry-stored SQL report in table mode.
+ * - 920 (`Thoth\ReportCore\Generator\Example\ExampleReportController`): "Example report" view controller. Table
+ * representation.
  * - 1698 (`Wl\Mail\History\Report\MailHistoryReportController`): "Email History" report controller.
  * - 1745 (`Wl\Staff\Pay\Report\StaffPayDetailReportController`): Controller for "Payroll Details".
  * - 1752 (`Wl\Staff\Pay\Report\StaffPaySummaryReportController`): Controller for "Payroll Summary".
@@ -149,18 +123,35 @@ namespace WlSdk\Wl\Report\View;
  * list format.
  * - 1520 (`Wl\Attendance\Report\Appointment\SummaryReportController`): Controls appointment summary report in list
  * format.
- * - 1558 (`Thoth\Report\SalesReport\Transaction\Batch\Summary\ApprovedReportController`): Controller for "Batch
- * Reconciliation Summary" (Approved) report.
- * - 1559 (`Thoth\Report\SalesReport\Transaction\Batch\Summary\SettledReportController`): Controller for "Batch
- * Reconciliation Summary" (Settled) report.
- * - 962 (`Thoth\Report\SalesReport\Franchise\Location\Detail\PurchaseFranchiseLocationReportController`): Controller
- * for "Sales Details by Location" corporate report. Table view.
- * - 1023 (`Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryReportController`):
- * Main controller for "Sales Summary By Location" report.
- * - 1276 (`Thoth\Report\SalesReport\Franchise\Sale\Compare\CompareListReportController`): Controller for "YOY Sales
- * Comparison" report.
- * - 1579 (`Thoth\Report\SalesReport\Closeout\Report\PurchaseOption\UsageReportController`): Controller for "Purchase
- * Option Usage Summary" report.
+ * - 2326 (`Thoth\Report\SalesReport\Transaction\BulkChargesDetail\BulkChargesDetailReportController`): "Bulk Charges"
+ * batch detail report controller.
+ * - 2317 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReportController`): "Bulk Charges" report
+ * controller. Table representation.
+ * - 1573 (`Thoth\Report\SalesReport\Transaction\Cash\SummaryReportController`): Controller for "Cash Reconciliation
+ * Summary" report.
+ * - 1286 (`Thoth\Report\SalesReport\Transaction\Batch\BatchReportController`): Controller for "Batch Report".
+ * - 1907 (`Thoth\Report\SalesReport\Client\AccountReport\AccountHistoryReportController`): Controller for "Account
+ * Balance History" report.
+ * - 2224 (`Thoth\Report\SalesReport\Client\ClientStatementHistoryReport\ClientStatementHistoryReportController`):
+ * Controller for "Statement History" report.
+ * - 1296 (`Thoth\Report\SalesReport\Client\SummaryReport\SummaryReportController`): Controller for "Sales per Client"
+ * report.
+ * - 1030 (`Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryReportController`): Controller for "Sales
+ * Summary By Location" franchisee report.
+ * - 1447 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReportController`): "Enterprise Reports ->
+ * Memberships Details by Location" report controller. Table representation.
+ * - 1499 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipSummaryReportController`): Franchise "Memberships
+ * Summary by Location" report controller. Table representation.
+ * - 1263 (`Thoth\Report\SalesReport\Tag\Detail\ListRevenueReportController`): Controller for "Sales Details by Revenue
+ * Category" report.
+ * - 1269 (`Thoth\Report\SalesReport\Tag\Summary\ListReportController`): Controller for "Sales Summary by Revenue
+ * Category" report.
+ * - 1397 (`Thoth\Report\SalesReport\PayMethod\SummaryReport\SummaryReportController`): Controller for "Sales Summary
+ * by Payment Method" report.
+ * - 1265 (`Thoth\Report\SalesReport\PurchaseOption\Summary\SummaryReportController`): Controller for "Sales Summary by
+ * Purchase Options" report.
+ * - 1253 (`Thoth\WlPay\Transaction\StripeCom\PayoutReconciliation\PayoutReconciliationReportController`): "Stripe
+ * Payout Reconciliation" report controller. Table representation.
  * - 2217 (`Wl\Login\Promotion\GuestPass\Report\GuestPassHistoryReportController`): Controller for the "Guest Pass
  * History" report shown on the client profile under Account.
  * - 1162 (`Wl\Business\Account\Revenue\Processing\RevenueProcessingReportController`): Controller for {@link
@@ -178,6 +169,18 @@ namespace WlSdk\Wl\Report\View;
  * report controller. Table representation.
  * - 1482 (`Wl\Visit\Location\Cross\Summary\VisitLocationCrossDetailSummaryReportController`): "Cross-Location Visit
  * Summary" report controller. Table representation.
+ * - 1558 (`Thoth\Report\SalesReport\Transaction\Batch\Summary\ApprovedReportController`): Controller for "Batch
+ * Reconciliation Summary" (Approved) report.
+ * - 1559 (`Thoth\Report\SalesReport\Transaction\Batch\Summary\SettledReportController`): Controller for "Batch
+ * Reconciliation Summary" (Settled) report.
+ * - 962 (`Thoth\Report\SalesReport\Franchise\Location\Detail\PurchaseFranchiseLocationReportController`): Controller
+ * for "Sales Details by Location" corporate report. Table view.
+ * - 1023 (`Thoth\Report\SalesReport\Franchise\Location\Summary\PurchaseFranchiseLocationSummaryReportController`):
+ * Main controller for "Sales Summary By Location" report.
+ * - 1276 (`Thoth\Report\SalesReport\Franchise\Sale\Compare\CompareListReportController`): Controller for "YOY Sales
+ * Comparison" report.
+ * - 1579 (`Thoth\Report\SalesReport\Closeout\Report\PurchaseOption\UsageReportController`): Controller for "Purchase
+ * Option Usage Summary" report.
  * - 1473 (`Wl\Visit\Franchise\Location\Cross\Detail\VisitFranchiseLocationCrossDetailReportController`): Franchise
  * "Cross-Location Visit Details" report controller. Table representation.
  * - 1471 (`Wl\Visit\Franchise\Location\Cross\Detail\VisitFranchiseeLocationCrossDetailReportController`): Franchisee
@@ -195,32 +198,26 @@ namespace WlSdk\Wl\Report\View;
  * controller. Table representation.
  * - 1690 (`Wl\Contact\Member\History\Report\ContactHistoryReportTableController`): "Contact History" report
  * controller. Table representation.
- * - 845 (`Thoth\Report\SalesReport\Transaction\TransactionAllReportPageYoyController`): "All transactions" report page
- * controller. Year-over-year representation.
  * - 841 (`Wl\Member\Report\MemberAllReportYoyController`): "All clients" report controller. Year-over-year chart
  * representation.
  * - 1305 (`Wl\Member\Report\MemberReportYoyController`): "All clients" report controller (this report used for the
  * "Clients" link accessed from the top nav or WL menu).
  *   Year-over-year chart representation.
- * - 1496 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReportYoyController`): "Enterprise Reports ->
- * Memberships Details by Location" report controller. Year-over-year representation.
- * - 1048 (`Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryReportPageYoyController`): Sales Summary
- * By Location report page, year-over-year chart representation.
+ * - 845 (`Thoth\Report\SalesReport\Transaction\TransactionAllReportPageYoyController`): "All transactions" report page
+ * controller. Year-over-year representation.
  * - 1512 (`Wl\Login\Franchise\Detail\DetailListReportYoyController`): "Enterprise Client Details" report controller.
  *   Year-over-year chart representation.
  * - 1462 (`Wl\Lead\Franchise\Report\LeadByLocationReportYoyController`): "Leads by location" report page controller.
  * Year-over-year representation.
+ * - 1048 (`Thoth\Report\SalesReport\Location\Summary\PurchaseLocationSummaryReportPageYoyController`): Sales Summary
+ * By Location report page, year-over-year chart representation.
+ * - 1496 (`Thoth\Report\SalesReport\Franchise\Membership\MembershipDetailReportYoyController`): "Enterprise Reports ->
+ * Memberships Details by Location" report controller. Year-over-year representation.
  */
 class ReportViewControllerAbstract
 {
     /** Progress Log (Transformation Log) report view controller. Chart representation. */
     public const ProgressLogListReportPageChartController = 1848;
-
-    /** "All transactions" report page controller. Chart representation. */
-    public const TransactionAllReportPageChartController = 803;
-
-    /** "Example report" view controller. Chart representation. */
-    public const ExampleReportChartController = 925;
 
     /** "All clients" report controller. Chart representation. */
     public const MemberAllReportChartController = 753;
@@ -228,14 +225,11 @@ class ReportViewControllerAbstract
     /** "All clients" report controller (this report used for the "Clients" link accessed from the top nav or WL menu). */
     public const MemberReportChartController = 1304;
 
-    /** "Enterprise Reports -> Memberships Details by Location" report controller. Chart representation. */
-    public const MembershipDetailReportChartController = 1495;
+    /** "All transactions" report page controller. Chart representation. */
+    public const TransactionAllReportPageChartController = 803;
 
-    /** Controller for "Sales Summary by Revenue Category" report. Chart view. */
-    public const ListReportChartController = 1270;
-
-    /** Sales Summary By Location report page, chart representation. */
-    public const PurchaseLocationSummaryReportPageChartController = 1047;
+    /** "Example report" view controller. Chart representation. */
+    public const ExampleReportChartController = 925;
 
     /** "Enterprise Client Details" report controller. */
     public const DetailListReportChartController = 1511;
@@ -245,6 +239,15 @@ class ReportViewControllerAbstract
 
     /** Controls detailed appointment analysis report in chart format. */
     public const DetailReportChartController = 1527;
+
+    /** Sales Summary By Location report page, chart representation. */
+    public const PurchaseLocationSummaryReportPageChartController = 1047;
+
+    /** "Enterprise Reports -> Memberships Details by Location" report controller. Chart representation. */
+    public const MembershipDetailReportChartController = 1495;
+
+    /** Controller for "Sales Summary by Revenue Category" report. Chart view. */
+    public const ListReportChartController = 1270;
 
     /** "Cross-Location Visit Summary" report controller. Chart representation. */
     public const VisitLocationCrossDetailSummaryReportChartController = 1481;
@@ -278,39 +281,6 @@ class ReportViewControllerAbstract
 
     /** Controller for "Transformation Log" report that includes all clients. */
     public const ProgressLogClientReportController = 1855;
-
-    /** "Marketing Campaigns" detail report controller. */
-    public const CampaignDetailReportController = 1778;
-
-    /** "Marketing Campaigns" list report controller. */
-    public const CampaignListReportController = 1762;
-
-    /** Controller of report "All Transactions (item view)" */
-    public const TransactionAllItemReportController = 752;
-
-    /** Controller of report "All Transactions (payment view)" */
-    public const TransactionAllPaymentReportController = 800;
-
-    /** "Failed Transactions" report controller. Table representation. */
-    public const TransactionFailReportController = 1351;
-
-    /** Controller of  client's 'Purchases' report. */
-    public const TransactionAllItemStaffClientReportController = 1322;
-
-    /** Controller for report about user's transactions. */
-    public const TransactionAllPaymentClientReportController = 1256;
-
-    /** Controller of client's report "Transactions" */
-    public const TransactionAllPaymentStaffClientReportController = 1323;
-
-    /** "Cost of Goods Sold" report controller. */
-    public const ProductCostItemReportController = 899;
-
-    /** "Example report" view controller. Table representation. */
-    public const ExampleReportController = 920;
-
-    /** View controller for {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}. */
-    public const ReportQueryReportController = 2229;
 
     /** Controller for {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract} report. */
     public const DebtReportController = 1272;
@@ -351,50 +321,41 @@ class ReportViewControllerAbstract
     /** Controls list report for attendance. */
     public const VisitBuySummaryReportController = 1555;
 
-    /** "Bulk Charges" report controller. Table representation. */
-    public const BulkChargesReportController = 2317;
+    /** External attendance report of a franchisor. */
+    public const FranchisorAttendanceReportController = 2496;
 
-    /** "Bulk Charges" batch detail report controller. */
-    public const BulkChargesDetailReportController = 2326;
+    /** "Marketing Campaigns" detail report controller. */
+    public const CampaignDetailReportController = 1778;
 
-    /** Controller for "Cash Reconciliation Summary" report. */
-    public const Cash_SummaryReportController = 1573;
+    /** "Marketing Campaigns" list report controller. */
+    public const CampaignListReportController = 1762;
 
-    /** Controller for "Batch Report". */
-    public const BatchReportController = 1286;
+    /** Controller of report "All Transactions (item view)" */
+    public const TransactionAllItemReportController = 752;
 
-    /** Controller for "Account Balance History" report. */
-    public const AccountHistoryReportController = 1907;
+    /** Controller of report "All Transactions (payment view)" */
+    public const TransactionAllPaymentReportController = 800;
 
-    /** Controller for "Statement History" report. */
-    public const ClientStatementHistoryReportController = 2224;
+    /** "Failed Transactions" report controller. Table representation. */
+    public const TransactionFailReportController = 1351;
 
-    /** Controller for "Sales per Client" report. */
-    public const Client_SummaryReport_SummaryReportController = 1296;
+    /** Controller of  client's 'Purchases' report. */
+    public const TransactionAllItemStaffClientReportController = 1322;
 
-    /** "Enterprise Reports -> Memberships Details by Location" report controller. Table representation. */
-    public const MembershipDetailReportController = 1447;
+    /** Controller for report about user's transactions. */
+    public const TransactionAllPaymentClientReportController = 1256;
 
-    /** Franchise "Memberships Summary by Location" report controller. Table representation. */
-    public const MembershipSummaryReportController = 1499;
+    /** Controller of client's report "Transactions" */
+    public const TransactionAllPaymentStaffClientReportController = 1323;
 
-    /** Controller for "Sales Summary by Revenue Category" report. */
-    public const ListReportController = 1269;
+    /** "Cost of Goods Sold" report controller. */
+    public const ProductCostItemReportController = 899;
 
-    /** Controller for "Sales Details by Revenue Category" report. */
-    public const ListRevenueReportController = 1263;
+    /** View controller for {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}. */
+    public const ReportQueryReportController = 2229;
 
-    /** Controller for "Sales Summary By Location" franchisee report. */
-    public const PurchaseLocationSummaryReportController = 1030;
-
-    /** Controller for "Sales Summary by Payment Method" report. */
-    public const PayMethod_SummaryReport_SummaryReportController = 1397;
-
-    /** Controller for "Sales Summary by Purchase Options" report. */
-    public const Summary_SummaryReportController = 1265;
-
-    /** "Stripe Payout Reconciliation" report controller. Table representation. */
-    public const PayoutReconciliationReportController = 1253;
+    /** "Example report" view controller. Table representation. */
+    public const ExampleReportController = 920;
 
     /** "Email History" report controller. */
     public const MailHistoryReportController = 1698;
@@ -447,23 +408,50 @@ class ReportViewControllerAbstract
     /** Controls appointment summary report in list format. */
     public const Appointment_SummaryReportController = 1520;
 
-    /** Controller for "Batch Reconciliation Summary" (Approved) report. */
-    public const ApprovedReportController = 1558;
+    /** "Bulk Charges" batch detail report controller. */
+    public const BulkChargesDetailReportController = 2326;
 
-    /** Controller for "Batch Reconciliation Summary" (Settled) report. */
-    public const SettledReportController = 1559;
+    /** "Bulk Charges" report controller. Table representation. */
+    public const BulkChargesReportController = 2317;
 
-    /** Controller for "Sales Details by Location" corporate report. Table view. */
-    public const PurchaseFranchiseLocationReportController = 962;
+    /** Controller for "Cash Reconciliation Summary" report. */
+    public const Cash_SummaryReportController = 1573;
 
-    /** Main controller for "Sales Summary By Location" report. */
-    public const PurchaseFranchiseLocationSummaryReportController = 1023;
+    /** Controller for "Batch Report". */
+    public const BatchReportController = 1286;
 
-    /** Controller for "YOY Sales Comparison" report. */
-    public const CompareListReportController = 1276;
+    /** Controller for "Account Balance History" report. */
+    public const AccountHistoryReportController = 1907;
 
-    /** Controller for "Purchase Option Usage Summary" report. */
-    public const UsageReportController = 1579;
+    /** Controller for "Statement History" report. */
+    public const ClientStatementHistoryReportController = 2224;
+
+    /** Controller for "Sales per Client" report. */
+    public const Client_SummaryReport_SummaryReportController = 1296;
+
+    /** Controller for "Sales Summary By Location" franchisee report. */
+    public const PurchaseLocationSummaryReportController = 1030;
+
+    /** "Enterprise Reports -> Memberships Details by Location" report controller. Table representation. */
+    public const MembershipDetailReportController = 1447;
+
+    /** Franchise "Memberships Summary by Location" report controller. Table representation. */
+    public const MembershipSummaryReportController = 1499;
+
+    /** Controller for "Sales Details by Revenue Category" report. */
+    public const ListRevenueReportController = 1263;
+
+    /** Controller for "Sales Summary by Revenue Category" report. */
+    public const ListReportController = 1269;
+
+    /** Controller for "Sales Summary by Payment Method" report. */
+    public const PayMethod_SummaryReport_SummaryReportController = 1397;
+
+    /** Controller for "Sales Summary by Purchase Options" report. */
+    public const Summary_SummaryReportController = 1265;
+
+    /** "Stripe Payout Reconciliation" report controller. Table representation. */
+    public const PayoutReconciliationReportController = 1253;
 
     /** Controller for the "Guest Pass History" report shown on the client profile under Account. */
     public const GuestPassHistoryReportController = 2217;
@@ -492,6 +480,24 @@ class ReportViewControllerAbstract
     /** "Cross-Location Visit Summary" report controller. Table representation. */
     public const VisitLocationCrossDetailSummaryReportController = 1482;
 
+    /** Controller for "Batch Reconciliation Summary" (Approved) report. */
+    public const ApprovedReportController = 1558;
+
+    /** Controller for "Batch Reconciliation Summary" (Settled) report. */
+    public const SettledReportController = 1559;
+
+    /** Controller for "Sales Details by Location" corporate report. Table view. */
+    public const PurchaseFranchiseLocationReportController = 962;
+
+    /** Main controller for "Sales Summary By Location" report. */
+    public const PurchaseFranchiseLocationSummaryReportController = 1023;
+
+    /** Controller for "YOY Sales Comparison" report. */
+    public const CompareListReportController = 1276;
+
+    /** Controller for "Purchase Option Usage Summary" report. */
+    public const UsageReportController = 1579;
+
     /** Franchise "Cross-Location Visit Details" report controller. Table representation. */
     public const VisitFranchiseLocationCrossDetailReportController = 1473;
 
@@ -519,24 +525,24 @@ class ReportViewControllerAbstract
     /** "Contact History" report controller. Table representation. */
     public const ContactHistoryReportTableController = 1690;
 
-    /** "All transactions" report page controller. Year-over-year representation. */
-    public const TransactionAllReportPageYoyController = 845;
-
     /** "All clients" report controller. Year-over-year chart representation. */
     public const MemberAllReportYoyController = 841;
 
     /** "All clients" report controller (this report used for the "Clients" link accessed from the top nav or WL menu). */
     public const MemberReportYoyController = 1305;
 
-    /** "Enterprise Reports -> Memberships Details by Location" report controller. Year-over-year representation. */
-    public const MembershipDetailReportYoyController = 1496;
-
-    /** Sales Summary By Location report page, year-over-year chart representation. */
-    public const PurchaseLocationSummaryReportPageYoyController = 1048;
+    /** "All transactions" report page controller. Year-over-year representation. */
+    public const TransactionAllReportPageYoyController = 845;
 
     /** "Enterprise Client Details" report controller. */
     public const DetailListReportYoyController = 1512;
 
     /** "Leads by location" report page controller. Year-over-year representation. */
     public const LeadByLocationReportYoyController = 1462;
+
+    /** Sales Summary By Location report page, year-over-year chart representation. */
+    public const PurchaseLocationSummaryReportPageYoyController = 1048;
+
+    /** "Enterprise Reports -> Memberships Details by Location" report controller. Year-over-year representation. */
+    public const MembershipDetailReportYoyController = 1496;
 }

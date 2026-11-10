@@ -63,6 +63,7 @@ namespace WlSdk;
  *
  *
  *   Purchase that is created when a staff adds payment for an appointment at POS {@link \WlSdk\RsPurchaseItemSid}.
+ * - 29 (`TICKET`): Ticket purchase item.
  * - 26 (`TUITION`): Tuition purchase item.
  *   Used when client purchases tuition for an event list.
  * - 27 (`TUITION_FEE`): Tuition fee purchase item.
@@ -145,6 +146,9 @@ class RsPurchaseItemSid
 
     /** Purchase item for appointments. */
     public const SERVICE = 6;
+
+    /** Ticket purchase item. */
+    public const TICKET = 29;
 
     /** Tuition purchase item. */
     public const TUITION = 26;

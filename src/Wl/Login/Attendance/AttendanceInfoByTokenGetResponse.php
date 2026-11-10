@@ -125,6 +125,15 @@ class AttendanceInfoByTokenGetResponse
     public ?bool $is_start_virtual_service = null;
 
     /**
+     * Whether the session belongs to a ticketed event.
+     *
+     * `false` for classes, appointments, assets and events that are not ticketed.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket = null;
+
+    /**
      * Class identifier. Not empty if service is class or event reservation.
      *
      * @var string|null
@@ -206,6 +215,7 @@ class AttendanceInfoByTokenGetResponse
         $this->id_note = isset($data['id_note']) ? (int)$data['id_note'] : null;
         $this->id_service = isset($data['id_service']) ? (int)$data['id_service'] : null;
         $this->is_start_virtual_service = isset($data['is_start_virtual_service']) ? (bool)$data['is_start_virtual_service'] : null;
+        $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
         $this->k_resource = isset($data['k_resource']) ? (string)$data['k_resource'] : null;

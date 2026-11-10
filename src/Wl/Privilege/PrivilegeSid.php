@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Privilege;
 /**
  * Wellnessliving-wide privileges.
  *
- * Last Used ID: 249.
+ * Last Used ID: 253.
  *
  * Values:
  * - 225 (`AI_AGENT_KNOWLEDGE_BASE`): Allows user to view, create or edit knowledge base entries, or conversational
@@ -22,6 +22,13 @@ namespace WlSdk\Wl\Privilege;
  * - 49 (`APPOINTMENT_FOREIGN`): Change/View all appointment.
  * - 51 (`APPOINTMENT_PERIOD`): Edit appointment schedule.
  * - 52 (`APPOINTMENT_VIEW`): View appointment.
+ * - 252 (`BILLING_CODE_ASSIGN`): Ability to assign billing and diagnostic codes to appointments.
+ *
+ *   Allows to select codes of the central billing code list and to search and apply ICD diagnostic codes.
+ * - 253 (`BILLING_CODE_TEMPORARY`): Ability to add a temporary custom billing code at the appointment booking.
+ *
+ *   The code exists for that booking only: it shows up on the receipt, but is not saved to the central billing code
+ *   list. Adding a code to the central list requires {@link \WlSdk\Wl\Privilege\PrivilegeSid} instead.
  * - 141 (`BOOK_OUTSIDE_PAID_PERIOD`): Ability to book clients outside their current paid period.
  * - 154 (`BOOK_OVER_CAPACITY`): Ability to book clients over capacity during or after the services have been
  * scheduled.
@@ -109,6 +116,8 @@ namespace WlSdk\Wl\Privilege;
  * - 7 (`HOLIDAY`): Add holidays.
  * - 215 (`IMPORT_CLIENT`): Allows to import clients from a CSV file.
  * - 163 (`INTEGRATION_AUTYMATE`): Set up and modify Autymate integration.
+ * - 251 (`INTEGRATION_BRIDGE_ATHLETIC_ACCESS`): Access to view Bridge Athletic integration.
+ * - 250 (`INTEGRATION_BRIDGE_ATHLETIC_MANAGE`): Access to set up and change Bridge Athletic integration.
  * - 179 (`INTEGRATION_BRIVO`): Set up and modify Brivo integration.
  * - 249 (`INTEGRATION_QUICKBOOKS`): Access to set up and change quickbooks integration.
  * - 87 (`INTERFACE_ACHIEVE_APP`): Enroll into and manage the WellnessLiving Achieve App. These settings are located
@@ -317,6 +326,12 @@ class PrivilegeSid
     /** View appointment. */
     public const APPOINTMENT_VIEW = 52;
 
+    /** Ability to assign billing and diagnostic codes to appointments. */
+    public const BILLING_CODE_ASSIGN = 252;
+
+    /** Ability to add a temporary custom billing code at the appointment booking. */
+    public const BILLING_CODE_TEMPORARY = 253;
+
     /** Ability to book clients outside their current paid period. */
     public const BOOK_OUTSIDE_PAID_PERIOD = 141;
 
@@ -523,6 +538,12 @@ class PrivilegeSid
 
     /** Set up and modify Autymate integration. */
     public const INTEGRATION_AUTYMATE = 163;
+
+    /** Access to view Bridge Athletic integration. */
+    public const INTEGRATION_BRIDGE_ATHLETIC_ACCESS = 251;
+
+    /** Access to set up and change Bridge Athletic integration. */
+    public const INTEGRATION_BRIDGE_ATHLETIC_MANAGE = 250;
 
     /** Set up and modify Brivo integration. */
     public const INTEGRATION_BRIVO = 179;

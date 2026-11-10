@@ -7,6 +7,9 @@ class AttendanceListGetResponseListActive
     /**
      * Information about member.
      *
+     * Fields `text_address`, `text_mail`, `text_phone_cell`, `text_phone_home` and `text_phone_work`
+     * are returned only if the current user has the {@link \WlSdk\Wl\Privilege\PrivilegeSid} privilege.
+     *
      * @var AttendanceListGetResponseListActiveInfo|null
      */
     public ?AttendanceListGetResponseListActiveInfo $a_info = null;

@@ -22,6 +22,16 @@ class CartGetResponseItemConfig
     public ?CartGetResponseItemConfigRegistrationFeeList $a_registration_fee_list = null;
 
     /**
+     * Used only for `id_sale` = {@link \WlSdk\RsSaleSid}.
+     * Key of the event instance the ticket is purchased for.
+     * Required for a ticket of an event with several instances. The class must belong to the event of the
+     * ticket, otherwise the user error `ticket-nx` or `ticket-class-settings-mismatch` is returned.
+     *
+     * @var string|null
+     */
+    public ?string $k_class = null;
+
+    /**
      * The total amount that will be charged for the tuition item when during purchase.
      *
      * @var string|null
@@ -39,6 +49,7 @@ class CartGetResponseItemConfig
     {
         $this->a_event_list = isset($data['a_event_list']) ? new CartGetResponseItemConfigEventList((array)$data['a_event_list']) : null;
         $this->a_registration_fee_list = isset($data['a_registration_fee_list']) ? new CartGetResponseItemConfigRegistrationFeeList((array)$data['a_registration_fee_list']) : null;
+        $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
         $this->m_checkout = isset($data['m_checkout']) ? (string)$data['m_checkout'] : null;
         $this->m_deferred = isset($data['m_deferred']) ? (string)$data['m_deferred'] : null;
     }

@@ -5,6 +5,13 @@ namespace WlSdk\Wl\Lead;
 class LeadGetResponseFieldList
 {
     /**
+     * The additional data of the field. Its keys depend on the field type.
+     *
+     * @var LeadGetResponseFieldListData|null
+     */
+    public ?LeadGetResponseFieldListData $a_data = null;
+
+    /**
      * A list of possible options for an HTML select field. This value is only used if this field is an HTML
      * select.
      * Every element has the following keys:
@@ -53,6 +60,7 @@ class LeadGetResponseFieldList
 
     public function __construct(array $data)
     {
+        $this->a_data = isset($data['a_data']) ? new LeadGetResponseFieldListData((array)$data['a_data']) : null;
         $this->a_item = isset($data['a_item']) ? new LeadGetResponseFieldListItem((array)$data['a_item']) : null;
         $this->id_field_general = isset($data['id_field_general']) ? (int)$data['id_field_general'] : null;
         $this->id_field_type = isset($data['id_field_type']) ? (int)$data['id_field_type'] : null;

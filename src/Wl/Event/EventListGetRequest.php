@@ -63,7 +63,7 @@ class EventListGetRequest
      * If the only ID is {@link \WlSdk\Core\Sid\YesNoSid}, only in-person events are included.
      * Otherwise, no filtering is done.
      *
-     * @var string[]|null
+     * @var int[]|null
      */
     public ?array $a_virtual = null;
 

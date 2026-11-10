@@ -5,6 +5,15 @@ namespace WlSdk\Wl\Profile\Edit;
 class EditByTokenGetRequest
 {
     /**
+     * Family role for a new user. One of {@link \WlSdk\RsFamilyRelationSid} constants.
+     * Not `null` only for a case of relative registration.
+     *
+     * @var int|null
+     * @see \WlSdk\RsFamilyRelationSid
+     */
+    public ?int $id_family_relation = null;
+
+    /**
      * Registration source ID.
      * One of {@link \WlSdk\Wl\Profile\RegisterSourceSid} constants.
      *
@@ -17,6 +26,19 @@ class EditByTokenGetRequest
      * @see \WlSdk\Wl\Profile\RegisterSourceSid
      */
     public ?int $id_register_source = null;
+
+    /**
+     * `true` to return all active, non-removed profile fields of the business regardless of entry-point filtering
+     * (register source, level `DONT_ASK`, booking-and-purchase, and family-relation applies-to filters are
+     * skipped).
+     * The `id_level_*` values are still included in each field element of {@link
+     * \WlSdk\Wl\Profile\Edit\EditGetResponse::$a_structure}.
+     *
+     * `false` (default) to apply the normal entry-point filtering based on {@link \WlSdk\Wl\Profile\Edit\Edit}.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_field_all = null;
 
     /**
      * Indicates whether to display the form as a user or as a staff member.
@@ -55,7 +77,9 @@ class EditByTokenGetRequest
     {
         return array_filter(
             [
+            'id_family_relation' => $this->id_family_relation,
             'id_register_source' => $this->id_register_source,
+            'is_field_all' => $this->is_field_all,
             'is_staff' => $this->is_staff,
             'k_business' => $this->k_business,
             'text_token' => $this->text_token,
