@@ -360,6 +360,10 @@ namespace WlSdk;
  * - 229 (`PAY_DISPUTE_STUDIO`): A client disputed a payment to the studio.
  *
  *   Sent to the owners of the studio when a client's bank takes back a payment (a chargeback).
+ * - 230 (`PAY_DISPUTE_SUPPORT`): A chargeback that Smart Disputes does not take must be contested by Support.
+ *
+ *   Sent to the group mailbox of Support when a client's bank takes back a payment and Stripe does not submit the
+ *   evidence itself, with the response deadline. The mail to the studio says that Support contests such a dispute.
  * - 181 (`PAY_TRANSACTION_FAIL`): Transaction failed.
  *
  *   Sent to support whenever transaction fails.
@@ -951,6 +955,9 @@ class RsMailSid
 
     /** A client disputed a payment to the studio. */
     public const PAY_DISPUTE_STUDIO = 229;
+
+    /** A chargeback that Smart Disputes does not take must be contested by Support. */
+    public const PAY_DISPUTE_SUPPORT = 230;
 
     /** Transaction failed. */
     public const PAY_TRANSACTION_FAIL = 181;
