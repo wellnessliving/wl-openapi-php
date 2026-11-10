@@ -40,6 +40,31 @@ class EventListGetResponseEventList
     public ?EventListGetResponseEventListSearchTag $a_search_tag = null;
 
     /**
+     * Future sessions of this event that {@link \WlSdk\Wl\Event\EventList} holds, booked or on the wait list,
+     * ordered by
+     *  date.
+     *
+     * Only the own visits of the user (the user is the attendee) are listed, never the visits of the related
+     *  profiles of the user. Empty when {@link \WlSdk\Wl\Event\EventList} is not passed.
+     *
+     * Sessions that can no longer be booked (the event is closed, the limit of the wait list is reached) are
+     * listed
+     *  too.
+     *
+     * Every session is a separate entry, also when `a_schedule` merges several
+     *  schedules into one item.
+     *
+     * A session is future by the same rule as in `i_session_future`.
+     * This list may hold more entries than `i_session_future`: that count is capped at
+     *  250 sessions, and it skips the dates that a schedule no longer produces (for example a holiday added after
+     *  the booking). So compare the count of this list with `i_session_future` by `>=`,
+     *  not by `==`.
+     *
+     * @var EventListGetResponseEventListSessionUser|null
+     */
+    public ?EventListGetResponseEventListSessionUser $a_session_user = null;
+
+    /**
      * Returns how many tickets can be sold for the ticketed event the class belongs to, and how
      *  many of those are still available to sell.
      *
@@ -475,6 +500,7 @@ class EventListGetResponseEventList
         $this->a_logo = isset($data['a_logo']) ? new EventListGetResponseEventListLogo((array)$data['a_logo']) : null;
         $this->a_schedule = isset($data['a_schedule']) ? new EventListGetResponseEventListSchedule((array)$data['a_schedule']) : null;
         $this->a_search_tag = isset($data['a_search_tag']) ? new EventListGetResponseEventListSearchTag((array)$data['a_search_tag']) : null;
+        $this->a_session_user = isset($data['a_session_user']) ? new EventListGetResponseEventListSessionUser((array)$data['a_session_user']) : null;
         $this->a_ticket_inventory = isset($data['a_ticket_inventory']) ? new EventListGetResponseEventListTicketInventory((array)$data['a_ticket_inventory']) : null;
         $this->a_tickets = isset($data['a_tickets']) ? new EventListGetResponseEventListTickets((array)$data['a_tickets']) : null;
         $this->can_book = isset($data['can_book']) ? (bool)$data['can_book'] : null;
