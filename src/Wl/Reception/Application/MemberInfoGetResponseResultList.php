@@ -6,6 +6,7 @@ class MemberInfoGetResponseResultList
 {
     /**
      * Additional user's information.
+     * Besides the keys below, it has the keys of the member information:
      *
      * @var MemberInfoGetResponseResultListInfo|null
      */
