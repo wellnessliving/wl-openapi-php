@@ -24,6 +24,17 @@ class ListEndpoint
      *  on the specified date and time. Each entry includes the staff member's name, image, gender,
      *  and availability. An 'any staff' option is included when the service allows random staff assignment.
      *
+     * When {@link \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} is `true` and {@link
+     * \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} is passed, the list holds the staff
+     *  members who can perform the service at the location, whatever {@link
+     * \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} says, and no
+     *  staff member is left out for being unavailable. Each entry then gets `dt_next`, the next time when the
+     * staff
+     *  member can be booked, found with the add-ons of {@link \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint}. That
+     * search ignores
+     *  {@link \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} and {@link
+     * \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint}.
+     *
      * @deprecated Use {@link \Wl\Appointment\Book\Staff\StaffListApi} instead.
      *
      * @return ListEndpointGetResponse
