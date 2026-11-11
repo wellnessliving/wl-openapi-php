@@ -5,6 +5,22 @@ namespace WlSdk\Wl\Appointment\Book\Staff;
 class ListGetResponseStaff
 {
     /**
+     * The first time from {@link \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} to the end of the booking window
+     * when the staff member can be
+     *   booked without the wait list. Local date and time in the time zone of {@link
+     * \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint}, in MySQL
+     *   format, for example `2026-11-12 13:00:00`.
+     * `null` when the staff member is available at {@link \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint}, or has
+     * no such time in the booking
+     *   window.
+     * <p>Returned only when {@link \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} is `true` and {@link
+     * \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} is passed.</p>
+     *
+     * @var string|null
+     */
+    public ?string $dt_next = null;
+
+    /**
      * Staff member's gender. One of {@link \WlSdk\AGenderSid} constants.
      *
      * @var int|null
@@ -27,6 +43,9 @@ class ListGetResponseStaff
      * will be different for client and staff booking flows. If client books, such staff member is not available
      * and
      * this field is `false`. If staff member books, such staff member is available.
+     * <p>When {@link \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} is `true`, this field is `true` exactly when
+     * the first time found for
+     *   `dt_next` is {@link \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} itself, whoever books.</p>
      *
      * @var bool|null
      */
@@ -34,6 +53,9 @@ class ListGetResponseStaff
 
     /**
      * Whether staff member reached daily limits on number or total duration of the appointments for one day.
+     * <p>When {@link \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} is `true`, the add-ons of {@link
+     * \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} count in the
+     *   duration.</p>
      *
      * @var bool|null
      */
@@ -41,6 +63,9 @@ class ListGetResponseStaff
 
     /**
      * Whether staff member available only for wait list booking.
+     * <p>When {@link \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} is `true`, the add-ons of {@link
+     * \WlSdk\Wl\Appointment\Book\Staff\ListEndpoint} count in the
+     *   duration.</p>
      *
      * @var bool|null
      */
@@ -83,6 +108,7 @@ class ListGetResponseStaff
 
     public function __construct(array $data)
     {
+        $this->dt_next = isset($data['dt_next']) ? (string)$data['dt_next'] : null;
         $this->id_gender = isset($data['id_gender']) ? (int)$data['id_gender'] : null;
         $this->i_free_spot = isset($data['i_free_spot']) ? (int)$data['i_free_spot'] : null;
         $this->is_available = isset($data['is_available']) ? (bool)$data['is_available'] : null;
