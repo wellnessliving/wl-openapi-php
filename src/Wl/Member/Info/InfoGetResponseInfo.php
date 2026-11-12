@@ -223,6 +223,18 @@ class InfoGetResponseInfo
      */
     public ?string $url_waiver = null;
 
+    /**
+     * The client's tasks in the business, ordered by due date, keyed by task key
+     *   .
+     * Filled only when {@link \WlSdk\Wl\Member\Info\Info} is `true` and {@link \WlSdk\Wl\Member\Info\Info} is set.
+     * Empty when the business's account is below Standard and the current user is not an admin.
+     * Which tasks it holds depends on the privileges of the current staff member.
+     * Each task has the following structure:
+     *
+     * @var array|null
+     */
+    public ?array $a_task_list = null;
+
     public function __construct(array $data)
     {
         $this->a_icon = isset($data['a_icon']) ? new InfoGetResponseInfoIcon((array)$data['a_icon']) : null;
@@ -256,5 +268,6 @@ class InfoGetResponseInfo
         $this->url_overview = isset($data['url_overview']) ? (string)$data['url_overview'] : null;
         $this->url_profile = isset($data['url_profile']) ? (string)$data['url_profile'] : null;
         $this->url_waiver = isset($data['url_waiver']) ? (string)$data['url_waiver'] : null;
+        $this->a_task_list = isset($data['a_task_list']) ? (array)$data['a_task_list'] : null;
     }
 }

@@ -24,6 +24,10 @@ class CustomTerms
      * public-facing pages (the booking widget, for example) need them to render their own wording for a client
      * who is not signed in.
      *
+     * Also returns {@link \WlSdk\Wl\Business\Custom\Terms\CustomTermsGetResponse::$a_rule}, the ready rules that
+     * apply the terms to the English texts of a
+     * client of the API. The rules are as public as the terms they are built from.
+     *
      * @return CustomTermsGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
