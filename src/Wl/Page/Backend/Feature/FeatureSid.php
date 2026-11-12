@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Page\Backend\Feature;
 /**
  * List of available features in the system that can be shown in owner's header.
  *
- * Last used ID: 38.
+ * Last used ID: 39.
  *
  * Values:
  * - 34 (`AI_AGENT`): Ai Agent.
@@ -41,6 +41,7 @@ namespace WlSdk\Wl\Page\Backend\Feature;
  * - 6 (`SCHEDULE`): Business schedule.
  * - 15 (`SELF_SIGNUP`): Popup window where new clients can sign up themselves to the classes.
  * - 13 (`SKIN_APP`): Page to config custom client's app.
+ * - 39 (`STAFF_RECEPTION`): Staff check-in kiosk of gym visits: the staff member stays signed in.
  * - 10 (`SUPPORT`): Link to the page of the support page.
  * - 8 (`TASK_MANAGEMENT`): Creation of the user.
  * - 24 (`TOAST_MESSAGE`): Toast notifications.
@@ -143,6 +144,9 @@ class FeatureSid
 
     /** Page to config custom client's app. */
     public const SKIN_APP = 13;
+
+    /** Staff check-in kiosk of gym visits: the staff member stays signed in. */
+    public const STAFF_RECEPTION = 39;
 
     /** Link to the page of the support page. */
     public const SUPPORT = 10;
