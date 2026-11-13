@@ -42,6 +42,9 @@ class SocialSharePostRequest
     /**
      * User key.
      *
+     * Deprecated, the share is always recorded for the current user.
+     * Optional, but if passed, it must match the current user, otherwise the request is rejected.
+     *
      * @var string|null
      */
     public ?string $uid = null;

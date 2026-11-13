@@ -13,7 +13,7 @@ namespace WlSdk;
  *
  * Pay attention that all `\MailPrioritySid` must start with backslash.
  *
- * Last used ID: 229.
+ * Last used ID: 231.
  *
  * Values:
  * - 220 (`ABANDONED_CHECKOUT`): Sent when a client abandons a checkout (used in automations).
@@ -290,6 +290,9 @@ namespace WlSdk;
  * - 87 (`LEAD_CAPTURE`): Sent to the client after they fill out a Lead Capture Form on the website of a business.
  * - 197 (`LEAD_CAPTURE_AI`): Sent to staff when CAASI captures a new lead from a conversation,
  *   including contact details and any provided inquiry notes.
+ * - 231 (`LEAD_STAGE_NO_ACTIVITY`): Sent to a client when they have stayed in a lead stage for a set time without any
+ * activity of their own
+ *   (used in automations).
  * - 224 (`LEAD_STAGE_UPDATED`): Sent to staff when a lead's stage is updated in the Lead Capture Form.
  * - 96 (`LOGIN_ANNIVERSARY`): Sent to client on annual anniversary of the Member Since date.
  * - 42 (`LOGIN_ATTENDANCE`): Attendance List.
@@ -882,6 +885,9 @@ class RsMailSid
 
     /** Sent to staff when CAASI captures a new lead from a conversation, */
     public const LEAD_CAPTURE_AI = 197;
+
+    /** Sent to a client when they have stayed in a lead stage for a set time without any activity of their own */
+    public const LEAD_STAGE_NO_ACTIVITY = 231;
 
     /** Sent to staff when a lead's stage is updated in the Lead Capture Form. */
     public const LEAD_STAGE_UPDATED = 224;
