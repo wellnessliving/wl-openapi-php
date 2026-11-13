@@ -133,7 +133,7 @@ class TicketListGetResponseOrder
     public ?string $uid = null;
 
     /**
-     * Link to the PDF file with all tickets of the order. .
+     * Link to the PDF file with all tickets of the order. The browser opens the file, it does not save it. .
      *
      * @var string|null
      */
