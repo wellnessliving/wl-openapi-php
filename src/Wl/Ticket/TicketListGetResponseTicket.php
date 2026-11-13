@@ -128,6 +128,13 @@ class TicketListGetResponseTicket
     public ?string $text_type = null;
 
     /**
+     * Link to the PDF file with this ticket only. The browser opens the file, it does not save it.
+     *
+     * @var string|null
+     */
+    public ?string $url_pdf = null;
+
+    /**
      * Link to the page with this ticket for view and print.
      *
      * @var string|null
@@ -152,6 +159,7 @@ class TicketListGetResponseTicket
         $this->text_holder = isset($data['text_holder']) ? (string)$data['text_holder'] : null;
         $this->text_ticket_code = isset($data['text_ticket_code']) ? (string)$data['text_ticket_code'] : null;
         $this->text_type = isset($data['text_type']) ? (string)$data['text_type'] : null;
+        $this->url_pdf = isset($data['url_pdf']) ? (string)$data['url_pdf'] : null;
         $this->url_viewer = isset($data['url_viewer']) ? (string)$data['url_viewer'] : null;
     }
 }

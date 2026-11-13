@@ -133,14 +133,16 @@ class TicketListGetResponseOrder
     public ?string $uid = null;
 
     /**
-     * Link to the PDF file with all tickets of the order. The browser opens the file, it does not save it. .
+     * Link to the PDF file with the tickets of the order for the event of the list, not for its other instances.
+     * The browser opens the file, it does not save it. .
      *
      * @var string|null
      */
     public ?string $url_pdf = null;
 
     /**
-     * Link to the page with all tickets of the order, to view and print them. .
+     * Link to the page with the tickets of the order for the event of the list, not for its other instances, to
+     * view and print them. .
      *
      * @var string|null
      */
