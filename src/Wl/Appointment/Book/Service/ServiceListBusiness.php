@@ -24,7 +24,6 @@ class ServiceListBusiness
      * Each service and category includes an array of location keys where it is available.
      * All active services are returned: unlike the location-scoped list, the result is not filtered by class tab
      * or by online bookability, and removed locations are skipped.
-     * The caller must be a staff member or admin of the business.
      *
      * @return ServiceListBusinessGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
