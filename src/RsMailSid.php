@@ -357,13 +357,24 @@ namespace WlSdk;
  *
  *   Sent to Finance when the recovery of the amount from the studio (the transfer reversal) or the repayment to the
  *   studio after a won dispute failed.
+ *
+ *   The class of the email is `Thoth\WlPay\Dispute\Finance\Mail` of SAL, see {@link \WlSdk\RsMailSid}. It is a
+ *   text here and not a `@see` link: SAL is released after the monolith, and a link to a class that does not exist yet
+ *   fails the documentation check of this class. TODO WL-96921: replace the text with the links to this class and to
+ *   its methods that load the data and the information of the email when SAL is on every production.
  * - 229 (`PAY_DISPUTE_STUDIO`): A client disputed a payment to the studio.
  *
  *   Sent to the owners of the studio when a client's bank takes back a payment (a chargeback).
+ *
+ *   The class of the email is `Thoth\WlPay\Dispute\Studio\Mail` of SAL, see {@link \WlSdk\RsMailSid}. TODO WL-96921:
+ *   replace the text with the links when SAL is on every production, as in {@link \WlSdk\RsMailSid}.
  * - 230 (`PAY_DISPUTE_SUPPORT`): A chargeback that Smart Disputes does not take must be contested by Support.
  *
  *   Sent to the group mailbox of Support when a client's bank takes back a payment and Stripe does not submit the
  *   evidence itself, with the response deadline. The mail to the studio says that Support contests such a dispute.
+ *
+ *   The class of the email is `Thoth\WlPay\Dispute\Support\Mail` of SAL, see {@link \WlSdk\RsMailSid}. TODO WL-96921:
+ *   replace the text with the links when SAL is on every production, as in {@link \WlSdk\RsMailSid}.
  * - 181 (`PAY_TRANSACTION_FAIL`): Transaction failed.
  *
  *   Sent to support whenever transaction fails.
