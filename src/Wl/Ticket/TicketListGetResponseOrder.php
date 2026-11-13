@@ -133,6 +133,13 @@ class TicketListGetResponseOrder
     public ?string $uid = null;
 
     /**
+     * Link to the PDF file with all tickets of the order. .
+     *
+     * @var string|null
+     */
+    public ?string $url_pdf = null;
+
+    /**
      * Link to the page with all tickets of the order, to view and print them. .
      *
      * @var string|null
@@ -157,6 +164,7 @@ class TicketListGetResponseOrder
         $this->m_total = isset($data['m_total']) ? (string)$data['m_total'] : null;
         $this->text_name = isset($data['text_name']) ? (string)$data['text_name'] : null;
         $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
+        $this->url_pdf = isset($data['url_pdf']) ? (string)$data['url_pdf'] : null;
         $this->url_viewer = isset($data['url_viewer']) ? (string)$data['url_viewer'] : null;
     }
 }

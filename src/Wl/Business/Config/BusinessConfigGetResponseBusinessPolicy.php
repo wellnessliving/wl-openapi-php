@@ -42,6 +42,21 @@ class BusinessConfigGetResponseBusinessPolicy
     public ?int $i_cancel = null;
 
     /**
+     * The low attendance cancellation: a session is cancelled if fewer clients than this are booked.
+     *
+     * @var int|null
+     */
+    public ?int $i_cancel_attendance = null;
+
+    /**
+     * The low attendance cancellation: how long before the session starts the bookings are counted, in the unit of
+     *   `id_cancel_attendance_check`.
+     *
+     * @var int|null
+     */
+    public ?int $i_cancel_attendance_check = null;
+
+    /**
      * Minimum hours|days|months before class should be promoted from wait list.
      *
      * @var int|null
@@ -96,6 +111,13 @@ class BusinessConfigGetResponseBusinessPolicy
     public ?int $id_cancel = null;
 
     /**
+     * The unit of `i_cancel_attendance_check`: {@link \WlSdk\ADurationSid} or {@link \WlSdk\ADurationSid}.
+     *
+     * @var int|null
+     */
+    public ?int $id_cancel_attendance_check = null;
+
+    /**
      * Hours|days|months from {@link \WlSdk\ADurationSid}.
      *
      * @var int|null
@@ -126,6 +148,13 @@ class BusinessConfigGetResponseBusinessPolicy
      * @var bool|null
      */
     public ?bool $is_book_inside_active_pay_period = null;
+
+    /**
+     * `true` if class sessions are cancelled automatically when too few clients are booked, `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_cancel_attendance = null;
 
     /**
      * 1 if a client's automatic payment fails, their account should not be
@@ -199,6 +228,15 @@ class BusinessConfigGetResponseBusinessPolicy
     public ?string $m_payment_penalty = null;
 
     /**
+     * Only for `business`. `true` if a session cancelled for low attendance shows as Cancelled on the client
+     * schedule,
+     *   `false` if clients no longer see it.
+     *
+     * @var bool|null
+     */
+    public ?bool $show_cancel_attendance = null;
+
+    /**
      * Custom Url of a business
      *
      * @var string|null
@@ -229,6 +267,8 @@ class BusinessConfigGetResponseBusinessPolicy
         $this->i_book_before = isset($data['i_book_before']) ? (int)$data['i_book_before'] : null;
         $this->i_book_future = isset($data['i_book_future']) ? (int)$data['i_book_future'] : null;
         $this->i_cancel = isset($data['i_cancel']) ? (int)$data['i_cancel'] : null;
+        $this->i_cancel_attendance = isset($data['i_cancel_attendance']) ? (int)$data['i_cancel_attendance'] : null;
+        $this->i_cancel_attendance_check = isset($data['i_cancel_attendance_check']) ? (int)$data['i_cancel_attendance_check'] : null;
         $this->i_promote = isset($data['i_promote']) ? (int)$data['i_promote'] : null;
         $this->i_promote_fastest_response = isset($data['i_promote_fastest_response']) ? (int)$data['i_promote_fastest_response'] : null;
         $this->i_promote_require_confirm = isset($data['i_promote_require_confirm']) ? (int)$data['i_promote_require_confirm'] : null;
@@ -236,10 +276,12 @@ class BusinessConfigGetResponseBusinessPolicy
         $this->id_book_before = isset($data['id_book_before']) ? (int)$data['id_book_before'] : null;
         $this->id_book_future = isset($data['id_book_future']) ? (int)$data['id_book_future'] : null;
         $this->id_cancel = isset($data['id_cancel']) ? (int)$data['id_cancel'] : null;
+        $this->id_cancel_attendance_check = isset($data['id_cancel_attendance_check']) ? (int)$data['id_cancel_attendance_check'] : null;
         $this->id_promote = isset($data['id_promote']) ? (int)$data['id_promote'] : null;
         $this->id_promote_fastest_response = isset($data['id_promote_fastest_response']) ? (int)$data['id_promote_fastest_response'] : null;
         $this->id_promote_require_confirm = isset($data['id_promote_require_confirm']) ? (int)$data['id_promote_require_confirm'] : null;
         $this->is_book_inside_active_pay_period = isset($data['is_book_inside_active_pay_period']) ? (bool)$data['is_book_inside_active_pay_period'] : null;
+        $this->is_cancel_attendance = isset($data['is_cancel_attendance']) ? (bool)$data['is_cancel_attendance'] : null;
         $this->is_disable_promotion = isset($data['is_disable_promotion']) ? (bool)$data['is_disable_promotion'] : null;
         $this->is_enable_payment_penalty = isset($data['is_enable_payment_penalty']) ? (bool)$data['is_enable_payment_penalty'] : null;
         $this->is_enable_payment_reattempt = isset($data['is_enable_payment_reattempt']) ? (bool)$data['is_enable_payment_reattempt'] : null;
@@ -250,6 +292,7 @@ class BusinessConfigGetResponseBusinessPolicy
         $this->k_currency = isset($data['k_currency']) ? (string)$data['k_currency'] : null;
         $this->k_timezone = isset($data['k_timezone']) ? (string)$data['k_timezone'] : null;
         $this->m_payment_penalty = isset($data['m_payment_penalty']) ? (string)$data['m_payment_penalty'] : null;
+        $this->show_cancel_attendance = isset($data['show_cancel_attendance']) ? (bool)$data['show_cancel_attendance'] : null;
         $this->url_custom = isset($data['url_custom']) ? (string)$data['url_custom'] : null;
         $this->a_family_relation = isset($data['a_family_relation']) ? (array)$data['a_family_relation'] : null;
         $this->a_family_relation_login_allow = isset($data['a_family_relation_login_allow']) ? (array)$data['a_family_relation_login_allow'] : null;
