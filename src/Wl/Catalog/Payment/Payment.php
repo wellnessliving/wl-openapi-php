@@ -27,7 +27,7 @@ class Payment
      * receipt, which lets an anonymous user, who has no access to the purchase, view the receipt. For an anonymous
      * user ({@link \WlSdk\Wl\Catalog\Payment\Payment}) the session also remembers the purchase, so that user can
      * ask for the
-     * emails of the purchase afterwards.
+     * emails of the purchase afterwards, and the receipt goes to the email of the order.
      *
      * @return PaymentPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

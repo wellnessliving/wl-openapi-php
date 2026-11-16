@@ -123,6 +123,16 @@ class StripeComPayInitPostRequest
     public ?string $k_business_merchant = null;
 
     /**
+     * Key of the saved bank account of the payer to pay with a pre-authorized debit.
+     *
+     * `null` if the payer enters a new bank account in the modal of Stripe. Used only if the payment method is
+     * {@link \WlSdk\RsPayMethodSid}. The payer confirms the mandate in the modal of Stripe for every payment.
+     *
+     * @var string|null
+     */
+    public ?string $k_pay_bank = null;
+
+    /**
      * Key of a custom payment method.
      *
      * `null` in case when not initialized yet or empty if payment is performed with a standard payment method.
@@ -183,6 +193,7 @@ class StripeComPayInitPostRequest
             'is_stripe_elements' => $this->is_stripe_elements,
             'k_business' => $this->k_business,
             'k_business_merchant' => $this->k_business_merchant,
+            'k_pay_bank' => $this->k_pay_bank,
             'k_pay_method' => $this->k_pay_method,
             'm_amount' => $this->m_amount,
             'm_surcharge' => $this->m_surcharge,

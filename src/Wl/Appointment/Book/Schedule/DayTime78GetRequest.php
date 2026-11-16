@@ -5,6 +5,24 @@ namespace WlSdk\Wl\Appointment\Book\Schedule;
 class DayTime78GetRequest
 {
     /**
+     * The list of staff members to limit the availability to. Empty means no limit.
+     * Each element is the user key of a staff member.
+     *
+     * When the list is set, only the times that a listed staff member can take are returned, and the suggested
+     * staff
+     * member of each time is taken from this list.
+     * The list is ignored when {@link \WlSdk\Wl\Appointment\Book\Schedule\DayTime} (or the legacy {@link
+     * \WlSdk\Wl\Appointment\Book\Schedule\DayTime}) is set,
+     * and for asset bookings.
+     * Listed staff members who cannot take the booking (not configured for the service, without a work period at
+     * the
+     * location, inactive) are skipped. When none of the listed staff members remains, no availability is returned.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_staff = null;
+
+    /**
      * List of user keys to book appointments.
      * There may be empty values in this list, which means that this is a walk-in.
      *
@@ -189,6 +207,7 @@ class DayTime78GetRequest
     {
         return array_filter(
             [
+            'a_staff' => $this->a_staff,
             'a_uid' => $this->a_uid,
             'dt_date' => $this->dt_date,
             'i_duration' => $this->i_duration,

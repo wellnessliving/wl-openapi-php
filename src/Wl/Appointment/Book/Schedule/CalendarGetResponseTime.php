@@ -74,6 +74,7 @@ class CalendarGetResponseTime
      * User key of the staff member the system would assign for this time if the client booked with any staff
      * member.
      * Populated only when no specific staff member is requested and the booking is not back-to-back.
+     * When {@link \WlSdk\Wl\Appointment\Book\Schedule\DayTime} is set, this is a staff member from that list.
      *
      * `'0'` when not applicable or for asset bookings.
      *
