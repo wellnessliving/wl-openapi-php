@@ -5,22 +5,44 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastS
 {
     /**
-     * Whether message is active. This is needed to avoid showing previous messages on page reload.
+     * End of change interval.
      *
-     * @var bool|null
+     * Empty string if change interval has no end.
+     *
+     * @var string|null
      */
-    public ?bool $is_active = null;
+    public ?string $dt_end_local = null;
 
     /**
-     * Whether booking is in progress.
+     * Start of change interval.
      *
-     * @var bool|null
+     * @var string|null
      */
-    public ?bool $is_booking_in_progress = null;
+    public ?string $dt_start_local = null;
+
+    /**
+     * New "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
+     *
+     * `null` means system default tab.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_tab_new = null;
+
+    /**
+     * Old "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
+     *
+     * `null` means system default tab.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_tab_old = null;
 
     public function __construct(array $data)
     {
-        $this->is_active = isset($data['is_active']) ? (bool)$data['is_active'] : null;
-        $this->is_booking_in_progress = isset($data['is_booking_in_progress']) ? (bool)$data['is_booking_in_progress'] : null;
+        $this->dt_end_local = isset($data['dt_end_local']) ? (string)$data['dt_end_local'] : null;
+        $this->dt_start_local = isset($data['dt_start_local']) ? (string)$data['dt_start_local'] : null;
+        $this->k_class_tab_new = isset($data['k_class_tab_new']) ? (string)$data['k_class_tab_new'] : null;
+        $this->k_class_tab_old = isset($data['k_class_tab_old']) ? (string)$data['k_class_tab_old'] : null;
     }
 }

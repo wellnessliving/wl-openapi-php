@@ -62,6 +62,19 @@ namespace WlSdk\Core\WebSocket;
  * - 977 (`Wl\Business\Sms\SmsSendErrorChannel`): Channel to pass over error message when failed sent SMS.
  * - 16 (`Wl\Business\Edit\TitleChangeChannel`): When title of a business is changed, new title is sent over this
  * channel.
+ * - 2461 (`Wl\Visit\Kiosk\AttemptChannel`): Channel to notify the staff at the check-in kiosk of a location about
+ * every gym check-in and every failed gym
+ *   check-in attempt at that location, from any source.
+ *
+ *   A check-in to a class, an event or an appointment and a failed attempt of it send nothing, and neither does an
+ * undo
+ *   of a check-in.
+ *
+ *   The message carries no data of the client, of the user who made the attempt or of the pass: a broadcast reaches
+ *   every subscriber of the keys, so it cannot be limited to the clients that one staff member may see. On each
+ * message
+ *   the kiosk reads {@link \WlSdk\Wl\Visit\Kiosk\AttemptList} with {@link \WlSdk\Wl\Visit\Kiosk\AttemptList} equal to
+ *   {@link \WlSdk\Core\WebSocket\ChannelBroadcast} to get the full row of the attempt with its `s_attempt`.
  * - 1850 (`Wl\Import\Progress\ProgressChannel`): Channel to pass over information about business import progress.
  * - 1834 (`Wl\Mail\Domain\DomainVerifyStatusChannel`): Domain verification status verification channel.
  * - 677 (`Wl\Mail\Verify\MailVerifyStatusChangeChannel`): When mail verify status was changed new value is sent over
@@ -140,6 +153,9 @@ class ChannelAbstract
 
     /** When title of a business is changed, new title is sent over this channel. */
     public const TitleChangeChannel = 16;
+
+    /** Channel to notify the staff at the check-in kiosk of a location about every gym check-in and every failed gym */
+    public const AttemptChannel = 2461;
 
     /** Channel to pass over information about business import progress. */
     public const ProgressChannel = 1850;

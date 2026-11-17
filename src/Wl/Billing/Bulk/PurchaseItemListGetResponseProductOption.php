@@ -12,7 +12,8 @@ class PurchaseItemListGetResponseProductOption
     public ?string $k_shop_product_option = null;
 
     /**
-     * The regular price of the option.
+     * The price of the option: the discount price when the discount of the option is enabled, the regular
+     * price otherwise.
      *
      * @var string|null
      */

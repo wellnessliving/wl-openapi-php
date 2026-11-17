@@ -5,91 +5,48 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastU
 {
     /**
-     * Card type ID.
-     *
-     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
-     * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
+     * Duration of the generation of the report in seconds.
      *
      * @var int|null
-     * @see \WlSdk\ACardSystemSid
      */
-    public ?int $id_card_system = null;
+    public ?int $i_generation = null;
 
     /**
-     * Transaction exception ID.
-     *
-     * `null` if no errors occurred.
+     * ID of the report that was generated.
+     * One of the {@link \WlSdk\RsReportSid} constants.
      *
      * @var int|null
-     * @see \WlSdk\RsPayException
+     * @see \WlSdk\RsReportSid
      */
-    public ?int $id_pay_exception = null;
+    public ?int $id_report = null;
 
     /**
-     * Ticket status.
+     * Whether need to display a message about report generation, regardless of the generation time.
      *
-     * `null` if not set yet.
-     *
-     * @var int|null
-     * @see \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid
+     * @var bool|null
      */
-    public ?int $id_ticket_status = null;
+    public ?bool $is_need_show = null;
 
     /**
-     * Amount of tips entered by customer on terminal.
+     * Report accumulation.
      *
      * @var string|null
      */
-    public ?string $m_tip = null;
+    public ?string $k_report_accumulation = null;
 
     /**
-     * Cardholder name.
-     *
-     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
-     * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
+     * Title of the report that was generated.
      *
      * @var string|null
      */
-    public ?string $s_card_holder = null;
-
-    /**
-     * Card expiration date.
-     *
-     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
-     * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
-     *
-     * @var string|null
-     */
-    public ?string $s_expire = null;
-
-    /**
-     * Last four digits of the card number.
-     *
-     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
-     * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
-     *
-     * @var string|null
-     */
-    public ?string $s_last4 = null;
-
-    /**
-     * Text message to notify the client.
-     *
-     * `null` until initialized.
-     *
-     * @var string|null
-     */
-    public ?string $text_message = null;
+    public ?string $text_report = null;
 
     public function __construct(array $data)
     {
-        $this->id_card_system = isset($data['id_card_system']) ? (int)$data['id_card_system'] : null;
-        $this->id_pay_exception = isset($data['id_pay_exception']) ? (int)$data['id_pay_exception'] : null;
-        $this->id_ticket_status = isset($data['id_ticket_status']) ? (int)$data['id_ticket_status'] : null;
-        $this->m_tip = isset($data['m_tip']) ? (string)$data['m_tip'] : null;
-        $this->s_card_holder = isset($data['s_card_holder']) ? (string)$data['s_card_holder'] : null;
-        $this->s_expire = isset($data['s_expire']) ? (string)$data['s_expire'] : null;
-        $this->s_last4 = isset($data['s_last4']) ? (string)$data['s_last4'] : null;
-        $this->text_message = isset($data['text_message']) ? (string)$data['text_message'] : null;
+        $this->i_generation = isset($data['i_generation']) ? (int)$data['i_generation'] : null;
+        $this->id_report = isset($data['id_report']) ? (int)$data['id_report'] : null;
+        $this->is_need_show = isset($data['is_need_show']) ? (bool)$data['is_need_show'] : null;
+        $this->k_report_accumulation = isset($data['k_report_accumulation']) ? (string)$data['k_report_accumulation'] : null;
+        $this->text_report = isset($data['text_report']) ? (string)$data['text_report'] : null;
     }
 }

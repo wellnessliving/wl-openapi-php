@@ -5,48 +5,46 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastM
 {
     /**
-     * List of email domain tokens:
-     *
-     * Empty array if the business does not have a mail domain set up.
-     *
-     * @var SubscribePostResponseMessageBroadcastMDomainToken|null
-     */
-    public ?SubscribePostResponseMessageBroadcastMDomainToken $a_domain_token = null;
-
-    /**
-     * Number of resets of the domain that the staff of the business made in its current calendar month.
-     *
-     *
-     * `0` if the domain is not verified.
+     * Number of successfully processed items.
      *
      * @var int|null
      */
-    public ?int $i_reset_month = null;
+    public ?int $i_complete = null;
 
     /**
-     * Email domain status.
-     *
-     * `null` if the business does not have a mail domain set up.
+     * Number of failed items.
      *
      * @var int|null
-     * @see \WlSdk\Wl\Mail\Domain\DomainVerifyStatusSid
      */
-    public ?int $id_domain_status = null;
+    public ?int $i_fail = null;
 
     /**
-     * CSS class for the icon representing the email domain status.
+     * Number of items left to process.
      *
-     * Empty string if the business does not have a mail domain set up.
+     * @var int|null
+     */
+    public ?int $i_left = null;
+
+    /**
+     * Key of the import being processing.
      *
      * @var string|null
      */
-    public ?string $text_domain_status_icon = null;
+    public ?string $k_import = null;
+
+    /**
+     * Url link to download log file with import progress.
+     *
+     * @var string|null
+     */
+    public ?string $url_log = null;
 
     public function __construct(array $data)
     {
-        $this->a_domain_token = isset($data['a_domain_token']) ? new SubscribePostResponseMessageBroadcastMDomainToken((array)$data['a_domain_token']) : null;
-        $this->i_reset_month = isset($data['i_reset_month']) ? (int)$data['i_reset_month'] : null;
-        $this->id_domain_status = isset($data['id_domain_status']) ? (int)$data['id_domain_status'] : null;
-        $this->text_domain_status_icon = isset($data['text_domain_status_icon']) ? (string)$data['text_domain_status_icon'] : null;
+        $this->i_complete = isset($data['i_complete']) ? (int)$data['i_complete'] : null;
+        $this->i_fail = isset($data['i_fail']) ? (int)$data['i_fail'] : null;
+        $this->i_left = isset($data['i_left']) ? (int)$data['i_left'] : null;
+        $this->k_import = isset($data['k_import']) ? (string)$data['k_import'] : null;
+        $this->url_log = isset($data['url_log']) ? (string)$data['url_log'] : null;
     }
 }
