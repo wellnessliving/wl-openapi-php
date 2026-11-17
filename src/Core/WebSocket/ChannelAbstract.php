@@ -72,6 +72,19 @@ namespace WlSdk\Core\WebSocket;
  * - 305 (`Wl\Schedule\ScheduleList\ScheduleListChannel`): Channel to notify user that a session has been booked or
  * book cancelled.
  * - 298 (`Wl\Schedule\ClassList\ClassListChannel`): Channel to notify user that class schedule is changed.
+ * - 2461 (`Wl\Visit\Kiosk\AttemptChannel`): Channel to notify the staff at the check-in kiosk of a location about
+ * every gym check-in and every failed gym
+ *   check-in attempt at that location, from any source.
+ *
+ *   A check-in to a class, an event or an appointment and a failed attempt of it send nothing, and neither does an
+ * undo
+ *   of a check-in.
+ *
+ *   The message carries no data of the client, of the user who made the attempt or of the pass: a broadcast reaches
+ *   every subscriber of the keys, so it cannot be limited to the clients that one staff member may see. On each
+ * message
+ *   the kiosk reads {@link \WlSdk\Wl\Visit\Kiosk\AttemptList} with {@link \WlSdk\Wl\Visit\Kiosk\AttemptList} equal to
+ *   {@link \WlSdk\Core\WebSocket\ChannelBroadcast} to get the full row of the attempt with its `s_attempt`.
  * - 1820 (`Wl\Member\Info\ClientTypeChangeChannel`): A message is sent through this channel every time a client type
  * is changed.
  * - 842 (`Wl\Report\Background\ReportBackgroundProcessChannel`): Channel to notify certain user about complete of
@@ -161,6 +174,9 @@ class ChannelAbstract
 
     /** Channel to notify user that class schedule is changed. */
     public const ClassListChannel = 298;
+
+    /** Channel to notify the staff at the check-in kiosk of a location about every gym check-in and every failed gym */
+    public const AttemptChannel = 2461;
 
     /** A message is sent through this channel every time a client type is changed. */
     public const ClientTypeChangeChannel = 1820;

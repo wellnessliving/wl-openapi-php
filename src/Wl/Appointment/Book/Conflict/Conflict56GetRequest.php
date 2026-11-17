@@ -40,6 +40,30 @@ class Conflict56GetRequest
     public ?array $a_uid = null;
 
     /**
+     * New weekdays for a weekly forward reschedule, constants of {@link \WlSdk\ADateWeekSid}.
+     * Empty to keep the current weekdays.
+     *
+     * @var int[]|null
+     */
+    public ?array $a_week = null;
+
+    /**
+     * First local date of the bounded reschedule range, in MySQL format.
+     * Required for {@link \WlSdk\Wl\Appointment\Edit\EditRangeSid}; empty otherwise.
+     *
+     * @var string|null
+     */
+    public ?string $dl_edit_from = null;
+
+    /**
+     * Last local date of the bounded reschedule range, in MySQL format.
+     * Required for {@link \WlSdk\Wl\Appointment\Edit\EditRangeSid}; empty otherwise.
+     *
+     * @var string|null
+     */
+    public ?string $dl_edit_to = null;
+
+    /**
      * Date/time of appointment. In location timezone.
      *
      * @var string|null
@@ -53,6 +77,18 @@ class Conflict56GetRequest
      * @var int|null
      */
     public ?int $i_duration = null;
+
+    /**
+     * Scope of a staff reschedule of a recurring appointment.
+     *
+     * Omitted or {@link \WlSdk\Wl\Appointment\Edit\EditRangeSid} keeps the existing single-session behavior.
+     * A wider scope keeps each session's calendar date and checks its new time in the destination location.
+     * Each returned `dt_date_global` is the key of that session's conflict solution on the write.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Appointment\Edit\EditRangeSid
+     */
+    public ?int $id_edit_range = 1;
 
     /**
      * If `true`, the client is a walk-in. Otherwise, this will be `false`.
@@ -111,7 +147,7 @@ class Conflict56GetRequest
     public ?string $uid = null;
 
     /**
-     * Staff member user ID.
+     * Staff member user key.
      *
      * @var string|null
      */
@@ -125,8 +161,12 @@ class Conflict56GetRequest
             'a_repeat' => $this->a_repeat,
             'a_resource' => $this->a_resource,
             'a_uid' => $this->a_uid,
+            'a_week' => $this->a_week,
+            'dl_edit_from' => $this->dl_edit_from,
+            'dl_edit_to' => $this->dl_edit_to,
             'dt_date' => $this->dt_date,
             'i_duration' => $this->i_duration,
+            'id_edit_range' => $this->id_edit_range,
             'is_walk_in' => $this->is_walk_in,
             'k_appointment' => $this->k_appointment,
             'k_location' => $this->k_location,
