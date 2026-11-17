@@ -153,6 +153,29 @@ class PaymentPostRequest
      */
     public ?string $text_receipt_note = null;
 
+    /**
+     * The key of the payor (optional). Primary key in  table.
+     *
+     * When non-empty, the payor becomes the money owner of the sale and is charged instead of the client. The
+     * client
+     * ({@link \WlSdk\Wl\Catalog\Payment\Payment}) stays the holder of the purchased items.
+     *
+     * Empty string (the default) means the client's default payer is charged, which is the normal behaviour.
+     *
+     * Only staff ({@link \WlSdk\Wl\Catalog\Payment\Payment} `true`, {@link \WlSdk\Wl\Catalog\Payment\Payment}
+     * `false`) may set this field.
+     * A non-staff caller receives `payor-staff`.
+     *
+     * Other error codes returned when the payor is not valid:
+     * - `payor-disabled` - the payor feature is not available;
+     * - `payor-invalid` - the payor is not a valid payer for the client;
+     * - `payor-installment` - the sale has a payment plan;
+     * - `payor-holder` - a scheduled-payment item is held by someone other than the client.
+     *
+     * @var string|null
+     */
+    public ?string $uid_payor = null;
+
     public function params(): array
     {
         return array_filter(
@@ -176,6 +199,7 @@ class PaymentPostRequest
             'm_tip' => $this->m_tip,
             'text_discount_code' => $this->text_discount_code,
             'text_receipt_note' => $this->text_receipt_note,
+            'uid_payor' => $this->uid_payor,
             ],
             static fn ($v) => $v !== null
         );

@@ -8,6 +8,19 @@ namespace WlSdk\Wl\Visit\Kiosk;
 class AttendPostResponse
 {
     /**
+     * Every reason why the check-in has been refused.
+     *
+     * Each is one of {@link \WlSdk\Wl\Visit\VisitDenyReasonSid} constants. The first one is the reason given by
+     * the check-in and equals
+     * {@link \WlSdk\Wl\Visit\Kiosk\AttendPostResponse::$id_deny_reason}; the others are the reasons found by the
+     * evaluation of the check-in, in the
+     * order of the check-in, without duplicates. Empty if the check-in has been made.
+     *
+     * @var int[]|null
+     */
+    public ?array $a_deny_reason = null;
+
+    /**
      * Time of the check-in of the gym visit that the client already has on the day, in UTC and MySQL format, for
      * example `2026-11-05 14:30:00`.
      *
@@ -45,7 +58,8 @@ class AttendPostResponse
     public ?int $i_attend_quick_close_success = null;
 
     /**
-     * Reason why the check-in has been refused.
+     * Reason why the check-in has been refused, the first element of {@link
+     * \WlSdk\Wl\Visit\Kiosk\AttendPostResponse::$a_deny_reason}.
      *
      * One of {@link \WlSdk\Wl\Visit\VisitDenyReasonSid} constants. `0` if the check-in has been made.
      *
@@ -171,6 +185,7 @@ class AttendPostResponse
 
     public function __construct(array $data)
     {
+        $this->a_deny_reason = isset($data['a_deny_reason']) ? (array)$data['a_deny_reason'] : null;
         $this->dtu_attend = isset($data['dtu_attend']) ? (string)$data['dtu_attend'] : null;
         $this->dtu_register = isset($data['dtu_register']) ? (string)$data['dtu_register'] : null;
         $this->i_attend_quick_close_fail = isset($data['i_attend_quick_close_fail']) ? (int)$data['i_attend_quick_close_fail'] : null;

@@ -647,12 +647,30 @@ class PurchaseListElementGetResponse
     public ?string $text_guest_pass = null;
 
     /**
+     * The full name of the user who pays for this purchase option instead of the default payer of its holder.
+     * `null` if the item is not a purchase option, the purchase option is billed to the default payer,
+     * or the payer cannot be resolved.
+     *
+     * @var string|null
+     */
+    public ?string $text_promotion_payer = null;
+
+    /**
      * The key of the user who paid for this purchase.
      * `null` in a case when there was no money transaction.
      *
      * @var string|null
      */
     public ?string $uid_payer = null;
+
+    /**
+     * The key of the user who pays for this purchase option instead of the default payer of its holder.
+     * `null` under the same conditions as {@link
+     * \WlSdk\Wl\Profile\PurchaseList\PurchaseListElementGetResponse::$text_promotion_payer}.
+     *
+     * @var string|null
+     */
+    public ?string $uid_promotion_payer = null;
 
     /**
      * The key of the user who paid for this purchase.
@@ -745,7 +763,9 @@ class PurchaseListElementGetResponse
         $this->sid_value = isset($data['sid_value']) ? (string)$data['sid_value'] : null;
         $this->text_expire = isset($data['text_expire']) ? (string)$data['text_expire'] : null;
         $this->text_guest_pass = isset($data['text_guest_pass']) ? (string)$data['text_guest_pass'] : null;
+        $this->text_promotion_payer = isset($data['text_promotion_payer']) ? (string)$data['text_promotion_payer'] : null;
         $this->uid_payer = isset($data['uid_payer']) ? (string)$data['uid_payer'] : null;
+        $this->uid_promotion_payer = isset($data['uid_promotion_payer']) ? (string)$data['uid_promotion_payer'] : null;
         $this->uid_recipient = isset($data['uid_recipient']) ? (string)$data['uid_recipient'] : null;
     }
 }

@@ -64,11 +64,31 @@ class ListGetResponseClass
     public ?string $k_class = null;
 
     /**
+     * Key of the category of the class or event. Classes and events have separate lists of categories, see
+     * {@link \WlSdk\Wl\Classes\Category\CategoryList}.
+     * A class or event that has no category yet is given in the category "Uncategorized" of its business and kind.
+     * `null` only for such a class or event while its business has no category "Uncategorized" of that kind yet.
+     *
+     * @var string|null
+     */
+    public ?string $k_classes_category = null;
+
+    /**
      * Event Block ID.
      *
      * @var string|null
      */
     public ?string $k_enrollment_block = null;
+
+    /**
+     * Name of the category of the class or event, in the language of the request, or in the nearest language
+     * that has a name. The translated name "Uncategorized" when `k_classes_category` is `null`. `null` if the
+     * category has no name in any language: a category always gets a name when it is created, so this is broken
+     * data.
+     *
+     * @var string|null
+     */
+    public ?string $text_category = null;
 
     /**
      * Class/event name.
@@ -87,7 +107,9 @@ class ListGetResponseClass
         $this->is_event = isset($data['is_event']) ? (bool)$data['is_event'] : null;
         $this->is_remove = isset($data['is_remove']) ? (bool)$data['is_remove'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
+        $this->k_classes_category = isset($data['k_classes_category']) ? (string)$data['k_classes_category'] : null;
         $this->k_enrollment_block = isset($data['k_enrollment_block']) ? (string)$data['k_enrollment_block'] : null;
+        $this->text_category = isset($data['text_category']) ? (string)$data['text_category'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }
 }

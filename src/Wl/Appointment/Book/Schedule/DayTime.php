@@ -24,6 +24,10 @@ class DayTime
      *  Each slot includes the start time, duration, available capacity, and staff information. Supports
      *  both frontend and backend modes, as well as asset bookings and back-to-back scheduling.
      *
+     * On a client request (`uid` set, `is_staff` false), time slots that overlap the client's own bookings of the
+     *  same service are excluded, including the future occurrences of the client's never-ending recurring
+     * bookings.
+     *
      * @deprecated Use {@link \Wl\Appointment\Book\Schedule\DayTime73Api}
      *
      * @return DayTimeGetResponse

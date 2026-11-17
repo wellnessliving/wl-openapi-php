@@ -84,6 +84,17 @@ class BookListGetResponseClass
     public ?string $k_class = null;
 
     /**
+     * The key of the category of the class or event, as {@link
+     * \WlSdk\Wl\Classes\ClassList\ListEndpointGetResponse::$a_class} gives it: a class or event that
+     * has no category yet is given in the category "Uncategorized" of its business and kind, and `null` only while
+     * the business has no such category. A removed class or event that still has a session at the location is
+     * given as a class without a category, like its `is_event`.
+     *
+     * @var string|null
+     */
+    public ?string $k_classes_category = null;
+
+    /**
      * The enrollment block key.
      *
      * @var string|null
@@ -96,6 +107,16 @@ class BookListGetResponseClass
      * @var string|null
      */
     public ?string $m_price_total = null;
+
+    /**
+     * The name of the category of the class or event in the language of the request, or in the nearest language
+     * that has a name. The translated name "Uncategorized" when `k_classes_category` is `null`. `null` if the
+     * category has no name in any language: a category always gets a name when it is created, so this is broken
+     * data.
+     *
+     * @var string|null
+     */
+    public ?string $text_category = null;
 
     /**
      * The class description.
@@ -124,8 +145,10 @@ class BookListGetResponseClass
         $this->is_event = isset($data['is_event']) ? (bool)$data['is_event'] : null;
         $this->is_online_private = isset($data['is_online_private']) ? (bool)$data['is_online_private'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
+        $this->k_classes_category = isset($data['k_classes_category']) ? (string)$data['k_classes_category'] : null;
         $this->k_enrollment_block = isset($data['k_enrollment_block']) ? (string)$data['k_enrollment_block'] : null;
         $this->m_price_total = isset($data['m_price_total']) ? (string)$data['m_price_total'] : null;
+        $this->text_category = isset($data['text_category']) ? (string)$data['text_category'] : null;
         $this->text_description = isset($data['text_description']) ? (string)$data['text_description'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
     }

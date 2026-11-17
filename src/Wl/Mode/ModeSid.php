@@ -36,6 +36,7 @@ namespace WlSdk\Wl\Mode;
  * - 35 (`STAFF_KIOSK`): Staff member checked the client in at the staff check-in kiosk.
  * - 10 (`SYSTEM`): Created by system.
  * - 6 (`UNDEFINED`): Means that we did not define mode.
+ * - 34 (`WAIT_LIST_PROMOTION`): Sale made automatically on wait list promotion.
  * - 16 (`WEB_APP_ATTENDANCE`): Client booked session from Attendance Web App.
  * - 15 (`WEB_APP_CHECK_IN`): Client checked-in for the session through Check-In Web App.
  * - 2 (`WEB_BACKEND`): Staff booked session for client from website backend.
@@ -122,6 +123,9 @@ class ModeSid
 
     /** Means that we did not define mode. */
     public const UNDEFINED = 6;
+
+    /** Sale made automatically on wait list promotion. */
+    public const WAIT_LIST_PROMOTION = 34;
 
     /** Client booked session from Attendance Web App. */
     public const WEB_APP_ATTENDANCE = 16;

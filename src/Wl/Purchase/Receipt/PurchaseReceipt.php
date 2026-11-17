@@ -21,7 +21,10 @@ class PurchaseReceipt
      * Gets purchase information.
      *
      * Returns full receipt data for the specified purchase, including business details, customer information,
-     * itemized purchase items, payment methods, pricing summary, and print URLs.
+     * itemized purchase items, payment methods, pricing summary, and print URLs. The access is granted to a user
+     * who
+     * has the rights to the purchase, or to anyone who passes a valid {@link
+     * \WlSdk\Wl\Purchase\Receipt\PurchaseReceipt}.
      *
      * @return PurchaseReceiptGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

@@ -24,6 +24,10 @@ class ListEndpoint
      * promotions, products, events, and coupons - merged across the business's categories. The separate
      * de-duplicated list and category list support both the flat and category-tabbed views.
      *
+     * In the paged mode, when `i_last` is set or `a_item` is not empty, the items are read from a list cached for
+     * 10 minutes, filtered and sorted by `a_filter`, and one page of them is returned with the categories of the
+     * sidebar; or the items of `a_item` are looked up.
+     *
      * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Privilege;
 /**
  * Wellnessliving-wide privileges.
  *
- * Last Used ID: 253.
+ * Last Used ID: 259.
  *
  * Values:
  * - 225 (`AI_AGENT_KNOWLEDGE_BASE`): Allows user to view, create or edit knowledge base entries, or conversational
@@ -127,6 +127,26 @@ namespace WlSdk\Wl\Privilege;
  * - 110 (`INTERFACE_WIDGET_VIEW`): View the look and functionality business’s widgets. These settings are located
  * within Setup > Widgets.
  * - 157 (`INVENTORY_UPDATE`): Permission to Receive or Adjust quantity from the Inventory On Hand Report.
+ * - 255 (`LEAD_ADD`): Add leads.
+ *
+ *   Allows a staff member to add a lead from the App Drawer. Without this privilege the Add Lead button is hidden.
+ *   Leads that come from lead capture widgets, the API and integrations are not affected.
+ * - 257 (`LEAD_CREATION_SETTINGS_MANAGE`): Manage lead creation settings.
+ *
+ *   Allows a staff member to change what happens when a staff member adds a lead, in Setup > Leads > Lead Creation.
+ *   Without this privilege the page is view only.
+ * - 258 (`LEAD_SOURCE_MANAGE`): Manage lead sources and fields.
+ *
+ *   Allows a staff member to edit the list of lead sources and the fields shown when adding a lead, in
+ *   Setup > Leads > Lead Sources and Lead Fields. Without this privilege these pages are view only.
+ * - 256 (`LEAD_STAGE_CHANGE`): Change lead stage.
+ *
+ *   Allows a staff member to move leads and clients between lead stages. Without this privilege the stage is shown
+ *   as read-only text. Automations still move leads on their own.
+ * - 259 (`LEAD_STAGE_MANAGE`): Manage lead stages.
+ *
+ *   Allows a staff member to add, edit, reorder and delete lead stages, in Setup > Leads > Lead Stages. Without this
+ *   privilege the page is view only.
  * - 9 (`LOCATION_EDIT`): Manage my locations except General information.
  * - 126 (`LOCATION_EDIT_GENERAL`): Manage tab Location -> General.
  * - 8 (`LOCATION_FOREIGN`): Manage all locations.
@@ -183,6 +203,10 @@ namespace WlSdk\Wl\Privilege;
  * - 136 (`NOTIFICATION_SALE_STAFF`): Staff with this role will receive the sale receipts mails.
  * - 216 (`NOTIFICATION_STAFF_CALLBACK_REQUEST`): Receive Staff Callback Request notification.
  * - 164 (`OVERRIDE_FEE`): Override late cancel and no show fees.
+ * - 254 (`OVERRIDE_MAKEUP_PASS`): Override make-up passes.
+ *
+ *   Allows a staff member to choose whether a make-up pass is issued when cancelling a visit for a client.
+ *   Without this privilege the Make-up Passes policy of the business applies as it is set.
  * - 94 (`PARTNER_PROGRAM_MANAGE`): Manage partner program.
  * - 166 (`PAYMENT_PROCESSING`): Access to Payment Processing.
  * - 245 (`PERFORM_BULK_BILLING`): Allows staff to select multiple clients and post a single bulk transaction for a
@@ -563,6 +587,21 @@ class PrivilegeSid
     /** Permission to Receive or Adjust quantity from the Inventory On Hand Report. */
     public const INVENTORY_UPDATE = 157;
 
+    /** Add leads. */
+    public const LEAD_ADD = 255;
+
+    /** Manage lead creation settings. */
+    public const LEAD_CREATION_SETTINGS_MANAGE = 257;
+
+    /** Manage lead sources and fields. */
+    public const LEAD_SOURCE_MANAGE = 258;
+
+    /** Change lead stage. */
+    public const LEAD_STAGE_CHANGE = 256;
+
+    /** Manage lead stages. */
+    public const LEAD_STAGE_MANAGE = 259;
+
     /** Manage my locations except General information. */
     public const LOCATION_EDIT = 9;
 
@@ -709,6 +748,9 @@ class PrivilegeSid
 
     /** Override late cancel and no show fees. */
     public const OVERRIDE_FEE = 164;
+
+    /** Override make-up passes. */
+    public const OVERRIDE_MAKEUP_PASS = 254;
 
     /** Manage partner program. */
     public const PARTNER_PROGRAM_MANAGE = 94;

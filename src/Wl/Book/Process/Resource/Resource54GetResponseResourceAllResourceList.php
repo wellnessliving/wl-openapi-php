@@ -28,6 +28,22 @@ class Resource54GetResponseResourceAllResourceList
     public ?int $i_index = null;
 
     /**
+     * Padding after each booking of the asset, in minutes. `0` if the asset has no padding after.
+     * Classes are not padded; the value only tells the client about the asset setting.
+     *
+     * @var int|null
+     */
+    public ?int $i_padding_after = null;
+
+    /**
+     * Padding before each booking of the asset, in minutes. `0` if the asset has no padding before.
+     * Classes are not padded; the value only tells the client about the asset setting.
+     *
+     * @var int|null
+     */
+    public ?int $i_padding_before = null;
+
+    /**
      * Total number of the asset spots.
      *
      * @var int|null
@@ -95,6 +111,8 @@ class Resource54GetResponseResourceAllResourceList
         $this->a_class_period = isset($data['a_class_period']) ? (array)$data['a_class_period'] : null;
         $this->a_image = isset($data['a_image']) ? new Resource54GetResponseResourceAllResourceListImage((array)$data['a_image']) : null;
         $this->i_index = isset($data['i_index']) ? (int)$data['i_index'] : null;
+        $this->i_padding_after = isset($data['i_padding_after']) ? (int)$data['i_padding_after'] : null;
+        $this->i_padding_before = isset($data['i_padding_before']) ? (int)$data['i_padding_before'] : null;
         $this->i_quantity = isset($data['i_quantity']) ? (int)$data['i_quantity'] : null;
         $this->i_use = isset($data['i_use']) ? (int)$data['i_use'] : null;
         $this->is_current = isset($data['is_current']) ? (bool)$data['is_current'] : null;

@@ -25,7 +25,9 @@ class TicketPurchaseMail
      * pattern
      * is turned off in the business, or if the buyer has turned it off in the notification settings and no address
      * is
-     * given. The codes of the errors are listed in the description of the class.
+     * given. A guest, who is not signed in, gets the email at the address of the order.
+     *  The codes of the errors are listed in the description of
+     * the class.
      *
      * @return TicketPurchaseMailPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

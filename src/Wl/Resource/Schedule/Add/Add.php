@@ -20,10 +20,10 @@ class Add
     /**
      * Saves new time interval.
      *
-     * Validates the business, location, and resource, checks that the resource is active,
-     *  belongs to the given location, and that the current login has edit access, then creates
-     *  the working or non-working schedule for each selected day and returns the created
-     *  resource period keys.
+     * Validates the business, location, and resource, checks that the location and the resource belong
+     *  to the business, that the resource is active and belongs to the given location, and that the current
+     *  login has edit access, then creates the working or non-working schedule for each selected day
+     *  and returns the created resource period keys.
      *
      * @return AddPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

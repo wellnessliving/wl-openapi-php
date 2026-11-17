@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Page\Backend\Feature;
 /**
  * List of available features in the system that can be shown in owner's header.
  *
- * Last used ID: 37.
+ * Last used ID: 39.
  *
  * Values:
  * - 34 (`AI_AGENT`): Ai Agent.
@@ -30,6 +30,7 @@ namespace WlSdk\Wl\Page\Backend\Feature;
  * - 21 (`LOG_REPORT`): Log report of staff activity.
  * - 12 (`MARKETING`): List of email patterns that are connected to the online marketing.
  * - 19 (`PARTNER`): Page with information about partner program.
+ * - 38 (`PASSKEY`): Passkeys of the staff members.
  * - 23 (`PRESENCE`): Presence landing page, where staff can get their custom website.
  * - 29 (`QUIZ`): Quiz form creator.
  * - 16 (`RECEPTION`): Popup window where client can check-in to the upcoming classes.
@@ -40,6 +41,7 @@ namespace WlSdk\Wl\Page\Backend\Feature;
  * - 6 (`SCHEDULE`): Business schedule.
  * - 15 (`SELF_SIGNUP`): Popup window where new clients can sign up themselves to the classes.
  * - 13 (`SKIN_APP`): Page to config custom client's app.
+ * - 39 (`STAFF_RECEPTION`): Staff check-in kiosk of gym visits: the staff member stays signed in.
  * - 10 (`SUPPORT`): Link to the page of the support page.
  * - 8 (`TASK_MANAGEMENT`): Creation of the user.
  * - 24 (`TOAST_MESSAGE`): Toast notifications.
@@ -110,6 +112,9 @@ class FeatureSid
     /** Page with information about partner program. */
     public const PARTNER = 19;
 
+    /** Passkeys of the staff members. */
+    public const PASSKEY = 38;
+
     /** Presence landing page, where staff can get their custom website. */
     public const PRESENCE = 23;
 
@@ -139,6 +144,9 @@ class FeatureSid
 
     /** Page to config custom client's app. */
     public const SKIN_APP = 13;
+
+    /** Staff check-in kiosk of gym visits: the staff member stays signed in. */
+    public const STAFF_RECEPTION = 39;
 
     /** Link to the page of the support page. */
     public const SUPPORT = 10;

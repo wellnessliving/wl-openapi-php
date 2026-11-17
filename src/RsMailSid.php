@@ -13,7 +13,7 @@ namespace WlSdk;
  *
  * Pay attention that all `\MailPrioritySid` must start with backslash.
  *
- * Last used ID: 225.
+ * Last used ID: 231.
  *
  * Values:
  * - 220 (`ABANDONED_CHECKOUT`): Sent when a client abandons a checkout (used in automations).
@@ -290,6 +290,9 @@ namespace WlSdk;
  * - 87 (`LEAD_CAPTURE`): Sent to the client after they fill out a Lead Capture Form on the website of a business.
  * - 197 (`LEAD_CAPTURE_AI`): Sent to staff when CAASI captures a new lead from a conversation,
  *   including contact details and any provided inquiry notes.
+ * - 231 (`LEAD_STAGE_NO_ACTIVITY`): Sent to a client when they have stayed in a lead stage for a set time without any
+ * activity of their own
+ *   (used in automations).
  * - 224 (`LEAD_STAGE_UPDATED`): Sent to staff when a lead's stage is updated in the Lead Capture Form.
  * - 96 (`LOGIN_ANNIVERSARY`): Sent to client on annual anniversary of the Member Since date.
  * - 42 (`LOGIN_ATTENDANCE`): Attendance List.
@@ -329,6 +332,8 @@ namespace WlSdk;
  * - 191 (`NOTIFICATION_OTP`): Sent OTP code by sms or email to validate phone number or email address.
  * - 187 (`PASSPORT_LOGIN_ENTER`): Sent OTP code by sms and email for the user sign in.
  * - 205 (`PASSPORT_LOGIN_MERGE`): Notification about email address is changed due to merge.
+ * - 226 (`PASSPORT_PASSKEY_ADD`): Notification to a staff member that a passkey was added to their account.
+ * - 227 (`PASSPORT_PASSKEY_REMOVE`): Notification to a staff member that a passkey was removed from their account.
  * - 85 (`PAY_ACCOUNT_INVOICE`): E-mail with a list of user's payment account transactions for last `62` days.
  *
  *   <h2>Acceptance test</h2>
@@ -351,6 +356,28 @@ namespace WlSdk;
  *   * When status of a recurrently paid transaction is changed to {@link \WlSdk\RsPayTransactionStatusSid}.
  *
  *   Should be disabled by default according to the task (see link below).
+ * - 228 (`PAY_DISPUTE_FUNDS_FAIL`): Funds of a Stripe dispute must be moved by hand.
+ *
+ *   Sent to Finance when the recovery of the amount from the studio (the transfer reversal) or the repayment to the
+ *   studio after a won dispute failed.
+ *
+ *   The class of the email is `Thoth\WlPay\Dispute\Finance\Mail` of SAL, see {@link \WlSdk\RsMailSid}. It is a
+ *   text here and not a `@see` link: SAL is released after the monolith, and a link to a class that does not exist yet
+ *   fails the documentation check of this class. TODO WL-96921: replace the text with the links to this class and to
+ *   its methods that load the data and the information of the email when SAL is on every production.
+ * - 229 (`PAY_DISPUTE_STUDIO`): A client disputed a payment to the studio.
+ *
+ *   Sent to the owners of the studio when a client's bank takes back a payment (a chargeback).
+ *
+ *   The class of the email is `Thoth\WlPay\Dispute\Studio\Mail` of SAL, see {@link \WlSdk\RsMailSid}. TODO WL-96921:
+ *   replace the text with the links when SAL is on every production, as in {@link \WlSdk\RsMailSid}.
+ * - 230 (`PAY_DISPUTE_SUPPORT`): A chargeback that Smart Disputes does not take must be contested by Support.
+ *
+ *   Sent to the group mailbox of Support when a client's bank takes back a payment and Stripe does not submit the
+ *   evidence itself, with the response deadline. The mail to the studio says that Support contests such a dispute.
+ *
+ *   The class of the email is `Thoth\WlPay\Dispute\Support\Mail` of SAL, see {@link \WlSdk\RsMailSid}. TODO WL-96921:
+ *   replace the text with the links when SAL is on every production, as in {@link \WlSdk\RsMailSid}.
  * - 181 (`PAY_TRANSACTION_FAIL`): Transaction failed.
  *
  *   Sent to support whenever transaction fails.
@@ -859,6 +886,9 @@ class RsMailSid
     /** Sent to staff when CAASI captures a new lead from a conversation, */
     public const LEAD_CAPTURE_AI = 197;
 
+    /** Sent to a client when they have stayed in a lead stage for a set time without any activity of their own */
+    public const LEAD_STAGE_NO_ACTIVITY = 231;
+
     /** Sent to staff when a lead's stage is updated in the Lead Capture Form. */
     public const LEAD_STAGE_UPDATED = 224;
 
@@ -925,11 +955,26 @@ class RsMailSid
     /** Notification about email address is changed due to merge. */
     public const PASSPORT_LOGIN_MERGE = 205;
 
+    /** Notification to a staff member that a passkey was added to their account. */
+    public const PASSPORT_PASSKEY_ADD = 226;
+
+    /** Notification to a staff member that a passkey was removed from their account. */
+    public const PASSPORT_PASSKEY_REMOVE = 227;
+
     /** E-mail with a list of user's payment account transactions for last `62` days. */
     public const PAY_ACCOUNT_INVOICE = 85;
 
     /** Automatic payment success. */
     public const PAY_AUTOMATIC_SUCCESS = 116;
+
+    /** Funds of a Stripe dispute must be moved by hand. */
+    public const PAY_DISPUTE_FUNDS_FAIL = 228;
+
+    /** A client disputed a payment to the studio. */
+    public const PAY_DISPUTE_STUDIO = 229;
+
+    /** A chargeback that Smart Disputes does not take must be contested by Support. */
+    public const PAY_DISPUTE_SUPPORT = 230;
 
     /** Transaction failed. */
     public const PAY_TRANSACTION_FAIL = 181;

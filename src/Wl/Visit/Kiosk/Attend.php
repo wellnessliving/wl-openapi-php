@@ -26,8 +26,9 @@ class Attend
      * for
      * a gym visit once a day: a second check-in on the same local day, at any location of the business, is refused
      * and nothing is written. A booked gym visit of the day at the location of the kiosk is checked in. A refusal
-     * gives its reason, its message and the key of the failed attempt; a refusal for a negative balance does not
-     * show the amount to a staff member who may not see the balances of the clients.
+     * gives its reason, every reason of the refusal, its message and the key of the failed attempt; a refusal for
+     * a
+     * negative balance does not show the amount to a staff member who may not see the balances of the clients.
      *
      * @return AttendPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

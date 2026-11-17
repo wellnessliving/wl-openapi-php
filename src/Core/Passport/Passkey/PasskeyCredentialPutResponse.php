@@ -1,11 +1,11 @@
 <?php
 
-namespace WlSdk\Core\Timing;
+namespace WlSdk\Core\Passport\Passkey;
 
 /**
- * Response from POST
+ * Response from PUT
  */
-class ComponentTimingPostResponse
+class PasskeyCredentialPutResponse
 {
     public function __construct(array $data)
     {

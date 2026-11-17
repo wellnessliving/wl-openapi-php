@@ -177,6 +177,27 @@ class ClassList68PostResponseSession
     public ?int $i_duration = null;
 
     /**
+     * Number of the tickets of the session that are checked in. `null` if the session is not a session of a
+     * ticketed event (see `is_ticket`).
+     * A visit checked in without a ticket is not counted. The same rule is used by the ticket check-in scanner,
+     * see {@link \WlSdk\Core\WebSocket\ChannelBroadcast}.
+     *
+     * @var int|null
+     */
+    public ?int $i_ticket_attend = null;
+
+    /**
+     * Number of the tickets of the session that are sold. `null` if the session is not a session of a ticketed
+     * event (see `is_ticket`).
+     * Every ticket that is not cancelled is sold, including a ticket whose holder has not come. A visit without a
+     * ticket is not counted, so unlike `i_book` this number does not include regular bookings and the
+     * wait list. The same rule is used by {@link \WlSdk\Core\WebSocket\ChannelBroadcast}.
+     *
+     * @var int|null
+     */
+    public ?int $i_ticket_sold = null;
+
+    /**
      * Number of clients in wait list.
      *
      * @var int|null
@@ -388,6 +409,8 @@ class ClassList68PostResponseSession
         $this->i_capacity = isset($data['i_capacity']) ? (int)$data['i_capacity'] : null;
         $this->i_day = isset($data['i_day']) ? (int)$data['i_day'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
+        $this->i_ticket_attend = isset($data['i_ticket_attend']) ? (int)$data['i_ticket_attend'] : null;
+        $this->i_ticket_sold = isset($data['i_ticket_sold']) ? (int)$data['i_ticket_sold'] : null;
         $this->i_wait = isset($data['i_wait']) ? (int)$data['i_wait'] : null;
         $this->i_wait_limit = isset($data['i_wait_limit']) ? (int)$data['i_wait_limit'] : null;
         $this->i_wait_spot = isset($data['i_wait_spot']) ? (int)$data['i_wait_spot'] : null;

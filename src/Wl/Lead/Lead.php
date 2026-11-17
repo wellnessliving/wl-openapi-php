@@ -39,6 +39,10 @@ class Lead
      * and associates the lead with a lead source. Returns an error code in `text_sign_in_error` if sign-in was
      * requested but could not be completed.
      *
+     * When the lead is added from the backend ({@link \WlSdk\Wl\Lead\Lead}), the staff member needs the privilege
+     * to
+     * add leads ({@link \WlSdk\Wl\Privilege\PrivilegeSid}).
+     *
      * @return LeadPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

@@ -8,6 +8,18 @@ namespace WlSdk\Wl\Visit\Kiosk;
 class EvaluateGetResponse
 {
     /**
+     * Every reason why the check-in would be refused, in the order of the check-in.
+     *
+     * Each is one of {@link \WlSdk\Wl\Visit\VisitDenyReasonSid} constants. The first one equals {@link
+     * \WlSdk\Wl\Visit\Kiosk\EvaluateGetResponse::$id_deny_reason}.
+     * Empty if no reason is found; the check-in still may be refused by the rules of the booking. A client already
+     * checked in on the day gets only {@link \WlSdk\Wl\Visit\VisitDenyReasonSid}.
+     *
+     * @var int[]|null
+     */
+    public ?array $a_deny_reason = null;
+
+    /**
      * Passes of the client that may pay for a gym visit.
      *
      * The pass that the check-in would take is marked with `is_use`. No pass is marked when the check-in would
@@ -30,7 +42,8 @@ class EvaluateGetResponse
     public ?string $dtu_attend = null;
 
     /**
-     * The first reason why the check-in would be refused.
+     * The first reason why the check-in would be refused, the first element of {@link
+     * \WlSdk\Wl\Visit\Kiosk\EvaluateGetResponse::$a_deny_reason}.
      *
      * One of {@link \WlSdk\Wl\Visit\VisitDenyReasonSid} constants. `0` if no reason is found; the check-in still
      * may be refused by
@@ -168,6 +181,7 @@ class EvaluateGetResponse
 
     public function __construct(array $data)
     {
+        $this->a_deny_reason = isset($data['a_deny_reason']) ? (array)$data['a_deny_reason'] : null;
         $this->a_login_promotion = isset($data['a_login_promotion']) ? array_map(static fn ($item) => new EvaluateGetResponseLoginPromotion((array)$item), (array)$data['a_login_promotion']) : null;
         $this->dtu_attend = isset($data['dtu_attend']) ? (string)$data['dtu_attend'] : null;
         $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;

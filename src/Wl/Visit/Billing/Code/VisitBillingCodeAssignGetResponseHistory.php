@@ -34,7 +34,8 @@ class VisitBillingCodeAssignGetResponseHistory
     public ?string $text_signature = null;
 
     /**
-     * Key of the staff member who made the change. `null` if the user is deleted.
+     * Key of the staff member who made the change. `null` if the user is deleted, for the codes applied by
+     * default, and for a void made not by a user.
      *
      * @var string|null
      */

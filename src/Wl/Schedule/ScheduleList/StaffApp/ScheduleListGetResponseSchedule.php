@@ -37,6 +37,14 @@ class ScheduleListGetResponseSchedule
     public ?array $a_resource = null;
 
     /**
+     * Padding of the assets of `a_resource`. Keys are asset keys, values are:
+     * Classes are not padded. Whether to show the padding is up to the application.
+     *
+     * @var ScheduleListGetResponseScheduleResourcePadding|null
+     */
+    public ?ScheduleListGetResponseScheduleResourcePadding $a_resource_padding = null;
+
+    /**
      * List of removed assets involved in the session.
      *
      * @var string[]|null
@@ -216,6 +224,16 @@ class ScheduleListGetResponseSchedule
     public ?bool $is_pay = null;
 
     /**
+     * For appointments: `true` if the appointment was booked as a Phone Call; `false` otherwise.
+     * This is the type of the service at the time of booking, so it stays `true` after the service is switched to
+     * another type.
+     * For classes and events always `false`.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_phone_call = null;
+
+    /**
      * For appointments: `true` if appointment is recurring; `false` otherwise.
      * For classes always `null`.
      *
@@ -355,6 +373,7 @@ class ScheduleListGetResponseSchedule
         $this->a_quiz = isset($data['a_quiz']) ? new ScheduleListGetResponseScheduleQuiz((array)$data['a_quiz']) : null;
         $this->a_appointment_visit_info = isset($data['a_appointment_visit_info']) ? new ScheduleListGetResponseScheduleAppointmentVisitInfo((array)$data['a_appointment_visit_info']) : null;
         $this->a_resource = isset($data['a_resource']) ? (array)$data['a_resource'] : null;
+        $this->a_resource_padding = isset($data['a_resource_padding']) ? new ScheduleListGetResponseScheduleResourcePadding((array)$data['a_resource_padding']) : null;
         $this->a_resource_removed = isset($data['a_resource_removed']) ? (array)$data['a_resource_removed'] : null;
         $this->a_staff = isset($data['a_staff']) ? (array)$data['a_staff'] : null;
         $this->a_uid_staff = isset($data['a_uid_staff']) ? (array)$data['a_uid_staff'] : null;
@@ -378,6 +397,7 @@ class ScheduleListGetResponseSchedule
         $this->is_arrive = isset($data['is_arrive']) ? (bool)$data['is_arrive'] : null;
         $this->is_class_view = isset($data['is_class_view']) ? (bool)$data['is_class_view'] : null;
         $this->is_pay = isset($data['is_pay']) ? (bool)$data['is_pay'] : null;
+        $this->is_phone_call = isset($data['is_phone_call']) ? (bool)$data['is_phone_call'] : null;
         $this->is_repeat = isset($data['is_repeat']) ? (bool)$data['is_repeat'] : null;
         $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
         $this->k_appointment = isset($data['k_appointment']) ? (string)$data['k_appointment'] : null;

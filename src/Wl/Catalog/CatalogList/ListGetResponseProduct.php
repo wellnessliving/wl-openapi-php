@@ -19,6 +19,15 @@ class ListGetResponseProduct
     public ?array $a_shop_category = null;
 
     /**
+     * How many tickets can be sold for the event and how many of those are still available. Empty if the
+     * item is not a ticketed event.
+     * Returned for items with `id_sale` equal to {@link \WlSdk\RsSaleSid} only.
+     *
+     * @var ListGetResponseProductTicketInventory|null
+     */
+    public ?ListGetResponseProductTicketInventory $a_ticket_inventory = null;
+
+    /**
      * List of ticket options available for booking the event. Empty if the item is not a
      * ticketed event.
      * Each element contains the following keys:
@@ -79,6 +88,15 @@ class ListGetResponseProduct
     public ?bool $is_ticket = null;
 
     /**
+     * `true` if a client can buy tickets without creating an account. `false` if the item is not a
+     * ticketed event.
+     * Returned for items with `id_sale` equal to {@link \WlSdk\RsSaleSid} only.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_ticket_guest_allowed = null;
+
+    /**
      * The item key.
      *
      * @var string|null
@@ -117,6 +135,7 @@ class ListGetResponseProduct
     {
         $this->a_location = isset($data['a_location']) ? (array)$data['a_location'] : null;
         $this->a_shop_category = isset($data['a_shop_category']) ? (array)$data['a_shop_category'] : null;
+        $this->a_ticket_inventory = isset($data['a_ticket_inventory']) ? new ListGetResponseProductTicketInventory((array)$data['a_ticket_inventory']) : null;
         $this->a_tickets = isset($data['a_tickets']) ? new ListGetResponseProductTickets((array)$data['a_tickets']) : null;
         $this->dtu_create = isset($data['dtu_create']) ? (string)$data['dtu_create'] : null;
         $this->f_price = isset($data['f_price']) ? (string)$data['f_price'] : null;
@@ -125,6 +144,7 @@ class ListGetResponseProduct
         $this->is_direct = isset($data['is_direct']) ? (bool)$data['is_direct'] : null;
         $this->is_introductory = isset($data['is_introductory']) ? (bool)$data['is_introductory'] : null;
         $this->is_ticket = isset($data['is_ticket']) ? (bool)$data['is_ticket'] : null;
+        $this->is_ticket_guest_allowed = isset($data['is_ticket_guest_allowed']) ? (bool)$data['is_ticket_guest_allowed'] : null;
         $this->k_id = isset($data['k_id']) ? (string)$data['k_id'] : null;
         $this->k_shop_category = isset($data['k_shop_category']) ? (string)$data['k_shop_category'] : null;
         $this->s_key = isset($data['s_key']) ? (string)$data['s_key'] : null;

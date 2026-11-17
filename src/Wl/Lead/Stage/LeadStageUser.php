@@ -22,6 +22,10 @@ class LeadStageUser
      *
      * If the client is already in this stage, nothing is changed.
      *
+     * The staff member needs the privilege to change the lead stage ({@link \WlSdk\Wl\Privilege\PrivilegeSid}).
+     * The
+     * privilege to manage client profiles does not give it.
+     *
      * @return LeadStageUserPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

@@ -24,7 +24,9 @@ class Footer
      * branding and the Terms and Conditions link should be shown in the footer. The result is stored in
      * {@link \WlSdk\Thoth\LayoutBe\Footer\FooterGetResponse::$show_term}. The URL of the tour page of the business
      * type, which the badge links to, is
-     * loaded into {@link \WlSdk\Thoth\LayoutBe\Footer\FooterGetResponse::$url_tour}.
+     * loaded into {@link \WlSdk\Thoth\LayoutBe\Footer\FooterGetResponse::$url_tour}. For a business with a
+     * white-label plan of the Achieve client app the
+     * links to the app in the stores are loaded too.
      *
      * @return FooterGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
