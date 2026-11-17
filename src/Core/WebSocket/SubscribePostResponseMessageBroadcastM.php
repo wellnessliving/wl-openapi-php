@@ -5,46 +5,53 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastM
 {
     /**
-     * Number of successfully processed items.
+     * Time of the attempt (of the check-in for a visit), in UTC and MySQL format, for example `2026-11-05
+     * 14:30:00`.
      *
-     * @var int|null
-     */
-    public ?int $i_complete = null;
-
-    /**
-     * Number of failed items.
-     *
-     * @var int|null
-     */
-    public ?int $i_fail = null;
-
-    /**
-     * Number of items left to process.
-     *
-     * @var int|null
-     */
-    public ?int $i_left = null;
-
-    /**
-     * Key of the import being processing.
+     * The same value as `dtu_attempt` of the row of the attempt in {@link
+     * \WlSdk\Wl\Visit\Kiosk\AttemptListGetResponse::$a_attempt}.
      *
      * @var string|null
      */
-    public ?string $k_import = null;
+    public ?string $dtu_attempt = null;
 
     /**
-     * Url link to download log file with import progress.
+     * Reason of the failure. One of {@link \WlSdk\Wl\Visit\VisitDenyReasonSid} constants. `0` for a check-in.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Visit\VisitDenyReasonSid
+     */
+    public ?int $id_deny_reason = null;
+
+    /**
+     * Source of the attempt. One of {@link \WlSdk\Wl\Mode\ModeSid} constants. `null` if the source of the check-in
+     * is not recorded.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Mode\ModeSid
+     */
+    public ?int $id_mode = null;
+
+    /**
+     * `true` for a failed attempt, `false` for a check-in.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_fail = null;
+
+    /**
+     * Key of the checked-in visit. `null` for a failed attempt.
      *
      * @var string|null
      */
-    public ?string $url_log = null;
+    public ?string $k_visit = null;
 
     public function __construct(array $data)
     {
-        $this->i_complete = isset($data['i_complete']) ? (int)$data['i_complete'] : null;
-        $this->i_fail = isset($data['i_fail']) ? (int)$data['i_fail'] : null;
-        $this->i_left = isset($data['i_left']) ? (int)$data['i_left'] : null;
-        $this->k_import = isset($data['k_import']) ? (string)$data['k_import'] : null;
-        $this->url_log = isset($data['url_log']) ? (string)$data['url_log'] : null;
+        $this->dtu_attempt = isset($data['dtu_attempt']) ? (string)$data['dtu_attempt'] : null;
+        $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
+        $this->id_mode = isset($data['id_mode']) ? (int)$data['id_mode'] : null;
+        $this->is_fail = isset($data['is_fail']) ? (bool)$data['is_fail'] : null;
+        $this->k_visit = isset($data['k_visit']) ? (string)$data['k_visit'] : null;
     }
 }

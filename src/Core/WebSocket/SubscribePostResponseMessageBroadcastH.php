@@ -5,28 +5,14 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastH
 {
     /**
-     * A CAS (compare-and-swap) number that allows to track changes in the report storage.
+     * Time when the device was registered for the pass, in UTC and MySQL format.
      *
-     * This number is changed every time content of the report gets updated.
-     * If this number is not changed, the content is not updated.
-     *
-     * @var int|null
+     * @var string|null
      */
-    public ?int $i_cas_change = null;
-
-    /**
-     * Status of this report.
-     *
-     * One of {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid} constants.
-     *
-     * @var int|null
-     * @see \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorStatusSid
-     */
-    public ?int $id_report_status = null;
+    public ?string $dtu_add = null;
 
     public function __construct(array $data)
     {
-        $this->i_cas_change = isset($data['i_cas_change']) ? (int)$data['i_cas_change'] : null;
-        $this->id_report_status = isset($data['id_report_status']) ? (int)$data['id_report_status'] : null;
+        $this->dtu_add = isset($data['dtu_add']) ? (string)$data['dtu_add'] : null;
     }
 }

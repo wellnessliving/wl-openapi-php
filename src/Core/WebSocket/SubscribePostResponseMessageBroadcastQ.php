@@ -5,14 +5,24 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastQ
 {
     /**
-     * New data of changes schedule item:
+     * Key of the client type.
      *
-     * @var SubscribePostResponseMessageBroadcastQVisit|null
+     * `null` if client type is not set.
+     *
+     * @var string|null
      */
-    public ?SubscribePostResponseMessageBroadcastQVisit $a_visit = null;
+    public ?string $k_login_type = null;
+
+    /**
+     * Key of the user.
+     *
+     * @var string|null
+     */
+    public ?string $uid = null;
 
     public function __construct(array $data)
     {
-        $this->a_visit = isset($data['a_visit']) ? new SubscribePostResponseMessageBroadcastQVisit((array)$data['a_visit']) : null;
+        $this->k_login_type = isset($data['k_login_type']) ? (string)$data['k_login_type'] : null;
+        $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
     }
 }
