@@ -42,7 +42,10 @@ class ElementPostResponseItemData
     public ?ElementPostResponseItemDataStaff $a_staff = null;
 
     /**
-     * Date of expiration of coupon, local date in MySQL format.
+     * Expiration date, local date in MySQL format. Example: `2027-02-01`.
+     * For a coupon: the expiration date of the coupon, `null` if the coupon has no expiration date.
+     * For a purchase option: the fixed expiration date. Set only when the duration type is a fixed date
+     * (`sid_duration_type` is `date`, see {@link \WlSdk\RsDurationTypeSid}), `null` otherwise.
      *
      * @var string|null
      */
