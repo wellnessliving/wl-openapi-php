@@ -126,7 +126,7 @@ class TicketListGetResponse
     public ?string $text_title = null;
 
     /**
-     * Link to book the session directly. Empty: the link is not provided yet.
+     * Link to book the event of the session directly. Empty: the event is not shown on any tab.
      *
      * @var string|null
      */
