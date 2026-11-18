@@ -5,7 +5,8 @@ namespace WlSdk\Wl\Tag;
 class TagListGetResponseList
 {
     /**
-     * The sort order of the tag.
+     * The sort order of the tag, starts from zero. A tag sent without it (or with `null`) keeps the sort order
+     *   it has now, and a new tag sent without it goes to the end of the list.
      *
      * @var int|null
      */
