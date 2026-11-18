@@ -28,6 +28,24 @@ class CustomTermsGetResponseRule
     public ?bool $has_vowel_sound = null;
 
     /**
+     * The term the rule belongs to. One of {@link \WlSdk\Wl\Business\Custom\Terms\CustomTermSid} constants. The
+     * rules of different terms are mixed
+     * in one list, so this is how a client tells them apart.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Business\Custom\Terms\CustomTermSid
+     */
+    public ?int $id_term = null;
+
+    /**
+     * `true` if the rule replaces the word with the plural form of the term ("patients"), `false` if with the
+     * singular ("patient").
+     *
+     * @var bool|null
+     */
+    public ?bool $is_plural = null;
+
+    /**
      * Replacement for the word found in lowercase ("patient").
      *
      * @var string|null
@@ -55,6 +73,8 @@ class CustomTermsGetResponseRule
         $this->has_article = isset($data['has_article']) ? (bool)$data['has_article'] : null;
         $this->has_end = isset($data['has_end']) ? (bool)$data['has_end'] : null;
         $this->has_vowel_sound = isset($data['has_vowel_sound']) ? (bool)$data['has_vowel_sound'] : null;
+        $this->id_term = isset($data['id_term']) ? (int)$data['id_term'] : null;
+        $this->is_plural = isset($data['is_plural']) ? (bool)$data['is_plural'] : null;
         $this->text_lower = isset($data['text_lower']) ? (string)$data['text_lower'] : null;
         $this->text_search = isset($data['text_search']) ? (string)$data['text_search'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;

@@ -39,6 +39,9 @@ class PayChange
      *  option is already applied to the visit. Verifies that the caller has access to the visit
      *  and that the selected promotion belongs to the visit's client before saving the change.
      *
+     * An appointment visit that waits for a payment requested by the system is confirmed as soon as the change
+     * pays it.
+     *
      * @return PayChangePostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
