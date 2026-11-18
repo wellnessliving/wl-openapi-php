@@ -24,8 +24,8 @@ class PurchaseElementList
      * price,
      * applicable discount code reduction, login-type discount, and taxes, and returns per-item cost, discount,
      * price, tax, and subtotal amounts in `a_purchase_item_result`. For a tuition the amounts cover the
-     * full cost, and the split between what is charged right now and what is deferred is added to the
-     * same row.
+     * full cost (the prorated first payment for a tuition billed as memberships), and the split between what is
+     * charged right now and what is deferred is added to the same row.
      *
      * @return PurchaseElementListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

@@ -64,7 +64,8 @@ class PurchaseElementGetResponseConfigEventList
 
     /**
      * The part of the event cost that is not charged right now, including tax. Goes to the
-     * installment plan or to the membership schedule, depending on the tuition billing mode.
+     * installment plan. Always `0.00` for a tuition billed as memberships: the days of the period that
+     * are gone are not billed at all, and the amounts of the cart are the prorated first payment.
      *
      * @var string|null
      */

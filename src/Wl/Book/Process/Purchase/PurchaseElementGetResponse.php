@@ -36,9 +36,10 @@ class PurchaseElementGetResponse
      *
      * Equals {@link \WlSdk\Wl\Book\Process\Purchase\PurchaseElementGroupGetResponse::$m_cost} for everything that
      * is paid for in full at
-     * once. A tuition defers a part of its cost to an installment plan or to a membership schedule,
-     * and `m_cost` covers the full cost regardless, so this is the amount to put into the payment
-     * form. It is `m_cost` minus `a_config.m_deferred` of every tuition item in
+     * once. A tuition defers a part of its cost to an installment plan, and `m_cost` covers the full
+     * cost regardless, so this is the amount to put into the payment form (a tuition billed as
+     * memberships defers nothing, its `m_cost` is the prorated first payment). It is `m_cost` minus
+     * `a_config.m_deferred` of every tuition item in
      * {@link \WlSdk\Wl\Book\Process\Purchase\PurchaseElementGroupGetResponse::$a_purchase_item}.
      *
      * @var string|null
@@ -60,8 +61,8 @@ class PurchaseElementGetResponse
     /**
      * The total cost of the given purchase options.
      *
-     * For a tuition this is the full cost, including whatever is deferred to an installment plan or
-     * to a membership schedule.
+     * For a tuition this is the full cost, including whatever is deferred to an installment plan; for
+     * a tuition billed as memberships it is the prorated first payment.
      *
      * @var string|null
      */

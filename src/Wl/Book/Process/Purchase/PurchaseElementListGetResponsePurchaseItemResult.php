@@ -48,7 +48,7 @@ class PurchaseElementListGetResponsePurchaseItemResult
     /**
      * The amount that has to be charged for the tuition right now, including tax. The other
      * amounts of this row cover the full cost, including whatever is deferred to an installment
-     * plan or to a membership schedule.
+     * plan. For a tuition billed as memberships they are the prorated first payment, as this one.
      *
      * @var string|null
      */
