@@ -35,8 +35,16 @@ class PaymentIntentUpdatePostRequest
     public ?string $k_pay_transaction = null;
 
     /**
+     * ID of the Checkout Session to update.
+     * Required if {@link \WlSdk\Thoth\PayProcessor\StripeCom\PaymentIntentUpdate} is empty.
+     *
+     * @var string|null
+     */
+    public ?string $s_checkout_session = null;
+
+    /**
      * Payment intent ID to update.
-     * Required.
+     * Required if {@link \WlSdk\Thoth\PayProcessor\StripeCom\PaymentIntentUpdate} is empty.
      *
      * @var string|null
      */
@@ -49,6 +57,19 @@ class PaymentIntentUpdatePostRequest
      * @var string|null
      */
     public ?string $uid_purchase = null;
+
+    /**
+     * Items of the sale to set in the Checkout Session. Every element:
+     *
+     * The whole list is sent, the items of the session that are not in it are removed. The total of the items must
+     * equal {@link \WlSdk\Thoth\PayProcessor\StripeCom\PaymentIntentUpdate}.
+     * Empty to replace the items of the session with one item for {@link
+     * \WlSdk\Thoth\PayProcessor\StripeCom\PaymentIntentUpdate}.
+     * Used only with {@link \WlSdk\Thoth\PayProcessor\StripeCom\PaymentIntentUpdate}.
+     *
+     * @var array[]|null
+     */
+    public ?array $a_line_item = null;
 
     /**
      * ID of the currency.
@@ -83,8 +104,10 @@ class PaymentIntentUpdatePostRequest
             'k_business' => $this->k_business,
             'k_business_merchant' => $this->k_business_merchant,
             'k_pay_transaction' => $this->k_pay_transaction,
+            's_checkout_session' => $this->s_checkout_session,
             's_payment_intent' => $this->s_payment_intent,
             'uid_purchase' => $this->uid_purchase,
+            'a_line_item' => $this->a_line_item,
             'id_currency' => $this->id_currency,
             'm_amount' => $this->m_amount,
             'm_surcharge' => $this->m_surcharge,
