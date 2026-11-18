@@ -17,6 +17,16 @@ class StripeComPayInitPostRequest
     public ?array $a_card = null;
 
     /**
+     * Items of the sale for the Checkout Session. Every element:
+     *
+     * The total of the items must equal {@link \WlSdk\Thoth\PayProcessor\StripeCom\StripeComPayInit}.
+     * Empty to send one item for the whole amount. Used only if the payment runs on a Checkout Session.
+     *
+     * @var array[]|null
+     */
+    public ?array $a_line_item = null;
+
+    /**
      * ID of the currency.
      *
      * One of {@link \WlSdk\Core\Locale\CurrencySid} constants.
@@ -62,6 +72,22 @@ class StripeComPayInitPostRequest
      * @var bool|null
      */
     public ?bool $is_authorize = null;
+
+    /**
+     * `true` if the client card form can run on a Checkout Session, `false` otherwise.
+     *
+     * Only the card form of the web sets it. API clients and the mobile apps do not: the mobile Payment Sheet
+     * takes
+     * the client secret of a Payment Intent only. A session is created only if this flag is set, the Stripe
+     * Payment
+     * Element is used ({@link \WlSdk\Thoth\PayProcessor\StripeCom\StripeComPayInit}) and the environment allows
+     * it. The answer
+     * tells which one was created:
+     * {@link \WlSdk\Thoth\PayProcessor\StripeCom\StripeComPayInit}.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_checkout_session = null;
 
     /**
      * `true` if card swiper is used, `false` otherwise.
@@ -147,10 +173,12 @@ class StripeComPayInitPostRequest
         return array_filter(
             [
             'a_card' => $this->a_card,
+            'a_line_item' => $this->a_line_item,
             'id_currency' => $this->id_currency,
             'id_pay_actor' => $this->id_pay_actor,
             'id_pay_method' => $this->id_pay_method,
             'is_authorize' => $this->is_authorize,
+            'is_checkout_session' => $this->is_checkout_session,
             'is_pos' => $this->is_pos,
             'is_stripe_elements' => $this->is_stripe_elements,
             'k_business' => $this->k_business,

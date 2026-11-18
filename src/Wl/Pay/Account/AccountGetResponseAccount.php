@@ -34,6 +34,13 @@ class AccountGetResponseAccount
     public ?string $k_pay_method = null;
 
     /**
+     * Total amount of pending ACH payments for this account. `'0.00'` when there are no pending payments.
+     *
+     * @var string|null
+     */
+    public ?string $m_pending = null;
+
+    /**
      * Account balance.
      *
      * @var string|null
@@ -53,6 +60,7 @@ class AccountGetResponseAccount
         $this->k_currency = isset($data['k_currency']) ? (string)$data['k_currency'] : null;
         $this->k_pay_account = isset($data['k_pay_account']) ? (string)$data['k_pay_account'] : null;
         $this->k_pay_method = isset($data['k_pay_method']) ? (string)$data['k_pay_method'] : null;
+        $this->m_pending = isset($data['m_pending']) ? (string)$data['m_pending'] : null;
         $this->m_rest = isset($data['m_rest']) ? (string)$data['m_rest'] : null;
         $this->s_method = isset($data['s_method']) ? (string)$data['s_method'] : null;
     }
