@@ -27,6 +27,9 @@ class EditPostRequest
      *
      * Empty array means not set.
      *
+     * When a task is added, every staff member gets a task of their own. When a task is edited, exactly one staff
+     * member is given.
+     *
      * @var string[]|null
      */
     public ?array $a_staff = null;
@@ -35,6 +38,9 @@ class EditPostRequest
      * List of staff user IDs assigned to task.
      *
      * Empty array means not set.
+     *
+     * When a task is added, every staff member gets a task of their own. When a task is edited, exactly one staff
+     * member is given.
      *
      * @var string[]|null
      */

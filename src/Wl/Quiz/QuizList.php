@@ -23,7 +23,9 @@ class QuizList
      * Loads the quiz list for the business filtered by active state and search phrase, then
      *  marks which quizzes still require registration for the current login and which quizzes
      *  were imported from an external system. Also stores the requested active-state filter as
-     *  the user's default quiz view, unless the filter is asked not to be stored.
+     *  the user's default quiz view.
+     *
+     * @deprecated Use {@link \Wl\Quiz\QuizList79Api} instead.
      *
      * @return QuizListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

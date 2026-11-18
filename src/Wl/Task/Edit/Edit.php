@@ -39,6 +39,13 @@ class Edit
      *  previously and newly assigned clients, logs the change, sends an assignment notification
      *  email to newly assigned staff, and notifies the task channel.
      *
+     * When a task is added, every staff member gets a task of their own, all of them saved in one transaction:
+     * either
+     *  all the tasks are created, or none. When a task is edited, exactly one staff member is given. Inactive
+     * staff
+     *  members, and staff members the current user may not assign a task to, are refused; a staff member who is
+     *  already assigned to the edited task may stay there. The keys of the saved tasks are returned in `a_k_task`.
+     *
      * @return EditPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
