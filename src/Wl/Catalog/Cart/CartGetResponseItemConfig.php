@@ -39,7 +39,8 @@ class CartGetResponseItemConfig
     public ?string $m_checkout = null;
 
     /**
-     * The part of the tuition cost that is not charged during purchase.
+     * The part of the tuition cost that is not charged during purchase. Always `0.00` for a tuition
+     *   billed as memberships: the days of the period that are gone are not billed at all.
      *
      * @var string|null
      */

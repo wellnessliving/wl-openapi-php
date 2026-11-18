@@ -48,9 +48,10 @@ class CatalogCartGetResponse
      *
      * Equals {@link \WlSdk\Wl\Catalog\StaffApp\CatalogCart\CatalogCartGetResponse::$m_total} for everything that
      * is paid for in full at once. A
-     * tuition defers a part of its cost to an installment plan or to a membership schedule, and
-     * `m_total` covers the full cost regardless, so this is the amount to put into the payment form.
-     * It is `m_total` minus `a_config.m_deferred` of every tuition item in
+     * tuition defers a part of its cost to an installment plan, and `m_total` covers the full cost
+     * regardless, so this is the amount to put into the payment form. A tuition billed as memberships
+     * defers nothing: its part of `m_total` is the prorated first payment. It is `m_total` minus
+     * `a_config.m_deferred` of every tuition item in
      * {@link \WlSdk\Wl\Catalog\StaffApp\CatalogCart\CatalogCartGetResponse::$a_item}.
      *
      * @var string|null

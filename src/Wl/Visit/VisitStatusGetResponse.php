@@ -11,6 +11,9 @@ class VisitStatusGetResponse
      * Information about whether the given user can cancel an online booking and what
      * consequences the cancellation would have:
      *
+     * A client that has come only by {@link \WlSdk\Wl\Visit\VisitStatus}, with no login or with no access of its
+     * own to the visit, cannot cancel the visit: it gets `can_cancel` as `false` and the other values as empty.
+     *
      * @var VisitStatusGetResponseCancel|null
      */
     public ?VisitStatusGetResponseCancel $a_cancel = null;

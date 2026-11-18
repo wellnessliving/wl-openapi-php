@@ -21,11 +21,24 @@ class PurchaseReceiptGetResponsePurchaseItem
 
     /**
      * List of visit keys. Only available if the purchase item is a class period,
-     * enrollment, enrollment deposit, or enrollment discount. Each element is a string visit key.
+     * enrollment, enrollment deposit, enrollment discount, or a ticket (a visit for every session of the event
+     * that the ticket is for). Each element is a string visit key.
      *
      * @var string[]|null
      */
     public ?array $a_visit = null;
+
+    /**
+     * The temporary secrets of the visits of `a_visit`, by the key of the visit. Only available if the purchase
+     * item
+     * is a ticket. A client passes the secret of a visit as
+     * {@link \WlSdk\Wl\Visit\VisitStatus}, and gets the status of that visit without a login: the
+     * buyer of a ticket may be a guest who has only the token of the receipt. The secret expires in one hour after
+     * the receipt is read.
+     *
+     * @var array|null
+     */
+    public ?array $a_visit_secret = null;
 
     /**
      * The number of items in the purchase.
@@ -152,6 +165,7 @@ class PurchaseReceiptGetResponsePurchaseItem
         $this->a_logo = isset($data['a_logo']) ? new PurchaseReceiptGetResponsePurchaseItemLogo((array)$data['a_logo']) : null;
         $this->a_ticket_info = isset($data['a_ticket_info']) ? new PurchaseReceiptGetResponsePurchaseItemTicketInfo((array)$data['a_ticket_info']) : null;
         $this->a_visit = isset($data['a_visit']) ? (array)$data['a_visit'] : null;
+        $this->a_visit_secret = isset($data['a_visit_secret']) ? (array)$data['a_visit_secret'] : null;
         $this->i_count = isset($data['i_count']) ? (int)$data['i_count'] : null;
         $this->id_program = isset($data['id_program']) ? (int)$data['id_program'] : null;
         $this->id_purchase_item = isset($data['id_purchase_item']) ? (int)$data['id_purchase_item'] : null;

@@ -13,7 +13,7 @@ namespace WlSdk;
  *
  * Pay attention that all `\MailPrioritySid` must start with backslash.
  *
- * Last used ID: 231.
+ * Last used ID: 232.
  *
  * Values:
  * - 220 (`ABANDONED_CHECKOUT`): Sent when a client abandons a checkout (used in automations).
@@ -478,6 +478,8 @@ namespace WlSdk;
  * - 173 (`QUIZ_NOTIFICATION_REMIND`): Quiz submitted - Staff.
  *
  *   Send to a staff member informing them of a reminder.
+ * - 232 (`QUIZ_RESPONSE_SUBMIT`): Sent to a client after they submitted a form (used in automations: the trigger "Form
+ * submitted").
  * - 177 (`REPORT_EXPORT`): Email to wellnessliving team when businesses perform actions which is exporting data
  *   that indicate that they are making steps to cancel their WL account.
  * - 38 (`REVIEW_ADD`): New Customer Review - Staff.
@@ -1071,6 +1073,9 @@ class RsMailSid
 
     /** Quiz submitted - Staff. */
     public const QUIZ_NOTIFICATION_REMIND = 173;
+
+    /** Sent to a client after they submitted a form (used in automations: the trigger "Form submitted"). */
+    public const QUIZ_RESPONSE_SUBMIT = 232;
 
     /** Email to wellnessliving team when businesses perform actions which is exporting data */
     public const REPORT_EXPORT = 177;
