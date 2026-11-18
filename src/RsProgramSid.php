@@ -7,7 +7,7 @@ namespace WlSdk;
  *
  * Usually type includes type and category.
  *
- * Last used ID: 25.
+ * Last used ID: 26.
  *
  * Values:
  * - 21 (`ACCOUNT_MEMBERSHIP`): Special Membership that does not allow client to visit anything but fill client's
@@ -16,6 +16,7 @@ namespace WlSdk;
  * - 20 (`ACCOUNT_PASS`): Special Time-Based pass that does not allow client to visit anything but fill client's
  * account after purchase
  *   and after renew.
+ * - 26 (`CLASS_DURATION`): Class Duration Pass.
  * - 25 (`CLASS_GUEST`): Class Guest pass.
  * - 1 (`CLASS_LIMIT`): Class Pass.
  * - 5 (`CLASS_MEMBERSHIP`): Class Membership.
@@ -46,6 +47,9 @@ class RsProgramSid
 
     /** Special Time-Based pass that does not allow client to visit anything but fill client's account after purchase */
     public const ACCOUNT_PASS = 20;
+
+    /** Class Duration Pass. */
+    public const CLASS_DURATION = 26;
 
     /** Class Guest pass. */
     public const CLASS_GUEST = 25;

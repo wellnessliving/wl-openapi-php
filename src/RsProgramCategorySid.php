@@ -18,6 +18,7 @@ namespace WlSdk;
  *     <li>{@link \WlSdk\RsProgramSid}</li>
  *     <li>{@link \WlSdk\RsProgramSid}</li>
  *     <li>{@link \WlSdk\RsProgramSid}</li>
+ *     <li>{@link \WlSdk\RsProgramSid}</li>
  *   </ul>
  * - 8 (`INSURANCE`): Special "Wellness Program" purchase option.
  * - 5 (`OTHER`): Packages and daily deals.

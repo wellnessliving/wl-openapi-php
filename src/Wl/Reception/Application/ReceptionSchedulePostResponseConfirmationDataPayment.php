@@ -122,7 +122,8 @@ class ReceptionSchedulePostResponseConfirmationDataPayment
     public ?string $k_login_promotion = null;
 
     /**
-     * The formatted remaining duration on the promotion.
+     * The time left on a time-based pass, in hours and minutes, for example `2 h 25 min`.
+     *   An empty string for other passes.
      *
      * @var string|null
      */
@@ -141,6 +142,63 @@ class ReceptionSchedulePostResponseConfirmationDataPayment
      * @var string|null
      */
     public ?string $sid_program_type = null;
+
+    /**
+     * Minutes of the upcoming visits, as a text: `2 h 25 min`.
+     *   Empty for promotions of other program types than {@link \WlSdk\RsProgramTypeSid}.
+     *
+     * @var string|null
+     */
+    public ?string $text_book_duration = null;
+
+    /**
+     * Minutes of the upcoming visits, as a text for screen readers: `2 hours 25 minutes`.
+     *   Empty for promotions of other program types than {@link \WlSdk\RsProgramTypeSid}.
+     *
+     * @var string|null
+     */
+    public ?string $text_book_duration_aria = null;
+
+    /**
+     * Minutes left in this promotion, as a text for screen readers: `2 hours 25 minutes`.
+     *   Empty for promotions of other program types than {@link \WlSdk\RsProgramTypeSid}.
+     *
+     * @var string|null
+     */
+    public ?string $text_remain_duration_aria = null;
+
+    /**
+     * Minutes left and minutes of the upcoming visits together, as a text: `2 h 25 min`.
+     *   Empty for promotions of other program types than {@link \WlSdk\RsProgramTypeSid}.
+     *
+     * @var string|null
+     */
+    public ?string $text_unused_duration = null;
+
+    /**
+     * Minutes left and minutes of the upcoming visits together, as a text for screen readers:
+     *   `2 hours 25 minutes`.
+     *   Empty for promotions of other program types than {@link \WlSdk\RsProgramTypeSid}.
+     *
+     * @var string|null
+     */
+    public ?string $text_unused_duration_aria = null;
+
+    /**
+     * Minutes used for past visits, as a text: `2 h 25 min`.
+     *   Empty for promotions of other program types than {@link \WlSdk\RsProgramTypeSid}.
+     *
+     * @var string|null
+     */
+    public ?string $text_use_duration = null;
+
+    /**
+     * Minutes used for past visits, as a text for screen readers: `2 hours 25 minutes`.
+     *   Empty for promotions of other program types than {@link \WlSdk\RsProgramTypeSid}.
+     *
+     * @var string|null
+     */
+    public ?string $text_use_duration_aria = null;
 
     public function __construct(array $data)
     {
@@ -163,5 +221,12 @@ class ReceptionSchedulePostResponseConfirmationDataPayment
         $this->s_remain_measure = isset($data['s_remain_measure']) ? (string)$data['s_remain_measure'] : null;
         $this->show_remain = isset($data['show_remain']) ? (bool)$data['show_remain'] : null;
         $this->sid_program_type = isset($data['sid_program_type']) ? (string)$data['sid_program_type'] : null;
+        $this->text_book_duration = isset($data['text_book_duration']) ? (string)$data['text_book_duration'] : null;
+        $this->text_book_duration_aria = isset($data['text_book_duration_aria']) ? (string)$data['text_book_duration_aria'] : null;
+        $this->text_remain_duration_aria = isset($data['text_remain_duration_aria']) ? (string)$data['text_remain_duration_aria'] : null;
+        $this->text_unused_duration = isset($data['text_unused_duration']) ? (string)$data['text_unused_duration'] : null;
+        $this->text_unused_duration_aria = isset($data['text_unused_duration_aria']) ? (string)$data['text_unused_duration_aria'] : null;
+        $this->text_use_duration = isset($data['text_use_duration']) ? (string)$data['text_use_duration'] : null;
+        $this->text_use_duration_aria = isset($data['text_use_duration_aria']) ? (string)$data['text_use_duration_aria'] : null;
     }
 }

@@ -119,6 +119,16 @@ class PurchaseElementGetResponse
     public ?int $i_book = null;
 
     /**
+     * Displays the number of minutes of sessions that were booked by this promotion.
+     * `0` if the purchase is not a time-based promotion, that is, a promotion whose program is of the
+     * {@link \WlSdk\RsProgramTypeSid} type.
+     *
+     * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
+     */
+    public ?int $i_book_duration = null;
+
+    /**
      * The number of purchased items bought at the time of purchase.
      * This field will be `0` for purchase items obtained via a redemption code or as a result of an old import.
      *
@@ -190,6 +200,16 @@ class PurchaseElementGetResponse
      * @var int|null
      */
     public ?int $i_use = null;
+
+    /**
+     * The number of minutes the user has already used with this purchase of this promotion.
+     * `0` if the purchase is not a time-based promotion, that is, a promotion whose program is of the
+     * {@link \WlSdk\RsProgramTypeSid} type.
+     *
+     * @var int|null
+     * @see \WlSdk\RsProgramTypeSid
+     */
+    public ?int $i_use_duration = null;
 
     /**
      * Activation mode. One on {@link \WlSdk\RsActivationSid} constants. This field is only added for promotions.
@@ -565,6 +585,7 @@ class PurchaseElementGetResponse
         $this->f_discount_login_type_percent = isset($data['f_discount_login_type_percent']) ? (float)$data['f_discount_login_type_percent'] : null;
         $this->html_description = isset($data['html_description']) ? (string)$data['html_description'] : null;
         $this->i_book = isset($data['i_book']) ? (int)$data['i_book'] : null;
+        $this->i_book_duration = isset($data['i_book_duration']) ? (int)$data['i_book_duration'] : null;
         $this->i_buy = isset($data['i_buy']) ? (int)$data['i_buy'] : null;
         $this->i_discount_count = isset($data['i_discount_count']) ? (int)$data['i_discount_count'] : null;
         $this->i_duration = isset($data['i_duration']) ? (int)$data['i_duration'] : null;
@@ -575,6 +596,7 @@ class PurchaseElementGetResponse
         $this->i_remain_duration = isset($data['i_remain_duration']) ? (int)$data['i_remain_duration'] : null;
         $this->i_renew = isset($data['i_renew']) ? (int)$data['i_renew'] : null;
         $this->i_use = isset($data['i_use']) ? (int)$data['i_use'] : null;
+        $this->i_use_duration = isset($data['i_use_duration']) ? (int)$data['i_use_duration'] : null;
         $this->id_activation = isset($data['id_activation']) ? (int)$data['id_activation'] : null;
         $this->id_discount_commission_type = isset($data['id_discount_commission_type']) ? (int)$data['id_discount_commission_type'] : null;
         $this->id_duration = isset($data['id_duration']) ? (int)$data['id_duration'] : null;

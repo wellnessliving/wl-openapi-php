@@ -55,6 +55,18 @@ namespace WlSdk\Core\WebSocket;
  * - 1583 (`Wl\Fitbuilder\MessageChannel`): Channel to inform Fitbuilder messenger about new information.
  * - 733 (`Wl\Virtual\AccountUpdateChannel`): Channel to pass over information about virtual account release.
  * - 688 (`Wl\Virtual\MeetingScheduleChannel`): Channel to pass over information about meeting creation.
+ * - 2528 (`Wl\Wallet\WalletAddChannel`): Channel to tell the page that adds a pass to Apple Wallet that the pass is in
+ * the wallet.
+ *
+ *   The phone tells it itself: when a pass is put into Wallet, the phone registers itself in the web service of Apple
+ * Wallet,
+ *   see AppleRegistrationApi, and the web service notifies this channel. The page of
+ *   WalletAddController is subscribed to the channel of every ticket of the link, and shows that the pass is added
+ * when it
+ *   has heard of all of them. A page that did not hear anything stays as it is: the user is told what to do anyway.
+ *
+ *   The page is opened without a login, so the access is given by a signature of the ticket, which only the page that
+ *   checked the link of the wallet gets, see {@link \WlSdk\Core\WebSocket\ChannelBroadcast}.
  * - 735 (`Thoth\ReportCore\Generator\UpdateChannel`): A message is sent through this channel every time a report gets
  * updated.
  * - 19 (`Core\WebSocket\Example\ExampleFunctionChannel`): Example channel to test how asynchronous function calls
@@ -141,6 +153,9 @@ class ChannelAbstract
 
     /** Channel to pass over information about meeting creation. */
     public const MeetingScheduleChannel = 688;
+
+    /** Channel to tell the page that adds a pass to Apple Wallet that the pass is in the wallet. */
+    public const WalletAddChannel = 2528;
 
     /** A message is sent through this channel every time a report gets updated. */
     public const UpdateChannel = 735;

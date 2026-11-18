@@ -5,53 +5,44 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastR
 {
     /**
-     * Time of the attempt (of the check-in for a visit), in UTC and MySQL format, for example `2026-11-05
-     * 14:30:00`.
+     * End of change interval.
      *
-     * The same value as `dtu_attempt` of the row of the attempt in {@link
-     * \WlSdk\Wl\Visit\Kiosk\AttemptListGetResponse::$a_attempt}.
+     * Empty string if change interval has no end.
      *
      * @var string|null
      */
-    public ?string $dtu_attempt = null;
+    public ?string $dt_end_local = null;
 
     /**
-     * Reason of the failure. One of {@link \WlSdk\Wl\Visit\VisitDenyReasonSid} constants. `0` for a check-in.
-     *
-     * @var int|null
-     * @see \WlSdk\Wl\Visit\VisitDenyReasonSid
-     */
-    public ?int $id_deny_reason = null;
-
-    /**
-     * Source of the attempt. One of {@link \WlSdk\Wl\Mode\ModeSid} constants. `null` if the source of the check-in
-     * is not recorded.
-     *
-     * @var int|null
-     * @see \WlSdk\Wl\Mode\ModeSid
-     */
-    public ?int $id_mode = null;
-
-    /**
-     * `true` for a failed attempt, `false` for a check-in.
-     *
-     * @var bool|null
-     */
-    public ?bool $is_fail = null;
-
-    /**
-     * Key of the checked-in visit. `null` for a failed attempt.
+     * Start of change interval.
      *
      * @var string|null
      */
-    public ?string $k_visit = null;
+    public ?string $dt_start_local = null;
+
+    /**
+     * New "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
+     *
+     * `null` means system default tab.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_tab_new = null;
+
+    /**
+     * Old "Book now" tab primary key in {@link \WlSdk\Wl\Classes\Tab\TabSid} table.
+     *
+     * `null` means system default tab.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_tab_old = null;
 
     public function __construct(array $data)
     {
-        $this->dtu_attempt = isset($data['dtu_attempt']) ? (string)$data['dtu_attempt'] : null;
-        $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
-        $this->id_mode = isset($data['id_mode']) ? (int)$data['id_mode'] : null;
-        $this->is_fail = isset($data['is_fail']) ? (bool)$data['is_fail'] : null;
-        $this->k_visit = isset($data['k_visit']) ? (string)$data['k_visit'] : null;
+        $this->dt_end_local = isset($data['dt_end_local']) ? (string)$data['dt_end_local'] : null;
+        $this->dt_start_local = isset($data['dt_start_local']) ? (string)$data['dt_start_local'] : null;
+        $this->k_class_tab_new = isset($data['k_class_tab_new']) ? (string)$data['k_class_tab_new'] : null;
+        $this->k_class_tab_old = isset($data['k_class_tab_old']) ? (string)$data['k_class_tab_old'] : null;
     }
 }

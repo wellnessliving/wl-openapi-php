@@ -5,6 +5,16 @@ namespace WlSdk\Wl\Purchase\Receipt;
 class PurchaseReceiptGetResponsePurchaseItemTicketInfo
 {
     /**
+     * The key of the instance of the event the ticket is for. It is the same as `k_class` of `a_ticket_event`
+     * in {@link \WlSdk\Wl\Purchase\Receipt\PurchaseReceiptGetResponse::$a_purchase_detail}, so the ticket matches
+     * the links of its event. The
+     * instances of one event have the same ticket types, so this key tells the tickets of two instances apart.
+     *
+     * @var string|null
+     */
+    public ?string $k_class = null;
+
+    /**
      * The title of the event the ticket is for.
      *
      * @var string|null
@@ -42,6 +52,7 @@ class PurchaseReceiptGetResponsePurchaseItemTicketInfo
 
     public function __construct(array $data)
     {
+        $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
         $this->text_event_title = isset($data['text_event_title']) ? (string)$data['text_event_title'] : null;
         $this->text_number = isset($data['text_number']) ? (string)$data['text_number'] : null;
         $this->text_ticket_title = isset($data['text_ticket_title']) ? (string)$data['text_ticket_title'] : null;

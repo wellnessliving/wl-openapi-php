@@ -399,6 +399,15 @@ class AttendanceListByTokenGetResponseListWait
     public ?string $text_lastname = null;
 
     /**
+     * The time left on the Purchase Option, in hours and minutes, for example `2 h 25 min`.
+     * An empty string if the Purchase Option is not of type {@link \WlSdk\RsProgramTypeSid}, or if it has no
+     * time limit.
+     *
+     * @var string|null
+     */
+    public ?string $text_left = null;
+
+    /**
      * Any notes tied to the client.
      *
      * @var string|null
@@ -569,6 +578,7 @@ class AttendanceListByTokenGetResponseListWait
         $this->text_expire = isset($data['text_expire']) ? (string)$data['text_expire'] : null;
         $this->text_firstname = isset($data['text_firstname']) ? (string)$data['text_firstname'] : null;
         $this->text_lastname = isset($data['text_lastname']) ? (string)$data['text_lastname'] : null;
+        $this->text_left = isset($data['text_left']) ? (string)$data['text_left'] : null;
         $this->text_note = isset($data['text_note']) ? (string)$data['text_note'] : null;
         $this->text_phone = isset($data['text_phone']) ? (string)$data['text_phone'] : null;
         $this->text_promotion_return = isset($data['text_promotion_return']) ? (string)$data['text_promotion_return'] : null;
