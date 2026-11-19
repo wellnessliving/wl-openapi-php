@@ -73,6 +73,27 @@ class TaskManagerListGetRequest
     public ?int $id_column_sort = null;
 
     /**
+     * The system role of the view of a role, a system role that the business has not changed. One of
+     * {@link \WlSdk\RsPrivilegeRoleSid} constants. Given for the view {@link
+     * \WlSdk\Wl\Task\Manager\TaskManagerViewEnum} and for a system role
+     * only. `null` for every other view and for a role of the business ({@link
+     * \WlSdk\Wl\Task\Manager\TaskManagerList}).
+     *
+     * @var int|null
+     * @see \WlSdk\RsPrivilegeRoleSid
+     */
+    public ?int $id_privilege_role = null;
+
+    /**
+     * The view of the list: whose tasks it shows. One of {@link \WlSdk\Wl\Task\Manager\TaskManagerViewEnum} cases.
+     * `null` for the view of every staff member the user may see.
+     *
+     * @var int|null
+     * @see \WlSdk\Wl\Task\Manager\TaskManagerViewEnum
+     */
+    public ?int $id_view = null;
+
+    /**
      * Whether the list is sorted in the reverse order: Z to A, newest first.
      * `null` for the direct order.
      *
@@ -86,6 +107,16 @@ class TaskManagerListGetRequest
      * @var string|null
      */
     public ?string $k_business = null;
+
+    /**
+     * Key of the role of the business of the view of a role.
+     * Given for the view {@link \WlSdk\Wl\Task\Manager\TaskManagerViewEnum} and for a role of the business only.
+     * `null` for every other
+     * view and for a system role ({@link \WlSdk\Wl\Task\Manager\TaskManagerList}).
+     *
+     * @var string|null
+     */
+    public ?string $k_business_role = null;
 
     /**
      * The text to search in the names of the tasks and in the names, the emails and the keys of their clients.
@@ -107,8 +138,11 @@ class TaskManagerListGetRequest
             'i_page' => $this->i_page,
             'i_page_size' => $this->i_page_size,
             'id_column_sort' => $this->id_column_sort,
+            'id_privilege_role' => $this->id_privilege_role,
+            'id_view' => $this->id_view,
             'is_sort_desc' => $this->is_sort_desc,
             'k_business' => $this->k_business,
+            'k_business_role' => $this->k_business_role,
             'text_search' => $this->text_search,
             ],
             static fn ($v) => $v !== null

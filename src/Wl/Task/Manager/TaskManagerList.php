@@ -27,7 +27,9 @@ class TaskManagerList
      * tasks of
      * every location are listed, and the filter of the location picks the staff of the home location (the
      * default), of
-     * the other locations or of every location.
+     * the other locations or of every location. The view of the list narrows the tasks to those of the signed-in
+     * staff
+     * member or of the staff members who have a staff role, and the counts of the views are given with it.
      *
      * @return TaskManagerListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

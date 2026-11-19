@@ -10,7 +10,7 @@ class TaskManagerListGetResponse
     /**
      * How many tasks each tab of the page has:
      *
-     * A count follows the staff filter and not the search or the other filters.
+     * A count follows the view and not the staff filter, the search or the other filters.
      *
      * @var TaskManagerListGetResponseCount|null
      */
@@ -24,11 +24,24 @@ class TaskManagerListGetResponse
     public ?array $a_row = null;
 
     /**
-     * The staff members that the staff filter offers, sorted by the name:
+     * The staff members that the staff filter offers, sorted by the name: those of the picked view whom the user
+     * may
+     * see, the staff members of the role in a role view. The staff filter does not narrow them.
      *
      * @var TaskManagerListGetResponseStaff[]|null
      */
     public ?array $a_staff = null;
+
+    /**
+     * How many open tasks each view of the views panel has:
+     *
+     * The counts follow neither the picked view nor the filters. An empty array when the user may not see the
+     * views
+     * panel ({@link \WlSdk\Wl\Task\Manager\TaskManagerListGetResponse::$can_view}).
+     *
+     * @var TaskManagerListGetResponseView|null
+     */
+    public ?TaskManagerListGetResponseView $a_view = null;
 
     /**
      * Whether the signed-in user may add tasks.
@@ -43,6 +56,15 @@ class TaskManagerListGetResponse
      * @var bool|null
      */
     public ?bool $can_edit = null;
+
+    /**
+     * Whether the page offers the views panel: the user may see the tasks of every staff member, which is the
+     * privilege
+     * "All tasks". Without it the user sees their own tasks only, and every view would show the same ones.
+     *
+     * @var bool|null
+     */
+    public ?bool $can_view = null;
 
     /**
      * Today in the time zone of the business, MySQL format: the day of the tab "Due today".
@@ -86,8 +108,10 @@ class TaskManagerListGetResponse
         $this->a_count = isset($data['a_count']) ? new TaskManagerListGetResponseCount((array)$data['a_count']) : null;
         $this->a_row = isset($data['a_row']) ? array_map(static fn ($item) => new TaskManagerListGetResponseRow((array)$item), (array)$data['a_row']) : null;
         $this->a_staff = isset($data['a_staff']) ? array_map(static fn ($item) => new TaskManagerListGetResponseStaff((array)$item), (array)$data['a_staff']) : null;
+        $this->a_view = isset($data['a_view']) ? new TaskManagerListGetResponseView((array)$data['a_view']) : null;
         $this->can_add = isset($data['can_add']) ? (bool)$data['can_add'] : null;
         $this->can_edit = isset($data['can_edit']) ? (bool)$data['can_edit'] : null;
+        $this->can_view = isset($data['can_view']) ? (bool)$data['can_view'] : null;
         $this->dl_today = isset($data['dl_today']) ? (string)$data['dl_today'] : null;
         $this->i_total = isset($data['i_total']) ? (int)$data['i_total'] : null;
         $this->id_tab = isset($data['id_tab']) ? (int)$data['id_tab'] : null;
