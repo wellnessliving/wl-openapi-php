@@ -94,6 +94,16 @@ class TaskManagerListGetRequest
     public ?int $id_view = null;
 
     /**
+     * Whether to show only the overdue tasks: the tab Overdue. They are the tasks that are not completed and whose
+     * due
+     * date and time have passed, and the other filters narrow them. `null` or `false` for the tasks of any due
+     * time.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_overdue = null;
+
+    /**
      * Whether the list is sorted in the reverse order: Z to A, newest first.
      * `null` for the direct order.
      *
@@ -140,6 +150,7 @@ class TaskManagerListGetRequest
             'id_column_sort' => $this->id_column_sort,
             'id_privilege_role' => $this->id_privilege_role,
             'id_view' => $this->id_view,
+            'is_overdue' => $this->is_overdue,
             'is_sort_desc' => $this->is_sort_desc,
             'k_business' => $this->k_business,
             'k_business_role' => $this->k_business_role,

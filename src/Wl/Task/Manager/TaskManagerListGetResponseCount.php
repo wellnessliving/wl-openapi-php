@@ -26,6 +26,13 @@ class TaskManagerListGetResponseCount
     public ?int $i_future = null;
 
     /**
+     * The tasks that are overdue: not completed, with the due date and time that have passed.
+     *
+     * @var int|null
+     */
+    public ?int $i_overdue = null;
+
+    /**
      * The tasks due today, in the time zone of the business.
      *
      * @var int|null
@@ -37,6 +44,7 @@ class TaskManagerListGetResponseCount
         $this->i_all = isset($data['i_all']) ? (int)$data['i_all'] : null;
         $this->i_complete = isset($data['i_complete']) ? (int)$data['i_complete'] : null;
         $this->i_future = isset($data['i_future']) ? (int)$data['i_future'] : null;
+        $this->i_overdue = isset($data['i_overdue']) ? (int)$data['i_overdue'] : null;
         $this->i_today = isset($data['i_today']) ? (int)$data['i_today'] : null;
     }
 }

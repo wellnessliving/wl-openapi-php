@@ -34,6 +34,15 @@ class TaskManagerListGetResponseRow
     public ?int $id_task_status = null;
 
     /**
+     * Whether the task is overdue: it is not completed, and its due date and time have passed. The row is overdue
+     * on
+     * every tab, not only on the tab Overdue.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_overdue = null;
+
+    /**
      * Key of the business of the task: the business of the request, or another location of a franchise in the
      * flexible travel mode.
      *
@@ -97,6 +106,14 @@ class TaskManagerListGetResponseRow
      * @var string|null
      */
     public ?string $text_due = null;
+
+    /**
+     * How late the task is, as the page shows it under the due date: "2 days overdue" for whole days of 24 hours,
+     * "Overdue" when the task is late less than a day. An empty string when the task is not overdue.
+     *
+     * @var string|null
+     */
+    public ?string $text_overdue = null;
 
     /**
      * The full name of the staff member the task is assigned to. An empty string when that user is no staff member
@@ -164,6 +181,7 @@ class TaskManagerListGetResponseRow
         $this->dtl_due = isset($data['dtl_due']) ? (string)$data['dtl_due'] : null;
         $this->html_description = isset($data['html_description']) ? (string)$data['html_description'] : null;
         $this->id_task_status = isset($data['id_task_status']) ? (int)$data['id_task_status'] : null;
+        $this->is_overdue = isset($data['is_overdue']) ? (bool)$data['is_overdue'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;
         $this->k_task = isset($data['k_task']) ? (string)$data['k_task'] : null;
         $this->text_add = isset($data['text_add']) ? (string)$data['text_add'] : null;
@@ -173,6 +191,7 @@ class TaskManagerListGetResponseRow
         $this->text_client_phone = isset($data['text_client_phone']) ? (string)$data['text_client_phone'] : null;
         $this->text_create = isset($data['text_create']) ? (string)$data['text_create'] : null;
         $this->text_due = isset($data['text_due']) ? (string)$data['text_due'] : null;
+        $this->text_overdue = isset($data['text_overdue']) ? (string)$data['text_overdue'] : null;
         $this->text_staff = isset($data['text_staff']) ? (string)$data['text_staff'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
         $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;
