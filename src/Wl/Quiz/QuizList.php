@@ -25,8 +25,6 @@ class QuizList
      *  were imported from an external system. Also stores the requested active-state filter as
      *  the user's default quiz view.
      *
-     * @deprecated Use {@link \Wl\Quiz\QuizList79Api} instead.
-     *
      * @return QuizListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
