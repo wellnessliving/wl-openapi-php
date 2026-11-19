@@ -132,6 +132,13 @@ class TicketListGetResponse
      */
     public ?string $url_booking = null;
 
+    /**
+     * Link to the checkout page of the event of the session.
+     *
+     * @var string|null
+     */
+    public ?string $url_checkout = null;
+
     public function __construct(array $data)
     {
         $this->a_location = isset($data['a_location']) ? new TicketListGetResponseLocation((array)$data['a_location']) : null;
@@ -151,5 +158,6 @@ class TicketListGetResponse
         $this->m_total = isset($data['m_total']) ? (string)$data['m_total'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
         $this->url_booking = isset($data['url_booking']) ? (string)$data['url_booking'] : null;
+        $this->url_checkout = isset($data['url_checkout']) ? (string)$data['url_checkout'] : null;
     }
 }
