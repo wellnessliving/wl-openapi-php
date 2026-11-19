@@ -2,7 +2,7 @@
 
 namespace WlSdk\Core\WebSocket;
 
-class SubscribePostResponseMessageBroadcastZVisit
+class SubscribePostResponseMessageBroadcast26Visit
 {
     /**
      * Date/time of end.

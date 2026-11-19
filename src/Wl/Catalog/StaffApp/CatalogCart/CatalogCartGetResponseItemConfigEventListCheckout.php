@@ -33,7 +33,8 @@ class CatalogCartGetResponseItemConfigEventListCheckout
     public ?int $i_sessions_total = null;
 
     /**
-     * Prorated amount as calculated by the system, before any manual override of `m_checkout`.
+     * Prorated price as calculated by the system, before discount and tax and before any manual
+     *      override of `m_checkout_subtotal`.
      *
      * @var string|null
      */

@@ -34,6 +34,35 @@ class PurchaseElementListGetResponsePurchaseItemResultEventList
     public ?string $m_checkout = null;
 
     /**
+     * The taxes charged for this event right now, keyed by tax key. `a_tax` is the tax of the full price.
+     *
+     * @var string[]|null
+     */
+    public ?array $a_checkout_tax = null;
+
+    /**
+     * The price charged for this event right now, before discount and tax.
+     *
+     * @var string|null
+     */
+    public ?string $m_checkout_subtotal = null;
+
+    /**
+     * The tax charged for this event right now: the sum of `a_checkout_tax`.
+     *
+     * @var string|null
+     */
+    public ?string $m_checkout_tax = null;
+
+    /**
+     * The discount taken from `m_checkout_subtotal`, `m_discount` is the discount of the full price.
+     * Every row of `a_discount` has its part of it in `m_discount_checkout`.
+     *
+     * @var string|null
+     */
+    public ?string $m_discount_checkout = null;
+
+    /**
      * The part of the event cost that is not charged right now, including tax. Goes to the
      * installment plan or to the membership schedule, depending on the tuition billing mode.
      *
@@ -68,6 +97,10 @@ class PurchaseElementListGetResponsePurchaseItemResultEventList
         $this->a_tax = isset($data['a_tax']) ? (array)$data['a_tax'] : null;
         $this->k_class = isset($data['k_class']) ? (string)$data['k_class'] : null;
         $this->m_checkout = isset($data['m_checkout']) ? (string)$data['m_checkout'] : null;
+        $this->a_checkout_tax = isset($data['a_checkout_tax']) ? (array)$data['a_checkout_tax'] : null;
+        $this->m_checkout_subtotal = isset($data['m_checkout_subtotal']) ? (string)$data['m_checkout_subtotal'] : null;
+        $this->m_checkout_tax = isset($data['m_checkout_tax']) ? (string)$data['m_checkout_tax'] : null;
+        $this->m_discount_checkout = isset($data['m_discount_checkout']) ? (string)$data['m_discount_checkout'] : null;
         $this->m_deferred = isset($data['m_deferred']) ? (string)$data['m_deferred'] : null;
         $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;
         $this->m_price = isset($data['m_price']) ? (string)$data['m_price'] : null;

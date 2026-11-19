@@ -20,14 +20,15 @@ class Evaluate
     /**
      * Evaluates a gym check-in of the client.
      *
-     * Finds the gym visit of the client on the local day of the location (at any location of the business), the
-     * first reason why the check-in would be refused, in the order of the check-in, and the reason why the pass of
-     * the client would not pay for the visit. Fills the state of the profile: the balance, the unpaid visits, the
-     * waiver, the contract, the required forms, the credit cards, the flag, the passes on hold and expired, and
-     * the
-     * passes that may pay for the visit. Only the first reason is given. Nothing is written: no visit and no
-     * failed
-     * attempt.
+     * Finds the gym visit of the client on the local day of the location (at any location of the business), every
+     * reason why the check-in would be refused, in the order of the check-in, and the reason why the pass of the
+     * client would not pay for the visit. Fills the state of the profile: the balance, the unpaid visits, the
+     * waiver,
+     * the contract, the required forms, the credit cards, the flag, the passes on hold and expired, and the passes
+     * that
+     * may pay for the visit. Every reason is given in `a_deny_reason`, and the first one in `id_deny_reason`.
+     * Nothing
+     * is written: no visit and no failed attempt.
      *
      * @return EvaluateGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

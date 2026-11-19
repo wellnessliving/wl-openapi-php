@@ -5,91 +5,53 @@ namespace WlSdk\Core\WebSocket;
 class SubscribePostResponseMessageBroadcastU
 {
     /**
-     * Card type ID.
+     * Time of the attempt (of the check-in for a visit), in UTC and MySQL format, for example `2026-11-05
+     * 14:30:00`.
      *
-     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
-     * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
+     * The same value as `dtu_attempt` of the row of the attempt in {@link
+     * \WlSdk\Wl\Visit\Kiosk\AttemptListGetResponse::$a_attempt}.
+     *
+     * @var string|null
+     */
+    public ?string $dtu_attempt = null;
+
+    /**
+     * Reason of the failure. One of {@link \WlSdk\Wl\Visit\VisitDenyReasonSid} constants. `0` for a check-in.
      *
      * @var int|null
-     * @see \WlSdk\ACardSystemSid
+     * @see \WlSdk\Wl\Visit\VisitDenyReasonSid
      */
-    public ?int $id_card_system = null;
+    public ?int $id_deny_reason = null;
 
     /**
-     * Transaction exception ID.
-     *
-     * `null` if no errors occurred.
+     * Source of the attempt. One of {@link \WlSdk\Wl\Mode\ModeSid} constants. `null` if the source of the check-in
+     * is not recorded.
      *
      * @var int|null
-     * @see \WlSdk\RsPayException
+     * @see \WlSdk\Wl\Mode\ModeSid
      */
-    public ?int $id_pay_exception = null;
+    public ?int $id_mode = null;
 
     /**
-     * Ticket status.
+     * `true` for a failed attempt, `false` for a check-in.
      *
-     * `null` if not set yet.
-     *
-     * @var int|null
-     * @see \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid
+     * @var bool|null
      */
-    public ?int $id_ticket_status = null;
+    public ?bool $is_fail = null;
 
     /**
-     * Amount of tips entered by customer on terminal.
+     * Key of the checked-in visit. `null` for a failed attempt.
      *
      * @var string|null
      */
-    public ?string $m_tip = null;
-
-    /**
-     * Cardholder name.
-     *
-     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
-     * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
-     *
-     * @var string|null
-     */
-    public ?string $s_card_holder = null;
-
-    /**
-     * Card expiration date.
-     *
-     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
-     * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
-     *
-     * @var string|null
-     */
-    public ?string $s_expire = null;
-
-    /**
-     * Last four digits of the card number.
-     *
-     * Not `null` when {@link \WlSdk\Core\WebSocket\ChannelBroadcast}
-     * is equal {@link \WlSdk\Thoth\PayProcessor\DirectConnect\Ticket\DirectConnectTicketStatusSid}.
-     *
-     * @var string|null
-     */
-    public ?string $s_last4 = null;
-
-    /**
-     * Text message to notify the client.
-     *
-     * `null` until initialized.
-     *
-     * @var string|null
-     */
-    public ?string $text_message = null;
+    public ?string $k_visit = null;
 
     public function __construct(array $data)
     {
-        $this->id_card_system = isset($data['id_card_system']) ? (int)$data['id_card_system'] : null;
-        $this->id_pay_exception = isset($data['id_pay_exception']) ? (int)$data['id_pay_exception'] : null;
-        $this->id_ticket_status = isset($data['id_ticket_status']) ? (int)$data['id_ticket_status'] : null;
-        $this->m_tip = isset($data['m_tip']) ? (string)$data['m_tip'] : null;
-        $this->s_card_holder = isset($data['s_card_holder']) ? (string)$data['s_card_holder'] : null;
-        $this->s_expire = isset($data['s_expire']) ? (string)$data['s_expire'] : null;
-        $this->s_last4 = isset($data['s_last4']) ? (string)$data['s_last4'] : null;
-        $this->text_message = isset($data['text_message']) ? (string)$data['text_message'] : null;
+        $this->dtu_attempt = isset($data['dtu_attempt']) ? (string)$data['dtu_attempt'] : null;
+        $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
+        $this->id_mode = isset($data['id_mode']) ? (int)$data['id_mode'] : null;
+        $this->is_fail = isset($data['is_fail']) ? (bool)$data['is_fail'] : null;
+        $this->k_visit = isset($data['k_visit']) ? (string)$data['k_visit'] : null;
     }
 }
