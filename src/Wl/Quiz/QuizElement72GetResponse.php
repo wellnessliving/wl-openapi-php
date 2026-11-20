@@ -27,6 +27,15 @@ class QuizElement72GetResponse
     public ?array $a_element = null;
 
     /**
+     * Send rules of the custom confirmation of the form: how many client types and client groups it is sent to.
+     *
+     * Empty for a form of the main business. Otherwise:
+     *
+     * @var QuizElement72GetResponseNotificationCustom|null
+     */
+    public ?QuizElement72GetResponseNotificationCustom $a_notification_custom = null;
+
+    /**
      * Quiz settings.
      *
      * @var QuizElement72GetResponseSetting|null
@@ -99,6 +108,16 @@ class QuizElement72GetResponse
     public ?string $text_title = null;
 
     /**
+     * URL of the page of the global form submission notification, which the custom confirmation of the form
+     * replaces.
+     *
+     * Empty for a form of the main business.
+     *
+     * @var string|null
+     */
+    public ?string $url_notification = null;
+
+    /**
      * Direct URL to quiz.
      *
      * @var string|null
@@ -116,6 +135,7 @@ class QuizElement72GetResponse
     {
         $this->a_access_log = isset($data['a_access_log']) ? array_map(static fn ($item) => new QuizElement72GetResponseAccessLog((array)$item), (array)$data['a_access_log']) : null;
         $this->a_element = $data['a_element'] ?? null;
+        $this->a_notification_custom = isset($data['a_notification_custom']) ? new QuizElement72GetResponseNotificationCustom((array)$data['a_notification_custom']) : null;
         $this->a_setting = isset($data['a_setting']) ? new QuizElement72GetResponseSetting((array)$data['a_setting']) : null;
         $this->can_amend = isset($data['can_amend']) ? (bool)$data['can_amend'] : null;
         $this->i_responses = isset($data['i_responses']) ? (int)$data['i_responses'] : null;
@@ -125,6 +145,7 @@ class QuizElement72GetResponse
         $this->k_business_type = isset($data['k_business_type']) ? (string)$data['k_business_type'] : null;
         $this->show_numbering = isset($data['show_numbering']) ? (bool)$data['show_numbering'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
+        $this->url_notification = isset($data['url_notification']) ? (string)$data['url_notification'] : null;
         $this->url_quiz = isset($data['url_quiz']) ? (string)$data['url_quiz'] : null;
         $this->url_quiz_kiosk = isset($data['url_quiz_kiosk']) ? (string)$data['url_quiz_kiosk'] : null;
     }

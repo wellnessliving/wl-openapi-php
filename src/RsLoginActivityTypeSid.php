@@ -5,7 +5,7 @@ namespace WlSdk;
 /**
  * Manages identifiers of user activity.
  *
- * Last ID: 64.
+ * Last ID: 71.
  *
  * Values:
  * - 27 (`APPOINTMENT_BOOK`): Client books an appointment.
@@ -41,6 +41,34 @@ namespace WlSdk;
  * - 8 (`FAVORITE_REMOVE_LOCATION`): Client removed a location from favorites.
  * - 9 (`FAVORITE_REMOVE_STAFF`): Client removed a staff member from favorites.
  * - 10 (`FRIEND_ADD`): Client added a friend.
+ * - 70 (`GUEST_PASS_EXPIRE`): A guest pass invitation sent by the client expired: the guest did not claim it, or
+ * claimed it and did not visit
+ *   before the expiration.
+ *
+ *   Written on the feed of the owner of the guest pass.
+ * - 69 (`GUEST_PASS_REDEEM_GUEST`): The client redeemed a guest pass sent by another client.
+ *
+ *   Written on the feed of the guest.
+ * - 68 (`GUEST_PASS_REDEEM_HOST`): The guest redeemed a guest pass sent by the client.
+ *
+ *   Written on the feed of the owner of the guest pass.
+ * - 71 (`GUEST_PASS_REMIND`): A reminder of a guest pass invitation was sent to the guest.
+ *
+ *   Written on the feed of the owner of the guest pass. Hidden from the client while
+ *   {@link \WlSdk\RsLoginActivityTypeSid} says so.
+ * - 66 (`GUEST_PASS_REVOKE_MANUAL`): A guest pass invitation sent by the client was revoked by a person: a staff
+ * member or the client.
+ *
+ *   Written on the feed of the owner of the guest pass.
+ * - 67 (`GUEST_PASS_REVOKE_SYSTEM`): A guest pass invitation sent by the client was revoked by the system: a renewal,
+ * a hold, a transfer or another
+ *   change of the membership, a change of the purchase option, a cancellation of the visit.
+ *
+ *   Written on the feed of the owner of the guest pass.
+ * - 65 (`GUEST_PASS_SEND`): The client sent a guest pass invitation, or a staff member sent it on behalf of the
+ * client.
+ *
+ *   Written on the feed of the owner of the guest pass.
  * - 32 (`GYM_VISIT`): Client made a gym visit.
  * - 14 (`INVITE_SEND`): Client sent an invite.
  * - 57 (`LEAD_STAGE_AUTOMATION`): Lead stage was changed by an automation step.
@@ -172,6 +200,27 @@ class RsLoginActivityTypeSid
 
     /** Client added a friend. */
     public const FRIEND_ADD = 10;
+
+    /** A guest pass invitation sent by the client expired: the guest did not claim it, or claimed it and did not visit */
+    public const GUEST_PASS_EXPIRE = 70;
+
+    /** The client redeemed a guest pass sent by another client. */
+    public const GUEST_PASS_REDEEM_GUEST = 69;
+
+    /** The guest redeemed a guest pass sent by the client. */
+    public const GUEST_PASS_REDEEM_HOST = 68;
+
+    /** A reminder of a guest pass invitation was sent to the guest. */
+    public const GUEST_PASS_REMIND = 71;
+
+    /** A guest pass invitation sent by the client was revoked by a person: a staff member or the client. */
+    public const GUEST_PASS_REVOKE_MANUAL = 66;
+
+    /** A guest pass invitation sent by the client was revoked by the system: a renewal, a hold, a transfer or another */
+    public const GUEST_PASS_REVOKE_SYSTEM = 67;
+
+    /** The client sent a guest pass invitation, or a staff member sent it on behalf of the client. */
+    public const GUEST_PASS_SEND = 65;
 
     /** Client made a gym visit. */
     public const GYM_VISIT = 32;

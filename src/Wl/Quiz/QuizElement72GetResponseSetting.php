@@ -129,6 +129,45 @@ class QuizElement72GetResponseSetting
     public ?bool $is_notify_client = null;
 
     /**
+     * Whether the custom confirmation of the form is turned on: it is sent instead of the global form submission
+     * notification.
+     *
+     * `null` if it was not sent: the stored state is then not changed. Never set for the forms of the main
+     * business
+     * (`0`), which have no custom confirmation.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_notify_custom = null;
+
+    /**
+     * Whether the email of the custom confirmation is activated.
+     *
+     * `null` if it was not sent: the stored state is then not changed.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_notify_custom_mail = null;
+
+    /**
+     * Whether the push notification of the custom confirmation is activated.
+     *
+     * `null` if it was not sent: the stored state is then not changed.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_notify_custom_push = null;
+
+    /**
+     * Whether the SMS of the custom confirmation is activated.
+     *
+     * `null` if it was not sent: the stored state is then not changed.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_notify_custom_sms = null;
+
+    /**
      * Whether email notification should be sent to staff members after quiz is submitted.
      *
      * @var bool|null
@@ -225,6 +264,10 @@ class QuizElement72GetResponseSetting
         $this->is_notify_additional = isset($data['is_notify_additional']) ? (bool)$data['is_notify_additional'] : null;
         $this->is_notify_automated = isset($data['is_notify_automated']) ? (bool)$data['is_notify_automated'] : null;
         $this->is_notify_client = isset($data['is_notify_client']) ? (bool)$data['is_notify_client'] : null;
+        $this->is_notify_custom = isset($data['is_notify_custom']) ? (bool)$data['is_notify_custom'] : null;
+        $this->is_notify_custom_mail = isset($data['is_notify_custom_mail']) ? (bool)$data['is_notify_custom_mail'] : null;
+        $this->is_notify_custom_push = isset($data['is_notify_custom_push']) ? (bool)$data['is_notify_custom_push'] : null;
+        $this->is_notify_custom_sms = isset($data['is_notify_custom_sms']) ? (bool)$data['is_notify_custom_sms'] : null;
         $this->is_notify_staff = isset($data['is_notify_staff']) ? (bool)$data['is_notify_staff'] : null;
         $this->is_prevent_franchisee = isset($data['is_prevent_franchisee']) ? (bool)$data['is_prevent_franchisee'] : null;
         $this->is_private = isset($data['is_private']) ? (bool)$data['is_private'] : null;
