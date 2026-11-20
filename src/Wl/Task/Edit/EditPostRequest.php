@@ -173,13 +173,11 @@ class EditPostRequest
     /**
      * Whether the task had a repeat when the client read it.
      *
-     * Optional. A client that sends it with the repeat on is refused when the rule has moved to a newer task of
-     * the
-     * series since, so a turn-off does not go to a task that no longer carries the rule. `null` if the client does
-     * not
-     * send it, and then only a request that turns the repeat on is checked: the protection against a stale
-     * turn-off
-     * exists only for a client that sends it.
+     * Optional. An older task of a series shows the rule of the series, and a request that turns the repeat off
+     * stops
+     * the series only when the client says it read the task with the repeat on. `null` if the client does not send
+     * it:
+     * then a turn-off on an older task changes nothing.
      *
      * @var bool|null
      */
