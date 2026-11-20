@@ -52,10 +52,6 @@ namespace WlSdk;
  * - 68 (`GUEST_PASS_REDEEM_HOST`): The guest redeemed a guest pass sent by the client.
  *
  *   Written on the feed of the owner of the guest pass.
- * - 71 (`GUEST_PASS_REMIND`): A reminder of a guest pass invitation was sent to the guest.
- *
- *   Written on the feed of the owner of the guest pass. Hidden from the client while
- *   {@link \WlSdk\RsLoginActivityTypeSid} says so.
  * - 66 (`GUEST_PASS_REVOKE_MANUAL`): A guest pass invitation sent by the client was revoked by a person: a staff
  * member or the client.
  *
@@ -209,9 +205,6 @@ class RsLoginActivityTypeSid
 
     /** The guest redeemed a guest pass sent by the client. */
     public const GUEST_PASS_REDEEM_HOST = 68;
-
-    /** A reminder of a guest pass invitation was sent to the guest. */
-    public const GUEST_PASS_REMIND = 71;
 
     /** A guest pass invitation sent by the client was revoked by a person: a staff member or the client. */
     public const GUEST_PASS_REVOKE_MANUAL = 66;

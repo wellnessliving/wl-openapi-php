@@ -61,6 +61,13 @@ class QuizElement72GetResponseNotificationCustom
     public ?bool $is_member_group_all = null;
 
     /**
+     * `true` if the business cannot send SMS notifications, `false` otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_sms_disable = null;
+
+    /**
      * Key of the pattern of the custom confirmation. `null` if the form has no pattern yet.
      *
      * @var string|null
@@ -77,6 +84,7 @@ class QuizElement72GetResponseNotificationCustom
         $this->is_login_type_all = isset($data['is_login_type_all']) ? (bool)$data['is_login_type_all'] : null;
         $this->is_member_group = isset($data['is_member_group']) ? (bool)$data['is_member_group'] : null;
         $this->is_member_group_all = isset($data['is_member_group_all']) ? (bool)$data['is_member_group_all'] : null;
+        $this->is_sms_disable = isset($data['is_sms_disable']) ? (bool)$data['is_sms_disable'] : null;
         $this->k_mail_pattern_live = isset($data['k_mail_pattern_live']) ? (string)$data['k_mail_pattern_live'] : null;
     }
 }

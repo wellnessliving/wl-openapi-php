@@ -40,7 +40,7 @@ class TaskManagerListGetResponseRow
      *
      * @var bool|null
      */
-    public ?bool $is_overdue = null;
+    public ?bool $is_late = null;
 
     /**
      * Key of the business of the task: the business of the request, or another location of a franchise in the
@@ -116,6 +116,14 @@ class TaskManagerListGetResponseRow
     public ?string $text_overdue = null;
 
     /**
+     * Text that tells how the task repeats, such as "Repeats every week on Friday". An empty string if the task
+     * does not repeat.
+     *
+     * @var string|null
+     */
+    public ?string $text_repeat = null;
+
+    /**
      * The full name of the staff member the task is assigned to. An empty string when that user is no staff member
      * of the business of the task.
      *
@@ -181,7 +189,7 @@ class TaskManagerListGetResponseRow
         $this->dtl_due = isset($data['dtl_due']) ? (string)$data['dtl_due'] : null;
         $this->html_description = isset($data['html_description']) ? (string)$data['html_description'] : null;
         $this->id_task_status = isset($data['id_task_status']) ? (int)$data['id_task_status'] : null;
-        $this->is_overdue = isset($data['is_overdue']) ? (bool)$data['is_overdue'] : null;
+        $this->is_late = isset($data['is_late']) ? (bool)$data['is_late'] : null;
         $this->k_business = isset($data['k_business']) ? (string)$data['k_business'] : null;
         $this->k_task = isset($data['k_task']) ? (string)$data['k_task'] : null;
         $this->text_add = isset($data['text_add']) ? (string)$data['text_add'] : null;
@@ -192,6 +200,7 @@ class TaskManagerListGetResponseRow
         $this->text_create = isset($data['text_create']) ? (string)$data['text_create'] : null;
         $this->text_due = isset($data['text_due']) ? (string)$data['text_due'] : null;
         $this->text_overdue = isset($data['text_overdue']) ? (string)$data['text_overdue'] : null;
+        $this->text_repeat = isset($data['text_repeat']) ? (string)$data['text_repeat'] : null;
         $this->text_staff = isset($data['text_staff']) ? (string)$data['text_staff'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
         $this->uid = isset($data['uid']) ? (string)$data['uid'] : null;

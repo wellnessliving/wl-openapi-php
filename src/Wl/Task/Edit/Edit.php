@@ -61,6 +61,11 @@ class Edit
      * Updates the task status, logs the change, and notifies the task channel so that connected
      *  clients refresh their task list.
      *
+     * If the task is set to Completed and repeats "when this one is completed", the next task of the repeat is
+     * made,
+     * and its staff are notified as of any new task. A status other than Completed, and a task that was Completed
+     * already, make nothing.
+     *
      * @return EditPutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
@@ -76,6 +81,8 @@ class Edit
      * Deletes the task record, removes any pending due-date reminder, reindexes search data for
      *  the previously assigned client, logs the removal, and notifies the task channel so that
      *  connected clients refresh their task list.
+     *
+     * If the task carries the rule of a repeat, the repeat ends with it.
      *
      * @return EditDeleteResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

@@ -13,7 +13,7 @@ namespace WlSdk;
  *
  * Pay attention that all `\MailPrioritySid` must start with backslash.
  *
- * Last used ID: 232.
+ * Last used ID: 233.
  *
  * Values:
  * - 220 (`ABANDONED_CHECKOUT`): Sent when a client abandons a checkout (used in automations).
@@ -499,6 +499,7 @@ namespace WlSdk;
  * - 196 (`STAFF_CALLBACK_REQUEST`): Notifies staff when CAASI captures a client request for a staff connect,
  *   including their contact details and any relevant notes from the conversation.
  * - 104 (`TASK_ASSIGN`): Sends when task assigned to staff.
+ * - 233 (`TASK_REMIND`): Sends to a staff member to remind them that a task is due soon.
  * - 99 (`TERM_COPY`): Send a copy of waiver.
  * - 225 (`TICKET_PURCHASE`): Sent after a ticketed event is purchased.
  *
@@ -1109,6 +1110,9 @@ class RsMailSid
 
     /** Sends when task assigned to staff. */
     public const TASK_ASSIGN = 104;
+
+    /** Sends to a staff member to remind them that a task is due soon. */
+    public const TASK_REMIND = 233;
 
     /** Send a copy of waiver. */
     public const TERM_COPY = 99;

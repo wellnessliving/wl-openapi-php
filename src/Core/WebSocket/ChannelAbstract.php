@@ -61,7 +61,7 @@ namespace WlSdk\Core\WebSocket;
  *   The phone tells it itself: when a pass is put into Wallet, the phone registers itself in the web service of Apple
  * Wallet,
  *   see AppleRegistrationApi, and the web service notifies this channel. The page of
- *   `WalletAddController` is subscribed to the channel of every ticket of the link, and shows that the pass is added
+ *   WalletAddController is subscribed to the channel of every ticket of the link, and shows that the pass is added
  * when it
  *   has heard of all of them. A page that did not hear anything stays as it is: the user is told what to do anyway.
  *
