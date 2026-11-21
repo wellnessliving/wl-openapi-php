@@ -22,7 +22,7 @@ class AlertList
      *
      * Validates that the user has access to the business, then loads the alert list for the current
      *  user. Additional alert data needed to make alerts tappable is included only when the request
-     *  comes from the staff backend.
+     *  comes from the staff backend. The pinned overdue tasks are loaded only when the client asks for them.
      *
      * @return AlertListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
