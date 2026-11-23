@@ -42,7 +42,8 @@ class AlertListGetResponsePinned
     public ?string $text_title = null;
 
     /**
-     * The address of the Task Manager that opens the form of the task.
+     * The address of the Task Manager that opens the form of the task, for example
+     *   `https://example.com/Wl/Task/Manager.html?is_all=1&k_task=112811`.
      *
      * @var string|null
      */

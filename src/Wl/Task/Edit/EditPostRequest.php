@@ -177,7 +177,7 @@ class EditPostRequest
      * stops
      * the series only when the client says it read the task with the repeat on. `null` if the client does not send
      * it:
-     * then a turn-off on an older task changes nothing.
+     * then a turn-off on an older task is refused with the code `repeat-series-open`.
      *
      * @var bool|null
      */

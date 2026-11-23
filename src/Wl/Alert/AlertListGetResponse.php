@@ -35,8 +35,10 @@ class AlertListGetResponse
     public ?bool $is_pinned_more = null;
 
     /**
-     * The address of the page with every overdue task, the tab Overdue of the Task Manager. Empty when
-     * {@link \WlSdk\Wl\Alert\AlertListGetResponse::$is_pinned_more} is `false`.
+     * The address of the page with every overdue task, the tab Overdue of the Task Manager, for example
+     * `https://example.com/Wl/Task/Manager.html?is_overdue=1`. Empty when {@link
+     * \WlSdk\Wl\Alert\AlertListGetResponse::$is_pinned_more} is
+     * `false`.
      *
      * @var string|null
      */

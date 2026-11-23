@@ -161,7 +161,8 @@ class TaskManagerListGetResponseRow
     public ?string $url_client_photo = null;
 
     /**
-     * The address of the profile of the client. An empty string when the task has no client.
+     * The address of the page Overview of the profile of the client. An empty string when the task has no
+     * client.
      *
      * @var string|null
      */
