@@ -228,7 +228,9 @@ class VisitStatusGetResponse
     public ?string $url_book_referral_short = null;
 
     /**
-     * URL of virtual service. Empty if the visit is not virtual.
+     * URL of virtual service. Empty if the visit is not virtual. Also empty for a virtual visit that is opened
+     * only by
+     * {@link \WlSdk\Wl\Visit\VisitStatus}: the link holds the permanent secret of the visit.
      *
      * @var string|null
      */
