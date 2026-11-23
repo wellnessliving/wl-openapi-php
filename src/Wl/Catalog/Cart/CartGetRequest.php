@@ -19,6 +19,15 @@ class CartGetRequest
     public ?bool $is_auto_apply_prize = true;
 
     /**
+     * Specify this if the cart is calculated for a staff member in the backend (optional).
+     *
+     * Products in such a cart have the retail price, not the online discounted price that clients get.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_staff = null;
+
+    /**
      * The location key.
      *
      * @var string|null
@@ -56,6 +65,7 @@ class CartGetRequest
             [
             'a_item' => $this->a_item,
             'is_auto_apply_prize' => $this->is_auto_apply_prize,
+            'is_staff' => $this->is_staff,
             'k_location' => $this->k_location,
             'k_login_prize' => $this->k_login_prize,
             'text_discount_code' => $this->text_discount_code,

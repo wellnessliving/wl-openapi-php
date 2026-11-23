@@ -36,7 +36,7 @@ class VisitStatusGetRequest
      * secret that has expired or a secret of another visit gives nothing: the access is checked as without it.
      * Only
      * the status is given by it, the visit cannot be changed, and the link to join a virtual visit is never given.
-     * It is not the permanent secret of the visit, `rs_visit.s_secret`.
+     *
      *
      * The value is passed in the query of a GET request, so it may be written to the access logs of the web server
      * and
