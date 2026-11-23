@@ -5,9 +5,7 @@ namespace WlSdk\Thoth\WlPay\Dispute\Finance;
 /**
  * The step of the funds of a Stripe dispute that failed, and that Finance must do by hand.
  *
- * Stored in the column `id_fail` of StripeDisputeSql and given to
- * Mail::send(). The code does not repeat a failed step, see
- * StripeDisputeFunds.
+ *
  *
  * Last used ID: 3
  *

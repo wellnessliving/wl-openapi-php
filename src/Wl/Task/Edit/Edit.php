@@ -56,15 +56,26 @@ class Edit
     }
 
     /**
-     * Changes task status.
+     * Changes task status or assigns a client to the task.
      *
-     * Updates the task status, logs the change, and notifies the task channel so that connected
-     *  clients refresh their task list.
+     * Updates the task status, the client of the task, or both, logs the change, and notifies the task channel so
+     * that
+     * connected clients refresh their task list. The status is changed when {@link
+     * \WlSdk\Wl\Task\Edit\EditGetResponse::$id_task_status} is given,
+     * and the client when {@link \WlSdk\Wl\Task\Edit\EditGetResponse::$uid} is given. At least one of them must be
+     * given. The client of the task is
+     * set when it has none, or replaced; it cannot be cleared. Changing the client sends no alert, no notification
+     * and
+     * no reminder, and does not touch the reminder or the due date of the task:  The staff member must be allowed
+     * to edit the task to change the client.
      *
      * If the task is set to Completed and repeats "when this one is completed", the next task of the repeat is
      * made,
      * and its staff are notified as of any new task. A status other than Completed, and a task that was Completed
      * already, make nothing.
+     *
+     * Access: staff with the privilege to see all tasks and the staff member the task is assigned to; others get
+     * `access`.
      *
      * @return EditPutResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

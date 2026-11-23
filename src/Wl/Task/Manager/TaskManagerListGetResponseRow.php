@@ -5,6 +5,17 @@ namespace WlSdk\Wl\Task\Manager;
 class TaskManagerListGetResponseRow
 {
     /**
+     * Whether the signed-in staff member may change the task with the bulk actions of the page and edit it: they
+     * have
+     * the privilege to edit tasks, and the privilege for all tasks or the task is assigned to them. The page lets
+     * them select only such tasks. {@link \WlSdk\Wl\Task\Manager\TaskBulk} checks the same right again for every
+     * task.
+     *
+     * @var bool|null
+     */
+    public ?bool $can_edit = null;
+
+    /**
      * The date and the time when the task was created, in the time zone of the business, MySQL format.
      *
      * @var string|null
@@ -169,6 +180,15 @@ class TaskManagerListGetResponseRow
     public ?string $url_client_profile = null;
 
     /**
+     * The address of the form of a new task that is a copy of the task, filled in from the saved task. It is the
+     * address of `url_edit` with  in the query in place of
+     * `k_task`: `<address>?k_task_duplicate=<key of the task>`.
+     *
+     * @var string|null
+     */
+    public ?string $url_duplicate = null;
+
+    /**
      * The address of the form that edits the task.
      *
      * @var string|null
@@ -186,6 +206,7 @@ class TaskManagerListGetResponseRow
 
     public function __construct(array $data)
     {
+        $this->can_edit = isset($data['can_edit']) ? (bool)$data['can_edit'] : null;
         $this->dtl_add = isset($data['dtl_add']) ? (string)$data['dtl_add'] : null;
         $this->dtl_due = isset($data['dtl_due']) ? (string)$data['dtl_due'] : null;
         $this->html_description = isset($data['html_description']) ? (string)$data['html_description'] : null;
@@ -208,6 +229,7 @@ class TaskManagerListGetResponseRow
         $this->uid_staff = isset($data['uid_staff']) ? (string)$data['uid_staff'] : null;
         $this->url_client_photo = isset($data['url_client_photo']) ? (string)$data['url_client_photo'] : null;
         $this->url_client_profile = isset($data['url_client_profile']) ? (string)$data['url_client_profile'] : null;
+        $this->url_duplicate = isset($data['url_duplicate']) ? (string)$data['url_duplicate'] : null;
         $this->url_edit = isset($data['url_edit']) ? (string)$data['url_edit'] : null;
         $this->url_staff = isset($data['url_staff']) ? (string)$data['url_staff'] : null;
     }

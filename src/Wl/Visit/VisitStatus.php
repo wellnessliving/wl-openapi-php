@@ -25,7 +25,7 @@ class VisitStatus
      * the visit can still be cancelled. Handles class, appointment, and gym visit types. Used
      * to render the visit detail view and action buttons in the client portal. A visit of a class can also be read
      * without a login and without the access of the user by its temporary secret,
-     * {@link \WlSdk\Wl\Visit\VisitStatus}. Such a visit cannot be virtual.
+     * {@link \WlSdk\Wl\Visit\VisitStatus}. Such a visit has no link to join a virtual service.
      *
      * @return VisitStatusGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

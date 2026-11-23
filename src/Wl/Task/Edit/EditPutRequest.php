@@ -32,6 +32,17 @@ class EditPutRequest
      */
     public ?int $id_task_status = null;
 
+    /**
+     * Client's uid for whom connected task.
+     *
+     * `null` means not set. When a task is changed by `put()`, the client to assign to the task: the task
+     * gets this client, or its client is replaced by this one. `null` there leaves the client of the task as it
+     * is.
+     *
+     * @var string|null
+     */
+    public ?string $uid = null;
+
     public function params(): array
     {
         return array_filter(
@@ -39,6 +50,7 @@ class EditPutRequest
             'k_business' => $this->k_business,
             'k_task' => $this->k_task,
             'id_task_status' => $this->id_task_status,
+            'uid' => $this->uid,
             ],
             static fn ($v) => $v !== null
         );

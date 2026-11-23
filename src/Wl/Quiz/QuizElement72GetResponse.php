@@ -29,7 +29,9 @@ class QuizElement72GetResponse
     /**
      * Send rules of the custom confirmation of the form: how many client types and client groups it is sent to.
      *
-     * Empty for a form of the main business. Otherwise:
+     * Empty for a form of the main business, and for a user who may not manage forms (a client who fills the
+     * form).
+     * Otherwise:
      *
      * @var QuizElement72GetResponseNotificationCustom|null
      */
@@ -111,7 +113,7 @@ class QuizElement72GetResponse
      * URL of the page of the global form submission notification, which the custom confirmation of the form
      * replaces.
      *
-     * Empty for a form of the main business.
+     * Empty for a form of the main business, and for a user who may not manage forms.
      *
      * @var string|null
      */

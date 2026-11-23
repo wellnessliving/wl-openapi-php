@@ -181,7 +181,9 @@ class EditGetResponse
     /**
      * Client's uid for whom connected task.
      *
-     * `null` means not set.
+     * `null` means not set. When a task is changed by `put()`, the client to assign to the task: the task
+     * gets this client, or its client is replaced by this one. `null` there leaves the client of the task as it
+     * is.
      *
      * @var string|null
      */
