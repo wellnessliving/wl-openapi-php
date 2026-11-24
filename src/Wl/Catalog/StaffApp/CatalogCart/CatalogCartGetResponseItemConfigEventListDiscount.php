@@ -5,6 +5,15 @@ namespace WlSdk\Wl\Catalog\StaffApp\CatalogCart;
 class CatalogCartGetResponseItemConfigEventListDiscount
 {
     /**
+     * Discount in percents of the event price, more than `0` and not more than `100`. When it is
+     *      set, `m_discount` that comes with the request is ignored and the amount is calculated from
+     *      the price.
+     *
+     * @var string|null
+     */
+    public ?string $f_discount_percent = null;
+
+    /**
      * Discount amount of the full event price.
      *
      * @var string|null
@@ -29,6 +38,7 @@ class CatalogCartGetResponseItemConfigEventListDiscount
 
     public function __construct(array $data)
     {
+        $this->f_discount_percent = isset($data['f_discount_percent']) ? (string)$data['f_discount_percent'] : null;
         $this->m_discount = isset($data['m_discount']) ? (string)$data['m_discount'] : null;
         $this->m_discount_checkout = isset($data['m_discount_checkout']) ? (string)$data['m_discount_checkout'] : null;
         $this->text_discount = isset($data['text_discount']) ? (string)$data['text_discount'] : null;
