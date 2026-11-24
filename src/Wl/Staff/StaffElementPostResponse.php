@@ -22,8 +22,13 @@ class StaffElementPostResponse
     /**
      * User key of a staff member.
      *
-     * This is the supported request identifier for staff update operations.
-     * Value is normalized into {@link \WlSdk\Wl\Staff\StaffElementPostResponse::$k_staff} in `post()`.
+     *
+     * In the request: the staff member to update. `null` to create a new staff member.
+     * In the result: the user key of the saved staff member. It is returned after every successful save, for a
+     * new staff member too.
+     *
+     * The value of the request is normalized into {@link \WlSdk\Wl\Staff\StaffElementPostResponse::$k_staff} in
+     * `post()`.
      *
      * @var string|null
      */
