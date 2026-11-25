@@ -96,7 +96,8 @@ namespace WlSdk\Thoth\ReportCore\Generator;
  * `\Wl\Purchase\PurchaseItemInfo::$a_tax` for a
  *   billed client (same mechanism as
  *   {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s own per-tax
- *   columns), or from `_clientExpectedGet()`'s own re-priced `a_tax_by_name` for a `PENDING`/`FAIL` client - see
+ *   columns), or from {@link \WlSdk\Thoth\ReportCore\Generator\ReportGeneratorReportAbstract}'s own re-priced
+ * `a_tax_by_name` for a `PENDING`/`FAIL` client - see
  *   SAL-1195.
  * - 2316 (`Thoth\Report\SalesReport\Transaction\BulkCharges\BulkChargesReport`): "Bulk Charges" report. Summary of
  * Bulk Billing batches created from the Clients tab.

@@ -37,7 +37,7 @@ namespace WlSdk\Wl\Search\Criteria;
  *   if `s_diastolic` is set to '80' and `s_systolic` is `null`, ''(empty string), or absent -
  *   the criterion will match all users with diastolic pressure being 80, regardless of their systolic value.
  *
- *   `['s_diastolic' =&gt; '123']`
+ *   `['s_diastolic' => '123']`
  * - 889 (`Wl\Login\Search\SearchCriteria\PurchasesActiveCriteria`): Client`s "Active Purchases" search criteria.
  * - 1831 (`Wl\Login\Search\SearchCriteria\LeadSourceCriteria`): "Lead source" search criteria.
  * - 1233 (`Wl\Login\Search\SearchCriteria\QuizFormStatusCriteria`): Client's form completion search criteria.

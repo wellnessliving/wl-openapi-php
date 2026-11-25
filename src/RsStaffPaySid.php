@@ -12,8 +12,8 @@ namespace WlSdk;
  * - 2 (`COMMISSION`): `Commission` pay role.
  * - 3 (`EVENT`): `Pay Per Event` pay role.
  * - 4 (`HOUR`): `Hourly` pay role.
- * - 5 (`RANGE`): <tt>Pay Per Client Range<tt> pay role.
- * - 6 (`TIERED_RANGE`): <tt>Tiered Pay Per Client Range<tt> pay role.
+ * - 5 (`RANGE`): `Pay Per Client Range` pay role.
+ * - 6 (`TIERED_RANGE`): `Tiered Pay Per Client Range` pay role.
  */
 class RsStaffPaySid
 {
@@ -29,9 +29,9 @@ class RsStaffPaySid
     /** `Hourly` pay role. */
     public const HOUR = 4;
 
-    /** <tt>Pay Per Client Range<tt> pay role. */
+    /** `Pay Per Client Range` pay role. */
     public const RANGE = 5;
 
-    /** <tt>Tiered Pay Per Client Range<tt> pay role. */
+    /** `Tiered Pay Per Client Range` pay role. */
     public const TIERED_RANGE = 6;
 }

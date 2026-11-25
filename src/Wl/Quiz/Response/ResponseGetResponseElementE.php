@@ -54,7 +54,7 @@ class ResponseGetResponseElementE
     public ?int $id_element = null;
 
     /**
-     * ` true ` if custom markup image is to be deleted `false` otherwise.
+     * `true` if custom markup image is to be deleted `false` otherwise.
      *
      * @var bool|null
      */
