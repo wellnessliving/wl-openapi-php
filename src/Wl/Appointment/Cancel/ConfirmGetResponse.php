@@ -18,6 +18,21 @@ class ConfirmGetResponse
     public ?ConfirmGetResponseAppointmentList $a_appointment_list = null;
 
     /**
+     * The Make-up pass section of the cancellation: the make-up pass that an early or a late cancel of the visit
+     * may
+     * issue under the Make-up Passes policy of the business.
+     *
+     * `null` if there is no section: the policy is off, the visit does not qualify, the cancel is recurring, or
+     * the
+     * status is not an early or a late cancel. Given also without a status (`id_visit` is `0`, the status is
+     * chosen
+     * later): the section is the same for both statuses.
+     *
+     * @var ConfirmGetResponseMakeup|null
+     */
+    public ?ConfirmGetResponseMakeup $a_makeup = null;
+
+    /**
      * End date of period for appointments cancellation.
      *
      * `null` in case of cancellation of single appointment.
@@ -167,6 +182,7 @@ class ConfirmGetResponse
     public function __construct(array $data)
     {
         $this->a_appointment_list = isset($data['a_appointment_list']) ? new ConfirmGetResponseAppointmentList((array)$data['a_appointment_list']) : null;
+        $this->a_makeup = isset($data['a_makeup']) ? new ConfirmGetResponseMakeup((array)$data['a_makeup']) : null;
         $this->dl_end = isset($data['dl_end']) ? (string)$data['dl_end'] : null;
         $this->dl_start = isset($data['dl_start']) ? (string)$data['dl_start'] : null;
         $this->dtl_max = isset($data['dtl_max']) ? (string)$data['dtl_max'] : null;

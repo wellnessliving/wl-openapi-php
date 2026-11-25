@@ -46,11 +46,21 @@ class TermGetResponse
     public ?bool $is_agree = null;
 
     /**
-     * The user's name.
+     * The full name of the user who signed the waiver.
+     * It is the name of the user to show information for, if he signed the waiver himself or has not signed it
+     * yet.
      *
      * @var string|null
      */
     public ?string $s_name = null;
+
+    /**
+     * The full name of the user to show information for, if a relative signed the waiver on his behalf.
+     * Empty if the user signed the waiver himself or has not signed it yet.
+     *
+     * @var string|null
+     */
+    public ?string $text_sign_for = null;
 
     /**
      * The URL to the image with the client's signature.
@@ -68,6 +78,7 @@ class TermGetResponse
         $this->ip_agree = isset($data['ip_agree']) ? (string)$data['ip_agree'] : null;
         $this->is_agree = isset($data['is_agree']) ? (bool)$data['is_agree'] : null;
         $this->s_name = isset($data['s_name']) ? (string)$data['s_name'] : null;
+        $this->text_sign_for = isset($data['text_sign_for']) ? (string)$data['text_sign_for'] : null;
         $this->url_signature = $data['url_signature'] ?? null;
     }
 }

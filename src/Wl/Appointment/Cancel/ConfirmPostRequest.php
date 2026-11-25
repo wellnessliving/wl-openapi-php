@@ -158,6 +158,26 @@ class ConfirmPostRequest
      */
     public ?array $a_notification = null;
 
+    /**
+     * The choice about the make-up pass of the cancellation: `true` to issue the make-up pass, `false` not to
+     * issue
+     * it. The same as {@link \WlSdk\Wl\Visit\VisitStatus}.
+     *
+     * `null` to cancel without make-up passes, as when `a_makeup` of the GET request is `null`. A choice is
+     * accepted
+     * only for an early or a late cancel (`id_visit`), never for a recurring cancel, which never issues a pass.
+     *
+     * Without the privilege "Override make-up passes", which an administrator always has (`can_override` of
+     * `a_makeup`
+     * is `false`), only the default of the policy is accepted, except that a choice to issue the pass for a client
+     * at
+     * the maximum is accepted and issues no pass. The choice to issue the pass is refused when the visit no longer
+     * qualifies or the client has reached the purchase limit of the pass.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_makeup_issue = null;
+
     public function params(): array
     {
         return array_filter(
@@ -181,6 +201,7 @@ class ConfirmPostRequest
             'm_fee_amount' => $this->m_fee_amount,
             'text_reason' => $this->text_reason,
             'a_notification' => $this->a_notification,
+            'is_makeup_issue' => $this->is_makeup_issue,
             ],
             static fn ($v) => $v !== null
         );

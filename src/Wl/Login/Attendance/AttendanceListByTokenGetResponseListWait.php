@@ -58,6 +58,25 @@ class AttendanceListByTokenGetResponseListWait
     public ?AttendanceListByTokenGetResponseListWaitWearable $a_wearable = null;
 
     /**
+     * `true` if the visit can be cancelled early with a make-up pass: it is booked and qualifies for a pass under
+     * the Make-up Passes policy of the business. `false` otherwise; then the other make-up fields of a booked
+     * visit
+     * are `false` or empty.
+     *
+     * @var bool|null
+     */
+    public ?bool $can_makeup_cancel = null;
+
+    /**
+     * `true` if the current user may choose whether to issue the make-up pass of an early cancel: the user has the
+     * privilege "Override make-up passes" or is an administrator. `false` if only the default of the policy is
+     * accepted, or if the visit does not qualify (`can_makeup_cancel` is `false`).
+     *
+     * @var bool|null
+     */
+    public ?bool $can_makeup_override = null;
+
+    /**
      * If `true`, the current user can access this client profile.
      *
      * @var bool|null
@@ -247,6 +266,32 @@ class AttendanceListByTokenGetResponseListWait
     public ?bool $is_hidden = null;
 
     /**
+     * `true` if the client already holds the maximum number of active make-up passes of the policy: by default an
+     * early cancel issues no pass then. `false` otherwise, also if the visit does not qualify.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_makeup_at_maximum = null;
+
+    /**
+     * `true` if the visit is an Early Cancel (Make-up): the client cancelled early, and the visit is used and is
+     * not returned to the Purchase Option. `id_visit` gives such a visit as {@link \WlSdk\Wl\Visit\VisitSid}, so
+     * this field
+     * tells it from a regular early cancel. `false` for any other visit.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_makeup_cancel = null;
+
+    /**
+     * `true` if the client has reached the purchase limit of the make-up pass, so no pass can be issued.
+     * `false` otherwise, also if the visit does not qualify.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_makeup_limit = null;
+
+    /**
      * This will be `true` if this visit was cancelled late and a penalty is applied.
      *
      * @var bool|null
@@ -408,6 +453,32 @@ class AttendanceListByTokenGetResponseListWait
     public ?string $text_left = null;
 
     /**
+     * The sentence of the Make-up pass section of an early cancel, for example "Jane will receive 1 Make-up Class
+     * Pass. It expires on Nov 5, 2026.", "Jane already has 2 active make-up passes, which is the maximum." or
+     * "Jane has reached the purchase limit for Make-up Class Pass, so no pass will be issued.".
+     * An empty string if the visit does not qualify (`can_makeup_cancel` is `false`).
+     *
+     * @var string|null
+     */
+    public ?string $text_makeup_pass = null;
+
+    /**
+     * The outcome of an Early Cancel (Make-up) (`is_makeup_cancel` is `true`): "Make-up Pass issued" or "No
+     * make-up
+     * pass issued". When the current user is paid for the session, a middle dot between spaces and "You are paid
+     * for this session" follow: the user is the staff member of the appointment or an instructor of the class
+     * session, and the own pay rate pays the make-up early cancellations; or the user is neither, has the
+     * {@link \WlSdk\Wl\Privilege\PrivilegeSid} privilege, and the pay rate of the staff member of the appointment
+     * or of
+     * any instructor of the class session pays them. The pay part is never given by
+     * {@link \WlSdk\Wl\Login\Attendance\AttendanceListByToken}.
+     * An empty string for any other visit.
+     *
+     * @var string|null
+     */
+    public ?string $text_makeup_status = null;
+
+    /**
      * Any notes tied to the client.
      *
      * @var string|null
@@ -531,6 +602,8 @@ class AttendanceListByTokenGetResponseListWait
         $this->a_resource = isset($data['a_resource']) ? new AttendanceListByTokenGetResponseListWaitResource((array)$data['a_resource']) : null;
         $this->a_wait_confirm = isset($data['a_wait_confirm']) ? new AttendanceListByTokenGetResponseListWaitWaitConfirm((array)$data['a_wait_confirm']) : null;
         $this->a_wearable = isset($data['a_wearable']) ? new AttendanceListByTokenGetResponseListWaitWearable((array)$data['a_wearable']) : null;
+        $this->can_makeup_cancel = isset($data['can_makeup_cancel']) ? (bool)$data['can_makeup_cancel'] : null;
+        $this->can_makeup_override = isset($data['can_makeup_override']) ? (bool)$data['can_makeup_override'] : null;
         $this->can_profile = isset($data['can_profile']) ? (bool)$data['can_profile'] : null;
         $this->dt_book = isset($data['dt_book']) ? (string)$data['dt_book'] : null;
         $this->dt_date = isset($data['dt_date']) ? (string)$data['dt_date'] : null;
@@ -557,6 +630,9 @@ class AttendanceListByTokenGetResponseListWait
         $this->is_free = isset($data['is_free']) ? (bool)$data['is_free'] : null;
         $this->is_guest = isset($data['is_guest']) ? (bool)$data['is_guest'] : null;
         $this->is_hidden = isset($data['is_hidden']) ? (bool)$data['is_hidden'] : null;
+        $this->is_makeup_at_maximum = isset($data['is_makeup_at_maximum']) ? (bool)$data['is_makeup_at_maximum'] : null;
+        $this->is_makeup_cancel = isset($data['is_makeup_cancel']) ? (bool)$data['is_makeup_cancel'] : null;
+        $this->is_makeup_limit = isset($data['is_makeup_limit']) ? (bool)$data['is_makeup_limit'] : null;
         $this->is_penalty = isset($data['is_penalty']) ? (bool)$data['is_penalty'] : null;
         $this->is_promotion_first = isset($data['is_promotion_first']) ? (bool)$data['is_promotion_first'] : null;
         $this->is_promotion_last = isset($data['is_promotion_last']) ? (bool)$data['is_promotion_last'] : null;
@@ -579,6 +655,8 @@ class AttendanceListByTokenGetResponseListWait
         $this->text_firstname = isset($data['text_firstname']) ? (string)$data['text_firstname'] : null;
         $this->text_lastname = isset($data['text_lastname']) ? (string)$data['text_lastname'] : null;
         $this->text_left = isset($data['text_left']) ? (string)$data['text_left'] : null;
+        $this->text_makeup_pass = isset($data['text_makeup_pass']) ? (string)$data['text_makeup_pass'] : null;
+        $this->text_makeup_status = isset($data['text_makeup_status']) ? (string)$data['text_makeup_status'] : null;
         $this->text_note = isset($data['text_note']) ? (string)$data['text_note'] : null;
         $this->text_phone = isset($data['text_phone']) ? (string)$data['text_phone'] : null;
         $this->text_promotion_return = isset($data['text_promotion_return']) ? (string)$data['text_promotion_return'] : null;

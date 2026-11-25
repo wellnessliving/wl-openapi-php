@@ -86,6 +86,28 @@ class VisitStatusPostRequest
     public ?bool $is_mail = null;
 
     /**
+     * The choice about the make-up pass of an early or a late cancel under the Make-up Passes policy of the
+     * business.
+     *
+     * `true` to issue the make-up pass, `false` not to issue it. Accepted only for an early or a late cancel
+     * (`id_visit`).
+     *
+     * `null` to change the status without make-up passes, as for a visit that does not qualify for a pass.
+     *
+     * Without the privilege "Override make-up passes", which an administrator always has, only the default of the
+     * policy is accepted: to issue the pass for an early cancel of a client below the maximum of active passes and
+     * the
+     * purchase limit of the pass, not to issue it otherwise; a choice to issue the pass for a client at the
+     * maximum is
+     * accepted too and issues no pass.
+     * The choice to issue the pass is refused when the visit no longer qualifies or the client has reached the
+     * purchase limit of the pass.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_makeup_issue = null;
+
+    /**
      * Whether to send push notification.
      *
      * `true` - push notification will be sent.
@@ -118,6 +140,7 @@ class VisitStatusPostRequest
             'id_visit' => $this->id_visit,
             'id_visit_from' => $this->id_visit_from,
             'is_mail' => $this->is_mail,
+            'is_makeup_issue' => $this->is_makeup_issue,
             'is_push' => $this->is_push,
             'is_sms' => $this->is_sms,
             ],
