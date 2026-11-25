@@ -7,7 +7,7 @@ namespace WlSdk;
  *
  *
  *
- * Last used ID: 23.
+ * Last used ID: 24.
  *
  * Values:
  * - 19 (`AI_AGENT`): Ai Agent web-chat.
@@ -22,6 +22,7 @@ namespace WlSdk;
  * - 20 (`LEAD_FOREIGN`): Skin for lead tracking form from microservice.
  * - 10 (`MOBILE_SCHEDULE`): Mobile schedule version.
  * - 16 (`RESOURCE`): Asset booking wizard.
+ * - 24 (`RESOURCE_FOREIGN`): Asset booking widget built by microservice widget team.
  * - 4 (`REVIEW_LIST`): Review list widget.
  * - 15 (`SCHEDULE_DESIGN`): General schedule design appearance.
  * - 18 (`SCHEDULE_FOREIGN`): Foreign schedule widget on react language.
@@ -70,6 +71,9 @@ class RsSkinSid
 
     /** Asset booking wizard. */
     public const RESOURCE = 16;
+
+    /** Asset booking widget built by microservice widget team. */
+    public const RESOURCE_FOREIGN = 24;
 
     /** Review list widget. */
     public const REVIEW_LIST = 4;

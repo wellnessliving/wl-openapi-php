@@ -28,6 +28,12 @@ class CustomTerms
      * apply the terms to the English texts of a
      * client of the API. The rules are as public as the terms they are built from.
      *
+     * While {@link \WlSdk\Wl\FeatureFlag\BusinessFeatureFlagAbstract} is disabled for the business, the saved
+     * terms (the preset of its business
+     * type is saved at the creation of the business whether the feature is on or not) are not shown: every term
+     * has
+     * the platform option, as CustomTermsRuntime::ruleList() gives no rules.
+     *
      * @return CustomTermsGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
