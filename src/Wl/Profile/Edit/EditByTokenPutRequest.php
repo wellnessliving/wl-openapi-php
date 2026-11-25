@@ -45,6 +45,19 @@ class EditByTokenPutRequest
     public ?string $k_business = null;
 
     /**
+     * Key of the session of a class or an event that the client is booking while the profile is saved.
+     *
+     *
+     * When the session belongs to a class or an event with an age restriction, the Date of birth system field is
+     * accepted and saved whatever its level for the entry point given by {@link \WlSdk\Wl\Profile\Edit\Edit}.
+     *
+     * Empty when the profile is not saved during the booking of a session.
+     *
+     * @var string|null
+     */
+    public ?string $k_class_period = null;
+
+    /**
      * Key of the lead source.
      *
      * `null` if not defined.
@@ -111,6 +124,7 @@ class EditByTokenPutRequest
             'is_address_inherit' => $this->is_address_inherit,
             'is_staff' => $this->is_staff,
             'k_business' => $this->k_business,
+            'k_class_period' => $this->k_class_period,
             'k_lead_source' => $this->k_lead_source,
             'uid' => $this->uid,
             'uid_inherit_address' => $this->uid_inherit_address,

@@ -13,7 +13,7 @@ namespace WlSdk;
  *
  * Pay attention that all `\MailPrioritySid` must start with backslash.
  *
- * Last used ID: 233.
+ * Last used ID: 234.
  *
  * Values:
  * - 220 (`ABANDONED_CHECKOUT`): Sent when a client abandons a checkout (used in automations).
@@ -148,6 +148,11 @@ namespace WlSdk;
  * - 62 (`BOOK_REMIND_ENROLLMENT`): Enrollment Reminder.
  *
  *   Sent to the client reminding about an upcoming enrollment.
+ * - 234 (`BOOK_REMIND_SERVICE_LIST_USER`): Multiple Appointment Reminder (Client).
+ *
+ *   Sent to remind the client about all of their appointments on the same day, in one message. It is sent instead
+ *   of several appointment reminders, when the client has several appointments on the same day. It is off by
+ *   default. The time of sending comes from the schedule of {@link \WlSdk\RsMailSid}.
  * - 27 (`BOOK_REMIND_SERVICE_STAFF`): Appointment Reminder - Staff.
  *
  *   Sent to the staff member reminding them about an upcoming appointment.
@@ -666,6 +671,9 @@ class RsMailSid
 
     /** Enrollment Reminder. */
     public const BOOK_REMIND_ENROLLMENT = 62;
+
+    /** Multiple Appointment Reminder (Client). */
+    public const BOOK_REMIND_SERVICE_LIST_USER = 234;
 
     /** Appointment Reminder - Staff. */
     public const BOOK_REMIND_SERVICE_STAFF = 27;

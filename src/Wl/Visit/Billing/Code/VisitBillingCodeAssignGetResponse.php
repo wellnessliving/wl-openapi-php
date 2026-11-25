@@ -84,6 +84,15 @@ class VisitBillingCodeAssignGetResponse
     public ?bool $is_signature = null;
 
     /**
+     * `true` when the diagnostic codes of the visit are locked and the user who signed them was deleted, so
+     * {@link \WlSdk\Wl\Visit\Billing\Code\VisitBillingCodeAssignGetResponse::$uid_staff_lock} is `null`; `false`
+     * otherwise.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_staff_lock_delete = null;
+
+    /**
      * `true` if the business has the diagnostic codes turned on, `false` otherwise.
      *
      * @var bool|null
@@ -111,8 +120,10 @@ class VisitBillingCodeAssignGetResponse
      * moment
      * of the request.
      *
-     * `null` when the diagnostic codes are not locked or when the user is deleted; the lock itself stays, so the
-     * diagnostic codes are kept frozen.
+     * `null` when the diagnostic codes are not locked. An empty string when the user who signed was deleted, see
+     * {@link \WlSdk\Wl\Visit\Billing\Code\VisitBillingCodeAssignGetResponse::$is_staff_lock_delete}, or is not a
+     * staff member of the business; the lock
+     * itself stays, so the diagnostic codes are kept frozen.
      *
      * @var string|null
      */
@@ -121,7 +132,8 @@ class VisitBillingCodeAssignGetResponse
     /**
      * Key of the staff member who signed and locked the diagnostic codes of the visit.
      *
-     * `null` when the diagnostic codes are not locked or when the user is deleted.
+     * `null` when the diagnostic codes are not locked, or when the user who signed was deleted, see
+     * {@link \WlSdk\Wl\Visit\Billing\Code\VisitBillingCodeAssignGetResponse::$is_staff_lock_delete}.
      *
      * @var string|null
      */
@@ -136,6 +148,7 @@ class VisitBillingCodeAssignGetResponse
         $this->is_locked = isset($data['is_locked']) ? (bool)$data['is_locked'] : null;
         $this->is_receipt_sent = isset($data['is_receipt_sent']) ? (bool)$data['is_receipt_sent'] : null;
         $this->is_signature = isset($data['is_signature']) ? (bool)$data['is_signature'] : null;
+        $this->is_staff_lock_delete = isset($data['is_staff_lock_delete']) ? (bool)$data['is_staff_lock_delete'] : null;
         $this->is_system = isset($data['is_system']) ? (bool)$data['is_system'] : null;
         $this->s_code_version = isset($data['s_code_version']) ? (string)$data['s_code_version'] : null;
         $this->text_staff_name_lock = isset($data['text_staff_name_lock']) ? (string)$data['text_staff_name_lock'] : null;
