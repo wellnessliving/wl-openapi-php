@@ -29,7 +29,8 @@ class AttemptList
      * the
      * clients of the staff member) are neither listed nor counted. Works in the session of a staff member with
      * access
-     * to the location and the privilege to see the profiles of the clients; no key of a kiosk is needed.
+     * to the location and either the privilege to manage the profiles of the clients or the privilege to view the
+     * details of the clients; no key of a kiosk is needed.
      *
      * @return AttemptListGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

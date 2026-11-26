@@ -21,7 +21,8 @@ class ScanPostRequest
     /**
      * The scanned value: a member ID or a dynamic barcode, for example `100245`.
      *
-     * The symbols that are not letters or digits are cut from both ends.
+     * When the business uses QR codes, also the QR code of the client, `text_barcode|tu_qr_issued|30`, for example
+     * `100245|1795000000|30`. The symbols that are not letters or digits are cut from both ends.
      *
      * @var string|null
      */

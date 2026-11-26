@@ -86,6 +86,22 @@ class PurchaseListElementGetResponse
     public ?string $dl_start = null;
 
     /**
+     * The local date in MySQL format when the purchase option first started, before any renewal.
+     * Only available if the item is a promotion.
+     *
+     * For a purchase option that was never renewed, this is the same as {@link
+     * \WlSdk\Wl\Profile\PurchaseList\PurchaseListElementGetResponse::$dl_start}
+     * unless its start date was moved later.
+     *
+     * `null` if the purchase option has not started yet (for example, a pass before its first visit) or if the
+     * item
+     * is not a promotion.
+     *
+     * @var string|null
+     */
+    public ?string $dl_start_first = null;
+
+    /**
      * The local date of cancellation in MySQL format. Only available if the item is a membership.
      *
      * @var string|null
@@ -673,6 +689,7 @@ class PurchaseListElementGetResponse
         $this->dl_purchase = isset($data['dl_purchase']) ? (string)$data['dl_purchase'] : null;
         $this->dl_send = isset($data['dl_send']) ? (string)$data['dl_send'] : null;
         $this->dl_start = isset($data['dl_start']) ? (string)$data['dl_start'] : null;
+        $this->dl_start_first = isset($data['dl_start_first']) ? (string)$data['dl_start_first'] : null;
         $this->dt_cancel = isset($data['dt_cancel']) ? (string)$data['dt_cancel'] : null;
         $this->dt_hold_end = isset($data['dt_hold_end']) ? (string)$data['dt_hold_end'] : null;
         $this->dt_hold_start = isset($data['dt_hold_start']) ? (string)$data['dt_hold_start'] : null;

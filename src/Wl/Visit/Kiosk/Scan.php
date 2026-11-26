@@ -25,10 +25,11 @@ class Scan
      *   <li>the client is found: the key, the name and the photo of the client;</li>
      *   <li>no client that the staff member may see matches the value;</li>
      *   <li>the member ID of the client is inactive;</li>
-     *   <li>the dynamic barcode has expired;</li>
-     *   <li>the business uses QR codes, which the kiosk does not read: every scan gives this result.</li>
+     *   <li>the dynamic barcode has expired, or the 30 seconds of the QR code have passed;</li>
+     *   <li>the business uses QR codes, and the value contains `|` but is not a well-formed QR code.</li>
      * </ul>
-     * Only one client is returned: there is no list of the candidates.
+     * At a business that uses QR codes, a value without `|` is found as at a business that does not use them. Only
+     * one client is returned: there is no list of the candidates.
      *
      * @return ScanPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

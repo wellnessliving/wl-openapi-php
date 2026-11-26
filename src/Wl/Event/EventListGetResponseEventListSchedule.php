@@ -81,6 +81,33 @@ class EventListGetResponseEventListSchedule
     public ?string $k_resource_location = null;
 
     /**
+     * End time of the scheduled sessions in `MySql` time format (`HH:MM:SS`).
+     *
+     * It is in the same time zone as `text_time`: the time zone of the location,
+     * or the time zone of the profile of the client when the business lets clients choose a time zone in the
+     * profile
+     * and {@link \WlSdk\Wl\Event\EventList} is passed.
+     *
+     * It is the start time plus the duration of the session, so it is earlier than
+     * `s_time_start` when the session ends after midnight.
+     *
+     * @var string|null
+     */
+    public ?string $s_time_end = null;
+
+    /**
+     * Start time of the scheduled sessions in `MySql` time format (`HH:MM:SS`).
+     *
+     * It is in the same time zone as `text_time`: the time zone of the location,
+     * or the time zone of the profile of the client when the business lets clients choose a time zone in the
+     * profile
+     * and {@link \WlSdk\Wl\Event\EventList} is passed.
+     *
+     * @var string|null
+     */
+    public ?string $s_time_start = null;
+
+    /**
      * Identifier of the timezone of the location of the session (for example `America/New_York`).
      *
      * It never depends on the timezone of the client. Use it to find out whether the early bird price is still
@@ -123,6 +150,8 @@ class EventListGetResponseEventListSchedule
         $this->k_class_period = isset($data['k_class_period']) ? (string)$data['k_class_period'] : null;
         $this->k_location = isset($data['k_location']) ? (string)$data['k_location'] : null;
         $this->k_resource_location = isset($data['k_resource_location']) ? (string)$data['k_resource_location'] : null;
+        $this->s_time_end = isset($data['s_time_end']) ? (string)$data['s_time_end'] : null;
+        $this->s_time_start = isset($data['s_time_start']) ? (string)$data['s_time_start'] : null;
         $this->s_timezone_location = isset($data['s_timezone_location']) ? (string)$data['s_timezone_location'] : null;
         $this->text_location = isset($data['text_location']) ? (string)$data['text_location'] : null;
         $this->text_room = isset($data['text_room']) ? (string)$data['text_room'] : null;

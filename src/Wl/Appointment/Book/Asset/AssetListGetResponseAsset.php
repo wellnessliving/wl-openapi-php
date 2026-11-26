@@ -92,6 +92,15 @@ class AssetListGetResponseAsset
     public ?string $html_title = null;
 
     /**
+     * The number of identical units of the asset. One booking takes one unit.
+     * The units booked at {@link \WlSdk\Wl\Appointment\Book\Asset\AssetList} are listed in {@link
+     * \WlSdk\Wl\Appointment\Book\Asset\AssetListGetResponse::$a_asset_busy}.
+     *
+     * @var int|null
+     */
+    public ?int $i_quantity = null;
+
+    /**
      * The ID of the reason why the client cannot book this asset.
      * One of {@link \WlSdk\Wl\Schedule\ClassView\DenyReasonSid} constants. `null` if there is no deny reason.
      *
@@ -165,6 +174,7 @@ class AssetListGetResponseAsset
         $this->html_age_restriction = isset($data['html_age_restriction']) ? (string)$data['html_age_restriction'] : null;
         $this->html_deny_reason = isset($data['html_deny_reason']) ? (string)$data['html_deny_reason'] : null;
         $this->html_title = isset($data['html_title']) ? (string)$data['html_title'] : null;
+        $this->i_quantity = isset($data['i_quantity']) ? (int)$data['i_quantity'] : null;
         $this->id_deny_reason = isset($data['id_deny_reason']) ? (int)$data['id_deny_reason'] : null;
         $this->id_service_require = isset($data['id_service_require']) ? (int)$data['id_service_require'] : null;
         $this->is_age_restricted = isset($data['is_age_restricted']) ? (bool)$data['is_age_restricted'] : null;
