@@ -24,8 +24,8 @@ class Waiver
      *  the profile. When the business belongs to a franchise that shares waivers across all
      *  franchise locations, waivers are loaded from the franchisor business instead. Each waiver
      *  includes the local and UTC agreement dates, the rendered contract text, the IP address used
-     *  to sign, and a link to the signature image, along with the minor age configured for parent
-     *  or guardian consent.
+     *  to sign, whether the signature is old, the user who signed it for the client, and a link to
+     *  the signature image, along with the minor age configured for parent or guardian consent.
      *
      * @return WaiverGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.

@@ -44,6 +44,15 @@ class Agree
      * both, records the agreement date and signature in the database, and sends a waiver confirmation
      * notification.
      *
+     * The agreement also records who signed the waiver for the user. Nobody is recorded when the user signs
+     * themselves. A relative of the user who signs the waiver is recorded as the signer, and `uid_sign` is
+     * ignored.
+     * Otherwise (a staff member or an administrator signs the waiver) the main contact sent in `uid_sign` is
+     * recorded,
+     * and nobody when `uid_sign` is empty; the request is refused when that main contact is not a relative of the
+     * user
+     * in the business.
+     *
      * @return AgreePostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

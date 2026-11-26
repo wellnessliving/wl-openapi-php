@@ -34,6 +34,20 @@ class AgreePostRequest
      */
     public ?string $s_signature = null;
 
+    /**
+     * Key of the main contact who signs the waiver for the user.
+     *
+     * Read only when the current user is neither the user nor a relative of the user (a staff member or an
+     * administrator signs the waiver at the kiosk). Must be a relative of the user in the business. `null` or an
+     * empty
+     * value to record no signer. When the current user is a relative of the user, the current user is recorded as
+     * the
+     * signer, and this value is ignored.
+     *
+     * @var string|null
+     */
+    public ?string $uid_sign = null;
+
     public function params(): array
     {
         return array_filter(
@@ -42,6 +56,7 @@ class AgreePostRequest
             'uid' => $this->uid,
             'is_agree' => $this->is_agree,
             's_signature' => $this->s_signature,
+            'uid_sign' => $this->uid_sign,
             ],
             static fn ($v) => $v !== null
         );
