@@ -23,6 +23,8 @@ class RewardConfig
      * Used in the backend settings editor to show the current enabled or disabled state of the reward
      * program before the staff member makes a change. Always reads live data, bypassing the cache.
      *
+     * Anybody may read the state, a guest included: whether a business has a reward program is public information.
+     *
      * @return RewardConfigGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
