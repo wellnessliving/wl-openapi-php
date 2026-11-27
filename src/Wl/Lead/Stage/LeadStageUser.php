@@ -5,7 +5,7 @@ namespace WlSdk\Wl\Lead\Stage;
 use WlSdk\WlSdkClient;
 
 /**
- * Sets the lead stage of the client.
+ * Gets the lead stage of the client.
  */
 class LeadStageUser
 {
@@ -15,6 +15,30 @@ class LeadStageUser
     public function __construct(WlSdkClient $client)
     {
         $this->client = $client;
+    }
+
+    /**
+     * Gets the lead stage of the client.
+     *
+     * The current user must be allowed to view the profile of the client, as for the profile page of the client
+     * (the
+     * privilege to view client profiles and the access to the client), and the client must be one whom the user
+     * may see
+     * in this business: a client of the business, or a franchise client by the rules of the franchise. A client
+     * without a
+     * stored stage which is not one of the stages of the business, is in the default stage of the business, and
+     * that
+     * stage is returned. An empty string is returned only if the business has no stages.
+     *
+     * Also tells whether the current user may change the stage of the client.
+     *
+     * @return LeadStageUserGetResponse
+     * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
+     * @throws \RuntimeException On network or cURL error.
+     */
+    public function get(LeadStageUserGetRequest $request): LeadStageUserGetResponse
+    {
+        return new LeadStageUserGetResponse($this->client->request('/Wl/Lead/Stage/LeadStageUser.json', $request->params(), 'GET'));
     }
 
     /**
