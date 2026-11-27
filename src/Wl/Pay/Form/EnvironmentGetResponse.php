@@ -166,11 +166,10 @@ class EnvironmentGetResponse
      *
      * It is set only for a business that has the card surcharge on and is under the rule of the surcharge of
      * Stripe (the
-     * country of the business and the switch of the feature, see
-     * SurchargeCardTypeResolver::localeList()). An empty string for any other business
-     * and any other processor: nothing is shown for them. The wording comes from WL-95032, which is not built, so
-     * for now it
-     * is `TEXT_SURCHARGE_DISCLOSURE_PLACEHOLDER`. It is a plain text, the widget escapes it.
+     * country of the business and the switch of the feature decide). An empty string for any other business and
+     * any other
+     * processor: nothing is shown for them. The wording comes from WL-95032, which is not built, so for now it is
+     * `TEXT_SURCHARGE_DISCLOSURE_PLACEHOLDER`. It is a plain text, the widget escapes it.
      *
      * @var string|null
      */

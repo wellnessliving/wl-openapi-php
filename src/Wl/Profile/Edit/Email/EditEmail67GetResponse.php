@@ -32,6 +32,17 @@ class EditEmail67GetResponse
     public ?bool $is_added = null;
 
     /**
+     * If `true`, the user who has the specified email is a client or a staff member of a business other than
+     * {@link \WlSdk\Wl\Profile\Edit\Email\EditEmail}, `false` - otherwise.
+     *
+     * The password of such a user can not be set when the user is added as a staff member of
+     * {@link \WlSdk\Wl\Profile\Edit\Email\EditEmail}, so the form of a new staff member does not ask for it.
+     *
+     * @var bool|null
+     */
+    public ?bool $is_business_foreign = null;
+
+    /**
      * If `true`, user is already a member of current business, `false` - otherwise.
      *
      * @var bool|null
@@ -86,6 +97,7 @@ class EditEmail67GetResponse
         $this->a_business_member_key = isset($data['a_business_member_key']) ? (array)$data['a_business_member_key'] : null;
         $this->a_user = isset($data['a_user']) ? new EditEmail67GetResponseUser((array)$data['a_user']) : null;
         $this->is_added = isset($data['is_added']) ? (bool)$data['is_added'] : null;
+        $this->is_business_foreign = isset($data['is_business_foreign']) ? (bool)$data['is_business_foreign'] : null;
         $this->is_current_member = isset($data['is_current_member']) ? (bool)$data['is_current_member'] : null;
         $this->is_limit = isset($data['is_limit']) ? (bool)$data['is_limit'] : null;
         $this->is_password_set = isset($data['is_password_set']) ? (bool)$data['is_password_set'] : null;
