@@ -1,6 +1,6 @@
 <?php
 
-namespace WlSdk\Wl\Promotion\Editor;
+namespace WlSdk\Wl\Promotion\Editor\List;
 
 use WlSdk\WlSdkClient;
 
@@ -33,6 +33,6 @@ class ListEndpoint
      */
     public function get(ListEndpointGetRequest $request): ListEndpointGetResponse
     {
-        return new ListEndpointGetResponse($this->client->request('/Wl/Promotion/Editor/List.json', $request->params(), 'GET'));
+        return new ListEndpointGetResponse($this->client->request('/Wl/Promotion/Editor/List/List.json', $request->params(), 'GET'));
     }
 }

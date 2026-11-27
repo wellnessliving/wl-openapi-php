@@ -84,6 +84,14 @@ class PaymentIntentUpdatePostRequest
      * Payment amount to set.
      * Required.
      *
+     * With {@link \WlSdk\Thoth\PayProcessor\StripeCom\PaymentIntentUpdate} for a business that is under the rule
+     * of the surcharge it is
+     * the amount without the surcharge, and the answer gives the total with the surcharge decided by the server. A
+     * form
+     * that posts the model with the answer again, the total in it and the surcharge, gets the same: the posted
+     * surcharge
+     * is taken off the amount first.
+     *
      * @var string|null
      */
     public ?string $m_amount = '0.00';
@@ -92,9 +100,37 @@ class PaymentIntentUpdatePostRequest
      * Surcharge amount to set.
      * Required.
      *
+     * With {@link \WlSdk\Thoth\PayProcessor\StripeCom\PaymentIntentUpdate} for a business that is under the rule
+     * of the surcharge the
+     * posted value is not charged: the surcharge is decided by the server and comes in the answer. The value only
+     * tells
+     * how much of {@link \WlSdk\Thoth\PayProcessor\StripeCom\PaymentIntentUpdate} is the surcharge of an earlier
+     * answer.
+     *
      * @var string|null
      */
     public ?string $m_surcharge = '0.00';
+
+    /**
+     * The payment method of the new card to attach to the Payment Intent, `null` if there is none.
+     *
+     * The card form makes it after the card is entered (`stripe.createPaymentMethod()` of the Payment Element),
+     * and the
+     * payment is confirmed in the browser with the client secret alone. Stripe tells whether the card can be
+     * surcharged
+     * and the maximum only when a payment method is attached, so the server attaches it, decides the surcharge and
+     * sets
+     * the amount and the surcharge on the Payment Intent and on the transaction. A changed card is a new payment
+     * method: the step is repeated, and the amount and the surcharge are put back by the same request. Not for a
+     * Checkout Session, and not for a payment that is not under the rule of the surcharge (the business has no
+     * surcharge
+     * of the card, the country is not one of the rule, or the switch of the feature is off): the call is refused
+     * with
+     * `payment-method-rule`.
+     *
+     * @var string|null
+     */
+    public ?string $s_payment_method = null;
 
     public function params(): array
     {
@@ -111,6 +147,7 @@ class PaymentIntentUpdatePostRequest
             'id_currency' => $this->id_currency,
             'm_amount' => $this->m_amount,
             'm_surcharge' => $this->m_surcharge,
+            's_payment_method' => $this->s_payment_method,
             ],
             static fn ($v) => $v !== null
         );

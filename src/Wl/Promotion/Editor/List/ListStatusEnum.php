@@ -1,6 +1,6 @@
 <?php
 
-namespace WlSdk\Wl\Promotion\Editor;
+namespace WlSdk\Wl\Promotion\Editor\List;
 
 /**
  * The statuses by which the list of Purchase Options is filtered.

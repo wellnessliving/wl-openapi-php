@@ -25,6 +25,12 @@ class MailUse
      * active member of the business. Requests are rate-limited per IP unless the caller has the required
      * privilege.
      *
+     * With {@link \WlSdk\Wl\Login\Mail\MailUse} set to `true`, the membership in the business is not checked: only
+     * {@link \WlSdk\Wl\Login\Mail\MailUseGetResponse::$is_use} is returned, `true` if the email address is used by
+     * an account of `WellnessLiving`
+     * that is not a virtual user. The business key is still required and validated, and the same rate limit
+     * applies.
+     *
      * @return MailUseGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

@@ -1,6 +1,6 @@
 <?php
 
-namespace WlSdk\Wl\Promotion\Editor;
+namespace WlSdk\Wl\Promotion\Editor\List;
 
 /**
  * The optional columns of the list of Purchase Options, whose data is read only when it is asked.

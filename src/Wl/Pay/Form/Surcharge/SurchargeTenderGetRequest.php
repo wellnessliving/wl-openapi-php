@@ -48,6 +48,19 @@ class SurchargeTenderGetRequest
     public ?string $k_pay_bank = null;
 
     /**
+     * Amount of the payment without the surcharge, to calculate {@link
+     * \WlSdk\Thoth\WlPay\Form\Surcharge\SurchargeTender} for.
+     *
+     * `null` if the surcharge is not asked for: the answer is then only {@link
+     * \WlSdk\Thoth\WlPay\Form\Surcharge\SurchargeTender}, as it was
+     * before the field appeared. The field is not a part of `KEY`, so a model of this API that
+     * is shared by several widgets takes the amount that was set last.
+     *
+     * @var string|null
+     */
+    public ?string $m_amount = null;
+
+    /**
      * First digits of a newly-typed card number (at least 6).
      *
      * Exactly one of {@link \WlSdk\Thoth\WlPay\Form\Surcharge\SurchargeTender} and {@link
@@ -66,6 +79,7 @@ class SurchargeTenderGetRequest
             'k_currency' => $this->k_currency,
             'k_location' => $this->k_location,
             'k_pay_bank' => $this->k_pay_bank,
+            'm_amount' => $this->m_amount,
             's_bin' => $this->s_bin,
             ],
             static fn ($v) => $v !== null

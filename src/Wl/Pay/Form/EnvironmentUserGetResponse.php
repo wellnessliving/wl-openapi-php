@@ -161,6 +161,21 @@ class EnvironmentUserGetResponse
      */
     public ?string $m_surcharge_ach = null;
 
+    /**
+     * The disclosure that the payer sees at the checkout next to the surcharge line (SAL-1411).
+     *
+     * It is set only for a business that has the card surcharge on and is under the rule of the surcharge of
+     * Stripe (the
+     * country of the business and the switch of the feature, see
+     * SurchargeCardTypeResolver::localeList()). An empty string for any other business
+     * and any other processor: nothing is shown for them. The wording comes from WL-95032, which is not built, so
+     * for now it
+     * is `TEXT_SURCHARGE_DISCLOSURE_PLACEHOLDER`. It is a plain text, the widget escapes it.
+     *
+     * @var string|null
+     */
+    public ?string $text_surcharge_disclosure = null;
+
     public function __construct(array $data)
     {
         $this->a_card_system = isset($data['a_card_system']) ? (array)$data['a_card_system'] : null;
@@ -179,5 +194,6 @@ class EnvironmentUserGetResponse
         $this->is_tip = isset($data['is_tip']) ? (bool)$data['is_tip'] : null;
         $this->m_surcharge = isset($data['m_surcharge']) ? (string)$data['m_surcharge'] : null;
         $this->m_surcharge_ach = isset($data['m_surcharge_ach']) ? (string)$data['m_surcharge_ach'] : null;
+        $this->text_surcharge_disclosure = isset($data['text_surcharge_disclosure']) ? (string)$data['text_surcharge_disclosure'] : null;
     }
 }

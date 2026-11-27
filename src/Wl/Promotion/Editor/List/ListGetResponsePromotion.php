@@ -1,12 +1,12 @@
 <?php
 
-namespace WlSdk\Wl\Promotion\Editor;
+namespace WlSdk\Wl\Promotion\Editor\List;
 
 class ListGetResponsePromotion
 {
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. The titles of the client groups that the
-     * Purchase
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. The titles of the client groups that
+     * the Purchase
      * Option is only for. Empty if it is not restricted to groups.
      *
      * @var string[]|null
@@ -14,8 +14,8 @@ class ListGetResponsePromotion
     public ?array $a_client_group = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. The titles of the client types that the
-     * Purchase
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. The titles of the client types that
+     * the Purchase
      * Option is only for. Empty if it is not restricted to types.
      *
      * @var string[]|null
@@ -23,8 +23,8 @@ class ListGetResponsePromotion
     public ?array $a_client_type = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. The titles of the locations where the
-     * Purchase Option is
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. The titles of the locations where
+     * the Purchase Option is
      * sold, in alphabetical order. Empty if it is sold in every location. A package is sold where its components
      * are.
      *
@@ -33,8 +33,8 @@ class ListGetResponsePromotion
     public ?array $a_location = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. The titles of the store categories of the
-     * Purchase
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. The titles of the store categories
+     * of the Purchase
      * Option, in alphabetical order. Empty if it is in none.
      *
      * @var string[]|null
@@ -42,7 +42,7 @@ class ListGetResponsePromotion
     public ?array $a_shop_category = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. The date when the Purchase Option is
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. The date when the Purchase Option is
      * planned to be switched
      * off. `null` if none is planned.
      *
@@ -51,7 +51,7 @@ class ListGetResponsePromotion
     public ?string $dl_terminate = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. The date and time when the Purchase
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. The date and time when the Purchase
      * Option is published,
      * local to the business. `null` if it is published at once.
      *
@@ -60,7 +60,7 @@ class ListGetResponsePromotion
     public ?string $dtl_publish = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. The date and time when the Purchase
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. The date and time when the Purchase
      * Option is
      * unpublished, local to the business. `null` if it is published until it is removed.
      *
@@ -78,8 +78,8 @@ class ListGetResponsePromotion
     public ?int $i_client = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. How many times one client can buy the
-     * Purchase Option.
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. How many times one client can buy
+     * the Purchase Option.
      * `null` if there is no limit.
      *
      * @var int|null
@@ -117,8 +117,8 @@ class ListGetResponsePromotion
     public ?bool $is_introductory = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. Whether the Purchase Option is sold in
-     * every location of
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. Whether the Purchase Option is sold
+     * in every location of
      * the business.
      *
      * @var bool|null
@@ -133,7 +133,7 @@ class ListGetResponsePromotion
     public ?bool $is_online_sell = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. Whether the Purchase Option renews
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. Whether the Purchase Option renews
      * itself.
      *
      * @var bool|null
@@ -148,8 +148,8 @@ class ListGetResponsePromotion
     public ?string $k_promotion = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. Who created the Purchase Option: the word
-     * for the
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. Who created the Purchase Option: the
+     * word for the
      * franchisor, for an admin, or the public name of a staff member of the business. Empty for anybody else.
      *
      * @var string|null
@@ -157,8 +157,8 @@ class ListGetResponsePromotion
     public ?string $text_create_by = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. When the Purchase Option was created, in
-     * the time zone and
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. When the Purchase Option was
+     * created, in the time zone and
      * the format of the business.
      *
      * @var string|null
@@ -166,8 +166,8 @@ class ListGetResponsePromotion
     public ?string $text_create_date = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. Who changed the Purchase Option last,
-     * named as the creator,
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. Who changed the Purchase Option
+     * last, named as the creator,
      * or the words for an option that nobody changed.
      *
      * @var string|null
@@ -175,7 +175,7 @@ class ListGetResponsePromotion
     public ?string $text_edit_by = null;
 
     /**
-     * With the column {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum}. When the Purchase Option was changed
+     * With the column {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum}. When the Purchase Option was changed
      * last, or the words for
      * an option that nobody changed.
      *
@@ -234,6 +234,13 @@ class ListGetResponsePromotion
     public ?string $text_visit = null;
 
     /**
+     * The link to the page where the Purchase Option is edited.
+     *
+     * @var string|null
+     */
+    public ?string $url_edit = null;
+
+    /**
      * The link to the small image of the Purchase Option. Empty if it has no image.
      *
      * @var string|null
@@ -270,6 +277,7 @@ class ListGetResponsePromotion
         $this->text_service_category = isset($data['text_service_category']) ? (string)$data['text_service_category'] : null;
         $this->text_title = isset($data['text_title']) ? (string)$data['text_title'] : null;
         $this->text_visit = isset($data['text_visit']) ? (string)$data['text_visit'] : null;
+        $this->url_edit = isset($data['url_edit']) ? (string)$data['url_edit'] : null;
         $this->url_image = isset($data['url_image']) ? (string)$data['url_image'] : null;
     }
 }

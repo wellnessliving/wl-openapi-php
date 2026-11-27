@@ -1,14 +1,14 @@
 <?php
 
-namespace WlSdk\Wl\Promotion\Editor;
+namespace WlSdk\Wl\Promotion\Editor\List;
 
 class ListGetRequest
 {
     /**
      * The optional columns whose data is wanted. Empty to read the default columns only.
      *
-     * Each item is one of the {@link \WlSdk\Wl\Promotion\Editor\ListColumnEnum} cases. The data of a column that
-     * is not asked is not read, and its
+     * Each item is one of the {@link \WlSdk\Wl\Promotion\Editor\List\ListColumnEnum} cases. The data of a column
+     * that is not asked is not read, and its
      * fields are not in the rows.
      *
      * @var int[]|null
@@ -40,7 +40,7 @@ class ListGetRequest
      *
      * Each item is the key of a store category of the business. The Purchase Options that are in no store category
      * are
-     * added by {@link \WlSdk\Wl\Promotion\Editor\ListEndpoint}.
+     * added by {@link \WlSdk\Wl\Promotion\Editor\List\ListEndpoint}.
      *
      * @var string[]|null
      */
@@ -61,26 +61,26 @@ class ListGetRequest
     public ?int $i_page_size = 25;
 
     /**
-     * The sort of the list. One of the {@link \WlSdk\Wl\Promotion\Editor\ListSortEnum} cases.
+     * The sort of the list. One of the {@link \WlSdk\Wl\Promotion\Editor\List\ListSortEnum} cases.
      *
      * @var int|null
-     * @see \WlSdk\Wl\Promotion\Editor\ListSortEnum
+     * @see \WlSdk\Wl\Promotion\Editor\List\ListSortEnum
      */
     public ?int $id_sort = 1;
 
     /**
-     * The status of the Purchase Options to show. One of the {@link \WlSdk\Wl\Promotion\Editor\ListStatusEnum}
-     * cases.
+     * The status of the Purchase Options to show. One of the {@link
+     * \WlSdk\Wl\Promotion\Editor\List\ListStatusEnum} cases.
      *
      * @var int|null
-     * @see \WlSdk\Wl\Promotion\Editor\ListStatusEnum
+     * @see \WlSdk\Wl\Promotion\Editor\List\ListStatusEnum
      */
     public ?int $id_status = 3;
 
     /**
      * Whether the Purchase Options that are in no store category are shown in addition to the requested store
      * categories. It is the only filter by the store categories when
-     * {@link \WlSdk\Wl\Promotion\Editor\ListEndpoint} is `null`.
+     * {@link \WlSdk\Wl\Promotion\Editor\List\ListEndpoint} is `null`.
      *
      * @var bool|null
      */

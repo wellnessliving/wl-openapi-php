@@ -23,6 +23,15 @@ class PassportOtp
      * Checks the OTP rate limit, generates a new code for the given user, and dispatches it according to the
      * chosen delivery strategy. The user must not be already signed in and must not be an admin.
      *
+     * The user is given by {@link \WlSdk\Wl\Passport\Login\Enter\PassportOtp} or by {@link
+     * \WlSdk\Wl\Passport\Login\Enter\PassportOtp}. With the email, the
+     * limit of the requests from the IP address is checked and spent first; only then the request is refused when
+     * no
+     * account uses the email (`mail-nx`), when the account is an admin (`user-admin`) or a staff member of the
+     * business, active or not (`user-staff`). The code is then sent to the contacts of the account found, its
+     * email and
+     * its phone, which may differ from the email given.
+     *
      * There are two ways to specify the delivery channel:
      *
      * **1. Broadcast strategy** (default)
@@ -71,6 +80,13 @@ class PassportOtp
      *
      * Validates the OTP code for the given user, signs in the session, fires the post-login event,
      * completes business registration if applicable, and returns the redirect URL for the business frontend.
+     *
+     * The user is given by {@link \WlSdk\Wl\Passport\Login\Enter\PassportOtp} or by {@link
+     * \WlSdk\Wl\Passport\Login\Enter\PassportOtp}. With the email, the
+     * limit of the submits from the IP address is checked and spent first; only then the request is refused when
+     * no
+     * account uses the email (`mail-nx`), when the account is an admin (`user-admin`) or a staff member of the
+     * business, active or not (`user-staff`). The account found is signed in; no account is created.
      *
      * @return PassportOtpPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
