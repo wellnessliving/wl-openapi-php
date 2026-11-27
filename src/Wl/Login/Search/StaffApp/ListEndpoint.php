@@ -25,6 +25,10 @@ class ListEndpoint
      * client's
      * name, email, phone, member ID, and user key.
      *
+     * At a business with Dynamic ID the live dynamic barcode of a client is still matched first. While QUICK Auto
+     * Check-In of the current staff member is on, nothing else is matched, unless
+     * {@link \WlSdk\Wl\Login\Search\StaffApp\ListEndpoint} is `true`.
+     *
      * @return ListEndpointGetResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.
