@@ -51,6 +51,12 @@ class VisitBillingCodeAssign
      * overwriting that change, see {@link
      * \WlSdk\Wl\Visit\Billing\Code\VisitBillingCodeAssignGetResponse::$s_code_version}.
      *
+     * While the business has the diagnostic codes turned off, a post that adds an ICD-10-CM diagnostic code the
+     * visit
+     * does not have yet is rejected with the error `visit-icd-disabled` and nothing is saved, see
+     * {@link \WlSdk\Wl\Visit\Billing\Code\VisitBillingCodeAssign}. The diagnostic codes the visit already has may
+     * stay in the list.
+     *
      * @return VisitBillingCodeAssignPostResponse
      * @throws \WlSdk\WlSdkException On non-2xx HTTP response.
      * @throws \RuntimeException On network or cURL error.

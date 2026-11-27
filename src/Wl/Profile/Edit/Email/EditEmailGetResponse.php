@@ -36,7 +36,7 @@ class EditEmailGetResponse
      * {@link \WlSdk\Wl\Profile\Edit\Email\EditEmail}, `false` - otherwise.
      *
      * The password of such a user can not be set when the user is added as a staff member of
-     * {@link \WlSdk\Wl\Profile\Edit\Email\EditEmail}, so the form of a new staff member does not ask for it.
+     * {@link \WlSdk\Wl\Profile\Edit\Email\EditEmail}.
      *
      * @var bool|null
      */

@@ -28,6 +28,11 @@ class VisitBillingCodeAssignPostRequest
      * temporary codes. The case of a value does not matter. The codes the visit has are returned in
      * {@link \WlSdk\Wl\Visit\Billing\Code\VisitBillingCodeAssignGetResponse::$a_code}.
      *
+     * While the business has the diagnostic codes turned off, a post that adds an ICD-10-CM diagnostic code the
+     * visit
+     * does not have yet is rejected with the error `visit-icd-disabled`, and nothing of the post is saved. The
+     * diagnostic codes the visit already has may stay in the list.
+     *
      * @var string[]|null
      */
     public ?array $a_text_code = null;
